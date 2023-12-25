@@ -1,0 +1,385 @@
+
+{
+    "regionLinksOfMainPage": [
+        
+        {
+            "testID": "1",
+            "expectedLink": "https://dev.swisscows.com/en?region=es-AR",
+            "locatorId" : "Argentina",
+            "expectedTitle" : "Your private and anonymous search engine Swisscows"
+        },
+        {
+            "testID": "2",
+            "expectedLink": "https://dev.swisscows.com/en?region=en-AU",
+            "locatorId" : "Australia",
+            "expectedTitle" : "Your private and anonymous search engine Swisscows"
+        },
+        {
+            "testID": "3",
+            "expectedLink": "https://dev.swisscows.com/en?region=de-AT",
+            "locatorId" : "Austria",
+            "expectedTitle" : "Your private and anonymous search engine Swisscows"
+        },
+        {
+            "testID": "4",
+            "expectedLink": "https://dev.swisscows.com/en?region=fr-BE",
+            "locatorId" : "Belgium (FR)",
+            "expectedTitle" : "Your private and anonymous search engine Swisscows"
+        },
+        {
+            "testID": "5",
+            "expectedLink": "https://dev.swisscows.com/en?region=nl-BE",
+            "locatorId" : "Belgium (NL)",
+            "expectedTitle" : "Your private and anonymous search engine Swisscows"
+        },
+        {
+            "testID": "6",
+            "expectedLink": "https://dev.swisscows.com/en?region=pt-BR",
+            "locatorId" : "Brazil",
+            "expectedTitle" : "Your private and anonymous search engine Swisscows"
+        },
+        {
+            "testID": "7",
+            "expectedLink": "https://dev.swisscows.com/en?region=en-CA",
+            "locatorId" : "Canada (EN)",
+            "expectedTitle" : "Your private and anonymous search engine Swisscows"
+        },
+        {
+            "testID": "8",
+            "expectedLink": "https://dev.swisscows.com/en?region=fr-CA",
+            "locatorId" : "Canada (FR)",
+            "expectedTitle" : "Your private and anonymous search engine Swisscows"
+        },
+        {
+            "testID": "9",
+            "expectedLink": "https://dev.swisscows.com/en?region=es-CL",
+            "locatorId" : "Chile",
+            "expectedTitle" : "Your private and anonymous search engine Swisscows"
+        },
+        {
+            "testID": "10",
+            "expectedLink": "https://dev.swisscows.com/en?region=zh-CN",
+            "locatorId" : "China",
+            "expectedTitle" : "Your private and anonymous search engine Swisscows"
+        },
+        {
+            "testID": "11",
+            "expectedLink": "https://dev.swisscows.com/en?region=da-DK",
+            "locatorId" : "Denmark",
+            "expectedTitle" : "Your private and anonymous search engine Swisscows"
+        },
+        {
+            "testID": "12",
+            "expectedLink": "https://dev.swisscows.com/en?region=fi-FI",
+            "locatorId" : "Finland",
+            "expectedTitle" : "Your private and anonymous search engine Swisscows"
+        },
+        {
+            "testID": "13",
+            "expectedLink": "https://dev.swisscows.com/en?region=fr-FR",
+            "locatorId" : "France",
+            "expectedTitle" : "Your private and anonymous search engine Swisscows"
+        },
+        {
+            "testID": "14",
+            "expectedLink": "https://dev.swisscows.com/en?region=de-DE",
+            "locatorId" : "Germany",
+            "expectedTitle" : "Your private and anonymous search engine Swisscows"
+        },
+        {
+            "testID": "15",
+            "expectedLink": "https://dev.swisscows.com/en?region=zh-HK",
+            "locatorId" : "Hong Kong SAR",
+            "expectedTitle" : "Your private and anonymous search engine Swisscows"
+        }
+        ,
+        {
+            "testID": "16",
+            "expectedLink": "https://dev.swisscows.com/en?region=hu-HU",
+            "locatorId" : "Hungary",
+            "expectedTitle" : "Your private and anonymous search engine Swisscows"
+        }
+        ,
+        {
+            "testID": "17",
+            "expectedLink": "https://dev.swisscows.com/en?region=en-IN",
+            "locatorId" : "India",
+            "expectedTitle" : "Your private and anonymous search engine Swisscows"
+        }
+        ,
+        {
+            "testID": "18",
+            "expectedLink": "https://dev.swisscows.com/en?region=en-ID",
+            "locatorId" : "Indonesia",
+            "expectedTitle" : "Your private and anonymous search engine Swisscows"
+        }
+        ,
+        {
+            "testID": "19",
+            "expectedLink": "https://dev.swisscows.com/en?region=en-IE",
+            "locatorId" : "Ireland",
+            "expectedTitle" : "Your private and anonymous search engine Swisscows"
+        }
+        ,
+        {
+            "testID": "20",
+            "expectedLink": "https://dev.swisscows.com/en?region=it-IT",
+            "locatorId" : "Italy",
+            "expectedTitle" : "Your private and anonymous search engine Swisscows"
+        }
+        ,
+        {
+            "testID": "21",
+            "expectedLink": "https://dev.swisscows.com/en?region=ja-JP",
+            "locatorId" : "Japan",
+            "expectedTitle" : "Your private and anonymous search engine Swisscows"
+        }
+        ,
+        {
+            "testID": "22",
+            "expectedLink": "https://dev.swisscows.com/en?region=kk-KZ",
+            "locatorId" : "Kazakhstan",
+            "expectedTitle" : "Your private and anonymous search engine Swisscows"
+        }
+        ,
+        {
+            "testID": "23",
+            "expectedLink": "https://dev.swisscows.com/en?region=ko-KR",
+            "locatorId" : "Korea",
+            "expectedTitle" : "Your private and anonymous search engine Swisscows"
+        }
+        ,
+        {
+            "testID": "24",
+            "expectedLink": "https://dev.swisscows.com/en?region=lv-LV",
+            "locatorId" : "Latvia",
+            "expectedTitle" : "Your private and anonymous search engine Swisscows"
+        }
+        ,
+        {
+            "testID": "25",
+            "expectedLink": "https://dev.swisscows.com/en?region=en-MY",
+            "locatorId" : "Malaysia",
+            "expectedTitle" : "Your private and anonymous search engine Swisscows"
+        }
+        ,
+        {
+            "testID": "26",
+            "expectedLink": "https://dev.swisscows.com/en?region=es-MX",
+            "locatorId" : "Mexico",
+            "expectedTitle" : "Your private and anonymous search engine Swisscows"
+        }
+        ,
+        {
+            "testID": "27",
+            "expectedLink": "https://dev.swisscows.com/en?region=nl-NL",
+            "locatorId" : "Netherlands",
+            "expectedTitle" : "Your private and anonymous search engine Swisscows"
+        }
+        ,
+        {
+            "testID": "28",
+            "expectedLink": "https://dev.swisscows.com/en?region=en-NZ",
+            "locatorId" : "New Zealand",
+            "expectedTitle" : "Your private and anonymous search engine Swisscows"
+        }
+        ,
+        {
+            "testID": "29",
+            "expectedLink": "https://dev.swisscows.com/en?region=en-NG",
+            "locatorId" : "Nigeria",
+            "expectedTitle" : "Your private and anonymous search engine Swisscows"
+        }
+        ,
+        {
+            "testID": "30",
+            "expectedLink": "https://dev.swisscows.com/en?region=nb-NO",
+            "locatorId" : "Norway",
+            "expectedTitle" : "Your private and anonymous search engine Swisscows"
+        }
+        ,
+        {
+            "testID": "31",
+            "expectedLink": "https://dev.swisscows.com/en?region=es-PY",
+            "locatorId" : "Paraguay",
+            "expectedTitle" : "Your private and anonymous search engine Swisscows"
+        }
+        ,
+        {
+            "testID": "32",
+            "expectedLink": "https://dev.swisscows.com/en?region=en-PH",
+            "locatorId" : "Philippines",
+            "expectedTitle" : "Your private and anonymous search engine Swisscows"
+        }
+        ,
+        {
+            "testID": "33",
+            "expectedLink": "https://dev.swisscows.com/en?region=pl-PL",
+            "locatorId" : "Poland",
+            "expectedTitle" : "Your private and anonymous search engine Swisscows"
+        }
+        ,
+        {
+            "testID": "34",
+            "expectedLink": "https://dev.swisscows.com/en?region=pt-PT",
+            "locatorId" : "Portugal",
+            "expectedTitle" : "Your private and anonymous search engine Swisscows"
+        }
+        ,
+        {
+            "testID": "35",
+            "expectedLink": "https://dev.swisscows.com/en?region=ru-RU",
+            "locatorId" : "Russia",
+            "expectedTitle" : "Your private and anonymous search engine Swisscows"
+        }
+        ,
+        {
+            "testID": "36",
+            "expectedLink": "https://dev.swisscows.com/en?region=ar-SA",
+            "locatorId" : "Saudi Arabia",
+            "expectedTitle" : "Your private and anonymous search engine Swisscows"
+        }
+        ,
+        {
+            "testID": "37",
+            "expectedLink": "https://dev.swisscows.com/en?region=en-ZA",
+            "locatorId" : "South Africa",
+            "expectedTitle" : "Your private and anonymous search engine Swisscows"
+        }
+        ,
+        {
+            "testID": "38",
+            "expectedLink": "https://dev.swisscows.com/en?region=es-ES",
+            "locatorId" : "Spain",
+            "expectedTitle" : "Your private and anonymous search engine Swisscows"
+        }
+        ,
+        {
+            "testID": "39",
+            "expectedLink": "https://dev.swisscows.com/en?region=sv-SE",
+            "locatorId" : "Sweden",
+            "expectedTitle" : "Your private and anonymous search engine Swisscows"
+        }
+        ,
+        {
+            "testID": "40",
+            "expectedLink": "https://dev.swisscows.com/en?region=de-CH",
+            "locatorId" : "Switzerland (DE)",
+            "expectedTitle" : "Your private and anonymous search engine Swisscows"
+        }
+        ,
+        {
+            "testID": "41",
+            "expectedLink": "https://dev.swisscows.com/en?region=fr-CH",
+            "locatorId" : "Switzerland (FR)",
+            "expectedTitle" : "Your private and anonymous search engine Swisscows"
+        }
+        ,
+        {
+            "testID": "42",
+            "expectedLink": "https://dev.swisscows.com/en?region=zh-TW",
+            "locatorId" : "Taiwan",
+            "expectedTitle" : "Your private and anonymous search engine Swisscows"
+        }
+        ,
+        {
+            "testID": "43",
+            "expectedLink": "https://dev.swisscows.com/en?region=tr-TR",
+            "locatorId" : "Turkey",
+            "expectedTitle" : "Your private and anonymous search engine Swisscows"
+        }
+        ,
+        {
+            "testID": "44",
+            "expectedLink": "https://dev.swisscows.com/en?region=uk-UA",
+            "locatorId" : "Ukraine",
+            "expectedTitle" : "Your private and anonymous search engine Swisscows"
+        }
+        ,
+        {
+            "testID": "45",
+            "expectedLink": "https://dev.swisscows.com/en?region=en-GB",
+            "locatorId" : "United Kingdom",
+            "expectedTitle" : "Your private and anonymous search engine Swisscows"
+        }
+        ,
+        {
+            "testID": "46",
+            "expectedLink": "https://dev.swisscows.com/en?region=en-US",
+            "locatorId" : "United States (EN)",
+            "expectedTitle" : "Your private and anonymous search engine Swisscows"
+        }
+        ,
+        {
+            "testID": "47",
+            "expectedLink": "https://dev.swisscows.com/en?region=es-US",
+            "locatorId" : "United States (ES)",
+            "expectedTitle" : "Your private and anonymous search engine Swisscows"
+        }
+        ,
+        {
+            "testID": "48",
+            "expectedLink": "https://dev.swisscows.com/en?region=iv",
+            "locatorId" : "World-wide",
+            "expectedTitle" : "Your private and anonymous search engine Swisscows"
+        }
+    ],
+    
+    "staticPagesLinks": [
+       
+        {
+            "testID": "1",
+            "expectedLink": "https://dev.swisscows.com/en/set-as-startpage",
+            "locatorId" : "Set as Startpage",
+            "expectedTitle" : "Set Swisscows as start page"
+        },
+        {
+            "testID": "2",
+            "expectedLink": "https://dev.swisscows.com/en/default-search",
+            "locatorId" : "Make a Default Search Engine",
+            "expectedTitle" :"Install Swisscows and use it as the default search"
+        },
+        {
+            "testID": "3",
+            "expectedLink": "https://dev.swisscows.com/en/search-engine-no-tracking",
+            "locatorId" : "Who we are",
+            "expectedTitle" :"Search engine without tracking - Learn more about us"
+        },
+        {
+            "testID": "4",
+            "expectedLink": "https://dev.swisscows.com/en/media-education",
+            "locatorId" : "Media Education",
+            "expectedTitle" :"Media Education - Extremely Safe Web for Children"
+        },
+        {
+            "testID": "5",
+            "expectedLink": "https://dev.swisscows.com/en/social-projects",
+            "locatorId" : "Charity Project",
+            "expectedTitle" :"Social projects - We support social projects"
+        },
+        {
+            "testID": "6",
+            "expectedLink": "https://dev.swisscows.com/en/data-safe-search-engine",
+            "locatorId" : "Our Datacenter",
+            "expectedTitle" :"Data center – Everything about the Swisscows data center"
+        },
+        {
+            "testID": "7",
+            "expectedLink": "https://dev.swisscows.com/en/contact",
+            "locatorId" : "Contact us",
+            "expectedTitle" :"Contact us"
+        },
+        {
+            "testID": "8",
+            "expectedLink": "https://dev.swisscows.com/en/privacy",
+            "locatorId" : "Data privacy",
+            "expectedTitle" :"Privacy Policy | Swisscows"
+        },
+        {
+            "testID": "9",
+            "expectedLink": "https://dev.swisscows.com/en/donation",
+            "locatorId" : "Donation",
+            "expectedTitle" :"Search engine without tracking - Donations"
+        }
+    ]
+}
