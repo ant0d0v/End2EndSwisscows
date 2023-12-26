@@ -20,7 +20,7 @@ test("Check that border is red and 2px when clicking on the Charity Columbia sli
   );
 });
 
-test("Check the swipe to left in  Columbia Charity slider ", async ({
+test("Check the swipe to left in  Charity Columbia slider ", async ({
   charityPage,
 }) => {
   //Actions
@@ -29,15 +29,11 @@ test("Check the swipe to left in  Columbia Charity slider ", async ({
     await charityPage.staticSlider.charityColumbiaSliderFirstImage,
     await charityPage.staticSlider.charityColumbiaSliderLastImage
   );
-
   //Assert
-  await charityPage.staticSlider.expectAttributeClassOfElement(
-    charityPage.staticSlider.charityColumbiaSliderLastImage,
-    "swiper-slide swiper-slide-thumb-active swiper-slide-visible swiper-slide-fully-visible"
-  );
+  await charityPage.staticSlider.expectAttributeClassOfLastImageCharityColumbiaSlider( "visible");
 });
 
-test("Check the swipe to left in  Haiti Slider slider ", async ({
+test("Check the swipe to left in Charity Haiti slider ", async ({
   charityPage,
 }) => {
   //Actions
@@ -48,10 +44,7 @@ test("Check the swipe to left in  Haiti Slider slider ", async ({
   );
 
   //Assert
-  await charityPage.staticSlider.expectAttributeClassOfElement(
-    charityPage.staticSlider.charityHaitiSliderLastImage,
-    "swiper-slide swiper-slide-thumb-active swiper-slide-visible"
-  );
+  await charityPage.staticSlider.expectAttributeClassOfLastImageCharityHaitiSlider( "visible" );
 });
 
 
