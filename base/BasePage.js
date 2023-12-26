@@ -160,7 +160,7 @@ export class BasePage {
   async expectAttributeClassOfElement(element, value) {
     await test.step('Expect the element  to "have" attribute class with value ', async () => {
       await expect(element).toHaveAttribute("class", value);
-    });
+    }).catch(async (e) => await this.errorHandling(e, this.page));
   }
   async expectAttributeToHaveValue(element, attribute, value) {
     await test.step(`Expect the element  to "have" attribute ${value} with value `, async () => {

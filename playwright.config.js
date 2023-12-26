@@ -49,7 +49,7 @@ module.exports = defineConfig({
     screenshot: "only-on-failure",
     video: "retain-on-failure",
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
-    trace: "on-first-retry",
+    // trace: "on-first-retry",
   },
   expect: {
     toHaveScreenshot: { maxDiffPixels: 30 },
@@ -82,11 +82,11 @@ module.exports = defineConfig({
       name: "chromium",
       use: {
         ...devices["Desktop Chrome"],
+        channel: "chrome",
         storageState: "./data/auth/user.json",
         headless: false,
         viewport: { width: 1360, height: 900 },
         screenshot: "only-on-failure",
-        hasTouch: true,
       },
       dependencies: ["setup"],
     },
