@@ -21,6 +21,8 @@ export class StaticSlider extends BasePage {
     );
     this.charityHaitiSliderSmallFirstImage = this.page.locator("div:nth-child(2) > .swiper-wrapper > div:nth-child(2)").first();
     this.charityHaitiSliderSmallLastImage = this.page.locator("div:nth-child(2) > .swiper-wrapper > div:nth-child(10)").first();
+    this.dataCenterSliderSmallImages = (id) => this.page.locator(`div:nth-child(2) > .swiper-wrapper > div:nth-child(${id})`);
+    this.dataCenterSliderLargeImages = (id) => this.page.locator(`.swiper-wrapper > div:nth-child(${id})`).first();
   }
 
   //Actions
@@ -47,6 +49,13 @@ export class StaticSlider extends BasePage {
     for (const { imageID } of await testData.idImagesOfSlider) {
       await this.charityColumbiaSliderSmallImages(imageID).click();
       await this.expectAttributeClassOfElement(this.charityColumbiaSliderLargeImages(imageID), `swiper-slide swiper-slide-${expectedValue}`);
+    }
+  }
+
+  async expectAttributeOfLargeImagesWhenClickingInDatacenterSlider(expectedValue) {
+    for (const { imageID } of await testData.idImagesOfSlider) {
+      await this.dataCenterSliderSmallImages(imageID).click();
+      await this.expectAttributeClassOfElement(this.dataCenterSliderLargeImages(imageID), `swiper-slide swiper-slide-${expectedValue}`);
     }
   }
 

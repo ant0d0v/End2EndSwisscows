@@ -13,6 +13,7 @@ const { FooterFull } = require("../components/FooterFull");
 const { StaticSlider } = require("../components/StaticSlider");
 const { DefaultSearchPage } = require("../pages/static-pages/DefaultSearchPage");
 const { CharityPage } = require("../pages/static-pages/CharityPage");
+const { DatacenterPage } = require("../pages/static-pages/DatacenterPage");
 
 exports.test = base.test.extend({
   mainPage: async ({ page }, use) => {
@@ -51,6 +52,10 @@ exports.test = base.test.extend({
   charityPage: async ({ page, footerFull }, use) => {
     await footerFull.clickCharityProjectLink();
     await use(new CharityPage(page));
+  },
+  datacenterPage: async ({ page, footerFull }, use) => {
+    await footerFull.clickDatacentertLink();
+    await use(new DatacenterPage(page));
   },
   preloader: async ({ page }, use) => {
     await use(new Preloader(page));
