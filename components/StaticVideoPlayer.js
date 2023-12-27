@@ -5,15 +5,15 @@ export class StaticVideoPlayer extends BasePage {
   constructor(page) {
     super(page);
     //Locators
-    this.videoElement = this.page.locator("video");
+    this.videoPlayer = this.page.locator("video");
   }
 
-  async playVideo() {
-     await this.videoElement.evaluate((video) => {
+  async expectVideoToPlay() {
+     await this.videoPlayer.evaluate((video) => {
        video.play();
      });
      await this.page.waitForTimeout(5000);
-     const currentTime = await this.videoElement.evaluate((video) => {
+     const currentTime = await this.videoPlayer.evaluate((video) => {
        return video.currentTime;
      });
      expect(currentTime).toBeGreaterThan(0.5);

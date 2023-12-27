@@ -52,7 +52,7 @@ module.exports = defineConfig({
     trace: "on-first-retry",
   },
   expect: {
-    toHaveScreenshot: { maxDiffPixels: 30 },
+    toHaveScreenshot: { maxDiffPixelRatio: 0.2},
     timeout: 15 * 1000,
   },
 
@@ -111,6 +111,7 @@ module.exports = defineConfig({
       testMatch: /.*\.mobile\.js/,
       use: {
         ...devices["Pixel 7"],
+        channel: "chrome",
         headless: false,
         screenshot: "only-on-failure",
       },

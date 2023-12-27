@@ -9,7 +9,9 @@ export class HeaderStaticPages extends BasePage {
 
     //Locators
     this.linksOfHeader = (name) => this.page.locator(`a.badge-${name}`);
-    this.hamburgerMenu = this.page.locator("header button.hamburger-menu");
+    this.hamburgerMenu = this.page.locator(
+      "header button.hamburger-menu"
+    );
     this.charitySearchCounter = this.page.locator("div.badge span");
     this.badgeEmail = this.page.locator("div.badges a.badge-email");
     this.searchCounter = this.page.locator("//div[@class= 'badge']");
@@ -37,7 +39,7 @@ export class HeaderStaticPages extends BasePage {
       `charity search counter  in the header`
     );
   };
- 
+
   waitToBeVisibleSuggest = async () => {
     await this.waitElementToBeVisible(this.suggest, `suggest`);
   };
