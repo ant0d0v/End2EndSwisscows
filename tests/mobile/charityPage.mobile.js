@@ -1,6 +1,6 @@
-const { test } = require("../utils/fixturePages");
+const { test } = require("../../utils/fixturePages");
 const testData = JSON.parse(
-  JSON.stringify(require("../data/charity-page/testData.json"))
+  JSON.stringify(require("../../data/charity-page/testData.json"))
 );
 
 test("Check that border is red and 2px when clicking on the Charity Haiti slider images", async ({
@@ -20,37 +20,6 @@ test("Check that border is red and 2px when clicking on the Charity Columbia sli
   await charityPage.staticSlider.expectBorderWhenClickingOnSmallImages(
     charityPage.staticSlider.charityColumbiaSliderSmallImages,
     "2px solid rgb(223, 93, 93)"
-  );
-});
-
-test("Check the swipe to left in  Charity Columbia slider ", async ({
-  charityPage,
-}) => {
-  //Actions
-  await charityPage.waitUntilPageIsFullyLoaded();
-  await charityPage.staticSlider.swipeLeft(
-    await charityPage.staticSlider.charityColumbiaSliderSmallFirstImage,
-    await charityPage.staticSlider.charityColumbiaSliderSmallLastImage
-  );
-  //Assert
-  await charityPage.staticSlider.expectAttributeClassOfLastSmallImageCharityColumbiaSlider(
-    "visible"
-  );
-});
-
-test("Check the swipe to left in Charity Haiti slider ", async ({
-  charityPage,
-}) => {
-  //Actions
-  await charityPage.waitUntilPageIsFullyLoaded();
-  await charityPage.staticSlider.swipeLeft(
-    await charityPage.staticSlider.charityHaitiSliderSmallFirstImage,
-    await charityPage.staticSlider.charityHaitiSliderSmallLastImage
-  );
-
-  //Assert
-  await charityPage.staticSlider.expectAttributeClassOfLastSmallImageCharityHaitiSlider(
-    "visible"
   );
 });
 

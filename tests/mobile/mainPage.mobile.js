@@ -110,7 +110,3 @@ test("Check that images are dysplaed of the service block", async ({
   //Assert
   await mainPage.expectImagesOfSrviceBlockAreDisplayed();
 });
-
-
-
-

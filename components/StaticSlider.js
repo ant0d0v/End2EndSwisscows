@@ -9,16 +9,18 @@ export class StaticSlider extends BasePage {
     super(page);
 
     //Locators
-    this.charityHaitiSliderImages = (id) => this.page.locator(`div:nth-child(2) > .swiper-wrapper > div:nth-child(${id})`).first();
-    this.charityColumbiaSliderImages = (id) => this.page.locator( `div:nth-child(16) > div:nth-child(2) > .swiper-wrapper > div:nth-child(${id})`);
-    this.charityColumbiaSliderFirstImage = this.page.locator(
+    this.charityHaitiSliderSmallImages = (id) => this.page.locator(`div:nth-child(2) > .swiper-wrapper > div:nth-child(${id})`).first();
+    this.charityHaitiSliderLargeImages = (id) => this.page.locator(`.swiper-wrapper > div:nth-child(${id})`).first();
+    this.charityColumbiaSliderSmallImages = (id) => this.page.locator(`div:nth-child(16) > div:nth-child(2) > .swiper-wrapper > div:nth-child(${id})`);
+    this.charityColumbiaSliderLargeImages = (id) => this.page.locator(`div:nth-child(16) > div > .swiper-wrapper > div:nth-child(${id})`).first()
+    this.charityColumbiaSliderSmallFirstImage = this.page.locator(
       "div:nth-child(16) > div:nth-child(2) > .swiper-wrapper > div:nth-child(1)"
     );
-    this.charityColumbiaSliderLastImage = this.page.locator(
+    this.charityColumbiaSliderSmallLastImage = this.page.locator(
       "div:nth-child(16) > div:nth-child(2) > .swiper-wrapper > div:nth-child(9)"
     );
-    this.charityHaitiSliderFirstImage = this.page.locator("div:nth-child(2) > .swiper-wrapper > div:nth-child(2)").first();
-    this.charityHaitiSliderLastImage = this.page.locator("div:nth-child(2) > .swiper-wrapper > div:nth-child(10)").first();
+    this.charityHaitiSliderSmallFirstImage = this.page.locator("div:nth-child(2) > .swiper-wrapper > div:nth-child(2)").first();
+    this.charityHaitiSliderSmallLastImage = this.page.locator("div:nth-child(2) > .swiper-wrapper > div:nth-child(10)").first();
   }
 
   //Actions
@@ -28,20 +30,33 @@ export class StaticSlider extends BasePage {
   }
 
   //Assert
-  async expectBorderWhenClickingOnImages(elements, expectedValue) {
+  async expectBorderWhenClickingOnSmallImages(elements, expectedValue) {
     for (const { imageID } of await testData.idImagesOfSlider) {
       await elements(imageID).click();
       await expect(elements(imageID)).toHaveCSS("border", expectedValue);
     }
   }
 
-  async expectAttributeClassOfLastImageCharityColumbiaSlider(expectedValue) {
-    await this.expectAttributeClassOfElement(this.charityColumbiaSliderLastImage,
+  async expectAttributeOfLargeImagesWhenClickingInHaitiSlider(expectedValue) {
+    for (const { imageID } of await testData.idImagesOfSlider) {
+      await this.charityHaitiSliderSmallImages(imageID).click();
+      await this.expectAttributeClassOfElement(this.charityHaitiSliderLargeImages(imageID), `swiper-slide swiper-slide-${expectedValue}`);
+    }
+  }
+  async expectAttributeOfLargeImagesWhenClickingInColumbiaSlider(expectedValue) {
+    for (const { imageID } of await testData.idImagesOfSlider) {
+      await this.charityColumbiaSliderSmallImages(imageID).click();
+      await this.expectAttributeClassOfElement(this.charityColumbiaSliderLargeImages(imageID), `swiper-slide swiper-slide-${expectedValue}`);
+    }
+  }
+
+  async expectAttributeClassOfLastSmallImageCharityColumbiaSlider(expectedValue) {
+    await this.expectAttributeClassOfElement(this.charityColumbiaSliderSmallLastImage,
       `swiper-slide swiper-slide-thumb-active swiper-slide-visible swiper-slide-fully-${expectedValue}`
     );
   }
-   async expectAttributeClassOfLastImageCharityHaitiSlider(expectedValue) {
-    await this.expectAttributeClassOfElement( this.charityHaitiSliderLastImage,
+   async expectAttributeClassOfLastSmallImageCharityHaitiSlider(expectedValue) {
+    await this.expectAttributeClassOfElement( this.charityHaitiSliderSmallLastImage,
       `swiper-slide swiper-slide-thumb-active swiper-slide-${expectedValue}`
     );
   }

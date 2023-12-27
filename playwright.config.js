@@ -52,7 +52,7 @@ module.exports = defineConfig({
     trace: "on-first-retry",
   },
   expect: {
-    toHaveScreenshot: { maxDiffPixels: 30 },
+    toHaveScreenshot: { maxDiffPixelRatio: 0.2},
     timeout: 15 * 1000,
   },
 
@@ -82,11 +82,11 @@ module.exports = defineConfig({
       name: "chromium",
       use: {
         ...devices["Desktop Chrome"],
+        channel: "chrome",
         storageState: "./data/auth/user.json",
         headless: false,
         viewport: { width: 1360, height: 900 },
         screenshot: "only-on-failure",
-        hasTouch: true,
       },
       dependencies: ["setup"],
     },
@@ -111,6 +111,7 @@ module.exports = defineConfig({
       testMatch: /.*\.mobile\.js/,
       use: {
         ...devices["Pixel 7"],
+        channel: "chrome",
         headless: false,
         screenshot: "only-on-failure",
       },

@@ -92,7 +92,6 @@ export class MainPage extends BasePage {
   expectScreenMainPage = async () => {
     await this.expectScreenOfPage(
       this.widgetMainPage,
-      this.imagesOfServiceBlock
     );
   };
 
