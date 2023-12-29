@@ -28,33 +28,33 @@ export class StaticSlider extends BasePage {
   //Actions
   async swipeLeft(firstImage, lastImage) {
     await firstImage.dragTo(lastImage);
-    await lastImage.click();
+    await this.clickElement(lastImage)
   }
 
   //Assert
   async expectBorderWhenClickingOnSmallImages(elements, expectedValue) {
     for (const { imageID } of await testData.idImagesOfSlider) {
-      await elements(imageID).click();
+      await this.clickElement(elements(imageID));
       await expect(elements(imageID)).toHaveCSS("border", expectedValue);
     }
   }
 
   async expectAttributeOfLargeImagesWhenClickingInHaitiSlider(expectedValue) {
     for (const { imageID } of await testData.idImagesOfSlider) {
-      await this.charityHaitiSliderSmallImages(imageID).click();
+      await this.clickElement(this.charityHaitiSliderSmallImages(imageID))
       await this.expectAttributeClassOfElement(this.charityHaitiSliderLargeImages(imageID), `swiper-slide swiper-slide-${expectedValue}`);
     }
   }
   async expectAttributeOfLargeImagesWhenClickingInColumbiaSlider(expectedValue) {
     for (const { imageID } of await testData.idImagesOfSlider) {
-      await this.charityColumbiaSliderSmallImages(imageID).click();
+      await this.clickElement(this.charityColumbiaSliderSmallImages(imageID))
       await this.expectAttributeClassOfElement(this.charityColumbiaSliderLargeImages(imageID), `swiper-slide swiper-slide-${expectedValue}`);
     }
   }
 
   async expectAttributeOfLargeImagesWhenClickingInDatacenterSlider(expectedValue) {
     for (const { imageID } of await testData.idImagesOfSlider) {
-      await this.dataCenterSliderSmallImages(imageID).click();
+      await this.clickElement(this.dataCenterSliderSmallImages(imageID))
       await this.expectAttributeClassOfElement(this.dataCenterSliderLargeImages(imageID), `swiper-slide swiper-slide-${expectedValue}`);
     }
   }

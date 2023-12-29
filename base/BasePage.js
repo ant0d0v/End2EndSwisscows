@@ -21,22 +21,19 @@ export class BasePage {
   //Actions
 
   async clickElement(element, nameElement) {
-    await test
-      .step(`Click on the ${nameElement}`, async () => {
+    await test.step(`Click on the ${nameElement}`, async () => {
         await element.click();
       })
       .catch(async (e) => await this.errorHandling(e, this.page));
   }
   async clickEnter(element, nameElement) {
-    await test
-      .step(`Press enter on the ${nameElement}`, async () => {
+    await test.step(`Press enter on the ${nameElement}`, async () => {
         await element.press("Enter");
       })
       .catch(async (e) => await this.errorHandling(e, this.page));
   }
   async clickAllElementsInList(elements, nameElements) {
-    await test
-      .step(`Click on the all ${nameElements}`, async () => {
+    await test.step(`Click on the all ${nameElements}`, async () => {
         for (const element of await elements.all()) {
           await element.click();
         }
@@ -44,22 +41,20 @@ export class BasePage {
       .catch(async (e) => await this.errorHandling(e, this.page));
   }
   async getTextsOfElements(elements, nameElements) {
-    return await test
-      .step(`Get texts the all ${nameElements} `, async () => {
+    return await test.step(`Get texts the all ${nameElements} `, async () => {
         return await elements.allTextContents();
       })
       .catch(async (e) => await this.errorHandling(e, this.page));
   }
   async clickElementAndNavigateToNewPage(element, nameElement) {
-    return test
-      .step(
-        `Click on the ${nameElement} and navigate to new tab and wait for page to be loaded`,
+    return test.step(`Click on the ${nameElement} and navigate to new tab and wait for page to be loaded`,
         async () => {
           const [newPage] = await Promise.all([
             this.page.context().waitForEvent("page"),
             element.click(),
           ]);
           await newPage.waitForLoadState("domcontentloaded");
+          console.log(await newPage);
           return newPage;
         }
       )
@@ -67,45 +62,38 @@ export class BasePage {
   }
 
   async scrollByVisibleElement(element, nameElement) {
-    await test
-      .step(`Scroll to by visible ${nameElement} on the page`, async () => {
+    await test.step(`Scroll to by visible ${nameElement} on the page`, async () => {
         await element.scrollIntoViewIfNeeded();
       })
       .catch(async (e) => await this.errorHandling(e, this.page));
   }
   async waitElementToBeVisible(element, nameElement) {
-    await test
-      .step(`Wait ${nameElement} to be visible`, async () => {
+    await test.step(`Wait ${nameElement} to be visible`, async () => {
         await element.waitFor();
       })
       .catch(async (e) => await this.errorHandling(e, this.page));
   }
   async reloadPage() {
-    await test
-      .step("Refresh current page", async () => {
+    await test.step("Refresh current page", async () => {
         await this.page.reload("domcontentloaded");
       })
       .catch(async (e) => await this.errorHandling(e, this.page));
   }
   async input(element, text, nameElement) {
-    await test
-      .step(`Input text in to the ${nameElement}`, async () => {
+    await test.step(`Input text in to the ${nameElement}`, async () => {
         await element.type(text, { delay: 100 });
       })
       .catch(async (e) => await this.errorHandling(e, this.page));
   }
   async waitForUrlContains(Url) {
-    await test
-      .step(`Wait for url ${Url}`, async () => {
+    await test.step(`Wait for url ${Url}`, async () => {
         await this.page.waitForURL(Url);
       })
       .catch(async (e) => await this.errorHandling(e, this.page));
   }
 
   async selectOption(element, text) {
-    await test
-      .step(
-        "Waits until all specified options are present in the <select> element and selects these options. ",
+    await test.step( "Waits until all specified options are present in the <select> element and selects these options. ",
         async () => {
           await element.selectOption(text);
         }
@@ -113,16 +101,13 @@ export class BasePage {
       .catch(async (e) => await this.errorHandling(e, this.page));
   }
   async goBack() {
-    await test
-      .step("Navigate to the previous page in history.", async () => {
+    await test.step("Navigate to the previous page in history.", async () => {
         await this.page.goBack();
       })
       .catch(async (e) => await this.errorHandling(e, this.page));
   }
   async waitUntilPageIsFullyLoaded() {
-    await test
-      .step(
-        "Wait for all network requests for images to complete",
+    await test.step("Wait for all network requests for images to complete",
         async () => {
           await await this.page.waitForLoadState("networkidle");
         }
@@ -180,9 +165,7 @@ export class BasePage {
     });
   }
   async expectColorsLinksWhenHovering(elements, expectedValue) {
-    await test
-      .step(
-        'Expect the elements in the array to "have" css color with value',
+    await test.step('Expect the elements in the array to "have" css color with value',
         async () => {
           for (const link of await elements.all()) {
             if (link.isEnabled()) {
@@ -191,8 +174,16 @@ export class BasePage {
             }
           }
         }
-      )
-      .catch(async (e) => await this.errorHandling(e, this.page));
+      ).catch(async (e) => await this.errorHandling(e, this.page));
+  }
+
+  async expectColorLinkWhenHovering(element, color, expectedValue) {
+    await test.step('Expect the element to "have" css color with value',
+      async () => {
+        await element.hover();
+        await expect(element).toHaveCSS(color, expectedValue);
+      }
+    ).catch(async (e) => await this.errorHandling(e, this.page));
   }
 
   async expectAttributeClassAllElements(elements, value) {
@@ -203,9 +194,7 @@ export class BasePage {
     });
   }
   async expectAttributeClassOfElement(element, value) {
-    await test
-      .step(
-        'Expect the element  to "have" attribute class with value ',
+    await test.step('Expect the element  to "have" attribute class with value ',
         async () => {
           await expect(element).toHaveAttribute("class", value);
         }
@@ -248,8 +237,7 @@ export class BasePage {
     });
   }
   async expectScreenOfPage(element) {
-    await test
-      .step('Expect all elements to array "to equal" a string', async () => {
+    await test.step('Expect all elements to array "to equal" a string', async () => {
         await this.waitUntilPageIsFullyLoaded();
         await expect(this.page).toHaveScreenshot({
           fullPage: true,
@@ -262,8 +250,7 @@ export class BasePage {
       .catch(async (e) => await this.errorHandling(e, this.page));
   }
   async expectScreenOfPageWithoutMask() {
-    await test
-      .step('Expect all elements to array "to equal" a string', async () => {
+    await test.step('Expect all elements to array "to equal" a string', async () => {
         await this.waitUntilPageIsFullyLoaded();
         await expect(this.page).toHaveScreenshot({
           fullPage: true,
