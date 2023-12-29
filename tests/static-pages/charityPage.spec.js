@@ -1,6 +1,8 @@
-const { test } = require("../utils/fixturePages");
+const { test } = require("../../utils/fixturePages");
 const testData = JSON.parse(
-  JSON.stringify(require("../data/charity-page/testData.json"))
+  JSON.stringify(
+    require("../../data/static-pages/charity-page/testData.json")
+  )
 );
 
 test("Check that border is red and 2px when clicking on the Charity Haiti slider images", async ({
