@@ -6,16 +6,26 @@ export class StaticVideoPlayer extends BasePage {
     super(page);
     //Locators
     this.videoPlayer = this.page.locator("video");
+    this.playButtonYouTubeFrame = this.page.frameLocator('iframe').getByLabel('Play', { exact: true })
+    this.currentTimeYouTubeFrame = this.page.frameLocator('iframe').locator("span.ytp-time-current")
   }
 
   async expectVideoToPlay() {
-     await this.videoPlayer.evaluate((video) => {
-       video.play();
-     });
-     await this.page.waitForTimeout(5000);
-     const currentTime = await this.videoPlayer.evaluate((video) => {
-       return video.currentTime;
-     });
-     expect(currentTime).toBeGreaterThan(0.5);
+    await this.videoPlayer.evaluate((video) => { video.play() });
+    let currentTime;
+    const startTime = Date.now();
+    do {
+      await this.page.waitForTimeout(100); 
+      currentTime = await this.videoPlayer.evaluate((video) => {
+        return video.currentTime;
+      });
+    } while (currentTime <= 2 && Date.now() - startTime < 7000);
+    expect(currentTime).toBeGreaterThan(1);
   }
+
+  async expectYouTubeVideoToPlay() {
+    await this.playButtonYouTubeFrame.click()
+    await expect(this.currentTimeYouTubeFrame).toContainText("0:01");
+  }
+  
 }

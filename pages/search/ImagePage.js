@@ -1,12 +1,12 @@
 import { BasePage } from "../../base/BasePage.js";
 const { expect, context } = require("@playwright/test");
-import { Filters } from "../../components/Filters.js";
+import { ImageFilters } from "../../components/images/ImageFilters.js";
 import { Ads } from "../../components/Ads.js";
 
 export class ImagePage extends BasePage {
   constructor(page) {
     super(page);
-    this.filters = new Filters(page);
+    this.imageFilters = new ImageFilters(page);
     this.ads = new Ads(page);
   }
 }

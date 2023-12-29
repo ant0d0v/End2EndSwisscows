@@ -14,6 +14,7 @@ const { StaticSlider } = require("../components/StaticSlider");
 const { DefaultSearchPage } = require("../pages/static-pages/DefaultSearchPage");
 const { CharityPage } = require("../pages/static-pages/CharityPage");
 const { DatacenterPage } = require("../pages/static-pages/DatacenterPage");
+const { EducationPage } = require("../pages/static-pages/EducationPage");
 
 exports.test = base.test.extend({
   mainPage: async ({ page }, use) => {
@@ -56,6 +57,10 @@ exports.test = base.test.extend({
   datacenterPage: async ({ page, footerFull }, use) => {
     await footerFull.clickDatacentertLink();
     await use(new DatacenterPage(page));
+  },
+  educationPage: async ({ page, footerFull }, use) => {
+    await footerFull.clickEducationLink();
+    await use(new EducationPage(page));
   },
   preloader: async ({ page }, use) => {
     await use(new Preloader(page));

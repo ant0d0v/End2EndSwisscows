@@ -60,6 +60,7 @@ export class BasePage {
             element.click(),
           ]);
           await newPage.waitForLoadState("domcontentloaded");
+          console.log(await newPage);
           return newPage;
         }
       )
@@ -203,9 +204,7 @@ export class BasePage {
     });
   }
   async expectAttributeClassOfElement(element, value) {
-    await test
-      .step(
-        'Expect the element  to "have" attribute class with value ',
+    await test.step('Expect the element  to "have" attribute class with value ',
         async () => {
           await expect(element).toHaveAttribute("class", value);
         }
@@ -248,8 +247,7 @@ export class BasePage {
     });
   }
   async expectScreenOfPage(element) {
-    await test
-      .step('Expect all elements to array "to equal" a string', async () => {
+    await test.step('Expect all elements to array "to equal" a string', async () => {
         await this.waitUntilPageIsFullyLoaded();
         await expect(this.page).toHaveScreenshot({
           fullPage: true,
@@ -262,8 +260,7 @@ export class BasePage {
       .catch(async (e) => await this.errorHandling(e, this.page));
   }
   async expectScreenOfPageWithoutMask() {
-    await test
-      .step('Expect all elements to array "to equal" a string', async () => {
+    await test.step('Expect all elements to array "to equal" a string', async () => {
         await this.waitUntilPageIsFullyLoaded();
         await expect(this.page).toHaveScreenshot({
           fullPage: true,
