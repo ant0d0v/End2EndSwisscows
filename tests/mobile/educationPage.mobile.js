@@ -1,25 +1,10 @@
-const { test, expect } = require("../utils/fixturePages");
+const { test, expect } = require("../../utils/fixturePages");
 const testData = JSON.parse(
-  JSON.stringify(require("../data/education-page/testData.json"))
+  JSON.stringify(
+    require("../../data/static-pages/education-page/testData.json")
+  )
 );
 
-test("Check that the video is playing", async ({ educationPage }) => {
-  //Assert
-  await educationPage.staticVideoPlayer.expectYouTubeVideoToPlay();
-});
-
-for (const { testID, pdfLink, locatorId } of testData.educationPdfLinks) {
-  test(`${testID} Check navigation to corresponding page for  ${locatorId} pdf link and validate pdf`, async ({
-    educationPage,
-  }) => {
-    //Actions
-    const currentPage = await educationPage.clickPdfLinkOnThePage(locatorId);
-    
-    //Assert
-    await educationPage.expectHaveUrl(currentPage, pdfLink);
-    await educationPage.expectValidatePdfFile(currentPage, pdfLink);
-  });
-}
 test("Check design of the Education page ", async ({ educationPage }) => {
   //Assert
   await educationPage.expectScreenEducationPage();

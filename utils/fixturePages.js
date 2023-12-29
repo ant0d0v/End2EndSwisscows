@@ -15,6 +15,7 @@ const { DefaultSearchPage } = require("../pages/static-pages/DefaultSearchPage")
 const { CharityPage } = require("../pages/static-pages/CharityPage");
 const { DatacenterPage } = require("../pages/static-pages/DatacenterPage");
 const { EducationPage } = require("../pages/static-pages/EducationPage");
+const { DonationPage } = require("../pages/static-pages/DonationPage");
 
 exports.test = base.test.extend({
   mainPage: async ({ page }, use) => {
@@ -61,6 +62,10 @@ exports.test = base.test.extend({
   educationPage: async ({ page, footerFull }, use) => {
     await footerFull.clickEducationLink();
     await use(new EducationPage(page));
+  },
+  donationPage: async ({ page, footerFull }, use) => {
+    await footerFull.clickDonationLink();
+    await use(new DonationPage(page));
   },
   preloader: async ({ page }, use) => {
     await use(new Preloader(page));
