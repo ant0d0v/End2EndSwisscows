@@ -24,8 +24,8 @@ export class StaticVideoPlayer extends BasePage {
   }
 
   async expectYouTubeVideoToPlay() {
-    await this.playButtonYouTubeFrame.click()
-    await expect(this.currentTimeYouTubeFrame).toContainText("0:01");
+    await this.clickElement(this.playButtonYouTubeFrame);
+    await this.expectTextsToContains(this.currentTimeYouTubeFrame, "0:01");
   }
   
 }
