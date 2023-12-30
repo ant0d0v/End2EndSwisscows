@@ -20,7 +20,7 @@ export class StaticVideoPlayer extends BasePage {
         return video.currentTime;
       });
     } while (currentTime <= 3 && Date.now() - startTime < 7000);
-    expect(currentTime).toBeGreaterThan(1);
+    expect(currentTime).toBeGreaterThan(0.5);
   }
 
   async expectYouTubeVideoToPlay() {

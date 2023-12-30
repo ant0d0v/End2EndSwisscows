@@ -1,4 +1,4 @@
-const base = require("./fixtureBase");
+import  base from "./fixtureBase";
 const { MainPage } = require("../pages/MainPage");
 const { EmailPage } = require("../pages/static-pages/EmailPage");
 const { Header } = require("../components/Header");
@@ -16,6 +16,7 @@ const { CharityPage } = require("../pages/static-pages/CharityPage");
 const { DatacenterPage } = require("../pages/static-pages/DatacenterPage");
 const { EducationPage } = require("../pages/static-pages/EducationPage");
 const { DonationPage } = require("../pages/static-pages/DonationPage");
+const { ContactUsPage } = require("../pages/static-pages/ContactUsPage");
 
 exports.test = base.test.extend({
   mainPage: async ({ page }, use) => {
@@ -66,6 +67,10 @@ exports.test = base.test.extend({
   donationPage: async ({ page, footerFull }, use) => {
     await footerFull.clickDonationLink();
     await use(new DonationPage(page));
+  },
+  contactUsPage: async ({ page, footerFull }, use) => {
+    await footerFull.clickContactUsLink();
+    await use(new ContactUsPage(page));
   },
   preloader: async ({ page }, use) => {
     await use(new Preloader(page));

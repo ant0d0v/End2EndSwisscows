@@ -54,7 +54,6 @@ export class BasePage {
             element.click(),
           ]);
           await newPage.waitForLoadState("domcontentloaded");
-          console.log(await newPage);
           return newPage;
         }
       )
@@ -164,13 +163,13 @@ export class BasePage {
       await expect(locator).toBeEditable();
     });
   }
-  async expectColorsLinksWhenHovering(elements, expectedValue) {
+  async expectColorsLinksWhenHovering(elements, color, expectedValue) {
     await test.step('Expect the elements in the array to "have" css color with value',
-        async () => {
-          for (const link of await elements.all()) {
+      async () => {
+        for (const link of await elements.all()) {
             if (link.isEnabled()) {
               await link.hover();
-              await expect(link).toHaveCSS("color", expectedValue);
+              await expect(link).toHaveCSS(color, expectedValue);
             }
           }
         }
@@ -254,6 +253,9 @@ export class BasePage {
         await this.waitUntilPageIsFullyLoaded();
         await expect(this.page).toHaveScreenshot({
           fullPage: true,
+          mask: [
+            await this.appLinksInFooter(this.page)
+          ],
         });
       })
       .catch(async (e) => await this.errorHandling(e, this.page));

@@ -1,5 +1,5 @@
 // @ts-check
-const { test, expect } = require("../../utils/fixturePages");
+import { test } from "../../utils/fixturePages";
 const testData = JSON.parse(
   JSON.stringify(require("../../data/header/testData.json"))
 );
@@ -79,7 +79,7 @@ test("Check that buttons have hover over the services block on main page", async
   const expectedColorWhenHovering = "rgb(223, 93, 93)";
 
   //Assert
-  await mainPage.expectColorsLinksWhenHovering( mainPage.buttonOfServiceBlock, expectedColorWhenHovering);
+  await mainPage.expectColorsLinksWhenHovering(mainPage.buttonOfServiceBlock, "color", expectedColorWhenHovering );
 });
 
 test("Check design of the main page ", async ({ mainPage }) => {

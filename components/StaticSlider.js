@@ -4,7 +4,7 @@ const testData = JSON.parse(
   JSON.stringify(require("../data/static-slider/testData.json"))
 );
 
-export class StaticSlider extends BasePage {
+export  class StaticSlider extends BasePage {
   constructor(page) {
     super(page);
 

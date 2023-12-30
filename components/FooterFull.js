@@ -3,6 +3,7 @@ import { CharityPage } from "../pages/static-pages/CharityPage";
 import { DatacenterPage } from "../pages/static-pages/DatacenterPage";
 import { EducationPage } from "../pages/static-pages/EducationPage";
 import { DonationPage } from "../pages/static-pages/DonationPage";
+import { ContactUsPage } from "../pages/static-pages/ContactUsPage";
 export class FooterFull extends BasePage {
   constructor(page) {
     super(page);
@@ -11,6 +12,7 @@ export class FooterFull extends BasePage {
     this.dataCenterLink = this.page.getByRole('link', { name: 'Our Datacenter' })
     this.donationLink = this.page.getByRole("link", { name: 'Donation' });
     this.educationLink = this.page.getByRole('link', { name: 'Media Education', exact: true })
+    this.contactUsLink = this.page.getByRole("link", { name: "Contact us" });
   }
   
   clickCharityProjectLink = async () => {
@@ -36,8 +38,14 @@ export class FooterFull extends BasePage {
 
   clickDonationLink = async () => {
     await this.clickElement(this.donationLink,
-      `Education link in the footer full`
+      `Donation link in the footer full`
     );
     return new DonationPage(this.page);
+  };
+  clickContactUsLink = async () => {
+    await this.clickElement(this.contactUsLink,
+      `Contact Us link in the footer full`
+    );
+    return new ContactUsPage(this.page);
   };
 }

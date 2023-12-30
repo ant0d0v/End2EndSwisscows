@@ -1,4 +1,4 @@
-const { test, expect } = require("../../utils/fixturePages");
+import { test } from "../../utils/fixturePages";
 const data = JSON.parse(
   JSON.stringify(require("../../data/header/testData.json"))
 );

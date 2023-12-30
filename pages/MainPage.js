@@ -19,7 +19,7 @@ export class MainPage extends BasePage {
     this.widgetMainPage = this.page.locator("//div[@class ='bnnr-widget']");
     this.serviceBlock = this.page.locator("div.services-blocks");
     this.imagesOfServiceBlock = this.page.locator("div.services-blocks img");
-    this.buttonOfServiceBlock = this.page.locator("a.services-block-link");
+    this.buttonOfServiceBlock = this.page.locator("div.services-block-link");
     this.linksOfServiceBlock = (name) => this.page.getByRole("link", { name: name });
   }
 

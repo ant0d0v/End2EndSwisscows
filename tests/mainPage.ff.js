@@ -1,5 +1,5 @@
 // @ts-check
-const { test, expect } = require("../utils/fixturePages");
+import { test } from "../utils/fixturePages";
 
 const testData = JSON.parse(
   JSON.stringify(require("../data/main-page/testData.json"))

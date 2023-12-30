@@ -1,5 +1,4 @@
 import { BasePage } from "../base/BasePage";
-const { expect } = require("@playwright/test");
 import { WebPage } from "../pages/search/WebPage";
 import { HamburgerMenu } from "../components/HamburgerMenu";
 export class HeaderStaticPages extends BasePage {

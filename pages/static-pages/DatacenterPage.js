@@ -1,7 +1,6 @@
 import { BasePage } from "../../base/BasePage";
 import { StaticSlider } from "../../components/StaticSlider";
 import { StaticVideoPlayer } from "../../components/StaticVideoPlayer";
-const { expect, test } = require("@playwright/test");
 
 export class DatacenterPage extends BasePage {
   constructor(page) {
