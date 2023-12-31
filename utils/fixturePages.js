@@ -1,22 +1,22 @@
-import  base from "./fixtureBase";
-const { MainPage } = require("../pages/MainPage");
-const { EmailPage } = require("../pages/static-pages/EmailPage");
-const { Header } = require("../components/Header");
-const { Preloader } = require("../components/Preloader");
-const { HeaderStaticPages } = require("../components/HeaderStaticPages");
-const { ImagePage } = require("../pages/search/ImagePage");
-const { MusicPage } = require("../pages/search/MusicPage");
-const { VideoPage } = require("../pages/search/VideoPage");
-const { WebPage } = require("../pages/search/WebPage");
-const { HamburgerMenu } = require("../components/HamburgerMenu");
-const { FooterFull } = require("../components/FooterFull");
-const { StaticSlider } = require("../components/StaticSlider");
-const { DefaultSearchPage } = require("../pages/static-pages/DefaultSearchPage");
-const { CharityPage } = require("../pages/static-pages/CharityPage");
-const { DatacenterPage } = require("../pages/static-pages/DatacenterPage");
-const { EducationPage } = require("../pages/static-pages/EducationPage");
-const { DonationPage } = require("../pages/static-pages/DonationPage");
-const { ContactUsPage } = require("../pages/static-pages/ContactUsPage");
+import base from "./fixtureBase";
+import MainPage from "../pages/MainPage";
+import EmailPage from "../pages/static-pages/EmailPage";
+import Preloader from "../components/Preloader";
+import Header from "../components/Header";
+import HeaderStaticPages from "../components/HeaderStaticPages";
+import HamburgerMenu from "../components/HamburgerMenu";
+import ImagePage from "../pages/search/ImagePage";
+import MusicPage from"../pages/search/MusicPage";
+import VideoPage from"../pages/search/VideoPage";
+import WebPage from "../pages/search/WebPage";
+import FooterFull from"../components/FooterFull";
+import StaticSlider from"../components/StaticSlider";
+import DefaultSearchPage from "../pages/static-pages/DefaultSearchPage";
+import CharityPage from "../pages/static-pages/CharityPage";
+import DatacenterPage from "../pages/static-pages/DatacenterPage";
+import EducationPage from "../pages/static-pages/EducationPage";
+import DonationPage from "../pages/static-pages/DonationPage";
+import ContactUsPage from"../pages/static-pages/ContactUsPage";
 
 exports.test = base.test.extend({
   mainPage: async ({ page }, use) => {

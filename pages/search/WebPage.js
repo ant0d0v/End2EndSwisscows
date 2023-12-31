@@ -1,9 +1,9 @@
-import { Pagination } from "../../components/Pagination.js";
-import { WebFilters } from "../../components/web/WebFilters.js";
-import { Ads } from "../../components/Ads.js";
-import { BasePage } from "../../base/BasePage.js";
+import Pagination from "../../components/Pagination.js";
+import WebFilters from "../../components/web/WebFilters.js";
+import Ads from "../../components/Ads.js";
+import BasePage from "../../base/BasePage.js";
 
-export class WebPage extends BasePage {
+export default class WebPage extends BasePage {
   constructor(page) {
     super(page);
     this.pagination = new Pagination(page);

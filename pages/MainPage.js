@@ -1,8 +1,8 @@
 const { expect } = require("@playwright/test");
-import { DefaultSearchPage } from "./static-pages/DefaultSearchPage";
-import { BasePage } from "../base/BasePage";
+import  DefaultSearchPage  from "./static-pages/DefaultSearchPage";
+import  BasePage  from "../base/BasePage";
 
-export class MainPage extends BasePage {
+export default class MainPage extends BasePage {
   constructor(page) {
     super(page);
     // Locators

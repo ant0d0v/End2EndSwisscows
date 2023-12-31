@@ -1,6 +1,6 @@
 const { expect, context, test } = require('@playwright/test');
 
-export class BasePage {
+export default class BasePage {
   constructor(page) {
     this.page = page;
     this.h1Text = (page) => page.locator("//h1");

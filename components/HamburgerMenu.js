@@ -1,10 +1,10 @@
-import { BasePage } from '../base/BasePage';
+import  BasePage  from '../base/BasePage';
 import { Header} from '../components/Header';
-const { expect } = require('@playwright/test');
-import { WebPage } from "../pages/search/WebPage";
+import { expect } from '@playwright/test';
+import  WebPage  from "../pages/search/WebPage";
 
 
-export class HamburgerMenu extends BasePage {
+export default class HamburgerMenu extends BasePage {
   constructor(page) {
     super(page);
 

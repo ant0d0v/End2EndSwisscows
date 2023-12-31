@@ -1,7 +1,7 @@
-import { BasePage } from '../base/BasePage';
-const { expect } = require('@playwright/test');
+import  BasePage  from '../base/BasePage';
+import { expect } from '@playwright/test';
 
-export class StaticVideoPlayer extends BasePage {
+export default class StaticVideoPlayer extends BasePage {
   constructor(page) {
     super(page);
     //Locators

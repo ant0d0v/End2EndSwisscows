@@ -1,10 +1,10 @@
-import { BasePage } from '../base/BasePage';
-const { expect } = require('@playwright/test');
+import  BasePage  from '../base/BasePage';
+import { expect } from '@playwright/test';
 const testData = JSON.parse(
   JSON.stringify(require("../data/static-slider/testData.json"))
 );
 
-export  class StaticSlider extends BasePage {
+export default class StaticSlider extends BasePage {
   constructor(page) {
     super(page);
 

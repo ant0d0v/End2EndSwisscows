@@ -1,7 +1,7 @@
-import { BasePage } from "../base/BasePage";
-import { WebPage } from "../pages/search/WebPage";
-import { HamburgerMenu } from "../components/HamburgerMenu";
-export class HeaderStaticPages extends BasePage {
+import  BasePage  from "../base/BasePage";
+import  WebPage  from "../pages/search/WebPage";
+import  HamburgerMenu  from "../components/HamburgerMenu";
+export default class HeaderStaticPages extends BasePage {
   constructor(page) {
     super(page);
     this.hamburgerMenu = new HamburgerMenu(page);

@@ -1,7 +1,6 @@
-import { BasePage } from "../base/BasePage";
-const { expect } = require("@playwright/test");
+import BasePage from "../base/BasePage";
 
-export class Pagination extends BasePage {
+export default class Pagination extends BasePage {
   constructor(page) {
     super(page);
   }

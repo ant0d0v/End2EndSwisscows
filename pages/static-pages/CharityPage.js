@@ -1,8 +1,8 @@
-import { BasePage } from "../../base/BasePage";
-import { StaticSlider } from "../../components/StaticSlider";
-import { StaticVideoPlayer } from "../../components/StaticVideoPlayer";
+import  BasePage  from "../../base/BasePage";
+import  StaticSlider  from "../../components/StaticSlider";
+import  StaticVideoPlayer  from "../../components/StaticVideoPlayer";
 
-export class CharityPage extends BasePage {
+export default class CharityPage extends BasePage {
   constructor(page) {
     super(page);
     this.staticSlider = new StaticSlider(page);

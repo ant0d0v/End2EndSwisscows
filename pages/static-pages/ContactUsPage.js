@@ -1,10 +1,10 @@
-import { BasePage } from "../../base/BasePage";
+import  BasePage  from "../../base/BasePage";
 const { expect, test } = require("@playwright/test");
 const testData = JSON.parse(
   JSON.stringify(require("../../data/static-pages/contact-page/testData.json"))
 );
 
-export class ContactUsPage extends BasePage {
+export default class ContactUsPage extends BasePage {
   constructor(page) {
     super(page);
 
