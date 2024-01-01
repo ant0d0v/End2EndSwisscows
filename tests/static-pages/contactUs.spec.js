@@ -66,7 +66,6 @@ test.skip(`Sending form without an "agree" checkbox`, async ({
   await contactUsPage.inputEmailField("test123@gmail.com");
   await contactUsPage.inputMessageField("Check");
   await contactUsPage.clickSendButton();
-
   //Assert
   await expect(contactUsPage.url()).not.toHaveURL("https://dev.swisscows.com/en/contact?success=true")
 });
