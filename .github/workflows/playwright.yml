@@ -23,7 +23,7 @@ jobs:
       run: |
         export QASE_REPORT=1
         export QASE_RUN_NAME=UI
-        npx playwright test --project chromium firefox edge mobile --headed &&
+        npx playwright test --project chromium firefox edge mobile --headed ;
         export QASE_RUN_NAME=API
         npx playwright test api
 
