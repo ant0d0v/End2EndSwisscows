@@ -1,22 +1,22 @@
 import base from "./fixtureBase";
-import MainPage from "../pages/MainPage";
+import MainPage   from "../pages/MainPage";
 import EmailPage from "../pages/static-pages/EmailPage";
 import Preloader from "../components/Preloader";
 import Header from "../components/Header";
 import HeaderStaticPages from "../components/HeaderStaticPages";
 import HamburgerMenu from "../components/HamburgerMenu";
 import ImagePage from "../pages/search/ImagePage";
-import MusicPage from"../pages/search/MusicPage";
-import VideoPage from"../pages/search/VideoPage";
+import MusicPage from "../pages/search/MusicPage";
+import VideoPage from "../pages/search/VideoPage";
 import WebPage from "../pages/search/WebPage";
-import FooterFull from"../components/FooterFull";
-import StaticSlider from"../components/StaticSlider";
+import FooterFull from "../components/FooterFull";
+import StaticSlider from "../components/StaticSlider";
 import DefaultSearchPage from "../pages/static-pages/DefaultSearchPage";
 import CharityPage from "../pages/static-pages/CharityPage";
 import DatacenterPage from "../pages/static-pages/DatacenterPage";
 import EducationPage from "../pages/static-pages/EducationPage";
 import DonationPage from "../pages/static-pages/DonationPage";
-import ContactUsPage from"../pages/static-pages/ContactUsPage";
+import ContactUsPage from "../pages/static-pages/ContactUsPage";
 
 exports.test = base.test.extend({
   mainPage: async ({ page }, use) => {

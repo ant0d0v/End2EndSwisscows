@@ -1,4 +1,4 @@
-import  { test } from "../../utils/fixturePages";
+import { test, expect } from "../../utils/fixturePages";
 const testData = JSON.parse(
   JSON.stringify(require("../../data/static-pages/contact-page/testData.json"))
 );
@@ -56,6 +56,20 @@ test(`Check border color of name, email, message when sending form with message 
   await contactUsPage.expectBorderColorFormField(testData.formFields[0].yourName, testData.formFields[0].redColor);
   await contactUsPage.expectBorderColorFormField(testData.formFields[1].email, testData.formFields[1].redColor);
   await contactUsPage.expectBorderColorFormField(testData.formFields[2].yourMessage, testData.formFields[2].greyColor);
+});
+
+test.skip(`Sending form without an "agree" checkbox`, async ({
+  contactUsPage
+}) => {
+  //Actions
+  await contactUsPage.inputYouNameField("Test");
+  await contactUsPage.inputEmailField("test123@gmail.com");
+  await contactUsPage.inputMessageField("Check");
+  await contactUsPage.clickSendButton();
+
+
+  //Assert
+  await expect(contactUsPage.url()).not.toHaveURL("https://dev.swisscows.com/en/contact?success=true")
 });
 
 test("Check navigation to corresponding pages for  privacy link on the page", async ({

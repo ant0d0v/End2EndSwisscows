@@ -12,10 +12,14 @@ export default class ContactUsPage extends BasePage {
     this.sendButton = this.page.getByRole("button", { name: "Send" });
     this.formFields = (id) => this.page.getByPlaceholder(`${id}`);
     this.privacyLink = this.page.getByRole("link", { name: "privacy policy" });
+    this.agreeCheckbox = this.page.getByLabel("I agree that my data will be");
   }
   //Actions
   async clickSendButton() {
     await this.clickElement(this.sendButton, `Send button`);
+  }
+  async checkAgreeCheckbox() {
+    await this.checkElement(this.sendButton, `Agree checkbox`);
   }
   async inputYouNameField(text) {
     await this.input(this.formFields(testData.formFields[0].yourName), text, `Your name field`);

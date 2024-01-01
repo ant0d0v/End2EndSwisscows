@@ -1,5 +1,4 @@
-// @ts-check
-import { test }  from "../utils/fixturePages";
+import { test } from "../utils/fixturePages";
 const testData = JSON.parse(
   JSON.stringify(require("../data/header/testData.json"))
 );

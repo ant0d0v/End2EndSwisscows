@@ -26,6 +26,12 @@ export default class BasePage {
       })
       .catch(async (e) => await this.errorHandling(e, this.page));
   }
+  async checkElement(element, nameElement) {
+    await test.step(`Check on the ${nameElement}`, async () => {
+        await element.check();;
+      })
+      .catch(async (e) => await this.errorHandling(e, this.page));
+  }
   async clickEnter(element, nameElement) {
     await test.step(`Press enter on the ${nameElement}`, async () => {
         await element.press("Enter");
