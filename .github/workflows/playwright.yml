@@ -23,7 +23,7 @@ jobs:
       run: |
         export QASE_REPORT=1
         export QASE_RUN_NAME=UI
-        npx playwright test --project=chromium firefox edge mobile --headed 
+        npx playwright test chromium firefox edge mobile --headed 
         
     - uses: actions/upload-artifact@v3
       if: always()
