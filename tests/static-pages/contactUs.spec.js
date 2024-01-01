@@ -57,8 +57,8 @@ test(`Check border color of name, email, message when sending form with message 
   await contactUsPage.expectBorderColorFormField(testData.formFields[1].email, testData.formFields[1].redColor);
   await contactUsPage.expectBorderColorFormField(testData.formFields[2].yourMessage, testData.formFields[2].greyColor);
 });
-
-test.skip(`Sending form without an "agree" checkbox`, async ({
+test.skip();
+test(`Sending form without an "agree" checkbox`, async ({
   contactUsPage
 }) => {
   //Actions
