@@ -54,14 +54,7 @@ export default class MainPage extends BasePage {
     );
     return newPage;
   }
-  clickLogoSwisscows = async () => {
-    await this.clickElement(
-      this.logoSwisscows,
-      `logo swisscows on the main page`
-    );
-    return this;
-  };
-
+ 
   clickInstallSwisscowsBlockAndNavigateToWebStore = async () => {
     const newPage = await this.clickElementAndNavigateToNewPage(
       this.installSwisscowsBlock,
@@ -126,9 +119,6 @@ export default class MainPage extends BasePage {
     this.expectTextOfElement(this.popupInstallSwisscowsLink, text);
   };
 
-  expectImagesOfSrviceBlockAreDisplayed = async () => {
-    await this.expectAreElementsInListDisplayed(this.imagesOfServiceBlock);
-  };
   expecListSizeAnswerToQuestions = async (number) => {
     await this.expectArraySize(this.answersToQuestions, number);
   };

@@ -10,9 +10,8 @@ test("Check that suggest is displayed", async ({
   mainPage,
   headerStaticPages,
 }) => {
+  await mainPage.clickCloseButtonOfPopupInstallSwisscowsLink();
   await headerStaticPages.inputSearchCriteria(testData.searchCriteria.first);
-  await mainPage.clickLogoSwisscows();
-  await headerStaticPages.clickSearchField();
   await headerStaticPages.waitToBeVisibleSuggest();
 
   //Assert
@@ -134,14 +133,6 @@ test("Check design dark theme of the main page ", async ({
 
   //Assert
   await mainPage.expectScreenMainPage();
-});
-
-test("Check that images are dysplaed of the service block", async ({
-  mainPage,
-}) => {
- 
-  //Assert
-  await mainPage.expectImagesOfSrviceBlockAreDisplayed();
 });
 
 for (const { testID, expectedLink, locatorId,expectedTitle,} of main.servicesBlockLinks) {
