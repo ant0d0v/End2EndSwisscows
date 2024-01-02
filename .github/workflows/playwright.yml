@@ -23,8 +23,13 @@ jobs:
       run: npx playwright install --with-deps
     - name: Run Playwright tests
       run: |
-        QASE_REPORT=1 QASE_RUN_NAME=EndTwoEnd npx playwright test --update-snapshots
-          
+        export QASE_REPORT=1
+        export QASE_RUN_NAME=UI
+        npx playwright test --project 'chromium' --project 'firefox' --project 'edge' --project 'mobile' --update-snapshots &&
+        export QASE_REPORT=1
+        export QASE_RUN_NAME=API
+        npx playwright test api
+
     - uses: actions/upload-artifact@v3
       if: always()
       with:
