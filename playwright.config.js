@@ -65,8 +65,15 @@ module.exports = defineConfig({
       teardown: "cleanup",
     },
     {
-      name: "cleanup",
-      testMatch: /.*\.teardown\.js/,
+      name: "chromium",
+      use: {
+        ...devices["Desktop Chrome"],
+        channel: "chrome",
+        storageState: "./data/auth/user.json",
+        viewport: { width: 1360, height: 900 },
+        screenshot: "only-on-failure",
+      },
+      dependencies: ["setup"],
     },
     {
       name: "firefox",
@@ -77,17 +84,6 @@ module.exports = defineConfig({
         screenshot: "on",
         trace: "retain-on-failure",
       },
-    },
-    {
-      name: "chromium",
-      use: {
-        ...devices["Desktop Chrome"],
-        channel: "chrome",
-        storageState: "./data/auth/user.json",
-        viewport: { width: 1360, height: 900 },
-        screenshot: "only-on-failure",
-      },
-      dependencies: ["setup"],
     },
     {
       name: "edge",
@@ -101,10 +97,6 @@ module.exports = defineConfig({
       },
     },
     {
-      name: "api",
-      testMatch: /.*\.api\.js/,
-    },
-    {
       name: "mobile",
       testMatch: /.*\.mobile\.js/,
       use: {
@@ -112,6 +104,14 @@ module.exports = defineConfig({
         channel: "chrome",
         screenshot: "only-on-failure",
       },
+    },
+    {
+      name: "cleanup",
+      testMatch: /.*\.teardown\.js/,
+    },
+    {
+      name: "api",
+      testMatch: /.*\.api\.js/,
     },
   ],
   /* Run your local dev server before starting the tests */
@@ -121,4 +121,5 @@ module.exports = defineConfig({
   //   reuseExistingServer: !process.env.CI,
   // },
   // grep: [/@firefox/],
+  // headless: false,
 });
