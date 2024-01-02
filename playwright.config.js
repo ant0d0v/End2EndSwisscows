@@ -85,7 +85,7 @@ module.exports = defineConfig({
         ...devices["Desktop Chrome"],
         channel: "chrome",
         storageState: "./data/auth/user.json",
-        headless: false,
+        // headless: false,
         viewport: { width: 1360, height: 900 },
         screenshot: "only-on-failure",
       },
@@ -97,7 +97,7 @@ module.exports = defineConfig({
       use: {
         ...devices["Desktop Edge"],
         channel: "msedge",
-        headless: false,
+        // headless: false,
         viewport: { width: 1360, height: 900 },
         screenshot: "only-on-failure",
         video: "retain-on-failure",
@@ -113,7 +113,7 @@ module.exports = defineConfig({
       use: {
         ...devices["Pixel 7"],
         channel: "chrome",
-        headless: false,
+        // headless: false,
         screenshot: "only-on-failure",
       },
     },
