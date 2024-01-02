@@ -9,7 +9,7 @@ on:
 jobs:
   test:
     timeout-minutes: 60
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     container:
       image: mcr.microsoft.com/playwright:v1.40.0-jammy
     steps:
@@ -23,12 +23,9 @@ jobs:
       run: npx playwright install --with-deps
     - name: Run Playwright tests
       run: |
-        export QASE_REPORT=1
-        export QASE_RUN_NAME=UI
-        npx playwright test --project=chromium --project=firefox  --project=edge  --project=mobile --update-snapshots &&
-        export QASE_REPORT=1
-        export QASE_RUN_NAME=API
-        npx playwright test api
+        export QASE_REPORT=1 
+        export QASE_RUN_NAME=End2End
+        npx playwright test --update-snapshots 
         
     - uses: actions/upload-artifact@v3
       if: always()
