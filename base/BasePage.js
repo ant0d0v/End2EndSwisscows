@@ -242,20 +242,17 @@ export default class BasePage {
     });
   }
   async expectScreenOfPage(element) {
-    await test.step('Expect all elements to array "to equal" a string', async () => {
+    await test.step(`Expect screen to be equal to the snapshot of page`, async () => {
         await this.waitUntilPageIsFullyLoaded();
         await expect(this.page).toHaveScreenshot({
           fullPage: true,
-          mask: [
-            await element,
-            await this.appLinksInFooter(this.page)
-          ],
+          mask: [await element, await this.appLinksInFooter(this.page)],
         });
       })
       .catch(async (e) => await this.errorHandling(e, this.page));
   }
   async expectScreenOfPageWithoutMask() {
-    await test.step('Expect all elements to array "to equal" a string', async () => {
+    await test.step('Expect screen to be equal to the snapshot of page', async () => {
         await this.waitUntilPageIsFullyLoaded();
         await expect(this.page).toHaveScreenshot({
           fullPage: true,
