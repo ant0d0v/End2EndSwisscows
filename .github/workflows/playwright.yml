@@ -24,7 +24,7 @@ jobs:
     - name: Run Playwright tests
       run: |
         QASE_REPORT=1 QASE_RUN_NAME=UI npx playwright test --project chromium firefox edge mobile --update-snapshots &&
-        QASE_REPORT=1 QASE_RUN_NAME=API npx playwright test api 
+        QASE_REPORT=1 QASE_RUN_NAME=API npx playwright test api
 
     - uses: actions/upload-artifact@v3
       if: always()
