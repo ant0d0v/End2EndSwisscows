@@ -24,7 +24,7 @@ jobs:
     - name: Run Playwright tests
       run: |
         export QASE_REPORT=1 
-        export QASE_RUN_NAME=End2End
+        export QASE_RUN_NAME=EndTwoEnd
         npx playwright test --update-snapshots 
         
     - uses: actions/upload-artifact@v3
