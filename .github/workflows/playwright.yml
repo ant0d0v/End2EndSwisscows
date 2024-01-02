@@ -23,11 +23,11 @@ jobs:
       run: npx playwright install --with-deps
     - name: Run Playwright tests
       run: |
-        export QASE_REPORT=1
-        export QASE_RUN_NAME=UI
+        QASE_REPORT=1
+        QASE_RUN_NAME=UI
         xvfb-run --auto-servernum npx playwright test chromium firefox edge mobile --headed --update-snapshots &&
-        export QASE_REPORT=1
-        export QASE_RUN_NAME=API
+        QASE_REPORT=1
+        QASE_RUN_NAME=API
         npx playwright test api
         
     - uses: actions/upload-artifact@v3

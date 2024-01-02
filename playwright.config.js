@@ -31,14 +31,13 @@ module.exports = defineConfig({
   // Limit the number of failures on CI to save resources
   maxFailures: process.env.CI ? 10 : undefined,
   /* Run tests in files in parallel */
-  // fullyParallel: true,
+  fullyParallel: true,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
   forbidOnly: !!process.env.CI,
   /* Retry on CI only */
   retries: process.env.CI ? 2 : 0,
   /* Opt out of parallel tests on CI. */
-  workers: process.env.CI ? 4 : undefined,
-  fullyParallel: process.env.CI ? true : undefined,
+  workers: process.env.CI ? 2 : undefined,
 
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: [["playwright-qase-reporter", qaseConfig]],
