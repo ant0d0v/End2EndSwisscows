@@ -10,7 +10,7 @@ test("Check that suggest is displayed", async ({
   mainPage,
   headerStaticPages,
 }) => {
-  await mainPage.clickCloseButtonOfPopupInstallSwisscowsLink();
+  await mainPage.reloadPage();
   await headerStaticPages.inputSearchCriteria(testData.searchCriteria.first);
   await headerStaticPages.waitToBeVisibleSuggest();
 
