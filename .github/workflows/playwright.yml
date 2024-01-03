@@ -9,7 +9,7 @@ on:
 jobs:
   test:
     timeout-minutes: 60
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
     - uses: actions/setup-node@v3
@@ -22,11 +22,5 @@ jobs:
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
     - name: Run your tests
-      run: |
-        $env:QASE_REPORT=1
-        $env:QASE_RUN_NAME="UI"
-        npx playwright test --project=chromium --project=firefox --project=edge --project=mobile --update-snapshots
-        $env:QASE_REPORT=1
-        $env:QASE_RUN_NAME="API"
-        npx playwright test api
+      run: npx playwright test --project=chromium --project=firefox --project=edge --project=mobile --update-snapshots -QASE_REPORT=1 -QASE_RUN_NAME=UI && npx playwright test api -QASE_REPORT=1 -QASE_RUN_NAME=API
 
