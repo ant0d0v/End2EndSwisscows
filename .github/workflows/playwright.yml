@@ -11,25 +11,17 @@ jobs:
     timeout-minutes: 60
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18  
-
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Install XVFB
-        run: sudo apt-get install xvfb
-
-      - name: Set up virtual display
-        run: xvfb-run --auto-servernum
-
-      - name: Install Playwright Browsers
-        run: npx playwright install --with-deps
-      - name: Run your tests
-        run: |
-          QASE_REPORT=1 QASE_RUN_NAME=UI xvfb-run npx playwright test chromium firefox edge mobile --headed --update-snapshots &&
-          QASE_REPORT=1 QASE_RUN_NAME=API npx playwright test api
+    - uses: actions/checkout@v3
+    - uses: actions/setup-node@v3
+      with:
+        node-version: 18
+    - name: Install dependencies
+      run: npm ci
+    - name: Install Xvfb
+      run: sudo apt-get install xvfb
+    - name: Install Playwright Browsers
+      run: npx playwright install --with-deps
+    - name: Run your tests
+      run: |
+        QASE_REPORT=1 QASE_RUN_NAME=UI xvfb-run npx playwright test chromium firefox edge mobile --headed --update-snapshots &&
+        QASE_REPORT=1 QASE_RUN_NAME=API npx playwright test api
