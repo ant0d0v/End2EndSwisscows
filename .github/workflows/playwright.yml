@@ -15,15 +15,18 @@ jobs:
     - uses: actions/setup-node@v3
       with:
         node-version: 18
-    - name: Install dependencies and run tests
-      run: npm install  
     - name: Install dependencies
-      run: npm ci  
+      run: npm ci
     - name: Install dotenv
-      run: npm install dotenv  
+      run: npm install dotenv
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
     - name: Run your tests
       run: |
-        QASE_REPORT=1 QASE_RUN_NAME=UI npx playwright test --project=chromium --project=firefox --project=edge --project=mobile --update-snapshots &&
-        QASE_REPORT=1 QASE_RUN_NAME=API npx playwright test api
+        $env:QASE_REPORT=1
+        $env:QASE_RUN_NAME=UI
+        npx playwright test --project=chromium --project=firefox --project=edge --project=mobile --update-snapshots
+        $env:QASE_REPORT=1
+        $env:QASE_RUN_NAME=API
+        npx playwright test api
+
