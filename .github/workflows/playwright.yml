@@ -17,11 +17,9 @@ jobs:
         node-version: 18
     - name: Install dependencies
       run: npm ci
-    - name: Install Xvfb
-      run: sudo apt-get install xvfb
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
     - name: Run your tests
       run: |
-        QASE_REPORT=1 QASE_RUN_NAME=UI xvfb-run npx playwright test --project=chromium --project=firefox --project=edge --project=mobile --headed --update-snapshots &&
+        QASE_REPORT=1 QASE_RUN_NAME=UI npx playwright test --project=chromium --project=firefox --project=edge --project=mobile --update-snapshots &&
         QASE_REPORT=1 QASE_RUN_NAME=API npx playwright test api
