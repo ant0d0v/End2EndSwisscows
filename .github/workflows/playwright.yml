@@ -23,9 +23,7 @@ jobs:
       run: |
         export QASE_REPORT=1
         export QASE_RUN_NAME=UI
-        export QASE_API_TOKEN=${{secrets.QASE_API_TOKEN}}
-        export QASE_PROJECT_CODE=SWISSCOWS
-        npx playwright test spec ff edge mobile --update-snapshots &&
+        npx playwright test --project chromium firefox edge mobile --update-snapshots &&
         export QASE_REPORT=2
         export QASE_RUN_NAME=API
         npx playwright test api

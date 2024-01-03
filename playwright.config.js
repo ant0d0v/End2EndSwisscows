@@ -64,8 +64,12 @@ module.exports = defineConfig({
   projects: [
     {
       name: "setup",
-      testMatch: /.*\.setup\.js/,
+      testMatch: /global\.setup\.js/,
       teardown: "cleanup",
+    },
+    {
+      name: "cleanup",
+      testMatch: /global\.teardown\.js/,
     },
     {
       name: "chromium",
@@ -108,10 +112,6 @@ module.exports = defineConfig({
         screenshot: "only-on-failure",
         video: "retain-on-failure",
       },
-    },
-    {
-      name: "cleanup",
-      testMatch: /.*\.teardown\.js/,
     },
     {
       name: "api",
