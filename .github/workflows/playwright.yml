@@ -17,6 +17,8 @@ jobs:
           node-version: 18
       - name: Install dependencies
         run: npm ci
+      - name: Install Playwright
+        run: npx playwright install --with-deps  
       - name: Run your tests
         run: |
           QASE_REPORT=1 QASE_RUN_NAME=UI xvfb-run npx playwright test chromium firefox edge mobile --headed --update-snapshots &&
