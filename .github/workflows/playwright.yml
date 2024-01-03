@@ -22,4 +22,4 @@ jobs:
           QASE_REPORT=1 QASE_RUN_NAME=UI xvfb-run npx playwright test chromium firefox edge mobile --headed --update-snapshots &&
           QASE_REPORT=1 QASE_RUN_NAME=API npx playwright test api
         env:
-          HOME: /root
+          HOME: /github/home
