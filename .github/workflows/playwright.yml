@@ -17,6 +17,8 @@ jobs:
         node-version: 18
     - name: Install dependencies
       run: npm ci
+    - name: Install dotenv
+      run: npm install dotenv  
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
     - name: Run your tests
