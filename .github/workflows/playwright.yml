@@ -19,7 +19,7 @@ jobs:
       run: npm ci
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
-    - name: Run Playwright tests
+    - name: Run tests
       run: |
         export QASE_REPORT=1
         export QASE_RUN_NAME=UI
