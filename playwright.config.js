@@ -72,7 +72,6 @@ module.exports = defineConfig({
       use: {
         ...devices["Desktop Chrome"],
         channel: "chrome",
-        headless: false,
         storageState: "./data/auth/user.json",
         viewport: { width: 1360, height: 900 },
         screenshot: "only-on-failure",
@@ -84,7 +83,6 @@ module.exports = defineConfig({
       testMatch: /.*\.ff\.js/,
       use: {
         ...devices["Desktop Firefox"],
-        headless: false,
         viewport: { width: 1360, height: 900 },
         screenshot: "only-on-failure",
         video: "retain-on-failure",
@@ -96,7 +94,6 @@ module.exports = defineConfig({
       use: {
         ...devices["Desktop Edge"],
         channel: "msedge",
-        headless: false,
         viewport: { width: 1360, height: 900 },
         screenshot: "only-on-failure",
         video: "retain-on-failure",
@@ -108,7 +105,6 @@ module.exports = defineConfig({
       use: {
         ...devices["Pixel 7"],
         channel: "chrome",
-        headless: false,
         screenshot: "only-on-failure",
         video: "retain-on-failure",
       },
@@ -128,4 +124,5 @@ module.exports = defineConfig({
   //   url: 'http://127.0.0.1:3000',
   //   reuseExistingServer: !process.env.CI,
   // },
+  // headless: false,
 });
