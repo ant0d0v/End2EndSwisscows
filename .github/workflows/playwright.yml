@@ -21,5 +21,5 @@ jobs:
       run: npx playwright install --with-deps
     - name: Run your tests
       run: |
-        QASE_REPORT=1 QASE_RUN_NAME=UI npx playwright test setup teardown spec ff msedge mobile --update-snapshots &&
+        QASE_REPORT=1 QASE_RUN_NAME=UI npx playwright test setup spec ff edge mobile teardown --update-snapshots &&
         QASE_REPORT=1 QASE_RUN_NAME=API npx playwright test api
