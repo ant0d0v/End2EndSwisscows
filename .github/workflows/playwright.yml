@@ -23,8 +23,8 @@ jobs:
       run: |
         export QASE_REPORT=1
         export QASE_RUN_NAME=UI
-        npx playwright test setup spec edge mobile teardown --update-snapshots &&
-        export QASE_REPORT=1
+        npx playwright test setup spec ff msedge mobile teardown --update-snapshots &&
+        export QASE_REPORT=2
         export QASE_RUN_NAME=API
         npx playwright test api
 
