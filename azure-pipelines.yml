@@ -3,13 +3,13 @@ name: End2End Tests
 trigger:
   branches:
     include:
-      - master
+      - main
       
 jobs:
   - job: Agent_job
     timeoutInMinutes: 60
     pool:
-      vmImage: "windows-latest"
+      vmImage: "ubuntu-latest"
  
     steps:
       - task: NodeTool@0
@@ -18,18 +18,28 @@ jobs:
         displayName: "Install Node"
  
       - script: |
-          npm i
+          npm ci
         displayName: "Install dependencies"
+     
+      - script: npx playwright install --with-deps
+        displayName: 'Install Playwright browsers'  
  
       - script: |
           npx playwright install
-        displayName: "Install Playwright Browsers"
+        displayName: 'Install Playwright Browsers'
  
       - script: |
-          QASE_REPORT=1 QASE_RUN_NAME=UI npx playwright test --project chromium firefox edge mobile  --headed ; QASE_REPORT=1 QASE_RUN_NAME=API npx playwright test api 
-        displayName: "Run Playwright tests"
+          export QASE_REPORT=1
+          export QASE_RUN_NAME=UI
+          npx playwright test --project chromium firefox edge mobile --update-snapshots &&
+          export QASE_REPORT=2
+          export QASE_RUN_NAME=API
+          npx playwright test api 
+        displayName: 'Run Playwright tests'
+        env:
+          CI: 'true'
        
       - publish: $(Build.SourcesDirectory)/playwright-report
-        displayName: "Publish report"
+        displayName: 'Publish report'
         artifact: playwright-report
         condition: always()
