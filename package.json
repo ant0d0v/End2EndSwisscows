@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "tests": "playwright test --config=playwright.config.js --project=chromium --project=firefox --project=edge --project=mobile --update-snapshots && playwright test api"
+  },
   "keywords": [],
   "author": "Anton",
   "license": "ISC",

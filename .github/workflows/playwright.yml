@@ -11,23 +11,30 @@ jobs:
     timeout-minutes: 60
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
-    - uses: actions/setup-node@v3
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
       with:
         node-version: 18
+
     - name: Install dependencies
       run: npm ci
+
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
+
     - name: Run UI tests
       run: |
         export QASE_REPORT=1
         export QASE_RUN_NAME=UI
-        playwright test --config=playwright.config.js --project=chromium --project=firefox --project=edge --project=mobile --update-snapshots
+        npx playwright test --config=playwright.config.js --project=chromium --project=firefox --project=edge --project=mobile --update-snapshots
 
     - name: Run API tests
       run: |
         export QASE_REPORT=2
         export QASE_RUN_NAME=API
         npx playwright test api
+
 
