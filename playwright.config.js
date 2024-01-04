@@ -1,4 +1,3 @@
-// @ts-check
 import { defineConfig, devices } from "@playwright/test";
 
 
@@ -71,7 +70,7 @@ module.exports = defineConfig({
     },
     {
       name: "cleanup",
-      testMatch: /global\.teardown\.js/,
+      testMatch: /.*\.teardown\.js/
     },
     {
       name: "chromium",
