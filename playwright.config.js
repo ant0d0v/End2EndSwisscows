@@ -28,6 +28,7 @@ module.exports = defineConfig({
   // globalSetup: 'utils/globalSetup.js',
   testDir: "./tests",
   timeout: 5 * 60 * 1000,
+  retries: 2,
   // Limit the number of failures on CI to save resources
   maxFailures: process.env.CI ? 10 : undefined,
   /* Run tests in files in parallel */
@@ -35,7 +36,7 @@ module.exports = defineConfig({
   /* Fail the build on CI if you accidentally left test.only in the source code. */
   forbidOnly: !!process.env.CI,
   /* Retry on CI only */
-  retries: process.env.CI ? 2 : 0,
+  // retries: process.env.CI ? 2 : 0,
   /* Opt out of parallel tests on CI. */
   workers: process.env.CI ? 2 : undefined,
   // reporter: process.env.CI
