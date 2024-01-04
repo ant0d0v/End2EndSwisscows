@@ -37,14 +37,14 @@ module.exports = defineConfig({
   /* Retry on CI only */
   // retries: process.env.CI ? 2 : 0,
   /* Opt out of parallel tests on CI. */
-  workers: process.env.CI ? 2 : undefined,
+  workers: process.env.CI ? 4 : undefined,
   // reporter: process.env.CI
   //   ? [["playwright-qase-reporter", qaseConfig]]
   //   : undefined,
 
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   //["playwright-qase-reporter", qaseConfig]
-  reporter: [["list"],["html"]],
+  reporter: [["playwright-qase-reporter", qaseConfig]],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     baseURL: "https://dev.swisscows.com/",
@@ -70,7 +70,7 @@ module.exports = defineConfig({
     },
     {
       name: "cleanup",
-      testMatch: /.*\.teardown\.js/
+      testMatch: /.*\.teardown\.js/,
     },
     {
       name: "chromium",

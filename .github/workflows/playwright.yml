@@ -27,14 +27,13 @@ jobs:
       run: npx playwright install --with-deps
 
     - name: Run tests
-      run: npx playwright test --project chromium firefox edge mobile && npx playwright test --project api
-      
-    - uses: actions/upload-artifact@v3
-      if: always()
-      with:
-        name: playwright-report
-        path: playwright-report/
-        retention-days: 30  
+      run: |
+        export QASE_REPORT=1
+        export QASE_RUN_NAME=UI
+        npx playwright test --project chromium firefox edge mobile --update-snapshots &&
+        export QASE_REPORT=2
+        export QASE_RUN_NAME=API
+        npx playwright test api 
 
 
 
