@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "tests": "echo 'Running UI tests' && QASE_REPORT=1 QASE_RUN_NAME=UI npx playwright test --config=playwright.config.js --project=chromium --project=firefox --project=edge --project=mobile --update-snapshots && echo 'Running API tests' && QASE_REPORT=2 QASE_RUN_NAME=API npx playwright test api"
+    "tests": "QASE_REPORT=1 QASE_RUN_NAME=UI npx playwright test --project=chromium --project=firefox --project=edge --project=mobile --update-snapshots && QASE_REPORT=2 QASE_RUN_NAME=API npx playwright test api"
   },
   "keywords": [],
   "author": "Anton",
