@@ -1,4 +1,3 @@
-// @ts-check
 import { defineConfig, devices } from "@playwright/test";
 
 
@@ -38,12 +37,13 @@ module.exports = defineConfig({
   /* Retry on CI only */
   // retries: process.env.CI ? 2 : 0,
   /* Opt out of parallel tests on CI. */
-  workers: process.env.CI ? 2 : undefined,
+  workers: process.env.CI ? 4 : undefined,
   // reporter: process.env.CI
   //   ? [["playwright-qase-reporter", qaseConfig]]
   //   : undefined,
 
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
+  //["playwright-qase-reporter", qaseConfig]
   reporter: [["playwright-qase-reporter", qaseConfig]],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
@@ -70,7 +70,7 @@ module.exports = defineConfig({
     },
     {
       name: "cleanup",
-      testMatch: /global\.teardown\.js/,
+      testMatch: /.*\.teardown\.js/,
     },
     {
       name: "chromium",
@@ -79,6 +79,7 @@ module.exports = defineConfig({
         channel: "chrome",
         storageState: "./data/auth/user.json",
         viewport: { width: 1360, height: 900 },
+        headless: false,
         screenshot: "only-on-failure",
       },
       dependencies: ["setup"],
@@ -90,6 +91,7 @@ module.exports = defineConfig({
         ...devices["Desktop Firefox"],
         viewport: { width: 1360, height: 900 },
         screenshot: "only-on-failure",
+        headless: false,
         video: "retain-on-failure",
       },
     },
@@ -100,6 +102,7 @@ module.exports = defineConfig({
         ...devices["Desktop Edge"],
         channel: "msedge",
         viewport: { width: 1360, height: 900 },
+        headless: false,
         screenshot: "only-on-failure",
         video: "retain-on-failure",
       },
@@ -110,6 +113,7 @@ module.exports = defineConfig({
       use: {
         ...devices["Pixel 7"],
         channel: "chrome",
+        headless: false,
         screenshot: "only-on-failure",
         video: "retain-on-failure",
       },
