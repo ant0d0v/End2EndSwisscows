@@ -10,6 +10,7 @@ jobs:
   test:
     timeout-minutes: 60
     runs-on: ubuntu-latest
+
     steps:
     - name: Checkout code
       uses: actions/checkout@v3
@@ -26,6 +27,14 @@ jobs:
       run: npx playwright install --with-deps
 
     - name: Run tests
-      run: npx playwright test spec chromium firefox edge mobile && npx playwright test api
+      run: npx playwright test --project chromium firefox edge mobile && npx playwright test --project api
       
+    - uses: actions/upload-artifact@v3
+      if: always()
+      with:
+        name: playwright-report
+        path: playwright-report/
+        retention-days: 30  
+
+
 

@@ -3,8 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {
-  "tests": " QASE_RUN_NAME=UI npm playwright test spec chromium firefox edge mobile --update-snapshots ; QASE_RUN_NAME=API npm playwright test api"},
+  "scripts": {},
   "keywords": [],
   "author": "Anton",
   "license": "ISC",

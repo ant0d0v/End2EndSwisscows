@@ -44,7 +44,8 @@ module.exports = defineConfig({
   //   : undefined,
 
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
-  reporter: [["playwright-qase-reporter", qaseConfig]],
+  //["playwright-qase-reporter", qaseConfig]
+  reporter: [["list"],["html"]],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     baseURL: "https://dev.swisscows.com/",
