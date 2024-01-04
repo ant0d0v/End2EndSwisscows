@@ -4,8 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "tests": "export QASE_REPORT=1 export QASE_RUN_NAME=UI npx playwright test spec ff edge mobile --update-snapshots ; export QASE_REPORT=2 export QASE_RUN_NAME=API npx playwright test api"
-  },
+  "tests": "export QASE_REPORT=1 && export QASE_RUN_NAME=UI && npx playwright test spec ff edge mobile --update-snapshots && export QASE_REPORT=2 && export QASE_RUN_NAME=API && npx playwright test api"},
   "keywords": [],
   "author": "Anton",
   "license": "ISC",
