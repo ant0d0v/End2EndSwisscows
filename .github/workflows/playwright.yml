@@ -26,6 +26,6 @@ jobs:
       run: npx playwright install --with-deps
 
     - name: Run tests
-      run: npm run tests
+      run: npx playwright test spec chromium firefox edge mobile && npx playwright test api
       
 
