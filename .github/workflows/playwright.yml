@@ -25,16 +25,7 @@ jobs:
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
 
-    - name: Run UI tests
-      run: |
-        export QASE_REPORT=1
-        export QASE_RUN_NAME=UI
-        npx playwright test --config=playwright.config.js --project=chromium --project=firefox --project=edge --project=mobile --update-snapshots
-
-    - name: Run API tests
-      run: |
-        export QASE_REPORT=2
-        export QASE_RUN_NAME=API
-        npx playwright test api
-
+    - name: Run tests
+      run: npm run tests
+      
 
