@@ -1,9 +1,9 @@
-import { BasePage } from "../../base/BasePage.js";
+import BasePage  from "../../base/BasePage.js";
 const { expect, context } = require("@playwright/test");
-import { ImageFilters } from "../../components/images/ImageFilters.js";
-import { Ads } from "../../components/Ads.js";
+import  ImageFilters  from "../../components/images/ImageFilters.js";
+import  Ads  from "../../components/Ads.js";
 
-export class ImagePage extends BasePage {
+export default class ImagePage extends BasePage {
   constructor(page) {
     super(page);
     this.imageFilters = new ImageFilters(page);

@@ -1,16 +1,15 @@
 
-import { HeaderStaticPages } from './HeaderStaticPages';
-const { expect} = require("@playwright/test");
-import { MainPage } from '../pages/MainPage';
+import  HeaderStaticPages  from './HeaderStaticPages';
+import  MainPage  from '../pages/MainPage';
 import { WebPage } from "../pages/search/WebPage";
-import { ImagePage } from "../pages/search/ImagePage";
-import { MusicPage } from "../pages/search/MusicPage";
-import { NewsPage } from "../pages/search/NewsPage";
-import { VideoPage } from "../pages/search/VideoPage";
-import { ShoppingPage } from "../pages/search/ShoppingPage";
-import { BasePage } from '../base/BasePage';
+import  ImagePage  from "../pages/search/ImagePage";
+import  MusicPage  from "../pages/search/MusicPage";
+import  NewsPage  from "../pages/search/NewsPage";
+import  VideoPage  from "../pages/search/VideoPage";
+import  ShoppingPage  from "../pages/search/ShoppingPage";
+import  BasePage  from '../base/BasePage';
 
-export  class Header extends BasePage {
+export default class Header extends BasePage {
     constructor(page) {
         super(page);
         this.headerStaticPages = new HeaderStaticPages(page);

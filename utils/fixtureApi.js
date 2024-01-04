@@ -6,5 +6,4 @@ exports.test = base.test.extend({
     await use(new BotsProtection(request));
   },
 });
-
 exports.expect = base.expect;

@@ -1,5 +1,5 @@
 // @ts-check
-const { defineConfig, devices } = require("@playwright/test");
+import { defineConfig, devices } from "@playwright/test";
 
 
 const qaseConfig = {
@@ -28,7 +28,9 @@ module.exports = defineConfig({
   // globalSetup: 'utils/globalSetup.js',
   testDir: "./tests",
   timeout: 5 * 60 * 1000,
-  retries: 3,
+  retries: 2,
+  // Limit the number of failures on CI to save resources
+  maxFailures: process.env.CI ? 10 : undefined,
   /* Run tests in files in parallel */
   fullyParallel: true,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
@@ -36,7 +38,10 @@ module.exports = defineConfig({
   /* Retry on CI only */
   // retries: process.env.CI ? 2 : 0,
   /* Opt out of parallel tests on CI. */
-  workers: process.env.CI ? 1 : undefined,
+  workers: process.env.CI ? 2 : undefined,
+  // reporter: process.env.CI
+  //   ? [["playwright-qase-reporter", qaseConfig]]
+  //   : undefined,
 
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: [["playwright-qase-reporter", qaseConfig]],
@@ -52,7 +57,7 @@ module.exports = defineConfig({
     trace: "on-first-retry",
   },
   expect: {
-    toHaveScreenshot: { maxDiffPixelRatio: 0.3},
+    toHaveScreenshot: { maxDiffPixelRatio: 0.3 },
     timeout: 15 * 1000,
   },
 
@@ -60,23 +65,12 @@ module.exports = defineConfig({
   projects: [
     {
       name: "setup",
-      testMatch: /.*\.setup\.js/,
+      testMatch: /global\.setup\.js/,
       teardown: "cleanup",
     },
     {
       name: "cleanup",
-      testMatch: /.*\.teardown\.js/,
-    },
-    {
-      name: "firefox",
-      testMatch: /.*\.ff\.js/,
-      use: {
-        ...devices["Desktop Firefox"],
-        headless: false,
-        viewport: { width: 1360, height: 900 },
-        screenshot: "on",
-        trace: "retain-on-failure",
-      },
+      testMatch: /global\.teardown\.js/,
     },
     {
       name: "chromium",
@@ -84,11 +78,20 @@ module.exports = defineConfig({
         ...devices["Desktop Chrome"],
         channel: "chrome",
         storageState: "./data/auth/user.json",
-        headless: false,
         viewport: { width: 1360, height: 900 },
         screenshot: "only-on-failure",
       },
       dependencies: ["setup"],
+    },
+    {
+      name: "firefox",
+      testMatch: /.*\.ff\.js/,
+      use: {
+        ...devices["Desktop Firefox"],
+        viewport: { width: 1360, height: 900 },
+        screenshot: "only-on-failure",
+        video: "retain-on-failure",
+      },
     },
     {
       name: "edge",
@@ -96,8 +99,17 @@ module.exports = defineConfig({
       use: {
         ...devices["Desktop Edge"],
         channel: "msedge",
-        headless: false,
         viewport: { width: 1360, height: 900 },
+        screenshot: "only-on-failure",
+        video: "retain-on-failure",
+      },
+    },
+    {
+      name: "mobile",
+      testMatch: /.*\.mobile\.js/,
+      use: {
+        ...devices["Pixel 7"],
+        channel: "chrome",
         screenshot: "only-on-failure",
         video: "retain-on-failure",
       },
@@ -106,16 +118,6 @@ module.exports = defineConfig({
       name: "api",
       testMatch: /.*\.api\.js/,
     },
-    {
-      name: "mobile",
-      testMatch: /.*\.mobile\.js/,
-      use: {
-        ...devices["Pixel 7"],
-        channel: "chrome",
-        headless: false,
-        screenshot: "only-on-failure",
-      },
-    },
   ],
   /* Run your local dev server before starting the tests */
   // webServer: {
@@ -123,5 +125,5 @@ module.exports = defineConfig({
   //   url: 'http://127.0.0.1:3000',
   //   reuseExistingServer: !process.env.CI,
   // },
-  // grep: [/@firefox/],
+  // headless: false
 });

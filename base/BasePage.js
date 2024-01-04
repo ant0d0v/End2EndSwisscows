@@ -1,6 +1,6 @@
 const { expect, context, test } = require('@playwright/test');
 
-export class BasePage {
+export default class BasePage {
   constructor(page) {
     this.page = page;
     this.h1Text = (page) => page.locator("//h1");
@@ -23,6 +23,12 @@ export class BasePage {
   async clickElement(element, nameElement) {
     await test.step(`Click on the ${nameElement}`, async () => {
         await element.click();
+      })
+      .catch(async (e) => await this.errorHandling(e, this.page));
+  }
+  async checkElement(element, nameElement) {
+    await test.step(`Check on the ${nameElement}`, async () => {
+        await element.check();;
       })
       .catch(async (e) => await this.errorHandling(e, this.page));
   }
@@ -236,20 +242,17 @@ export class BasePage {
     });
   }
   async expectScreenOfPage(element) {
-    await test.step('Expect all elements to array "to equal" a string', async () => {
+    await test.step(`Expect screen to be equal to the snapshot of page`, async () => {
         await this.waitUntilPageIsFullyLoaded();
         await expect(this.page).toHaveScreenshot({
           fullPage: true,
-          mask: [
-            await element,
-            await this.appLinksInFooter(this.page)
-          ],
+          mask: [await element, await this.appLinksInFooter(this.page)],
         });
       })
       .catch(async (e) => await this.errorHandling(e, this.page));
   }
   async expectScreenOfPageWithoutMask() {
-    await test.step('Expect all elements to array "to equal" a string', async () => {
+    await test.step('Expect screen to be equal to the snapshot of page', async () => {
         await this.waitUntilPageIsFullyLoaded();
         await expect(this.page).toHaveScreenshot({
           fullPage: true,

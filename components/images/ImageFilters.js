@@ -1,7 +1,7 @@
-import { BaseFilters } from "../../base/BaseFilters";
+import  BaseFilters  from "../../base/BaseFilters";
 const { expect } = require("@playwright/test");
 
-export class ImageFilters extends BaseFilters {
+export default class ImageFilters extends BaseFilters {
   constructor(page) {
     super(page);
   }

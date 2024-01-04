@@ -1,9 +1,11 @@
 name: Playwright Tests
+
 on:
   push:
-    branches: [ main, master ]
+    branches: [main, master]
   pull_request:
-    branches: [ main, master ]
+    branches: [main, master]
+
 jobs:
   test:
     timeout-minutes: 60
@@ -17,6 +19,12 @@ jobs:
       run: npm ci
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
-    - name: Run Playwright tests
-      run: QASE_REPORT=1 QASE_RUN_NAME=End2End npx playwright test --project chromium --project firefox --project api --headed
-  
+    - name: Run tests
+      run: |
+        export QASE_REPORT=1
+        export QASE_RUN_NAME=UI
+        npx playwright test --project chromium firefox edge mobile --update-snapshots &&
+        export QASE_REPORT=2
+        export QASE_RUN_NAME=API
+        npx playwright test api
+

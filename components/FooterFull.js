@@ -1,10 +1,10 @@
-const { BasePage } = require('../base/BasePage')
-import { CharityPage } from "../pages/static-pages/CharityPage";
-import { DatacenterPage } from "../pages/static-pages/DatacenterPage";
-import { EducationPage } from "../pages/static-pages/EducationPage";
-import { DonationPage } from "../pages/static-pages/DonationPage";
-import { ContactUsPage } from "../pages/static-pages/ContactUsPage";
-export class FooterFull extends BasePage {
+import BasePage  from '../base/BasePage'
+import  CharityPage  from "../pages/static-pages/CharityPage";
+import  DatacenterPage  from "../pages/static-pages/DatacenterPage";
+import  EducationPage  from "../pages/static-pages/EducationPage";
+import  DonationPage  from "../pages/static-pages/DonationPage";
+import  ContactUsPage  from "../pages/static-pages/ContactUsPage";
+export default class FooterFull extends BasePage {
   constructor(page) {
     super(page);
 
