@@ -1,12 +1,16 @@
-import BasePage  from "../../base/BasePage.js";
+import BasePage from "../../base/BasePage.js";
 const { expect, context } = require("@playwright/test");
-import  ImageFilters  from "../../components/images/ImageFilters.js";
-import  Ads  from "../../components/Ads.js";
+import ImagesFilters from "../../components/images/Images.Filters.js";
+import ImagesRelatedQueries from "../../components/images/Images.RelatedQueries.js";
+import ImagesView from "../../components/images/Images.View.js";
+import ProductAds from "../../components/ads/Ads.Product.js";
 
 export default class ImagePage extends BasePage {
   constructor(page) {
     super(page);
-    this.imageFilters = new ImageFilters(page);
-    this.ads = new Ads(page);
+    this.imagesFilters = new ImagesFilters(page);
+    this.imagesRelatedQueries = new ImagesRelatedQueries();
+    this.imagesView = new ImagesView();
+    this.productAds = new ProductAds(page);
   }
 }

@@ -19,7 +19,7 @@ export default class StaticVideoPlayer extends BasePage {
       currentTime = await this.videoPlayer.evaluate((video) => {
         return video.currentTime;
       });
-    } while (currentTime <= 3 && Date.now() - startTime < 7000);
+    } while (currentTime <= 5 && Date.now() - startTime < 7000);
     expect(currentTime).toBeGreaterThan(0.5);
   }
 

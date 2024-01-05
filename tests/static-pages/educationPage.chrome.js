@@ -4,6 +4,7 @@ const testData = JSON.parse(
     require("../../data/static-pages/education-page/testData.json")
   )
 );
+test.use({ headless: false });
 
 test("Check that the video is playing", async ({ educationPage }) => {
   //Assert
@@ -14,14 +15,16 @@ for (const { testID, pdfLink, locatorId } of testData.educationPdfLinks) {
   test(`${testID} Check navigation to corresponding page for  ${locatorId} pdf link and validate pdf`, async ({
     educationPage,
   }) => {
-    //Actions
+   //Actions
     const currentPage = await educationPage.clickPdfLinkOnThePage(locatorId);
     
-    //Assert
+   //Assert
     await educationPage.expectHaveUrl(currentPage, pdfLink);
     await educationPage.expectValidatePdfFile(currentPage, pdfLink);
   });
 }
+
+
 test("Check design of the Education page ", async ({ educationPage }) => {
   //Assert
   await educationPage.expectScreenEducationPage();

@@ -74,12 +74,12 @@ module.exports = defineConfig({
     },
     {
       name: "chromium",
+      testMatch: /.*\.chrome\.js/,
       use: {
         ...devices["Desktop Chrome"],
         channel: "chrome",
         storageState: "./data/auth/user.json",
         viewport: { width: 1360, height: 900 },
-        headless: false,
         screenshot: "only-on-failure",
       },
       dependencies: ["setup"],
@@ -91,7 +91,6 @@ module.exports = defineConfig({
         ...devices["Desktop Firefox"],
         viewport: { width: 1360, height: 900 },
         screenshot: "only-on-failure",
-        headless: false,
         video: "retain-on-failure",
       },
     },
@@ -102,7 +101,6 @@ module.exports = defineConfig({
         ...devices["Desktop Edge"],
         channel: "msedge",
         viewport: { width: 1360, height: 900 },
-        headless: false,
         screenshot: "only-on-failure",
         video: "retain-on-failure",
       },
@@ -113,7 +111,6 @@ module.exports = defineConfig({
       use: {
         ...devices["Pixel 7"],
         channel: "chrome",
-        headless: false,
         screenshot: "only-on-failure",
         video: "retain-on-failure",
       },
