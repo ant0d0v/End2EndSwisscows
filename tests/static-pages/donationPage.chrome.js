@@ -2,6 +2,7 @@ import { test, expect } from "../../utils/fixturePages";
 const testData = JSON.parse(
   JSON.stringify(require("../../data/static-pages/donation-page/testData.json"))
 );
+test.use({ headless: false });
 
 for (const { testID, pdfLink, locatorId } of testData.donationPdfLinks) {
   test(`${testID} Check navigation to corresponding page for  ${locatorId} pdf link and validate pdf`, async ({
