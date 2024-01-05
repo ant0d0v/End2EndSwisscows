@@ -1,15 +1,11 @@
 import  BasePage  from '../base/BasePage';
-import { Header} from '../components/Header';
 import { expect } from '@playwright/test';
-import  WebPage  from "../pages/search/WebPage";
-
 
 export default class HamburgerMenu extends BasePage {
   constructor(page) {
     super(page);
 
     //Locators
-
     this.dropdownRegion = this.page.getByText("Region");
     this.germanyRegionInDropdown = this.page.getByText("Germany");
     this.loginButtonInHamburgerMenu = this.page.getByRole("button", {name: "Login",});
@@ -90,7 +86,6 @@ export default class HamburgerMenu extends BasePage {
   selectGermanyRegion = async () => {
     await this.clickDropdownRegion();
     await this.clickGermanyRegionInDropdown();
-    return new WebPage();
   };
 
   //Verify

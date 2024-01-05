@@ -13,7 +13,7 @@ test.describe("test don't use cookie ", () => {
       headerStaticPages,
     }) => {
       //Actions
-      const newPage = await headerStaticPages.clickLinkInHeaderAndNavigateToNewPage(locatorId);
+      const newPage = await headerStaticPages.clickLinkInStaticHeaderAndNavigateToNewPage(locatorId);
 
       //Assert
       await headerStaticPages.expectHaveUrl(newPage, expectedLink);
@@ -25,7 +25,7 @@ test("Check charity query counter value at the Beginning", async ({
   headerStaticPages,
 }) => {
   //Assert
-  await headerStaticPages.expectCharitySearchCounterToHave("0");
+  await headerStaticPages.searchCounter.expectCharitySearchCounterToHave("0");
 });
 
 test("Check charity query counter value after refresh page ", async ({
@@ -36,7 +36,7 @@ test("Check charity query counter value after refresh page ", async ({
   await mainPage.reloadPage();
 
   //Assert
-  await headerStaticPages.expectCharitySearchCounterToHave("0");
+  await headerStaticPages.searchCounter.expectCharitySearchCounterToHave("0");
 });
 
 test("Check charity query counter value after search and go back to main bage ", async ({
@@ -44,22 +44,24 @@ test("Check charity query counter value after search and go back to main bage ",
   webPage,
 }) => {
   //Actions
-  await headerStaticPages.inputSearchCriteria(testData.searchCriteria.first);
-  await headerStaticPages.clickEnterSearchField();
-  await headerStaticPages.expectCharitySearchCounterToHave("1");
+  await headerStaticPages.autocomplete.inputSearchCriteria(
+    testData.searchCriteria.first
+  );
+  await headerStaticPages.autocomplete.clickEnterSearchField();
+  await headerStaticPages.searchCounter.expectCharitySearchCounterToHave("1");
   await webPage.goBack();
 
   //Assert
-  await headerStaticPages.expectCharitySearchCounterToHave("1");
+  await headerStaticPages.searchCounter.expectCharitySearchCounterToHave("1");
 });
 test("Check that display of heart icon message in the header static pages", async ({
   headerStaticPages,
 }) => {
   //Actions
-  await headerStaticPages.clickSearchCounter();
+  await headerStaticPages.searchCounter.clickSearchCounter();
 
   //Assert
-  await headerStaticPages.expectPopupCharitySearchCounterToHaveText(
+  await headerStaticPages.searchCounter.expectPopupCharitySearchCounterToHaveText(
     "Charity ProjectThis is the number of your Swisscows searches. On average, 50 search queries finance a children's meal. Register and receive newsletters."
   );
 });
