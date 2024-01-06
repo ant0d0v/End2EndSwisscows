@@ -77,15 +77,13 @@ test("Check design of the Contact Us page ", async ({ contactUsPage }) => {
 });
 
 test("Check design dark theme of the  Contact Us page ", async ({
-  contactUsPage,
-  headerStaticPages,
-  hamburgerMenu,
+  contactUsPage
 }) => {
   //Actions
   await contactUsPage.waitUntilPageIsFullyLoaded();
-  await headerStaticPages.clickHamburgerMenuButton();
-  await hamburgerMenu.clickThemeDropdownInHamburgerMenu();
-  await hamburgerMenu.clickDarkInHamburgerMenu();
+  await contactUsPage.headerStaticPages.clickHamburgerMenuButton();
+  await contactUsPage.headerStaticPages.hamburgerMenu.clickThemeDropdownInHamburgerMenu();
+  await contactUsPage.headerStaticPages.hamburgerMenu.clickDarkInHamburgerMenu();
 
   //Assert
   await contactUsPage.expectScreenContactUsPage();

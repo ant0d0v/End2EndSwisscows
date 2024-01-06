@@ -36,15 +36,13 @@ test("Check color of flyer button when hovering ", async ({ educationPage }) => 
 });
 
 test("Check design dark theme of the Education page ", async ({
-  educationPage,
-  headerStaticPages,
-  hamburgerMenu,
+  educationPage
 }) => {
   //Actions
   await educationPage.waitUntilPageIsFullyLoaded();
-  await headerStaticPages.clickHamburgerMenuButton();
-  await hamburgerMenu.clickThemeDropdownInHamburgerMenu();
-  await hamburgerMenu.clickDarkInHamburgerMenu();
+  await educationPage.headerStaticPages.clickHamburgerMenuButton();
+  await educationPage.headerStaticPages.hamburgerMenu.clickThemeDropdownInHamburgerMenu();
+  await educationPage.headerStaticPages.hamburgerMenu.clickDarkInHamburgerMenu();
 
   //Assert
   await educationPage.expectScreenEducationPage();

@@ -11,13 +11,15 @@ test("Check that suggest is displayed", async ({
   headerStaticPages,
 }) => {
   await mainPage.reloadPage();
-  await headerStaticPages.inputSearchCriteria(testData.searchCriteria.first);
-  await headerStaticPages.waitToBeVisibleSuggest();
+  await headerStaticPages.headerStaticPages.autocomplete.inputSearchCriteria(testData.searchCriteria.first);
+  await headerStaticPages.headerStaticPages.autocomplete.waitToBeVisibleSuggest();
 
   //Assert
-  await headerStaticPages.expectSuggestIsDisplayed();
-  await headerStaticPages.expectSuggestToHaveCount(5);
-  await headerStaticPages.expectSuggestToContains(testData.searchCriteria.first);
+  await headerStaticPages.headerStaticPages.autocomplete.expectSuggestIsDisplayed();
+  await headerStaticPages.headerStaticPages.autocomplete.expectSuggestToHaveCount(5);
+  await headerStaticPages.headerStaticPages.autocomplete.expectSuggestToContains(
+    testData.searchCriteria.first
+  );
 });
 
 test("Check that all questions were opened on the main page.", async ({
@@ -87,15 +89,13 @@ test("Check design of the main page ", async ({ mainPage }) => {
 });
 
 test("Check design dark theme of the main page ", async ({
-  mainPage,
-  headerStaticPages,
-  hamburgerMenu,
+  mainPage
 }) => {
   //Actions
 
-  await headerStaticPages.clickHamburgerMenuButton();
-  await hamburgerMenu.clickThemeDropdownInHamburgerMenu();
-  await hamburgerMenu.clickDarkInHamburgerMenu();
+  await mainPage.headerStaticPages.clickHamburgerMenuButton();
+  await mainPage.headerStaticPages.hamburgerMenu.clickThemeDropdownInHamburgerMenu();
+  await mainPage.headerStaticPages.hamburgerMenu.clickDarkInHamburgerMenu();
 
   //Assert
   await mainPage.expectScreenMainPage();

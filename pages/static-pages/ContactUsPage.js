@@ -1,4 +1,5 @@
-import  BasePage  from "../../base/BasePage";
+import BasePage from "../../base/BasePage";
+import HeaderStaticPages from "../../components/HeaderStaticPages";
 const { expect, test } = require("@playwright/test");
 const testData = JSON.parse(
   JSON.stringify(require("../../data/static-pages/contact-page/testData.json"))
@@ -7,6 +8,7 @@ const testData = JSON.parse(
 export default class ContactUsPage extends BasePage {
   constructor(page) {
     super(page);
+    this.headerStaticPages = new HeaderStaticPages(page);
 
     //Locators
     this.sendButton = this.page.getByRole("button", { name: "Send" });

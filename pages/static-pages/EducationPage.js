@@ -1,11 +1,13 @@
 import  BasePage  from "../../base/BasePage";
-import  StaticVideoPlayer from "../../components/StaticVideoPlayer";
+import StaticVideoPlayer from "../../components/StaticVideoPlayer";
+import HeaderStaticPages from "../../components/HeaderStaticPages";
 const { expect, test } = require("@playwright/test");
 
 export default class EducationPage extends BasePage {
   constructor(page) {
     super(page);
     this.staticVideoPlayer = new StaticVideoPlayer(page);
+    this.headerStaticPages = new HeaderStaticPages(page);
 
     //Locators
     this.links = (id) => this.page.getByRole("link", { name: `${id}` });
