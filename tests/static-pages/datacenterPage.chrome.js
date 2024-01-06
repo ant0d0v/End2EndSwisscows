@@ -47,15 +47,13 @@ test("Check design of the Datacenter page ", async ({ datacenterPage }) => {
 });
 
 test("Check design dark theme of the Datacenter page ", async ({
-  datacenterPage,
-  headerStaticPages,
-  hamburgerMenu,
+  datacenterPage
 }) => {
   //Actions
   await datacenterPage.waitUntilPageIsFullyLoaded();
-  await headerStaticPages.clickHamburgerMenuButton();
-  await hamburgerMenu.clickThemeDropdownInHamburgerMenu();
-  await hamburgerMenu.clickDarkInHamburgerMenu();
+  await datacenterPage.headerStaticPages.clickHamburgerMenuButton();
+  await datacenterPage.headerStaticPages.hamburgerMenu.clickThemeDropdownInHamburgerMenu();
+  await datacenterPage.headerStaticPages.hamburgerMenu.clickDarkInHamburgerMenu();
 
   //Assert
   await datacenterPage.expectScreenDatacenterPage();

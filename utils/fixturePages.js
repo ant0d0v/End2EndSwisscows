@@ -46,9 +46,6 @@ exports.test = base.test.extend({
   webPage: async ({ page }, use) => {
     await use(new WebPage(page));
   },
-  hamburgerMenu: async ({ page }, use) => {
-    await use(new HamburgerMenu(page));
-  },
   footerFull: async ({ page }, use) => {
     await use(new FooterFull(page));
   },

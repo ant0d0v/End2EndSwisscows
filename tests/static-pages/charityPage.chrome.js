@@ -98,15 +98,13 @@ test("Check design of the charity page ", async ({ charityPage }) => {
 });
 
 test("Check design dark theme of the charity page ", async ({
-  charityPage,
-  headerStaticPages,
-  hamburgerMenu,
+  charityPage
 }) => {
   //Actions
   await charityPage.waitUntilPageIsFullyLoaded();
-  await headerStaticPages.clickHamburgerMenuButton();
-  await hamburgerMenu.clickThemeDropdownInHamburgerMenu();
-  await hamburgerMenu.clickDarkInHamburgerMenu();
+  await charityPage.headerStaticPages.clickHamburgerMenuButton();
+  await charityPage.headerStaticPages.hamburgerMenu.clickThemeDropdownInHamburgerMenu();
+  await charityPage.headerStaticPages.hamburgerMenu.clickDarkInHamburgerMenu();
 
   //Assert
   await charityPage.expectScreenCharityPage();

@@ -1,10 +1,12 @@
 const { expect } = require("@playwright/test");
-import  DefaultSearchPage  from "./static-pages/DefaultSearchPage";
+import DefaultSearchPage from "./static-pages/DefaultSearchPage";
+import HeaderStaticPages from "../components/HeaderStaticPages";
 import  BasePage  from "../base/BasePage";
 
 export default class MainPage extends BasePage {
   constructor(page) {
     super(page);
+    this.headerStaticPages = new HeaderStaticPages(page);
     // Locators
     this.logoSwisscows = this.page.getByRole("img", {
       name: "Swisscows",
