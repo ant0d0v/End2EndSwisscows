@@ -7,17 +7,16 @@ const main = JSON.parse(
 );
 
 test("Check that suggest is displayed", async ({
-  mainPage,
-  headerStaticPages,
+  mainPage
 }) => {
   await mainPage.reloadPage();
-  await headerStaticPages.headerStaticPages.autocomplete.inputSearchCriteria(testData.searchCriteria.first);
-  await headerStaticPages.headerStaticPages.autocomplete.waitToBeVisibleSuggest();
+  await mainPage.headerStaticPages.autocomplete.inputSearchCriteria(testData.searchCriteria.first);
+  await mainPage.headerStaticPages.autocomplete.waitToBeVisibleSuggest();
 
   //Assert
-  await headerStaticPages.headerStaticPages.autocomplete.expectSuggestIsDisplayed();
-  await headerStaticPages.headerStaticPages.autocomplete.expectSuggestToHaveCount(5);
-  await headerStaticPages.headerStaticPages.autocomplete.expectSuggestToContains(
+  await mainPage.headerStaticPages.autocomplete.expectSuggestIsDisplayed();
+  await mainPage.headerStaticPages.autocomplete.expectSuggestToHaveCount(5);
+  await mainPage.headerStaticPages.autocomplete.expectSuggestToContains(
     testData.searchCriteria.first
   );
 });
