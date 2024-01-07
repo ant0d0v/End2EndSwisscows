@@ -44,7 +44,10 @@ module.exports = defineConfig({
 
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   //["playwright-qase-reporter", qaseConfig]
-  reporter: [["playwright-qase-reporter", qaseConfig]],
+  reporter: [
+    ["playwright-qase-reporter", qaseConfig],
+    ["./reporter/SlowStepReporter.js"],
+  ],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     baseURL: "https://dev.swisscows.com/",
@@ -78,7 +81,6 @@ module.exports = defineConfig({
       use: {
         ...devices["Desktop Chrome"],
         channel: "chrome",
-        headless: false,
         storageState: "./data/auth/user.json",
         viewport: { width: 1360, height: 900 },
         screenshot: "only-on-failure",
