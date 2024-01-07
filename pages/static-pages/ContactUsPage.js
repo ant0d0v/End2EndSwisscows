@@ -1,11 +1,11 @@
-import BasePage from "../../base/BasePage";
+import AppPage from "../../base/AppPage";
 import HeaderStaticPages from "../../components/HeaderStaticPages";
 const { expect, test } = require("@playwright/test");
 const testData = JSON.parse(
   JSON.stringify(require("../../data/static-pages/contact-page/testData.json"))
 );
 
-export default class ContactUsPage extends BasePage {
+export default class ContactUsPage extends AppPage {
   constructor(page) {
     super(page);
     this.headerStaticPages = new HeaderStaticPages(page);
@@ -24,13 +24,25 @@ export default class ContactUsPage extends BasePage {
     await this.checkElement(this.sendButton, `Agree checkbox`);
   }
   async inputYouNameField(text) {
-    await this.input(this.formFields(testData.formFields[0].yourName), text, `Your name field`);
+    await this.input(
+      this.formFields(testData.formFields[0].yourName),
+      text,
+      `Your name field`
+    );
   }
   async inputEmailField(text) {
-    await this.input(this.formFields(testData.formFields[1].email), text, `Email field`);
+    await this.input(
+      this.formFields(testData.formFields[1].email),
+      text,
+      `Email field`
+    );
   }
   async inputMessageField(text) {
-    await this.input(this.formFields(testData.formFields[2].yourMessage), text, `Message field`);
+    await this.input(
+      this.formFields(testData.formFields[2].yourMessage),
+      text,
+      `Message field`
+    );
   }
 
   //Assert

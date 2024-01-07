@@ -1,7 +1,7 @@
-import  BaseFilters  from "../../base/BaseFilters";
+import BaseComponent from "../../base/BaseComponent";
 const { expect } = require("@playwright/test");
 
-export default class ShoppingFilters extends BaseFilters {
+export default class ShoppingFilters extends BaseComponent {
   constructor(page) {
     super(page);
   }

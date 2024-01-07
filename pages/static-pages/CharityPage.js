@@ -1,8 +1,8 @@
-import  BasePage  from "../../base/BasePage";
+import AppPage from "../../base/AppPage";
 import  StaticSlider  from "../../components/StaticSlider";
 import StaticVideoPlayer from "../../components/StaticVideoPlayer";
 import HeaderStaticPages from "../../components/HeaderStaticPages";
-export default class CharityPage extends BasePage {
+export default class CharityPage extends AppPage {
   constructor(page) {
     super(page);
     this.headerStaticPages = new HeaderStaticPages(page);
@@ -16,7 +16,10 @@ export default class CharityPage extends BasePage {
   //Actions
 
   async clickLinkOnThePage(id) {
-    const newPage = await this.clickElementAndNavigateToNewPage(this.links(id), `${id}`);
+    const newPage = await this.clickElementAndNavigateToNewPage(
+      this.links(id),
+      `${id}`
+    );
     return newPage;
   }
   //Assert

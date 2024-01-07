@@ -1,9 +1,9 @@
-import BasePage from "../base/BasePage";
+import BaseComponent from "../base/BaseComponent";
 import WebPage from "../pages/search/WebPage";
 import HamburgerMenu from "../components/HamburgerMenu";
 import SearchCounter from "./users/User.SearchCounter";
 import Autocomplete from "./Autocomplete";
-export default class HeaderStaticPages extends BasePage {
+export default class HeaderStaticPages extends BaseComponent {
   constructor(page) {
     super(page);
     this.hamburgerMenu = new HamburgerMenu(page);
@@ -12,31 +12,26 @@ export default class HeaderStaticPages extends BasePage {
 
     //Locators
     this.linksInStaticHeader = (name) => this.page.locator(`a.badge-${name}`);
-    this.hamburgerMenuButton = this.page.locator(
-      "header button.hamburger-menu"
-    );
+    this.hamburgerMenuButton = this.page.locator( "header button.hamburger-menu");
     this.badgeEmail = this.page.locator("div.badges a.badge-email");
   }
 
   //Actions
 
   clickHamburgerMenuButton = async () => {
-    await this.clickElement(
-      this.hamburgerMenuButton,
+    await this.clickElement( this.hamburgerMenuButton,
       `hamburger menu in the header static pages`
     );
   };
 
   clickBadgeEmailAndNavigateToNewPage = async () => {
-    const loginPage = await this.clickElementAndNavigateToNewPage(
-      this.badgeEmail,
+    const loginPage = await this.clickElementAndNavigateToNewPage( this.badgeEmail,
       "badge Email"
     );
     return loginPage;
   };
   clickLinkInStaticHeaderAndNavigateToNewPage = async (id) => {
-    const newPage = await this.clickElementAndNavigateToNewPage(
-      this.linksInStaticHeader(id),
+    const newPage = await this.clickElementAndNavigateToNewPage( this.linksInStaticHeader(id),
       "link of header"
     );
     return newPage;

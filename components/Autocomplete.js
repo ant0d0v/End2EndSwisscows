@@ -1,6 +1,6 @@
-import BasePage from "../base/BasePage";
+import BaseComponent from "../base/BaseComponent";
 import WebPage from "../pages/search/WebPage"
-export default class Autocomplete extends BasePage {
+export default class Autocomplete extends BaseComponent {
   constructor(page) {
     super(page);
     this.suggestionItems = this.page.locator("ul.suggestions li");

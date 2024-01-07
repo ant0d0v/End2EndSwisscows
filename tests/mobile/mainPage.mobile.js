@@ -9,7 +9,6 @@ const main = JSON.parse(
 test("Check that suggest is displayed", async ({
   mainPage
 }) => {
-  await mainPage.reloadPage();
   await mainPage.headerStaticPages.autocomplete.inputSearchCriteria(testData.searchCriteria.first);
   await mainPage.headerStaticPages.autocomplete.waitToBeVisibleSuggest();
 

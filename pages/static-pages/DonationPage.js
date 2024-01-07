@@ -1,9 +1,9 @@
-import  BasePage  from "../../base/BasePage";
+import AppPage from "../../base/AppPage";
 import StaticVideoPlayer from "../../components/StaticVideoPlayer";
 import HeaderStaticPages from "../../components/HeaderStaticPages";
 const { expect, test } = require("@playwright/test");
 
-export default class DonationPage extends BasePage {
+export default class DonationPage extends AppPage {
   constructor(page) {
     super(page);
     this.staticVideoPlayer = new StaticVideoPlayer(page);

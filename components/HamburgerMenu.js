@@ -1,7 +1,7 @@
-import  BasePage  from '../base/BasePage';
+import BaseComponent from "../base/BaseComponent";
 import { expect } from '@playwright/test';
 
-export default class HamburgerMenu extends BasePage {
+export default class HamburgerMenu extends BaseComponent {
   constructor(page) {
     super(page);
 

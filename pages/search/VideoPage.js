@@ -1,10 +1,10 @@
-import  BasePage  from "../../base/BasePage.js";
+import AppPage from "../../base/AppPage.js";
 import VideoFilters from "../../components/video/Video.Filters.js";
 import VideoDetails from "../../components/video/Video.Details.js";
 import VideoPlayer from "../../components/video/Video.Player.js";
 const { expect, context } = require("@playwright/test");
 
-export default class VideoPage extends BasePage {
+export default class VideoPage extends AppPage {
   constructor(page) {
     super(page);
     this.videoFilters = new VideoFilters(page);

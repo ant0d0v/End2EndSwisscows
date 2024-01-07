@@ -6,9 +6,9 @@ import VideoWidget from "../../components/video/Video.Widget.js";
 import ImagesWidget from "../../components/images/Images.Widget.js";
 import NewsWidget from "../../components/news/News.Widget.js";
 import AdsText from "../../components/ads/Ads.Text.js";
-import BasePage from "../../base/BasePage.js";
+import AppPage from "../../base/AppPage.js";
 
-export default class WebPage extends BasePage {
+export default class WebPage extends AppPage {
   constructor(page) {
     super(page);
     this.pagination = new Pagination(page);

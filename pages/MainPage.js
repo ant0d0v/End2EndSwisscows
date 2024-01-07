@@ -1,9 +1,9 @@
 const { expect } = require("@playwright/test");
 import DefaultSearchPage from "./static-pages/DefaultSearchPage";
 import HeaderStaticPages from "../components/HeaderStaticPages";
-import  BasePage  from "../base/BasePage";
+import AppPage from "../base/AppPage";
 
-export default class MainPage extends BasePage {
+export default class MainPage extends AppPage {
   constructor(page) {
     super(page);
     this.headerStaticPages = new HeaderStaticPages(page);
@@ -56,7 +56,7 @@ export default class MainPage extends BasePage {
     );
     return newPage;
   }
- 
+
   clickInstallSwisscowsBlockAndNavigateToWebStore = async () => {
     const newPage = await this.clickElementAndNavigateToNewPage(
       this.installSwisscowsBlock,

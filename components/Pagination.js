@@ -1,6 +1,6 @@
-import BasePage from "../base/BasePage";
+import BaseComponent from "../base/BaseComponent";
 
-export default class Pagination extends BasePage {
+export default class Pagination extends BaseComponent {
   constructor(page) {
     super(page);
   }
