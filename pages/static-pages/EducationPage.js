@@ -28,7 +28,7 @@ export default class EducationPage extends BasePage {
   };
 
   async expectValidatePdfFile(currentPage, pdf) {
-    await test.step(`Validate pdf when clicking  ${currentPage}`, async () => {
+    await test.step(`Validate pdf when clicking  media education pdf file`, async () => {
       let iframe = `<iframe src="${pdf}#zoom=105%" style="width: 100%;height:100%;border: none;"></iframe>`;
       await currentPage.setContent(iframe);
       await currentPage.waitForTimeout(5000);
