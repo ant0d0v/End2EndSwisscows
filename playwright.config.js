@@ -46,7 +46,7 @@ module.exports = defineConfig({
   //["playwright-qase-reporter", qaseConfig]
   reporter: [
     ["playwright-qase-reporter", qaseConfig],
-    ["./reporter/slowStepReporter.js"],
+    ["./reporter/SlowStepReporter.js"],
   ],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
