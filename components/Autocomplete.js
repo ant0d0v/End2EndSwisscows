@@ -1,13 +1,11 @@
 import BaseComponent from "../base/BaseComponent";
-import WebPage from "../pages/search/WebPage"
+import WebPage from "../pages/search/Web.Page";
 export default class Autocomplete extends BaseComponent {
   constructor(page) {
     super(page);
     this.suggestionItems = this.page.locator("ul.suggestions li");
     this.suggest = this.page.locator("ul.suggestions");
-    this.placeholderMainPage = this.page.getByPlaceholder(
-      "Your search. Your business."
-    );
+    this.placeholderMainPage = this.page.getByPlaceholder( "Your search. Your business.");
   }
   //Actions
   waitToBeVisibleSuggest = async () => {

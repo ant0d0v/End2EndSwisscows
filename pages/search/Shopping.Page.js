@@ -3,9 +3,9 @@ const { expect, context } = require("@playwright/test");
 import ShoppingFilters from "../../components/shopping/Shopping.Filters.js";
 import ShoppingOffer from "../../components/shopping/Shopping.Offer.js";
 import ShoppingDetails from "../../components/shopping/Shopping.Details.js";
-import AppPage from "../../base/AppPage.js";
+import BasePage from "../../base/BasePage.js";
 
-export default class ShoppingPage extends AppPage {
+export default class ShoppingPage extends BasePage {
   constructor(page) {
     super(page);
     this.pagination = new Pagination(page);

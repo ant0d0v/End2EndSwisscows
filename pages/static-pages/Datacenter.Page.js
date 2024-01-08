@@ -1,13 +1,14 @@
-import AppPage from "../../base/AppPage";
-import  StaticSlider  from "../../components/StaticSlider";
+import BasePage from "../../base/BasePage";
+import StaticSlider  from "../../components/StaticSlider";
 import StaticVideoPlayer from "../../components/StaticVideoPlayer";
 import HeaderStaticPages from "../../components/HeaderStaticPages";
-export default class CharityPage extends AppPage {
+
+export default class DatacenterPage extends BasePage {
   constructor(page) {
     super(page);
-    this.headerStaticPages = new HeaderStaticPages(page);
     this.staticSlider = new StaticSlider(page);
     this.staticVideoPlayer = new StaticVideoPlayer(page);
+    this.headerStaticPages = new HeaderStaticPages(page);
 
     //Locators
     this.links = (id) =>
@@ -24,7 +25,7 @@ export default class CharityPage extends AppPage {
   }
   //Assert
 
-  expectScreenCharityPage = async () => {
+  expectScreenDatacenterPage = async () => {
     await this.expectScreenOfPage(this.staticVideoPlayer.videoPlayer);
   };
 }

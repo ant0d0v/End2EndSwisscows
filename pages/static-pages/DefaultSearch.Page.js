@@ -1,6 +1,6 @@
-import AppPage from "../../base/AppPage";
+import BasePage from "../../base/BasePage";
 const { expect, context } = require("@playwright/test");
-export default class DefaultSearchPage extends AppPage {
+export default class DefaultSearchPage extends BasePage {
   constructor(page) {
     super(page);
   }

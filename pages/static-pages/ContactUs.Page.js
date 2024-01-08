@@ -1,11 +1,11 @@
-import AppPage from "../../base/AppPage";
+import BasePage from "../../base/BasePage";
 import HeaderStaticPages from "../../components/HeaderStaticPages";
 const { expect, test } = require("@playwright/test");
 const testData = JSON.parse(
   JSON.stringify(require("../../data/static-pages/contact-page/testData.json"))
 );
 
-export default class ContactUsPage extends AppPage {
+export default class ContactUsPage extends BasePage {
   constructor(page) {
     super(page);
     this.headerStaticPages = new HeaderStaticPages(page);
