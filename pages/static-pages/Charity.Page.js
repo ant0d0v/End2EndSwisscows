@@ -1,4 +1,4 @@
-import  BasePage  from "../../base/BasePage";
+import BasePage from "../../base/BasePage";
 import  StaticSlider  from "../../components/StaticSlider";
 import StaticVideoPlayer from "../../components/StaticVideoPlayer";
 import HeaderStaticPages from "../../components/HeaderStaticPages";
@@ -16,7 +16,10 @@ export default class CharityPage extends BasePage {
   //Actions
 
   async clickLinkOnThePage(id) {
-    const newPage = await this.clickElementAndNavigateToNewPage(this.links(id), `${id}`);
+    const newPage = await this.clickElementAndNavigateToNewPage(
+      this.links(id),
+      `${id}`
+    );
     return newPage;
   }
   //Assert

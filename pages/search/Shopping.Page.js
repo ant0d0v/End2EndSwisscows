@@ -3,7 +3,7 @@ const { expect, context } = require("@playwright/test");
 import ShoppingFilters from "../../components/shopping/Shopping.Filters.js";
 import ShoppingOffer from "../../components/shopping/Shopping.Offer.js";
 import ShoppingDetails from "../../components/shopping/Shopping.Details.js";
-import  BasePage from "../../base/BasePage.js";
+import BasePage from "../../base/BasePage.js";
 
 export default class ShoppingPage extends BasePage {
   constructor(page) {

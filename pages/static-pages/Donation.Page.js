@@ -1,4 +1,4 @@
-import  BasePage  from "../../base/BasePage";
+import BasePage from "../../base/BasePage";
 import StaticVideoPlayer from "../../components/StaticVideoPlayer";
 import HeaderStaticPages from "../../components/HeaderStaticPages";
 const { expect, test } = require("@playwright/test");

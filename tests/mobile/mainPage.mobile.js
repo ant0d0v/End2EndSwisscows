@@ -49,8 +49,7 @@ test("Check that the link in the fourth question leads to the expected URL.", as
   const expectedH1text = "How to use Swisscows as default search";
 
   await mainPage.clickFourQuestion();
-  const DefaultSearchPage =
-    await mainPage.clickLinkInTheFourQuestionAndNavigateToDefaultSearchPage();
+  const DefaultSearchPage = await mainPage.clickLinkInTheFourQuestionAndNavigateToDefaultSearchPage();
   
   //Assert
   await defaultSearchPage.expectHaveUrl( DefaultSearchPage, main.url.defaultSearchPage);

@@ -1,4 +1,4 @@
-import  BasePage  from "../../base/BasePage.js";
+import BasePage from "../../base/BasePage.js";
 import VideoFilters from "../../components/video/Video.Filters.js";
 import VideoDetails from "../../components/video/Video.Details.js";
 import VideoPlayer from "../../components/video/Video.Player.js";

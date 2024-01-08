@@ -1,4 +1,4 @@
-import  BasePage  from "../../base/BasePage";
+import BasePage from "../../base/BasePage";
 export default class EmailPage extends BasePage {
   constructor(page) {
     super(page);

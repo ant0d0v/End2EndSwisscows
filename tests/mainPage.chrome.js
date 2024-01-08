@@ -64,15 +64,17 @@ test("Check that popup google install Is Dysplaed", async ({ mainPage }) => {
     "Stay with us and set Swisscows as your default search engine. ";
 
   //Assert
-  await mainPage.expectPopupInstallSwisscowsLinkIsDisplayed();
-  await mainPage.expectTextOfPopupInstallSwisscowsLink(expectedText);
+  await mainPage.installSwisscowsLink.expectPopupInstallSwisscowsLinkIsDisplayed();
+  await mainPage.installSwisscowsLink.expectTextOfPopupInstallSwisscowsLink(
+    expectedText
+  );
 });
 
 test('Check that popup "google install" redirect to the corresponding page', async ({
   mainPage
 }) => {
   const externalPage =
-    await mainPage.clickPopupInstallSwisscowsBlockAndNavigateToWebStore();
+    await mainPage.installSwisscowsLink.clickPopupInstallSwisscowsLinkAndNavigateToWebStore();
 
   //Assert
   await mainPage.expectHaveUrl(externalPage, new RegExp(main.url.extensionGoogleInstall));
@@ -83,7 +85,7 @@ test('Check that the "Install Google Block" button redirect to coresponding URL.
   mainPage,
 }) => {
   const externalPage =
-    await mainPage.clickInstallSwisscowsBlockAndNavigateToWebStore();
+    await mainPage.installSwisscowsBlock.clickInstallSwisscowsBlockAndNavigateToWebStore();
 
   //Assert
   await mainPage.expectHaveUrl(externalPage, new RegExp(main.url.extensionGoogleInstall));
@@ -115,7 +117,7 @@ test("Check that buttons have hover over the services block on main page", async
 });
 
 test("Check design of the main page ", async ({ mainPage }) => {
-  await mainPage.clickCloseButtonOfPopupInstallSwisscowsLink();
+  await mainPage.installSwisscowsLink.clickCloseButtonOfPopupInstallSwisscowsLink();
 
   //Assert
   await mainPage.expectScreenMainPage();

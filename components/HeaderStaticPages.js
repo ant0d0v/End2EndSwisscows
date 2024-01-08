@@ -1,9 +1,9 @@
-import BasePage from "../base/BasePage";
-import WebPage from "../pages/search/WebPage";
+import BaseComponent from "../base/BaseComponent";
+import WebPage from "../pages/search/Web.Page";
 import HamburgerMenu from "../components/HamburgerMenu";
 import SearchCounter from "./users/User.SearchCounter";
 import Autocomplete from "./Autocomplete";
-export default class HeaderStaticPages extends BasePage {
+export default class HeaderStaticPages extends BaseComponent {
   constructor(page) {
     super(page);
     this.hamburgerMenu = new HamburgerMenu(page);

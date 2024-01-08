@@ -1,7 +1,7 @@
-import BasePage from "../../base/BasePage";
+import BaseComponent from "../../base/BaseComponent";
 const { expect } = require("@playwright/test");
 
-export default class Track extends BasePage {
+export default class Track extends BaseComponent {
   constructor(page) {
     super(page);
   }

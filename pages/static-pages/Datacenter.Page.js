@@ -1,4 +1,4 @@
-import  BasePage  from "../../base/BasePage";
+import BasePage from "../../base/BasePage";
 import StaticSlider  from "../../components/StaticSlider";
 import StaticVideoPlayer from "../../components/StaticVideoPlayer";
 import HeaderStaticPages from "../../components/HeaderStaticPages";
@@ -11,12 +11,16 @@ export default class DatacenterPage extends BasePage {
     this.headerStaticPages = new HeaderStaticPages(page);
 
     //Locators
-    this.links = (id) => this.page.getByRole("main").getByRole("link", { name: `${id}` });
+    this.links = (id) =>
+      this.page.getByRole("main").getByRole("link", { name: `${id}` });
   }
   //Actions
 
   async clickLinkOnThePage(id) {
-    const newPage = await this.clickElementAndNavigateToNewPage(this.links(id), `${id}`);
+    const newPage = await this.clickElementAndNavigateToNewPage(
+      this.links(id),
+      `${id}`
+    );
     return newPage;
   }
   //Assert

@@ -1,21 +1,21 @@
-import MainPage from "../pages/MainPage";
-import { WebPage } from "../pages/search/WebPage";
-import ImagePage from "../pages/search/ImagePage";
-import MusicPage from "../pages/search/MusicPage";
-import NewsPage from "../pages/search/NewsPage";
-import VideoPage from "../pages/search/VideoPage";
-import ShoppingPage from "../pages/search/ShoppingPage";
+import MainPage from "../pages/Main.Page";
+import { WebPage } from "../pages/search/Web.Page";
+import ImagePage from "../pages/search/Image.Page";
+import MusicPage from "../pages/search/Music.Page";
+import NewsPage from "../pages/search/News.Page";
+import VideoPage from "../pages/search/Video.Page";
+import ShoppingPage from "../pages/search/Shopping.Page";
 import HamburgerMenu from "../components/HamburgerMenu";
 import SearchCounter from "./users/User.SearchCounter";
 import Autocomplete from "./Autocomplete";
-import BasePage from "../base/BasePage";
+import BaseComponent from "../base/BaseComponent";
 
-export default class Header extends BasePage {
+export default class Header extends BaseComponent {
   constructor(page) {
     super(page);
     this.hamburgerMenu = new HamburgerMenu(page);
     this.searchCounter = new SearchCounter(page);
-    this.autocomplete= new Autocomplete(page);
+    this.autocomplete = new Autocomplete(page);
 
     //Locators
     this.linksOfHeader = (name) => this.page.locator(`a.badge-${name}`);
