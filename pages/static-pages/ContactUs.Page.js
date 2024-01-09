@@ -12,6 +12,7 @@ export default class ContactUsPage extends BasePage {
 
     //Locators
     this.sendButton = this.page.getByRole("button", { name: "Send" });
+    this.allContent = this.page.locator("main.contact");
     this.formFields = (id) => this.page.getByPlaceholder(`${id}`);
     this.privacyLink = this.page.getByRole("link", { name: "privacy policy" });
     this.agreeCheckbox = this.page.getByLabel("I agree that my data will be");

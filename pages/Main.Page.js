@@ -13,6 +13,7 @@ export default class MainPage extends BasePage {
     // Locators
     this.logoSwisscows = this.page.getByRole("img", { name: "Swisscows", exact: true, });
     this.blockQuestionsAndAnswers = this.page.getByText( "Questions and AnswersWhat");
+    this.allContent = this.page.locator("main.home");
     this.allQuestions = this.page.locator("h3.question");
     this.allAttributeOfQuestions = this.page.locator("div.faq-wrap div");
     this.fourQuestion = this.page.getByRole("heading", { name: "How can I switch from another",});
