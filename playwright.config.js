@@ -62,7 +62,6 @@ module.exports = defineConfig({
   },
   expect: {
     toHaveScreenshot: {  maxDiffPixelRatio: 0.3 },
-    compare: { tolerance: 0.1 },
     timeout: 15 * 1000,
   },
 
