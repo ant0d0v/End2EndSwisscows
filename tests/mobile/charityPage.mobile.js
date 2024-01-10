@@ -59,22 +59,15 @@ for (const { testID, expectedLink, locatorId, expectedTitle, } of testData.chari
     await charityPage.expectHaveTitle(currentPage, expectedTitle);
   });
 }
-test("Check design of the charity page ", async ({ charityPage,page },testInfo) => {
-  await page.evaluate(() => {
-    window.scrollTo(0, 0);
-  });
-  await page.waitForFunction(() => window.scrollY === 0);
+test("Check design of the charity page ", async ({ charityPage },testInfo) => {
   //Assert
   await charityPage.expectScreenCharityPage(testInfo);
 });
 
 test("Check design dark theme of the charity page ", async ({
-  charityPage,page
+  charityPage
 },testInfo) => {
-  await page.evaluate(() => {
-    window.scrollTo(0, 0);
-  });
-  await page.waitForFunction(() => window.scrollY === 0);
+  
   //Actions
   await charityPage.waitUntilPageIsFullyLoaded();
   await charityPage.headerStaticPages.clickHamburgerMenuButton();
