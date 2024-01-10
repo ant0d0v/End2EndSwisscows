@@ -28,15 +28,7 @@ jobs:
         run: |
           docker run --rm --network host -v $(pwd):/work/ -w /work/ -it mcr.microsoft.com/playwright:v1.40.0-jammy /bin/bash 
           npm install
-          export QASE_REPORT=1
-          export QASE_RUN_NAME=UI
           xvfb-run npx playwright test --project chromium firefox edge mobile --update-snapshots
-
-      - name: Run API tests
-        run: |
-          export QASE_REPORT=2
-          export QASE_RUN_NAME=API
-          npx playwright test api
         env:
           HOME: /root
 
