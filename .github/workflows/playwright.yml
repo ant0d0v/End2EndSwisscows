@@ -33,5 +33,3 @@ jobs:
           export QASE_REPORT=2
           export QASE_RUN_NAME=API
           npx playwright test api
-        env:
-          HOME: /root
