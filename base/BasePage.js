@@ -246,7 +246,6 @@ export default class BasePage {
         testInfo.snapshotSuffix = '';
         await this.waitUntilPageIsFullyLoaded();
         await expect(this.page).toHaveScreenshot(`${testInfo.title}.png`,{
-          _comparator: 'ssim-cie94',
           fullPage: true,
           mask: [await element, await this.appLinksInFooter(this.page)],
         });
