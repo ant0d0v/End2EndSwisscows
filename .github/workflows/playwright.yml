@@ -26,11 +26,11 @@ jobs:
 
       - name: Run UI tests
         run: |
-          docker run --rm --network host -v $(pwd):/work/ -w /work/ -it mcr.microsoft.com/playwright:v1.40.0-jammy /bin/bash 
-          npm install
-          xvfb-run npx playwright test --project chromium firefox edge mobile --update-snapshots
-        env:
-          HOME: /root
+          export QASE_REPORT=1
+          export QASE_RUN_NAME=UI
+          sudo docker run --rm --network host -v $(pwd):/work/ -w /work/ -it mcr.microsoft.com/playwright:v1.40.0-jammy /bin/bash npm install
+          xvfb-run sudo npx playwright test --project chromium firefox edge mobile --update-snapshots
+        shell: bash
 
 
 
