@@ -5,36 +5,36 @@ on:
     branches: [main, master]
 
 jobs:
-  playwright:
-    name: 'Playwright Tests'
+  test:
+    timeout-minutes: 60
     runs-on: ubuntu-latest
-    container:
-      image: mcr.microsoft.com/playwright:v1.40.0-jammy
+
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
+    - name: Checkout code
+      uses: actions/checkout@v3
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: 18
 
-      - name: Install dependencies
-        run: npm ci
+    - name: Install dependencies
+      run: npm ci
 
-      - name: Install Microsoft Edge browser
-        run: npx playwright install msedge
+    - name: Install Playwright Browsers
+      run: npx playwright install --with-deps
 
-      - name: Run tests
-        run: |
-          export QASE_REPORT=1
-          export QASE_RUN_NAME=UI
-          xvfb-run npx playwright test --project chromium firefox edge mobile &&
-          export QASE_REPORT=2
-          export QASE_RUN_NAME=API
-          npx playwright test api
-        env:
-          HOME: /root
-            
-      - name: Add user to Docker group
-        run: sudo usermod -aG docker $USER    
+    - name: Install Xvfb
+      run: sudo apt-get install xvfb
+  
+    - name: Run tests
+      run: |
+        export QASE_REPORT=1
+        export QASE_RUN_NAME=UI
+        xvfb-run npx playwright test --project chromium firefox edge mobile &&
+        export QASE_REPORT=2
+        export QASE_RUN_NAME=API
+        npx playwright test api 
+
+
+
