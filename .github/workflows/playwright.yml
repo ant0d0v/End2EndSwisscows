@@ -31,7 +31,7 @@ jobs:
       run: |
         export QASE_REPORT=1
         export QASE_RUN_NAME=UI
-        xvfb-run npx playwright test --project chromium firefox edge mobile --update-snapshots &&
+        xvfb-run npx playwright test --project chromium firefox edge mobile &&
         export QASE_REPORT=2
         export QASE_RUN_NAME=API
         npx playwright test api 
