@@ -25,10 +25,9 @@ jobs:
         run: npm ci
 
       - name: Run UI tests
-        run: docker run -v $PWD:/e2e -w /e2e --rm -it mcr.microsoft.com/playwright:v1.40.0-focal /bin/bash
-          npm install
-          xvfb-run npx playwright test --project chromium firefox edge mobile --update-snapshots
-        shell: bash
+        run: |
+          docker run -it --rm --ipc=host mcr.microsoft.com/playwright:v1.40.0-jammy /bin/bash -c "xvfb-run npx playwright test --project chromium firefox edge mobile --update-snapshots"
+
       
       
 
