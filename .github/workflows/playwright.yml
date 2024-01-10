@@ -25,10 +25,7 @@ jobs:
         run: npm ci
 
       - name: Run UI tests
-        run: |
-          export QASE_REPORT=1
-          export QASE_RUN_NAME=UI
-          docker run -v $PWD:/e2e -w /e2e --rm -it mcr.microsoft.com/playwright:v1.40.0-focal /bin/bash
+        run: docker run -v $PWD:/e2e -w /e2e --rm -it mcr.microsoft.com/playwright:v1.40.0-focal /bin/bash
           npm install
           xvfb-run npx playwright test --project chromium firefox edge mobile --update-snapshots
         shell: bash
