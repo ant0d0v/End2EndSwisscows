@@ -29,7 +29,7 @@ jobs:
           export QASE_REPORT=1
           export QASE_RUN_NAME=UI
           docker run --rm --network host -v $(pwd):/work/ -w /work/ -it mcr.microsoft.com/playwright:v1.40.0-jammy /bin/bash npm install
-          xvfb-run npx playwright test --project chromium firefox edge mobile
+          xvfb-run npx playwright test --project chromium firefox edge mobile --update-snapshots
 
       - name: Run API tests
         run: |
