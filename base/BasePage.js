@@ -247,7 +247,6 @@ export default class BasePage {
         await this.waitUntilPageIsFullyLoaded();
         await expect(this.page).toHaveScreenshot(`${testInfo.title}.png`,{
           fullPage: true,
-          _comparator: 'ssim-cie94',
           mask: [await element, await this.appLinksInFooter(this.page)],
         });
       })
@@ -259,7 +258,6 @@ export default class BasePage {
         await this.waitUntilPageIsFullyLoaded();
         await expect(this.page).toHaveScreenshot(`${testInfo.title}.png`,{
           fullPage: true,
-          _comparator: 'ssim-cie94',
           mask: [
             await this.appLinksInFooter(this.page)
           ],
