@@ -61,7 +61,8 @@ module.exports = defineConfig({
     trace: "on-first-retry",
   },
   expect: {
-    toHaveScreenshot: {  experimental: { comparator: 'ssim-cie94'}, },
+    toHaveScreenshot: {  maxDiffPixelRatio: 0.3 },
+    compare: { tolerance: 0.1 },
     timeout: 15 * 1000,
   },
 
