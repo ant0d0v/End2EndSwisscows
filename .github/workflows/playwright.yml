@@ -22,6 +22,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Install Microsoft Edge browser
+        run: npx playwright install msedge
+
       - name: Run tests
         run: |
           export QASE_REPORT=1
@@ -31,8 +34,4 @@ jobs:
           export QASE_RUN_NAME=API
           npx playwright test api
         env:
-          HOME: /root  
-
-
-
-
+          HOME: /root
