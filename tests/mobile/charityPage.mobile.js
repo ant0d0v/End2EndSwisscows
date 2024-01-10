@@ -4,7 +4,7 @@ const testData = JSON.parse(
 );
 
 test("Check that border is red and 2px when clicking on the Charity Haiti slider images", async ({
-  charityPage,
+  charityPage
 }) => {
   //Assert
   await charityPage.staticSlider.expectBorderWhenClickingOnSmallImages(
@@ -59,14 +59,22 @@ for (const { testID, expectedLink, locatorId, expectedTitle, } of testData.chari
     await charityPage.expectHaveTitle(currentPage, expectedTitle);
   });
 }
-test("Check design of the charity page ", async ({ charityPage },testInfo) => {
+test("Check design of the charity page ", async ({ charityPage,page },testInfo) => {
+  await page.evaluate(() => {
+    window.scrollTo(0, 0);
+  });
+  await page.waitForFunction(() => window.scrollY === 0);
   //Assert
   await charityPage.expectScreenCharityPage(testInfo);
 });
 
 test("Check design dark theme of the charity page ", async ({
-  charityPage
+  charityPage,page
 },testInfo) => {
+  await page.evaluate(() => {
+    window.scrollTo(0, 0);
+  });
+  await page.waitForFunction(() => window.scrollY === 0);
   //Actions
   await charityPage.waitUntilPageIsFullyLoaded();
   await charityPage.headerStaticPages.clickHamburgerMenuButton();

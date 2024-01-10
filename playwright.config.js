@@ -61,7 +61,7 @@ module.exports = defineConfig({
     trace: "on-first-retry",
   },
   expect: {
-    toHaveScreenshot: {  threshold: 0.7 },
+    toHaveScreenshot: {  maxDiffPixelRatio: 0.3 },
     timeout: 15 * 1000,
   },
 
@@ -82,14 +82,6 @@ module.exports = defineConfig({
       use: {
         ...devices["Desktop Chrome"],
         channel: "chrome",
-        launchOptions: {
-          args: [
-            "--font-render-hinting=none",
-            "--disable-skia-runtime-opts",
-            "--disable-font-subpixel-positioning",
-            "--disable-lcd-text",
-          ],
-        },
         storageState: "./data/auth/user.json",
         viewport: { width: 1360, height: 900 },
         screenshot: "only-on-failure",
