@@ -52,6 +52,7 @@ module.exports = defineConfig({
   use: {
     baseURL: "https://dev.swisscows.com/",
     actionTimeout: 25 * 1000,
+    updateSnapshots: 'none',
     locale: "en-GB",
     colorScheme: "light",
     screenshot: "only-on-failure",
@@ -60,7 +61,7 @@ module.exports = defineConfig({
     trace: "on-first-retry",
   },
   expect: {
-    toHaveScreenshot: { maxDiffPixelRatio: 0.3 },
+    toHaveScreenshot: { maxDiffPixels: 100 },
     timeout: 15 * 1000,
   },
 

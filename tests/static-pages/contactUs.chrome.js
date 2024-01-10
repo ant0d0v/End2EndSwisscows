@@ -71,14 +71,14 @@ test("Check navigation to corresponding pages for  privacy link on the page", as
   await contactUsPage.expectHaveTitle(currentPage, "Privacy Policy | Swisscows");
 });
 
-test("Check design of the Contact Us page ", async ({ contactUsPage }) => {
+test("Check design of the Contact Us page ", async ({ contactUsPage },testInfo) => {
   //Assert
-  await contactUsPage.expectScreenContactUsPage();
+  await contactUsPage.expectScreenContactUsPage(testInfo);
 });
 
 test("Check design dark theme of the  Contact Us page ", async ({
   contactUsPage
-}) => {
+},testInfo) => {
   //Actions
   await contactUsPage.waitUntilPageIsFullyLoaded();
   await contactUsPage.headerStaticPages.clickHamburgerMenuButton();
@@ -86,5 +86,5 @@ test("Check design dark theme of the  Contact Us page ", async ({
   await contactUsPage.headerStaticPages.hamburgerMenu.clickDarkInHamburgerMenu();
 
   //Assert
-  await contactUsPage.expectScreenContactUsPage();
+  await contactUsPage.expectScreenContactUsPage(testInfo);
 });

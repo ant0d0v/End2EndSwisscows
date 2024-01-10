@@ -25,7 +25,7 @@ export default class DatacenterPage extends BasePage {
   }
   //Assert
 
-  expectScreenDatacenterPage = async () => {
-    await this.expectScreenOfPage(this.staticVideoPlayer.videoPlayer);
+  expectScreenDatacenterPage = async (testInfo) => {
+    await this.expectScreenOfPage(this.staticVideoPlayer.videoPlayer, testInfo);
   };
 }
