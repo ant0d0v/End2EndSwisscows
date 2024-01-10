@@ -245,7 +245,7 @@ export default class BasePage {
     await test.step(`Expect screen to be equal to the snapshot of page`, async () => {  
         testInfo.snapshotSuffix = '';
         await this.waitUntilPageIsFullyLoaded();
-        await expect(this.page).toHaveScreenshot(`${testInfo.title}.png`,{
+        await expect.soft(this.page).toHaveScreenshot(`${testInfo.title}.png`,{
           fullPage: true,
           mask: [await element, await this.appLinksInFooter(this.page)],
         });
@@ -256,7 +256,7 @@ export default class BasePage {
     await test.step('Expect screen to be equal to the snapshot of page', async () => {
         testInfo.snapshotSuffix = '';
         await this.waitUntilPageIsFullyLoaded();
-        await expect(this.page).toHaveScreenshot(`${testInfo.title}.png`,{
+        await expect.soft(this.page).toHaveScreenshot(`${testInfo.title}.png`,{
           fullPage: true,
           mask: [
             await this.appLinksInFooter(this.page)
