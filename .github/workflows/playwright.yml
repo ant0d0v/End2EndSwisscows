@@ -33,3 +33,8 @@ jobs:
           export QASE_REPORT=2
           export QASE_RUN_NAME=API
           npx playwright test api
+        env:
+          HOME: /root
+            
+      - name: Add user to Docker group
+        run: sudo usermod -aG docker $USER    
