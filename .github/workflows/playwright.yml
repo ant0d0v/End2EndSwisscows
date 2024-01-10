@@ -1,40 +1,43 @@
 name: Playwright Tests
 
 on:
+  push:
+    branches: [main, master]
   pull_request:
     branches: [main, master]
 
 jobs:
-  test:
-    timeout-minutes: 60
+  playwright:
+    name: 'Playwright Tests'
     runs-on: ubuntu-latest
-
+    container:
+      image: mcr.microsoft.com/playwright:v1.40.0-jammy
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v3
 
-    - name: Set up Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: 18
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
 
-    - name: Install dependencies
-      run: npm ci
+      - name: Install dependencies
+        run: npm ci
 
-    - name: Install Playwright Browsers
-      run: npx playwright install --with-deps
+      - name: Run UI tests
+        run: |
+          export QASE_REPORT=1
+          export QASE_RUN_NAME=UI
+          docker run --rm --network host -v $(pwd):/work/ -w /work/ -it mcr.microsoft.com/playwright:v1.40.0-jammy /bin/bash npm install
+          xvfb-run npx playwright test --project chromium firefox edge mobile
 
-    - name: Install Xvfb
-      run: sudo apt-get install xvfb
-  
-    - name: Run tests
-      run: |
-        export QASE_REPORT=1
-        export QASE_RUN_NAME=UI
-        xvfb-run npx playwright test --project chromium firefox edge mobile &&
-        export QASE_REPORT=2
-        export QASE_RUN_NAME=API
-        npx playwright test api 
+      - name: Run API tests
+        run: |
+          export QASE_REPORT=2
+          export QASE_RUN_NAME=API
+          npx playwright test api
+        env:
+          HOME: /root
 
 
 
