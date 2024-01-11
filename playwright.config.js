@@ -114,7 +114,7 @@ module.exports = defineConfig({
       testMatch: /.*\.mobile\.js/,
       use: {
         ...devices["Pixel 7"],
-        channel: "chrome-beta",
+        channel: "chrome",
         screenshot: "only-on-failure",
         video: "retain-on-failure",
       },
