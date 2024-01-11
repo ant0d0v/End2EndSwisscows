@@ -7,13 +7,13 @@ test.use({ headless: false });
 for (const { testID, pdfLink, locatorId } of testData.donationPdfLinks) {
   test(`${testID} Check navigation to corresponding page for  ${locatorId} pdf link and validate pdf`, async ({
    donationPage,
-  }) => {
+  },testInfo) => {
     //Actions
     const currentPage = await donationPage.clickPdfLinkOnThePage(locatorId);
     
     //Assert
     await donationPage.expectHaveUrl(currentPage, pdfLink);
-    await donationPage.expectValidatePdfFile(currentPage, pdfLink);
+    await donationPage.expectValidatePdfFile(currentPage, pdfLink,testInfo);
   });
 }
 for (const { testID, expectedLink, locatorId, expectedTitle, } of testData.donationLinks) {
@@ -29,14 +29,14 @@ for (const { testID, expectedLink, locatorId, expectedTitle, } of testData.donat
   });
 }
 
-test("Check design of the Donation page ", async ({ donationPage }) => {
+test("Check design of the Donation page ", async ({ donationPage },testInfo) => {
   //Assert
-  await donationPage.expectScreenDonationPage();
+  await donationPage.expectScreenDonationPage(testInfo);
 });
 
 test("Check design dark theme of the  Donation page ", async ({
   donationPage
-}) => {
+},testInfo) => {
   //Actions
   await donationPage.waitUntilPageIsFullyLoaded();
   await donationPage.headerStaticPages.clickHamburgerMenuButton();
@@ -44,5 +44,5 @@ test("Check design dark theme of the  Donation page ", async ({
   await donationPage.headerStaticPages.hamburgerMenu.clickDarkInHamburgerMenu();
 
   //Assert
-  await donationPage.expectScreenDonationPage();
+  await donationPage.expectScreenDonationPage(testInfo);
 });

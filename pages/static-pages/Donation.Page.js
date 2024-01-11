@@ -34,20 +34,21 @@ export default class DonationPage extends BasePage {
 
   //Assert
 
-  expectScreenDonationPage = async () => {
-    await this.expectScreenOfPage(this.staticVideoPlayer.videoPlayer);
+  expectScreenDonationPage = async (testInfo) => {
+    await this.expectScreenOfPage(this.staticVideoPlayer.videoPlayer, testInfo);
   };
 
-  async expectValidatePdfFile(currentPage, pdf) {
+  async expectValidatePdfFile(currentPage, pdf, testInfo) {
     await test
       .step(`Validate pdf when clicking  Download payment slip`, async () => {
+        testInfo.snapshotSuffix = '';
         let iframe = `<iframe src="${pdf}#zoom=105%" style="width: 100%;height:100%;border: none;"></iframe>`;
         await currentPage.setContent(iframe);
         await currentPage.waitForTimeout(5000);
         expect(
           await currentPage.locator("iframe").screenshot()
         ).toMatchSnapshot({
-          name: `pdf_validation_${pdf}_.png`,
+          name: `pdf_validation_${testInfo.title}_.png`,
           maxDiffPixelRatio: 0.5,
         });
       })

@@ -24,7 +24,7 @@ export default class CharityPage extends BasePage {
   }
   //Assert
 
-  expectScreenCharityPage = async () => {
-    await this.expectScreenOfPage(this.staticVideoPlayer.videoPlayer);
+  expectScreenCharityPage = async (testInfo) => {
+    await this.expectScreenOfPage(this.staticVideoPlayer.videoPlayer, testInfo);
   };
 }

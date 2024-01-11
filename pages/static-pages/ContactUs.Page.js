@@ -56,7 +56,7 @@ export default class ContactUsPage extends BasePage {
       .catch(async (e) => await this.errorHandling(e, this.page));
   }
 
-  expectScreenContactUsPage = async () => {
-    await this.expectScreenOfPageWithoutMask();
+  expectScreenContactUsPage = async (testInfo) => {
+    await this.expectScreenOfPageWithoutMask(testInfo);
   };
 }

@@ -23,17 +23,18 @@ export default class EducationPage extends BasePage {
 
   //Assert
 
-  expectScreenEducationPage = async () => {
-    await this.expectScreenOfPage(this.staticVideoPlayer.videoPlayer);
+  expectScreenEducationPage = async (testInfo) => {
+    await this.expectScreenOfPage(this.staticVideoPlayer.videoPlayer, testInfo);
   };
 
-  async expectValidatePdfFile(currentPage, pdf) {
+  async expectValidatePdfFile(currentPage, pdf,testInfo) {
     await test.step(`Validate pdf when clicking  media education pdf file`, async () => {
+      testInfo.snapshotSuffix = '';
       let iframe = `<iframe src="${pdf}#zoom=105%" style="width: 100%;height:100%;border: none;"></iframe>`;
       await currentPage.setContent(iframe);
       await currentPage.waitForTimeout(5000);
       expect(await currentPage.locator("iframe").screenshot()).toMatchSnapshot({
-        name: `pdf_validation_page_.png`,
+        name: `${testInfo.title}.png`,
         maxDiffPixelRatio: 0.5,
       });
     }).catch(async (e) => await this.errorHandling(e, this.page))

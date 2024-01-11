@@ -60,8 +60,8 @@ export default class MainPage extends BasePage {
     await this.expectAttributeClassAllElements( this.allAttributeOfQuestions, "faq" );
   };
 
-  expectScreenMainPage = async () => {
-    await this.expectScreenOfPage(this.widgetMainPage);
+  expectScreenMainPage = async (testInfo) => {
+    await this.expectScreenOfPage(this.widgetMainPage,testInfo);
   };
 
   expecListSizeAnswerToQuestions = async (number) => {

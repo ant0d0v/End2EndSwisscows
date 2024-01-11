@@ -1,4 +1,4 @@
-const { expect, context, test } = require('@playwright/test');
+const { expect, context, test} = require('@playwright/test');
 
 export default class BasePage {
   constructor(page) {
@@ -241,20 +241,22 @@ export default class BasePage {
       await this.expectTextOfElement(this.h1Text(newPage), text);
     });
   }
-  async expectScreenOfPage(element) {
-    await test.step(`Expect screen to be equal to the snapshot of page`, async () => {
+  async expectScreenOfPage(element,testInfo) {
+    await test.step(`Expect screen to be equal to the snapshot of page`, async () => {  
+        testInfo.snapshotSuffix = '';
         await this.waitUntilPageIsFullyLoaded();
-        await expect(this.page).toHaveScreenshot({
+        await expect(this.page).toHaveScreenshot(`${testInfo.title}.png`,{
           fullPage: true,
           mask: [await element, await this.appLinksInFooter(this.page)],
         });
       })
       .catch(async (e) => await this.errorHandling(e, this.page));
   }
-  async expectScreenOfPageWithoutMask() {
+  async expectScreenOfPageWithoutMask(testInfo) {
     await test.step('Expect screen to be equal to the snapshot of page', async () => {
+        testInfo.snapshotSuffix = '';
         await this.waitUntilPageIsFullyLoaded();
-        await expect(this.page).toHaveScreenshot({
+        await expect(this.page).toHaveScreenshot(`${testInfo.title}.png`,{
           fullPage: true,
           mask: [
             await this.appLinksInFooter(this.page)

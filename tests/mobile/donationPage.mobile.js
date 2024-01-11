@@ -3,14 +3,14 @@ const testData = JSON.parse(
   JSON.stringify(require("../../data/static-pages/donation-page/testData.json"))
 );
 
-test("Check design of the Donation page ", async ({ donationPage }) => {
+test("Check design of the Donation page ", async ({ donationPage },testInfo) => {
   //Assert
-  await donationPage.expectScreenDonationPage();
+  await donationPage.expectScreenDonationPage(testInfo);
 });
 
 test("Check design dark theme of the  Donation page ", async ({
   donationPage
-}) => {
+},testInfo) => {
   //Actions
   await donationPage.waitUntilPageIsFullyLoaded();
   await donationPage.headerStaticPages.clickHamburgerMenuButton();
@@ -18,5 +18,5 @@ test("Check design dark theme of the  Donation page ", async ({
   await donationPage.headerStaticPages.hamburgerMenu.clickDarkInHamburgerMenu();
 
   //Assert
-  await donationPage.expectScreenDonationPage();
+  await donationPage.expectScreenDonationPage(testInfo);
 });

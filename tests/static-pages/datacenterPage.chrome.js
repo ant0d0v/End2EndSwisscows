@@ -41,14 +41,14 @@ for (const { testID, expectedLink, locatorId, expectedTitle, } of testData.datac
     await datacenterPage.expectHaveTitle(currentPage, expectedTitle);
   });
 }
-test("Check design of the Datacenter page ", async ({ datacenterPage }) => {
+test("Check design of the Datacenter page ", async ({ datacenterPage },testInfo) => {
   //Assert
-  await datacenterPage.expectScreenDatacenterPage();
+  await datacenterPage.expectScreenDatacenterPage(testInfo);
 });
 
 test("Check design dark theme of the Datacenter page ", async ({
   datacenterPage
-}) => {
+},testInfo) => {
   //Actions
   await datacenterPage.waitUntilPageIsFullyLoaded();
   await datacenterPage.headerStaticPages.clickHamburgerMenuButton();
@@ -56,5 +56,5 @@ test("Check design dark theme of the Datacenter page ", async ({
   await datacenterPage.headerStaticPages.hamburgerMenu.clickDarkInHamburgerMenu();
 
   //Assert
-  await datacenterPage.expectScreenDatacenterPage();
+  await datacenterPage.expectScreenDatacenterPage(testInfo);
 });

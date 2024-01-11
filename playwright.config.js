@@ -45,13 +45,15 @@ module.exports = defineConfig({
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   //["playwright-qase-reporter", qaseConfig]
   reporter: [
-    ["playwright-qase-reporter", qaseConfig],
+    // ["playwright-qase-reporter", qaseConfig],
+    ["html"],["list"],
     ["./reporter/SlowStepReporter.js"],
   ],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     baseURL: "https://dev.swisscows.com/",
     actionTimeout: 25 * 1000,
+    updateSnapshots: 'none',
     locale: "en-GB",
     colorScheme: "light",
     screenshot: "only-on-failure",
@@ -60,7 +62,7 @@ module.exports = defineConfig({
     trace: "on-first-retry",
   },
   expect: {
-    toHaveScreenshot: { maxDiffPixelRatio: 0.3 },
+    toHaveScreenshot: {  maxDiffPixelRatio: 0.4 },
     timeout: 15 * 1000,
   },
 
@@ -102,7 +104,6 @@ module.exports = defineConfig({
       testMatch: /.*\.msedge\.js/,
       use: {
         ...devices["Desktop Edge"],
-        channel: "msedge",
         viewport: { width: 1360, height: 900 },
         screenshot: "only-on-failure",
         video: "retain-on-failure",

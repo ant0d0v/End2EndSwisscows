@@ -14,20 +14,20 @@ test("Check that the video is playing", async ({ educationPage }) => {
 for (const { testID, pdfLink, locatorId } of testData.educationPdfLinks) {
   test(`${testID} Check navigation to corresponding page for  ${locatorId} pdf link and validate pdf`, async ({
     educationPage,
-  }) => {
+  },testInfo) => {
    //Actions
     const currentPage = await educationPage.clickPdfLinkOnThePage(locatorId);
     
    //Assert
     await educationPage.expectHaveUrl(currentPage, pdfLink);
-    await educationPage.expectValidatePdfFile(currentPage, pdfLink);
+    await educationPage.expectValidatePdfFile(currentPage, pdfLink,testInfo);
   });
 }
 
 
-test("Check design of the Education page ", async ({ educationPage }) => {
+test("Check design of the Education page ", async ({ educationPage },testInfo) => {
   //Assert
-  await educationPage.expectScreenEducationPage();
+  await educationPage.expectScreenEducationPage(testInfo);
 });
 
 test("Check color of flyer button when hovering ", async ({ educationPage }) => {
@@ -37,7 +37,7 @@ test("Check color of flyer button when hovering ", async ({ educationPage }) => 
 
 test("Check design dark theme of the Education page ", async ({
   educationPage
-}) => {
+},testInfo) => {
   //Actions
   await educationPage.waitUntilPageIsFullyLoaded();
   await educationPage.headerStaticPages.clickHamburgerMenuButton();
@@ -45,5 +45,5 @@ test("Check design dark theme of the Education page ", async ({
   await educationPage.headerStaticPages.hamburgerMenu.clickDarkInHamburgerMenu();
 
   //Assert
-  await educationPage.expectScreenEducationPage();
+  await educationPage.expectScreenEducationPage(testInfo);
 });

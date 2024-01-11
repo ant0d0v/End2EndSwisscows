@@ -80,15 +80,15 @@ test("Check that buttons have hover over the services block on main page", async
   await mainPage.expectColorsLinksWhenHovering(mainPage.buttonOfServiceBlock, "color", expectedColorWhenHovering );
 });
 
-test("Check design of the main page ", async ({ mainPage }) => {
+test("Check design of the main page ", async ({ mainPage },testInfo) => {
 
   //Assert
-  await mainPage.expectScreenMainPage();
+  await mainPage.expectScreenMainPage(testInfo);
 });
 
 test("Check design dark theme of the main page ", async ({
   mainPage
-}) => {
+},testInfo) => {
   //Actions
 
   await mainPage.headerStaticPages.clickHamburgerMenuButton();
@@ -96,5 +96,5 @@ test("Check design dark theme of the main page ", async ({
   await mainPage.headerStaticPages.hamburgerMenu.clickDarkInHamburgerMenu();
 
   //Assert
-  await mainPage.expectScreenMainPage();
+  await mainPage.expectScreenMainPage(testInfo);
 });
