@@ -24,9 +24,21 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Run UI tests
+      - name: Run Docker
+        run: docker run --rm --network host -v $(pwd):/work/ -w /work/ -it mcr.microsoft.com/playwright:v1.40.0-jammy /bin/bash
+
+      - name: Install dependenci
+        run: npm install
+
+      - name: Run test
         run: |
-          docker run -it --rm --ipc=host mcr.microsoft.com/playwright:v1.40.0-jammy /bin/bash -c "xvfb-run npx playwright test --project chromium firefox edge mobile --update-snapshots"
+          export QASE_REPORT=1
+          export QASE_RUN_NAME=UI
+          npx playwright test --project chromium firefox edge mobile --update-snapshots &&
+          export QASE_REPORT=2
+          export QASE_RUN_NAME=API
+          npx playwright test api  
+        
 
       
       
