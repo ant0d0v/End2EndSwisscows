@@ -15,7 +15,7 @@ jobs:
           node-version: 18
       - name: Install dependencies
         run: npm ci
-      - name: install chrome 
+      - name: Install chrome browser
         run: npx playwright install chrome
       - name: Run your tests
         run: npm run test

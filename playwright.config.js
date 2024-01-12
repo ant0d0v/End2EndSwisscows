@@ -27,7 +27,6 @@ module.exports = defineConfig({
   // globalSetup: 'utils/globalSetup.js',
   testDir: "./tests",
   timeout: 5 * 60 * 1000,
-  retries: 2,
   // Limit the number of failures on CI to save resources
   maxFailures: process.env.CI ? 10 : undefined,
   /* Run tests in files in parallel */
@@ -35,7 +34,7 @@ module.exports = defineConfig({
   /* Fail the build on CI if you accidentally left test.only in the source code. */
   forbidOnly: !!process.env.CI,
   /* Retry on CI only */
-  // retries: process.env.CI ? 2 : 0,
+  retries: process.env.CI ? 2 : 0,
   /* Opt out of parallel tests on CI. */
   workers: process.env.CI ? 4 : undefined,
   // reporter: process.env.CI
@@ -45,8 +44,8 @@ module.exports = defineConfig({
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   //["playwright-qase-reporter", qaseConfig]
   reporter: [
-    // ["playwright-qase-reporter", qaseConfig],
     ["html"],["list"],
+    ["playwright-qase-reporter", qaseConfig],
     ["./reporter/SlowStepReporter.js"],
   ],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
@@ -62,7 +61,7 @@ module.exports = defineConfig({
     trace: "on-first-retry",
   },
   expect: {
-    toHaveScreenshot: {  maxDiffPixelRatio: 0.4 },
+    toHaveScreenshot: {  maxDiffPixelRatio: 0.3 },
     timeout: 15 * 1000,
   },
 
@@ -130,5 +129,4 @@ module.exports = defineConfig({
   //   url: 'http://127.0.0.1:3000',
   //   reuseExistingServer: !process.env.CI,
   // },
-  // c
 });

@@ -4,13 +4,8 @@ export default class InstallSwisscowsLink extends BaseComponent {
   constructor(page) {
     super(page);
     // Locators
-    this.popupInstallSwisscowsLink = this.page.getByRole("link", {
-      name: "Stay with us and set",
-    });
-    this.closeButtonOfPopupInstallSwisscowsLink = this.page
-      .locator("div")
-      .filter({ hasText: "Install Swisscows" })
-      .getByRole("button");
+    this.popupInstallSwisscowsLink = this.page.getByRole("link", { name: "Stay with us and set",});
+    this.closeButtonOfPopupInstallSwisscowsLink = this.page.locator("div").filter({ hasText: "Install Swisscows" }).getByRole("button");
   }
   //Actions
 
