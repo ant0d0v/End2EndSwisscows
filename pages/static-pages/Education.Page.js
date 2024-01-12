@@ -10,6 +10,7 @@ export default class EducationPage extends BasePage {
     this.headerStaticPages = new HeaderStaticPages(page);
 
     //Locators
+    this.allContent = this.page.locator("main.media-education");
     this.links = (id) => this.page.getByRole("link", { name: `${id}` });
     this.flyerButton = this.page.getByRole("link", { name: "Open flyer [PDF, 1.49Mb]" });
   }

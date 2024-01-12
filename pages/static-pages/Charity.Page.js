@@ -10,8 +10,8 @@ export default class CharityPage extends BasePage {
     this.staticVideoPlayer = new StaticVideoPlayer(page);
 
     //Locators
-    this.links = (id) =>
-      this.page.getByRole("main").getByRole("link", { name: `${id}` });
+    this.allContent = this.page.locator("main.social-project");
+    this.links = (id) => this.page.getByRole("main").getByRole("link", { name: `${id}` });
   }
   //Actions
 
