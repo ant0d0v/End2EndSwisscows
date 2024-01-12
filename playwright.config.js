@@ -27,7 +27,6 @@ module.exports = defineConfig({
   // globalSetup: 'utils/globalSetup.js',
   testDir: "./tests",
   timeout: 5 * 60 * 1000,
-  retries: 2,
   // Limit the number of failures on CI to save resources
   maxFailures: process.env.CI ? 10 : undefined,
   /* Run tests in files in parallel */
@@ -62,7 +61,7 @@ module.exports = defineConfig({
     trace: "on-first-retry",
   },
   expect: {
-    toHaveScreenshot: {  maxDiffPixelRatio: 0.4 },
+    toHaveScreenshot: {  maxDiffPixels: 100 },
     timeout: 15 * 1000,
   },
 
