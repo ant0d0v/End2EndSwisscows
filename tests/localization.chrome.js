@@ -66,3 +66,84 @@ for (const { test_case, language, expected_content} of hamburgerTable) {
   });
 }
 
+const charityTable = parse(fs.readFileSync(path.join(__dirname, '../localization/charity.csv')), {
+  columns: true,
+  skip_empty_lines: true
+});
+
+for (const { test_case, language, expected_content} of charityTable) {
+  test(`${test_case} Check content of charity page for  ${language} localization`, async ({
+    charityPage
+  }) => {
+    //Actions
+    await charityPage.waitUntilPageIsFullyLoaded();
+    await charityPage.headerStaticPages.clickHamburgerMenuButton();
+    await charityPage.headerStaticPages.hamburgerMenu.clickLanguagesDropdownInHamburgerMenu();
+    await charityPage.headerStaticPages.hamburgerMenu.clickLanguageLinkInDropdown(
+      language
+    );
+
+    //Assert
+    await charityPage.expectTextOfElement(charityPage.allContent, expected_content)
+  });
+}
+
+const datacenterTable = parse(fs.readFileSync(path.join(__dirname, '../localization/datacenter.csv')), {
+  columns: true,
+  skip_empty_lines: true
+});
+
+for (const { test_case, language, expected_content} of datacenterTable) {
+  test(`${test_case} Check content of datacenter page for  ${language} localization`, async ({
+   datacenterPage
+  }) => {
+    //Actions
+    await datacenterPage.waitUntilPageIsFullyLoaded();
+    await datacenterPage.headerStaticPages.clickHamburgerMenuButton();
+    await datacenterPage.headerStaticPages.hamburgerMenu.clickLanguagesDropdownInHamburgerMenu();
+    await datacenterPage.headerStaticPages.hamburgerMenu.clickLanguageLinkInDropdown(
+      language
+    );
+
+    //Assert
+    await datacenterPage.expectTextOfElement(datacenterPage.allContent, expected_content)
+  });
+}
+const educationTable = parse(fs.readFileSync(path.join(__dirname, '../localization/education.csv')), {
+  columns: true, relax_quotes: true, escape: '\\', ltrim: true, rtrim: true 
+});
+for (const { test_case, language, expected_content} of educationTable) {
+  test(`${test_case} Check content of education page for  ${language} localization`, async ({
+   educationPage
+  }) => {
+    //Actions
+    await educationPage.waitUntilPageIsFullyLoaded();
+    await educationPage.headerStaticPages.clickHamburgerMenuButton();
+    await educationPage.headerStaticPages.hamburgerMenu.clickLanguagesDropdownInHamburgerMenu();
+    await educationPage.headerStaticPages.hamburgerMenu.clickLanguageLinkInDropdown(language);
+
+    //Assert
+    await educationPage.expectTextOfElement(educationPage.allContent, expected_content)
+  });
+}
+
+const headerHomeTable = parse(fs.readFileSync(path.join(__dirname, '../localization/headerHome.csv')), {
+  columns: true,
+  skip_empty_lines: true
+});
+
+for (const { test_case, language, expected_content} of headerHomeTable) {
+  test(`${test_case} Check content of header home for  ${language} localization`, async ({
+    mainPage
+  }) => {
+    //Actions
+    await mainPage.headerStaticPages.clickHamburgerMenuButton();
+    await mainPage.headerStaticPages.hamburgerMenu.clickLanguagesDropdownInHamburgerMenu();
+    await mainPage.headerStaticPages.hamburgerMenu.clickLanguageLinkInDropdown(
+      language
+    );
+
+    //Assert
+    await mainPage.expectTextOfElement(mainPage.headerStaticPages.allContent, expected_content)
+  });
+}

@@ -11,6 +11,7 @@ export default class DatacenterPage extends BasePage {
     this.headerStaticPages = new HeaderStaticPages(page);
 
     //Locators
+    this.allContent = this.page.locator("main.datacenter");
     this.links = (id) =>
       this.page.getByRole("main").getByRole("link", { name: `${id}` });
   }

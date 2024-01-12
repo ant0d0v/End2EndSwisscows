@@ -11,6 +11,7 @@ export default class HeaderStaticPages extends BaseComponent {
     this.autocomplete = new Autocomplete(page);
 
     //Locators
+    this.allContent = this.page.locator("header.header-home");
     this.linksInStaticHeader = (name) => this.page.locator(`a.badge-${name}`);
     this.hamburgerMenuButton = this.page.locator(
       "header button.hamburger-menu"
