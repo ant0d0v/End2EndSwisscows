@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "xvfb-run npx playwright test --project chromium firefox edge mobile && npx playwright test api"
+    "test": "xvfb-run QASE_REPORT=1 QASE_RUN_NAME=UI npx playwright test --project chromium firefox edge mobile && QASE_REPORT=2 QASE_RUN_NAME=API npx playwright test api"
   },
   "keywords": [],
   "author": "Anton",
