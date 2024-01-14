@@ -2,6 +2,9 @@ import { test, expect } from "../../utils/fixturePages";
 const testData = JSON.parse(
   JSON.stringify(require("../../data/static-pages/contact-page/testData.json"))
 );
+const constantsData = JSON.parse(
+  JSON.stringify(require("../../data/project-constants/testData.json"))
+);
 
 test("Check color of Send button when hovering ", async ({ contactUsPage }) => {
   //Assert
@@ -58,6 +61,69 @@ test(`Check border color of name, email, message when sending form with message 
   await contactUsPage.expectBorderColorFormField(testData.formFields[2].yourMessage, testData.formFields[2].greyColor);
 });
 
+test(`Check send message using all required fields`, async ({
+  contactUsPage,page
+}) => {
+  //Actions
+  await contactUsPage.inputYouNameField("Test");
+  await contactUsPage.inputEmailField("test@gmail.com");
+  await contactUsPage.inputMessageField("My test");
+  await contactUsPage.checkAgreeCheckbox()
+  await contactUsPage.clickSendButton()
+
+  //Assert
+  await contactUsPage.expectH1Text(page, "Contact us")
+  await contactUsPage.expectSuccesMessage()
+  await contactUsPage.expectHaveUrl(page, "https://dev.swisscows.com/en/contact?success=true");
+  
+});
+
+test(`Check "back to search" button `, async ({
+  contactUsPage, page, mainPage
+}) => {
+  //Actions
+  await contactUsPage.inputYouNameField("Test");
+  await contactUsPage.inputEmailField("test@gmail.com");
+  await contactUsPage.inputMessageField("My test");
+  await contactUsPage.checkAgreeCheckbox()
+  await contactUsPage.clickSendButton()
+  await contactUsPage.clickBackToSearchButton()
+
+  //Assert
+  await mainPage.expectHaveUrl(page, constantsData.URL_MAIN_PAGE);
+  await mainPage.expectHaveTitle(page,constantsData.TITLE_MAIN_PAGE)
+  
+});
+
+test(`Check try send message without chexbox `, async ({
+  contactUsPage, page, mainPage
+}) => {
+  //Actions
+  await contactUsPage.inputYouNameField("Test");
+  await contactUsPage.inputEmailField("test@gmail.com");
+  await contactUsPage.inputMessageField("My test");
+  await contactUsPage.clickSendButton()
+
+  //Assert
+  await expect("validationMessage").toHaveProperty('validationMessage', "Please tick this box if you want to proceed."
+  );
+  
+});
+
+test(`Check color of "back to search" when hovering `, async ({ 
+  contactUsPage 
+}) => {
+  //Actions
+  await contactUsPage.inputYouNameField("Test");
+  await contactUsPage.inputEmailField("test@gmail.com");
+  await contactUsPage.inputMessageField("My test");
+  await contactUsPage.checkAgreeCheckbox()
+  await contactUsPage.clickSendButton()
+
+  //Assert
+  await contactUsPage.expectColorLinkWhenHovering(contactUsPage.backToSearchButton, "background", /rgb\(191, 0, 0\)/);
+});
+
 test("Check navigation to corresponding pages for  privacy link on the page", async ({
   contactUsPage
 }) => {
@@ -67,8 +133,8 @@ test("Check navigation to corresponding pages for  privacy link on the page", as
   );
 
   //Assert
-  await contactUsPage.expectHaveUrl(currentPage, "https://dev.swisscows.com/en/privacy");
-  await contactUsPage.expectHaveTitle(currentPage, "Privacy Policy | Swisscows");
+  await contactUsPage.expectHaveUrl(currentPage, constantsData.URL_PRIVACY_POLICY);
+  await contactUsPage.expectHaveTitle(currentPage, constantsData.TITLE_PRIVACY_POLICY);
 });
 
 test("Check design of the Contact Us page ", async ({ contactUsPage },testInfo) => {

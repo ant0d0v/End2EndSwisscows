@@ -13,35 +13,36 @@ export default class ContactUsPage extends BasePage {
     //Locators
     this.sendButton = this.page.getByRole("button", { name: "Send" });
     this.allContent = this.page.locator("main.contact");
+    this.checkbox = page.getByLabel('I agree that my data will be')
     this.formFields = (id) => this.page.getByPlaceholder(`${id}`);
     this.privacyLink = this.page.getByRole("link", { name: "privacy policy" });
+    this.succesMessage = this.page.getByRole('heading', { name: 'Thank you for contacting us!' })
     this.agreeCheckbox = this.page.getByLabel("I agree that my data will be");
+    this.backToSearchButton = this.page.getByRole('link', { name: 'Back to search' })
   }
   //Actions
   async clickSendButton() {
     await this.clickElement(this.sendButton, `Send button`);
   }
-  async checkAgreeCheckbox() {
-    await this.checkElement(this.sendButton, `Agree checkbox`);
+  async clickBackToSearchButton() {
+    await this.clickElement(this.backToSearchButton, `Back to search button`);
   }
+  async checkAgreeCheckbox() {
+    await this.checkElement(this.checkbox, `Agree checkbox`);
+  }
+
   async inputYouNameField(text) {
-    await this.input(
-      this.formFields(testData.formFields[0].yourName),
-      text,
+    await this.input(this.formFields(testData.formFields[0].yourName), text,
       `Your name field`
     );
   }
   async inputEmailField(text) {
-    await this.input(
-      this.formFields(testData.formFields[1].email),
-      text,
+    await this.input( this.formFields(testData.formFields[1].email), text,
       `Email field`
     );
   }
   async inputMessageField(text) {
-    await this.input(
-      this.formFields(testData.formFields[2].yourMessage),
-      text,
+    await this.input(this.formFields(testData.formFields[2].yourMessage),text,
       `Message field`
     );
   }
@@ -58,5 +59,8 @@ export default class ContactUsPage extends BasePage {
 
   expectScreenContactUsPage = async (testInfo) => {
     await this.expectScreenOfPageWithoutMask(testInfo);
+  };
+  expectSuccesMessage = async () => {
+    await this.expectIsElementDisplayed(this.succesMessage)
   };
 }
