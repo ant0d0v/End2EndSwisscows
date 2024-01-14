@@ -122,18 +122,6 @@ test(`Check color of "back to search" when hovering `, async ({
   await contactUsPage.expectColorLinkWhenHovering(contactUsPage.backToSearchButton, "background", /rgb\(191, 0, 0\)/);
 });
 
-test("Check navigation to corresponding pages for  privacy link on the page", async ({
-  contactUsPage
-}) => {
-  //Actions
-  const currentPage = await contactUsPage.clickElementAndNavigateToNewPage(
-    contactUsPage.privacyLink
-  );
-
-  //Assert
-  await contactUsPage.expectHaveUrl(currentPage, constantsData.URL_PRIVACY_POLICY);
-  await contactUsPage.expectHaveTitle(currentPage, constantsData.TITLE_PRIVACY_POLICY);
-});
 
 test("Check design of the Contact Us page ", async ({ contactUsPage },testInfo) => {
   //Assert

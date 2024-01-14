@@ -63,4 +63,8 @@ export default class ContactUsPage extends BasePage {
   expectSuccesMessage = async () => {
     await this.expectIsElementDisplayed(this.succesMessage)
   };
+  expectAgreeCheckboxToHaveProperty = async (value) => {
+    await this.expectHaveJSProperty(this.agreeCheckbox,'validity.valueMissing', true)
+    await this.expectHaveJSProperty(this.agreeCheckbox,'validationMessage', value)
+  }
 }
