@@ -30,7 +30,7 @@ test("Check the swipe to left in  Charity Columbia slider ", async ({
 }) => {
   //Actions
   await charityPage.waitUntilPageIsFullyLoaded();
-  await charityPage.staticSlider.swipeLeft(
+  await charityPage.staticSlider.swipeLeftToLastImage(
     await charityPage.staticSlider.charityColumbiaSliderSmallFirstImage,
     await charityPage.staticSlider.charityColumbiaSliderSmallLastImage
   );
@@ -45,7 +45,7 @@ test("Check the swipe to left in Charity Haiti slider ", async ({
 }) => {
   //Actions
   await charityPage.waitUntilPageIsFullyLoaded();
-  await charityPage.staticSlider.swipeLeft(
+  await charityPage.staticSlider.swipeLeftToLastImage(
     await charityPage.staticSlider.charityHaitiSliderSmallFirstImage,
     await charityPage.staticSlider.charityHaitiSliderSmallLastImage
   );

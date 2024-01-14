@@ -149,6 +149,11 @@ export default class BasePage {
       await expect(element).toHaveValue(value);
     });
   }
+  async expectHaveJSProperty(element, property, value) {
+    await test.step(`Expect the Element to Have JS ${property} a ${value}`, async () => {
+      await expect(element).toHaveJSProperty(property, value);
+    });
+  }
   async expectListSize(elements, number) {
     await test
       .step('Expect the elements in the array to "have" a count', async () => {

@@ -26,8 +26,8 @@ export default class StaticSlider extends BaseComponent {
   }
 
   //Actions
-  async swipeLeft(firstImage, lastImage) {
-    await firstImage.dragTo(lastImage);
+  async swipeLeftToLastImage(firstImage, lastImage) {
+    await this.swipeLeft(firstImage, lastImage)
     await this.clickElement(lastImage)
   }
 

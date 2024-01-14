@@ -5,6 +5,9 @@ const data = JSON.parse(
 const testData = JSON.parse(
   JSON.stringify(require("../../data/header/testData.json"))
 );
+const constantsData = JSON.parse(
+  JSON.stringify(require("../../data/project-constants/testData.json"))
+);
 
 test("Clicking on the swisscows's logo leads to the main page.", async ({
   mainPage,
@@ -18,10 +21,7 @@ test("Clicking on the swisscows's logo leads to the main page.", async ({
 
   //Assert
   await mainPage.expectHaveUrl(mainPage.page, process.env.WEB_URL + "en");
-  await mainPage.expectHaveTitle(
-    mainPage.page,
-    "Your private and anonymous search engine Swisscows"
-  );
+  await mainPage.expectHaveTitle( mainPage.page, constantsData.TITLE_MAIN_PAGE );
 });
 
 test("Check query counter value when searching for images ", async ({
@@ -106,10 +106,7 @@ test("Check query counter value when searching for shopping", async ({
     const newPage = await header.clickBadgeEmailAndNavigateToNewPage();
 
     //Assert
-    await header.expectHaveUrl(
-      newPage,
-      new RegExp("/accounts.swisscows.com/login\\?ReturnUrl=.*")
-    );
+    await header.expectHaveUrl( newPage, new RegExp("/accounts.swisscows.com/login\\?ReturnUrl=.*"));
     await header.expectHaveTitle(newPage, /Login - Swisscows Accounts/);
   });
 
