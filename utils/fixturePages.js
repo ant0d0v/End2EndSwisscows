@@ -8,6 +8,8 @@ import ImagePage from "../pages/search/Image.Page";
 import MusicPage from "../pages/search/Music.Page";
 import VideoPage from "../pages/search/Video.Page";
 import WebPage from "../pages/search/Web.Page";
+import NewsPage from "../pages/search/News.Page";
+import ShoppingPage from "../pages/search/Shopping.Page";
 import FooterFull from "../components/FooterFull";
 import StaticSlider from "../components/StaticSlider";
 import DefaultSearchPage from "../pages/static-pages/DefaultSearch.Page";
@@ -39,6 +41,12 @@ exports.test = base.test.extend({
   },
   videoPage: async ({ page }, use) => {
     await use(new VideoPage(page));
+  },
+  newsPage: async ({ page }, use) => {
+    await use(new NewsPage(page));
+  },
+  shoppingPage: async ({ page }, use) => {
+    await use(new ShoppingPage(page));
   },
   webPage: async ({ page }, use) => {
     await use(new WebPage(page));
