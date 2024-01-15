@@ -140,12 +140,12 @@ export default class BasePage {
     });
   }
 
-  async expectHaveValue(element, value) {
+  async expectElementToHaveValue(element, value) {
     await test.step('Expect the Element "to have" a value', async () => {
       await expect(element).toHaveValue(value);
     });
   }
-  async expectHaveJSProperty(element, property, value) {
+  async expectElementToHaveJSProperty(element, property, value) {
     await test.step(`Expect the Element to Have JS ${property} a ${value}`, async () => {
       await expect(element).toHaveJSProperty(property, value);
     });

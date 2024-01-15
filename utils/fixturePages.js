@@ -25,9 +25,6 @@ exports.test = base.test.extend({
   defaultSearchPage: async ({ page }, use) => {
     await use(new DefaultSearchPage(page));
   },
-  emailPage: async ({ page }, use) => {
-    await use(new EmailPage(page));
-  },
   header: async ({ page }, use) => {
     await use(new Header(page));
   },
@@ -72,6 +69,10 @@ exports.test = base.test.extend({
   imprintPage: async ({ page, footerFull }, use) => {
     await footerFull.clickImprintLink();
     await use(new ImprintPage(page));
+  },
+  emailPage: async ({ footerFull }, use) => {
+    const newPage = await footerFull.clickEmailLinkAndNavigateToNewPage();
+    await use(new EmailPage(newPage));
   },
   preloader: async ({ page }, use) => {
     await use(new Preloader(page));
