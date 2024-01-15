@@ -147,3 +147,23 @@ for (const { test_case, language, expected_content} of headerHomeTable) {
     await mainPage.expectElementToHaveText(mainPage.headerStaticPages.allContent, expected_content)
   });
 }
+
+const imprintTable = parse(fs.readFileSync(path.join(__dirname, '../localization/imprintPage.csv')), {
+  columns: true,
+  skip_empty_lines: true
+});
+
+for (const { test_case, language, expected_content} of imprintTable) {
+  test(`${test_case} Check content of imprint page for  ${language} localization`, async ({
+    imprintPage
+  }) => {
+    //Actions
+    await imprintPage.waitUntilPageIsFullyLoaded();
+    await imprintPage.headerStaticPages.clickHamburgerMenuButton();
+    await imprintPage.headerStaticPages.hamburgerMenu.clickLanguagesDropdownInHamburgerMenu();
+    await imprintPage.headerStaticPages.hamburgerMenu.clickLanguageLinkInDropdown(language);
+
+    //Assert
+    await imprintPage.expectElementToHaveText(imprintPage.allContent, expected_content)
+  });
+}

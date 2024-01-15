@@ -35,7 +35,7 @@ export default class DonationPage extends BasePage {
   //Assert
 
   expectScreenDonationPage = async (testInfo) => {
-    await this.expectScreenOfPage(this.staticVideoPlayer.videoPlayer, testInfo);
+    await this.expectPageToHaveScreenshot(this.staticVideoPlayer.videoPlayer, testInfo);
   };
 
   async expectValidatePdfFile(currentPage, pdf, testInfo) {

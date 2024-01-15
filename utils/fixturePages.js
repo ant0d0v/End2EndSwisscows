@@ -4,7 +4,6 @@ import EmailPage from "../pages/static-pages/Email.Page";
 import Preloader from "../components/Preloader";
 import Header from "../components/Header";
 import HeaderStaticPages from "../components/HeaderStaticPages";
-import HamburgerMenu from "../components/HamburgerMenu";
 import ImagePage from "../pages/search/Image.Page";
 import MusicPage from "../pages/search/Music.Page";
 import VideoPage from "../pages/search/Video.Page";
@@ -17,6 +16,7 @@ import DatacenterPage from "../pages/static-pages/Datacenter.Page";
 import EducationPage from "../pages/static-pages/Education.Page";
 import DonationPage from "../pages/static-pages/Donation.Page";
 import ContactUsPage from "../pages/static-pages/ContactUs.Page";
+import ImprintPage from "../pages/static-pages/Imprint.Page";
 
 exports.test = base.test.extend({
   mainPage: async ({ page }, use) => {
@@ -54,7 +54,7 @@ exports.test = base.test.extend({
     await use(new CharityPage(page));
   },
   datacenterPage: async ({ page, footerFull }, use) => {
-    await footerFull.clickDatacentertLink();
+    await footerFull.clickDatacenterLink();
     await use(new DatacenterPage(page));
   },
   educationPage: async ({ page, footerFull }, use) => {
@@ -68,6 +68,10 @@ exports.test = base.test.extend({
   contactUsPage: async ({ page, footerFull }, use) => {
     await footerFull.clickContactUsLink();
     await use(new ContactUsPage(page));
+  },
+  imprintPage: async ({ page, footerFull }, use) => {
+    await footerFull.clickImprintLink();
+    await use(new ImprintPage(page));
   },
   preloader: async ({ page }, use) => {
     await use(new Preloader(page));

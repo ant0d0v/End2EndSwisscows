@@ -25,7 +25,7 @@ export default class EducationPage extends BasePage {
   //Assert
 
   expectScreenEducationPage = async (testInfo) => {
-    await this.expectScreenOfPage(this.staticVideoPlayer.videoPlayer, testInfo);
+    await this.expectPageToHaveScreenshot(this.staticVideoPlayer.videoPlayer, testInfo);
   };
 
   async expectValidatePdfFile(currentPage, pdf,testInfo) {
