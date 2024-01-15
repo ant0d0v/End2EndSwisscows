@@ -6,6 +6,15 @@ export default class BasePage {
     this.h1Text = (page) => page.locator("//h1");
     this.appLinksInFooter = (page) => page.locator('//div[contains(@class, "app") and contains(@class, "mobile")]')
   }
+  /**
+   * The function "errorHandling" throws an error message with details about the test failure,
+   * including the page URL, error type, error message, and stack trace.
+   * @param error - The `error` parameter is the error object that was thrown or caught in your code.
+   * It contains information about the error, such as its name, message, and stack trace.
+   * @param page - The `page` parameter is an object that represents a web page in a browser. It likely
+   * has properties and methods related to interacting with the page, such as `url()` which returns the
+   * URL of the page.
+   */
   async errorHandling(error, page) {
     const exceptionMessage = new Error(`
      *************************************
