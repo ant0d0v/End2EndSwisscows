@@ -77,8 +77,8 @@ test("Check availability and options of localization dropdown menu in hamburger 
   await headerStaticPages.hamburgerMenu.clickLanguagesDropdownInHamburgerMenu();
 
   //Assert
-  await headerStaticPages.hamburgerMenu.expectListSize(
-    headerStaticPages.hamburgerMenu.textsOflanguagesDropdownInHamburgerMenu,
+  await headerStaticPages.hamburgerMenu.expectListToHaveCount(
+    headerStaticPages.hamburgerMenu.textsLanguagesDropdownInHamburgerMenu,
     11
   );
   await headerStaticPages.hamburgerMenu.expectTextsOfLanguagesInHamburgerMenu(
@@ -144,7 +144,7 @@ test("Check  availability and options of region dropdown menu in hamburger menu"
   await headerStaticPages.hamburgerMenu.clickRegionDropdownInHamburgerMenu();
 
   //Assert
-  await headerStaticPages.hamburgerMenu.expectListSize(
+  await headerStaticPages.hamburgerMenu.expectListToHaveCount(
     headerStaticPages.hamburgerMenu.textsOfRegionDropdownInHamburgerMenu,
     48
   );
@@ -192,7 +192,7 @@ test("Check default theme on first opening the site", async ({
 
   //Assert
   await headerStaticPages.hamburgerMenu.expectAttributeClassOfElement(
-    headerStaticPages.hamburgerMenu.defaultThemeInHemburgerMenu,
+    headerStaticPages.hamburgerMenu.defaultThemeInHamburgerMenu,
     "active"
   );
   await headerStaticPages.hamburgerMenu.expectBackgroundColorOfPage(
@@ -209,7 +209,7 @@ for (const {testID,expectedLink,locatorId,expectedTitle,} of dateTest.regionLink
     //Actions
     await headerStaticPages.clickHamburgerMenuButton();
     await headerStaticPages.hamburgerMenu.clickDropdownRegion();
-    await headerStaticPages.hamburgerMenu.clickRegioLinkInDropdown(locatorId);
+    await headerStaticPages.hamburgerMenu.clickRegionLinkInDropdown(locatorId);
 
     //Assert
     await mainPage.expectHaveUrl(page, expectedLink);

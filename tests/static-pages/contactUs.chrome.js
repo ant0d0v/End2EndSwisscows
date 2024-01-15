@@ -73,7 +73,7 @@ test(`Check send message using all required fields`, async ({
 
   //Assert
   await contactUsPage.expectH1Text(page, "Contact us")
-  await contactUsPage.expectSuccesMessage()
+  await contactUsPage.expectSuccessMessage()
   await contactUsPage.expectHaveUrl(page, "https://dev.swisscows.com/en/contact?success=true");
   
 });

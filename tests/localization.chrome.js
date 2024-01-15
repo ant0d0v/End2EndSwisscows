@@ -20,7 +20,7 @@ for (const { test_case, language, expected_content} of mainTable) {
     );
 
     //Assert
-    await mainPage.expectTextOfElement(mainPage.allContent,expected_content)
+    await mainPage.expectElementToHaveText(mainPage.allContent,expected_content)
   });
 }
 
@@ -42,7 +42,7 @@ for (const { test_case, language, expected_content} of contactTable) {
     );
 
     //Assert
-    await contactUsPage.expectTextOfElement(contactUsPage.allContent,expected_content)
+    await contactUsPage.expectElementToHaveText(contactUsPage.allContent,expected_content)
   });
 }
 const hamburgerTable = parse(fs.readFileSync(path.join(__dirname, '../localization/hamburgerMenu.csv')), {
@@ -62,7 +62,7 @@ for (const { test_case, language, expected_content} of hamburgerTable) {
     await mainPage.headerStaticPages.clickHamburgerMenuButton();
 
     //Assert
-    await mainPage.expectTextOfElement(mainPage.headerStaticPages.hamburgerMenu.allContent,expected_content)
+    await mainPage.expectElementToHaveText(mainPage.headerStaticPages.hamburgerMenu.allContent,expected_content)
   });
 }
 
@@ -84,7 +84,7 @@ for (const { test_case, language, expected_content} of charityTable) {
     );
 
     //Assert
-    await charityPage.expectTextOfElement(charityPage.allContent, expected_content)
+    await charityPage.expectElementToHaveText(charityPage.allContent, expected_content)
   });
 }
 
@@ -106,7 +106,7 @@ for (const { test_case, language, expected_content} of datacenterTable) {
     );
 
     //Assert
-    await datacenterPage.expectTextOfElement(datacenterPage.allContent, expected_content)
+    await datacenterPage.expectElementToHaveText(datacenterPage.allContent, expected_content)
   });
 }
 const educationTable = parse(fs.readFileSync(path.join(__dirname, '../localization/education.csv')), {
@@ -123,7 +123,7 @@ for (const { test_case, language, expected_content} of educationTable) {
     await educationPage.headerStaticPages.hamburgerMenu.clickLanguageLinkInDropdown(language);
 
     //Assert
-    await educationPage.expectTextOfElement(educationPage.allContent, expected_content)
+    await educationPage.expectElementToHaveText(educationPage.allContent, expected_content)
   });
 }
 
@@ -144,6 +144,6 @@ for (const { test_case, language, expected_content} of headerHomeTable) {
     );
 
     //Assert
-    await mainPage.expectTextOfElement(mainPage.headerStaticPages.allContent, expected_content)
+    await mainPage.expectElementToHaveText(mainPage.headerStaticPages.allContent, expected_content)
   });
 }

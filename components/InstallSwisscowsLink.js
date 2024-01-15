@@ -27,9 +27,9 @@ export default class InstallSwisscowsLink extends BaseComponent {
 
   // Verify
   expectPopupInstallSwisscowsLinkIsDisplayed = async () => {
-    await this.expectIsElementDisplayed(this.popupInstallSwisscowsLink);
+    await this.expectElementToBeVisible(this.popupInstallSwisscowsLink);
   };
   expectTextOfPopupInstallSwisscowsLink = async (text) => {
-    this.expectTextOfElement(this.popupInstallSwisscowsLink, text);
+    this.expectElementToHaveText(this.popupInstallSwisscowsLink, text);
   };
 }

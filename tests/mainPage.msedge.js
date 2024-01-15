@@ -13,7 +13,7 @@ test('Check that popup "Edge install" redirect to the corresponding page', async
   await mainPage.expectHaveTitle(externalPage, /Swisscows/);
 });
 
-test("Check that popup Edge install Is Dysplaed", async ({ mainPage }) => {
+test("Check that popup Edge install Is Displayed", async ({ mainPage }) => {
   const expectedText =
     "Stay with us and set Swisscows as your default search engine. ";
 
@@ -22,7 +22,7 @@ test("Check that popup Edge install Is Dysplaed", async ({ mainPage }) => {
   await mainPage.installSwisscowsLink.expectTextOfPopupInstallSwisscowsLink(expectedText);
 });
 
-test('Check that the "Install Swisscows Block" button redirect to coresponding URL.', async ({
+test('Check that the "Install Swisscows Block" button redirect to corresponding URL.', async ({
   mainPage
 }) => {
   const externalPage = await mainPage.installSwisscowsBlock.clickInstallSwisscowsBlockAndNavigateToWebStore();

@@ -59,7 +59,7 @@ test("Check that the link in the fourth question leads to the expected URL.", as
   await defaultSearchPage.expectH1Text(DefaultSearchPage, expectedH1text);
 });
 
-test("Check that popup google install Is Dysplaed", async ({ mainPage }) => {
+test("Check that popup google install Is Displayed", async ({ mainPage }) => {
   const expectedText =
     "Stay with us and set Swisscows as your default search engine. ";
 
@@ -81,7 +81,7 @@ test('Check that popup "google install" redirect to the corresponding page', asy
   await mainPage.expectHaveTitle(externalPage, /Swisscows/);
 });
 
-test('Check that the "Install Google Block" button redirect to coresponding URL.', async ({
+test('Check that the "Install Google Block" button redirect to corresponding URL.', async ({
   mainPage,
 }) => {
   const externalPage =
@@ -103,8 +103,8 @@ test("Check the texts of questions on the main page.", async ({ mainPage }) => {
   ];
 
   //Assert
-  await mainPage.expecListSizeAnswerToQuestions(6);
-  await mainPage.expectTextsToEqual(mainPage.answersToQuestions, expectedAnswers);
+  await mainPage.expectListSizeAnswerToQuestions(6);
+  await mainPage.expectElementToHaveText(mainPage.answersToQuestions, expectedAnswers);
 });
 
 test("Check that buttons have hover over the services block on main page", async ({
