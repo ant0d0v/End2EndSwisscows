@@ -58,7 +58,7 @@ export default class ContactUsPage extends BasePage {
   }
 
   expectScreenContactUsPage = async (testInfo) => {
-    await this.expectScreenOfPageWithoutMask(testInfo);
+    await this.expectPageToHaveScreenshotWithoutMask(testInfo);
   };
   expectSuccessMessage = async () => {
     await this.expectElementToBeVisible(this.successMessage)

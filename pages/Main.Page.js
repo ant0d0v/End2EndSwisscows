@@ -61,7 +61,7 @@ export default class MainPage extends BasePage {
   };
 
   expectScreenMainPage = async (testInfo) => {
-    await this.expectScreenOfPage(this.widgetMainPage,testInfo);
+    await this.expectPageToHaveScreenshot(this.widgetMainPage,testInfo);
   };
 
   expectListSizeAnswerToQuestions = async (number) => {

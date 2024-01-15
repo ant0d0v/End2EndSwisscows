@@ -236,7 +236,7 @@ export default class BasePage {
       await this.expectElementToHaveText(this.h1Text(newPage), text);
     });
   }
-  async expectScreenOfPage(element,testInfo) {
+  async expectPageToHaveScreenshot(element,testInfo) {
     await test.step(`Expect screen to be equal to the snapshot of page`, async () => {  
         testInfo.snapshotSuffix = '';
         await this.waitUntilPageIsFullyLoaded();
@@ -247,7 +247,7 @@ export default class BasePage {
       })
       .catch(async (e) => await this.errorHandling(e, this.page));
   }
-  async expectScreenOfPageWithoutMask(testInfo) {
+  async expectPageToHaveScreenshotWithoutMask(testInfo) {
     await test.step('Expect screen to be equal to the snapshot of page', async () => {
         testInfo.snapshotSuffix = '';
         await this.waitUntilPageIsFullyLoaded();
