@@ -2,8 +2,10 @@
 {
 
     "URL_MAIN_PAGE" : "https://dev.swisscows.com/en",
+    "URL_LOGIN_PAGE" : "/accounts.swisscows.com/login\\?ReturnUrl=.*",
     "URL_PRIVACY_POLICY" : "https://dev.swisscows.com/en/privacy",
     
     "TITLE_MAIN_PAGE" : "Your private and anonymous search engine Swisscows",
-    "TITLE_PRIVACY_POLICY" : "Privacy Policy | Swisscows"
+    "TITLE_PRIVACY_POLICY" : "Privacy Policy | Swisscows",
+    "TITLE_LOGIN_PAGE" : "Login - Swisscows Accounts"
 }

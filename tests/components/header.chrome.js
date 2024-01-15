@@ -20,7 +20,7 @@ test("Clicking on the swisscows's logo leads to the main page.", async ({
   await header.clickSwisscowsLogo();
 
   //Assert
-  await mainPage.expectHaveUrl(mainPage.page, process.env.WEB_URL + "en");
+  await mainPage.expectHaveUrl(mainPage.page, constantsData.URL_MAIN_PAGE);
   await mainPage.expectHaveTitle( mainPage.page, constantsData.TITLE_MAIN_PAGE );
 });
 
@@ -106,8 +106,8 @@ test("Check query counter value when searching for shopping", async ({
     const newPage = await header.clickBadgeEmailAndNavigateToNewPage();
 
     //Assert
-    await header.expectHaveUrl( newPage, new RegExp("/accounts.swisscows.com/login\\?ReturnUrl=.*"));
-    await header.expectHaveTitle(newPage, /Login - Swisscows Accounts/);
+    await header.expectHaveUrl( newPage, new RegExp( constantsData.URL_LOGIN_PAGE));
+    await header.expectHaveTitle(newPage, constantsData.TITLE_LOGIN_PAGE);
   });
 
 test.describe("tests don't use cookie", () => {
