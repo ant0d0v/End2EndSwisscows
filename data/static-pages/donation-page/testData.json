@@ -1,6 +1,69 @@
 
 {
     
+    "languagesLinks": [
+        {
+            "testID": "1",
+            "expectedLink": "https://dev.swisscows.com/de",
+            "locatorId" : "Deutsch",
+            "expectedTitle" : "Deine private und anonyme Suchmaschine Swisscows"
+        },
+        {
+            "testID": "2",
+            "expectedLink": "https://dev.swisscows.com/es",
+            "locatorId" : "Español",
+            "expectedTitle" :"Su buscador privado y anónimo Swisscows"
+        },
+        {
+            "testID": "3",
+            "expectedLink": "https://dev.swisscows.com/fr",
+            "locatorId" : "Français",
+            "expectedTitle" :"Votre moteur de recherche privé et anonyme Swisscows"
+        },
+        {
+            "testID": "4",
+            "expectedLink": "https://dev.swisscows.com/it",
+            "locatorId" : "Italiano",
+            "expectedTitle" :"Il tuo motore di ricerca privato e anonimo Swisscows"
+        },
+        {
+            "testID": "5",
+            "expectedLink": "https://dev.swisscows.com/lv",
+            "locatorId" : "Latviešu",
+            "expectedTitle" :"Jūsu privātā un anonīma meklētājprogramma Swisscows"
+        },
+        {
+            "testID": "6",
+            "expectedLink": "https://dev.swisscows.com/hu",
+            "locatorId" : "Magyar",
+            "expectedTitle" :"Az Ön privát és névtelen keresőmotorja, Swisscows"
+        },
+        {
+            "testID": "7",
+            "expectedLink": "https://dev.swisscows.com/nl",
+            "locatorId" : "Nederlands",
+            "expectedTitle" :"Uw privé en anonieme zoekmachine Swisscows"
+        },
+        {
+            "testID": "8",
+            "expectedLink": "https://dev.swisscows.com/pt",
+            "locatorId" : "Português",
+            "expectedTitle" :"O teu motor de busca privado e anónimo Swisscows"
+        },
+        {
+            "testID": "9",
+            "expectedLink": "https://dev.swisscows.com/ru",
+            "locatorId" : "Русский",
+            "expectedTitle" :"Swisscows - Ваша приватная и анонимная поисковая система"
+        },
+        {
+            "testID": "10",
+            "expectedLink": "https://dev.swisscows.com/uk",
+            "locatorId" : "Українська",
+            "expectedTitle" :"Swisscows - Ваша приватна та анонімна пошукова система"
+        }
+    ],
+
     "donationPdfLinks": [
         {
             "testID": "1",
