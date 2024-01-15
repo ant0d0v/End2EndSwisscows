@@ -67,8 +67,8 @@ test("Check the texts of questions on the main page.", async ({ mainPage }) => {
   ];
 
   //Assert
-  await mainPage.expecListSizeAnswerToQuestions(6);
-  await mainPage.expectTextsToEqual(mainPage.answersToQuestions, expectedAnswers);
+  await mainPage.expectListSizeAnswerToQuestions(6);
+  await mainPage.expectElementToHaveText(mainPage.answersToQuestions, expectedAnswers);
 });
 
 test("Check that buttons have hover over the services block on main page", async ({

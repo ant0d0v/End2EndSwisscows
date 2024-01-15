@@ -26,6 +26,6 @@ export default class SearchCounter extends BaseComponent {
     await this.expectAttributeToHaveValue(this.searchCounter, "title", value);
   };
   expectPopupCharitySearchCounterToHaveText = async (text) => {
-    await this.expectTextOfElement(this.popupCharitySearchCounter, text);
+    await this.expectElementToHaveText(this.popupCharitySearchCounter, text);
   };
 }

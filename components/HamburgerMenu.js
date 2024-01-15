@@ -15,11 +15,11 @@ export default class HamburgerMenu extends BaseComponent {
     this.textsOfLinksInHamburgerMenu = this.page.locator("div.menu.popup li a");
     this.languagesDropdownInHamburgerMenu = this.page.getByText("Language");
     this.regionDropdownInHamburgerMenu = this.page.getByText("Region");
-    this.themeDropdownInHumburgerMenu = this.page.getByText("Theme Default");
-    this.darkThemeInHemburgerMenu = this.page.getByText("Dark");
-    this.lightThemeInHemburgerMenu = this.page.getByText("Light");
-    this.defaultThemeInHemburgerMenu = this.page.locator("li").filter({ hasText: /^Default$/ });
-    this.textsOflanguagesDropdownInHamburgerMenu = this.page.locator( "//ul[@class ='menu-dropdown-list']/li");
+    this.themeDropdownInHamburgerMenu = this.page.getByText("Theme Default");
+    this.darkThemeInHamburgerMenu = this.page.getByText("Dark");
+    this.lightThemeInHamburgerMenu = this.page.getByText("Light");
+    this.defaultThemeInHamburgerMenu = this.page.locator("li").filter({ hasText: /^Default$/ });
+    this.textsLanguagesDropdownInHamburgerMenu = this.page.locator( "//ul[@class ='menu-dropdown-list']/li");
     this.textsOfRegionDropdownInHamburgerMenu = this.page.locator("//ul[@class ='menu-dropdown-list']/li");
     this.bodyOfPage = this.page.locator("body");
     this.languageLinkInDropdown = (nameLocator) =>this.page.getByText(nameLocator);
@@ -33,7 +33,7 @@ export default class HamburgerMenu extends BaseComponent {
     await this.clickElement(
       this.languageLinkInDropdown(id),`lang link of Languages drop-down` );
   };
-  clickRegioLinkInDropdown = async (id) => {
+  clickRegionLinkInDropdown = async (id) => {
     await this.clickElement(
       this.regionLinkInDropdown(id),`region link of Region drop-down`);
   };
@@ -68,16 +68,16 @@ export default class HamburgerMenu extends BaseComponent {
   };
   clickThemeDropdownInHamburgerMenu = async () => {
     await this.clickElement(
-      this.themeDropdownInHumburgerMenu,`drop-down of themes in hamburger menu`);
+      this.themeDropdownInHamburgerMenu,`drop-down of themes in hamburger menu`);
   };
   clickDarkInHamburgerMenu = async () => {
     await this.clickElement(
-      this.darkThemeInHemburgerMenu,`dark theme in the dropdown of themes in hamburger menu`
+      this.darkThemeInHamburgerMenu,`dark theme in the dropdown of themes in hamburger menu`
     );
   };
   clickLightInHamburgerMenu = async () => {
     await this.clickElement(
-      this.lightThemeInHemburgerMenu, `light theme in the dropdown of themes in hamburger menu`);
+      this.lightThemeInHamburgerMenu, `light theme in the dropdown of themes in hamburger menu`);
   };
   getTextsOfLinksInHamburgerMenu = async () => {
     return this.getTextsOfElements(
@@ -92,22 +92,22 @@ export default class HamburgerMenu extends BaseComponent {
   //Verify
 
   expectNicknameUserInHamburgerMenuToHave = async (text) => {
-    await this.expectTextOfElement(this.nicknameInHamburgerMenu, text);
+    await this.expectElementToHaveText(this.nicknameInHamburgerMenu, text);
   };
 
   expectLoginButtonInHamburgerMenuIsDisplayed = async () => {
-    await this.expectIsElementDisplayed(this.loginButtonInHamburgerMenu);
+    await this.expectElementToBeVisible(this.loginButtonInHamburgerMenu);
   };
   expectTextsOfLinksInHamburgerMenu = async (expectedText) => {
-    await this.expectTextOfElement(
+    await this.expectElementToHaveText(
       this.textsOfLinksInHamburgerMenu, expectedText);
   };
   expectTextsOfLanguagesInHamburgerMenu = async (expectedText) => {
-    await this.expectTextOfElement(
-      this.textsOflanguagesDropdownInHamburgerMenu, expectedText);
+    await this.expectElementToHaveText(
+      this.textsLanguagesDropdownInHamburgerMenu, expectedText);
   };
   expectTextsOfRegionInHamburgerMenu = async ( expectedText) => {
-    await this.expectTextOfElement(
+    await this.expectElementToHaveText(
       this.textsOfRegionDropdownInHamburgerMenu, expectedText);
   };
   expectBackgroundColorOfPage = async (expectedValue) => {

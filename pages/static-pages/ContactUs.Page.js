@@ -16,7 +16,7 @@ export default class ContactUsPage extends BasePage {
     this.checkbox = page.getByLabel('I agree that my data will be')
     this.formFields = (id) => this.page.getByPlaceholder(`${id}`);
     this.privacyLink = this.page.getByRole("link", { name: "privacy policy" });
-    this.succesMessage = this.page.getByRole('heading', { name: 'Thank you for contacting us!' })
+    this.successMessage = this.page.getByRole('heading', { name: 'Thank you for contacting us!' })
     this.agreeCheckbox = this.page.getByLabel("I agree that my data will be");
     this.backToSearchButton = this.page.getByRole('link', { name: 'Back to search' })
   }
@@ -60,8 +60,8 @@ export default class ContactUsPage extends BasePage {
   expectScreenContactUsPage = async (testInfo) => {
     await this.expectScreenOfPageWithoutMask(testInfo);
   };
-  expectSuccesMessage = async () => {
-    await this.expectIsElementDisplayed(this.succesMessage)
+  expectSuccessMessage = async () => {
+    await this.expectElementToBeVisible(this.successMessage)
   };
   expectAgreeCheckboxToHaveProperty = async (value) => {
     await this.expectHaveJSProperty(this.agreeCheckbox,'validity.valueMissing', true)

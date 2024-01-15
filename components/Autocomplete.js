@@ -25,7 +25,7 @@ export default class Autocomplete extends BaseComponent {
   // Verify
 
   expectSuggestToHaveCount = async (number) => {
-    this.expectListSize(this.suggestionItems, number);
+    this.expectListToHaveCount(this.suggestionItems, number);
   };
 
   expectSuggestToContains = async (criteria) => {
@@ -33,6 +33,6 @@ export default class Autocomplete extends BaseComponent {
   };
 
   expectSuggestIsDisplayed = async () => {
-    await this.expectIsElementDisplayed(this.suggest);
+    await this.expectElementToBeVisible(this.suggest);
   };
 }

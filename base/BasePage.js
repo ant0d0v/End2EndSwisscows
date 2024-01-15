@@ -134,16 +134,12 @@ export default class BasePage {
     });
   }
 
-  async expectTextOfElement(element, text) {
-    await test.step('Expect the Element "to have" a string', async () => {
+  async expectElementToHaveText(element, text) {
+    await test.step('Expect the Element(s) "to have" a string', async () => {
       await expect(element).toHaveText(text);
     });
   }
-  async expectTextsToEqual(elements, expectedText) {
-    await test.step('Expect all elements to array "to equal" a string', async () => {
-      await expect(elements).toHaveText(expectedText);
-    });
-  }
+
   async expectHaveValue(element, value) {
     await test.step('Expect the Element "to have" a value', async () => {
       await expect(element).toHaveValue(value);
@@ -154,20 +150,14 @@ export default class BasePage {
       await expect(element).toHaveJSProperty(property, value);
     });
   }
-  async expectListSize(elements, number) {
+  async expectListToHaveCount(elements, number) {
     await test
       .step('Expect the elements in the array to "have" a count', async () => {
         await expect(elements).toHaveCount(number);
       })
       .catch(async (e) => await this.errorHandling(e, this.page));
   }
-  async expectArraySize(elements, number) {
-    await test
-      .step('Expect the elements in the array to "eqaul" a count', async () => {
-        await expect(elements).toHaveCount(number);
-      })
-      .catch(async (e) => await this.errorHandling(e, this.page));
-  }
+  
   async expectElementToBeEditable(element) {
     await test.step("Expect the element points to an editable element.", async () => {
       const locator = this.page.locator(element);
@@ -216,12 +206,12 @@ export default class BasePage {
       await expect(element).toHaveAttribute(attribute, value);
     });
   }
-  async expectIsElementDisplayed(element) {
+  async expectElementToBeVisible(element) {
     await test.step('Expect the element  to "be" visible', async () => {
       await expect(element).toBeVisible();
     });
   }
-  async expectElemenToBeHidden(element) {
+  async expectElementToBeHidden(element) {
     await test.step('Expect the element  to "be" hidden', async () => {
       await expect(element).toBeHidden();
     });
@@ -243,7 +233,7 @@ export default class BasePage {
   }
   async expectH1Text(newPage, text) {
     await test.step('Expect the page  "to have" h1 text with text', async () => {
-      await this.expectTextOfElement(this.h1Text(newPage), text);
+      await this.expectElementToHaveText(this.h1Text(newPage), text);
     });
   }
   async expectScreenOfPage(element,testInfo) {

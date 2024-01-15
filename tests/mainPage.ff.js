@@ -13,7 +13,7 @@ test('Check that popup "firefox install" redirect to the corresponding page ', a
   await mainPage.expectHaveTitle(externalPage, /Swisscows/);
 });
 
-test("Check that popup firefox install Is Dysplaed", async ({ mainPage }) => {
+test("Check that popup firefox install Is Displayed", async ({ mainPage }) => {
   const expectedText =
     "Stay with us and set Swisscows as your default search engine. ";
 
@@ -24,7 +24,7 @@ test("Check that popup firefox install Is Dysplaed", async ({ mainPage }) => {
   );
 });
 
-test('Check that the "Install Swisscows Block" button redirect to coresponding URL.', async ({
+test('Check that the "Install Swisscows Block" button redirect to corresponding URL.', async ({
   mainPage
 }) => {
   const externalPage = await mainPage.installSwisscowsBlock.clickInstallSwisscowsBlockAndNavigateToWebStore();
