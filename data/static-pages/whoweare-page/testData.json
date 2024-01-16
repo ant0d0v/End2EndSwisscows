@@ -1,0 +1,20 @@
+
+{
+    
+
+    "allLinks": [
+        {
+            "testID": "1",
+            "expectedLink": "https://dev.swisscows.com/en",
+            "locatorId" : "Swisscows",
+            "expectedTitle": "Your private and anonymous search engine Swisscows"
+        },
+        {
+            "testID": "2",
+            "expectedLink": "https://dev.swisscows.com/en/privacy",
+            "locatorId" : "privacy policy",
+            "expectedTitle": "Privacy Policy | Swisscows"
+        }
+    ]
+
+}

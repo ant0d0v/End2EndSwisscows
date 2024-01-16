@@ -2,7 +2,7 @@ import BasePage from "../../base/BasePage";
 import HeaderStaticPages from "../../components/HeaderStaticPages";
 const { expect } = require("@playwright/test");
 import fs from 'fs';
-export default class EmailPage extends BasePage {
+export default class VpnPage extends BasePage {
   constructor(page) {
     super(page);
     this.headerStaticPages = new HeaderStaticPages(page);

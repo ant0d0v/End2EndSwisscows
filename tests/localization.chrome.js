@@ -206,3 +206,22 @@ for (const { test_case, language, expected_content} of vpnTable) {
     await vpnPage.expectElementToHaveText(vpnPage.allContent, expected_content)
   });
 }
+const whoweareTable = parse(fs.readFileSync(path.join(__dirname, '../localization/whoweare.csv')), {
+  columns: true,
+  skip_empty_lines: true
+});
+
+for (const { test_case, language, expected_content} of whoweareTable) {
+  test(`${test_case} Check content of Who we are page for  ${language} localization`, async ({
+    whoWeArePage
+  }) => {
+    //Actions
+    await whoWeArePage.waitUntilPageIsFullyLoaded();
+    await whoWeArePage.headerStaticPages.clickHamburgerMenuButton();
+    await whoWeArePage.headerStaticPages.hamburgerMenu.clickLanguagesDropdownInHamburgerMenu();
+    await whoWeArePage.headerStaticPages.hamburgerMenu.clickLanguageLinkInDropdown(language);
+
+    //Assert
+    await whoWeArePage.expectElementToHaveText(whoWeArePage.allContent, expected_content)
+  });
+}
