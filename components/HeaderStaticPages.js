@@ -1,5 +1,5 @@
 import BaseComponent from "../base/BaseComponent";
-import WebPage from "../pages/search/Web.Page";
+import MainPage from "../pages/Main.Page";
 import HamburgerMenu from "../components/HamburgerMenu";
 import SearchCounter from "./users/User.SearchCounter";
 import Autocomplete from "./Autocomplete";
@@ -16,6 +16,7 @@ export default class HeaderStaticPages extends BaseComponent {
     this.hamburgerMenuButton = this.page.locator(
       "header button.hamburger-menu"
     );
+    this.logoSwisscows = this.page.getByRole('link', { name: 'Swisscows', exact: true })
     this.badgeEmail = this.page.locator("div.badges a.badge-email");
   }
 
@@ -26,6 +27,10 @@ export default class HeaderStaticPages extends BaseComponent {
       this.hamburgerMenuButton,
       `hamburger menu in the header static pages`
     );
+  };
+  clickSwisscowsLogo = async () => {
+    await this.clickElement(this.logoSwisscows, `Swisscows Logo in the header`);
+    return new MainPage(this.page);
   };
 
   clickBadgeEmailAndNavigateToNewPage = async () => {

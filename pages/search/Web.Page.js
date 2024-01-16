@@ -3,6 +3,7 @@ import WebFilters from "../../components/web/Web.Filters.js";
 import WebRelatedSearches from "../../components/web/Web.RelatedSearches.js";
 import AdsProduct from "../../components/ads/Ads.Product.js";
 import VideoWidget from "../../components/video/Video.Widget.js";
+import Header from "../../components/Header.js";
 import ImagesWidget from "../../components/images/Images.Widget.js";
 import NewsWidget from "../../components/news/News.Widget.js";
 import AdsText from "../../components/ads/Ads.Text.js";
@@ -19,6 +20,7 @@ export default class WebPage extends BasePage {
     this.videoWidget = new VideoWidget(page);
     this.imagesWidget = new ImagesWidget(page);
     this.newsWidget = new NewsWidget(page);
+    this.header  = new Header(page);
   }
   expectWebItemsToBeVisible = async () => {
     await this.expectAreElementsInListDisplayed(this.webItems);

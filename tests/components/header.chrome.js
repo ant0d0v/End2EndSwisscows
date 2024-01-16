@@ -11,103 +11,107 @@ const constantsData = JSON.parse(
 
 test("Clicking on the swisscows's logo leads to the main page.", async ({
   mainPage,
-  headerStaticPages,
-  header,
+  webPage
 }) => {
   //Actions
-  await headerStaticPages.autocomplete.inputSearchCriteria(testData.searchCriteria.first);
-  await headerStaticPages.autocomplete.clickEnterSearchField();
-  await header.clickSwisscowsLogo();
+  await mainPage.headerStaticPages.autocomplete.inputSearchCriteria(testData.searchCriteria.first);
+  await mainPage.headerStaticPages.autocomplete.clickEnterSearchField();
+  await webPage.header.clickSwisscowsLogo();
 
   //Assert
-  await mainPage.expectHaveUrl(mainPage.page, process.env.WEB_URL + "en");
+  await mainPage.expectHaveUrl(mainPage.page, constantsData.URL_MAIN_PAGE);
   await mainPage.expectHaveTitle( mainPage.page, constantsData.TITLE_MAIN_PAGE );
 });
 
 test("Check query counter value when searching for images ", async ({
-  headerStaticPages,
   header,
+  mainPage,
+  imagePage
 }) => {
   //Actions
-  await headerStaticPages.autocomplete.inputSearchCriteria(testData.searchCriteria.first);
-  await headerStaticPages.autocomplete.clickEnterSearchField();
+  await mainPage.headerStaticPages.autocomplete.inputSearchCriteria(testData.searchCriteria.first);
+  await mainPage.headerStaticPages.autocomplete.clickEnterSearchField();
   await header.clickImageSearchButton();
 
   //Assert
-  await header.searchCounter.expectCharitySearchCounterToHave("2");
+  await imagePage.header.searchCounter.expectCharitySearchCounterToHave("2");
 });
 
 test("Check query counter value when searching for video ", async ({
-  headerStaticPages,
+  videoPage,
   header,
+  mainPage
 }) => {
   //Actions
-  await headerStaticPages.autocomplete.inputSearchCriteria(testData.searchCriteria.first);
-  await headerStaticPages.autocomplete.clickEnterSearchField();
+  await mainPage.headerStaticPages.autocomplete.inputSearchCriteria(testData.searchCriteria.first);
+  await mainPage.headerStaticPages.autocomplete.clickEnterSearchField();
   await header.clickVideoSearchButton();
 
   //Assert
-  await header.searchCounter.expectCharitySearchCounterToHave("2");
+  await videoPage.header.searchCounter.expectCharitySearchCounterToHave("2");
 });
 
 test("Check query counter value when searching for music", async ({
-    headerStaticPages,
+    mainPage,
     header,
+    musicPage
   }) => {
     //Actions
-    await headerStaticPages.autocomplete.inputSearchCriteria(testData.searchCriteria.first);
-    await headerStaticPages.autocomplete.clickEnterSearchField();
+    await mainPage.headerStaticPages.autocomplete.inputSearchCriteria(testData.searchCriteria.first);
+    await mainPage.headerStaticPages.autocomplete.clickEnterSearchField();
     await header.clickMusicSearchButton();
 
     //Assert
-    await header.searchCounter.expectCharitySearchCounterToHave("2");
+    await musicPage.header.searchCounter.expectCharitySearchCounterToHave("2");
   });
 
 
 test("Check query counter value when searching for news", async ({
+  mainPage,
   header,
-  headerStaticPages
+  newsPage
 }) => {
   //Actions
-  await headerStaticPages.autocomplete.inputSearchCriteria(testData.searchCriteria.first);
-  await headerStaticPages.autocomplete.clickEnterSearchField();
+  await mainPage.headerStaticPages.autocomplete.inputSearchCriteria(testData.searchCriteria.first);
+  await mainPage.headerStaticPages.autocomplete.clickEnterSearchField();
   await header.clickHamburgerMenuButton();
   await header.hamburgerMenu.selectGermanyRegion();
   await header.clickNewsSearchButton();
 
   //Assert
-  await header.searchCounter.expectCharitySearchCounterToHave("3");
+  await newsPage.header.searchCounter.expectCharitySearchCounterToHave("3");
 });
 
 test("Check query counter value when searching for shopping", async ({
   header,
-  headerStaticPages,
-  page
+  shoppingPage,
+  mainPage
 }) => {
   //Actions
-  await headerStaticPages.autocomplete.inputSearchCriteria(testData.searchCriteria.first);
-  await headerStaticPages.autocomplete.clickEnterSearchField();
+  await mainPage.headerStaticPages.autocomplete.inputSearchCriteria(testData.searchCriteria.first);
+  await mainPage.headerStaticPages.autocomplete.clickEnterSearchField();
   await header.clickHamburgerMenuButton();
   await header.hamburgerMenu.selectGermanyRegion();
   await header.clickShoppingSearchButton();
 
   //Assert
-  await header.searchCounter.expectCharitySearchCounterToHave("3");
+  await shoppingPage.header.searchCounter.expectCharitySearchCounterToHave("3");
 });
 
   test("Check that email icon navigates to account/login page if user logged ", async({
     header,
-    headerStaticPages, 
+    mainPage,
+    webPage, 
   }) => {
     //Actions
-    await headerStaticPages.autocomplete.inputSearchCriteria(testData.searchCriteria.first);
-    await headerStaticPages.autocomplete.clickEnterSearchField();
-    await header.searchCounter.expectCharitySearchCounterToHave("1");
+    await mainPage.headerStaticPages.autocomplete.inputSearchCriteria(testData.searchCriteria.first);
+    await mainPage.headerStaticPages.autocomplete.clickEnterSearchField();
+    await webPage.header.searchCounter.expectCharitySearchCounterToHave("1");
     const newPage = await header.clickBadgeEmailAndNavigateToNewPage();
 
     //Assert
-    await header.expectHaveUrl( newPage, new RegExp("/accounts.swisscows.com/login\\?ReturnUrl=.*"));
-    await header.expectHaveTitle(newPage, /Login - Swisscows Accounts/);
+    await header.expectHaveUrl( newPage, new RegExp( constantsData.URL_LOGIN_PAGE));
+    await header.expectHaveTitle(newPage, constantsData.TITLE_LOGIN_PAGE);
   });
 
 test.describe("tests don't use cookie", () => {
@@ -115,12 +119,13 @@ test.describe("tests don't use cookie", () => {
   for (const { testID, expectedLink, locatorId, expectedTitle, } of data.headerLinks) {
     test(`${testID} Check that header badge ${locatorId} link navigate to corresponding pages`, async ({
       header,
-      headerStaticPages,
+      mainPage,
+      webPage,
     }) => {
       //Actions
-      await headerStaticPages.autocomplete.inputSearchCriteria(testData.searchCriteria.first);
-      await headerStaticPages.autocomplete.clickEnterSearchField();
-      await header.searchCounter.expectCharitySearchCounterToHave("1");
+      await mainPage.headerStaticPages.autocomplete.inputSearchCriteria(testData.searchCriteria.first);
+      await mainPage.headerStaticPages.autocomplete.clickEnterSearchField();
+      await webPage.header.searchCounter.expectCharitySearchCounterToHave("1");
       const newPage = await header.clickLinkInHeaderAndNavigateToNewPage(locatorId);
 
       //Assert
@@ -132,13 +137,14 @@ test.describe("tests don't use cookie", () => {
 
 test("Check that display of heart icon message in the header", async ({
   header,
-  headerStaticPages,
+  mainPage,
+  webPage
 }) => {
   //Actions
-  await headerStaticPages.autocomplete.inputSearchCriteria(testData.searchCriteria.first);
-  await headerStaticPages.autocomplete.clickEnterSearchField();
-  await header.searchCounter.expectCharitySearchCounterToHave("1");
-  await header.searchCounter.clickSearchCounter();
+  await mainPage.headerStaticPages.autocomplete.inputSearchCriteria(testData.searchCriteria.first);
+  await mainPage.headerStaticPages.autocomplete.clickEnterSearchField();
+  await webPage.header.searchCounter.expectCharitySearchCounterToHave("1");
+  await webPage.header.searchCounter.clickSearchCounter();
 
   //Assert
   await header.searchCounter.expectPopupCharitySearchCounterToHaveText(

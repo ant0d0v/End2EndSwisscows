@@ -25,7 +25,7 @@ test("Check design dark theme of the  Email page ", async ({
 });
 
 for (const { testID, expectedLink, locatorId, expectedTitle,} of testData.introductionAndSupportLinks) {
-  test(`${testID} Check navigation to corresponding pages for  ${locatorId} introduction and support inks`, async ({
+  test(`${testID} Check navigation to corresponding pages for  '${locatorId}' link`, async ({
     emailPage
   }) => {
     //Actions
@@ -38,7 +38,7 @@ for (const { testID, expectedLink, locatorId, expectedTitle,} of testData.introd
 }
 
 for (const { testID, expectedLink, locatorId, buttonName, expectedTitle,} of testData.subscriptionLinks) {
-  test(`${testID} Check navigation to corresponding pages for  ${locatorId} ${buttonName} link`, async ({
+  test(`${testID} Check navigation to corresponding pages for ${buttonName} link`, async ({
     emailPage
   }) => {
     //Actions

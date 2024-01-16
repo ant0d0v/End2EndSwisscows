@@ -1,45 +1,21 @@
-name: End2End Tests
- 
 trigger:
-  branches:
-    include:
-      - main
-      
-jobs:
-  - job: Agent_job
-    timeoutInMinutes: 60
-    pool:
-      vmImage: "ubuntu-latest"
- 
-    steps:
-      - task: NodeTool@0
-        inputs:
-          versionSpec: "20.x"
-        displayName: "Install Node"
- 
-      - script: |
-          npm ci
-        displayName: "Install dependencies"
-     
-      - script: npx playwright install --with-deps
-        displayName: 'Install Playwright browsers'  
- 
-      - script: |
-          npx playwright install
-        displayName: 'Install Playwright Browsers'
- 
-      - script: |
-          export QASE_REPORT=1
-          export QASE_RUN_NAME=UI
-          npx playwright test --project chromium firefox edge mobile --update-snapshots &&
-          export QASE_REPORT=2
-          export QASE_RUN_NAME=API
-          npx playwright test api 
-        displayName: 'Run Playwright tests'
-        env:
-          CI: 'true'
-       
-      - publish: $(Build.SourcesDirectory)/playwright-report
-        displayName: 'Publish report'
-        artifact: playwright-report
-        condition: always()
+- main
+
+pool:
+  vmImage: ubuntu-latest
+container: mcr.microsoft.com/playwright:v1.40.0-jammy
+
+steps:
+- task: NodeTool@0
+  inputs:
+    versionSpec: '18'
+  displayName: 'Install Node.js'
+
+- script: npm ci
+  displayName: 'npm ci'
+- script: npx playwright install chrome
+  displayName: 'Install chrome browser'
+- script: npm run test
+  displayName: 'Run Playwright tests'
+  env:
+    CI: 'true'
