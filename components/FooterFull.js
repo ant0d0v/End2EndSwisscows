@@ -5,6 +5,7 @@ import EducationPage from "../pages/static-pages/Education.Page";
 import DonationPage from "../pages/static-pages/Donation.Page";
 import ContactUsPage from "../pages/static-pages/ContactUs.Page";
 import ImprintPage from "../pages/static-pages/Imprint.Page";
+import WhoWeArePage from "../pages/static-pages/WhoWeAre.Page";
 export default class FooterFull extends BaseComponent {
   constructor(page) {
     super(page);
@@ -17,7 +18,9 @@ export default class FooterFull extends BaseComponent {
     this.imprintLink = this.page.getByRole('link', { name: 'Imprint' });
     this.emailLink = this.page.getByRole('link', { name: 'Swisscows.email' })
     this.vpnLink = this.page.getByText('VPN')
+    this.whoWeAreLink = this.page.getByRole('link', { name: 'Who we are' })
   }
+  //Actions
 
   clickCharityProjectLink = async () => {
     await this.clickElement( this.charityProjectLink, 
@@ -56,6 +59,12 @@ export default class FooterFull extends BaseComponent {
       `Imprint link in the footer full`
     );
     return new ImprintPage(this.page);
+  };
+  clickWhoWeAreLink = async () => {
+    await this.clickElement(this.whoWeAreLink,
+      `Who we are link in the footer full`
+    );
+    return new WhoWeArePage(this.page);
   };
 
   clickEmailLinkAndNavigateToNewPage = async () => {

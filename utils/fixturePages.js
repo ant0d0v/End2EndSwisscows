@@ -20,6 +20,7 @@ import DonationPage from "../pages/static-pages/Donation.Page";
 import ContactUsPage from "../pages/static-pages/ContactUs.Page";
 import ImprintPage from "../pages/static-pages/Imprint.Page";
 import VpnPage from "../pages/static-pages/Vpn.Page";
+import WhoWeArePage from "../pages/static-pages/WhoWeAre.Page";
 
 exports.test = base.test.extend({
   mainPage: async ({ page }, use) => {
@@ -75,6 +76,10 @@ exports.test = base.test.extend({
     await footerFull.clickContactUsLink();
     await use(new ContactUsPage(page));
   },
+  whoWeArePage: async ({ page, footerFull }, use) => {
+    await footerFull.clickWhoWeAreLink();
+    await use(new WhoWeArePage(page));
+  },
   imprintPage: async ({ page, footerFull }, use) => {
     await footerFull.clickImprintLink();
     await use(new ImprintPage(page));
@@ -83,6 +88,7 @@ exports.test = base.test.extend({
     const newPage = await footerFull.clickEmailLinkAndNavigateToNewPage();
     await use(new EmailPage(newPage));
   },
+  
   vpnPage: async ({ footerFull }, use) => {
     const newPage = await footerFull.clickVpnLinkAndNavigateToNewPage();
     await use(new VpnPage(newPage));
