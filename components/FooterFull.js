@@ -16,6 +16,7 @@ export default class FooterFull extends BaseComponent {
     this.contactUsLink = this.page.getByRole("link", { name: "Contact us" });
     this.imprintLink = this.page.getByRole('link', { name: 'Imprint' });
     this.emailLink = this.page.getByRole('link', { name: 'Swisscows.email' })
+    this.vpnLink = this.page.getByText('VPN')
   }
 
   clickCharityProjectLink = async () => {
@@ -60,5 +61,9 @@ export default class FooterFull extends BaseComponent {
   clickEmailLinkAndNavigateToNewPage = async () => {
     const emailPage = await this.clickElementAndNavigateToNewPage(this.emailLink,`Email link in the footer full`)
     return emailPage;
+  };
+  clickVpnLinkAndNavigateToNewPage = async () => {
+    const vpnPage = await this.clickElementAndNavigateToNewPage(this.vpnLink,`VPN link in the footer full`)
+    return vpnPage;
   };
 }

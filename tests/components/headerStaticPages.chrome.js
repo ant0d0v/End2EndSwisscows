@@ -95,3 +95,16 @@ test("Clicking on the swisscows's logo on email page leads to the main page.", a
   await mainPage.expectHaveUrl(mainPage.page, constantsData.URL_MAIN_PAGE);
   await mainPage.expectHaveTitle( mainPage.page, constantsData.TITLE_MAIN_PAGE );
 });
+
+test("Clicking on the swisscows's logo on vpn page leads to the main page.", async ({
+  mainPage,
+  vpnPage,
+}) => {
+  //Actions
+  await vpnPage.waitUntilPageIsFullyLoaded();
+  await vpnPage.headerStaticPages.clickSwisscowsLogo();
+
+  //Assert
+  await mainPage.expectHaveUrl(mainPage.page, constantsData.URL_MAIN_PAGE);
+  await mainPage.expectHaveTitle( mainPage.page, constantsData.TITLE_MAIN_PAGE );
+});

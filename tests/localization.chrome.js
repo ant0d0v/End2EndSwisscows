@@ -187,3 +187,22 @@ for (const { test_case, language, expected_content} of emailTable) {
     await emailPage.expectElementToHaveText(emailPage.allContent, expected_content)
   });
 }
+const vpnTable = parse(fs.readFileSync(path.join(__dirname, '../localization/vpn.csv')), {
+  columns: true,
+  skip_empty_lines: true
+});
+
+for (const { test_case, language, expected_content} of vpnTable) {
+  test(`${test_case} Check content of vpn page for  ${language} localization`, async ({
+    vpnPage
+  }) => {
+    //Actions
+    await vpnPage.waitUntilPageIsFullyLoaded();
+    await vpnPage.headerStaticPages.clickHamburgerMenuButton();
+    await vpnPage.headerStaticPages.hamburgerMenu.clickLanguagesDropdownInHamburgerMenu();
+    await vpnPage.headerStaticPages.hamburgerMenu.clickLanguageLinkInDropdown(language);
+
+    //Assert
+    await vpnPage.expectElementToHaveText(vpnPage.allContent, expected_content)
+  });
+}

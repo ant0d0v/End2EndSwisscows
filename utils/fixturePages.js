@@ -19,6 +19,7 @@ import EducationPage from "../pages/static-pages/Education.Page";
 import DonationPage from "../pages/static-pages/Donation.Page";
 import ContactUsPage from "../pages/static-pages/ContactUs.Page";
 import ImprintPage from "../pages/static-pages/Imprint.Page";
+import VpnPage from "../pages/static-pages/Vpn.Page";
 
 exports.test = base.test.extend({
   mainPage: async ({ page }, use) => {
@@ -81,6 +82,10 @@ exports.test = base.test.extend({
   emailPage: async ({ footerFull }, use) => {
     const newPage = await footerFull.clickEmailLinkAndNavigateToNewPage();
     await use(new EmailPage(newPage));
+  },
+  vpnPage: async ({ footerFull }, use) => {
+    const newPage = await footerFull.clickVpnLinkAndNavigateToNewPage();
+    await use(new VpnPage(newPage));
   },
   preloader: async ({ page }, use) => {
     await use(new Preloader(page));

@@ -1,0 +1,88 @@
+
+{
+    
+
+    "allLinks": [
+        {
+            "testID": "1",
+            "expectedLink": "https://accounts.swisscows.com/register",
+            "locatorId" : "Try now 3 days for free (",
+            "expectedTitle": "Register - Swisscows Accounts"
+        },
+        {
+            "testID": "2",
+            "expectedLink": "https://accounts.swisscows.com/register",
+            "locatorId" : "start now",
+            "expectedTitle": "Register - Swisscows Accounts"
+        },
+        {
+            "testID": "3",
+            "expectedLink": "https://chromewebstore.google.com/detail/swisscowsvpn/nglddggbgngenfgaelmmmhldofddjlmh",
+            "locatorId" : "Chrome",
+            "expectedTitle": "Swisscows.VPN"
+        },
+        {
+            "testID": "4",
+            "expectedLink": "https://addons.mozilla.org/en-GB/firefox/addon/swisscows-vpn/",
+            "locatorId" : "Firefox",
+            "expectedTitle": "Swisscows.VPN – Get this Extension for 🦊 Firefox (en-GB)"
+        },
+        {
+            "testID": "5",
+            "expectedLink": "https://microsoftedge.microsoft.com/addons/detail/swisscowsvpn/ekfpnjcldolgfbgdjpkakfabakoghnpp",
+            "locatorId" : "Edge",
+            "expectedTitle": "Swisscows.VPN - Microsoft Edge Addons"
+        },
+        {
+            "testID": "6",
+            "expectedLink": "https://blog.swisscows.com/en/browse-anonymously/",
+            "locatorId" : "surf anonymously",
+            "expectedTitle": "Browse anonymously: This is what you have to watch out for on the Internet"
+        },
+        {
+            "testID": "7",
+            "expectedLink": "https://accounts.swisscows.com/register",
+            "locatorId" : "Register",
+            "expectedTitle": "Register - Swisscows Accounts"
+        },
+        {
+            "testID": "8",
+            "expectedLink": "^https://accounts\\.swisscows\\.com/login\\?ReturnUrl=%2Fproducts%2Fswisscows-vpn-standard",
+            "locatorId" : "Monthly CHF 10.00 per month",
+            "expectedTitle": "Login - Swisscows Accounts"
+        },
+        {
+            "testID": "9",
+            "expectedLink": "^https://accounts\\.swisscows\\.com/login\\?ReturnUrl=%2Fproducts%2Fswisscows-vpn-standard",
+            "locatorId" : "Annual CHF 7.00 per month CHF",
+            "expectedTitle": "Login - Swisscows Accounts"
+        },
+        {
+            "testID": "10",
+            "expectedLink": "https://support.swisscows.com/swisscows-vpn/",
+            "locatorId" : "Go to support page",
+            "expectedTitle": "Swisscows Support (Page 1)"
+        }
+    ],
+    "allLinksInSecondQuestions": [
+        {
+            "testID": "1",
+            "expectedLink": "https://swisscows.com/en",
+            "locatorId" : "anonymous search engine",
+            "expectedTitle": "Your private and anonymous search engine Swisscows"
+        },
+        {
+            "testID": "2",
+            "expectedLink": "https://swisscows.com/en/search-engine-no-tracking",
+            "locatorId" : "search engine without tracking",
+            "expectedTitle": "Search engine without tracking - Learn more about us"
+        },
+        {
+            "testID": "3",
+            "expectedLink": "https://blog.swisscows.com/en/personalized-advertising-how-to-protect-your-own-data/",
+            "locatorId" : "personalized advertising",
+            "expectedTitle": "Prevent personalized advertising – measures explained"
+        }
+    ]
+
+}

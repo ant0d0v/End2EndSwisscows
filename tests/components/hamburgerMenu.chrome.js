@@ -7,35 +7,35 @@ const dateTest = JSON.parse(
 );
 
 test("Check  login User and display of nickname in hamburger menu", async ({
-  headerStaticPages,
-  header
+  mainPage,
+  webPage
 }) => {
   //Actions
-  await headerStaticPages.autocomplete.inputSearchCriteria(testData.searchCriteria.first);
-  await headerStaticPages.autocomplete.clickEnterSearchField();
-  await header.clickHamburgerMenuButton();
+  await mainPage.headerStaticPages.autocomplete.inputSearchCriteria(testData.searchCriteria.first);
+  await mainPage.headerStaticPages.autocomplete.clickEnterSearchField();
+  await webPage.header.clickHamburgerMenuButton();
 
   //Assert
-  await header.hamburgerMenu.expectNicknameUserInHamburgerMenuToHave("TTest");
+  await webPage.header.hamburgerMenu.expectNicknameUserInHamburgerMenuToHave("TTest");
 });
 
 test("Check Log Out user and display of login button", async ({
-  headerStaticPages,
-  header
+  mainPage,
+  webPage
 }) => {
   //Actions
-  await headerStaticPages.autocomplete.inputSearchCriteria(testData.searchCriteria.first);
-  await headerStaticPages.autocomplete.clickEnterSearchField();
-  await header.clickHamburgerMenuButton();
-  await header.hamburgerMenu.clickLogoutButtonInHamburgerMenu();
-  await header.clickHamburgerMenuButton();
+  await mainPage.headerStaticPages.autocomplete.inputSearchCriteria(testData.searchCriteria.first);
+  await mainPage.headerStaticPages.autocomplete.clickEnterSearchField();
+  await webPage.header.clickHamburgerMenuButton();
+  await webPage.header.hamburgerMenu.clickLogoutButtonInHamburgerMenu();
+  await webPage.header.clickHamburgerMenuButton();
 
   //Assert
-  await header.hamburgerMenu.expectLoginButtonInHamburgerMenuIsDisplayed();
+  await webPage.header.hamburgerMenu.expectLoginButtonInHamburgerMenuIsDisplayed();
 });
 
 test("Texts of the links in the hamburger menu.", async ({
-  headerStaticPages
+  mainPage
 }) => {
   const expectedTextsOfLinks = [
     "Set as Startpage",
@@ -50,14 +50,14 @@ test("Texts of the links in the hamburger menu.", async ({
     "Support",
   ];
   //Actions
-  await headerStaticPages.clickHamburgerMenuButton();
+  await mainPage.headerStaticPages.clickHamburgerMenuButton();
 
   //Assert
-  await headerStaticPages.hamburgerMenu.expectTextsOfLinksInHamburgerMenu(expectedTextsOfLinks);
+  await mainPage.headerStaticPages.hamburgerMenu.expectTextsOfLinksInHamburgerMenu(expectedTextsOfLinks);
 });
 
 test("Check availability and options of localization dropdown menu in hamburger Menu", async ({
-  headerStaticPages
+  mainPage
 }) => {
   const expectedTextsOfLanguagesDropdown = [
     "English",
@@ -73,21 +73,21 @@ test("Check availability and options of localization dropdown menu in hamburger 
     "Українська",
   ];
   //Actions
-  await headerStaticPages.clickHamburgerMenuButton();
-  await headerStaticPages.hamburgerMenu.clickLanguagesDropdownInHamburgerMenu();
+  await mainPage.headerStaticPages.clickHamburgerMenuButton();
+  await mainPage.headerStaticPages.hamburgerMenu.clickLanguagesDropdownInHamburgerMenu();
 
   //Assert
-  await headerStaticPages.hamburgerMenu.expectListToHaveCount(
-    headerStaticPages.hamburgerMenu.textsLanguagesDropdownInHamburgerMenu,
+  await mainPage.headerStaticPages.hamburgerMenu.expectListToHaveCount(
+    mainPage.headerStaticPages.hamburgerMenu.textsLanguagesDropdownInHamburgerMenu,
     11
   );
-  await headerStaticPages.hamburgerMenu.expectTextsOfLanguagesInHamburgerMenu(
+  await mainPage.headerStaticPages.hamburgerMenu.expectTextsOfLanguagesInHamburgerMenu(
     expectedTextsOfLanguagesDropdown
   );
 });
 
 test("Check  availability and options of region dropdown menu in hamburger menu", async ({
-  headerStaticPages
+  mainPage
 }) => {
   const expectedTextsOfRegionDropdown = [
     "Argentina",
@@ -140,76 +140,73 @@ test("Check  availability and options of region dropdown menu in hamburger menu"
     "World-wide",
   ];
   //Actions
-  await headerStaticPages.clickHamburgerMenuButton();
-  await headerStaticPages.hamburgerMenu.clickRegionDropdownInHamburgerMenu();
+  await mainPage.headerStaticPages.clickHamburgerMenuButton();
+  await mainPage.headerStaticPages.hamburgerMenu.clickRegionDropdownInHamburgerMenu();
 
   //Assert
-  await headerStaticPages.hamburgerMenu.expectListToHaveCount(
-    headerStaticPages.hamburgerMenu.textsOfRegionDropdownInHamburgerMenu,
+  await mainPage.headerStaticPages.hamburgerMenu.expectListToHaveCount(
+    mainPage.headerStaticPages.hamburgerMenu.textsOfRegionDropdownInHamburgerMenu,
     48
   );
-  await headerStaticPages.hamburgerMenu.expectTextsOfRegionInHamburgerMenu(
+  await mainPage.headerStaticPages.hamburgerMenu.expectTextsOfRegionInHamburgerMenu(
     expectedTextsOfRegionDropdown
   );
 });
 test("Check theme change to dark theme", async ({
-  headerStaticPages
+  mainPage
 }) => {
   const expectedDarkBackground = /rgb\(24, 26, 28\)/;
   //Actions
-  await headerStaticPages.clickHamburgerMenuButton();
-  await headerStaticPages.hamburgerMenu.clickThemeDropdownInHamburgerMenu();
-  await headerStaticPages.hamburgerMenu.clickDarkInHamburgerMenu();
+  await mainPage.headerStaticPages.clickHamburgerMenuButton();
+  await mainPage.headerStaticPages.hamburgerMenu.clickThemeDropdownInHamburgerMenu();
+  await mainPage.headerStaticPages.hamburgerMenu.clickDarkInHamburgerMenu();
 
   //Assert
-  await headerStaticPages.hamburgerMenu.expectBackgroundColorOfPage(
-    expectedDarkBackground
-  );
+  await mainPage.headerStaticPages.hamburgerMenu.expectBackgroundColorOfPage(expectedDarkBackground);
 });
 
 test("Check theme change to light theme", async ({
-  headerStaticPages
+  mainPage
 }) => {
   const expectedLightBackground = /rgb\(250, 251, 253\)/;
   //Actions
-  await headerStaticPages.clickHamburgerMenuButton();
-  await headerStaticPages.hamburgerMenu.clickThemeDropdownInHamburgerMenu();
-  await headerStaticPages.hamburgerMenu.clickLightInHamburgerMenu();
+  await mainPage.headerStaticPages.clickHamburgerMenuButton();
+  await mainPage.headerStaticPages.hamburgerMenu.clickThemeDropdownInHamburgerMenu();
+  await mainPage.headerStaticPages.hamburgerMenu.clickLightInHamburgerMenu();
 
   //Assert
-  await headerStaticPages.hamburgerMenu.expectBackgroundColorOfPage(
+  await mainPage.headerStaticPages.hamburgerMenu.expectBackgroundColorOfPage(
     expectedLightBackground
   );
 });
 
 test("Check default theme on first opening the site", async ({
-  headerStaticPages
+  mainPage
 }) => {
   const expectedLightBackground = /rgb\(250, 251, 253\)/;
   //Actions
-  await headerStaticPages.clickHamburgerMenuButton();
-  await headerStaticPages.hamburgerMenu.clickThemeDropdownInHamburgerMenu();
+  await mainPage.headerStaticPages.clickHamburgerMenuButton();
+  await mainPage.headerStaticPages.hamburgerMenu.clickThemeDropdownInHamburgerMenu();
 
   //Assert
-  await headerStaticPages.hamburgerMenu.expectAttributeClassOfElement(
-    headerStaticPages.hamburgerMenu.defaultThemeInHamburgerMenu,
+  await mainPage.headerStaticPages.hamburgerMenu.expectAttributeClassOfElement(
+    mainPage.headerStaticPages.hamburgerMenu.defaultThemeInHamburgerMenu,
     "active"
   );
-  await headerStaticPages.hamburgerMenu.expectBackgroundColorOfPage(
+  await mainPage.headerStaticPages.hamburgerMenu.expectBackgroundColorOfPage(
     expectedLightBackground
   );
 });
 
 for (const {testID,expectedLink,locatorId,expectedTitle,} of dateTest.regionLinksOfMainPage) {
   test(`${testID} Check navigation to corresponding pages for ${locatorId} region`, async ({
-    headerStaticPages,
     mainPage,
     page,
   }) => {
     //Actions
-    await headerStaticPages.clickHamburgerMenuButton();
-    await headerStaticPages.hamburgerMenu.clickDropdownRegion();
-    await headerStaticPages.hamburgerMenu.clickRegionLinkInDropdown(locatorId);
+    await mainPage.headerStaticPages.clickHamburgerMenuButton();
+    await mainPage.headerStaticPages.hamburgerMenu.clickDropdownRegion();
+    await mainPage.headerStaticPages.hamburgerMenu.clickRegionLinkInDropdown(locatorId);
 
     //Assert
     await mainPage.expectHaveUrl(page, expectedLink);
@@ -219,11 +216,12 @@ for (const {testID,expectedLink,locatorId,expectedTitle,} of dateTest.regionLink
 for (const {testID,expectedLink,locatorId,expectedTitle,} of dateTest.staticPagesLinks) {
   test(`${testID}  ${locatorId} content page links navigates to the corresponding page.`, async ({
     headerStaticPages,
+    mainPage,
     page
   }) => {
     //Actions
-    await headerStaticPages.clickHamburgerMenuButton();
-    await headerStaticPages.hamburgerMenu.clickLinkOfStaticPage(locatorId);
+    await mainPage.headerStaticPages.clickHamburgerMenuButton();
+    await mainPage.headerStaticPages.hamburgerMenu.clickLinkOfStaticPage(locatorId);
 
     //Assert
     await headerStaticPages.hamburgerMenu.expectHaveUrl(page, expectedLink);
