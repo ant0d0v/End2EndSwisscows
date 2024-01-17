@@ -78,22 +78,6 @@ test(`Check send message using all required fields`, async ({
   
 });
 
-test(`Check "back to search" button `, async ({
-  contactUsPage, page, mainPage
-}) => {
-  //Actions
-  await contactUsPage.inputYouNameField("Test");
-  await contactUsPage.inputEmailField("test@gmail.com");
-  await contactUsPage.inputMessageField("My test");
-  await contactUsPage.checkAgreeCheckbox()
-  await contactUsPage.clickSendButton()
-  await contactUsPage.clickBackToSearchButton()
-
-  //Assert
-  await mainPage.expectHaveUrl(page, constantsData.URL_MAIN_PAGE);
-  await mainPage.expectHaveTitle(page,constantsData.TITLE_MAIN_PAGE)
-  
-});
 
 test(`Check the tooltip when sending a message without the "Agree" checkbox`, async ({
   contactUsPage

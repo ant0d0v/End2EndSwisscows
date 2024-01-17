@@ -88,9 +88,10 @@ exports.test = base.test.extend({
     const newPage = await footerFull.clickEmailLinkAndNavigateToNewPage();
     await use(new EmailPage(newPage));
   },
-  defaultSearchPage: async ({ page }, use) => {
-    await page.goto("https://dev.swisscows.com/en/default-search")
-    await use(new DefaultSearchPage(page));
+  defaultSearchPage: async ({ mainPage }, use) => {
+    await mainPage.clickFourQuestion()
+    const newPage = await mainPage.clickLinkInTheFourQuestionAndNavigateToDefaultSearchPage();
+    await use(new DefaultSearchPage(newPage));
   },
 
   vpnPage: async ({ footerFull }, use) => {

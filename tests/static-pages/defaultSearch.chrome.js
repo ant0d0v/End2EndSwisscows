@@ -24,11 +24,11 @@ test("Check design of the default search page ", async ({ defaultSearchPage },te
 
   for (const { testID, expectedLink, locatorId, locatorName, expectedTitle,} of testData.allLinks) {
     test(`${testID} Check navigation to corresponding pages for  '${locatorId}' link`, async ({
-      defaultSearchPage,
-        page
+      defaultSearchPage
     }) => {
       //Actions
-      const currentPage = await defaultSearchPage.clickAllLinksAndNavigateToNewPage(locatorId, locatorName);
+      
+      const currentPage = await defaultSearchPage.clickAllLinksAndNavigateToNewPage(locatorId, locatorName,);
   
       //Assert
       await defaultSearchPage.expectHaveUrl(currentPage, new RegExp(expectedLink));
