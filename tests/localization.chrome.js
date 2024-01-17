@@ -3,6 +3,7 @@ import fs from 'fs';
 import path from 'path';
 import { parse } from 'csv-parse/sync';
 
+
 const mainTable = parse(fs.readFileSync(path.join(__dirname, '../localization/main.csv')), {
   columns: true,
   skip_empty_lines: true

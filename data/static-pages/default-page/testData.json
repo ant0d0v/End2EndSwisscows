@@ -1,0 +1,43 @@
+
+{
+    
+
+    "allLinks": [
+        {
+            "testID": "1",
+            "expectedLink": "https://addons.mozilla.org/en-US/firefox/addon/swisscows-search/",
+            "locatorId" : "default-search-firefox",
+            "locatorName" : "Install Swisscows",
+            "expectedTitle": "Swisscows – Get this Extension for 🦊 Firefox (en-US)"
+        },
+        {
+            "testID": "2",
+            "expectedLink": "https://chromewebstore.google.com/detail/swisscows/ibimaeimnogcdnjmmlpodbhhbejnpaij",
+            "locatorId" : "default-search-chrome",
+            "locatorName" : "Install Swisscows",
+            "expectedTitle": "Swisscows"
+        },
+        {
+            "testID": "3",
+            "expectedLink": "https://swisscows\\.com/en/web\\?query=",
+            "locatorId" : "default-search-brave",
+            "locatorName" : "https://swisscows.com/web?",
+            "expectedTitle": "Web pages for %s - Swisscows"
+        },
+        {
+            "testID": "4",
+            "expectedLink": "https://swisscows\\.com/en/web\\?query=",
+            "locatorId" : "default-search-opera",
+            "locatorName" : "https://swisscows.com/web?",
+            "expectedTitle": "Web pages for %s - Swisscows"
+        },
+        {
+            "testID": "5",
+            "expectedLink": "https://microsoftedge.microsoft.com/addons/detail/swisscows/dlclfmjmfabgglmifagcjnjcpimekdmn",
+            "locatorId" : "default-search-edge",
+            "locatorName" : "Install Swisscows",
+            "expectedTitle": "Swisscows - Microsoft Edge Addons"
+        }
+    ]
+
+}
