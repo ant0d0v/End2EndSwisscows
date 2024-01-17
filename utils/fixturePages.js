@@ -88,7 +88,12 @@ exports.test = base.test.extend({
     const newPage = await footerFull.clickEmailLinkAndNavigateToNewPage();
     await use(new EmailPage(newPage));
   },
-  
+  defaultSearchPage: async ({ mainPage }, use) => {
+    await mainPage.clickFourQuestion()
+    const newPage = await mainPage.clickLinkInTheFourQuestionAndNavigateToDefaultSearchPage();
+    await use(new DefaultSearchPage(newPage));
+  },
+
   vpnPage: async ({ footerFull }, use) => {
     const newPage = await footerFull.clickVpnLinkAndNavigateToNewPage();
     await use(new VpnPage(newPage));
