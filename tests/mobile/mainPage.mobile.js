@@ -44,7 +44,6 @@ test("Check that a question and answer can be opened and closed on the main page
 
 test("Check that the link in the fourth question leads to the expected URL.", async ({
   mainPage,
-  defaultSearchPage,
 }) => {
   const expectedH1text = "How to use Swisscows as default search";
 
@@ -52,8 +51,8 @@ test("Check that the link in the fourth question leads to the expected URL.", as
   const DefaultSearchPage = await mainPage.clickLinkInTheFourQuestionAndNavigateToDefaultSearchPage();
   
   //Assert
-  await defaultSearchPage.expectHaveUrl( DefaultSearchPage, main.url.defaultSearchPage);
-  await defaultSearchPage.expectH1Text(DefaultSearchPage, expectedH1text);
+  await mainPage.expectHaveUrl( DefaultSearchPage, main.url.defaultSearchPage);
+  await mainPage.expectH1Text(DefaultSearchPage, expectedH1text);
 });
 
 test("Check the texts of questions on the main page.", async ({ mainPage }) => {
