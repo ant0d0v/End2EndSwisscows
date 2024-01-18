@@ -23,32 +23,22 @@
         },
 
     "WebSearchRequestBrazilianBots" : {
-            "webEndpoint": "web/search?",
-            "query": "Otras características considerar",
             "XRequestNonce" : "0MIKs_jPHtiUBCI46lwAcPnMb3S6vyn3",
             "XRequestSignature": "DlagLa8LOWn-E3J7D3yhzncMXN5WAovFiRt_fU0ALJ0"
         },
     "ImageSearchRequestBrazilianBots" : {
-            "imageEndpoint": "image/search?",
-            "query": "Otras características considerar",
             "XRequestNonce" : "ZahdNnYJEZ1zNYhN_JmUlwCiHdZCPtlX",
             "XRequestSignature": "Czd33MRONQL7LzO0PWXvDdd9nsR3FfeTTZN_tiegW5A"
         },
     "VideoSearchRequestBrazilianBots" : {
-            "videoEndpoint": "v2/videos/search?query",
-            "query": "Otras características considerar",
             "XRequestNonce" : "96iC-7kIJKw.XF1dUpFJZtHynn-y6Zqa",
             "XRequestSignature": "-XAK2mXENfQyK3zNeUmG5DCY5Ho_Nfqo7l2A4yifEMs"
         },
     "ShoppingSearchRequestBrazilianBots" : {
-            "shoppingEndpoint": "shopping/search?",
-            "query": "Otras características considerar",
             "XRequestNonce" : "5IwKV2GH8RXe6Zued5qX7MqRvj3OS8rj",
             "XRequestSignature": "8yJ3oNuodsbP5_2HQ2U9Y1O9pyHwIFnKD4KPawnJDnI"
         },
     "MusicSearchRequestBrazilianBots" : {
-            "musicEndpoint": "audio/search/tracks?",
-            "query": "Otras características considerar",
             "XRequestNonce" : "5IwKV2GH8RXe6Zued5qX7MqRvj3OS8rj",
             "XRequestSignature": "8yJ3oNuodsbP5_2HQ2U9Y1O9pyHwIFnKD4KPawnJDnI"
         }                
