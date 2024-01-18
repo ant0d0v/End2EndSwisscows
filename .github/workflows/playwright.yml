@@ -12,8 +12,8 @@ jobs:
       fail-fast: false
       matrix:
         project: [chromium, firefox,edge, mobile , api]
-        shardIndex: [1,2,3,4,5]
-        shardTotal: [1]    
+        shardIndex: [1]
+        shardTotal: [5]    
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
