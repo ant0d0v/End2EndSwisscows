@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {
-    "test": "QASE_REPORT=1 QASE_RUN_NAME=UI xvfb-run npx playwright test --project chromium --shard=1/2  --project = firefox edge mobile --shard= 2/2 && QASE_REPORT=2 QASE_RUN_NAME=API npx playwright test api"
+  "scripts": { 
+    "test": "QASE_REPORT=1 QASE_RUN_NAME=UI xvfb-run  --project=${{ matrix.project }} --shard=${{ matrix.shardIndex }}/${{ matrix.shardTotal }} && npx playwright test api"
   },
   "keywords": [],
   "author": "Anton",
