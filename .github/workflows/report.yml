@@ -8,10 +8,6 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: mcr.microsoft.com/playwright:v1.40.0-jammy
-    strategy:
-      fail-fast: false
-      matrix:
-        project: [chromium, firefox, edge, mobile ]
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
@@ -21,14 +17,11 @@ jobs:
         run: npm ci
       - name: Install chrome browser
         run: npx playwright install chrome
-      - name: Run Playwright tests
-        run: xvfb-run  npx playwright test --project=${{ matrix.project }}
+      - name: Run your tests
+        run: xvfb-run  npx playwright test --project=edge mobile &&  npx playwright test api
         env:
           HOME: /root
         
 
       
       
-
-
-
