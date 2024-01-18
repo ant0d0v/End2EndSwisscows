@@ -18,7 +18,7 @@ jobs:
       - name: Install chrome browser
         run: npx playwright install chrome
       - name: Run your tests
-        run: xvfb-run  npx playwright test --project=edge mobile &&  npx playwright test api
+        run: xvfb-run npx playwright test --project firefox edge && npx playwright test api
         env:
           HOME: /root
         
