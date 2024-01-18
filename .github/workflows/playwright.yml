@@ -11,7 +11,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        project: [chromium, firefox,edge, mobile]
+        project: [chromium, firefox,edge, mobile , api]
         shardIndex: [1]
         shardTotal: [1]    
     steps:
@@ -23,8 +23,15 @@ jobs:
         run: npm ci
       - name: Install chrome browser
         run: npx playwright install chrome
-      - name: Run your tests
-        run: npm run test
+      - name: Run Playwright tests
+        run: xvfb-run npx playwright test --project=${{ matrix.project }} --shard=${{ matrix.shardIndex }}/${{ matrix.shardTotal }}
+      - name: Upload blob report to GitHub Actions Artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: blob-report-${{ matrix.shardIndex }}
+          path: blob-report
+          retention-days: 1
         env:
           HOME: /root
         
