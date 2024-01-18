@@ -60,9 +60,20 @@ export class SearchBuilder {
       this.search.params.license = license ;
       return this;
     }
+    doCheck(){
+      return (
+        this.search.headers["X-Request-Nonce"] != undefined &&
+        this.search.headers["X-Request-Signature"]!= undefined
+      )
+    }
 
     build() {
-      return this.search;
+      const isOk = this.doCheck()
+      if(isOk) {
+        return this.search;
+      } else {
+        throw new Error("Error message: Some required headers are missing.")
+      }
     }
 
      // Verify
