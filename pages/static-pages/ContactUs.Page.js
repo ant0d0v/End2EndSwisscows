@@ -32,6 +32,7 @@ export default class ContactUsPage extends BasePage {
   }
 
   async inputYouNameField(text) {
+    await this.waitUntilPageIsFullyLoaded()
     await this.input(this.formFields(testData.formFields[0].yourName), text,
       `Your name field`
     );
