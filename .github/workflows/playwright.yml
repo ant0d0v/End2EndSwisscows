@@ -8,6 +8,12 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: mcr.microsoft.com/playwright:v1.40.0-jammy
+    strategy:
+      fail-fast: false
+      matrix:
+        project: [chromium, webkit]
+        shardIndex: [1, 2]
+        shardTotal: [2]    
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
