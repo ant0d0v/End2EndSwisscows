@@ -111,104 +111,131 @@ test("Brazilian Bots and Error 429 Page /music search @api", async ({
     })
   );
 });
-test("Check Queries Rate Limit for Regular Bot /web search @apis", async ({
-  botsProtection,
+test("Check Queries Rate Limit for Regular Bot /web search @api", async ({
+  searchBuilder, 
+  request
 }) => {
   // Action
-  const response = await botsProtection.make100SearchRequestAndGetResponse(
+  let response;
+  for (let i = 1; i < 105; i++) {
+  response = await  request.get(process.env.API_URL + "/web/search",
+  searchBuilder.setHeaders(
     testData.WebSearchRequestRateLimit.XRequestNonce,
     testData.WebSearchRequestRateLimit.XRequestSignature,
-    testData.WebSearchRequestBrazilianBots.query,
-    testData.WebSearchRequestRateLimit.webEndpoint
-  );
-
-  // Assert
-  await botsProtection.expectResponseToHaveStatusCode(response, 429);
-  await botsProtection.expectResponseToBeFalsy(response);
-  await expect(response.json()).resolves.toEqual(
-    expect.objectContaining({
-      status: 429,
-    })
-  );
+   )
+   .setQueryParam("good")
+   .setOffsetParam(0)
+   .setItemsCountParam(10)
+   .setFreshnessParam("All")
+   .setRegionParam("uk-UA")
+   .build()
+  )}
+   // Assert
+   await searchBuilder.expectResponseToHaveStatusCode(response, 429);
+   await searchBuilder.expectResponseToBeFalsy(response);
+   await expect(response.json()).resolves.toEqual(expect.objectContaining({ status: 429, }));
 });
+
 test("Check Queries Rate Limit for Regular Bot /image search @api", async ({
-  botsProtection,
+  searchBuilder, 
+  request
 }) => {
   // Action
-  const response = await botsProtection.makeSearchRequestAndGetResponseForImage(
+  const response = await request.get(process.env.API_URL + "/image/search",
+  searchBuilder.setHeaders(
     testData.ImageSearchRequestRateLimit.XRequestNonce,
     testData.ImageSearchRequestRateLimit.XRequestSignature,
-    testData.ImageSearchRequestRateLimit.query,
-    testData.ImageSearchRequestRateLimit.imageEndpoint
-  );
-
-  // Assert
-  await botsProtection.expectResponseToHaveStatusCode(response, 429);
-  await botsProtection.expectResponseToBeFalsy(response);
-  await expect(response.json()).resolves.toEqual(
-    expect.objectContaining({
-      status: 429,
-    })
-  );
+   )
+   .setQueryParam("test")                 
+   .setOffsetParam(0)
+   .setItemsCountParam(50)
+   .setRegionParam("uk-UA")
+   .setFreshnessParam("All")
+   .setAspectParam("All")
+   .setSizeParam("All")
+   .setColorParam("All")
+   .setTypeParam("All")
+   .setContentParam("All")
+   .setLicenseParam("All")
+   .build() 
+  ) 
+   // Assert
+   await searchBuilder.expectResponseToHaveStatusCode(response, 429);
+   await searchBuilder.expectResponseToBeFalsy(response);
+   await expect(response.json()).resolves.toEqual(expect.objectContaining({ status: 429, }));
 });
 
 test("Check Queries Rate Limit for Regular Bot /video search @api", async ({
-  botsProtection,
+  searchBuilder, 
+  request
 }) => {
+
   // Action
-  const response = await botsProtection.makeSearchRequestAndGetResponseForVideo(
+  const response = await request.get(process.env.API_URL + "/v2/videos/search",
+  searchBuilder.setHeaders(
     testData.VideoSearchRequestRateLimit.XRequestNonce,
     testData.VideoSearchRequestRateLimit.XRequestSignature,
-    testData.VideoSearchRequestRateLimit.query,
-    testData.VideoSearchRequestRateLimit.videoEndpoint
-  );
-
+   )
+   .setQueryParam("test")
+   .setItemsCountParam(10)
+   .setRegionParam("uk-UA")
+   .build()
+   ) 
   // Assert
-  await botsProtection.expectResponseToHaveStatusCode(response, 429);
-  await botsProtection.expectResponseToBeFalsy(response);
-  await expect(response.json()).resolves.toEqual(
-    expect.objectContaining({
+  await searchBuilder.expectResponseToHaveStatusCode(response, 429);
+  await searchBuilder.expectResponseToBeFalsy(response);
+  await expect(response.json()).resolves.toEqual(expect.objectContaining({
       status: 429,
     })
   );
 });
 
 test("Check Queries Rate Limit for Regular Bot /shopping search @api", async ({
-  botsProtection,
+  searchBuilder, 
+  request
 }) => {
-  // Action
-  const response =
-    await botsProtection.makeSearchRequestAndGetResponseForShopping(
-      testData.ShoppingSearchRequestRateLimit.XRequestNonce,
-      testData.ShoppingSearchRequestRateLimit.XRequestSignature,
-      testData.ShoppingSearchRequestRateLimit.query,
-      testData.ShoppingSearchRequestRateLimit.shoppingEndpoint
-    );
-
+   // Action
+  const response = await request.get(process.env.API_URL + "/shopping/search",
+  searchBuilder.setHeaders(
+    testData.ShoppingSearchRequestRateLimit.XRequestNonce,
+    testData.ShoppingSearchRequestRateLimit.XRequestSignature
+   )
+   .setQueryParam("ivanka")
+   .setOffsetParam(0)
+   .setItemsCountParam(24)
+   .setSortParam("Popularity")
+   .setRegionParam("de-DE")
+   .build()
+  ) 
   // Assert
-  await botsProtection.expectResponseToHaveStatusCode(response, 429);
-  await botsProtection.expectResponseToBeFalsy(response);
-  await expect(response.json()).resolves.toEqual(
-    expect.objectContaining({
+  await searchBuilder.expectResponseToHaveStatusCode(response, 429);
+  await searchBuilder.expectResponseToBeFalsy(response);
+  await expect(response.json()).resolves.toEqual(expect.objectContaining({
       status: 429,
     })
   );
 });
 
 test("Check Queries Rate Limit for Regular Bot /music search @api", async ({
-  botsProtection,
+  searchBuilder, 
+  request
 }) => {
   // Action
-  const response = await botsProtection.makeSearchRequestAndGetResponseForMusic(
-    testData.MusicSearchRequestRateLimit.query,
-    testData.MusicSearchRequestRateLimit.musicEndpoint
-  );
-
+  const response = await request.get(process.env.API_URL + "/audio/search/tracks",
+  searchBuilder.setHeaders(
+    testData.MusicSearchRequestRateLimit.XRequestNonce,
+    testData.MusicSearchRequestRateLimit.XRequestSignature
+   )
+   .setQueryParam("best")
+   .setOffsetParam(0)
+   .setItemsCountParam(20)
+   .setRegionParam("de-DE")
+   .build()
+  ) 
   // Assert
-  await botsProtection.expectResponseToHaveStatusCode(response, 429);
-  await botsProtection.expectResponseToBeFalsy(response);
-  await expect(response.json()).resolves.toEqual(
-    expect.objectContaining({
+  await searchBuilder.expectResponseToHaveStatusCode(response, 429);
+  await searchBuilder.expectResponseToBeFalsy(response);
+  await expect(response.json()).resolves.toEqual(expect.objectContaining({
       status: 429,
     })
   );

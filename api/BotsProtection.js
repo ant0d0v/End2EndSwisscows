@@ -6,6 +6,13 @@ export class BotsProtection {
   }
 
   // Action
+  async getSearchRequest (endpoint, {headers,params} ){
+    return  await test.step(`Send GET request 100 times `, async () => {
+      return response = await this.request.get(process.env.API_URL + endpoint, {
+        headers,params
+      })
+    })
+  }
 
   async make100SearchRequestAndGetResponse(Nonce, Signature, Query, endpoint) {
     return  await test.step(`Send GET request 100 times `, async () => {
