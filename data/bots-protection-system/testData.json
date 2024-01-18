@@ -1,33 +1,23 @@
 
 {
     "WebSearchRequestRateLimit": {
-            "webEndpoint": "web/search?",
-            "query": "good",
             "XRequestNonce" : "ZGA0kQ.x8T7dyRCVxWRS-8cALOnSJ3ea",
             "XRequestSignature": "ps4ok5GzOodQJmo2KLzdFTsvtYD9hLE3j8JKH4dNqBM"
         },
     "ImageSearchRequestRateLimit": {
-            "imageEndpoint": "image/search?",
-            "query": "test",
             "XRequestNonce" : "~AJenVtFPpYheng9.GvAf0bPPPcqZdVh",
             "XRequestSignature": "ZbgFoE2aASVkLWw7Y-e2qqX0DSuRUKeSA_pYfVHRBGk"
         },
     "VideoSearchRequestRateLimit": {
-            "videoEndpoint": "v2/videos/search?",
-            "query": "test",
             "XRequestNonce" : "UzUSjA6FKfn003m1n6X97lAgeTfi3.KH",
             "XRequestSignature": "PClzC7wcsfjXYU1buHgpW-UTqbBz49CZ4ZZszij3QB0"
         },
     "ShoppingSearchRequestRateLimit": {
-            "shoppingEndpoint": "shopping/search?",
-            "query": "ivanka",
             "XRequestNonce" : "PS8spy3SdQSO4x.DO5Qu7X7PMc0ujUKc",
             "XRequestSignature": "qVrbsFRyIHLA6xVQhql7L1FizFfZfhfp4067qGZkFJI"
         },  
 
     "MusicSearchRequestRateLimit": {
-            "musicEndpoint": "audio/search/tracks?",
-            "query": "best",
             "XRequestNonce" : "PS8spy3SdQSO4x.DO5Qu7X7PMc0ujUKc",
             "XRequestSignature": "qVrbsFRyIHLA6xVQhql7L1FizFfZfhfp4067qGZkFJI"
         },

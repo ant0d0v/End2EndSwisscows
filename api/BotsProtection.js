@@ -1,6 +1,6 @@
 const { expect, test } = require("@playwright/test");
 
-export class BotsProtection {
+export default class BotsProtection {
   constructor(request) {
     this.request = request;
   }
