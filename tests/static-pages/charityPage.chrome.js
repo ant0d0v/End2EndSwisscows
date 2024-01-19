@@ -75,6 +75,8 @@ test("Check that small image matches the large image when clicking on the small 
 });
 
 test("Check that the video is playing", async ({ charityPage }) => {
+  //Action
+  await charityPage.waitUntilPageIsFullyLoaded();
   //Assert
   await charityPage.staticVideoPlayer.expectVideoToPlay();
 });
