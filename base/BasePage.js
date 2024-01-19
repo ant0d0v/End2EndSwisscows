@@ -51,6 +51,7 @@ export default class BasePage {
     await test.step(`Click on the all ${nameElements}`, async () => {
       const count = await elements.count();
          for (let i = 0; i < count; ++i){
+          await elements.nth(i).waitFor()
           await elements.nth(i).click();
         }
       })

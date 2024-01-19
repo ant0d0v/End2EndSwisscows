@@ -18,6 +18,7 @@ export default class VpnPage extends BasePage {
   }
   //Actions
   async clickAllLinksAndNavigateToNewPage(id) {
+    await this.page.waitForSelector('h3.question', { state: 'visible' });
     const newPage = await this.clickElementAndNavigateToNewPage( this.allLinks(id),`${id}`);
     return newPage;
   }
@@ -28,6 +29,7 @@ export default class VpnPage extends BasePage {
     return newPage;
   };
   clickSecondQuestion = async () => {
+    await this.page.waitForSelector('h3.question', { state: 'visible' });
     await this.clickElement( this.secondQuestion,
       `second question in accordion menu`
     );
