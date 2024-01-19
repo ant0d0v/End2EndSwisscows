@@ -5,8 +5,8 @@ on:
     branches: [main, master]
 
 jobs:
-  playwright-tests:
-    name: 'Playwright Tests'
+  playwright-shard-tests:
+    name: 'Playwright Tests - ${{ matrix.project }} - Shard ${{ matrix.shardIndex }} of ${{ matrix.shardTotal }}'
     runs-on: ubuntu-latest
     container:
       image: mcr.microsoft.com/playwright:v1.40.0-jammy
@@ -14,17 +14,24 @@ jobs:
       fail-fast: false
       matrix:
         project: [chromium, mobile]
-        shardIndex: [1, 2, 3]
-        shardTotal: [3]
+        shardIndex: [1, 2, 3, 4]
+        shardTotal: [4]
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
           node-version: 18
+      - uses: actions/cache@v2
+        id: playwright-cache
+        with:
+          path: |
+              ~/.cache/ms-playwright
+          key: ${{ runner.os }}-playwright-${{ hashFiles('**/package-lock.json') }}    
       - name: Install dependencies
         run: npm ci
       - name: Install chrome browser
         run: npx playwright install chrome
+        if: steps.playwright-cache.outputs.cache-hit != 'true'
       - name: Run Playwright tests using shard
         run: xvfb-run npx playwright test --project=${{ matrix.project }} --shard=${{ matrix.shardIndex }}/${{ matrix.shardTotal }}
       - name: Upload blob report to GitHub Actions Artifacts
@@ -37,9 +44,10 @@ jobs:
         env:
           HOME: /root
 
-  playwright:
+  playwright-tests:
+    name: 'Playwright Tests without shard'
     if: always()
-    needs: [playwright-tests]
+    needs: [playwright-shard-tests]
     runs-on: ubuntu-latest
     container:
       image: mcr.microsoft.com/playwright:v1.40.0-jammy
@@ -48,10 +56,17 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 18
+      - uses: actions/cache@v2
+        id: playwright-cache
+        with:
+          path: |
+                ~/.cache/ms-playwright
+          key: ${{ runner.os }}-playwright-${{ hashFiles('**/package-lock.json') }}        
       - name: Install dependencies
         run: npm ci
       - name: Install chrome browser
         run: npx playwright install chrome
+        if: steps.playwright-cache.outputs.cache-hit != 'true'
       - name: Run your tests
         run: xvfb-run npx playwright test --project firefox edge && npx playwright test api
         env:
@@ -66,7 +81,7 @@ jobs:
 
   merge-reports:
     if: always()
-    needs: [playwright-tests, playwright]
+    needs: [playwright-shard-tests, playwright-tests]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
