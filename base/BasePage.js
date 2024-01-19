@@ -49,8 +49,10 @@ export default class BasePage {
   }
   async clickAllElementsInList(elements, nameElements) {
     await test.step(`Click on the all ${nameElements}`, async () => {
-        for (const element of await elements.all()) {
-          await element.click();
+      const count = await elements.count();
+         for (let i = 0; i < count; ++i){
+          await elements.nth(i).waitFor()
+          await elements.nth(i).click();
         }
       })
       .catch(async (e) => await this.errorHandling(e, this.page));

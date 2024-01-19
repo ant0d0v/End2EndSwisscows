@@ -13,11 +13,12 @@ export default class VpnPage extends BasePage {
     this.allButtons = this.page.locator("main.vpn .button")
     this.secondQuestion = this.page.getByRole('heading', { name: 'What are the advantages of' })
     this.allAttributeOfQuestions = this.page.locator("div.faq-wrap div");
-    this.allQuestions = this.page.locator("h3.question");
+    this.allQuestions = this.page.locator("h3.question")
     this.windowsLink = this.page.getByRole('link', { name: 'Windows', exact: true })
   }
   //Actions
   async clickAllLinksAndNavigateToNewPage(id) {
+    await this.page.waitForSelector('h3.question', { state: 'visible' });
     const newPage = await this.clickElementAndNavigateToNewPage( this.allLinks(id),`${id}`);
     return newPage;
   }
@@ -28,6 +29,7 @@ export default class VpnPage extends BasePage {
     return newPage;
   };
   clickSecondQuestion = async () => {
+    await this.scrollByVisibleElement(this.secondQuestion, `second question in accordion menu`);
     await this.clickElement( this.secondQuestion,
       `second question in accordion menu`
     );

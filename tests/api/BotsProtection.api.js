@@ -129,15 +129,39 @@ test("Brazilian Bots and Error 429 Page /music search @api", async ({
   await expect(response.json()).resolves.toEqual(expect.objectContaining({ status: 429, }));
 });
 
+test("Check Queries Rate Limit for Regular Bot /video search @api", async ({
+  searchBuilder,
+  searchRequest,
+  searchResponse
+}) => {
+
+  // Action
+  let response;
+  for (let i = 0; i < 101; i++) {
+  response = await searchRequest.sendVideoRequestMethodGet(
+    searchBuilder.setHeaders(
+      testData.VideoSearchRequestRateLimit.XRequestNonce,
+      testData.VideoSearchRequestRateLimit.XRequestSignature,
+      )
+      .setQueryParam("test")
+      .setItemsCountParam(10)
+      .setRegionParam("uk-UA")
+      .build()
+      )}
+  // Assert
+  await searchResponse.expectResponseToHaveStatusCode(response, 429);
+  await searchResponse.expectResponseToBeFalsy(response);
+  await expect(response.json()).resolves.toEqual(expect.objectContaining({status: 429,}));
+});
+
 test("Check Queries Rate Limit for Regular Bot /web search @api", async ({
   searchBuilder,
   searchRequest,
   searchResponse
 }) => {
   // Action
-  let response;
-  for (let i = 1; i < 115; i++) {
-  response = await searchRequest.sendWebRequestMethodGet(
+  
+  const response = await searchRequest.sendWebRequestMethodGet(
     searchBuilder.setHeaders(
       testData.WebSearchRequestRateLimit.XRequestNonce,
       testData.WebSearchRequestRateLimit.XRequestSignature,
@@ -148,7 +172,7 @@ test("Check Queries Rate Limit for Regular Bot /web search @api", async ({
       .setFreshnessParam("All")
       .setRegionParam("uk-UA")
       .build()
-  )}
+  )
    // Assert
    await searchResponse.expectResponseToHaveStatusCode(response, 429);
    await searchResponse.expectResponseToBeFalsy(response);
@@ -184,30 +208,6 @@ test("Check Queries Rate Limit for Regular Bot /image search @api", async ({
    await searchResponse.expectResponseToBeFalsy(response);
    await expect(response.json()).resolves.toEqual(expect.objectContaining({status: 429,}));
 });
-
-test("Check Queries Rate Limit for Regular Bot /video search @api", async ({
-  searchBuilder,
-  searchRequest,
-  searchResponse
-}) => {
-
-  // Action
-  const response = await searchRequest.sendVideoRequestMethodGet(
-    searchBuilder.setHeaders(
-      testData.VideoSearchRequestRateLimit.XRequestNonce,
-      testData.VideoSearchRequestRateLimit.XRequestSignature,
-      )
-      .setQueryParam("test")
-      .setItemsCountParam(10)
-      .setRegionParam("uk-UA")
-      .build()
-      ) 
-  // Assert
-  await searchResponse.expectResponseToHaveStatusCode(response, 429);
-  await searchResponse.expectResponseToBeFalsy(response);
-  await expect(response.json()).resolves.toEqual(expect.objectContaining({status: 429,}));
-});
-
 test("Check Queries Rate Limit for Regular Bot /shopping search @api", async ({
   searchBuilder,
   searchRequest,
