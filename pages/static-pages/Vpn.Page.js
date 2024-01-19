@@ -13,7 +13,7 @@ export default class VpnPage extends BasePage {
     this.allButtons = this.page.locator("main.vpn .button")
     this.secondQuestion = this.page.getByRole('heading', { name: 'What are the advantages of' })
     this.allAttributeOfQuestions = this.page.locator("div.faq-wrap div");
-    this.allQuestions = this.page.locator("h3.question");
+    this.allQuestions = this.page.locator("h3.question")
     this.windowsLink = this.page.getByRole('link', { name: 'Windows', exact: true })
   }
   //Actions

@@ -14,24 +14,17 @@ jobs:
       fail-fast: false
       matrix:
         project: [chromium, mobile]
-        shardIndex: [1, 2, 3, 4]
-        shardTotal: [4]
+        shardIndex: [1, 2, 3, 4,5,6]
+        shardTotal: [6]
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
           node-version: 18
-      - uses: actions/cache@v2
-        id: playwright-cache
-        with:
-          path: |
-              ~/.cache/ms-playwright
-          key: ${{ runner.os }}-playwright-${{ hashFiles('**/package-lock.json') }}    
       - name: Install dependencies
         run: npm ci
       - name: Install chrome browser
         run: npx playwright install chrome
-        if: steps.playwright-cache.outputs.cache-hit != 'true'
       - name: Run Playwright tests using shard
         run: xvfb-run npx playwright test --project=${{ matrix.project }} --shard=${{ matrix.shardIndex }}/${{ matrix.shardTotal }}
       - name: Upload blob report to GitHub Actions Artifacts

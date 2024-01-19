@@ -136,7 +136,7 @@ test("Check Queries Rate Limit for Regular Bot /web search @api", async ({
 }) => {
   // Action
   let response;
-  for (let i = 1; i < 115; i++) {
+  for (let i = 1; i < 150; i++) {
   response = await searchRequest.sendWebRequestMethodGet(
     searchBuilder.setHeaders(
       testData.WebSearchRequestRateLimit.XRequestNonce,
