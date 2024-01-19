@@ -42,6 +42,12 @@ test("Check that small image matches the large image when clicking on the small 
 });
 
 test("Check that the video is playing", async ({ charityPage }) => {
+  //Action 
+ /* `await charityPage.waitUntilPageIsFullyLoaded();` is a function call that waits until the charity
+ page is fully loaded before proceeding with the next actions or assertions. This ensures that all
+ the necessary elements and resources on the page are loaded and ready to be interacted with or
+ checked. */
+  await charityPage.waitUntilPageIsFullyLoaded();
   //Assert
   await charityPage.staticVideoPlayer.expectVideoToPlay();
 });

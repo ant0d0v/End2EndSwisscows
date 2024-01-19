@@ -29,7 +29,7 @@ export default class VpnPage extends BasePage {
     return newPage;
   };
   clickSecondQuestion = async () => {
-    await this.page.waitForSelector('h3.question', { state: 'visible' });
+    await this.scrollByVisibleElement(this.secondQuestion, `second question in accordion menu`);
     await this.clickElement( this.secondQuestion,
       `second question in accordion menu`
     );
