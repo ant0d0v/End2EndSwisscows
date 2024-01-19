@@ -7,9 +7,8 @@ on:
 jobs:
   playwright-shard-tests:
     name: 'Playwright Tests - ${{ matrix.project }} - Shard ${{ matrix.shardIndex }} of ${{ matrix.shardTotal }}'
+    timeout-minutes: 60
     runs-on: ubuntu-latest
-    container:
-      image: mcr.microsoft.com/playwright:v1.40.0-jammy
     strategy:
       fail-fast: false
       matrix:
@@ -23,6 +22,10 @@ jobs:
           node-version: 18
       - name: Install dependencies
         run: npm ci
+      - name: Install Playwright Browsers
+        run: npx playwright install --with-deps
+      - name: Install Xvfb
+        run: sudo apt-get install xvfb  
       - name: Install chrome browser
         run: npx playwright install chrome
       - name: Run Playwright tests using shard
@@ -39,9 +42,8 @@ jobs:
     name: 'Playwright Tests without shard'
     if: always()
     needs: [playwright-shard-tests]
+    timeout-minutes: 60
     runs-on: ubuntu-latest
-    container:
-      image: mcr.microsoft.com/playwright:v1.40.0-jammy
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
@@ -55,6 +57,13 @@ jobs:
           key: ${{ runner.os }}-playwright-${{ hashFiles('**/package-lock.json') }}        
       - name: Install dependencies
         run: npm ci
+      - name: Install Playwright Browsers
+        run: npx playwright install --with-deps
+        if: steps.playwright-cache.outputs.cache-hit != 'true'
+  
+      - name: Install Xvfb
+        run: sudo apt-get install xvfb  
+        if: steps.playwright-cache.outputs.cache-hit != 'true'
       - name: Install chrome browser
         run: npx playwright install chrome
         if: steps.playwright-cache.outputs.cache-hit != 'true'
