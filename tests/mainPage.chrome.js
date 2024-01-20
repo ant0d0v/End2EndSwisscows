@@ -25,7 +25,8 @@ test("Check that suggest is displayed", async ({
 test("Check that all questions were opened on the main page.", async ({
   mainPage,
 }) => {
-  
+  //Action
+  await mainPage.scrollDownToQuestions()
   await mainPage.clickAllQuestions();
 
   //Assert
@@ -35,12 +36,12 @@ test("Check that all questions were opened on the main page.", async ({
 test("Check that a question and answer can be opened and closed on the main page.", async ({
   mainPage,
 }) => {
-  
+  //Action
+  await mainPage.scrollDownToQuestions()
   await mainPage.clickAllQuestions();
-  //Assert
   await mainPage.expectQuestionsAreOpened();
-
   await mainPage.clickAllQuestions();
+  
   //Assert
   await mainPage.expectQuestionsAreClosed();
 });

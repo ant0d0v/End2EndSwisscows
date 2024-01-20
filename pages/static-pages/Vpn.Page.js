@@ -28,8 +28,10 @@ export default class VpnPage extends BasePage {
     );
     return newPage;
   };
-  clickSecondQuestion = async () => {
+  scrollDownToQuestions = async () => {
     await this.scrollByVisibleElement(this.secondQuestion, `second question in accordion menu`);
+  }
+  clickSecondQuestion = async () => {
     await this.clickElement( this.secondQuestion,
       `second question in accordion menu`
     );
@@ -60,8 +62,7 @@ export default class VpnPage extends BasePage {
   expectScreenVpnPage = async (testInfo) => {
     await this.expectPageToHaveScreenshotWithoutMask(testInfo);
   };
-   // Verify
-   expectQuestionsAreOpened = async () => {
+  expectQuestionsAreOpened = async () => {
     await this.expectAttributeClassAllElements( this.allAttributeOfQuestions, "faq open");
   };
   expectQuestionsAreClosed = async () => {
