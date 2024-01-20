@@ -43,6 +43,9 @@ export default class MainPage extends BasePage {
     );
     return defaultSearchPage;
   };
+  scrollDownToQuestions = async () => {
+    await this.scrollByVisibleElement(this.fourQuestion, `four question in accordion menu`);
+  }
 
   clickFourQuestion = async () => {
     await this.clickElement( this.fourQuestion,
