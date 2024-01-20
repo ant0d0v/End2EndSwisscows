@@ -7,6 +7,7 @@ import Header from "../../components/Header.js";
 import ImagesWidget from "../../components/images/Images.Widget.js";
 import NewsWidget from "../../components/news/News.Widget.js";
 import AdsText from "../../components/ads/Ads.Text.js";
+import Preloader from "../../components/Preloader.js";
 import BasePage from "../../base/BasePage.js";
 
 export default class WebPage extends BasePage {
@@ -21,9 +22,13 @@ export default class WebPage extends BasePage {
     this.imagesWidget = new ImagesWidget(page);
     this.newsWidget = new NewsWidget(page);
     this.header  = new Header(page);
+    this.preloader  = new Preloader(page);
+
+
+    this.webItems = this.page.locator("article.item-web h2")
   }
   expectWebItemsToBeVisible = async () => {
-    await this.expectAreElementsInListDisplayed(this.webItems);
-    return this;
+    await this.page.waitForSelector("article.item-web h2",{ state: 'visible' })
+    await this.expectAreElementsInListDisplayed(this.webItems)
   };
 }
