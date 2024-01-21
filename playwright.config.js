@@ -37,7 +37,7 @@ module.exports = defineConfig({
   retries: process.env.CI ? 2 : 0,
   /* Opt out of parallel tests on CI. */
   workers: process.env.CI ? 4 : undefined,
-  reporter: [process.env.CI ? ['blob'] : ['html',{open:'never'}]],
+  reporter: process.env.CI ? 'blob' : 'html',
 
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   //["playwright-qase-reporter", qaseConfig]
