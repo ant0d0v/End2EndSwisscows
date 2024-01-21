@@ -24,6 +24,8 @@ test("Check that suggest is displayed", async ({
 test("Check that all questions were opened on the main page.", async ({
   mainPage,
 }) => {
+  //Actions
+  await mainPage.scrollDownToQuestions()
   await mainPage.clickAllQuestions();
 
   //Assert
@@ -33,11 +35,12 @@ test("Check that all questions were opened on the main page.", async ({
 test("Check that a question and answer can be opened and closed on the main page.", async ({
   mainPage,
 }) => {
+  //Actions
+  await mainPage.scrollDownToQuestions()
   await mainPage.clickAllQuestions();
-  //Assert
   await mainPage.expectQuestionsAreOpened();
-
   await mainPage.clickAllQuestions();
+
   //Assert
   await mainPage.expectQuestionsAreClosed();
 });
@@ -46,7 +49,8 @@ test("Check that the link in the fourth question leads to the expected URL.", as
   mainPage,
 }) => {
   const expectedH1text = "How to use Swisscows as default search";
-
+   //Actions
+  await mainPage.scrollDownToQuestions()
   await mainPage.clickFourQuestion();
   const DefaultSearchPage = await mainPage.clickLinkInTheFourQuestionAndNavigateToDefaultSearchPage();
   
