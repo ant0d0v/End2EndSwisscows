@@ -10,8 +10,8 @@ test("Check that suggest is displayed", async ({
   mainPage
 }) => {
   await mainPage.reloadPage();
+  await mainPage.waitUntilPageIsFullyLoaded();
   await mainPage.headerStaticPages.autocomplete.inputSearchCriteria(testData.searchCriteria.first);
-  await mainPage.headerStaticPages.autocomplete.waitToBeVisibleSuggest();
 
   //Assert
   await mainPage.headerStaticPages.autocomplete.expectSuggestIsDisplayed();
