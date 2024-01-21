@@ -230,8 +230,8 @@ export default class BasePage {
 
   async expectAreElementsInListDisplayed(elements) {
     await test.step('Expect the element in the array to "be" visible', async () => {
-      for (const image of await elements.all()) {
-        await expect(image).toBeVisible();
+      for (const element of await elements.all()) {
+        await expect(element).toBeVisible();
       }
     });
   }

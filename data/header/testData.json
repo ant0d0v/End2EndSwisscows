@@ -2,7 +2,8 @@
 {
    "searchCriteria": {
         "first": "ivanka",
-        "second": "ronaldo"
+        "second": "ronaldo",
+        "third": "news"
     },
    
     "headerLinks": [

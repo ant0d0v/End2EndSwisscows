@@ -25,7 +25,8 @@ test("Check design of the VPN page ", async ({ vpnPage },testInfo) => {
   test("Check that all questions were opened on the VPN page.", async ({
     vpnPage
   }) => {
-    
+    //Actions
+    await vpnPage.scrollDownToQuestions()
     await vpnPage.clickAllQuestions();
   
     //Assert
@@ -35,12 +36,12 @@ test("Check design of the VPN page ", async ({ vpnPage },testInfo) => {
   test("Check that a question and answer can be opened and closed on the VPN page.", async ({
     vpnPage,
   }) => {
-    
+    //Actions
+    await vpnPage.scrollDownToQuestions()
     await vpnPage.clickAllQuestions();
-    //Assert
     await vpnPage.expectQuestionsAreOpened();
-  
     await vpnPage.clickAllQuestions();
+    
     //Assert
     await vpnPage.expectQuestionsAreClosed();
   });

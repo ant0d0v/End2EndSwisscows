@@ -28,8 +28,10 @@ export default class VpnPage extends BasePage {
     );
     return newPage;
   };
-  clickSecondQuestion = async () => {
+  scrollDownToQuestions = async () => {
     await this.scrollByVisibleElement(this.secondQuestion, `second question in accordion menu`);
+  }
+  clickSecondQuestion = async () => {
     await this.clickElement( this.secondQuestion,
       `second question in accordion menu`
     );
