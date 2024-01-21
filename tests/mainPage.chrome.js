@@ -52,8 +52,7 @@ test("Check that the link in the fourth question leads to the expected URL.", as
   //Action
   await mainPage.scrollDownToQuestions()
   await mainPage.clickFourQuestion();
-  const DefaultSearchPage =
-    await mainPage.clickLinkInTheFourQuestionAndNavigateToDefaultSearchPage();
+  const DefaultSearchPage = await mainPage.clickLinkInTheFourQuestionAndNavigateToDefaultSearchPage();
 
   //Assert
   await mainPage.expectHaveUrl(DefaultSearchPage , main.url.defaultSearchPage);
