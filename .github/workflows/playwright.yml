@@ -89,4 +89,6 @@ jobs:
         with:
           name: html-report--attempt-${{ github.run_attempt }}
           path: playwright-report
+          compression-level: 9
+          overwrite: true
           retention-days: 1
