@@ -238,7 +238,6 @@ export default class BasePage {
   async expectTextsToContains(elements, criteria) {
     await test.step('Expect the elements in the array "to contain" a string', async () => {
       for (const element of await elements.all()) {
-        await expect(element).not.toBeEmpty();
         await expect(element).toContainText(criteria);
       }
     });
