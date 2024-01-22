@@ -6,7 +6,7 @@ on:
 
 jobs:
   playwright-shard-tests:
-    name: 'Playwright Tests - ${{ matrix.project }} - Shard ${{ matrix.shardIndex }} of ${{ matrix.shardTotal }}'
+    name: 'Playwright Tests - ${{ matrix.project }} - Shard ${{ matrix.shardIndex }}'
     runs-on: ubuntu-latest
     container:
       image: mcr.microsoft.com/playwright:v1.41.1-jammy
@@ -14,8 +14,7 @@ jobs:
       fail-fast: false
       matrix:
         project: [chromium, mobile]
-        shardIndex: [1, 2, 3, 4, 5, 6, 7, 8]
-        shardTotal: [8]
+        shardIndex: [1/2, 2/4, 3/4, 4/4]
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
@@ -26,13 +25,13 @@ jobs:
       - name: Install chrome browser
         run: npx playwright install chrome
       - name: Run Playwright tests using shard
-        run: xvfb-run npx playwright test --project=${{ matrix.project }} --shard=${{ matrix.shardIndex }}/${{ matrix.shardTotal }}
+        run: xvfb-run npx playwright test --project=${{ matrix.project }} --shard=${{ matrix.shardIndex }}
       - name: Upload blob report to GitHub Actions Artifacts
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: blob-report-${{ matrix.project }}-run-${{ matrix.shardIndex }}
-          path: blob-report
+          path: blob-report/
           retention-days: 1
         env:
           HOME: /root
@@ -62,7 +61,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: blob-report-api
-          path: blob-report
+          path: blob-report/
           retention-days: 1
 
   merge-reports:
