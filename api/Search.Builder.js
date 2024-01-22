@@ -1,5 +1,3 @@
-const { expect, test } = require("@playwright/test");
-
 export default class SearchBuilder {
     constructor() {
       this.search = {
@@ -7,8 +5,11 @@ export default class SearchBuilder {
         params: {},
     };
     }
-    setHeaders(Nonce, Signature) {
+    setNonceHeader(Nonce) {
       this.search.headers["X-Request-Nonce"] = Nonce;
+        return this;
+    }
+    setSignatureHeader(Signature) {
       this.search.headers["X-Request-Signature"] = Signature;
         return this;
     }

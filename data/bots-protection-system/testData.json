@@ -1,44 +1,44 @@
 
 {
-    "WebSearchRequestRateLimit": {
+    "WebRateLimit": {
             "XRequestNonce" : "ZGA0kQ.x8T7dyRCVxWRS-8cALOnSJ3ea",
             "XRequestSignature": "ps4ok5GzOodQJmo2KLzdFTsvtYD9hLE3j8JKH4dNqBM"
         },
-    "ImageSearchRequestRateLimit": {
+    "ImageRateLimit": {
             "XRequestNonce" : "~AJenVtFPpYheng9.GvAf0bPPPcqZdVh",
             "XRequestSignature": "ZbgFoE2aASVkLWw7Y-e2qqX0DSuRUKeSA_pYfVHRBGk"
         },
-    "VideoSearchRequestRateLimit": {
+    "VideoRateLimit": {
             "XRequestNonce" : "UzUSjA6FKfn003m1n6X97lAgeTfi3.KH",
             "XRequestSignature": "PClzC7wcsfjXYU1buHgpW-UTqbBz49CZ4ZZszij3QB0"
         },
-    "ShoppingSearchRequestRateLimit": {
+    "ShoppingRateLimit": {
             "XRequestNonce" : "PS8spy3SdQSO4x.DO5Qu7X7PMc0ujUKc",
             "XRequestSignature": "qVrbsFRyIHLA6xVQhql7L1FizFfZfhfp4067qGZkFJI"
         },  
 
-    "MusicSearchRequestRateLimit": {
+    "MusicRateLimit": {
             "XRequestNonce" : "PS8spy3SdQSO4x.DO5Qu7X7PMc0ujUKc",
             "XRequestSignature": "qVrbsFRyIHLA6xVQhql7L1FizFfZfhfp4067qGZkFJI"
         },
 
-    "WebSearchRequestBrazilianBots" : {
+    "WebBrazilianBots" : {
             "XRequestNonce" : "0MIKs_jPHtiUBCI46lwAcPnMb3S6vyn3",
             "XRequestSignature": "DlagLa8LOWn-E3J7D3yhzncMXN5WAovFiRt_fU0ALJ0"
         },
-    "ImageSearchRequestBrazilianBots" : {
+    "ImageBrazilianBots" : {
             "XRequestNonce" : "ZahdNnYJEZ1zNYhN_JmUlwCiHdZCPtlX",
             "XRequestSignature": "Czd33MRONQL7LzO0PWXvDdd9nsR3FfeTTZN_tiegW5A"
         },
-    "VideoSearchRequestBrazilianBots" : {
+    "VideoBrazilianBots" : {
             "XRequestNonce" : "96iC-7kIJKw.XF1dUpFJZtHynn-y6Zqa",
             "XRequestSignature": "-XAK2mXENfQyK3zNeUmG5DCY5Ho_Nfqo7l2A4yifEMs"
         },
-    "ShoppingSearchRequestBrazilianBots" : {
+    "ShoppingBrazilianBots" : {
             "XRequestNonce" : "5IwKV2GH8RXe6Zued5qX7MqRvj3OS8rj",
             "XRequestSignature": "8yJ3oNuodsbP5_2HQ2U9Y1O9pyHwIFnKD4KPawnJDnI"
         },
-    "MusicSearchRequestBrazilianBots" : {
+    "MusicBrazilianBots" : {
             "XRequestNonce" : "5IwKV2GH8RXe6Zued5qX7MqRvj3OS8rj",
             "XRequestSignature": "8yJ3oNuodsbP5_2HQ2U9Y1O9pyHwIFnKD4KPawnJDnI"
         }                
