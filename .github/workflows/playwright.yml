@@ -81,10 +81,10 @@ jobs:
         with:
           path: all-blob-reports
           pattern: |
-            blob-report-chromium*,
-            blob-report-mobile*,
+            blob-report-chromium*
+            blob-report-mobile*
             blob-report-api
-          merge-multiple: true        
+          merge-multiple: true     
       - name: Merge into HTML Report
         run: npx playwright merge-reports --reporter html ./all-blob-reports
       - name: Upload HTML report
