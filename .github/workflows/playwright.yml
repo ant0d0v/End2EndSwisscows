@@ -9,13 +9,13 @@ jobs:
     name: 'Playwright Tests - ${{ matrix.project }} - Shard ${{ matrix.shardIndex }} of ${{ matrix.shardTotal }}'
     runs-on: ubuntu-latest
     container:
-      image: mcr.microsoft.com/playwright:v1.40.0-jammy
+      image: mcr.microsoft.com/playwright:v1.41.1-jammy
     strategy:
       fail-fast: false
       matrix:
         project: [chromium, mobile]
-        shardIndex: [1, 2, 3, 4]
-        shardTotal: [4]
+        shardIndex: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+        shardTotal: [15]
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
@@ -31,7 +31,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: blob-report-${{ matrix.project }}-${{ matrix.shardIndex }}
+          name: blob-report-${{ matrix.project }}-shard-${{ matrix.shardIndex }}
           path: blob-report
           retention-days: 1
         env:
@@ -43,7 +43,7 @@ jobs:
     needs: [playwright-shard-tests]
     runs-on: ubuntu-latest
     container:
-      image: mcr.microsoft.com/playwright:v1.40.0-jammy
+      image: mcr.microsoft.com/playwright:v1.41.1-jammy
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
@@ -87,6 +87,7 @@ jobs:
       - name: Upload HTML report
         uses: actions/upload-artifact@v4
         with:
-          name: html-report--test-${{ github.run_attempt }}
+          name: html-report--attempt-${{ github.run_attempt }}
           path: playwright-report
+          compression-level: 0
           retention-days: 1
