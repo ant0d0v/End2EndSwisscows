@@ -75,7 +75,19 @@ test("Check design of the VPN page ", async ({ vpnPage },testInfo) => {
     vpnPage
   }) => {
     //Actions
-    const windowsExtension = await vpnPage.downloadVpnExtensionFile();
+    const windowsExtension = await vpnPage.downloadVpnExtensionFile(vpnPage.windowsLink);
+  
+    //Assert
+    await vpnPage.expectDownloadFileNameToBe(windowsExtension, "SwisscowsVPNInstaller.msi")
+    await vpnPage.expectFileSizeToBeGreaterThan(windowsExtension, 23000000)
+  
+  });
+
+  test("Check download windows vpn extension file when clicking try now 3 day link", async ({
+    vpnPage
+  }) => {
+    //Actions
+    const windowsExtension = await vpnPage.downloadVpnExtensionFile(vpnPage.tryNowThreeDayLink);
   
     //Assert
     await vpnPage.expectDownloadFileNameToBe(windowsExtension, "SwisscowsVPNInstaller.msi")
