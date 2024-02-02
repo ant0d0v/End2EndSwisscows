@@ -82,8 +82,9 @@ test("Check query counter value when searching for news", async ({
   await mainPage.headerStaticPages.autocomplete.inputSearchCriteria(testData.searchCriteria.third);
   await mainPage.headerStaticPages.autocomplete.clickEnterSearchField();
   await webPage.expectWebItemsToBeVisible()
-  await header.clickHamburgerMenuButton();
-  await header.hamburgerMenu.selectGermanyRegion();
+  await mainPage.headerStaticPages.clickHamburgerMenuButton();
+  await mainPage.headerStaticPages.hamburgerMenu.selectGermanyRegion();
+  await webPage.expectWebItemsToBeVisible()
   await header.clickNewsSearchButton();
 
   //Assert

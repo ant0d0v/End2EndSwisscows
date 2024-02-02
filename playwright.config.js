@@ -28,7 +28,7 @@ module.exports = defineConfig({
   testDir: "./tests",
   timeout: 5 * 60 * 1000,
   // Limit the number of failures on CI to save resources
-  maxFailures: process.env.CI ? 10 : undefined,
+  // maxFailures: process.env.CI ? 10 : undefined,
   /* Run tests in files in parallel */
   fullyParallel: true,
   /* Fail the build on CI if you accidentally left test.only in the source code. */

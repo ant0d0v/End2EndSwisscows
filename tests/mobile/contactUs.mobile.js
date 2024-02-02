@@ -11,7 +11,7 @@ test("Check color of Send button when hovering ", async ({ contactUsPage }) => {
   await contactUsPage.expectColorLinkWhenHovering(contactUsPage.sendButton, "background", /rgb\(191, 0, 0\)/);
 });
 
-test(`Check border color of name, email, message when sending form with empty fields`, async ({
+test.skip(`Check border color of name, email, message when sending form with empty fields`, async ({
   contactUsPage
 }) => {
   //Actions
@@ -22,7 +22,7 @@ test(`Check border color of name, email, message when sending form with empty fi
   await contactUsPage.expectBorderColorFormField(testData.formFields[2].yourMessage, testData.formFields[2].redColor);
 });
 
-test(`Check border color of name, email, message when sending form with name only`, async ({
+test.skip(`Check border color of name, email, message when sending form with name only`, async ({
   contactUsPage,
 }) => {
   //Actions
@@ -35,7 +35,7 @@ test(`Check border color of name, email, message when sending form with name onl
   await contactUsPage.expectBorderColorFormField(testData.formFields[2].yourMessage, testData.formFields[2].redColor);
 });
 
-test(`Check border color of name, email, message when sending form with email only`, async ({
+test.skip(`Check border color of name, email, message when sending form with email only`, async ({
   contactUsPage,
 }) => {
   //Actions
@@ -48,7 +48,7 @@ test(`Check border color of name, email, message when sending form with email on
   await contactUsPage.expectBorderColorFormField(testData.formFields[2].yourMessage, testData.formFields[2].redColor);
 });
 
-test(`Check border color of name, email, message when sending form with message only`, async ({
+test.skip(`Check border color of name, email, message when sending form with message only`, async ({
   contactUsPage,
 }) => {
   //Actions

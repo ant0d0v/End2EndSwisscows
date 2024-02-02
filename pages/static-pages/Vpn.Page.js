@@ -15,6 +15,7 @@ export default class VpnPage extends BasePage {
     this.allAttributeOfQuestions = this.page.locator("div.faq-wrap div");
     this.allQuestions = this.page.locator("h3.question")
     this.windowsLink = this.page.getByRole('link', { name: 'Windows', exact: true })
+    this.tryNowThreeDayLink = this.page.getByRole('link', { name: 'Try now 3 days for free (' })
   }
   //Actions
   async clickAllLinksAndNavigateToNewPage(id) {
@@ -40,10 +41,10 @@ export default class VpnPage extends BasePage {
     await this.clickAllElementsInList(this.allQuestions, `questions`);
     return this;
   };
-  downloadVpnExtensionFile = async () => {
+  downloadVpnExtensionFile = async (link) => {
     const downloadPromise = this.page.waitForEvent('download');
 
-    await this.clickElement(this.windowsLink, 'windows link');
+    await this.clickElement(link, 'windows link');
   
     const download = await downloadPromise;
     await download.saveAs('./tests/download/' + download.suggestedFilename());
