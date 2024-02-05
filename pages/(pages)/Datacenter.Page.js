@@ -1,12 +1,12 @@
 import BasePage from "../../base/BasePage";
-import StaticSlider  from "../../components/StaticSlider";
+import imagesGallery  from "../../components/ImagesGallery";
 import StaticVideoPlayer from "../../components/StaticVideoPlayer";
 import HeaderStaticPages from "../../components/HeaderStaticPages";
 
 export default class DatacenterPage extends BasePage {
   constructor(page) {
     super(page);
-    this.staticSlider = new StaticSlider(page);
+    this.imagesGallery = new imagesGallery(page);
     this.staticVideoPlayer = new StaticVideoPlayer(page);
     this.headerStaticPages = new HeaderStaticPages(page);
 

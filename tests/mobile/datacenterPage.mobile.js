@@ -7,8 +7,8 @@ test("Check that border is red and 2px when clicking on the images Datacenter sl
   datacenterPage,
 }) => {
   //Assert
-  await datacenterPage.staticSlider.expectBorderWhenClickingOnSmallImages(
-    datacenterPage.staticSlider.dataCenterSliderSmallImages,
+  await datacenterPage.imagesGallery.expectBorderWhenClickingOnSmallImages(
+    datacenterPage.imagesGallery.dataCenterGallerySmallImages,
     "2px solid rgb(223, 93, 93)"
   );
 });
@@ -17,7 +17,7 @@ test("Check that small image matches the large image when clicking on the small 
   datacenterPage,
 }) => {
   //Assert
-  await datacenterPage.staticSlider.expectAttributeOfLargeImagesWhenClickingInDatacenterSlider(
+  await datacenterPage.imagesGallery.expectAttributeOfLargeImagesWhenClickingInDatacenterGallery(
     "active"
   );
 });

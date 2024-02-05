@@ -4,7 +4,7 @@ import Preloader from "../components/Preloader";
 import Header from "../components/(search)/Header";
 import HeaderStaticPages from "../components/HeaderStaticPages";
 import FooterFull from "../components/FooterFull";
-import StaticSlider from "../components/StaticSlider";
+import imagesGallery from "../components/ImagesGallery";
 import ImagePage from "../pages/(search)/Image.Page";
 import MusicPage from "../pages/(search)/Music.Page";
 import VideoPage from "../pages/(search)/Video.Page";
@@ -102,8 +102,8 @@ exports.test = base.test.extend({
   preloader: async ({ page }, use) => {
     await use(new Preloader(page));
   },
-  staticSlider: async ({ page }, use) => {
-    await use(new StaticSlider(page));
+  imagesGallery: async ({ page }, use) => {
+    await use(new imagesGallery(page));
   },
 });
 
