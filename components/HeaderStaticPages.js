@@ -1,14 +1,14 @@
 import BaseComponent from "../base/BaseComponent";
 import MainPage from "../pages/Main.Page";
 import HamburgerMenu from "../components/HamburgerMenu";
-import SearchCounter from "./users/User.SearchCounter";
-import Autocomplete from "./Autocomplete";
+import badgeCounter from "./BadgeCounter";
+import searchForm from "./SearchForm";
 export default class HeaderStaticPages extends BaseComponent {
   constructor(page) {
     super(page);
     this.hamburgerMenu = new HamburgerMenu(page);
-    this.searchCounter = new SearchCounter(page);
-    this.autocomplete = new Autocomplete(page);
+    this.badgeCounter = new badgeCounter(page);
+    this.searchForm = new searchForm(page);
 
     //Locators
     this.allContent = this.page.locator("header.header-home");

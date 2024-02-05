@@ -11,8 +11,8 @@ test("Check  login User and display of nickname in hamburger menu", async ({
   webPage
 }) => {
   //Actions
-  await mainPage.headerStaticPages.autocomplete.inputSearchCriteria(testData.searchCriteria.first);
-  await mainPage.headerStaticPages.autocomplete.clickEnterSearchField();
+  await mainPage.headerStaticPages.searchForm.inputSearchCriteria(testData.searchCriteria.first);
+  await mainPage.headerStaticPages.searchForm.clickEnterSearchField();
   await webPage.header.clickHamburgerMenuButton();
 
   //Assert
@@ -24,8 +24,8 @@ test("Check Log Out user and display of login button", async ({
   webPage
 }) => {
   //Actions
-  await mainPage.headerStaticPages.autocomplete.inputSearchCriteria(testData.searchCriteria.first);
-  await mainPage.headerStaticPages.autocomplete.clickEnterSearchField();
+  await mainPage.headerStaticPages.searchForm.inputSearchCriteria(testData.searchCriteria.first);
+  await mainPage.headerStaticPages.searchForm.clickEnterSearchField();
   await webPage.header.clickHamburgerMenuButton();
   await webPage.header.hamburgerMenu.clickLogoutButtonInHamburgerMenu();
   await webPage.header.clickHamburgerMenuButton();

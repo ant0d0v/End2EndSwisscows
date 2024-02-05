@@ -1,7 +1,8 @@
 const { expect } = require("@playwright/test");
 import HeaderStaticPages from "../components/HeaderStaticPages";
-import InstallSwisscowsLink from "../components/InstallSwisscowsLink";
-import InstallSwisscowsBlock from "../components/InstallSwisscowsBlock";
+import InstallSwisscowsLink from "../components/(home)/ExtensionPopup";
+import extensionBlock from "../components/(home)/Extension";
+import FAQ from "../components/FAQ";
 import BasePage from "../base/BasePage";
 
 export default class MainPage extends BasePage {
@@ -9,16 +10,16 @@ export default class MainPage extends BasePage {
     super(page);
     this.headerStaticPages = new HeaderStaticPages(page);
     this.installSwisscowsLink = new InstallSwisscowsLink(page);
-    this.installSwisscowsBlock = new InstallSwisscowsBlock(page);
+    this.extensionBlock = new extensionBlock(page);
+    this.faq =  new FAQ(page);
+
     // Locators
     this.logoSwisscows = this.page.getByRole("img", { name: "Swisscows", exact: true, });
     this.blockQuestionsAndAnswers = this.page.getByText( "Questions and AnswersWhat");
     this.allContent = this.page.locator("main.home");
     this.allQuestions = this.page.locator("h3.question");
-    this.allAttributeOfQuestions = this.page.locator("div.faq-wrap div");
     this.fourQuestion = this.page.getByRole("heading", { name: "How can I switch from another",});
     this.linkInTheFourQuestion = this.page.getByRole("link", { name: "instructions",});
-    this.answersToQuestions = this.page.locator("p.answer");
     this.widgetMainPage = this.page.locator("//div[@class ='bnnr-widget']");
     this.serviceBlock = this.page.locator("div.services-blocks");
     this.buttonOfServiceBlock = this.page.locator("div.services-block-link");
@@ -56,18 +57,8 @@ export default class MainPage extends BasePage {
 
 
   // Verify
-  expectQuestionsAreOpened = async () => {
-    await this.expectAttributeClassAllElements( this.allAttributeOfQuestions, "faq open");
-  };
-  expectQuestionsAreClosed = async () => {
-    await this.expectAttributeClassAllElements( this.allAttributeOfQuestions, "faq" );
-  };
-
+  
   expectScreenMainPage = async (testInfo) => {
     await this.expectPageToHaveScreenshot(this.widgetMainPage,testInfo);
-  };
-
-  expectListSizeAnswerToQuestions = async (number) => {
-    await this.expectListToHaveCount(this.answersToQuestions, number);
   };
 }

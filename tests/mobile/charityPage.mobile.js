@@ -7,8 +7,8 @@ test("Check that border is red and 2px when clicking on the Charity Haiti slider
   charityPage
 }) => {
   //Assert
-  await charityPage.staticSlider.expectBorderWhenClickingOnSmallImages(
-    charityPage.staticSlider.charityHaitiSliderSmallImages,
+  await charityPage.imagesGallery.expectBorderWhenClickingOnSmallImages(
+    charityPage.imagesGallery.charityHaitiGallerySmallImages,
     "2px solid rgb(223, 93, 93)"
   );
 });
@@ -17,8 +17,8 @@ test("Check that border is red and 2px when clicking on the Charity Columbia sli
   charityPage,
 }) => {
   //Assert
-  await charityPage.staticSlider.expectBorderWhenClickingOnSmallImages(
-    charityPage.staticSlider.charityColumbiaSliderSmallImages,
+  await charityPage.imagesGallery.expectBorderWhenClickingOnSmallImages(
+    charityPage.imagesGallery.charityColumbiaGallerySmallImages,
     "2px solid rgb(223, 93, 93)"
   );
 });
@@ -27,7 +27,7 @@ test("Check that small image matches the large image when clicking on the small 
   charityPage,
 }) => {
   //Assert
-  await charityPage.staticSlider.expectAttributeOfLargeImagesWhenClickingInHaitiSlider(
+  await charityPage.imagesGallery.expectAttributeOfLargeImagesWhenClickingInHaitiGallery(
     "active"
   );
 });
@@ -36,7 +36,7 @@ test("Check that small image matches the large image when clicking on the small 
   charityPage,
 }) => {
   //Assert
-  await charityPage.staticSlider.expectAttributeOfLargeImagesWhenClickingInColumbiaSlider(
+  await charityPage.imagesGallery.expectAttributeOfLargeImagesWhenClickingInColumbiaGallery(
     "active"
   );
 });
@@ -49,7 +49,7 @@ test("Check that the video is playing", async ({ charityPage }) => {
  checked. */
   await charityPage.waitUntilPageIsFullyLoaded();
   //Assert
-  await charityPage.staticVideoPlayer.expectVideoToPlay();
+  await charityPage.videoPlayer.expectVideoToPlay();
 });
 
 for (const { testID, expectedLink, locatorId, expectedTitle, } of testData.charityLinks) {

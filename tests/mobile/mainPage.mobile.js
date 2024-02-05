@@ -11,12 +11,12 @@ test("Check that suggest is displayed", async ({
 }) => {
   await mainPage.reloadPage();
   await mainPage.waitUntilPageIsFullyLoaded();
-  await mainPage.headerStaticPages.autocomplete.inputSearchCriteria(testData.searchCriteria.first);
+  await mainPage.headerStaticPages.searchForm.inputSearchCriteria(testData.searchCriteria.first);
 
   //Assert
-  await mainPage.headerStaticPages.autocomplete.expectSuggestIsDisplayed();
-  await mainPage.headerStaticPages.autocomplete.expectSuggestToHaveCount(5);
-  await mainPage.headerStaticPages.autocomplete.expectSuggestToContains(
+  await mainPage.headerStaticPages.searchForm.expectSuggestIsDisplayed();
+  await mainPage.headerStaticPages.searchForm.expectSuggestToHaveCount(5);
+  await mainPage.headerStaticPages.searchForm.expectSuggestToContains(
     testData.searchCriteria.first
   );
 });
@@ -29,7 +29,7 @@ test("Check that all questions were opened on the main page.", async ({
   await mainPage.clickAllQuestions();
 
   //Assert
-  await mainPage.expectQuestionsAreOpened();
+  await mainPage.faq.expectQuestionsAreOpened();
 });
 
 test("Check that a question and answer can be opened and closed on the main page.", async ({
@@ -38,11 +38,11 @@ test("Check that a question and answer can be opened and closed on the main page
   //Actions
   await mainPage.scrollDownToQuestions()
   await mainPage.clickAllQuestions();
-  await mainPage.expectQuestionsAreOpened();
+  await mainPage.faq.expectQuestionsAreOpened();
   await mainPage.clickAllQuestions();
 
   //Assert
-  await mainPage.expectQuestionsAreClosed();
+  await mainPage.faq.expectQuestionsAreClosed();
 });
 
 test("Check that the link in the fourth question leads to the expected URL.", async ({
@@ -70,8 +70,8 @@ test("Check the texts of questions on the main page.", async ({ mainPage }) => {
   ];
 
   //Assert
-  await mainPage.expectListSizeAnswerToQuestions(6);
-  await mainPage.expectElementToHaveText(mainPage.answersToQuestions, expectedAnswers);
+  await mainPage.faq.expectListSizeAnswerToQuestions(6);
+  await mainPage.expectElementToHaveText(mainPage.faq.answersToQuestions, expectedAnswers);
 });
 
 test("Check that buttons have hover over the services block on main page", async ({
