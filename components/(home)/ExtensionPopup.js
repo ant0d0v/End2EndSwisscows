@@ -1,4 +1,4 @@
-import BaseComponent from "../base/BaseComponent";
+import BaseComponent from "../../base/BaseComponent";
 
 export default class ExtensionPopup extends BaseComponent {
   constructor(page) {

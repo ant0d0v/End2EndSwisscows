@@ -1,7 +1,7 @@
 const { expect } = require("@playwright/test");
 import HeaderStaticPages from "../components/HeaderStaticPages";
-import InstallSwisscowsLink from "../components/ExtensionPopup";
-import extensionBlock from "../components/Extension";
+import InstallSwisscowsLink from "../components/(home)/ExtensionPopup";
+import extensionBlock from "../components/(home)/Extension";
 import BasePage from "../base/BasePage";
 
 export default class MainPage extends BasePage {

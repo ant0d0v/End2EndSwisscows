@@ -14,8 +14,8 @@ test("Clicking on the swisscows's logo leads to the main page.", async ({
   webPage
 }) => {
   //Actions
-  await mainPage.headerStaticPages.autocomplete.inputSearchCriteria(testData.searchCriteria.first);
-  await mainPage.headerStaticPages.autocomplete.clickEnterSearchField();
+  await mainPage.headerStaticPages.searchForm.inputSearchCriteria(testData.searchCriteria.first);
+  await mainPage.headerStaticPages.searchForm.clickEnterSearchField();
   await webPage.header.clickSwisscowsLogo();
 
   //Assert
@@ -30,9 +30,9 @@ test("Check query counter value when searching for images ", async ({
   webPage
 }) => {
   //Actions
-  await mainPage.headerStaticPages.autocomplete.inputSearchCriteria(testData.searchCriteria.third);
-  await mainPage.headerStaticPages.autocomplete.clickEnterSearchField();
-  await webPage.expectWebItemsToBeVisible()
+  await mainPage.headerStaticPages.searchForm.inputSearchCriteria(testData.searchCriteria.third);
+  await mainPage.headerStaticPages.searchForm.clickEnterSearchField();
+  await webPage.item.expectWebItemsToBeVisible()
   await header.clickImageSearchButton();
 
   //Assert
@@ -46,9 +46,9 @@ test("Check query counter value when searching for video ", async ({
   mainPage
 }) => {
   //Actions
-  await mainPage.headerStaticPages.autocomplete.inputSearchCriteria(testData.searchCriteria.third);
-  await mainPage.headerStaticPages.autocomplete.clickEnterSearchField();
-  await webPage.expectWebItemsToBeVisible()
+  await mainPage.headerStaticPages.searchForm.inputSearchCriteria(testData.searchCriteria.third);
+  await mainPage.headerStaticPages.searchForm.clickEnterSearchField();
+  await webPage.item.expectWebItemsToBeVisible()
   await header.clickVideoSearchButton();
 
   //Assert
@@ -62,9 +62,9 @@ test("Check query counter value when searching for music", async ({
     musicPage
   }) => {
     //Actions
-    await mainPage.headerStaticPages.autocomplete.inputSearchCriteria(testData.searchCriteria.third);
-    await mainPage.headerStaticPages.autocomplete.clickEnterSearchField();
-    await webPage.expectWebItemsToBeVisible()
+    await mainPage.headerStaticPages.searchForm.inputSearchCriteria(testData.searchCriteria.third);
+    await mainPage.headerStaticPages.searchForm.clickEnterSearchField();
+    await webPage.item.expectWebItemsToBeVisible()
     await header.clickMusicSearchButton();
 
     //Assert
@@ -79,12 +79,12 @@ test("Check query counter value when searching for news", async ({
   webPage
 }) => {
   //Actions
-  await mainPage.headerStaticPages.autocomplete.inputSearchCriteria(testData.searchCriteria.third);
-  await mainPage.headerStaticPages.autocomplete.clickEnterSearchField();
-  await webPage.expectWebItemsToBeVisible()
+  await mainPage.headerStaticPages.searchForm.inputSearchCriteria(testData.searchCriteria.third);
+  await mainPage.headerStaticPages.searchForm.clickEnterSearchField();
+  await webPage.item.expectWebItemsToBeVisible()
   await mainPage.headerStaticPages.clickHamburgerMenuButton();
   await mainPage.headerStaticPages.hamburgerMenu.selectGermanyRegion();
-  await webPage.expectWebItemsToBeVisible()
+  await webPage.item.expectWebItemsToBeVisible()
   await header.clickNewsSearchButton();
 
   //Assert
@@ -100,9 +100,9 @@ test("Check query counter value when searching for shopping", async ({
   //Actions
   await mainPage.headerStaticPages.clickHamburgerMenuButton();
   await mainPage.headerStaticPages.hamburgerMenu.selectGermanyRegion();
-  await mainPage.headerStaticPages.autocomplete.inputSearchCriteria(testData.searchCriteria.third);
-  await mainPage.headerStaticPages.autocomplete.clickEnterSearchField();
-  await webPage.expectWebItemsToBeVisible()
+  await mainPage.headerStaticPages.searchForm.inputSearchCriteria(testData.searchCriteria.third);
+  await mainPage.headerStaticPages.searchForm.clickEnterSearchField();
+  await webPage.item.expectWebItemsToBeVisible()
   await header.clickShoppingSearchButton();
 
   //Assert
@@ -115,9 +115,9 @@ test("Check query counter value when searching for shopping", async ({
     webPage, 
   }) => {
     //Actions
-    await mainPage.headerStaticPages.autocomplete.inputSearchCriteria(testData.searchCriteria.third);
-    await mainPage.headerStaticPages.autocomplete.clickEnterSearchField();
-    await webPage.expectWebItemsToBeVisible()
+    await mainPage.headerStaticPages.searchForm.inputSearchCriteria(testData.searchCriteria.third);
+    await mainPage.headerStaticPages.searchForm.clickEnterSearchField();
+    await webPage.item.expectWebItemsToBeVisible()
     const newPage = await header.clickBadgeEmailAndNavigateToNewPage();
 
     //Assert
@@ -134,9 +134,9 @@ test.describe("tests don't use cookie", () => {
       webPage,
     }) => {
       //Actions
-      await mainPage.headerStaticPages.autocomplete.inputSearchCriteria(testData.searchCriteria.third);
-      await mainPage.headerStaticPages.autocomplete.clickEnterSearchField();
-      await webPage.expectWebItemsToBeVisible()
+      await mainPage.headerStaticPages.searchForm.inputSearchCriteria(testData.searchCriteria.third);
+      await mainPage.headerStaticPages.searchForm.clickEnterSearchField();
+      await webPage.item.expectWebItemsToBeVisible()
       const newPage = await header.clickLinkInHeaderAndNavigateToNewPage(locatorId);
 
       //Assert
@@ -152,9 +152,9 @@ test("Check that display of heart icon message in the header", async ({
   webPage
 }) => {
   //Actions
-  await mainPage.headerStaticPages.autocomplete.inputSearchCriteria(testData.searchCriteria.third);
-  await mainPage.headerStaticPages.autocomplete.clickEnterSearchField();
-  await webPage.expectWebItemsToBeVisible()
+  await mainPage.headerStaticPages.searchForm.inputSearchCriteria(testData.searchCriteria.third);
+  await mainPage.headerStaticPages.searchForm.clickEnterSearchField();
+  await webPage.item.expectWebItemsToBeVisible()
   await webPage.header.badgeCounter.clickBadgeCounter();
 
   //Assert

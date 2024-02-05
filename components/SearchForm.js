@@ -1,6 +1,6 @@
 import BaseComponent from "../base/BaseComponent";
 import WebPage from "../pages/(search)/Web.Page";
-export default class Autocomplete extends BaseComponent {
+export default class SearchForm extends BaseComponent {
   constructor(page) {
     super(page);
     this.suggestionItems = this.page.locator("ul.suggestions li");

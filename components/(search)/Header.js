@@ -7,7 +7,7 @@ import VideoPage from "../../pages/(search)/Video.Page";
 import ShoppingPage from "../../pages/(search)/Shopping.Page";
 import HamburgerMenu from "../HamburgerMenu";
 import badgeCounter from "../BadgeCounter";
-import Autocomplete from "../Autocomplete";
+import SearchForm from "../SearchForm";
 import BaseComponent from "../../base/BaseComponent";
 
 export default class Header extends BaseComponent {
@@ -15,7 +15,7 @@ export default class Header extends BaseComponent {
     super(page);
     this.hamburgerMenu = new HamburgerMenu(page);
     this.badgeCounter = new badgeCounter(page);
-    this.autocomplete = new Autocomplete(page);
+    this.searchForm = new SearchForm(page);
 
     //Locators
     this.linksOfHeader = (name) => this.page.locator(`a.badge-${name}`);

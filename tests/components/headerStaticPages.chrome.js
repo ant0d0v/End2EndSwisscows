@@ -47,11 +47,11 @@ test("Check charity query counter value after search and go back to main bage ",
   webPage,
 }) => {
   //Actions
-  await mainPage.headerStaticPages.autocomplete.inputSearchCriteria(
+  await mainPage.headerStaticPages.searchForm.inputSearchCriteria(
     testData.searchCriteria.first
   );
-  await mainPage.headerStaticPages.autocomplete.clickEnterSearchField();
-  await webPage.expectWebItemsToBeVisible()
+  await mainPage.headerStaticPages.searchForm.clickEnterSearchField();
+  await webPage.item.expectWebItemsToBeVisible()
   await webPage.goBack();
 
   //Assert

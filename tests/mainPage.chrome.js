@@ -12,12 +12,12 @@ test("Check that suggest is displayed", async ({
   
   await mainPage.reloadPage();
   await mainPage.waitUntilPageIsFullyLoaded();
-  await mainPage.headerStaticPages.autocomplete.inputSearchCriteria(testData.searchCriteria.first);
+  await mainPage.headerStaticPages.searchForm.inputSearchCriteria(testData.searchCriteria.first);
   
   //Assert
-  await mainPage.headerStaticPages.autocomplete.expectSuggestIsDisplayed();
-  await mainPage.headerStaticPages.autocomplete.expectSuggestToHaveCount(5);
-  await mainPage.headerStaticPages.autocomplete.expectSuggestToContains(
+  await mainPage.headerStaticPages.searchForm.expectSuggestIsDisplayed();
+  await mainPage.headerStaticPages.searchForm.expectSuggestToHaveCount(5);
+  await mainPage.headerStaticPages.searchForm.expectSuggestToContains(
     testData.searchCriteria.first
   );
 });
