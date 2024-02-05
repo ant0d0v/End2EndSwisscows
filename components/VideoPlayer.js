@@ -1,7 +1,7 @@
 import BaseComponent from "../base/BaseComponent";
 import { expect } from '@playwright/test';
 
-export default class StaticVideoPlayer extends BaseComponent {
+export default class VideoPlayer extends BaseComponent {
   constructor(page) {
     super(page);
     //Locators

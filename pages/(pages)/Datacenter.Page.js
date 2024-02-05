@@ -1,13 +1,13 @@
 import BasePage from "../../base/BasePage";
 import imagesGallery  from "../../components/ImagesGallery";
-import StaticVideoPlayer from "../../components/StaticVideoPlayer";
+import videoPlayer from "../../components/VideoPlayer";
 import HeaderStaticPages from "../../components/HeaderStaticPages";
 
 export default class DatacenterPage extends BasePage {
   constructor(page) {
     super(page);
     this.imagesGallery = new imagesGallery(page);
-    this.staticVideoPlayer = new StaticVideoPlayer(page);
+    this.videoPlayer = new videoPlayer(page);
     this.headerStaticPages = new HeaderStaticPages(page);
 
     //Locators
@@ -27,6 +27,6 @@ export default class DatacenterPage extends BasePage {
   //Assert
 
   expectScreenDatacenterPage = async (testInfo) => {
-    await this.expectPageToHaveScreenshot(this.staticVideoPlayer.videoPlayer, testInfo);
+    await this.expectPageToHaveScreenshot(this.videoPlayer.videoPlayer, testInfo);
   };
 }

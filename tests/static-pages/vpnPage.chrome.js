@@ -56,7 +56,7 @@ test("Check design of the VPN page ", async ({ vpnPage },testInfo) => {
     await vpnPage.clickAllQuestions();
   
     //Assert
-    await vpnPage.expectQuestionsAreOpened();
+    await vpnPage.faq.expectQuestionsAreOpened();
   });
   
   test("Check that a question and answer can be opened and closed on the VPN page.", async ({
@@ -65,10 +65,10 @@ test("Check design of the VPN page ", async ({ vpnPage },testInfo) => {
     //Action
     await vpnPage.scrollDownToQuestions()
     await vpnPage.clickAllQuestions();
-    await vpnPage.expectQuestionsAreOpened();
+    await vpnPage.faq.expectQuestionsAreOpened();
     await vpnPage.clickAllQuestions();
     //Assert
-    await vpnPage.expectQuestionsAreClosed();
+    await vpnPage.faq.expectQuestionsAreClosed();
   });
  
   test("Check download windows vpn extension file", async ({

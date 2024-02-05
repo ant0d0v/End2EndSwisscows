@@ -8,7 +8,7 @@ test.use({ headless: false });
 
 test("Check that the video is playing", async ({ educationPage }) => {
   //Assert
-  await educationPage.staticVideoPlayer.expectYouTubeVideoToPlay();
+  await educationPage.videoPlayer.expectYouTubeVideoToPlay();
 });
 
 for (const { testID, pdfLink, locatorId } of testData.educationPdfLinks) {

@@ -76,7 +76,7 @@ test("Check that small image matches the large image when clicking on the small 
 
 test("Check that the video is playing", async ({ charityPage }) => {
   //Assert
-  await charityPage.staticVideoPlayer.expectVideoToPlay();
+  await charityPage.videoPlayer.expectVideoToPlay();
 });
 
 for (const { testID, expectedLink, locatorId, expectedTitle, } of testData.charityLinks) {

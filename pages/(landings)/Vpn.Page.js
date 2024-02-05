@@ -1,18 +1,19 @@
 import BasePage from "../../base/BasePage";
 import HeaderStaticPages from "../../components/HeaderStaticPages";
+import FAQ from "../../components/FAQ";
 const { expect } = require("@playwright/test");
 import fs from 'fs';
 export default class VpnPage extends BasePage {
   constructor(page) {
     super(page);
     this.headerStaticPages = new HeaderStaticPages(page);
+    this.faq =  new FAQ(page);
      //Locators
     this.allContent = this.page.locator("main.vpn");
     this.allLinks = (name) => this.page.getByRole("link", { name: name });
     this.allLinksInSecondQuestions = (name) => this.page.getByRole("link", { name: name });
     this.allButtons = this.page.locator("main.vpn .button")
     this.secondQuestion = this.page.getByRole('heading', { name: 'What are the advantages of' })
-    this.allAttributeOfQuestions = this.page.locator("div.faq-wrap div");
     this.allQuestions = this.page.locator("h3.question")
     this.windowsLink = this.page.getByRole('link', { name: 'Windows', exact: true })
     this.tryNowThreeDayLink = this.page.getByRole('link', { name: 'Try now 3 days for free (' })
@@ -63,11 +64,5 @@ export default class VpnPage extends BasePage {
   expectScreenVpnPage = async (testInfo) => {
     await this.expectPageToHaveScreenshotWithoutMask(testInfo);
   };
-   // Verify
-   expectQuestionsAreOpened = async () => {
-    await this.expectAttributeClassAllElements( this.allAttributeOfQuestions, "faq open");
-  };
-  expectQuestionsAreClosed = async () => {
-    await this.expectAttributeClassAllElements( this.allAttributeOfQuestions, "faq" );
-  };
+
 }

@@ -26,7 +26,7 @@ test("Check that small image matches the large image when clicking on the small 
 
 test("Check that the video is playing", async ({ datacenterPage }) => {
   //Assert
-  await datacenterPage.staticVideoPlayer.expectVideoToPlay();
+  await datacenterPage.videoPlayer.expectVideoToPlay();
 });
 
 for (const { testID, expectedLink, locatorId, expectedTitle, } of testData.datacenterLinks) {

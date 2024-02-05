@@ -1,13 +1,13 @@
 import BasePage from "../../base/BasePage";
 import ImagesGallery  from "../../components/ImagesGallery";
-import StaticVideoPlayer from "../../components/StaticVideoPlayer";
+import VideoPlayer from "../../components/VideoPlayer";
 import HeaderStaticPages from "../../components/HeaderStaticPages";
 export default class CharityPage extends BasePage {
   constructor(page) {
     super(page);
     this.headerStaticPages = new HeaderStaticPages(page);
     this.imagesGallery = new ImagesGallery(page);
-    this.staticVideoPlayer = new StaticVideoPlayer(page);
+    this.videoPlayer = new VideoPlayer(page);
 
     //Locators
     this.allContent = this.page.locator("main.social-project");
@@ -25,6 +25,6 @@ export default class CharityPage extends BasePage {
   //Assert
 
   expectScreenCharityPage = async (testInfo) => {
-    await this.expectPageToHaveScreenshot(this.staticVideoPlayer.videoPlayer, testInfo);
+    await this.expectPageToHaveScreenshot(this.videoPlayer.videoPlayer, testInfo);
   };
 }

@@ -1,12 +1,12 @@
 import BasePage from "../../base/BasePage";
-import StaticVideoPlayer from "../../components/StaticVideoPlayer";
+import videoPlayer from "../../components/videoPlayer";
 import HeaderStaticPages from "../../components/HeaderStaticPages";
 const { expect, test } = require("@playwright/test");
 
 export default class DonationPage extends BasePage {
   constructor(page) {
     super(page);
-    this.staticVideoPlayer = new StaticVideoPlayer(page);
+    this.videoPlayer = new videoPlayer(page);
     this.headerStaticPages = new HeaderStaticPages(page);
 
     //Locators
@@ -35,7 +35,7 @@ export default class DonationPage extends BasePage {
   //Assert
 
   expectScreenDonationPage = async (testInfo) => {
-    await this.expectPageToHaveScreenshot(this.staticVideoPlayer.videoPlayer, testInfo);
+    await this.expectPageToHaveScreenshot(this.videoPlayer.videoPlayer, testInfo);
   };
 
   async expectValidatePdfFile(currentPage, pdf, testInfo) {
