@@ -29,7 +29,7 @@ test("Check charity query counter value at the Beginning", async ({
   mainPage,
 }) => {
   //Assert
-  await  mainPage.headerStaticPages.badgeCounter.expectPopupCharityBadgeCounterToHaveText("0");
+  await  mainPage.headerStaticPages.badgeCounter.expectCharityBadgeCounterToHaveValue("0");
 });
 
 test("Check charity query counter value after refresh page ", async ({
@@ -39,7 +39,7 @@ test("Check charity query counter value after refresh page ", async ({
   await mainPage.reloadPage();
 
   //Assert
-  await  mainPage.headerStaticPages.badgeCounter.expectPopupCharityBadgeCounterToHaveText("0");
+  await  mainPage.headerStaticPages.badgeCounter.expectCharityBadgeCounterToHaveValue("0");
 });
 
 test("Check charity query counter value after search and go back to main bage ", async ({
@@ -55,7 +55,7 @@ test("Check charity query counter value after search and go back to main bage ",
   await webPage.goBack();
 
   //Assert
-  await  mainPage.headerStaticPages.badgeCounter.expectPopupCharityBadgeCounterToHaveText("1");
+  await  mainPage.headerStaticPages.badgeCounter.expectCharityBadgeCounterToHaveValue("1");
 });
 test("Check that display of heart icon message in the header static pages", async ({
   headerStaticPages,

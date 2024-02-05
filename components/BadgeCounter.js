@@ -22,7 +22,7 @@ export default class BadgeCounter extends BaseComponent {
 
   // Verify
 
-  expectPopupCharityBadgeCounterToHaveText = async (value) => {
+  expectCharityBadgeCounterToHaveValue = async (value) => {
     await this.expectAttributeToHaveValue(this.badgeCounter, "title", value);
   };
   expectPopupCharityBadgeCounterToHaveText = async (text) => {

@@ -36,7 +36,7 @@ test("Check query counter value when searching for images ", async ({
   await header.clickImageSearchButton();
 
   //Assert
-  await imagePage.header.badgeCounter.expectPopupCharityBadgeCounterToHaveText("2");
+  await imagePage.header.badgeCounter.expectCharityBadgeCounterToHaveValue("2");
 });
 
 test("Check query counter value when searching for video ", async ({
@@ -52,7 +52,7 @@ test("Check query counter value when searching for video ", async ({
   await header.clickVideoSearchButton();
 
   //Assert
-  await videoPage.header.badgeCounter.expectPopupCharityBadgeCounterToHaveText("2");
+  await videoPage.header.badgeCounter.expectCharityBadgeCounterToHaveValue("2");
 });
 
 test("Check query counter value when searching for music", async ({
@@ -68,7 +68,7 @@ test("Check query counter value when searching for music", async ({
     await header.clickMusicSearchButton();
 
     //Assert
-    await musicPage.header.badgeCounter.expectPopupCharityBadgeCounterToHaveText("2");
+    await musicPage.header.badgeCounter.expectCharityBadgeCounterToHaveValue("2");
   });
 
 
@@ -88,7 +88,7 @@ test("Check query counter value when searching for news", async ({
   await header.clickNewsSearchButton();
 
   //Assert
-  await newsPage.header.badgeCounter.expectPopupCharityBadgeCounterToHaveText("3");
+  await newsPage.header.badgeCounter.expectCharityBadgeCounterToHaveValue("3");
 });
 
 test("Check query counter value when searching for shopping", async ({
@@ -106,7 +106,7 @@ test("Check query counter value when searching for shopping", async ({
   await header.clickShoppingSearchButton();
 
   //Assert
-  await shoppingPage.header.badgeCounter.expectPopupCharityBadgeCounterToHaveText("2");
+  await shoppingPage.header.badgeCounter.expectCharityBadgeCounterToHaveValue("2");
 });
 
   test("Check that email icon navigates to account/login page if user logged ", async({
