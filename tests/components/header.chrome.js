@@ -36,7 +36,7 @@ test("Check query counter value when searching for images ", async ({
   await header.clickImageSearchButton();
 
   //Assert
-  await imagePage.header.searchCounter.expectCharitySearchCounterToHave("2");
+  await imagePage.header.badgeCounter.expectPopupCharityBadgeCounterToHaveText("2");
 });
 
 test("Check query counter value when searching for video ", async ({
@@ -52,7 +52,7 @@ test("Check query counter value when searching for video ", async ({
   await header.clickVideoSearchButton();
 
   //Assert
-  await videoPage.header.searchCounter.expectCharitySearchCounterToHave("2");
+  await videoPage.header.badgeCounter.expectPopupCharityBadgeCounterToHaveText("2");
 });
 
 test("Check query counter value when searching for music", async ({
@@ -68,7 +68,7 @@ test("Check query counter value when searching for music", async ({
     await header.clickMusicSearchButton();
 
     //Assert
-    await musicPage.header.searchCounter.expectCharitySearchCounterToHave("2");
+    await musicPage.header.badgeCounter.expectPopupCharityBadgeCounterToHaveText("2");
   });
 
 
@@ -88,7 +88,7 @@ test("Check query counter value when searching for news", async ({
   await header.clickNewsSearchButton();
 
   //Assert
-  await newsPage.header.searchCounter.expectCharitySearchCounterToHave("3");
+  await newsPage.header.badgeCounter.expectPopupCharityBadgeCounterToHaveText("3");
 });
 
 test("Check query counter value when searching for shopping", async ({
@@ -106,7 +106,7 @@ test("Check query counter value when searching for shopping", async ({
   await header.clickShoppingSearchButton();
 
   //Assert
-  await shoppingPage.header.searchCounter.expectCharitySearchCounterToHave("2");
+  await shoppingPage.header.badgeCounter.expectPopupCharityBadgeCounterToHaveText("2");
 });
 
   test("Check that email icon navigates to account/login page if user logged ", async({
@@ -155,10 +155,10 @@ test("Check that display of heart icon message in the header", async ({
   await mainPage.headerStaticPages.autocomplete.inputSearchCriteria(testData.searchCriteria.third);
   await mainPage.headerStaticPages.autocomplete.clickEnterSearchField();
   await webPage.expectWebItemsToBeVisible()
-  await webPage.header.searchCounter.clickSearchCounter();
+  await webPage.header.badgeCounter.clickBadgeCounter();
 
   //Assert
-  await header.searchCounter.expectPopupCharitySearchCounterToHaveText(
+  await header.badgeCounter.expectPopupCharityBadgeCounterToHaveText(
     "Charity ProjectThis is the number of your Swisscows searches. On average, 50 search queries finance a children's meal. Register and receive newsletters."
   );
 });

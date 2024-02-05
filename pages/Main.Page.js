@@ -1,7 +1,7 @@
 const { expect } = require("@playwright/test");
 import HeaderStaticPages from "../components/HeaderStaticPages";
-import InstallSwisscowsLink from "../components/InstallSwisscowsLink";
-import InstallSwisscowsBlock from "../components/InstallSwisscowsBlock";
+import InstallSwisscowsLink from "../components/ExtensionPopup";
+import extensionBlock from "../components/Extension";
 import BasePage from "../base/BasePage";
 
 export default class MainPage extends BasePage {
@@ -9,7 +9,7 @@ export default class MainPage extends BasePage {
     super(page);
     this.headerStaticPages = new HeaderStaticPages(page);
     this.installSwisscowsLink = new InstallSwisscowsLink(page);
-    this.installSwisscowsBlock = new InstallSwisscowsBlock(page);
+    this.extensionBlock = new extensionBlock(page);
     // Locators
     this.logoSwisscows = this.page.getByRole("img", { name: "Swisscows", exact: true, });
     this.blockQuestionsAndAnswers = this.page.getByText( "Questions and AnswersWhat");

@@ -1,26 +1,27 @@
 import base from "./fixtureBase";
 import MainPage from "../pages/Main.Page";
-import EmailPage from "../pages/static-pages/Email.Page";
 import Preloader from "../components/Preloader";
-import Header from "../components/Header";
+import Header from "../components/(search)/Header";
 import HeaderStaticPages from "../components/HeaderStaticPages";
-import ImagePage from "../pages/search/Image.Page";
-import MusicPage from "../pages/search/Music.Page";
-import VideoPage from "../pages/search/Video.Page";
-import WebPage from "../pages/search/Web.Page";
-import NewsPage from "../pages/search/News.Page";
-import ShoppingPage from "../pages/search/Shopping.Page";
 import FooterFull from "../components/FooterFull";
 import StaticSlider from "../components/StaticSlider";
-import DefaultSearchPage from "../pages/static-pages/DefaultSearch.Page";
-import CharityPage from "../pages/static-pages/Charity.Page";
-import DatacenterPage from "../pages/static-pages/Datacenter.Page";
-import EducationPage from "../pages/static-pages/Education.Page";
-import DonationPage from "../pages/static-pages/Donation.Page";
-import ContactUsPage from "../pages/static-pages/ContactUs.Page";
-import ImprintPage from "../pages/static-pages/Imprint.Page";
-import VpnPage from "../pages/static-pages/Vpn.Page";
-import WhoWeArePage from "../pages/static-pages/WhoWeAre.Page";
+import ImagePage from "../pages/(search)/Image.Page";
+import MusicPage from "../pages/(search)/Music.Page";
+import VideoPage from "../pages/(search)/Video.Page";
+import WebPage from "../pages/(search)/Web.Page";
+import NewsPage from "../pages/(search)/News.Page";
+import ShoppingPage from "../pages/(search)/Shopping.Page";
+import DefaultSearchPage from "../pages/(pages)/DefaultSearch.Page";
+import CharityPage from "../pages/(pages)/Charity.Page";
+import DatacenterPage from "../pages/(pages)/Datacenter.Page";
+import EducationPage from "../pages/(pages)/Education.Page";
+import DonationPage from "../pages/(pages)/Donation.Page";
+import ContactUsPage from "../pages/(pages)/ContactUs.Page";
+import ImprintPage from "../pages/(pages)/Imprint.Page";
+import WhoWeArePage from "../pages/(pages)/WhoWeAre.Page";
+import VpnPage from "../pages/(landings)/Vpn.Page";
+import EmailPage from "../pages/(landings)/Email.Page";
+
 
 exports.test = base.test.extend({
   mainPage: async ({ page }, use) => {

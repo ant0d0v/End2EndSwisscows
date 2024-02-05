@@ -1,5 +1,5 @@
 import BaseComponent from "../base/BaseComponent";
-import WebPage from "../pages/search/Web.Page";
+import WebPage from "../pages/(search)/Web.Page";
 export default class Autocomplete extends BaseComponent {
   constructor(page) {
     super(page);
