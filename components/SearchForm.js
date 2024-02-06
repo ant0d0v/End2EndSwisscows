@@ -5,6 +5,7 @@ export default class SearchForm extends BaseComponent {
     super(page);
     this.suggestionItems = this.page.locator("ul.suggestions li");
     this.suggest = this.page.locator("ul.suggestions");
+    this.inputSearch = this.page.getByRole('searchbox')
     this.placeholderMainPage = this.page.getByPlaceholder( "Your search. Your business.");
   }
   //Actions
@@ -16,7 +17,7 @@ export default class SearchForm extends BaseComponent {
     return new WebPage(this.page);
   };
   clickSearchField = async () => {
-    await this.clickElement(this.placeholderMainPage, `search field `);
+    await this.clickElement(this.inputSearch, `search field `);
   };
   inputSearchCriteria = async (text) => {
     await this.input(this.placeholderMainPage, text, `search field`);

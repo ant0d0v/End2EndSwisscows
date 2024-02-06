@@ -82,8 +82,8 @@ test("Check query counter value when searching for news", async ({
   await mainPage.headerStaticPages.searchForm.inputSearchCriteria(testData.searchCriteria.third);
   await mainPage.headerStaticPages.searchForm.clickEnterSearchField();
   await webPage.item.expectWebItemsToBeVisible()
-  await mainPage.headerStaticPages.clickHamburgerMenuButton();
-  await mainPage.headerStaticPages.hamburgerMenu.selectGermanyRegion();
+  await webPage.header.clickHamburgerMenuButton();
+  await webPage.header.hamburgerMenu.selectGermanyRegion();
   await webPage.item.expectWebItemsToBeVisible()
   await header.clickNewsSearchButton();
 
@@ -162,3 +162,117 @@ test("Check that display of heart icon message in the header", async ({
     "Charity ProjectThis is the number of your Swisscows searches. On average, 50 search queries finance a children's meal. Register and receive newsletters."
   );
 });
+
+test("Check suggest on the web search", async ({
+  mainPage,
+  webPage
+}) => {
+  //Actions
+  await mainPage.headerStaticPages.searchForm.inputSearchCriteria(testData.searchCriteria.first);
+  await mainPage.headerStaticPages.searchForm.clickEnterSearchField();
+  await webPage.item.expectWebItemsToBeVisible()
+  await webPage.header.searchForm.clickSearchField()
+
+  //Assert
+  await webPage.header.searchForm.expectSuggestIsDisplayed();
+  await webPage.header.searchForm.expectSuggestToHaveCount(5);
+  await webPage.header.searchForm.expectSuggestToContains(testData.searchCriteria.first);
+});
+
+test("Check suggest on the image search", async ({
+  mainPage,
+  webPage,
+  imagePage
+}) => {
+  //Actions
+  await mainPage.headerStaticPages.searchForm.inputSearchCriteria(testData.searchCriteria.first);
+  await mainPage.headerStaticPages.searchForm.clickEnterSearchField();
+  await webPage.header.clickImageSearchButton()
+  await imagePage.item.expectImageItemsToBeVisible()
+  await imagePage.header.searchForm.clickSearchField()
+ 
+  //Assert
+  await imagePage.header.searchForm.expectSuggestIsDisplayed();
+  await imagePage.header.searchForm.expectSuggestToHaveCount(5);
+  await imagePage.header.searchForm.expectSuggestToContains(testData.searchCriteria.first);
+});
+
+test("Check suggest on the video search", async ({
+  mainPage,
+  webPage,
+  videoPage
+}) => {
+  //Actions
+  await mainPage.headerStaticPages.searchForm.inputSearchCriteria(testData.searchCriteria.first);
+  await mainPage.headerStaticPages.searchForm.clickEnterSearchField();
+  await webPage.header.clickVideoSearchButton()
+  await videoPage.item.expectVideoItemsToBeVisible()
+  await videoPage.header.searchForm.clickSearchField()
+ 
+  //Assert
+  await videoPage.header.searchForm.expectSuggestIsDisplayed();
+  await videoPage.header.searchForm.expectSuggestToHaveCount(5);
+  await videoPage.header.searchForm.expectSuggestToContains(testData.searchCriteria.first);
+});
+
+test("Check suggest on the news search", async ({
+  mainPage,
+  webPage,
+  newsPage
+}) => {
+  //Actions
+  await mainPage.headerStaticPages.searchForm.inputSearchCriteria(testData.searchCriteria.first);
+  await mainPage.headerStaticPages.searchForm.clickEnterSearchField();
+  await webPage.item.expectWebItemsToBeVisible()
+  await webPage.header.clickHamburgerMenuButton();
+  await webPage.header.hamburgerMenu.selectGermanyRegion();
+  await webPage.header.clickNewsSearchButton()
+  await newsPage.item.expectNewsItemsToBeVisible()
+  await newsPage.header.searchForm.clickSearchField()
+ 
+  //Assert
+  await newsPage.header.searchForm.expectSuggestIsDisplayed();
+  await newsPage.header.searchForm.expectSuggestToHaveCount(5);
+  await newsPage.header.searchForm.expectSuggestToContains(testData.searchCriteria.first);
+});
+
+test("Check suggest on the shopping search", async ({
+  mainPage,
+  webPage,
+  shoppingPage
+}) => {
+  //Actions
+  await mainPage.headerStaticPages.searchForm.inputSearchCriteria(testData.searchCriteria.first);
+  await mainPage.headerStaticPages.searchForm.clickEnterSearchField();
+  await webPage.item.expectWebItemsToBeVisible()
+  await webPage.header.clickHamburgerMenuButton();
+  await webPage.header.hamburgerMenu.selectGermanyRegion();
+  await webPage.header.clickShoppingSearchButton()
+  await shoppingPage.item.expectShoppingItemsToBeVisible()
+  await shoppingPage.header.searchForm.clickSearchField()
+ 
+  //Assert
+  await shoppingPage.header.searchForm.expectSuggestIsDisplayed();
+  await shoppingPage.header.searchForm.expectSuggestToHaveCount(5);
+  await shoppingPage.header.searchForm.expectSuggestToContains(testData.searchCriteria.first);
+});
+
+test("Check suggest on the music search", async ({
+  mainPage,
+  webPage,
+  musicPage
+}) => {
+  //Actions
+  await mainPage.headerStaticPages.searchForm.inputSearchCriteria(testData.searchCriteria.first);
+  await mainPage.headerStaticPages.searchForm.clickEnterSearchField();
+  await webPage.header.clickMusicSearchButton()
+  await musicPage.track.expectMusicItemsToBeVisible()
+  await musicPage.header.searchForm.clickSearchField()
+ 
+  //Assert
+  await musicPage.header.searchForm.expectSuggestIsDisplayed();
+  await musicPage.header.searchForm.expectSuggestToHaveCount(5);
+  await musicPage.header.searchForm.expectSuggestToContains(testData.searchCriteria.first);
+});
+
+
