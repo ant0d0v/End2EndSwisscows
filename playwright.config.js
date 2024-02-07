@@ -79,7 +79,7 @@ module.exports = defineConfig({
       testMatch: /.*\.chrome\.js/,
       use: {
         ...devices["Desktop Chrome"],
-        channel: "chrome",
+        
         storageState: "./data/auth/user.json",
         viewport: { width: 1360, height: 900 },
         screenshot: "only-on-failure",
@@ -111,7 +111,7 @@ module.exports = defineConfig({
       testMatch: /.*\.mobile\.js/,
       use: {
         ...devices["Pixel 7"],
-        channel: "chrome",
+       
         screenshot: "only-on-failure",
         video: "retain-on-failure",
       },
