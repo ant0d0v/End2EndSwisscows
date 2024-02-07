@@ -6,9 +6,9 @@ export default class HamburgerMenu extends BaseComponent {
     super(page);
 
     //Locators
-    this.dropdownRegion = this.page.getByText("Region");
+    this.dropdownRegion = this.page.getByText(/Region/);
     this.allContent = this.page.locator("header div.menu");
-    this.germanyRegionInDropdown = this.page.getByText('Germany', { exact: true });
+    this.regionInDropdown = (region) => this.page.getByText(`${region}`, { exact: true });
     this.loginButtonInHamburgerMenu = this.page.getByRole("button", {name: "Login",});
     this.nicknameInHamburgerMenu = this.page.getByRole("link", {name: "T Test",});
     this.logoutButtonInHamburgerMenu = this.page.getByRole("button", {name: "Logout",});
@@ -54,9 +54,9 @@ export default class HamburgerMenu extends BaseComponent {
     await this.clickElement(
       this.dropdownRegion, `drop-down of regions in hamburger menu`);
   };
-  clickGermanyRegionInDropdown = async () => {
+  clickRegionInDropdown = async (region) => {
     await this.clickElement(
-      this.germanyRegionInDropdown,`germany region in the drop-down of regions`);
+      this.regionInDropdown(region),`germany region in the drop-down of regions`);
   };
   clickLanguagesDropdownInHamburgerMenu = async () => {
     await this.clickElement(
@@ -84,9 +84,9 @@ export default class HamburgerMenu extends BaseComponent {
       this.textsOfLinksInHamburgerMenu.all(), `links of hamburger menu `);
   };
 
-  selectGermanyRegion = async () => {
+  selectRegion = async (region) => {
     await this.clickDropdownRegion();
-    await this.clickGermanyRegionInDropdown();
+    await this.clickRegionInDropdown(region);
   };
 
   //Verify

@@ -17,7 +17,12 @@ jobs:
         run: npm ci
       - name: Install chrome browser
         run: npx playwright install chrome
-      - name: Run your tests
-        run: npm run test
+      - name: Run UI tests
+        run: npm run test:ui
+        env:
+          HOME: /root
+      - name: Run API tests
+        run: npm run test:api
+        if: always() 
         env:
           HOME: /root
