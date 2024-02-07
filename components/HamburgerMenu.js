@@ -6,7 +6,7 @@ export default class HamburgerMenu extends BaseComponent {
     super(page);
 
     //Locators
-    this.dropdownRegion = this.page.getByText("Region");
+    this.dropdownRegion = this.page.getByText(/Region/);
     this.allContent = this.page.locator("header div.menu");
     this.regionInDropdown = (region) => this.page.getByText(`${region}`, { exact: true });
     this.loginButtonInHamburgerMenu = this.page.getByRole("button", {name: "Login",});
