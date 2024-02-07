@@ -17,6 +17,8 @@ jobs:
         run: npm ci
       - name: Install chrome browser
         run: npx playwright install chrome
+      - name: Install firefox browser
+        run: npx playwright install firefox
       - name: Run UI tests
         run: npm run test:ui
       - name: Run API tests
