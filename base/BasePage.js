@@ -144,6 +144,11 @@ export default class BasePage {
       await expect(newPage).toHaveURL(url);
     });
   }
+  async expectNotToHaveUrl(newPage, url) {
+    await test.step('Expect a URL "not to have" a string', async () => {
+      await expect(newPage).not.toHaveURL(url);
+    });
+  }
 
   async expectElementToHaveText(element, text) {
     await test.step('Expect the Element(s) "to have" a string', async () => {
@@ -161,10 +166,24 @@ export default class BasePage {
       await expect(element).toHaveJSProperty(property, value);
     });
   }
+  async expectElementsToHaveJSProperty(elements, property, value) {
+    await test.step(`Expect the Element to Have JS ${property} a ${value} in a array`, async () => {
+      for(const element of await elements.all()){
+      await expect(element).toHaveJSProperty(property, value);
+      }
+    });
+  }
   async expectListToHaveCount(elements, number) {
     await test
       .step('Expect the elements in the array to "have" a count', async () => {
         await expect(elements).toHaveCount(number);
+      })
+      .catch(async (e) => await this.errorHandling(e, this.page));
+  }
+  async expectListToBeGreaterThanOrEqual(elements, number) {
+    await test
+      .step('Expect the elements in the array to be greater Than Or Equal " a value', async () => {
+        expect(await elements.count()).toBeGreaterThanOrEqual(number);
       })
       .catch(async (e) => await this.errorHandling(e, this.page));
   }

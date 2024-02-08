@@ -12,5 +12,34 @@ export default class BaseComponent extends BasePage {
     })
     .catch(async (e) => await this.errorHandling(e, this.page));
   }
+
+  async clickElementUntilInvisible(element) {
+    await test.step(`Click on ${element} the until invisible`, async () => {
+      while(await element.isEnabled() && await element.isVisible()) {
+        await element.click();
+      }
+    })
+  }
+
+
   //Verify
+  async expectOldArrayNotToEqualNewArray(oldResult, newResult) {
+    await test.step('Expect the elements in the  old array not to equal elements in new array', async () => {
+      expect(await oldResult).not.toEqual(expect.arrayContaining(await newResult))
+    });
+  }
+  async expectOldArrayToEqualNewArray(oldResult, newResult) {
+    await test.step('Expect the elements in the  old array not to equal elements in new array', async () => {
+      expect(await oldResult).toEqual(expect.arrayContaining(await newResult))
+    });
+  }
+
+  async expectTextsToContainSearchCriteria(elements, criteria) {
+    await test.step('Expect the elements in the array "to contain" a string', async () => {
+      for (const element of await elements.all()) {
+        const elementText = await element.textContent();
+        expect(await elementText.toLowerCase()).toContain(criteria.toLowerCase());
+      }
+    });
+  }
 }
