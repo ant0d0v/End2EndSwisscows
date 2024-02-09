@@ -302,4 +302,41 @@ test("Check 202 No Results Found error page ", async ({
      await webPage.preview.clickScreenshotButtonInPreview()
      await webPage.preview.expectElementToBeVisible(webPage.preview.contentImageInPreview)
   });
+
+  test("Check design of the web search page ", async ({
+    mainPage,
+    webPage,
+  },testInfo) => {
+     
+     //Actions
+     await mainPage.headerStaticPages.clickHamburgerMenuButton();
+     await mainPage.headerStaticPages.hamburgerMenu.selectRegion("Ukraine");
+     await mainPage.headerStaticPages.searchForm.inputSearchCriteria("adsddss");
+     await mainPage.headerStaticPages.searchForm.clickEnterSearchField();
+     await webPage.item.expectWebItemsToBeVisible()
+     
+     //Assert
+     await webPage.expectScreenWebPage(testInfo)
+  });
+
+  test("Check design dark theme of the web search page ", async ({
+    mainPage,
+    webPage,
+  },testInfo) => {
+     
+     //Actions
+     await mainPage.headerStaticPages.clickHamburgerMenuButton();
+     await mainPage.headerStaticPages.hamburgerMenu.clickThemeDropdownInHamburgerMenu();
+     await mainPage.headerStaticPages.hamburgerMenu.clickDarkInHamburgerMenu();
+     await mainPage.headerStaticPages.clickHamburgerMenuButton();
+     await mainPage.headerStaticPages.hamburgerMenu.selectRegion("Ukraine");
+     await mainPage.headerStaticPages.searchForm.inputSearchCriteria("adsddss");
+     await mainPage.headerStaticPages.searchForm.clickEnterSearchField();
+     await webPage.item.expectWebItemsToBeVisible()
+     
+     //Assert
+     await webPage.expectScreenWebPage(testInfo)
+  });
+
+
  

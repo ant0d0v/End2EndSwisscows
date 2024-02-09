@@ -13,6 +13,7 @@ test("Check next and prev buttons in the video widget", async ({
      await mainPage.headerStaticPages.searchForm.clickEnterSearchField();
      await webPage.item.expectWebItemsToBeVisible()
      await webPage.videoWidget.clickNextButtonUntilInvisible()
+     await webPage.videoWidget.waitElementToBeVisible(webPage.videoWidget.nextButton)
      
      //Assert
      await webPage.videoWidget.expectAttributeToHaveValue(webPage.videoWidget.nextButton, 
@@ -33,6 +34,7 @@ test("Check next and prev buttons in the video widget", async ({
      await mainPage.headerStaticPages.searchForm.inputSearchCriteria("flovers video");
      await mainPage.headerStaticPages.searchForm.clickEnterSearchField();
      await webPage.item.expectWebItemsToBeVisible()
+     await webPage.videoWidget.waitElementToBeVisible(webPage.videoWidget.nextButton)
      
      //Assert
      await webPage.videoWidget.expectAreElementsInListDisplayed(webPage.videoWidget.allImage)
@@ -53,6 +55,7 @@ test("Check next and prev buttons in the video widget", async ({
      await mainPage.headerStaticPages.searchForm.inputSearchCriteria("flovers video");
      await mainPage.headerStaticPages.searchForm.clickEnterSearchField();
      await webPage.item.expectWebItemsToBeVisible()
+     await webPage.videoWidget.waitElementToBeVisible(webPage.videoWidget.nextButton)
      await webPage.videoWidget.clickMoreVideosButton()
      
      //Assert
@@ -71,6 +74,7 @@ test("Check next and prev buttons in the video widget", async ({
      await mainPage.headerStaticPages.searchForm.inputSearchCriteria("flovers video");
      await mainPage.headerStaticPages.searchForm.clickEnterSearchField();
      await webPage.item.expectWebItemsToBeVisible()
+     await webPage.videoWidget.waitElementToBeVisible(webPage.videoWidget.nextButton)
      const newPage = await webPage.videoWidget.clickFirstVideoAndNavigateToNewPage()
      
      //Assert

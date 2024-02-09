@@ -31,6 +31,12 @@ export default class WebPage extends BasePage {
     this.error = new Error(page)
     this.preloader  = new Preloader(page);
     this.preview  = new Preview(page);
+    //Locators
+   this.webResult = this.page.locator("section.container.page-results div.web-results")
   }
-  
+
+  // Verify
+  expectScreenWebPage = async (testInfo) => {
+    await this.expectPageToHaveScreenshot(this.webResult,testInfo);
+  };
 }
