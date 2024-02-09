@@ -8,6 +8,6 @@ export default class Preloader extends BaseComponent {
     this.preloader = this.page.locator("three-bounce");
   }
   waitUntilPreloaderToBeInvisible = async () => {
-    await expect(this.preloader).toBeHidden();
+    await this.page.waitForSelector("three-bounce",{ state: 'hidden' })
   };
 }

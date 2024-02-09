@@ -59,7 +59,7 @@ module.exports = defineConfig({
     trace: "on-first-retry",
   },
   expect: {
-    toHaveScreenshot: {  maxDiffPixelRatio: 0.3 },
+    toHaveScreenshot: {  maxDiffPixels: 100 },
     timeout: 15 * 1000,
   },
 

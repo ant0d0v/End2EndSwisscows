@@ -9,6 +9,7 @@ import Header from "../../components/(search)/Header.js";
 import ImagesWidget from "../../components/(search)/images/Widget.js";
 import NewsWidget from "../../components/(search)/news/Widget.js";
 import AdsText from "../../components/(search)/ads/TextAds.js";
+import Preview from "../../components/(search)/web/Preview.js";
 import Error from "../../components/Error.js";
 import Preloader from "../../components/Preloader.js";
 import BasePage from "../../base/BasePage.js";
@@ -29,6 +30,13 @@ export default class WebPage extends BasePage {
     this.header  = new Header(page);
     this.error = new Error(page)
     this.preloader  = new Preloader(page);
+    this.preview  = new Preview(page);
+    //Locators
+   this.webResult = this.page.locator("section.container.page-results div.web-results")
   }
-  
+
+  // Verify
+  expectScreenWebPage = async (testInfo) => {
+    await this.expectPageToHaveScreenshot(this.webResult,testInfo);
+  };
 }
