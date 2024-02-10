@@ -11,6 +11,7 @@ export default class DonationPage extends BasePage {
 
     //Locators
     this.pdfLinks = (id) => this.page.getByText(`${id}`);
+    this.paymentBlock = this.page.locator("div.payment-slip ") 
     this.links = (id) =>
       this.page.getByRole("main").getByRole("link", { name: `${id}` });
   }
@@ -35,7 +36,7 @@ export default class DonationPage extends BasePage {
   //Assert
 
   expectScreenDonationPage = async (testInfo) => {
-    await this.expectPageToHaveScreenshot(this.videoPlayer.videoPlayer, testInfo);
+    await this.expectPageToHaveScreenshot(this.paymentBlock, testInfo);
   };
 
   async expectValidatePdfFile(currentPage, pdf, testInfo) {
