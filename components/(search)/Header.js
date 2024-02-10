@@ -27,6 +27,7 @@ export default class Header extends BaseComponent {
     this.shoppingSearchButton = this.page.getByRole("link", {name: "Shopping",exact: true,});
     this.hamburgerMenuButton = this.page.locator("#header").getByRole("button").nth(2);
     this.badgeEmail = this.page.locator("div.badges a.badge-email");
+    this.filtersButton = this.page.locator('.filters-button')
   }
 
   //Actions
@@ -82,6 +83,18 @@ export default class Header extends BaseComponent {
       `shopping button in the header`
     );
     return new ShoppingPage(this.page);
+  };
+  clickFiltersButton = async () => {
+    await this.clickElement(this.filtersButton,
+      `filters button in the header`
+    );
+  };
+  clickFilterButtonInAndGetResponse = async () => {
+    const responsePromise = this.page.waitForResponse(
+       "https://api.dev.swisscows.com/web/search?query=ronaldo&offset=0&itemsCount=10&region=de-DE&freshness=All");
+    await this.clickElement(this.filtersButton,`filter button` );
+    const response = await responsePromise;
+    return response;
   };
 
   // Verify

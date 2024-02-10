@@ -12,7 +12,7 @@ test("Check text advertising", async ({
      //Actions
      await mainPage.headerStaticPages.clickHamburgerMenuButton();
      await mainPage.headerStaticPages.hamburgerMenu.selectRegion("Germany");
-     await mainPage.headerStaticPages.searchForm.inputSearchCriteria("crocs price");
+     await mainPage.headerStaticPages.searchForm.inputSearchCriteria("laptop");
      await mainPage.headerStaticPages.searchForm.clickEnterSearchField();
      await webPage.item.expectWebItemsToBeVisible()
      await webPage.adsText.waitElementToBeVisible(webPage.adsText.textAds)

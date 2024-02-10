@@ -1,0 +1,98 @@
+import { test} from "../../../utils/fixturePages";
+const { expect } = require("@playwright/test");
+
+const filterData = JSON.parse(
+  JSON.stringify(require("../../../data/filters/testData.json"))
+);
+
+for (const {testID,expectedLink,locatorId,responseUrl,filter } of filterData.byDate) {
+    test(`${testID}  ${locatorId} filter navigates to the corresponding page.`, async ({
+      mainPage,
+      webPage,
+      page
+    }) => {
+      //Actions
+      await mainPage.headerStaticPages.clickHamburgerMenuButton();
+      await mainPage.headerStaticPages.hamburgerMenu.selectRegion("Germany");
+      await mainPage.headerStaticPages.searchForm.inputSearchCriteria("ronaldo");
+      await mainPage.headerStaticPages.searchForm.clickEnterSearchField();
+      await webPage.item.expectWebItemsToBeVisible()
+      await webPage.header.clickFiltersButton()
+      await webPage.filters.buttonMenu.clickFilterByDate()
+      const response = await webPage.filters.clickFilterInDropdownListAndGetResponse(locatorId,responseUrl)
+      
+      //Assert
+      await webPage.expectHaveUrl(page, expectedLink);
+      await expect(response.json()).resolves.toEqual(expect.objectContaining({ "request": {
+        "query": "ronaldo",
+        "itemsCount": 10,
+        "offset": 0,
+        "region": "de-DE",
+        "freshness": filter
+    },}));
+    });
+  }
+
+  test("Cancel filter and navigates to the corresponding page.", async ({
+    mainPage,
+    webPage,
+    page
+  }) => {
+    //Actions
+    await mainPage.headerStaticPages.clickHamburgerMenuButton();
+    await mainPage.headerStaticPages.hamburgerMenu.selectRegion("Germany");
+    await mainPage.headerStaticPages.searchForm.inputSearchCriteria("ronaldo");
+    await mainPage.headerStaticPages.searchForm.clickEnterSearchField();
+    await webPage.item.expectWebItemsToBeVisible()
+    await webPage.header.clickFiltersButton()
+    await webPage.filters.buttonMenu.clickFilterByDate()
+    const oldResponse = await webPage.filters.clickFilterInDropdownListAndGetResponse(
+        filterData.byDate[0].locatorId, filterData.byDate[0].responseUrl)
+    const newResponse =  await webPage.header.clickFilterButtonInAndGetResponse()   
+    
+    //Assert
+    await webPage.expectHaveUrl(page, "https://dev.swisscows.com/en/web?query=ronaldo&region=de-DE");
+    await expect(oldResponse.json()).resolves.not.toEqual(newResponse.json())
+    await expect(newResponse.json()).resolves.toEqual(expect.objectContaining({ "request": {
+      "query": "ronaldo",
+      "itemsCount": 10,
+      "offset": 0,
+      "region": "de-DE",
+      "freshness": "All"
+  },}));
+  });
+
+  test("Check list dropdown of filter by date ", async ({
+    mainPage,
+    webPage
+  }) => {
+    //Actions
+    await mainPage.headerStaticPages.clickHamburgerMenuButton();
+    await mainPage.headerStaticPages.hamburgerMenu.selectRegion("Germany");
+    await mainPage.headerStaticPages.searchForm.inputSearchCriteria("ronaldo");
+    await mainPage.headerStaticPages.searchForm.clickEnterSearchField();
+    await webPage.item.expectWebItemsToBeVisible()
+    await webPage.header.clickFiltersButton()
+    await webPage.filters.buttonMenu.clickFilterByDate()
+
+    //Assert
+    await webPage.filters.expectElementToHaveText( webPage.filters.dropdownOfFilterByDate,[
+        "All","Past Day","Past Week","Past Month","Past Year"])
+  });
+
+  test("Check that dropdown of filter by date is opened", async ({
+    mainPage,
+    webPage
+  }) => {
+    //Actions
+    await mainPage.headerStaticPages.clickHamburgerMenuButton();
+    await mainPage.headerStaticPages.hamburgerMenu.selectRegion("Germany");
+    await mainPage.headerStaticPages.searchForm.inputSearchCriteria("ronaldo");
+    await mainPage.headerStaticPages.searchForm.clickEnterSearchField();
+    await webPage.item.expectWebItemsToBeVisible()
+    await webPage.header.clickFiltersButton()
+    await webPage.filters.buttonMenu.clickFilterByDate()
+
+    //Assert
+    await webPage.filters.buttonMenu.expectAttributeClassOfElement( webPage.filters.buttonMenu.attributeFilterByDate, /open/)
+  });
