@@ -314,6 +314,7 @@ test("Check 202 No Results Found error page ", async ({
      await mainPage.headerStaticPages.searchForm.inputSearchCriteria("adsddss");
      await mainPage.headerStaticPages.searchForm.clickEnterSearchField();
      await webPage.item.expectWebItemsToBeVisible()
+     await webPage.waitUntilPageIsFullyLoaded()
      
      //Assert
      await webPage.expectScreenWebPage(testInfo)
@@ -333,6 +334,7 @@ test("Check 202 No Results Found error page ", async ({
      await mainPage.headerStaticPages.searchForm.inputSearchCriteria("adsddss");
      await mainPage.headerStaticPages.searchForm.clickEnterSearchField();
      await webPage.item.expectWebItemsToBeVisible()
+     await webPage.waitUntilPageIsFullyLoaded()
      
      //Assert
      await webPage.expectScreenWebPage(testInfo)

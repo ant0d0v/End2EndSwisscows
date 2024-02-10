@@ -50,7 +50,7 @@ test("Check text advertising", async ({
      //Actions
      await mainPage.headerStaticPages.clickHamburgerMenuButton();
      await mainPage.headerStaticPages.hamburgerMenu.selectRegion("Germany");
-     await mainPage.headerStaticPages.searchForm.inputSearchCriteria("crocs price");
+     await mainPage.headerStaticPages.searchForm.inputSearchCriteria("price iphone in germany ");
      await mainPage.headerStaticPages.searchForm.clickEnterSearchField();
      await webPage.item.expectWebItemsToBeVisible()
      await webPage.adsProduct.waitElementToBeVisible(webPage.adsProduct.nextButton)
@@ -71,12 +71,12 @@ test("Check text advertising", async ({
      //Actions
      await mainPage.headerStaticPages.clickHamburgerMenuButton();
      await mainPage.headerStaticPages.hamburgerMenu.selectRegion("Germany");
-     await mainPage.headerStaticPages.searchForm.inputSearchCriteria("crocs price");
+     await mainPage.headerStaticPages.searchForm.inputSearchCriteria("price iphone in germany");
      await mainPage.headerStaticPages.searchForm.clickEnterSearchField();
      await webPage.item.expectWebItemsToBeVisible()
      await webPage.adsProduct.waitElementToBeVisible(webPage.adsProduct.firstProduct)
      const newPage = await webPage.adsProduct.clickFirstProductAndNavigateToNewPage()
      
      //Assert
-     await webPage.expectNotToHaveUrl(newPage, "https://dev.swisscows.com/en/web?query=crocs+price&region=de-DE" )
+     await webPage.expectNotToHaveUrl(newPage, "https://dev.swisscows.com/en/web?query=price+iphone+in+germany&region=de-DE" )
   });
