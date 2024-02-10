@@ -1,0 +1,35 @@
+
+{
+    "byDate": [
+        
+        {
+            "testID": "1",
+            "expectedLink": "https://dev.swisscows.com/en/web?query=ronaldo&region=de-DE&freshness=Day",
+            "locatorId" : "Past Day",
+            "responseUrl": "https://api.dev.swisscows.com/web/search?query=ronaldo&offset=0&itemsCount=10&region=de-DE&freshness=Day",
+            "filter": "Day"
+        },
+        {
+            "testID": "2",
+            "expectedLink": "https://dev.swisscows.com/en/web?query=ronaldo&region=de-DE&freshness=Week",
+            "locatorId" : "Past Week",
+            "responseUrl": "https://api.dev.swisscows.com/web/search?query=ronaldo&offset=0&itemsCount=10&region=de-DE&freshness=Week",
+            "filter": "Week"
+        },
+        {
+            "testID": "3",
+            "expectedLink": "https://dev.swisscows.com/en/web?query=ronaldo&region=de-DE&freshness=Month",
+            "locatorId" : "Past Month",
+            "responseUrl": "https://api.dev.swisscows.com/web/search?query=ronaldo&offset=0&itemsCount=10&region=de-DE&freshness=Month",
+            "filter": "Month"
+        },
+        {
+            "testID": "4",
+            "expectedLink": "https://dev.swisscows.com/en/web?query=ronaldo&region=de-DE&freshness=Year",
+            "locatorId" : "Past Year",
+            "responseUrl": "https://api.dev.swisscows.com/web/search?query=ronaldo&offset=0&itemsCount=10&region=de-DE&freshness=Year",
+            "filter": "Year"
+        }
+    ]
+
+}
