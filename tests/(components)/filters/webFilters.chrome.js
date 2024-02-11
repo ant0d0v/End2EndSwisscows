@@ -5,7 +5,7 @@ const filterData = JSON.parse(
   JSON.stringify(require("../../../data/filters/testData.json"))
 );
 
-for (const {testID,expectedLink,locatorId,responseUrl,filter } of filterData.byDate) {
+for (const {testID,expectedWebLink,locatorId,responseWebUrl,filter } of filterData.byDate) {
     test(`${testID}  ${locatorId} filter navigates to the corresponding page.`, async ({
       mainPage,
       webPage,
@@ -19,10 +19,10 @@ for (const {testID,expectedLink,locatorId,responseUrl,filter } of filterData.byD
       await webPage.item.expectWebItemsToBeVisible()
       await webPage.header.clickFiltersButton()
       await webPage.filters.buttonMenu.clickFilterByDate()
-      const response = await webPage.filters.clickFilterInDropdownListAndGetResponse(locatorId,responseUrl)
+      const response = await webPage.filters.clickFilterInDropdownListAndGetResponse(locatorId,responseWebUrl)
       
       //Assert
-      await webPage.expectHaveUrl(page, expectedLink);
+      await webPage.expectHaveUrl(page, expectedWebLink);
       await expect(response.json()).resolves.toEqual(expect.objectContaining({ "request": {
         "query": "ronaldo",
         "itemsCount": 10,
@@ -47,8 +47,10 @@ for (const {testID,expectedLink,locatorId,responseUrl,filter } of filterData.byD
     await webPage.header.clickFiltersButton()
     await webPage.filters.buttonMenu.clickFilterByDate()
     const oldResponse = await webPage.filters.clickFilterInDropdownListAndGetResponse(
-        filterData.byDate[0].locatorId, filterData.byDate[0].responseUrl)
-    const newResponse =  await webPage.header.clickFilterButtonInAndGetResponse()   
+        filterData.byDate[0].locatorId, filterData.byDate[0].responseWebUrl)
+    const newResponse =  await webPage.header.clickFilterButtonInAndGetResponse(
+      "https://api.dev.swisscows.com/web/search?query=ronaldo&offset=0&itemsCount=10&region=de-DE&freshness=All"
+    )   
     
     //Assert
     await webPage.expectHaveUrl(page, "https://dev.swisscows.com/en/web?query=ronaldo&region=de-DE");

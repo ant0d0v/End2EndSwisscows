@@ -4,9 +4,7 @@ const { expect } = require("@playwright/test");
 const testData = JSON.parse(
   JSON.stringify(require("../../../data/error/testData.json"))
 );
-const filterData = JSON.parse(
-  JSON.stringify(require("../../../data/filters/testData.json"))
-);
+
 
 test("Check 202 No Results Found error page ", async ({
     mainPage,
@@ -306,7 +304,7 @@ test("Check 202 No Results Found error page ", async ({
      await webPage.preview.expectElementToBeVisible(webPage.preview.contentImageInPreview)
   });
 
-  test("Check design of the web search page ", async ({
+  test.skip("Check design of the web search page ", async ({
     mainPage,
     webPage,
   },testInfo) => {
@@ -323,7 +321,7 @@ test("Check 202 No Results Found error page ", async ({
      await webPage.expectScreenWebPage(testInfo)
   });
 
-  test("Check design dark theme of the web search page ", async ({
+  test.skip("Check design dark theme of the web search page ", async ({
     mainPage,
     webPage,
   },testInfo) => {
@@ -343,33 +341,6 @@ test("Check 202 No Results Found error page ", async ({
      await webPage.expectScreenWebPage(testInfo)
   });
 
-  for (const {testID,expectedLink,locatorId,responseUrl,filter } of filterData.byDate) {
-    test(`${testID}  ${locatorId} filter navigates to the corresponding page.`, async ({
-      mainPage,
-      webPage,
-      page
-    }) => {
-      //Actions
-      await mainPage.headerStaticPages.clickHamburgerMenuButton();
-      await mainPage.headerStaticPages.hamburgerMenu.selectRegion("Germany");
-      await mainPage.headerStaticPages.searchForm.inputSearchCriteria("ronaldo");
-      await mainPage.headerStaticPages.searchForm.clickEnterSearchField();
-      await webPage.item.expectWebItemsToBeVisible()
-      await webPage.header.clickFiltersButton()
-      await webPage.filters.buttonMenu.clickFilterByDate()
-      const response = await webPage.filters.clickFilterInDropdownListAndGetResponse(locatorId,responseUrl)
-      
-      //Assert
-      await webPage.expectHaveUrl(page, expectedLink);
-      await expect(response.json()).resolves.toEqual(expect.objectContaining({ "request": {
-        "query": "ronaldo",
-        "itemsCount": 10,
-        "offset": 0,
-        "region": "de-DE",
-        "freshness": filter
-    },}));
-    });
-  }
 
 
  

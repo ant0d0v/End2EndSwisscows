@@ -4,30 +4,38 @@
         
         {
             "testID": "1",
-            "expectedLink": "https://dev.swisscows.com/en/web?query=ronaldo&region=de-DE&freshness=Day",
+            "expectedWebLink": "https://dev.swisscows.com/en/web?query=ronaldo&region=de-DE&freshness=Day",
+            "expectedNewsLink": "https://dev.swisscows.com/en/news?query=news&region=de-DE&freshness=Day",
             "locatorId" : "Past Day",
-            "responseUrl": "https://api.dev.swisscows.com/web/search?query=ronaldo&offset=0&itemsCount=10&region=de-DE&freshness=Day",
+            "responseWebUrl": "https://api.dev.swisscows.com/web/search?query=ronaldo&offset=0&itemsCount=10&region=de-DE&freshness=Day",
+            "responseNewsUrl": "https://api.dev.swisscows.com/news/search?query=news&region=de-DE&language=de&itemsCount=10&offset=0&freshness=Day&sortOrder=Desc&sortBy=Created",
             "filter": "Day"
         },
         {
             "testID": "2",
-            "expectedLink": "https://dev.swisscows.com/en/web?query=ronaldo&region=de-DE&freshness=Week",
+            "expectedWebLink": "https://dev.swisscows.com/en/web?query=ronaldo&region=de-DE&freshness=Week",
+            "expectedNewsLink": "https://dev.swisscows.com/en/news?query=news&region=de-DE&freshness=News",
             "locatorId" : "Past Week",
-            "responseUrl": "https://api.dev.swisscows.com/web/search?query=ronaldo&offset=0&itemsCount=10&region=de-DE&freshness=Week",
+            "responseWebUrl": "https://api.dev.swisscows.com/web/search?query=ronaldo&offset=0&itemsCount=10&region=de-DE&freshness=Week",
+            "responseNewsUrl": "https://api.dev.swisscows.com/news/search?query=news&region=de-DE&language=de&itemsCount=10&offset=0&freshness=Week&sortOrder=Desc&sortBy=Created",
             "filter": "Week"
         },
         {
             "testID": "3",
-            "expectedLink": "https://dev.swisscows.com/en/web?query=ronaldo&region=de-DE&freshness=Month",
+            "expectedWebLink": "https://dev.swisscows.com/en/web?query=ronaldo&region=de-DE&freshness=Month",
+            "expectedNewsLink": "https://dev.swisscows.com/en/news?query=news&region=de-DE&freshness=Month",
             "locatorId" : "Past Month",
-            "responseUrl": "https://api.dev.swisscows.com/web/search?query=ronaldo&offset=0&itemsCount=10&region=de-DE&freshness=Month",
+            "responseWebUrl": "https://api.dev.swisscows.com/web/search?query=ronaldo&offset=0&itemsCount=10&region=de-DE&freshness=Month",
+            "responseNewsUrl": "https://api.dev.swisscows.com/news/search?query=news&region=de-DE&language=de&itemsCount=10&offset=0&freshness=Month&sortOrder=Desc&sortBy=Created",
             "filter": "Month"
         },
         {
             "testID": "4",
-            "expectedLink": "https://dev.swisscows.com/en/web?query=ronaldo&region=de-DE&freshness=Year",
+            "expectedWebLink": "https://dev.swisscows.com/en/web?query=ronaldo&region=de-DE&freshness=Year",
+            "expectedNewsLink": "https://dev.swisscows.com/en/news?query=news&region=de-DE&freshness=Year",
             "locatorId" : "Past Year",
-            "responseUrl": "https://api.dev.swisscows.com/web/search?query=ronaldo&offset=0&itemsCount=10&region=de-DE&freshness=Year",
+            "responseWebUrl": "https://api.dev.swisscows.com/web/search?query=ronaldo&offset=0&itemsCount=10&region=de-DE&freshness=Year",
+            "responseNewsUrl": "https://api.dev.swisscows.com/news/search?query=news&region=de-DE&language=de&itemsCount=10&offset=0&freshness=Year&sortOrder=Desc&sortBy=Created",
             "filter": "Year"
         }
     ]
