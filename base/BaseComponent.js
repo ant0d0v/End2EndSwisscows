@@ -51,7 +51,7 @@ export default class BaseComponent extends BasePage {
     await test.step('Expect the elements in the array "to contain" a string', async () => {
       for (const element of await elements.all()) {
         const elementText = await element.textContent();
-        expect(await elementText.toLowerCase()).toContain(criteria.toLowerCase());
+        expect(await elementText.toLowerCase()).toContain(criteria);
       }
     });
   }

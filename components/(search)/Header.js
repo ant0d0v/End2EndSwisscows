@@ -89,9 +89,8 @@ export default class Header extends BaseComponent {
       `filters button in the header`
     );
   };
-  clickFilterButtonInAndGetResponse = async () => {
-    const responsePromise = this.page.waitForResponse(
-       "https://api.dev.swisscows.com/web/search?query=ronaldo&offset=0&itemsCount=10&region=de-DE&freshness=All");
+  clickFilterButtonInAndGetResponse = async (link) => {
+    const responsePromise = this.page.waitForResponse(link);
     await this.clickElement(this.filtersButton,`filter button` );
     const response = await responsePromise;
     return response;
