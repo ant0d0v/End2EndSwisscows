@@ -1,7 +1,7 @@
 import MainPage from "../../pages/Main.Page";
 import { WebPage } from "../../pages/(search)/Web.Page";
-import ImagePage from "../../pages/(search)/Image.Page";
-import MusicPage from "../../pages/(search)/Music.Page";
+import ImagePage from "../../pages/(search)/images/Image.page";
+import MusicPage from "../../pages/(search)/music/Music.page";
 import NewsPage from "../../pages/(search)/News.Page";
 import VideoPage from "../../pages/(search)/Video.Page";
 import ShoppingPage from "../../pages/(search)/Shopping.Page";

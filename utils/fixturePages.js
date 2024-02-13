@@ -5,8 +5,9 @@ import Header from "../components/(search)/Header";
 import HeaderStaticPages from "../components/HeaderStaticPages";
 import FooterFull from "../components/FooterFull";
 import imagesGallery from "../components/ImagesGallery";
-import ImagePage from "../pages/(search)/Image.Page";
-import MusicPage from "../pages/(search)/Music.Page";
+import ImagePage from "../pages/(search)/images/Image.page";
+import MusicPage from "../pages/(search)/music/Music.page";
+import MusicMyPage from "../pages/(search)/music/my/Music.page";
 import VideoPage from "../pages/(search)/Video.Page";
 import WebPage from "../pages/(search)/Web.Page";
 import NewsPage from "../pages/(search)/News.Page";
@@ -41,6 +42,9 @@ exports.test = base.test.extend({
   },
   musicPage: async ({ page }, use) => {
     await use(new MusicPage(page));
+  },
+  musicMyPage: async ({ page }, use) => {
+    await use(new MusicMyPage(page));
   },
   videoPage: async ({ page }, use) => {
     await use(new VideoPage(page));
