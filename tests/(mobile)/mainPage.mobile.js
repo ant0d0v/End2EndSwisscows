@@ -7,59 +7,59 @@ const main = JSON.parse(
 );
 
 test("Check that suggest is displayed", async ({
-  mainPage
+  home
 }) => {
-  await mainPage.reloadPage();
-  await mainPage.waitUntilPageIsFullyLoaded();
-  await mainPage.headerStaticPages.searchForm.inputSearchCriteria(testData.searchCriteria.first);
+  await home.reloadPage();
+  await home.waitUntilPageIsFullyLoaded();
+  await home.headerStaticPages.searchForm.inputSearchCriteria(testData.searchCriteria.first);
 
   //Assert
-  await mainPage.headerStaticPages.searchForm.expectSuggestIsDisplayed();
-  await mainPage.headerStaticPages.searchForm.expectSuggestToHaveCount(5);
-  await mainPage.headerStaticPages.searchForm.expectSuggestToContains(
+  await home.headerStaticPages.searchForm.expectSuggestIsDisplayed();
+  await home.headerStaticPages.searchForm.expectSuggestToHaveCount(5);
+  await home.headerStaticPages.searchForm.expectSuggestToContains(
     testData.searchCriteria.first
   );
 });
 
-test("Check that all questions were opened on the main page.", async ({
-  mainPage,
+test("Check that all questions were opened on the home page.", async ({
+  home,
 }) => {
   //Actions
-  await mainPage.scrollDownToQuestions()
-  await mainPage.clickAllQuestions();
+  await home.scrollDownToQuestions()
+  await home.clickAllQuestions();
 
   //Assert
-  await mainPage.faq.expectQuestionsAreOpened();
+  await home.faq.expectQuestionsAreOpened();
 });
 
-test("Check that a question and answer can be opened and closed on the main page.", async ({
-  mainPage,
+test("Check that a question and answer can be opened and closed on the home page.", async ({
+  home,
 }) => {
   //Actions
-  await mainPage.scrollDownToQuestions()
-  await mainPage.clickAllQuestions();
-  await mainPage.faq.expectQuestionsAreOpened();
-  await mainPage.clickAllQuestions();
+  await home.scrollDownToQuestions()
+  await home.clickAllQuestions();
+  await home.faq.expectQuestionsAreOpened();
+  await home.clickAllQuestions();
 
   //Assert
-  await mainPage.faq.expectQuestionsAreClosed();
+  await home.faq.expectQuestionsAreClosed();
 });
 
 test("Check that the link in the fourth question leads to the expected URL.", async ({
-  mainPage,
+  home,
 }) => {
   const expectedH1text = "How to use Swisscows as default search";
    //Actions
-  await mainPage.scrollDownToQuestions()
-  await mainPage.clickFourQuestion();
-  const DefaultSearchPage = await mainPage.clickLinkInTheFourQuestionAndNavigateToDefaultSearchPage();
+  await home.scrollDownToQuestions()
+  await home.clickFourQuestion();
+  const DefaultSearchPage = await home.clickLinkInTheFourQuestionAndNavigateToDefaultSearchPage();
   
   //Assert
-  await mainPage.expectHaveUrl( DefaultSearchPage, main.url.defaultSearchPage);
-  await mainPage.expectH1Text(DefaultSearchPage, expectedH1text);
+  await home.expectHaveUrl( DefaultSearchPage, main.url.defaultSearchPage);
+  await home.expectH1Text(DefaultSearchPage, expectedH1text);
 });
 
-test("Check the texts of questions on the main page.", async ({ mainPage }) => {
+test("Check the texts of questions on the home page.", async ({ home }) => {
   const expectedAnswers = [
     "Our anonymous search engine protects the privacy of our users when searching and from inappropriate content when finding it. We do not use cookies or other tracking technologies, with us each search query remains anonymous and each user a guest without a user profile.",
     "Protecting our users' data is an essential part of our DNA and thus a core promise of the anonymous search engine Swisscows. We do not store data, build search history or deliver ads based on collected data. Our technology is built in such a way that the storage of user data is not even possible.",
@@ -70,34 +70,34 @@ test("Check the texts of questions on the main page.", async ({ mainPage }) => {
   ];
 
   //Assert
-  await mainPage.faq.expectListSizeAnswerToQuestions(6);
-  await mainPage.expectElementToHaveText(mainPage.faq.answersToQuestions, expectedAnswers);
+  await home.faq.expectListSizeAnswerToQuestions(6);
+  await home.expectElementToHaveText(home.faq.answersToQuestions, expectedAnswers);
 });
 
-test("Check that buttons have hover over the services block on main page", async ({
-  mainPage,
+test("Check that buttons have hover over the services block on home page", async ({
+  home,
 }) => {
   const expectedColorWhenHovering = "rgb(223, 93, 93)";
 
   //Assert
-  await mainPage.expectColorsLinksWhenHovering(mainPage.buttonOfServiceBlock, "color", expectedColorWhenHovering );
+  await home.expectColorsLinksWhenHovering(home.buttonOfServiceBlock, "color", expectedColorWhenHovering );
 });
 
-test("Check design of the main page ", async ({ mainPage },testInfo) => {
+test("Check design of the home page ", async ({ home },testInfo) => {
 
   //Assert
-  await mainPage.expectScreenMainPage(testInfo);
+  await home.expectScreenHome(testInfo);
 });
 
-test("Check design dark theme of the main page ", async ({
-  mainPage
+test("Check design dark theme of the home page ", async ({
+  home
 },testInfo) => {
   //Actions
 
-  await mainPage.headerStaticPages.clickHamburgerMenuButton();
-  await mainPage.headerStaticPages.hamburgerMenu.clickThemeDropdownInHamburgerMenu();
-  await mainPage.headerStaticPages.hamburgerMenu.clickDarkInHamburgerMenu();
+  await home.headerStaticPages.clickHamburgerMenuButton();
+  await home.headerStaticPages.hamburgerMenu.clickThemeDropdownInHamburgerMenu();
+  await home.headerStaticPages.hamburgerMenu.clickDarkInHamburgerMenu();
 
   //Assert
-  await mainPage.expectScreenMainPage(testInfo);
+  await home.expectScreenHome(testInfo);
 });

@@ -1,5 +1,5 @@
 import base from "./fixtureBase";
-import MainPage from "../app/Main.Page";
+import Home from "../app/Home.page";
 import Preloader from "../components/Preloader";
 import Header from "../components/(search)/Header";
 import HeaderStaticPages from "../components/HeaderStaticPages";
@@ -25,8 +25,8 @@ import EmailPage from "../app/(landings)/Email.Page";
 
 
 exports.test = base.test.extend({
-  mainPage: async ({ page }, use) => {
-    await use(new MainPage(page));
+  home: async ({ page }, use) => {
+    await use(new Home(page));
   },
   defaultSearchPage: async ({ page }, use) => {
     await use(new DefaultSearchPage(page));
@@ -93,9 +93,9 @@ exports.test = base.test.extend({
     const newPage = await footerFull.clickEmailLinkAndNavigateToNewPage();
     await use(new EmailPage(newPage));
   },
-  defaultSearchPage: async ({ mainPage }, use) => {
-    await mainPage.clickFourQuestion()
-    const newPage = await mainPage.clickLinkInTheFourQuestionAndNavigateToDefaultSearchPage();
+  defaultSearchPage: async ({ home }, use) => {
+    await home.clickFourQuestion()
+    const newPage = await home.clickLinkInTheFourQuestionAndNavigateToDefaultSearchPage();
     await use(new DefaultSearchPage(newPage));
   },
 

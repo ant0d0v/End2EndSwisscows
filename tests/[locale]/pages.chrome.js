@@ -10,18 +10,18 @@ const mainTable = parse(fs.readFileSync(path.join(__dirname, '../../localization
 });
 
 for (const { test_case, language, expected_content} of mainTable) {
-  test(`${test_case} Check content of main page for  ${language} localization`, async ({
-    mainPage,
+  test(`${test_case} Check content of home page for  ${language} localization`, async ({
+    home,
   }) => {
     //Actions
-    await mainPage.headerStaticPages.clickHamburgerMenuButton();
-    await mainPage.headerStaticPages.hamburgerMenu.clickLanguagesDropdownInHamburgerMenu();
-    await mainPage.headerStaticPages.hamburgerMenu.clickLanguageLinkInDropdown(
+    await home.headerStaticPages.clickHamburgerMenuButton();
+    await home.headerStaticPages.hamburgerMenu.clickLanguagesDropdownInHamburgerMenu();
+    await home.headerStaticPages.hamburgerMenu.clickLanguageLinkInDropdown(
       language
     );
 
     //Assert
-    await mainPage.expectElementToHaveText(mainPage.allContent,expected_content)
+    await home.expectElementToHaveText(home.allContent,expected_content)
   });
 }
 

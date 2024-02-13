@@ -4,30 +4,30 @@ const testData = JSON.parse(
 );
 
 test('Check that popup "Edge install" redirect to the corresponding page', async ({
-  mainPage
+  home
 }) => {
- const externalPage = await mainPage.installSwisscowsLink.clickExtensionPopupAndNavigateToWebStore();
+ const externalPage = await home.installSwisscowsLink.clickExtensionPopupAndNavigateToWebStore();
 
   //Assert
-  await mainPage.expectHaveUrl( externalPage, new RegExp(testData.url.extensionEdgeInstall));
-  await mainPage.expectHaveTitle(externalPage, /Swisscows/);
+  await home.expectHaveUrl( externalPage, new RegExp(testData.url.extensionEdgeInstall));
+  await home.expectHaveTitle(externalPage, /Swisscows/);
 });
 
-test("Check that popup Edge install Is Displayed", async ({ mainPage }) => {
+test("Check that popup Edge install Is Displayed", async ({ home }) => {
   const expectedText =
     "Stay with us and set Swisscows as your default search engine. ";
 
   //Assert
-  await mainPage.installSwisscowsLink.expectExtensionPopupIsDisplayed();
-  await mainPage.installSwisscowsLink.expectTextExtensionPopup(expectedText);
+  await home.installSwisscowsLink.expectExtensionPopupIsDisplayed();
+  await home.installSwisscowsLink.expectTextExtensionPopup(expectedText);
 });
 
 test('Check that the "Install Swisscows Block" button redirect to corresponding URL.', async ({
-  mainPage
+  home
 }) => {
-  const externalPage = await mainPage.extensionBlock.clickExtensionBlockAndNavigateToWebStore();
+  const externalPage = await home.extensionBlock.clickExtensionBlockAndNavigateToWebStore();
 
   //Assert
-  await mainPage.expectHaveUrl( externalPage, new RegExp(testData.url.extensionEdgeInstall));
-  await mainPage.expectHaveTitle(externalPage, /Swisscows/);
+  await home.expectHaveUrl( externalPage, new RegExp(testData.url.extensionEdgeInstall));
+  await home.expectHaveTitle(externalPage, /Swisscows/);
 });

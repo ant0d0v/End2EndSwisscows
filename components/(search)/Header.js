@@ -1,4 +1,4 @@
-import MainPage from "../../app/Main.Page";
+import Home from "../../app/Home.page";
 import { WebPage } from "../../app/(search)/Web.Page";
 import ImagePage from "../../app/(search)/images/Image.page";
 import MusicPage from "../../app/(search)/music/Music.page";
@@ -52,7 +52,7 @@ export default class Header extends BaseComponent {
 
   clickSwisscowsLogo = async () => {
     await this.clickElement(this.logoSwisscows, `Swisscows Logo in the header`);
-    return new MainPage(this.page);
+    return new Home(this.page);
   };
   clickImageSearchButton = async () => {
     await this.clickElement( this.imageSearchButton,

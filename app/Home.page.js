@@ -5,7 +5,7 @@ import extensionBlock from "../components/(home)/Extension";
 import FAQ from "../components/FAQ";
 import BasePage from "../base/BasePage";
 
-export default class MainPage extends BasePage {
+export default class Home extends BasePage {
   constructor(page) {
     super(page);
     this.headerStaticPages = new HeaderStaticPages(page);
@@ -20,7 +20,7 @@ export default class MainPage extends BasePage {
     this.allQuestions = this.page.locator("h3.question");
     this.fourQuestion = this.page.getByRole("heading", { name: "How can I switch from another",});
     this.linkInTheFourQuestion = this.page.getByRole("link", { name: "instructions",});
-    this.widgetMainPage = this.page.locator("//div[@class ='bnnr-widget']");
+    this.widgetHome = this.page.locator("//div[@class ='bnnr-widget']");
     this.serviceBlock = this.page.locator("div.services-blocks");
     this.buttonOfServiceBlock = this.page.locator("div.services-block-link");
     this.linksOfServiceBlock = (name) => this.page.getByRole("link", { name: name });
@@ -58,7 +58,7 @@ export default class MainPage extends BasePage {
 
   // Verify
   
-  expectScreenMainPage = async (testInfo) => {
-    await this.expectPageToHaveScreenshot(this.widgetMainPage,testInfo);
+  expectScreenHome = async (testInfo) => {
+    await this.expectPageToHaveScreenshot(this.widgethome,testInfo);
   };
 }

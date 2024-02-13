@@ -14,10 +14,10 @@ test.describe("test don't use cookie ", () => {
   for (const { testID,expectedLink,locatorId,expectedTitle,} of data.headerLinks) {
     test(`${testID} Check that header static badge ${locatorId} link navigate to corresponding pages`, async ({
       headerStaticPages,
-      mainPage
+      home
     }) => {
       //Actions
-      const newPage = await  mainPage.headerStaticPages.clickLinkInStaticHeaderAndNavigateToNewPage(locatorId);
+      const newPage = await  home.headerStaticPages.clickLinkInStaticHeaderAndNavigateToNewPage(locatorId);
 
       //Assert
       await headerStaticPages.expectHaveUrl(newPage, expectedLink);
@@ -26,36 +26,36 @@ test.describe("test don't use cookie ", () => {
   }
 });
 test("Check charity query counter value at the Beginning", async ({
-  mainPage,
+  home,
 }) => {
   //Assert
-  await  mainPage.headerStaticPages.badgeCounter.expectCharityBadgeCounterToHaveValue("0");
+  await  home.headerStaticPages.badgeCounter.expectCharityBadgeCounterToHaveValue("0");
 });
 
 test("Check charity query counter value after refresh page ", async ({
-  mainPage
+  home
 }) => {
   //Actions
-  await mainPage.reloadPage();
+  await home.reloadPage();
 
   //Assert
-  await  mainPage.headerStaticPages.badgeCounter.expectCharityBadgeCounterToHaveValue("0");
+  await  home.headerStaticPages.badgeCounter.expectCharityBadgeCounterToHaveValue("0");
 });
 
 test("Check charity query counter value after search and go back to main bage ", async ({
-  mainPage,
+  home,
   webPage,
 }) => {
   //Actions
-  await mainPage.headerStaticPages.searchForm.inputSearchCriteria(
+  await home.headerStaticPages.searchForm.inputSearchCriteria(
     testData.searchCriteria.first
   );
-  await mainPage.headerStaticPages.searchForm.clickEnterSearchField();
+  await home.headerStaticPages.searchForm.clickEnterSearchField();
   await webPage.item.expectWebItemsToBeVisible()
   await webPage.goBack();
 
   //Assert
-  await  mainPage.headerStaticPages.badgeCounter.expectCharityBadgeCounterToHaveValue("1");
+  await  home.headerStaticPages.badgeCounter.expectCharityBadgeCounterToHaveValue("1");
 });
 test("Check that display of heart icon message in the header static pages", async ({
   headerStaticPages,
@@ -72,19 +72,19 @@ test("Check that display of heart icon message in the header static pages", asyn
 test.describe("test use cookie", () => {
   test.use({ storageState: "./data/auth/user.json" });
   test("Check that email icon navigates to account/login page if user logged ", async ({
-    mainPage,
+    home,
     headerStaticPages
   }) => {
     //Actions
-    const newPage = await  mainPage.headerStaticPages.clickBadgeEmailAndNavigateToNewPage();
+    const newPage = await  home.headerStaticPages.clickBadgeEmailAndNavigateToNewPage();
 
     //Assert
     await headerStaticPages.expectHaveUrl(newPage, new RegExp(constantsData.URL_LOGIN_PAGE));
     await headerStaticPages.expectHaveTitle( newPage, constantsData.TITLE_LOGIN_PAGE);
   });
 });
-test("Clicking on the swisscows's logo on email page leads to the main page.", async ({
-  mainPage,
+test("Clicking on the swisscows's logo on email page leads to the home page.", async ({
+  home,
   emailPage,
 }) => {
   //Actions
@@ -92,12 +92,12 @@ test("Clicking on the swisscows's logo on email page leads to the main page.", a
   await emailPage.headerStaticPages.clickSwisscowsLogo();
 
   //Assert
-  await mainPage.expectHaveUrl(mainPage.page, constantsData.URL_MAIN_PAGE);
-  await mainPage.expectHaveTitle( mainPage.page, constantsData.TITLE_MAIN_PAGE );
+  await home.expectHaveUrl(home.page, constantsData.URL_MAIN_PAGE);
+  await home.expectHaveTitle( home.page, constantsData.TITLE_MAIN_PAGE );
 });
 
-test("Clicking on the swisscows's logo on vpn page leads to the main page.", async ({
-  mainPage,
+test("Clicking on the swisscows's logo on vpn page leads to the home page.", async ({
+  home,
   vpnPage,
 }) => {
   //Actions
@@ -105,6 +105,6 @@ test("Clicking on the swisscows's logo on vpn page leads to the main page.", asy
   await vpnPage.headerStaticPages.clickSwisscowsLogo();
 
   //Assert
-  await mainPage.expectHaveUrl(mainPage.page, constantsData.URL_MAIN_PAGE);
-  await mainPage.expectHaveTitle( mainPage.page, constantsData.TITLE_MAIN_PAGE );
+  await home.expectHaveUrl(home.page, constantsData.URL_MAIN_PAGE);
+  await home.expectHaveTitle( home.page, constantsData.TITLE_MAIN_PAGE );
 });

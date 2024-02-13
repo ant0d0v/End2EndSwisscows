@@ -79,7 +79,7 @@ test(`Check send message using all required fields`, async ({
 });
 
 test(`Check "back to search" button `, async ({
-  contactUsPage, page, mainPage
+  contactUsPage, page, home
 }) => {
   //Actions
   await contactUsPage.inputYouNameField("Test");
@@ -90,8 +90,8 @@ test(`Check "back to search" button `, async ({
   await contactUsPage.clickBackToSearchButton()
 
   //Assert
-  await mainPage.expectHaveUrl(page, constantsData.URL_MAIN_PAGE);
-  await mainPage.expectHaveTitle(page,constantsData.TITLE_MAIN_PAGE)
+  await home.expectHaveUrl(page, constantsData.URL_MAIN_PAGE);
+  await home.expectHaveTitle(page,constantsData.TITLE_MAIN_PAGE)
   
 });
 

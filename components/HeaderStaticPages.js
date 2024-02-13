@@ -1,5 +1,5 @@
 import BaseComponent from "../base/BaseComponent";
-import MainPage from "../app/Main.Page";
+import Home from "../app/Home.page";
 import HamburgerMenu from "../components/HamburgerMenu";
 import badgeCounter from "./BadgeCounter";
 import searchForm from "./SearchForm";
@@ -30,7 +30,7 @@ export default class HeaderStaticPages extends BaseComponent {
   };
   clickSwisscowsLogo = async () => {
     await this.clickElement(this.logoSwisscows, `Swisscows Logo in the header`);
-    return new MainPage(this.page);
+    return new Home(this.page);
   };
 
   clickBadgeEmailAndNavigateToNewPage = async () => {
