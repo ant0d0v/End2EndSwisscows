@@ -1,11 +1,11 @@
 import BaseComponent from "../base/BaseComponent";
-import CharityPage from "../pages/(pages)/Charity.Page";
-import DatacenterPage from "../pages/(pages)/Datacenter.Page";
-import EducationPage from "../pages/(pages)/Education.Page";
-import DonationPage from "../pages/(pages)/Donation.Page";
-import ContactUsPage from "../pages/(pages)/ContactUs.Page";
-import ImprintPage from "../pages/(pages)/Imprint.Page";
-import WhoWeArePage from "../pages/(pages)/WhoWeAre.Page";
+import CharityPage from "../app/(pages)/Charity.Page";
+import DatacenterPage from "../app/(pages)/Datacenter.Page";
+import EducationPage from "../app/(pages)/Education.Page";
+import DonationPage from "../app/(pages)/Donation.Page";
+import ContactUsPage from "../app/(pages)/ContactUs.Page";
+import ImprintPage from "../app/(pages)/Imprint.Page";
+import WhoWeArePage from "../app/(pages)/WhoWeAre.Page";
 export default class FooterFull extends BaseComponent {
   constructor(page) {
     super(page);

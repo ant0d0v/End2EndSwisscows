@@ -1,5 +1,5 @@
 import BaseComponent from "../base/BaseComponent";
-import MainPage from "../pages/Main.Page";
+import MainPage from "../app/Main.Page";
 import HamburgerMenu from "../components/HamburgerMenu";
 import badgeCounter from "./BadgeCounter";
 import searchForm from "./SearchForm";

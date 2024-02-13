@@ -1,10 +1,10 @@
-import MainPage from "../../pages/Main.Page";
-import { WebPage } from "../../pages/(search)/Web.Page";
-import ImagePage from "../../pages/(search)/images/Image.page";
-import MusicPage from "../../pages/(search)/music/Music.page";
-import NewsPage from "../../pages/(search)/News.Page";
-import VideoPage from "../../pages/(search)/Video.Page";
-import ShoppingPage from "../../pages/(search)/Shopping.Page";
+import MainPage from "../../app/Main.Page";
+import { WebPage } from "../../app/(search)/Web.Page";
+import ImagePage from "../../app/(search)/images/Image.page";
+import MusicPage from "../../app/(search)/music/Music.page";
+import NewsPage from "../../app/(search)/News.Page";
+import VideoPage from "../../app/(search)/Video.Page";
+import ShoppingPage from "../../app/(search)/Shopping.Page";
 import HamburgerMenu from "../HamburgerMenu";
 import badgeCounter from "../BadgeCounter";
 import SearchForm from "../SearchForm";
