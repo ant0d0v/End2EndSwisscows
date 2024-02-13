@@ -4,9 +4,6 @@ const { expect } = require("@playwright/test");
 const testData = JSON.parse(
   JSON.stringify(require("../../../data/error/testData.json"))
 );
-const filterData = JSON.parse(
-  JSON.stringify(require("../../../data/filters/testData.json"))
-);
 
 test("Check 202 No Results Found error page ", async ({
     home,

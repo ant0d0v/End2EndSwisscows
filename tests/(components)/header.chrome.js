@@ -266,7 +266,7 @@ test("Check suggest on the music search", async ({
   await home.headerStaticPages.searchForm.inputSearchCriteria(testData.searchCriteria.first);
   await home.headerStaticPages.searchForm.clickEnterSearchField();
   await webPage.header.clickMusicSearchButton()
-  await musicPage.track.expectMusicItemsToBeVisible()
+  await musicPage.track.expectMusicTracksToBeVisible()
   await musicPage.header.searchForm.clickSearchField()
  
   //Assert

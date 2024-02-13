@@ -8,6 +8,7 @@ import imagesGallery from "../components/ImagesGallery";
 import ImagePage from "../app/(search)/images/Image.page";
 import MusicPage from "../app/(search)/music/Music.page";
 import MusicMyPage from "../app/(search)/music/my/Music.page";
+import MusicPlaylistPage from "../app/(search)/music/playlist/Music.page";
 import VideoPage from "../app/(search)/Video.Page";
 import WebPage from "../app/(search)/Web.Page";
 import NewsPage from "../app/(search)/News.Page";
@@ -45,6 +46,9 @@ exports.test = base.test.extend({
   },
   musicMyPage: async ({ page }, use) => {
     await use(new MusicMyPage(page));
+  },
+  musicPlaylistPage: async ({ page }, use) => {
+    await use(new MusicPlaylistPage(page));
   },
   videoPage: async ({ page }, use) => {
     await use(new VideoPage(page));
