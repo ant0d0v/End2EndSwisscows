@@ -1,7 +1,5 @@
 import { test, expect } from "../../utils/fixturePages";
-const testData = JSON.parse(
-  JSON.stringify(require("../../data/static-pages/vpn-page/testData.json"))
-);
+
 test("Check design of the VPN page ", async ({ vpnPage },testInfo) => {
     //Actions
     await vpnPage.waitUntilPageIsFullyLoaded();

@@ -1,6 +1,6 @@
 import { test, expect } from "../../utils/fixturePages";
 const testData = JSON.parse(
-  JSON.stringify(require("../../data/static-pages/email-page/testData.json"))
+  JSON.stringify(require("../../data/lendings/email/testData.json"))
 );
 
 

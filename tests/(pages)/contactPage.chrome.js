@@ -23,7 +23,7 @@ test.skip(`Check border color of name, email, message when sending form with emp
 });
 
 test.skip(`Check border color of name, email, message when sending form with name only`, async ({
-  contactPage,
+  contactPage
 }) => {
   //Actions
   await contactPage.inputYouNameField("Test");
@@ -36,7 +36,7 @@ test.skip(`Check border color of name, email, message when sending form with nam
 });
 
 test.skip(`Check border color of name, email, message when sending form with email only`, async ({
-  contactPage,
+  contactPage
 }) => {
   //Actions
   await contactPage.inputEmailField("test@gmail.com");
@@ -49,7 +49,7 @@ test.skip(`Check border color of name, email, message when sending form with ema
 });
 
 test.skip(`Check border color of name, email, message when sending form with message only`, async ({
-  contactPage,
+  contactPage
 }) => {
   //Actions
   await contactPage.inputMessageField("Check form using automation testing using playwright");
@@ -62,7 +62,7 @@ test.skip(`Check border color of name, email, message when sending form with mes
 });
 
 test(`Check send message using all required fields`, async ({
-  contactPage,page
+  contactPage, page
 }) => {
   //Actions
   await contactPage.inputYouNameField("Test");
@@ -95,7 +95,6 @@ test(`Check "back to search" button `, async ({
   
 });
 
-
 test(`Check the tooltip when sending a message without the "Agree" checkbox`, async ({
   contactPage
 }) => {
@@ -123,6 +122,18 @@ test(`Check color of "back to search" when hovering `, async ({
   await contactPage.expectColorLinkWhenHovering(contactPage.backToSearchButton, "background", /rgb\(191, 0, 0\)/);
 });
 
+test("Check navigation to corresponding pages for  privacy link on the page", async ({
+  contactPage
+}) => {
+  //Actions
+  const currentPage = await contactPage.clickElementAndNavigateToNewPage(
+    contactPage.privacyLink
+  );
+
+  //Assert
+  await contactPage.expectHaveUrl(currentPage, constantsData.URL_PRIVACY_POLICY);
+  await contactPage.expectHaveTitle(currentPage, constantsData.TITLE_PRIVACY_POLICY);
+});
 
 test("Check design of the Contact Us page ", async ({ contactPage },testInfo) => {
   //Assert

@@ -1,28 +1,28 @@
 import base from "./fixtureBase";
-import Home from "../app/Home.page";
+import Home from "../app/(home)/page";
 import Preloader from "../components/Preloader";
 import Header from "../components/(search)/Header";
 import HeaderStaticPages from "../components/HeaderStaticPages";
 import FooterFull from "../components/FooterFull";
 import imagesGallery from "../components/ImagesGallery";
-import ImagePage from "../app/(search)/images/Image.page";
-import MusicPage from "../app/(search)/music/Music.page";
-import MusicMyPage from "../app/(search)/music/my/Music.page";
-import MusicPlaylistPage from "../app/(search)/music/playlist/Music.page";
-import VideoPage from "../app/(search)/Video.page";
-import WebPage from "../app/(search)/Web.page";
-import NewsPage from "../app/(search)/News.page";
-import ShoppingPage from "../app/(search)/Shopping.page";
-import DefaultSearchPage from "../app/(pages)/DefaultSearch.page";
-import CharityPage from "../app/(pages)/Charity.page";
-import DatacenterPage from "../app/(pages)/Datacenter.page";
-import EducationPage from "../app/(pages)/Education.page";
-import DonationPage from "../app/(pages)/Donation.page";
-import ContactUsPage from "../app/(pages)/ContactUs.page";
-import ImprintPage from "../app/(pages)/Imprint.page";
-import WhoWeArePage from "../app/(pages)/WhoWeAre.page";
-import VpnPage from "../app/(landings)/Vpn.page";
-import EmailPage from "../app/(landings)/Email.page";
+import ImagePage from "../app/(search)/images/page";
+import MusicPage from "../app/(search)/music/page";
+import MusicMyPage from "../app/(search)/music/my/page";
+import MusicPlaylistPage from "../app/(search)/music/playlist/page";
+import VideoPage from "../app/(search)/video/page";
+import WebPage from "../app/(search)/web/page";
+import NewsPage from "../app/(search)/news/page";
+import ShoppingPage from "../app/(search)/shopping/page";
+import DefaultSearchPage from "../app/(pages)/default-search/page";
+import CharityPage from "../app/(pages)/social-projects/page";
+import DatacenterPage from "../app/(pages)/datacenter/page";
+import MediaEducationPage from "../app/(pages)/media-education/page";
+import DonationPage from "../app/(pages)/donation/page";
+import ContactPage from "../app/(pages)/contact/page";
+import ImprintPage from "../app/(pages)/imprint/page";
+import AboutPage from "../app/(pages)/about/page";
+import VpnPage from "../app/(landings)/vpn/page";
+import EmailPage from "../app/(landings)/email/page";
 
 
 exports.test = base.test.extend({
@@ -73,21 +73,21 @@ exports.test = base.test.extend({
     await footerFull.clickDatacenterLink();
     await use(new DatacenterPage(page));
   },
-  educationPage: async ({ page, footerFull }, use) => {
+  mediaEducationPage: async ({ page, footerFull }, use) => {
     await footerFull.clickEducationLink();
-    await use(new EducationPage(page));
+    await use(new MediaEducationPage(page));
   },
   donationPage: async ({ page, footerFull }, use) => {
     await footerFull.clickDonationLink();
     await use(new DonationPage(page));
   },
-  contactUsPage: async ({ page, footerFull }, use) => {
+  contactPage: async ({ page, footerFull }, use) => {
     await footerFull.clickContactUsLink();
-    await use(new ContactUsPage(page));
+    await use(new ContactPage(page));
   },
-  whoWeArePage: async ({ page, footerFull }, use) => {
+  aboutPage: async ({ page, footerFull }, use) => {
     await footerFull.clickWhoWeAreLink();
-    await use(new WhoWeArePage(page));
+    await use(new AboutPage(page));
   },
   imprintPage: async ({ page, footerFull }, use) => {
     await footerFull.clickImprintLink();
