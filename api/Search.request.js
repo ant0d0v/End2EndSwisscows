@@ -1,5 +1,5 @@
 const { expect, test } = require("@playwright/test");
-import SearchBuilder from "./Search.Builder"
+import SearchBuilder from "./Search.builder"
 
 
 export default class SearchRequest {

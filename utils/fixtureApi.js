@@ -1,5 +1,5 @@
 const base = require("@playwright/test");
-import SearchBuilder from "../api/Search.Builder"
+import SearchBuilder from "../api/Search.builder"
 import SearchRequest from "../api/Search.request"
 import SearchResponse from "../api/Search.response"
 
