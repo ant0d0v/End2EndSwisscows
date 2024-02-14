@@ -1,7 +1,7 @@
 const base = require("@playwright/test");
-import SearchBuilder from "../api/Search.builder"
-import SearchRequest from "../api/Search.request"
-import SearchResponse from "../api/Search.response"
+import SearchBuilder from "../api/search/Builder"
+import SearchRequest from "../api/search/Request"
+import SearchResponse from "../api/search/Response"
 
 exports.test = base.test.extend({
   searchRequest: async ({ request }, use) => {
