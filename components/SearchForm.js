@@ -14,7 +14,6 @@ export default class SearchForm extends BaseComponent {
   };
   clickEnterSearchField = async () => {
     await this.clickEnter(this.placeholderHome, `search field`);
-    return new WebPage(this.page);
   };
   clickSearchField = async () => {
     await this.clickElement(this.inputSearch, `search field `);
