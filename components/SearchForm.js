@@ -1,5 +1,4 @@
 import BaseComponent from "../base/BaseComponent";
-import WebPage from "../app/(search)/Web.page";
 export default class SearchForm extends BaseComponent {
   constructor(page) {
     super(page);
