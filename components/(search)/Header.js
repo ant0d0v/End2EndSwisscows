@@ -1,10 +1,3 @@
-import Home from "../../app/Home.page";
-import { WebPage } from "../../app/(search)/Web.Page";
-import ImagePage from "../../app/(search)/images/Image.page";
-import MusicPage from "../../app/(search)/music/Music.page";
-import NewsPage from "../../app/(search)/News.Page";
-import VideoPage from "../../app/(search)/Video.Page";
-import ShoppingPage from "../../app/(search)/Shopping.Page";
 import HamburgerMenu from "../HamburgerMenu";
 import badgeCounter from "../BadgeCounter";
 import SearchForm from "../SearchForm";
@@ -52,37 +45,31 @@ export default class Header extends BaseComponent {
 
   clickSwisscowsLogo = async () => {
     await this.clickElement(this.logoSwisscows, `Swisscows Logo in the header`);
-    return new Home(this.page);
   };
   clickImageSearchButton = async () => {
     await this.clickElement( this.imageSearchButton,
       `image button in the header`
     );
-    return new ImagePage(this.page);
   };
   clickVideoSearchButton = async () => {
     await this.clickElement(this.videoSearchButton,
       `video button in the header`
     );
-    return new VideoPage(this.page);
   };
   clickMusicSearchButton = async () => {
     await this.clickElement( this.musicSearchButton,
       `music button in the header`
     );
-    return new MusicPage(this.page);
   };
   clickNewsSearchButton = async () => {
     await this.clickElement(this.newsSearchButton,
       `search button in the header`
     );
-    return new NewsPage(this.page);
   };
   clickShoppingSearchButton = async () => {
     await this.clickElement(this.shoppingSearchButton,
       `shopping button in the header`
     );
-    return new ShoppingPage(this.page);
   };
   clickFiltersButton = async () => {
     await this.clickElement(this.filtersButton,
