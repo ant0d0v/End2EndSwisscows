@@ -13,14 +13,14 @@ const headerHomeTable = parse(fs.readFileSync(path.join(__dirname, '../../locali
       home
     }) => {
       //Actions
-      await home.headerStaticPages.clickHamburgerMenuButton();
-      await home.headerStaticPages.hamburgerMenu.clickLanguagesDropdownInHamburgerMenu();
-      await home.headerStaticPages.hamburgerMenu.clickLanguageLinkInDropdown(
+      await home.header.clickHamburgerMenuButton();
+      await home.header.hamburgerMenu.clickLanguagesDropdownInHamburgerMenu();
+      await home.header.hamburgerMenu.clickLanguageLinkInDropdown(
         language
       );
   
       //Assert
-      await home.expectElementToHaveText(home.headerStaticPages.allContent, expected_content)
+      await home.expectElementToHaveText(home.header.allContent, expected_content)
     });
   }
 
@@ -33,14 +33,14 @@ const headerHomeTable = parse(fs.readFileSync(path.join(__dirname, '../../locali
       home
     }) => {
       //Actions
-      await home.headerStaticPages.clickHamburgerMenuButton();
-      await home.headerStaticPages.hamburgerMenu.clickLanguagesDropdownInHamburgerMenu();
-      await home.headerStaticPages.hamburgerMenu.clickLanguageLinkInDropdown(
+      await home.header.clickHamburgerMenuButton();
+      await home.header.hamburgerMenu.clickLanguagesDropdownInHamburgerMenu();
+      await home.header.hamburgerMenu.clickLanguageLinkInDropdown(
         language
       );
-      await home.headerStaticPages.clickHamburgerMenuButton();
+      await home.header.clickHamburgerMenuButton();
   
       //Assert
-      await home.expectElementToHaveText(home.headerStaticPages.hamburgerMenu.allContent,expected_content)
+      await home.expectElementToHaveText(home.header.hamburgerMenu.allContent,expected_content)
     });
   }

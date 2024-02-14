@@ -1,10 +1,10 @@
 import BasePage from "../../../base/BasePage.js";
-import FavoritePlaylist from "../../../components/(search)/music/FavoritePlaylist.js"
-import Player from "../../../components/(search)/music/Player.js";
-import Playlist from "../../../components/(search)/music/Playlist.js";
-import Track from "../../../components/(search)/music/Track.js";
-import Header from "../../../components/(search)/Header.js";
-import Error from "../../../components/Error.js";
+import FavoritePlaylist from "./FavoritePlaylist.js"
+import Player from "./Player.js";
+import Playlist from "./Playlist.js";
+import Track from "./Track.js";
+import Header from "../Header.js";
+import Error from "../Error.js";
 import Preloader from "../../../components/Preloader.js";
 const { expect, context } = require("@playwright/test");
 

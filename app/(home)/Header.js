@@ -1,8 +1,8 @@
-import BaseComponent from "../base/BaseComponent";
-import HamburgerMenu from "../components/HamburgerMenu";
-import badgeCounter from "./BadgeCounter";
-import searchForm from "./SearchForm";
-export default class HeaderStaticPages extends BaseComponent {
+import BaseComponent from "../../base/BaseComponent";
+import HamburgerMenu from "../HamburgerMenu";
+import badgeCounter from "../../components/BadgeCounter";
+import searchForm from "../SearchForm";
+export default class Header extends BaseComponent {
   constructor(page) {
     super(page);
     this.hamburgerMenu = new HamburgerMenu(page);

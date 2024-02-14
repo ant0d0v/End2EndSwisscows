@@ -14,9 +14,9 @@ const emailTable = parse(fs.readFileSync(path.join(__dirname, '../../localizatio
     }) => {
       //Actions
       await emailPage.waitUntilPageIsFullyLoaded();
-      await emailPage.headerStaticPages.clickHamburgerMenuButton();
-      await emailPage.headerStaticPages.hamburgerMenu.clickLanguagesDropdownInHamburgerMenu();
-      await emailPage.headerStaticPages.hamburgerMenu.clickLanguageLinkInDropdown(language);
+      await emailPage.header.clickHamburgerMenuButton();
+      await emailPage.header.hamburgerMenu.clickLanguagesDropdownInHamburgerMenu();
+      await emailPage.header.hamburgerMenu.clickLanguageLinkInDropdown(language);
   
       //Assert
       await emailPage.expectElementToHaveText(emailPage.allContent, expected_content)
@@ -33,9 +33,9 @@ const emailTable = parse(fs.readFileSync(path.join(__dirname, '../../localizatio
     }) => {
       //Actions
       await vpnPage.waitUntilPageIsFullyLoaded();
-      await vpnPage.headerStaticPages.clickHamburgerMenuButton();
-      await vpnPage.headerStaticPages.hamburgerMenu.clickLanguagesDropdownInHamburgerMenu();
-      await vpnPage.headerStaticPages.hamburgerMenu.clickLanguageLinkInDropdown(language);
+      await vpnPage.header.clickHamburgerMenuButton();
+      await vpnPage.header.hamburgerMenu.clickLanguagesDropdownInHamburgerMenu();
+      await vpnPage.header.hamburgerMenu.clickLanguageLinkInDropdown(language);
   
       //Assert
       await vpnPage.expectElementToHaveText(vpnPage.allContent, expected_content)

@@ -1,9 +1,9 @@
 import Pagination from "../../../components/Pagination.js";
 import BasePage from "../../../base/BasePage.js";
-import Filters from "../../../components/(search)/news/Filters.js";
-import Item from "../../../components/(search)/news/Item.js";
-import Header from "../../../components/(search)/Header.js";
-import Error from "../../../components/Error.js";
+import Filters from "./Filters.js";
+import Item from "./Item.js";
+import Header from "../Header.js";
+import Error from "../Error.js";
 import ProxyImage from "../../../components/ProxyImage.js"
 const { expect, context } = require("@playwright/test");
 

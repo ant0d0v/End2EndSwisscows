@@ -1,8 +1,8 @@
 import BasePage from "../../../../base/BasePage.js";
-import Player from "../../../../components/(search)/music/Player.js";
-import Track from "../../../../components/(search)/music/Track.js";
-import Header from "../../../../components/(search)/Header.js";
-import Error from "../../../../components/Error.js";
+import Player from "../Player.js";
+import Track from "../Track.js";
+import Header from "../../Header.js";
+import Error from "../../Error.js";
 const { expect, context } = require("@playwright/test");
 
 export default class MusicPlaylistPage extends BasePage {

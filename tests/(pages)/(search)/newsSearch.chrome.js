@@ -10,10 +10,10 @@ test("Check 202 No Results Found error page ", async ({
     newsPage
   }) => {
     //Actions
-    await home.headerStaticPages.clickHamburgerMenuButton();
-    await home.headerStaticPages.hamburgerMenu.selectRegion("Germany");
-    await home.headerStaticPages.searchForm.inputSearchCriteria("@#@$%^$^dasdsad1231");
-    await home.headerStaticPages.searchForm.clickEnterSearchField();
+    await home.header.clickHamburgerMenuButton();
+    await home.header.hamburgerMenu.selectRegion("Germany");
+    await home.header.searchForm.inputSearchCriteria("@#@$%^$^dasdsad1231");
+    await home.header.searchForm.clickEnterSearchField();
     await newsPage.header.clickNewsSearchButton()
     
     //Assert
@@ -27,10 +27,10 @@ test("Check 202 No Results Found error page ", async ({
     newsPage
   }) => {
     //Actions
-    await home.headerStaticPages.clickHamburgerMenuButton();
-    await home.headerStaticPages.hamburgerMenu.selectRegion("Germany");
-    await home.headerStaticPages.searchForm.inputSearchCriteria("porn");
-    await home.headerStaticPages.searchForm.clickEnterSearchField();
+    await home.header.clickHamburgerMenuButton();
+    await home.header.hamburgerMenu.selectRegion("Germany");
+    await home.header.searchForm.inputSearchCriteria("porn");
+    await home.header.searchForm.clickEnterSearchField();
     await newsPage.header.clickNewsSearchButton()
 
     //Assert
@@ -56,10 +56,10 @@ test("Check 202 No Results Found error page ", async ({
     webPage
   }) => {
     //Actions
-    await home.headerStaticPages.clickHamburgerMenuButton();
-    await home.headerStaticPages.hamburgerMenu.selectRegion("Germany");
-    await home.headerStaticPages.searchForm.inputSearchCriteria("news");
-    await home.headerStaticPages.searchForm.clickEnterSearchField();
+    await home.header.clickHamburgerMenuButton();
+    await home.header.hamburgerMenu.selectRegion("Germany");
+    await home.header.searchForm.inputSearchCriteria("news");
+    await home.header.searchForm.clickEnterSearchField();
     await webPage.item.expectWebItemsToBeVisible()
     await newsPage.header.clickNewsSearchButton()
     await newsPage.item.expectNewsItemsToBeVisible()
@@ -80,10 +80,10 @@ test("Check 202 No Results Found error page ", async ({
   }) => {
      
      //Actions
-     await home.headerStaticPages.clickHamburgerMenuButton();
-     await home.headerStaticPages.hamburgerMenu.selectRegion("Germany");
-     await home.headerStaticPages.searchForm.inputSearchCriteria("Ukraine");
-     await home.headerStaticPages.searchForm.clickEnterSearchField();
+     await home.header.clickHamburgerMenuButton();
+     await home.header.hamburgerMenu.selectRegion("Germany");
+     await home.header.searchForm.inputSearchCriteria("Ukraine");
+     await home.header.searchForm.clickEnterSearchField();
      await webPage.item.expectWebItemsToBeVisible()
      await newsPage.header.clickNewsSearchButton()
      await newsPage.item.expectNewsItemsToBeVisible()
@@ -102,10 +102,10 @@ test("Check 202 No Results Found error page ", async ({
   }) => {
      
      //Actions
-     await home.headerStaticPages.clickHamburgerMenuButton();
-     await home.headerStaticPages.hamburgerMenu.selectRegion("Germany");
-     await home.headerStaticPages.searchForm.inputSearchCriteria("ukraine");
-     await home.headerStaticPages.searchForm.clickEnterSearchField();
+     await home.header.clickHamburgerMenuButton();
+     await home.header.hamburgerMenu.selectRegion("Germany");
+     await home.header.searchForm.inputSearchCriteria("ukraine");
+     await home.header.searchForm.clickEnterSearchField();
      await webPage.item.expectWebItemsToBeVisible()
      await newsPage.header.clickNewsSearchButton()
      await newsPage.item.expectNewsItemsToBeVisible()
@@ -122,10 +122,10 @@ test("Check 202 No Results Found error page ", async ({
   }) => {
      
      //Actions
-     await home.headerStaticPages.clickHamburgerMenuButton();
-     await home.headerStaticPages.hamburgerMenu.selectRegion("Germany");
-     await home.headerStaticPages.searchForm.inputSearchCriteria("ukraine");
-     await home.headerStaticPages.searchForm.clickEnterSearchField();
+     await home.header.clickHamburgerMenuButton();
+     await home.header.hamburgerMenu.selectRegion("Germany");
+     await home.header.searchForm.inputSearchCriteria("ukraine");
+     await home.header.searchForm.clickEnterSearchField();
      await webPage.item.expectWebItemsToBeVisible()
      await newsPage.header.clickNewsSearchButton()
      await newsPage.item.expectNewsItemsToBeVisible()
@@ -148,10 +148,10 @@ test("Check 202 No Results Found error page ", async ({
   }) => {
      
      //Actions
-     await home.headerStaticPages.clickHamburgerMenuButton();
-     await home.headerStaticPages.hamburgerMenu.selectRegion("Germany");
-     await home.headerStaticPages.searchForm.inputSearchCriteria("ukraine");
-     await home.headerStaticPages.searchForm.clickEnterSearchField();
+     await home.header.clickHamburgerMenuButton();
+     await home.header.hamburgerMenu.selectRegion("Germany");
+     await home.header.searchForm.inputSearchCriteria("ukraine");
+     await home.header.searchForm.clickEnterSearchField();
      await webPage.item.expectWebItemsToBeVisible()
      await newsPage.header.clickNewsSearchButton()
      await newsPage.item.expectNewsItemsToBeVisible()
@@ -175,10 +175,10 @@ test("Check 202 No Results Found error page ", async ({
   }) => {
      
      //Actions
-     await home.headerStaticPages.clickHamburgerMenuButton();
-     await home.headerStaticPages.hamburgerMenu.selectRegion("Germany");
-     await home.headerStaticPages.searchForm.inputSearchCriteria("news");
-     await home.headerStaticPages.searchForm.clickEnterSearchField();
+     await home.header.clickHamburgerMenuButton();
+     await home.header.hamburgerMenu.selectRegion("Germany");
+     await home.header.searchForm.inputSearchCriteria("news");
+     await home.header.searchForm.clickEnterSearchField();
      await webPage.item.expectWebItemsToBeVisible()
      await newsPage.header.clickNewsSearchButton()
      await newsPage.item.expectNewsItemsToBeVisible()
@@ -202,10 +202,10 @@ test("Check 202 No Results Found error page ", async ({
   }) => {
      
      //Actions
-     await home.headerStaticPages.clickHamburgerMenuButton();
-     await home.headerStaticPages.hamburgerMenu.selectRegion("Germany");
-     await home.headerStaticPages.searchForm.inputSearchCriteria("Ukraine");
-     await home.headerStaticPages.searchForm.clickEnterSearchField();
+     await home.header.clickHamburgerMenuButton();
+     await home.header.hamburgerMenu.selectRegion("Germany");
+     await home.header.searchForm.inputSearchCriteria("Ukraine");
+     await home.header.searchForm.clickEnterSearchField();
      await webPage.item.expectWebItemsToBeVisible()
      await newsPage.header.clickNewsSearchButton()
      await newsPage.item.expectNewsItemsToBeVisible()

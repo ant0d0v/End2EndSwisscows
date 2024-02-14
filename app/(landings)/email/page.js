@@ -1,9 +1,9 @@
 import BasePage from "../../../base/BasePage";
-import HeaderStaticPages from "../../../components/HeaderStaticPages";
+import Header from "../../(landings)/email/Header";
 export default class EmailPage extends BasePage {
   constructor(page) {
     super(page);
-    this.headerStaticPages = new HeaderStaticPages(page);
+    this.header = new Header(page);
      //Locators
     this.allContent = this.page.locator("main.swisscows-email");
     this.introductionAndSupportLinks = (name) => this.page.getByRole("link", { name: name });

@@ -12,10 +12,10 @@ for (const {testID,expectedWebLink,locatorId,responseWebUrl,filter } of filterDa
       page
     }) => {
       //Actions
-      await home.headerStaticPages.clickHamburgerMenuButton();
-      await home.headerStaticPages.hamburgerMenu.selectRegion("Germany");
-      await home.headerStaticPages.searchForm.inputSearchCriteria("ronaldo");
-      await home.headerStaticPages.searchForm.clickEnterSearchField();
+      await home.header.clickHamburgerMenuButton();
+      await home.header.hamburgerMenu.selectRegion("Germany");
+      await home.header.searchForm.inputSearchCriteria("ronaldo");
+      await home.header.searchForm.clickEnterSearchField();
       await webPage.item.expectWebItemsToBeVisible()
       await webPage.header.clickFiltersButton()
       await webPage.filters.buttonMenu.clickFilterByDate()
@@ -39,10 +39,10 @@ for (const {testID,expectedWebLink,locatorId,responseWebUrl,filter } of filterDa
     page
   }) => {
     //Actions
-    await home.headerStaticPages.clickHamburgerMenuButton();
-    await home.headerStaticPages.hamburgerMenu.selectRegion("Germany");
-    await home.headerStaticPages.searchForm.inputSearchCriteria("ronaldo");
-    await home.headerStaticPages.searchForm.clickEnterSearchField();
+    await home.header.clickHamburgerMenuButton();
+    await home.header.hamburgerMenu.selectRegion("Germany");
+    await home.header.searchForm.inputSearchCriteria("ronaldo");
+    await home.header.searchForm.clickEnterSearchField();
     await webPage.item.expectWebItemsToBeVisible()
     await webPage.header.clickFiltersButton()
     await webPage.filters.buttonMenu.clickFilterByDate()
@@ -69,10 +69,10 @@ for (const {testID,expectedWebLink,locatorId,responseWebUrl,filter } of filterDa
     webPage
   }) => {
     //Actions
-    await home.headerStaticPages.clickHamburgerMenuButton();
-    await home.headerStaticPages.hamburgerMenu.selectRegion("Germany");
-    await home.headerStaticPages.searchForm.inputSearchCriteria("ronaldo");
-    await home.headerStaticPages.searchForm.clickEnterSearchField();
+    await home.header.clickHamburgerMenuButton();
+    await home.header.hamburgerMenu.selectRegion("Germany");
+    await home.header.searchForm.inputSearchCriteria("ronaldo");
+    await home.header.searchForm.clickEnterSearchField();
     await webPage.item.expectWebItemsToBeVisible()
     await webPage.header.clickFiltersButton()
     await webPage.filters.buttonMenu.clickFilterByDate()
@@ -87,10 +87,10 @@ for (const {testID,expectedWebLink,locatorId,responseWebUrl,filter } of filterDa
     webPage
   }) => {
     //Actions
-    await home.headerStaticPages.clickHamburgerMenuButton();
-    await home.headerStaticPages.hamburgerMenu.selectRegion("Germany");
-    await home.headerStaticPages.searchForm.inputSearchCriteria("ronaldo");
-    await home.headerStaticPages.searchForm.clickEnterSearchField();
+    await home.header.clickHamburgerMenuButton();
+    await home.header.hamburgerMenu.selectRegion("Germany");
+    await home.header.searchForm.inputSearchCriteria("ronaldo");
+    await home.header.searchForm.clickEnterSearchField();
     await webPage.item.expectWebItemsToBeVisible()
     await webPage.header.clickFiltersButton()
     await webPage.filters.buttonMenu.clickFilterByDate()

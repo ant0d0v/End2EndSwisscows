@@ -14,9 +14,9 @@ for (const { test_case, language, expected_content} of mainTable) {
     home,
   }) => {
     //Actions
-    await home.headerStaticPages.clickHamburgerMenuButton();
-    await home.headerStaticPages.hamburgerMenu.clickLanguagesDropdownInHamburgerMenu();
-    await home.headerStaticPages.hamburgerMenu.clickLanguageLinkInDropdown(
+    await home.header.clickHamburgerMenuButton();
+    await home.header.hamburgerMenu.clickLanguagesDropdownInHamburgerMenu();
+    await home.header.hamburgerMenu.clickLanguageLinkInDropdown(
       language
     );
 
@@ -36,9 +36,9 @@ for (const { test_case, language, expected_content} of contactTable) {
   }) => {
     //Actions
     await contactPage.waitUntilPageIsFullyLoaded();
-    await contactPage.headerStaticPages.clickHamburgerMenuButton();
-    await contactPage.headerStaticPages.hamburgerMenu.clickLanguagesDropdownInHamburgerMenu();
-    await contactPage.headerStaticPages.hamburgerMenu.clickLanguageLinkInDropdown(
+    await contactPage.header.clickHamburgerMenuButton();
+    await contactPage.header.hamburgerMenu.clickLanguagesDropdownInHamburgerMenu();
+    await contactPage.header.hamburgerMenu.clickLanguageLinkInDropdown(
       language
     );
 
@@ -58,9 +58,9 @@ for (const { test_case, language, expected_content} of charityTable) {
   }) => {
     //Actions
     await charityPage.waitUntilPageIsFullyLoaded();
-    await charityPage.headerStaticPages.clickHamburgerMenuButton();
-    await charityPage.headerStaticPages.hamburgerMenu.clickLanguagesDropdownInHamburgerMenu();
-    await charityPage.headerStaticPages.hamburgerMenu.clickLanguageLinkInDropdown(
+    await charityPage.header.clickHamburgerMenuButton();
+    await charityPage.header.hamburgerMenu.clickLanguagesDropdownInHamburgerMenu();
+    await charityPage.header.hamburgerMenu.clickLanguageLinkInDropdown(
       language
     );
 
@@ -80,9 +80,9 @@ for (const { test_case, language, expected_content} of datacenterTable) {
   }) => {
     //Actions
     await datacenterPage.waitUntilPageIsFullyLoaded();
-    await datacenterPage.headerStaticPages.clickHamburgerMenuButton();
-    await datacenterPage.headerStaticPages.hamburgerMenu.clickLanguagesDropdownInHamburgerMenu();
-    await datacenterPage.headerStaticPages.hamburgerMenu.clickLanguageLinkInDropdown(
+    await datacenterPage.header.clickHamburgerMenuButton();
+    await datacenterPage.header.hamburgerMenu.clickLanguagesDropdownInHamburgerMenu();
+    await datacenterPage.header.hamburgerMenu.clickLanguageLinkInDropdown(
       language
     );
 
@@ -99,9 +99,9 @@ for (const { test_case, language, expected_content} of educationTable) {
   }) => {
     //Actions
     await mediaEducationPage.waitUntilPageIsFullyLoaded();
-    await mediaEducationPage.headerStaticPages.clickHamburgerMenuButton();
-    await mediaEducationPage.headerStaticPages.hamburgerMenu.clickLanguagesDropdownInHamburgerMenu();
-    await mediaEducationPage.headerStaticPages.hamburgerMenu.clickLanguageLinkInDropdown(language);
+    await mediaEducationPage.header.clickHamburgerMenuButton();
+    await mediaEducationPage.header.hamburgerMenu.clickLanguagesDropdownInHamburgerMenu();
+    await mediaEducationPage.header.hamburgerMenu.clickLanguageLinkInDropdown(language);
 
     //Assert
     await mediaEducationPage.expectElementToHaveText(mediaEducationPage.allContent, expected_content)
@@ -121,9 +121,9 @@ for (const { test_case, language, expected_content} of imprintTable) {
   }) => {
     //Actions
     await imprintPage.waitUntilPageIsFullyLoaded();
-    await imprintPage.headerStaticPages.clickHamburgerMenuButton();
-    await imprintPage.headerStaticPages.hamburgerMenu.clickLanguagesDropdownInHamburgerMenu();
-    await imprintPage.headerStaticPages.hamburgerMenu.clickLanguageLinkInDropdown(language);
+    await imprintPage.header.clickHamburgerMenuButton();
+    await imprintPage.header.hamburgerMenu.clickLanguagesDropdownInHamburgerMenu();
+    await imprintPage.header.hamburgerMenu.clickLanguageLinkInDropdown(language);
 
     //Assert
     await imprintPage.expectElementToHaveText(imprintPage.allContent, expected_content)
@@ -141,9 +141,9 @@ for (const { test_case, language, expected_content} of aboutTable) {
   }) => {
     //Actions
     await aboutPage.waitUntilPageIsFullyLoaded();
-    await aboutPage.headerStaticPages.clickHamburgerMenuButton();
-    await aboutPage.headerStaticPages.hamburgerMenu.clickLanguagesDropdownInHamburgerMenu();
-    await aboutPage.headerStaticPages.hamburgerMenu.clickLanguageLinkInDropdown(language);
+    await aboutPage.header.clickHamburgerMenuButton();
+    await aboutPage.header.hamburgerMenu.clickLanguagesDropdownInHamburgerMenu();
+    await aboutPage.header.hamburgerMenu.clickLanguageLinkInDropdown(language);
 
     //Assert
     await aboutPage.expectElementToHaveText(aboutPage.allContent, expected_content)
