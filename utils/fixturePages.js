@@ -9,20 +9,20 @@ import ImagePage from "../app/(search)/images/Image.page";
 import MusicPage from "../app/(search)/music/Music.page";
 import MusicMyPage from "../app/(search)/music/my/Music.page";
 import MusicPlaylistPage from "../app/(search)/music/playlist/Music.page";
-import VideoPage from "../app/(search)/Video.Page";
-import WebPage from "../app/(search)/Web.Page";
-import NewsPage from "../app/(search)/News.Page";
-import ShoppingPage from "../app/(search)/Shopping.Page";
-import DefaultSearchPage from "../app/(pages)/DefaultSearch.Page";
-import CharityPage from "../app/(pages)/Charity.Page";
-import DatacenterPage from "../app/(pages)/Datacenter.Page";
-import EducationPage from "../app/(pages)/Education.Page";
-import DonationPage from "../app/(pages)/Donation.Page";
-import ContactUsPage from "../app/(pages)/ContactUs.Page";
-import ImprintPage from "../app/(pages)/Imprint.Page";
-import WhoWeArePage from "../app/(pages)/WhoWeAre.Page";
-import VpnPage from "../app/(landings)/Vpn.Page";
-import EmailPage from "../app/(landings)/Email.Page";
+import VideoPage from "../app/(search)/Video.page";
+import WebPage from "../app/(search)/Web.page";
+import NewsPage from "../app/(search)/News.page";
+import ShoppingPage from "../app/(search)/Shopping.page";
+import DefaultSearchPage from "../app/(pages)/DefaultSearch.page";
+import CharityPage from "../app/(pages)/Charity.page";
+import DatacenterPage from "../app/(pages)/Datacenter.page";
+import EducationPage from "../app/(pages)/Education.page";
+import DonationPage from "../app/(pages)/Donation.page";
+import ContactUsPage from "../app/(pages)/ContactUs.page";
+import ImprintPage from "../app/(pages)/Imprint.page";
+import WhoWeArePage from "../app/(pages)/WhoWeAre.page";
+import VpnPage from "../app/(landings)/Vpn.page";
+import EmailPage from "../app/(landings)/Email.page";
 
 
 exports.test = base.test.extend({
