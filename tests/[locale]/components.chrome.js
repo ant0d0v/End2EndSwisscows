@@ -3,7 +3,7 @@ import fs from 'fs';
 import path from 'path';
 import { parse } from 'csv-parse/sync';
 
-const headerHomeTable = parse(fs.readFileSync(path.join(__dirname, '../../localization/headerhome.csv')), {
+const headerHomeTable = parse(fs.readFileSync(path.join(__dirname, '../../localization/headerHome.csv')), {
     columns: true,
     skip_empty_lines: true
   });
