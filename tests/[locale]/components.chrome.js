@@ -10,7 +10,7 @@ const headerHomeTable = parse(fs.readFileSync(path.join(__dirname, '../../locali
   
   for (const { test_case, language, expected_content} of headerHomeTable) {
     test(`${test_case} Check content of header home for  ${language} localization`, async ({
-      Home
+      home
     }) => {
       //Actions
       await home.headerStaticPages.clickHamburgerMenuButton();
@@ -30,7 +30,7 @@ const headerHomeTable = parse(fs.readFileSync(path.join(__dirname, '../../locali
   });
   for (const { test_case, language, expected_content} of hamburgerTable) {
     test(`${test_case} Check content of hamburger menu for  ${language} localization`, async ({
-      Home
+      home
     }) => {
       //Actions
       await home.headerStaticPages.clickHamburgerMenuButton();

@@ -10,6 +10,7 @@ export default class MusicPlayer extends BaseComponent {
     this.prevButton = page.getByRole('button', { name: 'Previous track' })
     this.progressBar = this.page.locator('.progress-bar-wrap .progress')
     this.shuffleButton = this.page.getByRole('button', { name: 'Shuffle' })
+    this.favoriteButton = this.page.locator(".audio-player button.button.favorite")
     this.timeLine = this.page.locator('.audio-player .timeline')
     this.durationTime = this.page.getByText('0:04').nth(1)
   }
@@ -45,6 +46,11 @@ export default class MusicPlayer extends BaseComponent {
   clickTimeLine = async () => {
     await this.clickElement(this.timeLine,
       `time-line in the player`
+    );
+  };
+  clickFavoriteButton = async () => {
+    await this.clickElement(this.favoriteButton,
+      `favorite button in the player`
     );
   };
   //Verify 
