@@ -1,11 +1,11 @@
 import  Pagination  from "../../../components/Pagination.js";
 const { expect, context } = require("@playwright/test");
-import Filters from "../../../components/(search)/shopping/Filters.js";
-import Offer from "../../../components/(search)/shopping/Offer.js";
-import Details from "../../../components/(search)/shopping/Details.js";
-import Item from "../../../components/(search)/shopping/Item.js";
+import Filters from "./Filters.js";
+import Offer from "./Offer.js";
+import Details from "./Details.js";
+import Item from "./Item.js";
 import BasePage from "../../../base/BasePage.js";
-import Header from "../../../components/(search)/Header.js";
+import Header from "../Header.js";
 
 export default class ShoppingPage extends BasePage {
   constructor(page) {

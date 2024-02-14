@@ -11,10 +11,10 @@ test("Check 202 No Results Found error page ", async ({
     webPage
   }) => {
     //Actions
-    await home.headerStaticPages.clickHamburgerMenuButton();
-    await home.headerStaticPages.hamburgerMenu.selectRegion("Ukraine");
-    await home.headerStaticPages.searchForm.inputSearchCriteria("@#@$%^$^dasdsad1231");
-    await home.headerStaticPages.searchForm.clickEnterSearchField();
+    await home.header.clickHamburgerMenuButton();
+    await home.header.hamburgerMenu.selectRegion("Ukraine");
+    await home.header.searchForm.inputSearchCriteria("@#@$%^$^dasdsad1231");
+    await home.header.searchForm.clickEnterSearchField();
     
     //Assert
     await webPage.expectElementToHaveText(webPage.error.contentErrorNoResults,
@@ -27,8 +27,8 @@ test("Check 202 No Results Found error page ", async ({
     webPage
   }) => {
     //Actions
-    await home.headerStaticPages.searchForm.inputSearchCriteria("porn");
-    await home.headerStaticPages.searchForm.clickEnterSearchField();
+    await home.header.searchForm.inputSearchCriteria("porn");
+    await home.header.searchForm.clickEnterSearchField();
     //Assert
     await webPage.expectElementToHaveText(webPage.error.contentErrorNoResults, 
       testData.expectedErrorText.blocked450Error)
@@ -62,10 +62,10 @@ test("Check 202 No Results Found error page ", async ({
     webPage
   }) => {
      //Actions
-     await home.headerStaticPages.clickHamburgerMenuButton();
-     await home.headerStaticPages.hamburgerMenu.selectRegion("Germany");
-     await home.headerStaticPages.searchForm.inputSearchCriteria("ronaldo");
-     await home.headerStaticPages.searchForm.clickEnterSearchField();
+     await home.header.clickHamburgerMenuButton();
+     await home.header.hamburgerMenu.selectRegion("Germany");
+     await home.header.searchForm.inputSearchCriteria("ronaldo");
+     await home.header.searchForm.clickEnterSearchField();
      await webPage.item.expectWebItemsToBeVisible()
 
     //Assert
@@ -78,10 +78,10 @@ test("Check 202 No Results Found error page ", async ({
     webPage
   }) => {
      //Actions
-     await home.headerStaticPages.clickHamburgerMenuButton();
-     await home.headerStaticPages.hamburgerMenu.selectRegion("Germany");
-     await home.headerStaticPages.searchForm.inputSearchCriteria("ronaldo");
-     await home.headerStaticPages.searchForm.clickEnterSearchField();
+     await home.header.clickHamburgerMenuButton();
+     await home.header.hamburgerMenu.selectRegion("Germany");
+     await home.header.searchForm.inputSearchCriteria("ronaldo");
+     await home.header.searchForm.clickEnterSearchField();
      await webPage.item.expectWebItemsToBeVisible()
 
     //Assert
@@ -95,10 +95,10 @@ test("Check 202 No Results Found error page ", async ({
   }) => {
      
      //Actions
-     await home.headerStaticPages.clickHamburgerMenuButton();
-     await home.headerStaticPages.hamburgerMenu.selectRegion("Germany");
-     await home.headerStaticPages.searchForm.inputSearchCriteria("Cristiano Ronaldo");
-     await home.headerStaticPages.searchForm.clickEnterSearchField();
+     await home.header.clickHamburgerMenuButton();
+     await home.header.hamburgerMenu.selectRegion("Germany");
+     await home.header.searchForm.inputSearchCriteria("Cristiano Ronaldo");
+     await home.header.searchForm.clickEnterSearchField();
      await webPage.item.expectWebItemsToBeVisible()
      const oldSearchResult = await webPage.item.getTextContentWebItems()
      await webPage.relatedSearches.clickFirstCriteriaInRelatedSearches()
@@ -118,8 +118,8 @@ test("Check 202 No Results Found error page ", async ({
      let expectedResult = "Including results for \"apple\"" + "Do you want results only for " + query + "?";
      
      //Actions
-     await home.headerStaticPages.searchForm.inputSearchCriteria(query);
-     await home.headerStaticPages.searchForm.clickEnterSearchField();
+     await home.header.searchForm.inputSearchCriteria(query);
+     await home.header.searchForm.clickEnterSearchField();
      await webPage.item.expectWebItemsToBeVisible()
 
      //Assert
@@ -133,8 +133,8 @@ test("Check 202 No Results Found error page ", async ({
   }) => {
      
      //Actions
-     await home.headerStaticPages.searchForm.inputSearchCriteria("Cristiano Ronaldo");
-     await home.headerStaticPages.searchForm.clickEnterSearchField();
+     await home.header.searchForm.inputSearchCriteria("Cristiano Ronaldo");
+     await home.header.searchForm.clickEnterSearchField();
      await webPage.item.expectWebItemsToBeVisible()
 
      //Assert
@@ -148,8 +148,8 @@ test("Check 202 No Results Found error page ", async ({
   }) => {
      
      //Actions
-     await home.headerStaticPages.searchForm.inputSearchCriteria("ukraine");
-     await home.headerStaticPages.searchForm.clickEnterSearchField();
+     await home.header.searchForm.inputSearchCriteria("ukraine");
+     await home.header.searchForm.clickEnterSearchField();
      await webPage.item.expectWebItemsToBeVisible()
      const oldSearchResult = await webPage.item.getTextContentWebItems()
      await webPage.pagination.clickThreeNumber()
@@ -168,8 +168,8 @@ test("Check 202 No Results Found error page ", async ({
   }) => {
      
      //Actions
-     await home.headerStaticPages.searchForm.inputSearchCriteria("ukraine");
-     await home.headerStaticPages.searchForm.clickEnterSearchField();
+     await home.header.searchForm.inputSearchCriteria("ukraine");
+     await home.header.searchForm.clickEnterSearchField();
      await webPage.item.expectWebItemsToBeVisible()
      const oldSearchResult = await webPage.item.getTextContentWebItems()
      await webPage.pagination.clickNextButton()
@@ -189,8 +189,8 @@ test("Check 202 No Results Found error page ", async ({
   }) => {
      
      //Actions
-     await home.headerStaticPages.searchForm.inputSearchCriteria("ivanka");
-     await home.headerStaticPages.searchForm.clickEnterSearchField();
+     await home.header.searchForm.inputSearchCriteria("ivanka");
+     await home.header.searchForm.clickEnterSearchField();
      await webPage.item.expectWebItemsToBeVisible()
      await webPage.pagination.clickNextButton()
      await webPage.header.badgeCounter.expectCharityBadgeCounterToHaveValue("2");
@@ -211,8 +211,8 @@ test("Check 202 No Results Found error page ", async ({
   }) => {
      
      //Actions
-     await home.headerStaticPages.searchForm.inputSearchCriteria("ukraine");
-     await home.headerStaticPages.searchForm.clickEnterSearchField();
+     await home.header.searchForm.inputSearchCriteria("ukraine");
+     await home.header.searchForm.clickEnterSearchField();
      await webPage.item.expectWebItemsToBeVisible()
      await webPage.item.clickFirstWebItem()
    
@@ -226,8 +226,8 @@ test("Check 202 No Results Found error page ", async ({
   }) => {
      
      //Actions
-     await home.headerStaticPages.searchForm.inputSearchCriteria("wiki");
-     await home.headerStaticPages.searchForm.clickEnterSearchField();
+     await home.header.searchForm.inputSearchCriteria("wiki");
+     await home.header.searchForm.clickEnterSearchField();
      await webPage.item.expectWebItemsToBeVisible()
      await webPage.preview.clickPreviewButton()
    
@@ -241,8 +241,8 @@ test("Check 202 No Results Found error page ", async ({
   }) => {
      
      //Actions
-     await home.headerStaticPages.searchForm.inputSearchCriteria("wiki");
-     await home.headerStaticPages.searchForm.clickEnterSearchField();
+     await home.header.searchForm.inputSearchCriteria("wiki");
+     await home.header.searchForm.clickEnterSearchField();
      await webPage.item.expectWebItemsToBeVisible()
      await webPage.preview.clickPreviewButton()
    
@@ -259,8 +259,8 @@ test("Check 202 No Results Found error page ", async ({
   }) => {
      
      //Actions
-     await home.headerStaticPages.searchForm.inputSearchCriteria("wiki");
-     await home.headerStaticPages.searchForm.clickEnterSearchField();
+     await home.header.searchForm.inputSearchCriteria("wiki");
+     await home.header.searchForm.clickEnterSearchField();
      await webPage.item.expectWebItemsToBeVisible()
      await webPage.preview.clickPreviewButton()
      const newPage = await webPage.preview.clickOpenSiteButtonInPreview()
@@ -275,8 +275,8 @@ test("Check 202 No Results Found error page ", async ({
   }) => {
      
      //Actions
-     await home.headerStaticPages.searchForm.inputSearchCriteria("google");
-     await home.headerStaticPages.searchForm.clickEnterSearchField();
+     await home.header.searchForm.inputSearchCriteria("google");
+     await home.header.searchForm.clickEnterSearchField();
      await webPage.item.expectWebItemsToBeVisible()
      await webPage.preview.clickPreviewButton()
      await webPage.preview.clickTrackersButtonInPreview()
@@ -292,8 +292,8 @@ test("Check 202 No Results Found error page ", async ({
   }) => {
      
      //Actions
-     await home.headerStaticPages.searchForm.inputSearchCriteria("google");
-     await home.headerStaticPages.searchForm.clickEnterSearchField();
+     await home.header.searchForm.inputSearchCriteria("google");
+     await home.header.searchForm.clickEnterSearchField();
      await webPage.item.expectWebItemsToBeVisible()
      await webPage.preview.clickPreviewButton()
      await webPage.preview.clickTrackersButtonInPreview()
@@ -310,10 +310,10 @@ test("Check 202 No Results Found error page ", async ({
   },testInfo) => {
      
      //Actions
-     await home.headerStaticPages.clickHamburgerMenuButton();
-     await home.headerStaticPages.hamburgerMenu.selectRegion("Ukraine");
-     await home.headerStaticPages.searchForm.inputSearchCriteria("adsddss");
-     await home.headerStaticPages.searchForm.clickEnterSearchField();
+     await home.header.clickHamburgerMenuButton();
+     await home.header.hamburgerMenu.selectRegion("Ukraine");
+     await home.header.searchForm.inputSearchCriteria("adsddss");
+     await home.header.searchForm.clickEnterSearchField();
      await webPage.item.expectWebItemsToBeVisible()
      await webPage.waitUntilPageIsFullyLoaded()
      
@@ -327,13 +327,13 @@ test("Check 202 No Results Found error page ", async ({
   },testInfo) => {
      
      //Actions
-     await home.headerStaticPages.clickHamburgerMenuButton();
-     await home.headerStaticPages.hamburgerMenu.clickThemeDropdownInHamburgerMenu();
-     await home.headerStaticPages.hamburgerMenu.clickDarkInHamburgerMenu();
-     await home.headerStaticPages.clickHamburgerMenuButton();
-     await home.headerStaticPages.hamburgerMenu.selectRegion("Ukraine");
-     await home.headerStaticPages.searchForm.inputSearchCriteria("adsddss");
-     await home.headerStaticPages.searchForm.clickEnterSearchField();
+     await home.header.clickHamburgerMenuButton();
+     await home.header.hamburgerMenu.clickThemeDropdownInHamburgerMenu();
+     await home.header.hamburgerMenu.clickDarkInHamburgerMenu();
+     await home.header.clickHamburgerMenuButton();
+     await home.header.hamburgerMenu.selectRegion("Ukraine");
+     await home.header.searchForm.inputSearchCriteria("adsddss");
+     await home.header.searchForm.clickEnterSearchField();
      await webPage.item.expectWebItemsToBeVisible()
      await webPage.waitUntilPageIsFullyLoaded()
      

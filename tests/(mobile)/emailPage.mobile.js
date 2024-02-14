@@ -13,9 +13,9 @@ test("Check design dark theme of the  Email page ", async ({
 },testInfo) => {
   //Actions
   await emailPage.waitUntilPageIsFullyLoaded();
-  await emailPage.headerStaticPages.clickHamburgerMenuButton();
-  await emailPage.headerStaticPages.hamburgerMenu.clickThemeDropdownInHamburgerMenu();
-  await emailPage.headerStaticPages.hamburgerMenu.clickDarkInHamburgerMenu();
+  await emailPage.header.clickHamburgerMenuButton();
+  await emailPage.header.hamburgerMenu.clickThemeDropdownInHamburgerMenu();
+  await emailPage.header.hamburgerMenu.clickDarkInHamburgerMenu();
 
   //Assert
   await emailPage.expectScreenEmailPage(testInfo)

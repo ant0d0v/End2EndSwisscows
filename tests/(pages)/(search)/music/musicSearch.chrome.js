@@ -9,8 +9,8 @@ test("Check 202 No Results Found error page ", async ({
     musicPage
   }) => {
     //Actions
-    await home.headerStaticPages.searchForm.inputSearchCriteria("@#@$%^$^dasdsad1231");
-    await home.headerStaticPages.searchForm.clickEnterSearchField();
+    await home.header.searchForm.inputSearchCriteria("@#@$%^$^dasdsad1231");
+    await home.header.searchForm.clickEnterSearchField();
     await musicPage.header.clickMusicSearchButton()
     
     //Assert
@@ -24,8 +24,8 @@ test("Check 202 No Results Found error page ", async ({
     musicPage
   }) => {
     //Actions
-    await home.headerStaticPages.searchForm.inputSearchCriteria("porn");
-    await home.headerStaticPages.searchForm.clickEnterSearchField();
+    await home.header.searchForm.inputSearchCriteria("porn");
+    await home.header.searchForm.clickEnterSearchField();
     await musicPage.header.clickMusicSearchButton()
 
     //Assert
@@ -50,8 +50,8 @@ test("Check 202 No Results Found error page ", async ({
     musicPage
   }) => {
     //Actions
-    await home.headerStaticPages.searchForm.inputSearchCriteria("Skofka");
-    await home.headerStaticPages.searchForm.clickEnterSearchField();
+    await home.header.searchForm.inputSearchCriteria("Skofka");
+    await home.header.searchForm.clickEnterSearchField();
     await musicPage.header.clickMusicSearchButton()
     await musicPage.track.expectMusicTracksToBeVisible()
     await musicPage.track.clickPlayButtonInFirstTrack()
@@ -67,8 +67,8 @@ test("Check 202 No Results Found error page ", async ({
     musicPage
   }) => {
     //Actions
-    await home.headerStaticPages.searchForm.inputSearchCriteria("Skofka");
-    await home.headerStaticPages.searchForm.clickEnterSearchField();
+    await home.header.searchForm.inputSearchCriteria("Skofka");
+    await home.header.searchForm.clickEnterSearchField();
     await musicPage.header.clickMusicSearchButton()
     await musicPage.track.expectMusicTracksToBeVisible()
     await musicPage.track.clickPlayButtonInFirstTrack()
@@ -87,8 +87,8 @@ test("Check 202 No Results Found error page ", async ({
     musicPage
   }) => {
     //Actions
-    await home.headerStaticPages.searchForm.inputSearchCriteria("Skofka");
-    await home.headerStaticPages.searchForm.clickEnterSearchField();
+    await home.header.searchForm.inputSearchCriteria("Skofka");
+    await home.header.searchForm.clickEnterSearchField();
     await musicPage.header.clickMusicSearchButton()
     await musicPage.track.expectMusicTracksToBeVisible()
     await musicPage.track.clickPlayButtonInFirstTrack()
@@ -106,8 +106,8 @@ test("Check 202 No Results Found error page ", async ({
     musicPage
   }) => {
     //Actions
-    await home.headerStaticPages.searchForm.inputSearchCriteria("Skofka");
-    await home.headerStaticPages.searchForm.clickEnterSearchField();
+    await home.header.searchForm.inputSearchCriteria("Skofka");
+    await home.header.searchForm.clickEnterSearchField();
     await musicPage.header.clickMusicSearchButton()
     await musicPage.track.expectMusicTracksToBeVisible()
     await musicPage.track.clickPlayButtonInFirstTrack()
@@ -126,8 +126,8 @@ test("Check 202 No Results Found error page ", async ({
     musicPage
   }) => {
     //Actions
-    await home.headerStaticPages.searchForm.inputSearchCriteria("Skofka");
-    await home.headerStaticPages.searchForm.clickEnterSearchField();
+    await home.header.searchForm.inputSearchCriteria("Skofka");
+    await home.header.searchForm.clickEnterSearchField();
     await musicPage.header.clickMusicSearchButton()
     await musicPage.track.expectMusicTracksToBeVisible()
     await musicPage.track.clickPlayButtonInFirstTrack()
@@ -146,8 +146,8 @@ test("Check 202 No Results Found error page ", async ({
     musicPage
   }) => {
     //Actions
-    await home.headerStaticPages.searchForm.inputSearchCriteria("Skofka");
-    await home.headerStaticPages.searchForm.clickEnterSearchField();
+    await home.header.searchForm.inputSearchCriteria("Skofka");
+    await home.header.searchForm.clickEnterSearchField();
     await musicPage.header.clickMusicSearchButton()
     await musicPage.track.expectMusicTracksToBeVisible()
     await musicPage.track.clickPlayButtonInFirstTrack()
@@ -166,8 +166,8 @@ test("Check 202 No Results Found error page ", async ({
     musicPage
   }) => {
     //Actions
-    await home.headerStaticPages.searchForm.inputSearchCriteria("Skofka");
-    await home.headerStaticPages.searchForm.clickEnterSearchField();
+    await home.header.searchForm.inputSearchCriteria("Skofka");
+    await home.header.searchForm.clickEnterSearchField();
     await musicPage.header.clickMusicSearchButton()
     await musicPage.track.expectMusicTracksToBeVisible()
     await musicPage.track.clickPlayButtonInFirstTrack()
@@ -188,8 +188,8 @@ test("Check 202 No Results Found error page ", async ({
     musicPage
   }) => {
     //Actions
-    await home.headerStaticPages.searchForm.inputSearchCriteria("Skofka");
-    await home.headerStaticPages.searchForm.clickEnterSearchField();
+    await home.header.searchForm.inputSearchCriteria("Skofka");
+    await home.header.searchForm.clickEnterSearchField();
     await musicPage.header.clickMusicSearchButton()
     await musicPage.track.expectMusicTracksToBeVisible()
     await musicPage.track.clickPlayButtonInFirstTrack()
@@ -211,8 +211,8 @@ test("Check 202 No Results Found error page ", async ({
     musicPage
   }) => {
     //Actions
-    await home.headerStaticPages.searchForm.inputSearchCriteria("Skofka");
-    await home.headerStaticPages.searchForm.clickEnterSearchField();
+    await home.header.searchForm.inputSearchCriteria("Skofka");
+    await home.header.searchForm.clickEnterSearchField();
     await musicPage.header.clickMusicSearchButton()
     await musicPage.track.expectMusicTracksToBeVisible()
     await musicPage.track.clickPlayButtonInFirstTrack()
@@ -231,8 +231,8 @@ test("Check 202 No Results Found error page ", async ({
     musicPage
   }) => {
     //Actions
-    await home.headerStaticPages.searchForm.inputSearchCriteria("Skofka");
-    await home.headerStaticPages.searchForm.clickEnterSearchField();
+    await home.header.searchForm.inputSearchCriteria("Skofka");
+    await home.header.searchForm.clickEnterSearchField();
     await musicPage.header.clickMusicSearchButton()
     await musicPage.track.expectMusicTracksToBeVisible()
     await musicPage.track.clickFavoriteButtonInFirstTrack()
@@ -250,8 +250,8 @@ test("Check 202 No Results Found error page ", async ({
     musicPage
   }) => {
     //Actions
-    await home.headerStaticPages.searchForm.inputSearchCriteria("Skofka");
-    await home.headerStaticPages.searchForm.clickEnterSearchField();
+    await home.header.searchForm.inputSearchCriteria("Skofka");
+    await home.header.searchForm.clickEnterSearchField();
     await musicPage.header.clickMusicSearchButton()
     await musicPage.track.expectMusicTracksToBeVisible()
     await musicPage.track.clickFavoriteButtonInFirstTrack()
@@ -270,8 +270,8 @@ test("Check 202 No Results Found error page ", async ({
     musicPage
   }) => {
     //Actions
-    await home.headerStaticPages.searchForm.inputSearchCriteria("Skofka");
-    await home.headerStaticPages.searchForm.clickEnterSearchField();
+    await home.header.searchForm.inputSearchCriteria("Skofka");
+    await home.header.searchForm.clickEnterSearchField();
     await musicPage.header.clickMusicSearchButton()
     await musicPage.track.expectMusicTracksToBeVisible()
     await musicPage.track.clickPlayButtonInFirstTrack()
@@ -291,8 +291,8 @@ test("Check 202 No Results Found error page ", async ({
     musicPage
   }) => {
     //Actions
-    await home.headerStaticPages.searchForm.inputSearchCriteria("Skofka");
-    await home.headerStaticPages.searchForm.clickEnterSearchField();
+    await home.header.searchForm.inputSearchCriteria("Skofka");
+    await home.header.searchForm.clickEnterSearchField();
     await musicPage.header.clickMusicSearchButton()
     await musicPage.track.expectMusicTracksToBeVisible()
     await musicPage.track.clickFavoriteButtonInFirstTrack()
@@ -312,8 +312,8 @@ test("Check 202 No Results Found error page ", async ({
     musicPage
   }) => {
     //Actions
-    await home.headerStaticPages.searchForm.inputSearchCriteria("Skofka");
-    await home.headerStaticPages.searchForm.clickEnterSearchField();
+    await home.header.searchForm.inputSearchCriteria("Skofka");
+    await home.header.searchForm.clickEnterSearchField();
     await musicPage.header.clickMusicSearchButton()
     await musicPage.track.expectMusicTracksToBeVisible()
     await musicPage.track.scrollByVisibleLastTrack()
@@ -328,8 +328,8 @@ test("Check 202 No Results Found error page ", async ({
     musicPage
   }) => {
     //Actions
-    await home.headerStaticPages.searchForm.inputSearchCriteria("billie jean");
-    await home.headerStaticPages.searchForm.clickEnterSearchField();
+    await home.header.searchForm.inputSearchCriteria("billie jean");
+    await home.header.searchForm.clickEnterSearchField();
     await musicPage.header.clickMusicSearchButton()
     await musicPage.track.expectMusicTracksToBeVisible()
     
@@ -345,8 +345,8 @@ test("Check 202 No Results Found error page ", async ({
     page
   }) => {
     //Actions
-    await home.headerStaticPages.searchForm.inputSearchCriteria("billie jean");
-    await home.headerStaticPages.searchForm.clickEnterSearchField();
+    await home.header.searchForm.inputSearchCriteria("billie jean");
+    await home.header.searchForm.clickEnterSearchField();
     await musicPage.header.clickMusicSearchButton()
     await musicPage.track.expectMusicTracksToBeVisible()
     await musicPage.header.clickHamburgerMenuButton();

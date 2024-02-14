@@ -20,9 +20,9 @@ test("Check design dark theme of the Education page ", async ({
 },testInfo) => {
   //Actions
   await mediaEducationPage.waitUntilPageIsFullyLoaded();
-  await mediaEducationPage.headerStaticPages.clickHamburgerMenuButton();
-  await mediaEducationPage.headerStaticPages.hamburgerMenu.clickThemeDropdownInHamburgerMenu();
-  await mediaEducationPage.headerStaticPages.hamburgerMenu.clickDarkInHamburgerMenu();
+  await mediaEducationPage.header.clickHamburgerMenuButton();
+  await mediaEducationPage.header.hamburgerMenu.clickThemeDropdownInHamburgerMenu();
+  await mediaEducationPage.header.hamburgerMenu.clickDarkInHamburgerMenu();
 
   //Assert
   await mediaEducationPage.expectScreenMediaEducationPage(testInfo);

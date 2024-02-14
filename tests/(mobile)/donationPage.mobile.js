@@ -10,9 +10,9 @@ test("Check design dark theme of the  Donation page ", async ({
 },testInfo) => {
   //Actions
   await donationPage.waitUntilPageIsFullyLoaded();
-  await donationPage.headerStaticPages.clickHamburgerMenuButton();
-  await donationPage.headerStaticPages.hamburgerMenu.clickThemeDropdownInHamburgerMenu();
-  await donationPage.headerStaticPages.hamburgerMenu.clickDarkInHamburgerMenu();
+  await donationPage.header.clickHamburgerMenuButton();
+  await donationPage.header.hamburgerMenu.clickThemeDropdownInHamburgerMenu();
+  await donationPage.header.hamburgerMenu.clickDarkInHamburgerMenu();
 
   //Assert
   await donationPage.expectScreenDonationPage(testInfo);

@@ -1,13 +1,13 @@
 import BasePage from "../../../base/BasePage";
 import videoPlayer from "../../../components/VideoPlayer";
-import HeaderStaticPages from "../../../components/HeaderStaticPages";
+import Header from "../../(pages)/Header";
 const { expect, test } = require("@playwright/test");
 
 export default class DonationPage extends BasePage {
   constructor(page) {
     super(page);
     this.videoPlayer = new videoPlayer(page);
-    this.headerStaticPages = new HeaderStaticPages(page);
+    this.header = new Header(page);
 
     //Locators
     this.pdfLinks = (id) => this.page.getByText(`${id}`);

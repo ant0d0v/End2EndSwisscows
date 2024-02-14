@@ -1,5 +1,5 @@
 import BaseComponent from "../../../base/BaseComponent";
-import ButtonMenu from "../../ButtonMenu";
+import ButtonMenu from "../../../components/ButtonMenu";
 const { expect } = require("@playwright/test");
 
 export default class Filters extends BaseComponent {
@@ -18,4 +18,5 @@ export default class Filters extends BaseComponent {
     const response = await responsePromise;
     return response;
   };
+  
 }

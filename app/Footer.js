@@ -1,5 +1,5 @@
 import BaseComponent from "../base/BaseComponent";
-export default class FooterFull extends BaseComponent {
+export default class Footer extends BaseComponent {
   constructor(page) {
     super(page);
 

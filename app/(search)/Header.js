@@ -1,5 +1,5 @@
 import HamburgerMenu from "../HamburgerMenu";
-import badgeCounter from "../BadgeCounter";
+import badgeCounter from "../../components/BadgeCounter";
 import SearchForm from "../SearchForm";
 import BaseComponent from "../../base/BaseComponent";
 

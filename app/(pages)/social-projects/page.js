@@ -1,11 +1,11 @@
 import BasePage from "../../../base/BasePage";
 import ImagesGallery  from "../../../components/ImagesGallery";
 import VideoPlayer from "../../../components/VideoPlayer";
-import HeaderStaticPages from "../../../components/HeaderStaticPages";
+import Header from "../../(pages)/Header";
 export default class CharityPage extends BasePage {
   constructor(page) {
     super(page);
-    this.headerStaticPages = new HeaderStaticPages(page);
+    this.header = new Header(page);
     this.imagesGallery = new ImagesGallery(page);
     this.videoPlayer = new VideoPlayer(page);
 

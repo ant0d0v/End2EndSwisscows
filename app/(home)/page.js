@@ -1,14 +1,16 @@
 const { expect } = require("@playwright/test");
-import HeaderStaticPages from "../../components/HeaderStaticPages";
-import InstallSwisscowsLink from "../../components/(home)/ExtensionPopup";
-import extensionBlock from "../../components/(home)/Extension";
+import Header from "./Header";
+import Footer from "../Footer";
+import InstallSwisscowsLink from "./ExtensionPopup";
+import extensionBlock from "./Extension";
 import FAQ from "../../components/FAQ";
 import BasePage from "../../base/BasePage";
 
 export default class Home extends BasePage {
   constructor(page) {
     super(page);
-    this.headerStaticPages = new HeaderStaticPages(page);
+    this.header = new Header(page);
+    this.footer = new Footer(page);
     this.installSwisscowsLink = new InstallSwisscowsLink(page);
     this.extensionBlock = new extensionBlock(page);
     this.faq =  new FAQ(page);

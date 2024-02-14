@@ -1,12 +1,12 @@
 import BasePage from "../../../base/BasePage";
-import HeaderStaticPages from "../../../components/HeaderStaticPages";
+import Header from "../../(landings)/vpn/Header";
 import FAQ from "../../../components/FAQ";
 const { expect } = require("@playwright/test");
 import fs from 'fs';
 export default class VpnPage extends BasePage {
   constructor(page) {
     super(page);
-    this.headerStaticPages = new HeaderStaticPages(page);
+    this.header = new Header(page);
     this.faq =  new FAQ(page);
      //Locators
     this.allContent = this.page.locator("main.vpn");

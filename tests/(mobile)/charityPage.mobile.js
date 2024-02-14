@@ -76,9 +76,9 @@ test("Check design dark theme of the charity page ", async ({
   
   //Actions
   await charityPage.waitUntilPageIsFullyLoaded();
-  await charityPage.headerStaticPages.clickHamburgerMenuButton();
-  await charityPage.headerStaticPages.hamburgerMenu.clickThemeDropdownInHamburgerMenu();
-  await charityPage.headerStaticPages.hamburgerMenu.clickDarkInHamburgerMenu();
+  await charityPage.header.clickHamburgerMenuButton();
+  await charityPage.header.hamburgerMenu.clickThemeDropdownInHamburgerMenu();
+  await charityPage.header.hamburgerMenu.clickDarkInHamburgerMenu();
 
   //Assert
   await charityPage.expectScreenCharityPage(testInfo);

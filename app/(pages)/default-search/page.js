@@ -1,9 +1,9 @@
 import BasePage from "../../../base/BasePage";
-import HeaderStaticPages from "../../../components/HeaderStaticPages";
+import Header from "../../(pages)/Header";
 export default class DefaultSearchPage extends BasePage {
   constructor(page) {
     super(page);
-    this.headerStaticPages = new HeaderStaticPages(page);
+    this.header = new Header(page);
      //Locators
     this.allContent = this.page.locator("main.default-search");
     this.allLinks = (id, name) => this.page.locator(`#${id}`).getByRole('link', { name: name })

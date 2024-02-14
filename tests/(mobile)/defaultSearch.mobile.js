@@ -12,9 +12,9 @@ test("Check design of the default search page ", async ({ defaultSearchPage },te
   },testInfo) => {
     //Actions
     await defaultSearchPage.waitUntilPageIsFullyLoaded();
-    await defaultSearchPage.headerStaticPages.clickHamburgerMenuButton();
-    await defaultSearchPage.headerStaticPages.hamburgerMenu.clickThemeDropdownInHamburgerMenu();
-    await defaultSearchPage.headerStaticPages.hamburgerMenu.clickDarkInHamburgerMenu();
+    await defaultSearchPage.header.clickHamburgerMenuButton();
+    await defaultSearchPage.header.hamburgerMenu.clickThemeDropdownInHamburgerMenu();
+    await defaultSearchPage.header.hamburgerMenu.clickDarkInHamburgerMenu();
   
     //Assert
     await defaultSearchPage.expectDefaultSearchPage(testInfo)

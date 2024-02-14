@@ -11,12 +11,12 @@ test("Check that suggest is displayed", async ({
 }) => {
   await home.reloadPage();
   await home.waitUntilPageIsFullyLoaded();
-  await home.headerStaticPages.searchForm.inputSearchCriteria(testData.searchCriteria.first);
+  await home.header.searchForm.inputSearchCriteria(testData.searchCriteria.first);
 
   //Assert
-  await home.headerStaticPages.searchForm.expectSuggestIsDisplayed();
-  await home.headerStaticPages.searchForm.expectSuggestToHaveCount(5);
-  await home.headerStaticPages.searchForm.expectSuggestToContains(
+  await home.header.searchForm.expectSuggestIsDisplayed();
+  await home.header.searchForm.expectSuggestToHaveCount(5);
+  await home.header.searchForm.expectSuggestToContains(
     testData.searchCriteria.first
   );
 });
@@ -94,9 +94,9 @@ test("Check design dark theme of the home page ", async ({
 },testInfo) => {
   //Actions
 
-  await home.headerStaticPages.clickHamburgerMenuButton();
-  await home.headerStaticPages.hamburgerMenu.clickThemeDropdownInHamburgerMenu();
-  await home.headerStaticPages.hamburgerMenu.clickDarkInHamburgerMenu();
+  await home.header.clickHamburgerMenuButton();
+  await home.header.hamburgerMenu.clickThemeDropdownInHamburgerMenu();
+  await home.header.hamburgerMenu.clickDarkInHamburgerMenu();
 
   //Assert
   await home.expectScreenHome(testInfo);

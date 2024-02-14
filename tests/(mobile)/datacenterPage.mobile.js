@@ -49,9 +49,9 @@ test("Check design dark theme of the Datacenter page ", async ({
 },testInfo) => {
   //Actions
   await datacenterPage.waitUntilPageIsFullyLoaded();
-  await datacenterPage.headerStaticPages.clickHamburgerMenuButton();
-  await datacenterPage.headerStaticPages.hamburgerMenu.clickThemeDropdownInHamburgerMenu();
-  await datacenterPage.headerStaticPages.hamburgerMenu.clickDarkInHamburgerMenu();
+  await datacenterPage.header.clickHamburgerMenuButton();
+  await datacenterPage.header.hamburgerMenu.clickThemeDropdownInHamburgerMenu();
+  await datacenterPage.header.hamburgerMenu.clickDarkInHamburgerMenu();
 
   //Assert
   await datacenterPage.expectScreenDatacenterPage(testInfo);

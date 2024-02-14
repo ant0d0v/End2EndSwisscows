@@ -1,14 +1,14 @@
 import BasePage from "../../../base/BasePage";
 import imagesGallery  from "../../../components/ImagesGallery";
 import videoPlayer from "../../../components/VideoPlayer";
-import HeaderStaticPages from "../../../components/HeaderStaticPages";
+import Header from "../../(pages)/Header";
 
 export default class DatacenterPage extends BasePage {
   constructor(page) {
     super(page);
     this.imagesGallery = new imagesGallery(page);
     this.videoPlayer = new videoPlayer(page);
-    this.headerStaticPages = new HeaderStaticPages(page);
+    this.header = new Header(page);
 
     //Locators
     this.allContent = this.page.locator("main.datacenter");

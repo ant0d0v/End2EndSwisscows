@@ -14,26 +14,25 @@ test("Clicking on the swisscows's logo leads to the home page.", async ({
   webPage
 }) => {
   //Actions
-  await home.headerStaticPages.searchForm.inputSearchCriteria(testData.searchCriteria.first);
-  await home.headerStaticPages.searchForm.clickEnterSearchField();
+  await home.header.searchForm.inputSearchCriteria(testData.searchCriteria.first);
+  await home.header.searchForm.clickEnterSearchField();
   await webPage.header.clickSwisscowsLogo();
 
   //Assert
   await home.expectHaveUrl(home.page, constantsData.URL_MAIN_PAGE);
-  await home.expectHaveTitle( home.page, constantsData.TITLE_MAIN_PAGE );
+  await home.expectHaveTitle(home.page, constantsData.TITLE_MAIN_PAGE );
 });
 
 test("Check query counter value when searching for images ", async ({
-  header,
   home,
   imagePage,
   webPage
 }) => {
   //Actions
-  await home.headerStaticPages.searchForm.inputSearchCriteria(testData.searchCriteria.third);
-  await home.headerStaticPages.searchForm.clickEnterSearchField();
+  await home.header.searchForm.inputSearchCriteria(testData.searchCriteria.third);
+  await home.header.searchForm.clickEnterSearchField();
   await webPage.item.expectWebItemsToBeVisible()
-  await header.clickImageSearchButton();
+  await imagePage.header.clickImageSearchButton();
 
   //Assert
   await imagePage.header.badgeCounter.expectCharityBadgeCounterToHaveValue("2");
@@ -41,15 +40,14 @@ test("Check query counter value when searching for images ", async ({
 
 test("Check query counter value when searching for video ", async ({
   videoPage,
-  header,
   webPage,
   home
 }) => {
   //Actions
-  await home.headerStaticPages.searchForm.inputSearchCriteria(testData.searchCriteria.third);
-  await home.headerStaticPages.searchForm.clickEnterSearchField();
+  await home.header.searchForm.inputSearchCriteria(testData.searchCriteria.third);
+  await home.header.searchForm.clickEnterSearchField();
   await webPage.item.expectWebItemsToBeVisible()
-  await header.clickVideoSearchButton();
+  await videoPage.header.clickVideoSearchButton();
 
   //Assert
   await videoPage.header.badgeCounter.expectCharityBadgeCounterToHaveValue("2");
@@ -57,15 +55,14 @@ test("Check query counter value when searching for video ", async ({
 
 test("Check query counter value when searching for music", async ({
     home,
-    header,
     webPage,
     musicPage
   }) => {
     //Actions
-    await home.headerStaticPages.searchForm.inputSearchCriteria(testData.searchCriteria.third);
-    await home.headerStaticPages.searchForm.clickEnterSearchField();
+    await home.header.searchForm.inputSearchCriteria(testData.searchCriteria.third);
+    await home.header.searchForm.clickEnterSearchField();
     await webPage.item.expectWebItemsToBeVisible()
-    await header.clickMusicSearchButton();
+    await musicPage.header.clickMusicSearchButton();
 
     //Assert
     await musicPage.header.badgeCounter.expectCharityBadgeCounterToHaveValue("2");
@@ -74,91 +71,86 @@ test("Check query counter value when searching for music", async ({
 
 test("Check query counter value when searching for news", async ({
   home,
-  header,
   newsPage,
   webPage
 }) => {
   //Actions
-  await home.headerStaticPages.searchForm.inputSearchCriteria(testData.searchCriteria.third);
-  await home.headerStaticPages.searchForm.clickEnterSearchField();
+  await home.header.searchForm.inputSearchCriteria(testData.searchCriteria.third);
+  await home.header.searchForm.clickEnterSearchField();
   await webPage.item.expectWebItemsToBeVisible()
   await webPage.header.clickHamburgerMenuButton();
   await webPage.header.hamburgerMenu.selectRegion("Germany");
   await webPage.item.expectWebItemsToBeVisible()
-  await header.clickNewsSearchButton();
+  await newsPage.header.clickNewsSearchButton();
 
   //Assert
   await newsPage.header.badgeCounter.expectCharityBadgeCounterToHaveValue("3");
 });
 
 test("Check query counter value when searching for shopping", async ({
-  header,
   shoppingPage,
   home,
   webPage
 }) => {
   //Actions
-  await home.headerStaticPages.clickHamburgerMenuButton();
-  await home.headerStaticPages.hamburgerMenu.selectRegion("Germany");
-  await home.headerStaticPages.searchForm.inputSearchCriteria(testData.searchCriteria.third);
-  await home.headerStaticPages.searchForm.clickEnterSearchField();
+  await home.header.clickHamburgerMenuButton();
+  await home.header.hamburgerMenu.selectRegion("Germany");
+  await home.header.searchForm.inputSearchCriteria(testData.searchCriteria.third);
+  await home.header.searchForm.clickEnterSearchField();
   await webPage.item.expectWebItemsToBeVisible()
-  await header.clickShoppingSearchButton();
+  await shoppingPage.header.clickShoppingSearchButton();
 
   //Assert
   await shoppingPage.header.badgeCounter.expectCharityBadgeCounterToHaveValue("2");
 });
 
   test("Check that email icon navigates to account/login page if user logged ", async({
-    header,
     home,
     webPage, 
   }) => {
     //Actions
-    await home.headerStaticPages.searchForm.inputSearchCriteria(testData.searchCriteria.third);
-    await home.headerStaticPages.searchForm.clickEnterSearchField();
+    await home.header.searchForm.inputSearchCriteria(testData.searchCriteria.third);
+    await home.header.searchForm.clickEnterSearchField();
     await webPage.item.expectWebItemsToBeVisible()
-    const newPage = await header.clickBadgeEmailAndNavigateToNewPage();
+    const newPage = await webPage.header.clickBadgeEmailAndNavigateToNewPage();
 
     //Assert
-    await header.expectHaveUrl( newPage, new RegExp( constantsData.URL_LOGIN_PAGE));
-    await header.expectHaveTitle(newPage, constantsData.TITLE_LOGIN_PAGE);
+    await webPage.header.expectHaveUrl( newPage, new RegExp( constantsData.URL_LOGIN_PAGE));
+    await webPage.header.expectHaveTitle(newPage, constantsData.TITLE_LOGIN_PAGE);
   });
 
 test.describe("tests don't use cookie", () => {
   test.use({ storageState: { cookies: [], origins: [] } });
   for (const { testID, expectedLink, locatorId, expectedTitle, } of data.headerLinks) {
     test(`${testID} Check that header badge ${locatorId} link navigate to corresponding pages`, async ({
-      header,
       home,
       webPage,
     }) => {
       //Actions
-      await home.headerStaticPages.searchForm.inputSearchCriteria(testData.searchCriteria.third);
-      await home.headerStaticPages.searchForm.clickEnterSearchField();
+      await home.header.searchForm.inputSearchCriteria(testData.searchCriteria.third);
+      await home.header.searchForm.clickEnterSearchField();
       await webPage.item.expectWebItemsToBeVisible()
-      const newPage = await header.clickLinkInHeaderAndNavigateToNewPage(locatorId);
+      const newPage = await webPage.header.clickLinkInHeaderAndNavigateToNewPage(locatorId);
 
       //Assert
-      await header.expectHaveUrl(newPage, expectedLink);
-      await header.expectHaveTitle(newPage, new RegExp(expectedTitle));
+      await webPage.header.expectHaveUrl(newPage, expectedLink);
+      await webPage.header.expectHaveTitle(newPage, new RegExp(expectedTitle));
     });
   }
 });
 
 test("Check that display of heart icon message in the header", async ({
-  header,
   home,
   webPage
 }) => {
   //Actions
-  await home.headerStaticPages.searchForm.inputSearchCriteria(testData.searchCriteria.third);
-  await home.headerStaticPages.searchForm.clickEnterSearchField();
+  await home.header.searchForm.inputSearchCriteria(testData.searchCriteria.third);
+  await home.header.searchForm.clickEnterSearchField();
   await webPage.item.expectWebItemsToBeVisible()
   await webPage.header.badgeCounter.clickBadgeCounter();
 
   //Assert
-  await header.badgeCounter.expectPopupCharityBadgeCounterToHaveText(
+  await webPage.header.badgeCounter.expectPopupCharityBadgeCounterToHaveText(
     "Charity ProjectThis is the number of your Swisscows searches. On average, 50 search queries finance a children's meal. Register and receive newsletters."
   );
 });
@@ -168,8 +160,8 @@ test("Check suggest on the web search", async ({
   webPage
 }) => {
   //Actions
-  await home.headerStaticPages.searchForm.inputSearchCriteria(testData.searchCriteria.first);
-  await home.headerStaticPages.searchForm.clickEnterSearchField();
+  await home.header.searchForm.inputSearchCriteria(testData.searchCriteria.first);
+  await home.header.searchForm.clickEnterSearchField();
   await webPage.item.expectWebItemsToBeVisible()
   await webPage.header.searchForm.clickSearchField()
 
@@ -185,8 +177,8 @@ test("Check suggest on the image search", async ({
   imagePage
 }) => {
   //Actions
-  await home.headerStaticPages.searchForm.inputSearchCriteria(testData.searchCriteria.first);
-  await home.headerStaticPages.searchForm.clickEnterSearchField();
+  await home.header.searchForm.inputSearchCriteria(testData.searchCriteria.first);
+  await home.header.searchForm.clickEnterSearchField();
   await webPage.header.clickImageSearchButton()
   await imagePage.item.expectImageItemsToBeVisible()
   await imagePage.header.searchForm.clickSearchField()
@@ -203,8 +195,8 @@ test("Check suggest on the video search", async ({
   videoPage
 }) => {
   //Actions
-  await home.headerStaticPages.searchForm.inputSearchCriteria(testData.searchCriteria.first);
-  await home.headerStaticPages.searchForm.clickEnterSearchField();
+  await home.header.searchForm.inputSearchCriteria(testData.searchCriteria.first);
+  await home.header.searchForm.clickEnterSearchField();
   await webPage.header.clickVideoSearchButton()
   await videoPage.item.expectVideoItemsToBeVisible()
   await videoPage.header.searchForm.clickSearchField()
@@ -221,8 +213,8 @@ test("Check suggest on the news search", async ({
   newsPage
 }) => {
   //Actions
-  await home.headerStaticPages.searchForm.inputSearchCriteria(testData.searchCriteria.first);
-  await home.headerStaticPages.searchForm.clickEnterSearchField();
+  await home.header.searchForm.inputSearchCriteria(testData.searchCriteria.first);
+  await home.header.searchForm.clickEnterSearchField();
   await webPage.item.expectWebItemsToBeVisible()
   await webPage.header.clickHamburgerMenuButton();
   await webPage.header.hamburgerMenu.selectRegion("Germany");
@@ -242,8 +234,8 @@ test("Check suggest on the shopping search", async ({
   shoppingPage
 }) => {
   //Actions
-  await home.headerStaticPages.searchForm.inputSearchCriteria(testData.searchCriteria.first);
-  await home.headerStaticPages.searchForm.clickEnterSearchField();
+  await home.header.searchForm.inputSearchCriteria(testData.searchCriteria.first);
+  await home.header.searchForm.clickEnterSearchField();
   await webPage.item.expectWebItemsToBeVisible()
   await webPage.header.clickHamburgerMenuButton();
   await webPage.header.hamburgerMenu.selectRegion("Germany");
@@ -263,8 +255,8 @@ test("Check suggest on the music search", async ({
   musicPage
 }) => {
   //Actions
-  await home.headerStaticPages.searchForm.inputSearchCriteria(testData.searchCriteria.first);
-  await home.headerStaticPages.searchForm.clickEnterSearchField();
+  await home.header.searchForm.inputSearchCriteria(testData.searchCriteria.first);
+  await home.header.searchForm.clickEnterSearchField();
   await webPage.header.clickMusicSearchButton()
   await musicPage.track.expectMusicTracksToBeVisible()
   await musicPage.header.searchForm.clickSearchField()

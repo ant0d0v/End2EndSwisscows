@@ -1,9 +1,9 @@
 import BasePage from "../../../base/BasePage.js";
-import Filters from "../../../components/(search)/video/Filters.js";
-import ItemDetails from "../../../components/(search)/video/ItemDetails.js";
-import Item from "../../../components/(search)/video/Item.js";
-import Player from "../../../components/(search)/video/Player.js";
-import Header from "../../../components/(search)/Header.js";
+import Filters from "./Filters.js";
+import ItemDetails from "./ItemDetails.js";
+import Item from "./Item.js";
+import Player from "./Player.js";
+import Header from "../Header.js";
 const { expect, context } = require("@playwright/test");
 
 export default class VideoPage extends BasePage {

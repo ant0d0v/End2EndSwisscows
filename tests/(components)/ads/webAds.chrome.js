@@ -10,10 +10,10 @@ test("Check text advertising", async ({
   }) => {
      
      //Actions
-     await home.headerStaticPages.clickHamburgerMenuButton();
-     await home.headerStaticPages.hamburgerMenu.selectRegion("Germany");
-     await home.headerStaticPages.searchForm.inputSearchCriteria("laptop");
-     await home.headerStaticPages.searchForm.clickEnterSearchField();
+     await home.header.clickHamburgerMenuButton();
+     await home.header.hamburgerMenu.selectRegion("Germany");
+     await home.header.searchForm.inputSearchCriteria("laptop");
+     await home.header.searchForm.clickEnterSearchField();
      await webPage.item.expectWebItemsToBeVisible()
      await webPage.adsText.waitElementToBeVisible(webPage.adsText.textAds)
    
@@ -29,10 +29,10 @@ test("Check text advertising", async ({
   }) => {
      
      //Actions
-     await home.headerStaticPages.clickHamburgerMenuButton();
-     await home.headerStaticPages.hamburgerMenu.selectRegion("Germany");
-     await home.headerStaticPages.searchForm.inputSearchCriteria("crocs price");
-     await home.headerStaticPages.searchForm.clickEnterSearchField();
+     await home.header.clickHamburgerMenuButton();
+     await home.header.hamburgerMenu.selectRegion("Germany");
+     await home.header.searchForm.inputSearchCriteria("crocs price");
+     await home.header.searchForm.clickEnterSearchField();
      await webPage.item.expectWebItemsToBeVisible()
      await webPage.adsProduct.waitElementToBeVisible(webPage.adsProduct.textProductsAds)
    
@@ -48,10 +48,10 @@ test("Check text advertising", async ({
   }) => {
      
      //Actions
-     await home.headerStaticPages.clickHamburgerMenuButton();
-     await home.headerStaticPages.hamburgerMenu.selectRegion("Germany");
-     await home.headerStaticPages.searchForm.inputSearchCriteria("price iphone in germany ");
-     await home.headerStaticPages.searchForm.clickEnterSearchField();
+     await home.header.clickHamburgerMenuButton();
+     await home.header.hamburgerMenu.selectRegion("Germany");
+     await home.header.searchForm.inputSearchCriteria("price iphone in germany ");
+     await home.header.searchForm.clickEnterSearchField();
      await webPage.item.expectWebItemsToBeVisible()
      await webPage.adsProduct.waitElementToBeVisible(webPage.adsProduct.nextButton)
      await webPage.adsProduct.clickNextButtonUntilInvisible()
@@ -69,10 +69,10 @@ test("Check text advertising", async ({
   }) => {
      
      //Actions
-     await home.headerStaticPages.clickHamburgerMenuButton();
-     await home.headerStaticPages.hamburgerMenu.selectRegion("Germany");
-     await home.headerStaticPages.searchForm.inputSearchCriteria("price iphone in germany");
-     await home.headerStaticPages.searchForm.clickEnterSearchField();
+     await home.header.clickHamburgerMenuButton();
+     await home.header.hamburgerMenu.selectRegion("Germany");
+     await home.header.searchForm.inputSearchCriteria("price iphone in germany");
+     await home.header.searchForm.clickEnterSearchField();
      await webPage.item.expectWebItemsToBeVisible()
      await webPage.adsProduct.waitElementToBeVisible(webPage.adsProduct.firstProduct)
      const newPage = await webPage.adsProduct.clickFirstProductAndNavigateToNewPage()
