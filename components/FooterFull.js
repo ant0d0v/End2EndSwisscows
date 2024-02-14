@@ -1,11 +1,4 @@
 import BaseComponent from "../base/BaseComponent";
-import CharityPage from "../pages/(pages)/Charity.Page";
-import DatacenterPage from "../pages/(pages)/Datacenter.Page";
-import EducationPage from "../pages/(pages)/Education.Page";
-import DonationPage from "../pages/(pages)/Donation.Page";
-import ContactUsPage from "../pages/(pages)/ContactUs.Page";
-import ImprintPage from "../pages/(pages)/Imprint.Page";
-import WhoWeArePage from "../pages/(pages)/WhoWeAre.Page";
 export default class FooterFull extends BaseComponent {
   constructor(page) {
     super(page);
@@ -25,46 +18,39 @@ export default class FooterFull extends BaseComponent {
   clickCharityProjectLink = async () => {
     await this.clickElement( this.charityProjectLink, 
       `charity project link in the footer full`);
-    return new CharityPage(this.page);
   };
 
   clickDatacenterLink = async () => {
     await this.clickElement(this.dataCenterLink,
       `Datacenter link in the footer full`
     );
-    return new DatacenterPage(this.page);
   };
 
   clickEducationLink = async () => {
     await this.clickElement(this.educationLink,
       `Education link in the footer full`
     );
-    return new EducationPage(this.page);
   };
 
   clickDonationLink = async () => {
     await this.clickElement(this.donationLink,
       `Donation link in the footer full`
     );
-    return new DonationPage(this.page);
   };
   clickContactUsLink = async () => {
     await this.clickElement(this.contactUsLink,
       `Contact Us link in the footer full`
     );
-    return new ContactUsPage(this.page);
   };
   clickImprintLink = async () => {
     await this.clickElement(this.imprintLink,
       `Imprint link in the footer full`
     );
-    return new ImprintPage(this.page);
   };
   clickWhoWeAreLink = async () => {
     await this.clickElement(this.whoWeAreLink,
       `Who we are link in the footer full`
     );
-    return new WhoWeArePage(this.page);
   };
 
   clickEmailLinkAndNavigateToNewPage = async () => {

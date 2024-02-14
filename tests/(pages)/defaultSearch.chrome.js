@@ -1,6 +1,6 @@
 import { test, expect } from "../../utils/fixturePages";
 const testData = JSON.parse(
-  JSON.stringify(require("../../data/static-pages/default-page/testData.json"))
+  JSON.stringify(require("../../data/pages/default-search/testData.json"))
 );
 test("Check design of the default search page ", async ({ defaultSearchPage },testInfo) => {
     //Actions

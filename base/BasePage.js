@@ -261,6 +261,11 @@ export default class BasePage {
       }
     });
   }
+  async expectTextToContain(element, criteria) {
+    await test.step('Expect the element in "to contain" a string', async () => {
+        await expect(element).toContainText(criteria);
+    });
+  }
   async expectH1Text(newPage, text) {
     await test.step('Expect the page  "to have" h1 text with text', async () => {
       await this.expectElementToHaveText(this.h1Text(newPage), text);

@@ -1,6 +1,6 @@
 import { test } from "../../utils/fixturePages";
 const testData = JSON.parse(
-  JSON.stringify(require("../../data/static-pages/datacenter-page/testData.json"))
+  JSON.stringify(require("../../data/pages/datacenter/testData.json"))
 );
 
 test("Check that border is red and 2px when clicking on the images Datacenter slider", async ({

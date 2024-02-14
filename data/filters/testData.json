@@ -14,7 +14,7 @@
         {
             "testID": "2",
             "expectedWebLink": "https://dev.swisscows.com/en/web?query=ronaldo&region=de-DE&freshness=Week",
-            "expectedNewsLink": "https://dev.swisscows.com/en/news?query=news&region=de-DE&freshness=News",
+            "expectedNewsLink": "https://dev.swisscows.com/en/news?query=news&region=de-DE&freshness=Week",
             "locatorId" : "Past Week",
             "responseWebUrl": "https://api.dev.swisscows.com/web/search?query=ronaldo&offset=0&itemsCount=10&region=de-DE&freshness=Week",
             "responseNewsUrl": "https://api.dev.swisscows.com/news/search?query=news&region=de-DE&language=de&itemsCount=10&offset=0&freshness=Week&sortOrder=Desc&sortBy=Created",

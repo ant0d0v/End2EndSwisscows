@@ -1,31 +1,33 @@
 import base from "./fixtureBase";
-import MainPage from "../pages/Main.Page";
+import Home from "../app/(home)/page";
 import Preloader from "../components/Preloader";
 import Header from "../components/(search)/Header";
 import HeaderStaticPages from "../components/HeaderStaticPages";
 import FooterFull from "../components/FooterFull";
 import imagesGallery from "../components/ImagesGallery";
-import ImagePage from "../pages/(search)/Image.Page";
-import MusicPage from "../pages/(search)/Music.Page";
-import VideoPage from "../pages/(search)/Video.Page";
-import WebPage from "../pages/(search)/Web.Page";
-import NewsPage from "../pages/(search)/News.Page";
-import ShoppingPage from "../pages/(search)/Shopping.Page";
-import DefaultSearchPage from "../pages/(pages)/DefaultSearch.Page";
-import CharityPage from "../pages/(pages)/Charity.Page";
-import DatacenterPage from "../pages/(pages)/Datacenter.Page";
-import EducationPage from "../pages/(pages)/Education.Page";
-import DonationPage from "../pages/(pages)/Donation.Page";
-import ContactUsPage from "../pages/(pages)/ContactUs.Page";
-import ImprintPage from "../pages/(pages)/Imprint.Page";
-import WhoWeArePage from "../pages/(pages)/WhoWeAre.Page";
-import VpnPage from "../pages/(landings)/Vpn.Page";
-import EmailPage from "../pages/(landings)/Email.Page";
+import ImagePage from "../app/(search)/images/page";
+import MusicPage from "../app/(search)/music/page";
+import MusicMyPage from "../app/(search)/music/my/page";
+import MusicPlaylistPage from "../app/(search)/music/playlist/page";
+import VideoPage from "../app/(search)/video/page";
+import WebPage from "../app/(search)/web/page";
+import NewsPage from "../app/(search)/news/page";
+import ShoppingPage from "../app/(search)/shopping/page";
+import DefaultSearchPage from "../app/(pages)/default-search/page";
+import CharityPage from "../app/(pages)/social-projects/page";
+import DatacenterPage from "../app/(pages)/datacenter/page";
+import MediaEducationPage from "../app/(pages)/media-education/page";
+import DonationPage from "../app/(pages)/donation/page";
+import ContactPage from "../app/(pages)/contact/page";
+import ImprintPage from "../app/(pages)/imprint/page";
+import AboutPage from "../app/(pages)/about/page";
+import VpnPage from "../app/(landings)/vpn/page";
+import EmailPage from "../app/(landings)/email/page";
 
 
 exports.test = base.test.extend({
-  mainPage: async ({ page }, use) => {
-    await use(new MainPage(page));
+  home: async ({ page }, use) => {
+    await use(new Home(page));
   },
   defaultSearchPage: async ({ page }, use) => {
     await use(new DefaultSearchPage(page));
@@ -41,6 +43,12 @@ exports.test = base.test.extend({
   },
   musicPage: async ({ page }, use) => {
     await use(new MusicPage(page));
+  },
+  musicMyPage: async ({ page }, use) => {
+    await use(new MusicMyPage(page));
+  },
+  musicPlaylistPage: async ({ page }, use) => {
+    await use(new MusicPlaylistPage(page));
   },
   videoPage: async ({ page }, use) => {
     await use(new VideoPage(page));
@@ -65,21 +73,21 @@ exports.test = base.test.extend({
     await footerFull.clickDatacenterLink();
     await use(new DatacenterPage(page));
   },
-  educationPage: async ({ page, footerFull }, use) => {
+  mediaEducationPage: async ({ page, footerFull }, use) => {
     await footerFull.clickEducationLink();
-    await use(new EducationPage(page));
+    await use(new MediaEducationPage(page));
   },
   donationPage: async ({ page, footerFull }, use) => {
     await footerFull.clickDonationLink();
     await use(new DonationPage(page));
   },
-  contactUsPage: async ({ page, footerFull }, use) => {
+  contactPage: async ({ page, footerFull }, use) => {
     await footerFull.clickContactUsLink();
-    await use(new ContactUsPage(page));
+    await use(new ContactPage(page));
   },
-  whoWeArePage: async ({ page, footerFull }, use) => {
+  aboutPage: async ({ page, footerFull }, use) => {
     await footerFull.clickWhoWeAreLink();
-    await use(new WhoWeArePage(page));
+    await use(new AboutPage(page));
   },
   imprintPage: async ({ page, footerFull }, use) => {
     await footerFull.clickImprintLink();
@@ -89,9 +97,9 @@ exports.test = base.test.extend({
     const newPage = await footerFull.clickEmailLinkAndNavigateToNewPage();
     await use(new EmailPage(newPage));
   },
-  defaultSearchPage: async ({ mainPage }, use) => {
-    await mainPage.clickFourQuestion()
-    const newPage = await mainPage.clickLinkInTheFourQuestionAndNavigateToDefaultSearchPage();
+  defaultSearchPage: async ({ home }, use) => {
+    await home.clickFourQuestion()
+    const newPage = await home.clickLinkInTheFourQuestionAndNavigateToDefaultSearchPage();
     await use(new DefaultSearchPage(newPage));
   },
 

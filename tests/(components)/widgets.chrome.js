@@ -2,15 +2,15 @@ import { test} from " /../../utils/fixturePages";
 const { expect } = require("@playwright/test");
 
 test("Check next and prev buttons in the video widget", async ({
-    mainPage,
+    home,
     webPage
   }) => {
      
      //Actions
-     await mainPage.headerStaticPages.clickHamburgerMenuButton();
-     await mainPage.headerStaticPages.hamburgerMenu.selectRegion("Germany");
-     await mainPage.headerStaticPages.searchForm.inputSearchCriteria("flovers video");
-     await mainPage.headerStaticPages.searchForm.clickEnterSearchField();
+     await home.headerStaticPages.clickHamburgerMenuButton();
+     await home.headerStaticPages.hamburgerMenu.selectRegion("Germany");
+     await home.headerStaticPages.searchForm.inputSearchCriteria("flovers video");
+     await home.headerStaticPages.searchForm.clickEnterSearchField();
      await webPage.item.expectWebItemsToBeVisible()
      await webPage.videoWidget.clickNextButtonUntilInvisible()
      await webPage.videoWidget.waitElementToBeVisible(webPage.videoWidget.nextButton)
@@ -24,15 +24,15 @@ test("Check next and prev buttons in the video widget", async ({
   });
 
   test("Check the width and visibility of images in the video widget", async ({
-    mainPage,
+    home,
     webPage
   }) => {
      
      //Actions
-     await mainPage.headerStaticPages.clickHamburgerMenuButton();
-     await mainPage.headerStaticPages.hamburgerMenu.selectRegion("Germany");
-     await mainPage.headerStaticPages.searchForm.inputSearchCriteria("flovers video");
-     await mainPage.headerStaticPages.searchForm.clickEnterSearchField();
+     await home.headerStaticPages.clickHamburgerMenuButton();
+     await home.headerStaticPages.hamburgerMenu.selectRegion("Germany");
+     await home.headerStaticPages.searchForm.inputSearchCriteria("flovers video");
+     await home.headerStaticPages.searchForm.clickEnterSearchField();
      await webPage.item.expectWebItemsToBeVisible()
      await webPage.videoWidget.waitElementToBeVisible(webPage.videoWidget.nextButton)
      
@@ -43,17 +43,17 @@ test("Check next and prev buttons in the video widget", async ({
   });
 
   test("Check click more button in the video widget", async ({
-    mainPage,
+    home,
     webPage,
     videoPage,
     page
   }) => {
      
      //Actions
-     await mainPage.headerStaticPages.clickHamburgerMenuButton();
-     await mainPage.headerStaticPages.hamburgerMenu.selectRegion("Germany");
-     await mainPage.headerStaticPages.searchForm.inputSearchCriteria("flovers video");
-     await mainPage.headerStaticPages.searchForm.clickEnterSearchField();
+     await home.headerStaticPages.clickHamburgerMenuButton();
+     await home.headerStaticPages.hamburgerMenu.selectRegion("Germany");
+     await home.headerStaticPages.searchForm.inputSearchCriteria("flovers video");
+     await home.headerStaticPages.searchForm.clickEnterSearchField();
      await webPage.item.expectWebItemsToBeVisible()
      await webPage.videoWidget.waitElementToBeVisible(webPage.videoWidget.nextButton)
      await webPage.videoWidget.clickMoreVideosButton()
@@ -64,15 +64,15 @@ test("Check next and prev buttons in the video widget", async ({
   });
 
   test("Check that open video in the video widget", async ({
-    mainPage,
+    home,
     webPage,
     videoPage
   }) => {
      //Actions
-     await mainPage.headerStaticPages.clickHamburgerMenuButton();
-     await mainPage.headerStaticPages.hamburgerMenu.selectRegion("Germany");
-     await mainPage.headerStaticPages.searchForm.inputSearchCriteria("flovers video");
-     await mainPage.headerStaticPages.searchForm.clickEnterSearchField();
+     await home.headerStaticPages.clickHamburgerMenuButton();
+     await home.headerStaticPages.hamburgerMenu.selectRegion("Germany");
+     await home.headerStaticPages.searchForm.inputSearchCriteria("flovers video");
+     await home.headerStaticPages.searchForm.clickEnterSearchField();
      await webPage.item.expectWebItemsToBeVisible()
      await webPage.videoWidget.waitElementToBeVisible(webPage.videoWidget.nextButton)
      const newPage = await webPage.videoWidget.clickFirstVideoAndNavigateToNewPage()
@@ -82,14 +82,14 @@ test("Check next and prev buttons in the video widget", async ({
   });
 
   test("Check the count and visibility of images in the image widget", async ({
-    mainPage,
+    home,
     webPage
   }) => {
      //Actions
-     await mainPage.headerStaticPages.clickHamburgerMenuButton();
-     await mainPage.headerStaticPages.hamburgerMenu.selectRegion("Germany");
-     await mainPage.headerStaticPages.searchForm.inputSearchCriteria("flowers");
-     await mainPage.headerStaticPages.searchForm.clickEnterSearchField();
+     await home.headerStaticPages.clickHamburgerMenuButton();
+     await home.headerStaticPages.hamburgerMenu.selectRegion("Germany");
+     await home.headerStaticPages.searchForm.inputSearchCriteria("flowers");
+     await home.headerStaticPages.searchForm.clickEnterSearchField();
      await webPage.item.expectWebItemsToBeVisible()
      
      //Assert
@@ -98,16 +98,16 @@ test("Check next and prev buttons in the video widget", async ({
   });
 
   test("Check click more button in the image widget", async ({
-    mainPage,
+    home,
     webPage,
     imagePage,
     page
   }) => {
      //Actions
-     await mainPage.headerStaticPages.clickHamburgerMenuButton();
-     await mainPage.headerStaticPages.hamburgerMenu.selectRegion("Germany");
-     await mainPage.headerStaticPages.searchForm.inputSearchCriteria("flowers");
-     await mainPage.headerStaticPages.searchForm.clickEnterSearchField();
+     await home.headerStaticPages.clickHamburgerMenuButton();
+     await home.headerStaticPages.hamburgerMenu.selectRegion("Germany");
+     await home.headerStaticPages.searchForm.inputSearchCriteria("flowers");
+     await home.headerStaticPages.searchForm.clickEnterSearchField();
      await webPage.item.expectWebItemsToBeVisible()
      await webPage.imagesWidget.clickMoreImagesButton()
      
@@ -117,15 +117,15 @@ test("Check next and prev buttons in the video widget", async ({
   });
 
   test("Check that open image in the image widget", async ({
-    mainPage,
+    home,
     webPage,
     imagePage
   }) => {
      //Actions
-     await mainPage.headerStaticPages.clickHamburgerMenuButton();
-     await mainPage.headerStaticPages.hamburgerMenu.selectRegion("Germany");
-     await mainPage.headerStaticPages.searchForm.inputSearchCriteria("flowers");
-     await mainPage.headerStaticPages.searchForm.clickEnterSearchField();
+     await home.headerStaticPages.clickHamburgerMenuButton();
+     await home.headerStaticPages.hamburgerMenu.selectRegion("Germany");
+     await home.headerStaticPages.searchForm.inputSearchCriteria("flowers");
+     await home.headerStaticPages.searchForm.clickEnterSearchField();
      await webPage.item.expectWebItemsToBeVisible()
      const newPage = await webPage.imagesWidget.clickFirstImageAndNavigateToNewPage()
      
@@ -134,15 +134,15 @@ test("Check next and prev buttons in the video widget", async ({
   });
 
   test("Check title of the image widget", async ({
-    mainPage,
+    home,
     webPage
   }) => {
      
      //Actions
-     await mainPage.headerStaticPages.clickHamburgerMenuButton();
-     await mainPage.headerStaticPages.hamburgerMenu.selectRegion("Germany");
-     await mainPage.headerStaticPages.searchForm.inputSearchCriteria("flowers");
-     await mainPage.headerStaticPages.searchForm.clickEnterSearchField();
+     await home.headerStaticPages.clickHamburgerMenuButton();
+     await home.headerStaticPages.hamburgerMenu.selectRegion("Germany");
+     await home.headerStaticPages.searchForm.inputSearchCriteria("flowers");
+     await home.headerStaticPages.searchForm.clickEnterSearchField();
      await webPage.item.expectWebItemsToBeVisible()
      
      //Assert
@@ -151,15 +151,15 @@ test("Check next and prev buttons in the video widget", async ({
   });
 
   test("Check open news in the news widget", async ({
-    mainPage,
+    home,
     webPage,
     newsPage
   }) => {
      //Actions
-     await mainPage.headerStaticPages.clickHamburgerMenuButton();
-     await mainPage.headerStaticPages.hamburgerMenu.selectRegion("Germany");
-     await mainPage.headerStaticPages.searchForm.inputSearchCriteria("news Ukraine");
-     await mainPage.headerStaticPages.searchForm.clickEnterSearchField();
+     await home.headerStaticPages.clickHamburgerMenuButton();
+     await home.headerStaticPages.hamburgerMenu.selectRegion("Germany");
+     await home.headerStaticPages.searchForm.inputSearchCriteria("news Ukraine");
+     await home.headerStaticPages.searchForm.clickEnterSearchField();
      await webPage.item.expectWebItemsToBeVisible()
      const newPage = await webPage.newsWidget.clickFirstNewsAndNavigateToNewPage()
      
@@ -167,15 +167,15 @@ test("Check next and prev buttons in the video widget", async ({
      await newsPage.expectNotToHaveUrl(newPage, "https://dev.swisscows.com/en/web?query=news+Ukraine&region=de-DE" )
   });
   test("Check the width and visibility of images in the news widget", async ({
-    mainPage,
+    home,
     webPage
   }) => {
      
      //Actions
-     await mainPage.headerStaticPages.clickHamburgerMenuButton();
-     await mainPage.headerStaticPages.hamburgerMenu.selectRegion("Germany");
-     await mainPage.headerStaticPages.searchForm.inputSearchCriteria("news Ukraine");
-     await mainPage.headerStaticPages.searchForm.clickEnterSearchField();
+     await home.headerStaticPages.clickHamburgerMenuButton();
+     await home.headerStaticPages.hamburgerMenu.selectRegion("Germany");
+     await home.headerStaticPages.searchForm.inputSearchCriteria("news Ukraine");
+     await home.headerStaticPages.searchForm.clickEnterSearchField();
      await webPage.item.expectWebItemsToBeVisible()
      
      //Assert
@@ -185,15 +185,15 @@ test("Check next and prev buttons in the video widget", async ({
   });
 
   test("Check title of the news widget", async ({
-    mainPage,
+    home,
     webPage
   }) => {
      
      //Actions
-     await mainPage.headerStaticPages.clickHamburgerMenuButton();
-     await mainPage.headerStaticPages.hamburgerMenu.selectRegion("Germany");
-     await mainPage.headerStaticPages.searchForm.inputSearchCriteria("news Ukraine");
-     await mainPage.headerStaticPages.searchForm.clickEnterSearchField();
+     await home.headerStaticPages.clickHamburgerMenuButton();
+     await home.headerStaticPages.hamburgerMenu.selectRegion("Germany");
+     await home.headerStaticPages.searchForm.inputSearchCriteria("news Ukraine");
+     await home.headerStaticPages.searchForm.clickEnterSearchField();
      await webPage.item.expectWebItemsToBeVisible()
      
      //Assert

@@ -1,7 +1,7 @@
 import { test } from "../../utils/fixturePages";
 const testData = JSON.parse(
   JSON.stringify(
-    require("../../data/static-pages/charity-page/testData.json")
+    require("../../data/pages/social-projects/testData.json")
   )
 );
 

@@ -5,15 +5,15 @@ const testData = JSON.parse(
   JSON.stringify(require("../../../data/error/testData.json"))
 );
 test("Check text advertising", async ({
-    mainPage,
+    home,
     webPage,
   }) => {
      
      //Actions
-     await mainPage.headerStaticPages.clickHamburgerMenuButton();
-     await mainPage.headerStaticPages.hamburgerMenu.selectRegion("Germany");
-     await mainPage.headerStaticPages.searchForm.inputSearchCriteria("laptop");
-     await mainPage.headerStaticPages.searchForm.clickEnterSearchField();
+     await home.headerStaticPages.clickHamburgerMenuButton();
+     await home.headerStaticPages.hamburgerMenu.selectRegion("Germany");
+     await home.headerStaticPages.searchForm.inputSearchCriteria("laptop");
+     await home.headerStaticPages.searchForm.clickEnterSearchField();
      await webPage.item.expectWebItemsToBeVisible()
      await webPage.adsText.waitElementToBeVisible(webPage.adsText.textAds)
    
@@ -24,15 +24,15 @@ test("Check text advertising", async ({
   });
 
   test("Check text and image product advertising ", async ({
-    mainPage,
+    home,
     webPage,
   }) => {
      
      //Actions
-     await mainPage.headerStaticPages.clickHamburgerMenuButton();
-     await mainPage.headerStaticPages.hamburgerMenu.selectRegion("Germany");
-     await mainPage.headerStaticPages.searchForm.inputSearchCriteria("crocs price");
-     await mainPage.headerStaticPages.searchForm.clickEnterSearchField();
+     await home.headerStaticPages.clickHamburgerMenuButton();
+     await home.headerStaticPages.hamburgerMenu.selectRegion("Germany");
+     await home.headerStaticPages.searchForm.inputSearchCriteria("crocs price");
+     await home.headerStaticPages.searchForm.clickEnterSearchField();
      await webPage.item.expectWebItemsToBeVisible()
      await webPage.adsProduct.waitElementToBeVisible(webPage.adsProduct.textProductsAds)
    
@@ -43,15 +43,15 @@ test("Check text advertising", async ({
   });
 
   test("Check next button and prev button in the product advertising ", async ({
-    mainPage,
+    home,
     webPage,
   }) => {
      
      //Actions
-     await mainPage.headerStaticPages.clickHamburgerMenuButton();
-     await mainPage.headerStaticPages.hamburgerMenu.selectRegion("Germany");
-     await mainPage.headerStaticPages.searchForm.inputSearchCriteria("price iphone in germany ");
-     await mainPage.headerStaticPages.searchForm.clickEnterSearchField();
+     await home.headerStaticPages.clickHamburgerMenuButton();
+     await home.headerStaticPages.hamburgerMenu.selectRegion("Germany");
+     await home.headerStaticPages.searchForm.inputSearchCriteria("price iphone in germany ");
+     await home.headerStaticPages.searchForm.clickEnterSearchField();
      await webPage.item.expectWebItemsToBeVisible()
      await webPage.adsProduct.waitElementToBeVisible(webPage.adsProduct.nextButton)
      await webPage.adsProduct.clickNextButtonUntilInvisible()
@@ -64,15 +64,15 @@ test("Check text advertising", async ({
       "class", /prev swiper-button-disabled/)
   });
   test("Check open advertising ", async ({
-    mainPage,
+    home,
     webPage
   }) => {
      
      //Actions
-     await mainPage.headerStaticPages.clickHamburgerMenuButton();
-     await mainPage.headerStaticPages.hamburgerMenu.selectRegion("Germany");
-     await mainPage.headerStaticPages.searchForm.inputSearchCriteria("price iphone in germany");
-     await mainPage.headerStaticPages.searchForm.clickEnterSearchField();
+     await home.headerStaticPages.clickHamburgerMenuButton();
+     await home.headerStaticPages.hamburgerMenu.selectRegion("Germany");
+     await home.headerStaticPages.searchForm.inputSearchCriteria("price iphone in germany");
+     await home.headerStaticPages.searchForm.clickEnterSearchField();
      await webPage.item.expectWebItemsToBeVisible()
      await webPage.adsProduct.waitElementToBeVisible(webPage.adsProduct.firstProduct)
      const newPage = await webPage.adsProduct.clickFirstProductAndNavigateToNewPage()

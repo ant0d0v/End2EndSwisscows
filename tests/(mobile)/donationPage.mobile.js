@@ -1,7 +1,4 @@
 import { test } from "../../utils/fixturePages";
-const testData = JSON.parse(
-  JSON.stringify(require("../../data/static-pages/donation-page/testData.json"))
-);
 
 test("Check design of the Donation page ", async ({ donationPage },testInfo) => {
   //Assert

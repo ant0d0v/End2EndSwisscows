@@ -10,40 +10,40 @@ const mainTable = parse(fs.readFileSync(path.join(__dirname, '../../localization
 });
 
 for (const { test_case, language, expected_content} of mainTable) {
-  test(`${test_case} Check content of main page for  ${language} localization`, async ({
-    mainPage,
+  test(`${test_case} Check content of home page for  ${language} localization`, async ({
+    home,
   }) => {
     //Actions
-    await mainPage.headerStaticPages.clickHamburgerMenuButton();
-    await mainPage.headerStaticPages.hamburgerMenu.clickLanguagesDropdownInHamburgerMenu();
-    await mainPage.headerStaticPages.hamburgerMenu.clickLanguageLinkInDropdown(
+    await home.headerStaticPages.clickHamburgerMenuButton();
+    await home.headerStaticPages.hamburgerMenu.clickLanguagesDropdownInHamburgerMenu();
+    await home.headerStaticPages.hamburgerMenu.clickLanguageLinkInDropdown(
       language
     );
 
     //Assert
-    await mainPage.expectElementToHaveText(mainPage.allContent,expected_content)
+    await home.expectElementToHaveText(home.allContent,expected_content)
   });
 }
 
-const contactTable = parse(fs.readFileSync(path.join(__dirname, '../../localization/contactUs.csv')), {
+const contactTable = parse(fs.readFileSync(path.join(__dirname, '../../localization/contact.csv')), {
   columns: true,
   skip_empty_lines: true
 });
 
 for (const { test_case, language, expected_content} of contactTable) {
   test(`${test_case} Check content of contact Us page for  ${language} localization`, async ({
-    contactUsPage
+    contactPage
   }) => {
     //Actions
-    await contactUsPage.waitUntilPageIsFullyLoaded();
-    await contactUsPage.headerStaticPages.clickHamburgerMenuButton();
-    await contactUsPage.headerStaticPages.hamburgerMenu.clickLanguagesDropdownInHamburgerMenu();
-    await contactUsPage.headerStaticPages.hamburgerMenu.clickLanguageLinkInDropdown(
+    await contactPage.waitUntilPageIsFullyLoaded();
+    await contactPage.headerStaticPages.clickHamburgerMenuButton();
+    await contactPage.headerStaticPages.hamburgerMenu.clickLanguagesDropdownInHamburgerMenu();
+    await contactPage.headerStaticPages.hamburgerMenu.clickLanguageLinkInDropdown(
       language
     );
 
     //Assert
-    await contactUsPage.expectElementToHaveText(contactUsPage.allContent,expected_content)
+    await contactPage.expectElementToHaveText(contactPage.allContent,expected_content)
   });
 }
 
@@ -95,16 +95,16 @@ const educationTable = parse(fs.readFileSync(path.join(__dirname, '../../localiz
 });
 for (const { test_case, language, expected_content} of educationTable) {
   test(`${test_case} Check content of education page for  ${language} localization`, async ({
-   educationPage
+   mediaEducationPage
   }) => {
     //Actions
-    await educationPage.waitUntilPageIsFullyLoaded();
-    await educationPage.headerStaticPages.clickHamburgerMenuButton();
-    await educationPage.headerStaticPages.hamburgerMenu.clickLanguagesDropdownInHamburgerMenu();
-    await educationPage.headerStaticPages.hamburgerMenu.clickLanguageLinkInDropdown(language);
+    await mediaEducationPage.waitUntilPageIsFullyLoaded();
+    await mediaEducationPage.headerStaticPages.clickHamburgerMenuButton();
+    await mediaEducationPage.headerStaticPages.hamburgerMenu.clickLanguagesDropdownInHamburgerMenu();
+    await mediaEducationPage.headerStaticPages.hamburgerMenu.clickLanguageLinkInDropdown(language);
 
     //Assert
-    await educationPage.expectElementToHaveText(educationPage.allContent, expected_content)
+    await mediaEducationPage.expectElementToHaveText(mediaEducationPage.allContent, expected_content)
   });
 }
 
@@ -130,22 +130,22 @@ for (const { test_case, language, expected_content} of imprintTable) {
   });
 }
 
-const whoweareTable = parse(fs.readFileSync(path.join(__dirname, '../../localization/whoweare.csv')), {
+const aboutTable = parse(fs.readFileSync(path.join(__dirname, '../../localization/about.csv')), {
   columns: true,
   skip_empty_lines: true
 });
 
-for (const { test_case, language, expected_content} of whoweareTable) {
-  test(`${test_case} Check content of Who we are page for  ${language} localization`, async ({
-    whoWeArePage
+for (const { test_case, language, expected_content} of aboutTable) {
+  test(`${test_case} Check content of About Page page for  ${language} localization`, async ({
+    aboutPage
   }) => {
     //Actions
-    await whoWeArePage.waitUntilPageIsFullyLoaded();
-    await whoWeArePage.headerStaticPages.clickHamburgerMenuButton();
-    await whoWeArePage.headerStaticPages.hamburgerMenu.clickLanguagesDropdownInHamburgerMenu();
-    await whoWeArePage.headerStaticPages.hamburgerMenu.clickLanguageLinkInDropdown(language);
+    await aboutPage.waitUntilPageIsFullyLoaded();
+    await aboutPage.headerStaticPages.clickHamburgerMenuButton();
+    await aboutPage.headerStaticPages.hamburgerMenu.clickLanguagesDropdownInHamburgerMenu();
+    await aboutPage.headerStaticPages.hamburgerMenu.clickLanguageLinkInDropdown(language);
 
     //Assert
-    await whoWeArePage.expectElementToHaveText(whoWeArePage.allContent, expected_content)
+    await aboutPage.expectElementToHaveText(aboutPage.allContent, expected_content)
   });
 }

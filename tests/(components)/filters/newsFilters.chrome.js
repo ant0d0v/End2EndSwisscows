@@ -7,16 +7,16 @@ const filterData = JSON.parse(
 
 for (const {testID,expectedNewsLink,locatorId,responseNewsUrl,filter } of filterData.byDate) {
     test(`${testID}  ${locatorId} filter navigates to the corresponding page.`, async ({
-      mainPage,
+      home,
       webPage,
       newsPage,
       page
     }) => {
       //Actions
-      await mainPage.headerStaticPages.clickHamburgerMenuButton();
-      await mainPage.headerStaticPages.hamburgerMenu.selectRegion("Germany");
-      await mainPage.headerStaticPages.searchForm.inputSearchCriteria("news");
-      await mainPage.headerStaticPages.searchForm.clickEnterSearchField();
+      await home.headerStaticPages.clickHamburgerMenuButton();
+      await home.headerStaticPages.hamburgerMenu.selectRegion("Germany");
+      await home.headerStaticPages.searchForm.inputSearchCriteria("news");
+      await home.headerStaticPages.searchForm.clickEnterSearchField();
       await webPage.item.expectWebItemsToBeVisible()
       await webPage.header.clickNewsSearchButton()
       await newsPage.item.expectNewsItemsToBeVisible()
@@ -42,16 +42,16 @@ for (const {testID,expectedNewsLink,locatorId,responseNewsUrl,filter } of filter
   }
 
   test("Cancel filter and navigates to the corresponding page.", async ({
-    mainPage,
+    home,
     webPage,
     newsPage,
     page
   }) => {
     //Actions
-    await mainPage.headerStaticPages.clickHamburgerMenuButton();
-    await mainPage.headerStaticPages.hamburgerMenu.selectRegion("Germany");
-    await mainPage.headerStaticPages.searchForm.inputSearchCriteria("news");
-    await mainPage.headerStaticPages.searchForm.clickEnterSearchField();
+    await home.headerStaticPages.clickHamburgerMenuButton();
+    await home.headerStaticPages.hamburgerMenu.selectRegion("Germany");
+    await home.headerStaticPages.searchForm.inputSearchCriteria("news");
+    await home.headerStaticPages.searchForm.clickEnterSearchField();
     await webPage.item.expectWebItemsToBeVisible()
     await webPage.header.clickNewsSearchButton()
     await newsPage.item.expectNewsItemsToBeVisible()
@@ -81,15 +81,15 @@ for (const {testID,expectedNewsLink,locatorId,responseNewsUrl,filter } of filter
   });
 
   test("Check list dropdown of filter by date ", async ({
-    mainPage,
+    home,
     webPage,
     newsPage
   }) => {
     //Actions
-    await mainPage.headerStaticPages.clickHamburgerMenuButton();
-    await mainPage.headerStaticPages.hamburgerMenu.selectRegion("Germany");
-    await mainPage.headerStaticPages.searchForm.inputSearchCriteria("ronaldo");
-    await mainPage.headerStaticPages.searchForm.clickEnterSearchField();
+    await home.headerStaticPages.clickHamburgerMenuButton();
+    await home.headerStaticPages.hamburgerMenu.selectRegion("Germany");
+    await home.headerStaticPages.searchForm.inputSearchCriteria("ronaldo");
+    await home.headerStaticPages.searchForm.clickEnterSearchField();
     await webPage.item.expectWebItemsToBeVisible()
     await webPage.header.clickNewsSearchButton()
     await newsPage.item.expectNewsItemsToBeVisible()
@@ -102,15 +102,15 @@ for (const {testID,expectedNewsLink,locatorId,responseNewsUrl,filter } of filter
   });
 
   test("Check that dropdown of filter by date is opened", async ({
-    mainPage,
+    home,
     webPage,
     newsPage
   }) => {
     //Actions
-    await mainPage.headerStaticPages.clickHamburgerMenuButton();
-    await mainPage.headerStaticPages.hamburgerMenu.selectRegion("Germany");
-    await mainPage.headerStaticPages.searchForm.inputSearchCriteria("ronaldo");
-    await mainPage.headerStaticPages.searchForm.clickEnterSearchField();
+    await home.headerStaticPages.clickHamburgerMenuButton();
+    await home.headerStaticPages.hamburgerMenu.selectRegion("Germany");
+    await home.headerStaticPages.searchForm.inputSearchCriteria("ronaldo");
+    await home.headerStaticPages.searchForm.clickEnterSearchField();
     await webPage.item.expectWebItemsToBeVisible()
     await webPage.header.clickNewsSearchButton()
     await newsPage.item.expectNewsItemsToBeVisible()

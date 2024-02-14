@@ -9,29 +9,29 @@ const constantsData = JSON.parse(
   JSON.stringify(require("../../data/project-constants/testData.json"))
 );
 
-test("Clicking on the swisscows's logo leads to the main page.", async ({
-  mainPage,
+test("Clicking on the swisscows's logo leads to the home page.", async ({
+  home,
   webPage
 }) => {
   //Actions
-  await mainPage.headerStaticPages.searchForm.inputSearchCriteria(testData.searchCriteria.first);
-  await mainPage.headerStaticPages.searchForm.clickEnterSearchField();
+  await home.headerStaticPages.searchForm.inputSearchCriteria(testData.searchCriteria.first);
+  await home.headerStaticPages.searchForm.clickEnterSearchField();
   await webPage.header.clickSwisscowsLogo();
 
   //Assert
-  await mainPage.expectHaveUrl(mainPage.page, constantsData.URL_MAIN_PAGE);
-  await mainPage.expectHaveTitle( mainPage.page, constantsData.TITLE_MAIN_PAGE );
+  await home.expectHaveUrl(home.page, constantsData.URL_MAIN_PAGE);
+  await home.expectHaveTitle( home.page, constantsData.TITLE_MAIN_PAGE );
 });
 
 test("Check query counter value when searching for images ", async ({
   header,
-  mainPage,
+  home,
   imagePage,
   webPage
 }) => {
   //Actions
-  await mainPage.headerStaticPages.searchForm.inputSearchCriteria(testData.searchCriteria.third);
-  await mainPage.headerStaticPages.searchForm.clickEnterSearchField();
+  await home.headerStaticPages.searchForm.inputSearchCriteria(testData.searchCriteria.third);
+  await home.headerStaticPages.searchForm.clickEnterSearchField();
   await webPage.item.expectWebItemsToBeVisible()
   await header.clickImageSearchButton();
 
@@ -43,11 +43,11 @@ test("Check query counter value when searching for video ", async ({
   videoPage,
   header,
   webPage,
-  mainPage
+  home
 }) => {
   //Actions
-  await mainPage.headerStaticPages.searchForm.inputSearchCriteria(testData.searchCriteria.third);
-  await mainPage.headerStaticPages.searchForm.clickEnterSearchField();
+  await home.headerStaticPages.searchForm.inputSearchCriteria(testData.searchCriteria.third);
+  await home.headerStaticPages.searchForm.clickEnterSearchField();
   await webPage.item.expectWebItemsToBeVisible()
   await header.clickVideoSearchButton();
 
@@ -56,14 +56,14 @@ test("Check query counter value when searching for video ", async ({
 });
 
 test("Check query counter value when searching for music", async ({
-    mainPage,
+    home,
     header,
     webPage,
     musicPage
   }) => {
     //Actions
-    await mainPage.headerStaticPages.searchForm.inputSearchCriteria(testData.searchCriteria.third);
-    await mainPage.headerStaticPages.searchForm.clickEnterSearchField();
+    await home.headerStaticPages.searchForm.inputSearchCriteria(testData.searchCriteria.third);
+    await home.headerStaticPages.searchForm.clickEnterSearchField();
     await webPage.item.expectWebItemsToBeVisible()
     await header.clickMusicSearchButton();
 
@@ -73,14 +73,14 @@ test("Check query counter value when searching for music", async ({
 
 
 test("Check query counter value when searching for news", async ({
-  mainPage,
+  home,
   header,
   newsPage,
   webPage
 }) => {
   //Actions
-  await mainPage.headerStaticPages.searchForm.inputSearchCriteria(testData.searchCriteria.third);
-  await mainPage.headerStaticPages.searchForm.clickEnterSearchField();
+  await home.headerStaticPages.searchForm.inputSearchCriteria(testData.searchCriteria.third);
+  await home.headerStaticPages.searchForm.clickEnterSearchField();
   await webPage.item.expectWebItemsToBeVisible()
   await webPage.header.clickHamburgerMenuButton();
   await webPage.header.hamburgerMenu.selectRegion("Germany");
@@ -94,14 +94,14 @@ test("Check query counter value when searching for news", async ({
 test("Check query counter value when searching for shopping", async ({
   header,
   shoppingPage,
-  mainPage,
+  home,
   webPage
 }) => {
   //Actions
-  await mainPage.headerStaticPages.clickHamburgerMenuButton();
-  await mainPage.headerStaticPages.hamburgerMenu.selectRegion("Germany");
-  await mainPage.headerStaticPages.searchForm.inputSearchCriteria(testData.searchCriteria.third);
-  await mainPage.headerStaticPages.searchForm.clickEnterSearchField();
+  await home.headerStaticPages.clickHamburgerMenuButton();
+  await home.headerStaticPages.hamburgerMenu.selectRegion("Germany");
+  await home.headerStaticPages.searchForm.inputSearchCriteria(testData.searchCriteria.third);
+  await home.headerStaticPages.searchForm.clickEnterSearchField();
   await webPage.item.expectWebItemsToBeVisible()
   await header.clickShoppingSearchButton();
 
@@ -111,12 +111,12 @@ test("Check query counter value when searching for shopping", async ({
 
   test("Check that email icon navigates to account/login page if user logged ", async({
     header,
-    mainPage,
+    home,
     webPage, 
   }) => {
     //Actions
-    await mainPage.headerStaticPages.searchForm.inputSearchCriteria(testData.searchCriteria.third);
-    await mainPage.headerStaticPages.searchForm.clickEnterSearchField();
+    await home.headerStaticPages.searchForm.inputSearchCriteria(testData.searchCriteria.third);
+    await home.headerStaticPages.searchForm.clickEnterSearchField();
     await webPage.item.expectWebItemsToBeVisible()
     const newPage = await header.clickBadgeEmailAndNavigateToNewPage();
 
@@ -130,12 +130,12 @@ test.describe("tests don't use cookie", () => {
   for (const { testID, expectedLink, locatorId, expectedTitle, } of data.headerLinks) {
     test(`${testID} Check that header badge ${locatorId} link navigate to corresponding pages`, async ({
       header,
-      mainPage,
+      home,
       webPage,
     }) => {
       //Actions
-      await mainPage.headerStaticPages.searchForm.inputSearchCriteria(testData.searchCriteria.third);
-      await mainPage.headerStaticPages.searchForm.clickEnterSearchField();
+      await home.headerStaticPages.searchForm.inputSearchCriteria(testData.searchCriteria.third);
+      await home.headerStaticPages.searchForm.clickEnterSearchField();
       await webPage.item.expectWebItemsToBeVisible()
       const newPage = await header.clickLinkInHeaderAndNavigateToNewPage(locatorId);
 
@@ -148,12 +148,12 @@ test.describe("tests don't use cookie", () => {
 
 test("Check that display of heart icon message in the header", async ({
   header,
-  mainPage,
+  home,
   webPage
 }) => {
   //Actions
-  await mainPage.headerStaticPages.searchForm.inputSearchCriteria(testData.searchCriteria.third);
-  await mainPage.headerStaticPages.searchForm.clickEnterSearchField();
+  await home.headerStaticPages.searchForm.inputSearchCriteria(testData.searchCriteria.third);
+  await home.headerStaticPages.searchForm.clickEnterSearchField();
   await webPage.item.expectWebItemsToBeVisible()
   await webPage.header.badgeCounter.clickBadgeCounter();
 
@@ -164,12 +164,12 @@ test("Check that display of heart icon message in the header", async ({
 });
 
 test("Check suggest on the web search", async ({
-  mainPage,
+  home,
   webPage
 }) => {
   //Actions
-  await mainPage.headerStaticPages.searchForm.inputSearchCriteria(testData.searchCriteria.first);
-  await mainPage.headerStaticPages.searchForm.clickEnterSearchField();
+  await home.headerStaticPages.searchForm.inputSearchCriteria(testData.searchCriteria.first);
+  await home.headerStaticPages.searchForm.clickEnterSearchField();
   await webPage.item.expectWebItemsToBeVisible()
   await webPage.header.searchForm.clickSearchField()
 
@@ -180,13 +180,13 @@ test("Check suggest on the web search", async ({
 });
 
 test("Check suggest on the image search", async ({
-  mainPage,
+  home,
   webPage,
   imagePage
 }) => {
   //Actions
-  await mainPage.headerStaticPages.searchForm.inputSearchCriteria(testData.searchCriteria.first);
-  await mainPage.headerStaticPages.searchForm.clickEnterSearchField();
+  await home.headerStaticPages.searchForm.inputSearchCriteria(testData.searchCriteria.first);
+  await home.headerStaticPages.searchForm.clickEnterSearchField();
   await webPage.header.clickImageSearchButton()
   await imagePage.item.expectImageItemsToBeVisible()
   await imagePage.header.searchForm.clickSearchField()
@@ -198,13 +198,13 @@ test("Check suggest on the image search", async ({
 });
 
 test("Check suggest on the video search", async ({
-  mainPage,
+  home,
   webPage,
   videoPage
 }) => {
   //Actions
-  await mainPage.headerStaticPages.searchForm.inputSearchCriteria(testData.searchCriteria.first);
-  await mainPage.headerStaticPages.searchForm.clickEnterSearchField();
+  await home.headerStaticPages.searchForm.inputSearchCriteria(testData.searchCriteria.first);
+  await home.headerStaticPages.searchForm.clickEnterSearchField();
   await webPage.header.clickVideoSearchButton()
   await videoPage.item.expectVideoItemsToBeVisible()
   await videoPage.header.searchForm.clickSearchField()
@@ -216,13 +216,13 @@ test("Check suggest on the video search", async ({
 });
 
 test("Check suggest on the news search", async ({
-  mainPage,
+  home,
   webPage,
   newsPage
 }) => {
   //Actions
-  await mainPage.headerStaticPages.searchForm.inputSearchCriteria(testData.searchCriteria.first);
-  await mainPage.headerStaticPages.searchForm.clickEnterSearchField();
+  await home.headerStaticPages.searchForm.inputSearchCriteria(testData.searchCriteria.first);
+  await home.headerStaticPages.searchForm.clickEnterSearchField();
   await webPage.item.expectWebItemsToBeVisible()
   await webPage.header.clickHamburgerMenuButton();
   await webPage.header.hamburgerMenu.selectRegion("Germany");
@@ -237,13 +237,13 @@ test("Check suggest on the news search", async ({
 });
 
 test("Check suggest on the shopping search", async ({
-  mainPage,
+  home,
   webPage,
   shoppingPage
 }) => {
   //Actions
-  await mainPage.headerStaticPages.searchForm.inputSearchCriteria(testData.searchCriteria.first);
-  await mainPage.headerStaticPages.searchForm.clickEnterSearchField();
+  await home.headerStaticPages.searchForm.inputSearchCriteria(testData.searchCriteria.first);
+  await home.headerStaticPages.searchForm.clickEnterSearchField();
   await webPage.item.expectWebItemsToBeVisible()
   await webPage.header.clickHamburgerMenuButton();
   await webPage.header.hamburgerMenu.selectRegion("Germany");
@@ -258,15 +258,15 @@ test("Check suggest on the shopping search", async ({
 });
 
 test("Check suggest on the music search", async ({
-  mainPage,
+  home,
   webPage,
   musicPage
 }) => {
   //Actions
-  await mainPage.headerStaticPages.searchForm.inputSearchCriteria(testData.searchCriteria.first);
-  await mainPage.headerStaticPages.searchForm.clickEnterSearchField();
+  await home.headerStaticPages.searchForm.inputSearchCriteria(testData.searchCriteria.first);
+  await home.headerStaticPages.searchForm.clickEnterSearchField();
   await webPage.header.clickMusicSearchButton()
-  await musicPage.track.expectMusicItemsToBeVisible()
+  await musicPage.track.expectMusicTracksToBeVisible()
   await musicPage.header.searchForm.clickSearchField()
  
   //Assert
