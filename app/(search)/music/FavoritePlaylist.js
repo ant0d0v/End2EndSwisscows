@@ -6,4 +6,10 @@ export default class FavoritePlaylist extends BaseComponent {
     super(page);
     this.playlist = this.page.getByRole('link', { name: /My favorite tracks/ })
   }
+  //Actions
+  clickPlaylist = async () => {
+    await this.clickElement( this.playlist,
+      `favorite playlist`
+    );
+  };
 }
