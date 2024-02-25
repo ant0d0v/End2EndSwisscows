@@ -4,36 +4,37 @@ const { expect } = require("@playwright/test");
 export default class Track extends BaseComponent {
   constructor(page) {
     super(page);
+
+    const root = "article.item--audio";
    //Locators
-   this.musicTracks = this.page.locator("article.item--audio h2")
-   this.firsTrack = this.page.locator("article.item--audio").nth(0)
-   this.lastTrack = (id) => this.page.locator("article.item--audio").nth(`${id}`)
-   this.favoriteButtonInFirsTrack = this.page.locator("button.button.favorite").nth(0)
-   this.valueOfProgressBarInFirstTrack = this.page.locator("article.item--audio div.progress-bar div.progress").nth(0)
-   this.timeLineInFirstTrack = this.page.locator("article.item--audio div.timeline").first()
-   this.secondTrack = this.page.locator("article.item--audio").nth(1)
-   this.playButtonInFirstTrack = this.page.locator("article.item--audio button.play-pause use").first()
-   this.allPlayButton = this.page.locator("article.item--audio button.play-pause use")
+   this.tracksName = this.page.locator(`${root} h2`)
+   this.track = (index) => this.page.locator(`${root}`).nth(index - 1)
+   this.lastTrack = (id) => this.page.locator(`${root}`).nth(`${id}`)
+   this.favoriteButton = (index) => this.page.locator("button.button.favorite").nth(index - 1)
+   this.valueProgressBar = (index) => this.page.locator(`${root} div.progress-bar div.progress`).nth(index - 1)
+   this.timeLine = (index) => this.page.locator(`${root} div.timeline`).nth(index - 1)
+   this.playButton = (index) => this.page.locator(`${root} button.play-pause use`).nth(index - 1)
+   this.allPlayButton = this.page.locator(`${root} button.play-pause use`)
   }
   //Action
-  clickPlayButtonInFirstTrack = async () => {
-    await this.clickElement( this.playButtonInFirstTrack,
-      `play button in the first track`
+  clickPlayButtonNumberTrack = async (index) => {
+    await this.clickElement( this.playButton(index),
+      `play button of track with index${index}`
     );
   };
-  clickTimeLineInFirstTrack = async () => {
-    await this.clickElement( this.timeLineInFirstTrack,
-      `play button in the first track`
+  clickTimeLineNumberTrack = async (index) => {
+    await this.clickElement( this.timeLine(index),
+      `Time Line of track with index${index}`
     );
   };
-  clickPauseButtonInFirstTrack = async () => {
-    await this.clickElement( this.playButtonInFirstTrack,
-      `pause button in the first track`
+  clickPauseButtonNumberTrack = async (index) => {
+    await this.clickElement(this.playButton(index),
+      `pause button of track with index${index}`
     );
   };
-  clickFavoriteButtonInFirstTrack = async () => {
-    await this.clickElement(this.favoriteButtonInFirsTrack,
-      `favorite button in the first track`
+  clickFavoriteButtonNumberTrack = async (index) => {
+    await this.clickElement(this.favoriteButton(index),
+      `favorite button of track with index${index}`
     );
   };
   scrollByVisibleLastTrack = async () => {
@@ -44,7 +45,7 @@ export default class Track extends BaseComponent {
   //Verify
   expectMusicTracksToBeVisible = async () => {
     await this.page.waitForSelector("article.item--audio h2",{ state: 'visible' })
-    await this.expectAreElementsInListDisplayed(this.musicTracks)
+    await this.expectAreElementsInListDisplayed(this.tracksName)
   };
   
 }
