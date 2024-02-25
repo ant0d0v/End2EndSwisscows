@@ -1,7 +1,7 @@
-import { test} from "../../../../utils/fixturePages";
+import { test} from "../../../utils/fixturePages";
 const { expect } = require("@playwright/test");
 const testData = JSON.parse(
-    JSON.stringify(require("../../../../data/error/testData.json"))
+    JSON.stringify(require("../../../data/error/testData.json"))
   );
 
 test("Check 202 No Results Found error page ", async ({
