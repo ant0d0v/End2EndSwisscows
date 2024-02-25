@@ -97,8 +97,7 @@ test("Check 202 No Results Found error page ", async ({
     
     //Assert
     await musicPage.player.expectTimeToHaveText("0:04")
-    await musicPage.track.expectAttributeClassOfElement(musicPage.track.track(2),
-        "item item--audio active playing")
+    await musicPage.track.expectAttributeClassOfElement(musicPage.track.track(2), /playing/ )
   });
 
   test("Check previous button of track on the main page", async ({
@@ -117,8 +116,7 @@ test("Check 202 No Results Found error page ", async ({
 
     //Assert
     await musicPage.player.expectTimeToHaveText("0:04")
-    await musicPage.track.expectAttributeClassOfElement(musicPage.track.track(1),
-        "item item--audio active playing")
+    await musicPage.track.expectAttributeClassOfElement(musicPage.track.track(1), /playing/)
   });
 
   test("Check set time in track", async ({

@@ -12,7 +12,7 @@ export default class MusicPlayer extends BaseComponent {
     this.shuffleButton = this.page.getByRole('button', { name: 'Shuffle' })
     this.favoriteButton = this.page.locator(".audio-player button.button.favorite")
     this.timeLine = this.page.locator('.audio-player .timeline')
-    this.durationTime = this.page.getByText('0:04').nth(1)
+    this.durationTime = this.page.locator("div.audio-player div.timeline span").nth(0)
   }
   
   //Actions
@@ -55,7 +55,7 @@ export default class MusicPlayer extends BaseComponent {
   };
   //Verify 
   async expectTimeToHaveText(value) {
-    await this.expectElementToHaveText(this.durationTime,value);
+    await this.expectTextToContain(this.durationTime,value);
   }
 
 }

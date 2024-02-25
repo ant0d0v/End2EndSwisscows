@@ -12,5 +12,10 @@ export default class MusicMyPage extends BasePage {
     this.track = new Track(page);
     this.header  = new Header(page);
     this.error = new Error(page)
+    //Locators 
+    this.titleName = this.page.getByRole('heading', { name: 'My favorite tracks' })
   }
+  expectPageToBeOpen = async () => {
+    await this.expectHaveUrl(this.page, "https://dev.swisscows.com/en/music/my?query=Skofka")
+  };
 }
