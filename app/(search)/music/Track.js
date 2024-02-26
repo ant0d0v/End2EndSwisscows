@@ -1,10 +1,13 @@
 import BaseComponent from "../../../base/BaseComponent";
 const { expect } = require("@playwright/test");
+const filterData = JSON.parse(
+  JSON.stringify(require("../../../data/auth/user.json"))
+);
 
 export default class Track extends BaseComponent {
   constructor(page) {
     super(page);
-
+  
     const root = "article.item--audio";
    //Locators
    this.tracksName = this.page.locator(`${root} h2`)
@@ -37,6 +40,24 @@ export default class Track extends BaseComponent {
       `favorite button of track with index${index}`
     );
   };
+  clickFavoriteButtonNumberTrackAndGetResponse = async (index) => {
+    const responsePromise = this.page.waitForResponse("https://api.dev.swisscows.com/music/tracks/my")
+    await this.clickElement(this.favoriteButton(index),
+      `favorite button of track with index${index}`
+    );
+    const response = await responsePromise;
+    return response;
+  };
+  deleteTrackFromFavorite = async (id) => {
+    const response = await this.page.request.delete(`https://api.dev.swisscows.com/music/tracks/my/${id}`,{
+    headers: {
+      'Accept': 'application/json, text/plain, */*',
+      'Authorization': `Bearer ${filterData["origins"][0]["localStorage"][0]["value"]}`,
+    },
+   });
+    expect(response.status()).toBe(204);
+  }
+
   scrollByVisibleLastTrack = async () => {
     for(let i = 0;i < 200 ; i++){
     await this.scrollByVisibleElement(this.lastTrack(i), "last track");

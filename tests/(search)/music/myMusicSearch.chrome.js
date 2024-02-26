@@ -1,8 +1,20 @@
 import { test} from "../../../utils/fixturePages";
 const { expect } = require("@playwright/test");
+let response;
 const testData = JSON.parse(
     JSON.stringify(require("../../../data/error/testData.json"))
   );
+ test.afterEach(async ({ musicMyPage }) => {
+    if (response) {
+        // Parse response data
+        const responseData = await response.json();
+        if (responseData.id !== null) {
+            // Delete track from favorite 
+            await musicMyPage.track.deleteTrackFromFavorite(responseData.id);
+        }
+    }
+  });
+
 test.describe.configure({ mode: "default" });
 test("Check No items Found error page ", async ({
     home,
@@ -15,7 +27,7 @@ test("Check No items Found error page ", async ({
     await musicPage.header.clickMusicSearchButton()
     await musicPage.track.expectMusicTracksToBeVisible()
     await musicPage.track.clickFavoriteButtonNumberTrack(1)
-    await musicPage.favoritePlaylist.clickPlaylist()
+    await musicPage.clickFavoritePlaylist()
     await musicMyPage.expectPageToBeOpen()
     await musicMyPage.track.clickFavoriteButtonNumberTrack(1)
     
@@ -36,7 +48,7 @@ test("Check No items Found error page ", async ({
     await musicPage.header.clickMusicSearchButton()
     await musicPage.track.expectMusicTracksToBeVisible()
     await musicPage.track.clickFavoriteButtonNumberTrack(1)
-    await musicPage.favoritePlaylist.clickPlaylist()
+    await musicPage.clickFavoritePlaylist()
     await musicMyPage.expectPageToBeOpen()
     await musicMyPage.track.clickPlayButtonNumberTrack(1)
     await musicMyPage.player.clickFavoriteButton()
@@ -58,7 +70,7 @@ test("Check No items Found error page ", async ({
     await musicPage.header.clickMusicSearchButton()
     await musicPage.track.expectMusicTracksToBeVisible()
     await musicPage.track.clickFavoriteButtonNumberTrack(1)
-    await musicPage.favoritePlaylist.clickPlaylist()
+    await musicPage.clickFavoritePlaylist()
     await musicMyPage.expectPageToBeOpen()
     await musicMyPage.track.clickPlayButtonNumberTrack(1)
     await musicMyPage.player.expectTimeToHaveText("0:04")
@@ -81,16 +93,15 @@ test("Check No items Found error page ", async ({
     await home.header.searchForm.clickEnterSearchField();
     await musicPage.header.clickMusicSearchButton()
     await musicPage.track.expectMusicTracksToBeVisible()
-    await musicPage.track.clickFavoriteButtonNumberTrack(1)
-    await musicPage.favoritePlaylist.clickPlaylist()
+    response = await musicPage.track.clickFavoriteButtonNumberTrackAndGetResponse(1)
+    await musicPage.clickFavoritePlaylist()
     await musicMyPage.expectPageToBeOpen()
     await musicMyPage.track.clickPlayButtonNumberTrack(1)
 
     //Assert
     await musicMyPage.player.expectTimeToHaveText("0:04")
     await musicMyPage.track.expectAttributeToHaveValue(musicMyPage.track.playButton(1),
-        "xlink:href", /pause/)
-    await musicMyPage.track.clickFavoriteButtonNumberTrack(1)    
+        "xlink:href", /pause/) 
   });
 
   test("Check pause track on my music page", async ({
@@ -103,8 +114,8 @@ test("Check No items Found error page ", async ({
     await home.header.searchForm.clickEnterSearchField();
     await musicPage.header.clickMusicSearchButton()
     await musicPage.track.expectMusicTracksToBeVisible()
-    await musicPage.track.clickFavoriteButtonNumberTrack(1)
-    await musicPage.favoritePlaylist.clickPlaylist()
+    response = await musicPage.track.clickFavoriteButtonNumberTrackAndGetResponse(1)
+    await musicPage.clickFavoritePlaylist()
     await musicMyPage.expectPageToBeOpen()
     await musicMyPage.track.clickPlayButtonNumberTrack(1)
     await musicMyPage.player.expectTimeToHaveText("0:04")
@@ -114,8 +125,7 @@ test("Check No items Found error page ", async ({
     await musicMyPage.track.expectAttributeClassOfElement(musicMyPage.track.track(1),
       "item item--audio active")
     await musicMyPage.track.expectAttributeToHaveValue(musicMyPage.track.playButton(1),
-        "xlink:href", /play/)
-    await musicMyPage.track.clickFavoriteButtonNumberTrack(1)    
+        "xlink:href", /play/)   
   });
 
   test("Check set time in track", async ({
@@ -128,8 +138,8 @@ test("Check No items Found error page ", async ({
     await home.header.searchForm.clickEnterSearchField();
     await musicPage.header.clickMusicSearchButton()
     await musicPage.track.expectMusicTracksToBeVisible()
-    await musicPage.track.clickFavoriteButtonNumberTrack(1)
-    await musicPage.favoritePlaylist.clickPlaylist()
+    response = await musicPage.track.clickFavoriteButtonNumberTrackAndGetResponse(1)
+    await musicPage.clickFavoritePlaylist()
     await musicMyPage.expectPageToBeOpen()
     await musicMyPage.track.clickPlayButtonNumberTrack(1)
     await musicMyPage.player.expectTimeToHaveText("0:04")
@@ -139,8 +149,7 @@ test("Check No items Found error page ", async ({
     await musicMyPage.track.expectAttributeToHaveValue(musicMyPage.track.valueProgressBar(1),
       "style", /width: 5/)
     await musicMyPage.player.expectAttributeToHaveValue(musicMyPage.player.progressBar,
-      "style", /width: 5/)
-    await musicMyPage.track.clickFavoriteButtonNumberTrack(1)  
+      "style", /width: 5/) 
   });
 
   test("Check set time in the player", async ({
@@ -153,8 +162,8 @@ test("Check No items Found error page ", async ({
     await home.header.searchForm.clickEnterSearchField();
     await musicPage.header.clickMusicSearchButton()
     await musicPage.track.expectMusicTracksToBeVisible()
-    await musicPage.track.clickFavoriteButtonNumberTrack(1)
-    await musicPage.favoritePlaylist.clickPlaylist()
+    response = await musicPage.track.clickFavoriteButtonNumberTrackAndGetResponse(1)
+    await musicPage.clickFavoritePlaylist()
     await musicMyPage.expectPageToBeOpen()
     await musicMyPage.track.clickPlayButtonNumberTrack(1)
     await musicMyPage.player.expectTimeToHaveText("0:04")
@@ -164,8 +173,7 @@ test("Check No items Found error page ", async ({
     await musicMyPage.track.expectAttributeToHaveValue(musicMyPage.track.valueProgressBar(1),
       "style", /width: 5/)
     await musicMyPage.player.expectAttributeToHaveValue(musicPage.player.progressBar,
-      "style", /width: 5/)
-    await musicMyPage.track.clickFavoriteButtonNumberTrack(1)    
+      "style", /width: 5/)   
   });
 
   test("Check pause track in player on my music page", async ({
@@ -178,8 +186,8 @@ test("Check No items Found error page ", async ({
     await home.header.searchForm.clickEnterSearchField();
     await musicPage.header.clickMusicSearchButton()
     await musicPage.track.expectMusicTracksToBeVisible()
-    await musicPage.track.clickFavoriteButtonNumberTrack(1)
-    await musicPage.favoritePlaylist.clickPlaylist()
+    response = await musicPage.track.clickFavoriteButtonNumberTrackAndGetResponse(1)
+    await musicPage.clickFavoritePlaylist()
     await musicMyPage.expectPageToBeOpen()
     await musicMyPage.track.clickPlayButtonNumberTrack(1)
     await musicMyPage.player.expectTimeToHaveText("0:04")
@@ -191,8 +199,7 @@ test("Check No items Found error page ", async ({
     await musicPage.track.expectAttributeToHaveValue(musicMyPage.track.playButton(1),
       "xlink:href", /play/)
     await musicPage.player.expectAttributeToHaveValue(musicMyPage.player.playButton,
-      "xlink:href", /play/)
-    await musicMyPage.track.clickFavoriteButtonNumberTrack(1)      
+      "xlink:href", /play/)    
   });
 
   test("Check play track in player on my music page", async ({
@@ -205,8 +212,8 @@ test("Check No items Found error page ", async ({
     await home.header.searchForm.clickEnterSearchField();
     await musicPage.header.clickMusicSearchButton()
     await musicPage.track.expectMusicTracksToBeVisible()
-    await musicPage.track.clickFavoriteButtonNumberTrack(1)
-    await musicPage.favoritePlaylist.clickPlaylist()
+    response = await musicPage.track.clickFavoriteButtonNumberTrackAndGetResponse(1)
+    await musicPage.clickFavoritePlaylist()
     await musicMyPage.expectPageToBeOpen()
     await musicMyPage.track.clickPlayButtonNumberTrack(1)
     await musicMyPage.player.expectTimeToHaveText("0:04")
@@ -219,8 +226,7 @@ test("Check No items Found error page ", async ({
     await musicMyPage.track.expectAttributeToHaveValue(musicMyPage.track.playButton(1),
         "xlink:href", /pause/)
     await musicPage.player.expectAttributeToHaveValue(musicMyPage.player.playButton,
-        "xlink:href", /pause/)
-    await musicMyPage.track.clickFavoriteButtonNumberTrack(1)          
+        "xlink:href", /pause/)      
   });
 
   test("Check regional search", async ({
@@ -234,8 +240,8 @@ test("Check No items Found error page ", async ({
     await home.header.searchForm.clickEnterSearchField();
     await musicPage.header.clickMusicSearchButton()
     await musicPage.track.expectMusicTracksToBeVisible()
-    await musicPage.track.clickFavoriteButtonNumberTrack(1)
-    await musicPage.favoritePlaylist.clickPlaylist()
+    response = await musicPage.track.clickFavoriteButtonNumberTrackAndGetResponse(1)
+    await musicPage.clickFavoritePlaylist()
     await musicMyPage.expectPageToBeOpen()
     await musicMyPage.header.clickHamburgerMenuButton();
     await musicMyPage.header.hamburgerMenu.selectRegion("Germany");
@@ -246,5 +252,5 @@ test("Check No items Found error page ", async ({
     await musicMyPage.track.expectListToHaveCount(musicMyPage.track.tracksName, 1)
     await musicMyPage.track.expectAreElementsInListDisplayed(musicMyPage.track.allPlayButton)
     await musicMyPage.expectHaveUrl(page,  process.env.WEB_URL + "en/music/my?query=Skofka&region=de-DE")
-    await musicMyPage.track.clickFavoriteButtonNumberTrack(1)
+    
   });

@@ -223,7 +223,7 @@ test("Check 202 No Results Found error page ", async ({
       "item item--audio")
     await musicPage.player.expectAttributeClassOfElement(musicPage.player.shuffleButton, /active/) 
   });
-
+  test.describe('favorite function', () => { test.use({ mode: "default" })
   test("Check add track in the favorite", async ({
     home,
     musicPage
@@ -238,8 +238,7 @@ test("Check 202 No Results Found error page ", async ({
     //Assert
     await musicPage.track.expectAttributeClassOfElement(musicPage.track.favoriteButton(1),
       /active/)
-    await musicPage.favoritePlaylist.expectElementToHaveText(musicPage.favoritePlaylist.playlist, 
-      /My favorite tracks1/)
+    await musicPage.favoritePlaylist.expectPlaylistToHaveText(/My favorite tracks1/)
     await musicPage.track.clickFavoriteButtonNumberTrack(1)   
   });
 
@@ -260,7 +259,7 @@ test("Check 202 No Results Found error page ", async ({
     //Assert
     await musicPage.track.expectAttributeClassOfElement(musicPage.track.favoriteButton(1),
       "button favorite")
-    await musicPage.favoritePlaylist.expectElementToBeHidden(musicPage.favoritePlaylist.playlist)
+    await musicPage.favoritePlaylist.expectPlaylistToBeHidden()
   });
 
   test("Check add track in the favorite from player", async ({
@@ -279,8 +278,7 @@ test("Check 202 No Results Found error page ", async ({
     //Assert
     await musicPage.track.expectAttributeClassOfElement(musicPage.track.favoriteButton(1),/active/)
     await musicPage.track.expectAttributeClassOfElement(musicPage.player.favoriteButton, /active/)  
-    await musicPage.favoritePlaylist.expectElementToHaveText(musicPage.favoritePlaylist.playlist, 
-      /My favorite tracks1/)
+    await musicPage.favoritePlaylist.expectPlaylistToHaveText(/My favorite tracks1/)
     await musicPage.track.clickFavoriteButtonNumberTrack(1)   
   });
 
@@ -302,8 +300,9 @@ test("Check 202 No Results Found error page ", async ({
     await musicPage.track.expectAttributeClassOfElement(musicPage.track.favoriteButton(1),
       "button favorite")
     await musicPage.track.expectAttributeClassOfElement(musicPage.player.favoriteButton, "button favorite")    
-    await musicPage.favoritePlaylist.expectElementToBeHidden(musicPage.favoritePlaylist.playlist)
+    await musicPage.favoritePlaylist.expectPlaylistToBeHidden()
   });
+});
 
   test("Check infinity scroll to next page", async ({
     home,

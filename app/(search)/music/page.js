@@ -18,5 +18,14 @@ export default class MusicPage extends BasePage {
     this.header  = new Header(page);
     this.error = new Error(page)
     this.preloader = new Preloader(page)
+    //Locators 
+    
+    this.playlist = this.page.getByRole('link', { name: /My favorite tracks/ })
   }
+  //Actions
+  clickFavoritePlaylist = async () => {
+    await this.clickElement( this.playlist,
+      `favorite playlist`
+    );
+  };
 }
