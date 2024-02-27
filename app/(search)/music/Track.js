@@ -41,7 +41,7 @@ export default class Track extends BaseComponent {
     );
   };
   clickFavoriteButtonNumberTrackAndGetResponse = async (index) => {
-    const responsePromise = this.page.waitForResponse("https://api.dev.swisscows.com/music/tracks/my")
+    const responsePromise = this.page.waitForResponse(`${ process.env.API_URL}/music/tracks/my`)
     await this.clickElement(this.favoriteButton(index),
       `favorite button of track with index${index}`
     );
@@ -49,7 +49,7 @@ export default class Track extends BaseComponent {
     return response;
   };
   deleteTrackFromFavorite = async (id) => {
-    const response = await this.page.request.delete(`https://api.dev.swisscows.com/music/tracks/my/${id}`,{
+    const response = await this.page.request.delete(`${ process.env.API_URL}/music/tracks/my/${id}`,{
     headers: {
       'Accept': 'application/json, text/plain, */*',
       'Authorization': `Bearer ${filterData["origins"][0]["localStorage"][0]["value"]}`,

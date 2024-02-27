@@ -13,4 +13,7 @@ export default class MusicPlaylistPage extends BasePage {
     this.header  = new Header(page);
     this.error = new Error(page)
   }
+  expectPageToBeOpen = async () => {
+    await this.expectHaveUrl(this.page, /https:\/\/dev.swisscows.com\/en\/music\/playlist\?query=skofka/);
+  };
 }

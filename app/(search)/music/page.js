@@ -20,12 +20,18 @@ export default class MusicPage extends BasePage {
     this.preloader = new Preloader(page)
     //Locators 
     
-    this.playlist = this.page.getByRole('link', { name: /My favorite tracks/ })
+    this.favoritePlaylist = this.page.getByRole('link', { name: /My favorite tracks/ })
+    this.playlist = (index) => this.page.locator("/en/music/playlist?query=").nth(index - 1)
   }
   //Actions
   clickFavoritePlaylist = async () => {
-    await this.clickElement( this.playlist,
+    await this.clickElement( this.favoritePlaylist,
       `favorite playlist`
+    );
+  };
+  clickPlaylistNumber = async (index) => {
+    await this.clickElement( this.playlist(index),
+      `playlist ${index}`
     );
   };
 }
