@@ -58,8 +58,8 @@ export default class Track extends BaseComponent {
     expect(response.status()).toBe(204);
   }
 
-  scrollByVisibleLastTrack = async () => {
-    for(let i = 0;i < 200 ; i++){
+  scrollByVisibleTrackNumber = async (number) => {
+    for(let i = 0;i < number ; i++){
     await this.scrollByVisibleElement(this.lastTrack(i), "last track");
     }
   }

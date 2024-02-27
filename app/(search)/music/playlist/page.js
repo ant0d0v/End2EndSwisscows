@@ -11,9 +11,9 @@ export default class MusicPlaylistPage extends BasePage {
     this.player = new Player(page);
     this.track = new Track(page);
     this.header  = new Header(page);
-    this.error = new Error(page)
+    this.error = new Error(page)  
   }
   expectPageToBeOpen = async () => {
-    await this.expectHaveUrl(this.page, /https:\/\/dev.swisscows.com\/en\/music\/playlist\?query=skofka/);
+    await this.expectHaveUrl(this.page, /https:\/\/dev.swisscows.com\/en\/music\/playlist\?query=Skofka/);
   };
 }

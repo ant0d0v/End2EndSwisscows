@@ -313,7 +313,7 @@ test("Check 202 No Results Found error page ", async ({
     await home.header.searchForm.clickEnterSearchField();
     await musicPage.header.clickMusicSearchButton()
     await musicPage.track.expectMusicTracksToBeVisible()
-    await musicPage.track.scrollByVisibleLastTrack()
+    await musicPage.track.scrollByVisibleTrackNumber(200)
     await musicPage.preloader.waitUntilPreloaderToBeHidden()
 
     //Assert
@@ -356,3 +356,4 @@ test("Check 202 No Results Found error page ", async ({
     await musicPage.track.expectAreElementsInListDisplayed(musicPage.track.allPlayButton)
     await musicPage.expectHaveUrl(page, process.env.WEB_URL + "en/music?query=billie+jean&region=de-DE")
   });
+  
