@@ -356,4 +356,66 @@ test("Check 202 No Results Found error page ", async ({
     await musicPage.track.expectAreElementsInListDisplayed(musicPage.track.allPlayButton)
     await musicPage.expectHaveUrl(page, process.env.WEB_URL + "en/music?query=billie+jean&region=de-DE")
   });
+
+  test("Check the width and visibility images of playlist", async ({
+    home,
+    musicPage,
+  }) => {
+    //Actions
+    await home.header.searchForm.inputSearchCriteria("billie jean");
+    await home.header.searchForm.clickEnterSearchField();
+    await musicPage.header.clickMusicSearchButton()
+    await musicPage.track.expectMusicTracksToBeVisible()
+    
+    //Assert
+    await musicPage.playlist.expectImageToHaveWight("width", 50)
+    await musicPage.playlist.expectListToHaveCount(musicPage.playlist.allImages, 3)
+    await musicPage.playlist.expectAreElementsInListDisplayed(musicPage.playlist.allImages)
+  });
+
+  test("Check the width and visibility images of tracks", async ({
+    home,
+    musicPage,
+  }) => {
+    //Actions
+    await home.header.searchForm.inputSearchCriteria("billie jean");
+    await home.header.searchForm.clickEnterSearchField();
+    await musicPage.header.clickMusicSearchButton()
+    await musicPage.track.expectMusicTracksToBeVisible()
+    
+    //Assert
+    await musicPage.track.expectImageToHaveWight("width", 72)
+    await musicPage.track.expectListToHaveCount(musicPage.track.allImages, 20)
+    await musicPage.track.expectAreElementsInListDisplayed(musicPage.track.allImages)
+  });
+  test("Check width and visibility image in player", async ({
+    home,
+    musicPage,
+  }) => {
+    //Actions
+    await home.header.searchForm.inputSearchCriteria("billie jean");
+    await home.header.searchForm.clickEnterSearchField();
+    await musicPage.header.clickMusicSearchButton()
+    await musicPage.track.expectMusicTracksToBeVisible()
+    await musicPage.track.clickPlayButtonNumberTrack(1)
+    
+    //Assert
+    await musicPage.player.expectImageToHaveWight("width", 40)
+    await musicPage.player.expectElementToBeVisible(musicPage.player.image)
+  });
+
+  test("Check hovering buttons play/next/prev/pause/heart/ in player", async ({
+    home,
+    musicPage,
+  }) => {
+    //Actions
+    await home.header.searchForm.inputSearchCriteria("billie jean");
+    await home.header.searchForm.clickEnterSearchField();
+    await musicPage.header.clickMusicSearchButton()
+    await musicPage.track.expectMusicTracksToBeVisible()
+    await musicPage.track.clickPlayButtonNumberTrack(1)
+    
+    //Assert
+    await musicPage.player.expectColorsLinksWhenHovering(musicPage.player.allButtons, "color", "rgb(223, 93, 93)");
+  });
   

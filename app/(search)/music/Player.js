@@ -13,6 +13,8 @@ export default class MusicPlayer extends BaseComponent {
     this.favoriteButton = this.page.locator(".audio-player button.button.favorite")
     this.timeLine = this.page.locator('.audio-player .timeline')
     this.durationTime = this.page.locator("div.audio-player div.timeline span").nth(0)
+    this.allButtons = this.page.locator('.audio-player button')
+    this.image = this.page.locator('.audio-player img')
   }
   
   //Actions
@@ -57,5 +59,8 @@ export default class MusicPlayer extends BaseComponent {
   async expectTimeToHaveText(value) {
     await this.expectTextToContain(this.durationTime,value);
   }
+  expectImageToHaveWight = async (property, value) => {
+    await this.expectElementToHaveJSProperty(this.image , property, value);
+  };
 
 }

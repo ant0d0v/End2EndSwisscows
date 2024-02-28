@@ -18,6 +18,8 @@ export default class Track extends BaseComponent {
    this.timeLine = (index) => this.page.locator(`${root} div.timeline`).nth(index - 1)
    this.playButton = (index) => this.page.locator(`${root} button.play-pause use`).nth(index - 1)
    this.allPlayButton = this.page.locator(`${root} button.play-pause use`)
+   this.allImages = this.page.locator(`${root} img`)
+   
   }
   //Action
   clickPlayButtonNumberTrack = async (index) => {
@@ -68,5 +70,7 @@ export default class Track extends BaseComponent {
     await this.page.waitForSelector("article.item--audio h2",{ state: 'visible' })
     await this.expectAreElementsInListDisplayed(this.tracksName)
   };
-  
+  expectImageToHaveWight = async (property, value) => {
+    await this.expectElementsToHaveJSProperty(this.allImages , property, value);
+  };
 }
