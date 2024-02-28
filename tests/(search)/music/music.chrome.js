@@ -417,5 +417,6 @@ test("Check 202 No Results Found error page ", async ({
     
     //Assert
     await musicPage.player.expectColorsLinksWhenHovering(musicPage.player.allButtons, "color", "rgb(223, 93, 93)");
+    await musicPage.player.expectListToHaveCount(musicPage.player.allButtons, 6);
   });
   
