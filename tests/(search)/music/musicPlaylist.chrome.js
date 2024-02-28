@@ -1,5 +1,6 @@
 import { test} from "../../../utils/fixturePages";
 const { expect } = require("@playwright/test");
+const value = "Skofka";
 
   test("Check pause track on music page", async ({
     home,
@@ -7,12 +8,12 @@ const { expect } = require("@playwright/test");
     musicPlaylistPage
   }) => {
     //Actions
-    await home.header.searchForm.inputSearchCriteria("Skofka");
+    await home.header.searchForm.inputSearchCriteria(value);
     await home.header.searchForm.clickEnterSearchField();
     await musicPage.header.clickMusicSearchButton()
     await musicPage.track.expectMusicTracksToBeVisible()
     await musicPage.clickPlaylistNumber(1)
-    await musicPlaylistPage.expectPageToBeOpen()
+    await musicPlaylistPage.expectPageUrlToHaveParameter(`?query=${value}`)
     await musicPlaylistPage.track.clickPlayButtonNumberTrack(1)
     await musicPlaylistPage.player.expectTimeToHaveText("0:04")
     await musicPlaylistPage.track.clickPauseButtonNumberTrack(1)
@@ -30,12 +31,12 @@ const { expect } = require("@playwright/test");
     musicPlaylistPage
   }) => {
     //Actions
-    await home.header.searchForm.inputSearchCriteria("Skofka");
+    await home.header.searchForm.inputSearchCriteria(value);
     await home.header.searchForm.clickEnterSearchField();
     await musicPage.header.clickMusicSearchButton()
     await musicPage.track.expectMusicTracksToBeVisible()
     await musicPage.clickPlaylistNumber(1)
-    await musicPlaylistPage.expectPageToBeOpen()
+    await musicPlaylistPage.expectPageUrlToHaveParameter(`?query=${value}`)
     await musicPlaylistPage.track.clickPlayButtonNumberTrack(1)
     await musicPlaylistPage.player.expectTimeToHaveText("0:04")
     await musicPlaylistPage.player.clickNextButton()
@@ -51,12 +52,12 @@ const { expect } = require("@playwright/test");
     musicPlaylistPage
   }) => {
     //Actions
-    await home.header.searchForm.inputSearchCriteria("Skofka");
+    await home.header.searchForm.inputSearchCriteria(value);
     await home.header.searchForm.clickEnterSearchField();
     await musicPage.header.clickMusicSearchButton()
     await musicPage.track.expectMusicTracksToBeVisible()
     await musicPage.clickPlaylistNumber(1)
-    await musicPlaylistPage.expectPageToBeOpen()
+    await musicPlaylistPage.expectPageUrlToHaveParameter(`?query=${value}`)
     await musicPlaylistPage.track.clickPlayButtonNumberTrack(1)
     await musicPlaylistPage.player.expectTimeToHaveText("0:04")
     await musicPlaylistPage.player.clickNextButton()
@@ -73,12 +74,12 @@ const { expect } = require("@playwright/test");
     musicPlaylistPage
   }) => {
     //Actions
-    await home.header.searchForm.inputSearchCriteria("Skofka");
+    await home.header.searchForm.inputSearchCriteria(value);
     await home.header.searchForm.clickEnterSearchField();
     await musicPage.header.clickMusicSearchButton()
     await musicPage.track.expectMusicTracksToBeVisible()
     await musicPage.clickPlaylistNumber(1)
-    await musicPlaylistPage.expectPageToBeOpen()
+    await musicPlaylistPage.expectPageUrlToHaveParameter(`?query=${value}`)
     await musicPlaylistPage.track.clickPlayButtonNumberTrack(1)
     await musicPlaylistPage.player.expectTimeToHaveText("0:04")
     await musicPlaylistPage.track.clickTimeLineNumberTrack(1)
@@ -97,12 +98,12 @@ const { expect } = require("@playwright/test");
     musicPlaylistPage
   }) => {
     //Actions
-    await home.header.searchForm.inputSearchCriteria("Skofka");
+    await home.header.searchForm.inputSearchCriteria(value);
     await home.header.searchForm.clickEnterSearchField();
     await musicPage.header.clickMusicSearchButton()
     await musicPage.track.expectMusicTracksToBeVisible()
     await musicPage.clickPlaylistNumber(1)
-    await musicPlaylistPage.expectPageToBeOpen()
+    await musicPlaylistPage.expectPageUrlToHaveParameter(`?query=${value}`)
     await musicPlaylistPage.track.clickPlayButtonNumberTrack(1)
     await musicPlaylistPage.player.expectTimeToHaveText("0:04")
     await musicPlaylistPage.player.clickShuffleButton()
@@ -120,14 +121,14 @@ const { expect } = require("@playwright/test");
     musicPlaylistPage,
     page
   }) => {
-    const expectedUrl= new RegExp(`${process.env.WEB_URL}en/music/playlist\\?query=Skofka&id=\\d+&region=de-DE`);
+    const expectedUrl= new RegExp(`${process.env.WEB_URL}en/music/playlist\\?query=${value}&id=\\d+&region=de-DE`);
     //Actions
-    await home.header.searchForm.inputSearchCriteria("Skofka");
+    await home.header.searchForm.inputSearchCriteria(value);
     await home.header.searchForm.clickEnterSearchField();
     await musicPage.header.clickMusicSearchButton()
     await musicPage.track.expectMusicTracksToBeVisible()
     await musicPage.clickPlaylistNumber(1)
-    await musicPlaylistPage.expectPageToBeOpen()
+    await musicPlaylistPage.expectPageUrlToHaveParameter(`?query=${value}`)
     await musicPlaylistPage.header.clickHamburgerMenuButton();
     await musicPlaylistPage.header.hamburgerMenu.selectRegion("Germany");
     await musicPlaylistPage.track.expectMusicTracksToBeVisible()

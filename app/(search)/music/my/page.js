@@ -16,7 +16,8 @@ export default class MusicMyPage extends BasePage {
     this.titleName = this.page.getByRole('heading', { name: 'My favorite tracks' })
     this.playlist = this.page.getByRole('link', { name: /My favorite tracks/ })
   }
-  expectPageToBeOpen = async () => {
-    await this.expectHaveUrl(this.page, "https://dev.swisscows.com/en/music/my?query=Skofka")
+  expectPageUrlToHaveParameter = async (query) => {
+    const expectedUrlPattern = new RegExp(`${process.env.WEB_URL}en/music/my\\${query}`);
+    await this.expectHaveUrl(this.page, expectedUrlPattern);
   };
 }

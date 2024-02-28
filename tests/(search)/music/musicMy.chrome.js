@@ -1,6 +1,7 @@
 import { test} from "../../../utils/fixturePages";
 const { expect } = require("@playwright/test");
 let response;
+const value = "Skofka";
 const testData = JSON.parse(
     JSON.stringify(require("../../../data/error/testData.json"))
   );
@@ -22,13 +23,13 @@ test("Check No items Found error page ", async ({
     musicMyPage
   }) => {
     //Actions
-    await home.header.searchForm.inputSearchCriteria("Skofka");
+    await home.header.searchForm.inputSearchCriteria(value);
     await home.header.searchForm.clickEnterSearchField();
     await musicPage.header.clickMusicSearchButton()
     await musicPage.track.expectMusicTracksToBeVisible()
     await musicPage.track.clickFavoriteButtonNumberTrack(1)
     await musicPage.clickFavoritePlaylist()
-    await musicMyPage.expectPageToBeOpen()
+    await musicMyPage.expectPageUrlToHaveParameter(`?query=${value}`)
     await musicMyPage.track.clickFavoriteButtonNumberTrack(1)
     
     //Assert
@@ -43,13 +44,13 @@ test("Check No items Found error page ", async ({
     musicMyPage
   }) => {
     //Actions
-    await home.header.searchForm.inputSearchCriteria("Skofka");
+    await home.header.searchForm.inputSearchCriteria(value);
     await home.header.searchForm.clickEnterSearchField();
     await musicPage.header.clickMusicSearchButton()
     await musicPage.track.expectMusicTracksToBeVisible()
     await musicPage.track.clickFavoriteButtonNumberTrack(1)
     await musicPage.clickFavoritePlaylist()
-    await musicMyPage.expectPageToBeOpen()
+    await musicMyPage.expectPageUrlToHaveParameter(`?query=${value}`)
     await musicMyPage.track.clickPlayButtonNumberTrack(1)
     await musicMyPage.player.clickFavoriteButton()
     
@@ -65,13 +66,13 @@ test("Check No items Found error page ", async ({
     musicMyPage
   }) => {
     //Actions
-    await home.header.searchForm.inputSearchCriteria("Skofka");
+    await home.header.searchForm.inputSearchCriteria(value);
     await home.header.searchForm.clickEnterSearchField();
     await musicPage.header.clickMusicSearchButton()
     await musicPage.track.expectMusicTracksToBeVisible()
     await musicPage.track.clickFavoriteButtonNumberTrack(1)
     await musicPage.clickFavoritePlaylist()
-    await musicMyPage.expectPageToBeOpen()
+    await musicMyPage.expectPageUrlToHaveParameter(`?query=${value}`)
     await musicMyPage.track.clickPlayButtonNumberTrack(1)
     await musicMyPage.player.expectTimeToHaveText("0:04")
     await musicMyPage.track.clickFavoriteButtonNumberTrack(1)
@@ -89,13 +90,13 @@ test("Check No items Found error page ", async ({
     musicMyPage
   }) => {
     //Actions
-    await home.header.searchForm.inputSearchCriteria("Skofka");
+    await home.header.searchForm.inputSearchCriteria(value);
     await home.header.searchForm.clickEnterSearchField();
     await musicPage.header.clickMusicSearchButton()
     await musicPage.track.expectMusicTracksToBeVisible()
     response = await musicPage.track.clickFavoriteButtonNumberTrackAndGetResponse(1)
     await musicPage.clickFavoritePlaylist()
-    await musicMyPage.expectPageToBeOpen()
+    await musicMyPage.expectPageUrlToHaveParameter(`?query=${value}`)
     await musicMyPage.track.clickPlayButtonNumberTrack(1)
 
     //Assert
@@ -110,13 +111,13 @@ test("Check No items Found error page ", async ({
     musicMyPage
   }) => {
     //Actions
-    await home.header.searchForm.inputSearchCriteria("Skofka");
+    await home.header.searchForm.inputSearchCriteria(value);
     await home.header.searchForm.clickEnterSearchField();
     await musicPage.header.clickMusicSearchButton()
     await musicPage.track.expectMusicTracksToBeVisible()
     response = await musicPage.track.clickFavoriteButtonNumberTrackAndGetResponse(1)
     await musicPage.clickFavoritePlaylist()
-    await musicMyPage.expectPageToBeOpen()
+    await musicMyPage.expectPageUrlToHaveParameter(`?query=${value}`)
     await musicMyPage.track.clickPlayButtonNumberTrack(1)
     await musicMyPage.player.expectTimeToHaveText("0:04")
     await musicMyPage.track.clickPauseButtonNumberTrack(1)
@@ -134,13 +135,13 @@ test("Check No items Found error page ", async ({
     musicMyPage
   }) => {
     //Actions
-    await home.header.searchForm.inputSearchCriteria("Skofka");
+    await home.header.searchForm.inputSearchCriteria(value);
     await home.header.searchForm.clickEnterSearchField();
     await musicPage.header.clickMusicSearchButton()
     await musicPage.track.expectMusicTracksToBeVisible()
     response = await musicPage.track.clickFavoriteButtonNumberTrackAndGetResponse(1)
     await musicPage.clickFavoritePlaylist()
-    await musicMyPage.expectPageToBeOpen()
+    await musicMyPage.expectPageUrlToHaveParameter(`?query=${value}`)
     await musicMyPage.track.clickPlayButtonNumberTrack(1)
     await musicMyPage.player.expectTimeToHaveText("0:04")
     await musicMyPage.track.clickTimeLineNumberTrack(1)
@@ -158,13 +159,13 @@ test("Check No items Found error page ", async ({
     musicMyPage
   }) => {
     //Actions
-    await home.header.searchForm.inputSearchCriteria("Skofka");
+    await home.header.searchForm.inputSearchCriteria(value);
     await home.header.searchForm.clickEnterSearchField();
     await musicPage.header.clickMusicSearchButton()
     await musicPage.track.expectMusicTracksToBeVisible()
     response = await musicPage.track.clickFavoriteButtonNumberTrackAndGetResponse(1)
     await musicPage.clickFavoritePlaylist()
-    await musicMyPage.expectPageToBeOpen()
+    await musicMyPage.expectPageUrlToHaveParameter(`?query=${value}`)
     await musicMyPage.track.clickPlayButtonNumberTrack(1)
     await musicMyPage.player.expectTimeToHaveText("0:04")
     await musicMyPage.player.clickTimeLine()
@@ -182,13 +183,13 @@ test("Check No items Found error page ", async ({
     musicMyPage
   }) => {
     //Actions
-    await home.header.searchForm.inputSearchCriteria("Skofka");
+    await home.header.searchForm.inputSearchCriteria(value);
     await home.header.searchForm.clickEnterSearchField();
     await musicPage.header.clickMusicSearchButton()
     await musicPage.track.expectMusicTracksToBeVisible()
     response = await musicPage.track.clickFavoriteButtonNumberTrackAndGetResponse(1)
     await musicPage.clickFavoritePlaylist()
-    await musicMyPage.expectPageToBeOpen()
+    await musicMyPage.expectPageUrlToHaveParameter(`?query=${value}`)
     await musicMyPage.track.clickPlayButtonNumberTrack(1)
     await musicMyPage.player.expectTimeToHaveText("0:04")
     await musicMyPage.player.clickPauseButton()
@@ -208,13 +209,13 @@ test("Check No items Found error page ", async ({
     musicMyPage
   }) => {
     //Actions
-    await home.header.searchForm.inputSearchCriteria("Skofka");
+    await home.header.searchForm.inputSearchCriteria(value);
     await home.header.searchForm.clickEnterSearchField();
     await musicPage.header.clickMusicSearchButton()
     await musicPage.track.expectMusicTracksToBeVisible()
     response = await musicPage.track.clickFavoriteButtonNumberTrackAndGetResponse(1)
     await musicPage.clickFavoritePlaylist()
-    await musicMyPage.expectPageToBeOpen()
+    await musicMyPage.expectPageUrlToHaveParameter(`?query=${value}`)
     await musicMyPage.track.clickPlayButtonNumberTrack(1)
     await musicMyPage.player.expectTimeToHaveText("0:04")
     await musicMyPage.player.clickPauseButton()
@@ -236,21 +237,21 @@ test("Check No items Found error page ", async ({
     musicMyPage
   }) => {
     //Actions
-    await home.header.searchForm.inputSearchCriteria("Skofka");
+    await home.header.searchForm.inputSearchCriteria(value);
     await home.header.searchForm.clickEnterSearchField();
     await musicPage.header.clickMusicSearchButton()
     await musicPage.track.expectMusicTracksToBeVisible()
     response = await musicPage.track.clickFavoriteButtonNumberTrackAndGetResponse(1)
     await musicPage.clickFavoritePlaylist()
-    await musicMyPage.expectPageToBeOpen()
+    await musicMyPage.expectPageUrlToHaveParameter(`?query=${value}`)
     await musicMyPage.header.clickHamburgerMenuButton();
     await musicMyPage.header.hamburgerMenu.selectRegion("Germany");
     await musicMyPage.track.expectMusicTracksToBeVisible()
     
     //Assert
-    await musicMyPage.track.expectTextsToContainSearchCriteria(musicMyPage.track.tracksName, "skofka")
+    await musicMyPage.track.expectTextsToContainSearchCriteria(musicMyPage.track.tracksName, value.toLowerCase())
     await musicMyPage.track.expectListToHaveCount(musicMyPage.track.tracksName, 1)
     await musicMyPage.track.expectAreElementsInListDisplayed(musicMyPage.track.allPlayButton)
-    await musicMyPage.expectHaveUrl(page,  process.env.WEB_URL + "en/music/my?query=Skofka&region=de-DE")
+    await musicMyPage.expectHaveUrl(page,  process.env.WEB_URL + `en/music/my?query=${value}&region=de-DE`)
     
   });

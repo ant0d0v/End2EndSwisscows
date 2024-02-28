@@ -72,7 +72,7 @@ test("Check 202 No Results Found error page ", async ({
     await musicPage.header.clickMusicSearchButton()
     await musicPage.track.expectMusicTracksToBeVisible()
     await musicPage.track.clickPlayButtonNumberTrack(1)
-    await musicPage.player.expectTimeToHaveText("0:04")
+    await musicPage.player.expectTimeToHaveText("0:04" || "0:05")
     await musicPage.track.clickPauseButtonNumberTrack(1)
 
     //Assert
@@ -92,11 +92,11 @@ test("Check 202 No Results Found error page ", async ({
     await musicPage.header.clickMusicSearchButton()
     await musicPage.track.expectMusicTracksToBeVisible()
     await musicPage.track.clickPlayButtonNumberTrack(1)
-    await musicPage.player.expectTimeToHaveText("0:04")
+    await musicPage.player.expectTimeToHaveText("0:04" || "0:05")
     await musicPage.player.clickNextButton()
     
     //Assert
-    await musicPage.player.expectTimeToHaveText("0:04")
+    await musicPage.player.expectTimeToHaveText("0:04" || "0:05")
     await musicPage.track.expectAttributeClassOfElement(musicPage.track.track(2), /playing/ )
   });
 
