@@ -29,6 +29,9 @@ export default class Home extends BasePage {
   }
 
   //Actions
+  async open(){
+    await this.openPage("https://dev.swisscows.com/")
+  }
 
   clickAllQuestions = async () => {
     await this.clickAllElementsInList(this.allQuestions, `questions`);

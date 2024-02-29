@@ -12,14 +12,7 @@ export default class BaseComponent extends BasePage {
     })
     .catch(async (e) => await this.errorHandling(e, this.page));
   }
-  scrollDownUsingWheelMouse = async () => {
-    await test.step(`Swipe left}`, async () => {
-    for(let i = 0;i < 100; i++){
-      await this.page.mouse.wheel(0,500);
-      }
-    })
-    .catch(async (e) => await this.errorHandling(e, this.page));
-  }
+
   async waitElementToBeVisible(element) {
     await test.step(`Click on ${element} the until invisible`, async () => {
       let count = 0

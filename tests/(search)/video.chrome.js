@@ -41,14 +41,14 @@ test("Check infinity scroll to items-pane aside", async ({
     videoPage,
   }) => {
     //Actions
-    await home.header.searchForm.inputSearchCriteria("football");
+    await home.header.searchForm.inputSearchCriteria("video");
     await home.header.searchForm.clickEnterSearchField();
     await videoPage.header.clickVideoSearchButton()
     await videoPage.item.expectVideoItemsToBeVisible()
-    await videoPage.item.scrollDownUsingWheelMouse()
+    await videoPage.item.scrollWheelMouseToVideoNumber(90)
 
     //Assert
-    await videoPage.item.expectListToBeGreaterThanOrEqual(videoPage.item.images, 80)
+    await videoPage.item.expectListToBeGreaterThanOrEqual(videoPage.item.images, 90)
   });
 
   test("Check the width and visibility images of items", async ({
@@ -94,10 +94,10 @@ test("Check infinity scroll to items-pane aside", async ({
     await videoPage.header.clickVideoSearchButton()
     await videoPage.item.expectVideoItemsToBeVisible()
     await videoPage.item.clickVideoNumber(1)
-    await videoPage.player.clickOkButton()
+    await videoPage.itemDetails.player.clickOkButton()
     
     //Assert
-    await videoPage.player.expectTimeToHaveText("0:02")     
+    await videoPage.itemDetails.player.expectTimeToHaveText("0:02")     
   });
 
   test("Check description and title of video ", async ({
@@ -112,9 +112,10 @@ test("Check infinity scroll to items-pane aside", async ({
     await videoPage.item.clickVideoNumber(1)
     
     //Assert
-    await videoPage.player.expectElementToHaveText(videoPage.player.description, 
+    await videoPage.itemDetails.player.expectElementToHaveText(
+      videoPage.itemDetails.player.description, 
         "Video provider prevents videos from being watched anonymously. Watching this video can be tracked by the video provider.")
-    await videoPage.player.expectElementToHaveText(videoPage.player.title,"Privacy Warning")          
+    await videoPage.itemDetails.player.expectElementToHaveText(videoPage.itemDetails.player.title,"Privacy Warning")          
   });
 
   test("Check cancel button of video ", async ({
@@ -128,9 +129,47 @@ test("Check infinity scroll to items-pane aside", async ({
     await videoPage.header.clickVideoSearchButton()
     await videoPage.item.expectVideoItemsToBeVisible()
     await videoPage.item.clickVideoNumber(1)
-    await videoPage.player.clickCancelButton()
+    await videoPage.itemDetails.player.clickCancelButton()
     
     //Assert
-    await videoPage.player.expectElementToBeHidden(videoPage.player.videoPlayer)
+    await videoPage.itemDetails.player.expectElementToBeHidden(videoPage.itemDetails.player.videoPlayer)
     await videoPage.expectHaveUrl(page, `${process.env.WEB_URL}en/video?query=Skofka`)       
+  });
+
+  test("Check checkbox `Don't remind me again ` ", async ({
+    home,
+    videoPage
+  }) => {
+    //Actions
+    await home.header.searchForm.inputSearchCriteria("Skofka");
+    await home.header.searchForm.clickEnterSearchField();
+    await videoPage.header.clickVideoSearchButton()
+    await videoPage.item.expectVideoItemsToBeVisible()
+    await videoPage.item.clickVideoNumber(1)
+    await videoPage.itemDetails.player.selectCheckbox()
+    await videoPage.itemDetails.player.clickOkButton()
+    await videoPage.reloadPage()
+    await videoPage.item.clickVideoNumber(1)
+
+    //Assert 
+    await videoPage.itemDetails.player.expectTimeToHaveText("0:02") 
+    await videoPage.itemDetails.player.expectElementToBeHidden(videoPage.itemDetails.player.checkbox)        
+  });
+
+  test("Check video play if don't select checkbox `Don't remind me again ` ", async ({
+    home,
+    videoPage
+  }) => {
+    //Actions
+    await home.header.searchForm.inputSearchCriteria("Skofka");
+    await home.header.searchForm.clickEnterSearchField();
+    await videoPage.header.clickVideoSearchButton()
+    await videoPage.item.expectVideoItemsToBeVisible()
+    await videoPage.item.clickVideoNumber(1)
+    await videoPage.itemDetails.player.clickOkButton()
+    await videoPage.reloadPage()
+    await videoPage.item.clickVideoNumber(1)
+
+    //Assert
+    await videoPage.player.expectElementToBeVisible(videoPage.itemDetails.player.okButton)        
   });

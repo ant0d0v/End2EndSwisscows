@@ -28,6 +28,9 @@ export default class BasePage {
   }
 
   //Actions
+  async openPage(path){
+    await this.page.goto(path)
+  }
 
   async clickElement(element, nameElement) {
     await test.step(`Click on the ${nameElement}`, async () => {

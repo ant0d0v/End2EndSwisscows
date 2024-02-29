@@ -1,4 +1,5 @@
 import base from "./fixtureBase";
+// const base = require('@playwright/test');
 import Home from "../app/(home)/page";
 import Preloader from "../components/Preloader";
 import imagesGallery from "../components/ImagesGallery";
@@ -20,9 +21,13 @@ import ImprintPage from "../app/(pages)/imprint/page";
 import AboutPage from "../app/(pages)/about/page";
 import VpnPage from "../app/(landings)/vpn/page";
 import EmailPage from "../app/(landings)/email/page";
+import Application from "../app/index.js";
 
 
 exports.test = base.test.extend({
+  app: async ({page}, use) => {
+    await use(new Application(page));
+  },
   home: async ({ page }, use) => {
     await use(new Home(page));
   },
