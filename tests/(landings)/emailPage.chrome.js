@@ -1,4 +1,5 @@
-import { test, expect } from "../../utils/fixturePages";
+import { test } from "../../utils/fixturePages";
+import { expect } from "../../utils/customMatchers";
 const testData = JSON.parse(
   JSON.stringify(require("../../data/lendings/email/testData.json"))
 );
@@ -55,4 +56,10 @@ test("Check that buttons have hover effect on email page", async ({ emailPage })
   // Assert
   await emailPage.expectColorsLinksWhenHovering(emailPage.introductionAndSupportButtons, "background", 
   "rgb(191, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box");
+});
+
+test("custom", async ({ home,emailPage, page}) => {
+
+  // Assert
+  await expect(home.footer.emailLink ).opensNewPage("https://dev.swisscows.com/en/swisscows-email");
 });

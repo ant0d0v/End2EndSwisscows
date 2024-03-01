@@ -89,9 +89,9 @@ exports.test = base.test.extend({
     await home.footer.clickImprintLink();
     await use(new ImprintPage(page));
   },
-  emailPage: async ({ home }, use) => {
-    const newPage = await home.footer.clickEmailLinkAndNavigateToNewPage();
-    await use(new EmailPage(newPage));
+  emailPage: async ({ page }, use) => {
+   
+    await use(new EmailPage(page));
   },
   defaultSearchPage: async ({ home }, use) => {
     await home.clickFourQuestion()
