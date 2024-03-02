@@ -1,4 +1,5 @@
-const { expect, context, test} = require('@playwright/test');
+
+import { expect, test} from "../utils/customMatchers"
 
 export default class BasePage {
   constructor(page) {
@@ -29,9 +30,9 @@ export default class BasePage {
 
   //Actions
   async openPage(path){
-    await this.page.goto(path)
+    await this.page.goto(process.env.BASE_URL + path)
   }
-
+  
   async clickElement(element, nameElement) {
     await test.step(`Click on the ${nameElement}`, async () => {
         await element.click();
@@ -135,6 +136,12 @@ export default class BasePage {
   }
 
   // Verify
+  async expectToBeOpenedNewPageAfterClick(locator, expectedUrl ){
+    return test.step(`Click on the ${locator} and navigate to new tab and wait for page to be loaded`,
+        async () => { 
+          await expect(locator).toBeOpenedNewPage(expectedUrl)
+        }).catch(async (e) => await this.errorHandling(e, this.page));
+  }
 
   async expectHaveTitle(newPage, title) {
     await test.step('Expect a title "to have" a substring', async () => {
@@ -200,14 +207,8 @@ export default class BasePage {
   async expectColorsLinksWhenHovering(elements, color, expectedValue) {
     await test.step('Expect the elements in the array to "have" css color with value',
       async () => {
-        for (const link of await elements.all()) {
-            if (link.isEnabled()) {
-              await link.hover();
-              await expect(link).toHaveCSS(color, expectedValue);
-            }
-          }
-        }
-      ).catch(async (e) => await this.errorHandling(e, this.page));
+        await expect(elements).toHaveColorsWhenHovering(color,expectedValue)
+      }).catch(async (e) => await this.errorHandling(e, this.page));
   }
 
   async expectColorLinkWhenHovering(element, color, expectedValue) {

@@ -68,7 +68,7 @@ module.exports = defineConfig({
     {
       name: "setup",
       testMatch: /global\.setup\.js/,
-      // teardown: "cleanup",
+      teardown: "cleanup",
     },
     {
       name: "cleanup",

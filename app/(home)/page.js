@@ -30,7 +30,7 @@ export default class Home extends BasePage {
 
   //Actions
   async open(){
-    await this.openPage("https://dev.swisscows.com/")
+    await this.openPage("/")
   }
 
   clickAllQuestions = async () => {

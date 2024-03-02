@@ -1,4 +1,5 @@
 import BasePage from "../../../base/BasePage";
+import {expect} from "../../../utils/customMatchers"
 import Header from "../../(landings)/email/Header";
 export default class EmailPage extends BasePage {
   constructor(page) {
@@ -11,13 +12,8 @@ export default class EmailPage extends BasePage {
     this.introductionAndSupportButtons = this.page.locator("//a[@class='button']")
   }
   //Actions
-  async clickIntroductionAndSupportLinksAndNavigateToNewPage(id) {
-    const newPage = await this.clickElementAndNavigateToNewPage( this.introductionAndSupportLinks(id),`${id}`);
-    return newPage;
-  }
-  async clickSubscriptionLinksAndNavigateToNewPage(id, nameButton) {
-    const newPage = await this.clickElementAndNavigateToNewPage( this.subscriptionLinks (id,nameButton),` ${id} ${nameButton}`);
-    return newPage;
+  async open(){
+    await this.openPage("/swisscows-email")
   }
 
   //Verify

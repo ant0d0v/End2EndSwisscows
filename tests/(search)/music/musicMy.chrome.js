@@ -1,257 +1,245 @@
-import { test} from "../../../utils/fixturePages";
-const { expect } = require("@playwright/test");
+import { test} from "../../../utils/fixtures";
 let response;
 const value = "Skofka";
 const testData = JSON.parse(
     JSON.stringify(require("../../../data/error/testData.json"))
   );
- test.afterEach(async ({ musicMyPage }) => {
+ test.afterEach("Delete track from favorite", async ({ app }) => {
     if (response) {
         // Parse response data
         const responseData = await response.json();
         if (responseData.id !== null) {
             // Delete track from favorite 
-            await musicMyPage.track.deleteTrackFromFavorite(responseData.id);
+            await app.musicMyPage.track.deleteTrackFromFavorite(responseData.id);
         }
     }
   });
 
 test.describe.configure({ mode: "default" });
 test("Check No items Found error page ", async ({
-    home,
-    musicPage,
-    musicMyPage
+    app
   }) => {
     //Actions
-    await home.header.searchForm.inputSearchCriteria(value);
-    await home.header.searchForm.clickEnterSearchField();
-    await musicPage.header.clickMusicSearchButton()
-    await musicPage.track.expectMusicTracksToBeVisible()
-    await musicPage.track.clickFavoriteButtonNumberTrack(1)
-    await musicPage.clickFavoritePlaylist()
-    await musicMyPage.expectPageUrlToHaveParameter(`?query=${value}`)
-    await musicMyPage.track.clickFavoriteButtonNumberTrack(1)
+    await app.home.open()
+    await app.home.header.searchForm.inputSearchCriteria(value);
+    await app.home.header.searchForm.clickEnterSearchField();
+    await app.musicPage.header.clickMusicSearchButton()
+    await app.musicPage.track.expectMusicTracksToBeVisible()
+    await app.musicPage.track.clickFavoriteButtonNumberTrack(1)
+    await app.musicPage.clickFavoritePlaylist()
+    await app.musicMyPage.expectPageUrlToHaveParameter(`?query=${value}`)
+    await app.musicMyPage.track.clickFavoriteButtonNumberTrack(1)
     
     //Assert
-    await musicMyPage.expectElementToHaveText(musicMyPage.error.contentErrorPage,
+    await app.musicMyPage.expectElementToHaveText(app.musicMyPage.error.contentErrorPage,
       testData.expectedErrorText.noItemsFound)
-    await musicMyPage.expectElementToBeVisible(musicMyPage.error.errorImageNoResult)
+    await app.musicMyPage.expectElementToBeVisible(app.musicMyPage.error.errorImageNoResult)
   });
 
   test("Check delete track from favorite using player on my music page ", async ({
-    home,
-    musicPage,
-    musicMyPage
+    app
   }) => {
     //Actions
-    await home.header.searchForm.inputSearchCriteria(value);
-    await home.header.searchForm.clickEnterSearchField();
-    await musicPage.header.clickMusicSearchButton()
-    await musicPage.track.expectMusicTracksToBeVisible()
-    await musicPage.track.clickFavoriteButtonNumberTrack(1)
-    await musicPage.clickFavoritePlaylist()
-    await musicMyPage.expectPageUrlToHaveParameter(`?query=${value}`)
-    await musicMyPage.track.clickPlayButtonNumberTrack(1)
-    await musicMyPage.player.clickFavoriteButton()
+    await app.home.open()
+    await app.home.header.searchForm.inputSearchCriteria(value);
+    await app.home.header.searchForm.clickEnterSearchField();
+    await app.musicPage.header.clickMusicSearchButton()
+    await app.musicPage.track.expectMusicTracksToBeVisible()
+    await app.musicPage.track.clickFavoriteButtonNumberTrack(1)
+    await app.musicPage.clickFavoritePlaylist()
+    await app.musicMyPage.expectPageUrlToHaveParameter(`?query=${value}`)
+    await app.musicMyPage.track.clickPlayButtonNumberTrack(1)
+    await app.musicMyPage.player.clickFavoriteButton()
     
     //Assert
-    await musicMyPage.expectElementToHaveText(musicMyPage.error.contentErrorPage,
+    await app.musicMyPage.expectElementToHaveText(app.musicMyPage.error.contentErrorPage,
       testData.expectedErrorText.noItemsFound)
-    await musicMyPage.expectElementToBeVisible(musicMyPage.error.errorImageNoResult)
+    await app.musicMyPage.expectElementToBeVisible(app.musicMyPage.error.errorImageNoResult)
   });
 
   test("Check delete track from favorite on my music page ", async ({
-    home,
-    musicPage,
-    musicMyPage
+    app
   }) => {
     //Actions
-    await home.header.searchForm.inputSearchCriteria(value);
-    await home.header.searchForm.clickEnterSearchField();
-    await musicPage.header.clickMusicSearchButton()
-    await musicPage.track.expectMusicTracksToBeVisible()
-    await musicPage.track.clickFavoriteButtonNumberTrack(1)
-    await musicPage.clickFavoritePlaylist()
-    await musicMyPage.expectPageUrlToHaveParameter(`?query=${value}`)
-    await musicMyPage.track.clickPlayButtonNumberTrack(1)
-    await musicMyPage.player.expectTimeToHaveText("0:04")
-    await musicMyPage.track.clickFavoriteButtonNumberTrack(1)
+    await app.home.open()
+    await app.home.header.searchForm.inputSearchCriteria(value);
+    await app.home.header.searchForm.clickEnterSearchField();
+    await app.musicPage.header.clickMusicSearchButton()
+    await app.musicPage.track.expectMusicTracksToBeVisible()
+    await app.musicPage.track.clickFavoriteButtonNumberTrack(1)
+    await app.musicPage.clickFavoritePlaylist()
+    await app.musicMyPage.expectPageUrlToHaveParameter(`?query=${value}`)
+    await app.musicMyPage.track.clickPlayButtonNumberTrack(1)
+    await app.musicMyPage.player.expectTimeToHaveText("0:04")
+    await app.musicMyPage.track.clickFavoriteButtonNumberTrack(1)
     
     //Assert
-    await musicMyPage.expectElementToHaveText(musicMyPage.error.contentErrorPage,
+    await app.musicMyPage.expectElementToHaveText(app.musicMyPage.error.contentErrorPage,
       testData.expectedErrorText.noItemsFound)
-    await musicMyPage.expectElementToBeVisible(musicMyPage.error.errorImageNoResult)
+    await app.musicMyPage.expectElementToBeVisible(app.musicMyPage.error.errorImageNoResult)
   });
 
 
   test("Check play track on music my page", async ({
-    home,
-    musicPage,
-    musicMyPage
+    app
   }) => {
     //Actions
-    await home.header.searchForm.inputSearchCriteria(value);
-    await home.header.searchForm.clickEnterSearchField();
-    await musicPage.header.clickMusicSearchButton()
-    await musicPage.track.expectMusicTracksToBeVisible()
-    response = await musicPage.track.clickFavoriteButtonNumberTrackAndGetResponse(1)
-    await musicPage.clickFavoritePlaylist()
-    await musicMyPage.expectPageUrlToHaveParameter(`?query=${value}`)
-    await musicMyPage.track.clickPlayButtonNumberTrack(1)
+    await app.home.open()
+    await app.home.header.searchForm.inputSearchCriteria(value);
+    await app.home.header.searchForm.clickEnterSearchField();
+    await app.musicPage.header.clickMusicSearchButton()
+    await app.musicPage.track.expectMusicTracksToBeVisible()
+    response = await app.musicPage.track.clickFavoriteButtonNumberTrackAndGetResponse(1)
+    await app.musicPage.clickFavoritePlaylist()
+    await app.musicMyPage.expectPageUrlToHaveParameter(`?query=${value}`)
+    await app.musicMyPage.track.clickPlayButtonNumberTrack(1)
 
     //Assert
-    await musicMyPage.player.expectTimeToHaveText("0:04")
-    await musicMyPage.track.expectAttributeToHaveValue(musicMyPage.track.playButton(1),
+    await app.musicMyPage.player.expectTimeToHaveText("0:04")
+    await app.musicMyPage.track.expectAttributeToHaveValue(app.musicMyPage.track.playButton(1),
         "xlink:href", /pause/) 
   });
 
   test("Check pause track on my music page", async ({
-    home,
-    musicPage, 
-    musicMyPage
+    app
   }) => {
     //Actions
-    await home.header.searchForm.inputSearchCriteria(value);
-    await home.header.searchForm.clickEnterSearchField();
-    await musicPage.header.clickMusicSearchButton()
-    await musicPage.track.expectMusicTracksToBeVisible()
-    response = await musicPage.track.clickFavoriteButtonNumberTrackAndGetResponse(1)
-    await musicPage.clickFavoritePlaylist()
-    await musicMyPage.expectPageUrlToHaveParameter(`?query=${value}`)
-    await musicMyPage.track.clickPlayButtonNumberTrack(1)
-    await musicMyPage.player.expectTimeToHaveText("0:04")
-    await musicMyPage.track.clickPauseButtonNumberTrack(1)
+    await app.home.open()
+    await app.home.header.searchForm.inputSearchCriteria(value);
+    await app.home.header.searchForm.clickEnterSearchField();
+    await app.musicPage.header.clickMusicSearchButton()
+    await app.musicPage.track.expectMusicTracksToBeVisible()
+    response = await app.musicPage.track.clickFavoriteButtonNumberTrackAndGetResponse(1)
+    await app.musicPage.clickFavoritePlaylist()
+    await app.musicMyPage.expectPageUrlToHaveParameter(`?query=${value}`)
+    await app.musicMyPage.track.clickPlayButtonNumberTrack(1)
+    await app.musicMyPage.player.expectTimeToHaveText("0:04")
+    await app.musicMyPage.track.clickPauseButtonNumberTrack(1)
 
     //Assert
-    await musicMyPage.track.expectAttributeClassOfElement(musicMyPage.track.track(1),
+    await app.musicMyPage.track.expectAttributeClassOfElement(app.musicMyPage.track.track(1),
       "item item--audio active")
-    await musicMyPage.track.expectAttributeToHaveValue(musicMyPage.track.playButton(1),
+    await app.musicMyPage.track.expectAttributeToHaveValue(app.musicMyPage.track.playButton(1),
         "xlink:href", /play/)   
   });
 
   test("Check set time in track", async ({
-    home,
-    musicPage,
-    musicMyPage
+    app
   }) => {
     //Actions
-    await home.header.searchForm.inputSearchCriteria(value);
-    await home.header.searchForm.clickEnterSearchField();
-    await musicPage.header.clickMusicSearchButton()
-    await musicPage.track.expectMusicTracksToBeVisible()
-    response = await musicPage.track.clickFavoriteButtonNumberTrackAndGetResponse(1)
-    await musicPage.clickFavoritePlaylist()
-    await musicMyPage.expectPageUrlToHaveParameter(`?query=${value}`)
-    await musicMyPage.track.clickPlayButtonNumberTrack(1)
-    await musicMyPage.player.expectTimeToHaveText("0:04")
-    await musicMyPage.track.clickTimeLineNumberTrack(1)
+    await app.home.open()
+    await app.home.header.searchForm.inputSearchCriteria(value);
+    await app.home.header.searchForm.clickEnterSearchField();
+    await app.musicPage.header.clickMusicSearchButton()
+    await app.musicPage.track.expectMusicTracksToBeVisible()
+    response = await app.musicPage.track.clickFavoriteButtonNumberTrackAndGetResponse(1)
+    await app.musicPage.clickFavoritePlaylist()
+    await app.musicMyPage.expectPageUrlToHaveParameter(`?query=${value}`)
+    await app.musicMyPage.track.clickPlayButtonNumberTrack(1)
+    await app.musicMyPage.player.expectTimeToHaveText("0:04")
+    await app.musicMyPage.track.clickTimeLineNumberTrack(1)
 
     //Assert
-    await musicMyPage.track.expectAttributeToHaveValue(musicMyPage.track.valueProgressBar(1),
+    await app.musicMyPage.track.expectAttributeToHaveValue(app.musicMyPage.track.valueProgressBar(1),
       "style", /width: 5/)
-    await musicMyPage.player.expectAttributeToHaveValue(musicMyPage.player.progressBar,
+    await app.musicMyPage.player.expectAttributeToHaveValue(app.musicMyPage.player.progressBar,
       "style", /width: 5/) 
   });
 
   test("Check set time in the player", async ({
-    home,
-    musicPage,
-    musicMyPage
+    app
   }) => {
     //Actions
-    await home.header.searchForm.inputSearchCriteria(value);
-    await home.header.searchForm.clickEnterSearchField();
-    await musicPage.header.clickMusicSearchButton()
-    await musicPage.track.expectMusicTracksToBeVisible()
-    response = await musicPage.track.clickFavoriteButtonNumberTrackAndGetResponse(1)
-    await musicPage.clickFavoritePlaylist()
-    await musicMyPage.expectPageUrlToHaveParameter(`?query=${value}`)
-    await musicMyPage.track.clickPlayButtonNumberTrack(1)
-    await musicMyPage.player.expectTimeToHaveText("0:04")
-    await musicMyPage.player.clickTimeLine()
+    await app.home.open()
+    await app.home.header.searchForm.inputSearchCriteria(value);
+    await app.home.header.searchForm.clickEnterSearchField();
+    await app.musicPage.header.clickMusicSearchButton()
+    await app.musicPage.track.expectMusicTracksToBeVisible()
+    response = await app.musicPage.track.clickFavoriteButtonNumberTrackAndGetResponse(1)
+    await app.musicPage.clickFavoritePlaylist()
+    await app.musicMyPage.expectPageUrlToHaveParameter(`?query=${value}`)
+    await app.musicMyPage.track.clickPlayButtonNumberTrack(1)
+    await app.musicMyPage.player.expectTimeToHaveText("0:04")
+    await app.musicMyPage.player.clickTimeLine()
 
     //Assert
-    await musicMyPage.track.expectAttributeToHaveValue(musicMyPage.track.valueProgressBar(1),
+    await app.musicMyPage.track.expectAttributeToHaveValue(app.musicMyPage.track.valueProgressBar(1),
       "style", /width: 5/)
-    await musicMyPage.player.expectAttributeToHaveValue(musicPage.player.progressBar,
+    await app.musicMyPage.player.expectAttributeToHaveValue(app.musicPage.player.progressBar,
       "style", /width: 5/)   
   });
 
   test("Check pause track in player on my music page", async ({
-    home,
-    musicPage,
-    musicMyPage
+    app
   }) => {
     //Actions
-    await home.header.searchForm.inputSearchCriteria(value);
-    await home.header.searchForm.clickEnterSearchField();
-    await musicPage.header.clickMusicSearchButton()
-    await musicPage.track.expectMusicTracksToBeVisible()
-    response = await musicPage.track.clickFavoriteButtonNumberTrackAndGetResponse(1)
-    await musicPage.clickFavoritePlaylist()
-    await musicMyPage.expectPageUrlToHaveParameter(`?query=${value}`)
-    await musicMyPage.track.clickPlayButtonNumberTrack(1)
-    await musicMyPage.player.expectTimeToHaveText("0:04")
-    await musicMyPage.player.clickPauseButton()
+    await app.home.open()
+    await app.home.header.searchForm.inputSearchCriteria(value);
+    await app.home.header.searchForm.clickEnterSearchField();
+    await app.musicPage.header.clickMusicSearchButton()
+    await app.musicPage.track.expectMusicTracksToBeVisible()
+    response = await app.musicPage.track.clickFavoriteButtonNumberTrackAndGetResponse(1)
+    await app.musicPage.clickFavoritePlaylist()
+    await app.musicMyPage.expectPageUrlToHaveParameter(`?query=${value}`)
+    await app.musicMyPage.track.clickPlayButtonNumberTrack(1)
+    await app.musicMyPage.player.expectTimeToHaveText("0:04")
+    await app.musicMyPage.player.clickPauseButton()
 
     //Assert
-    await musicPage.track.expectAttributeClassOfElement(musicMyPage.track.track(1),
+    await app.musicPage.track.expectAttributeClassOfElement(app.musicMyPage.track.track(1),
       "item item--audio active")
-    await musicPage.track.expectAttributeToHaveValue(musicMyPage.track.playButton(1),
+    await app.musicPage.track.expectAttributeToHaveValue(app.musicMyPage.track.playButton(1),
       "xlink:href", /play/)
-    await musicPage.player.expectAttributeToHaveValue(musicMyPage.player.playButton,
+    await app.musicPage.player.expectAttributeToHaveValue(app.musicMyPage.player.playButton,
       "xlink:href", /play/)    
   });
 
   test("Check play track in player on my music page", async ({
-    home,
-    musicPage,
-    musicMyPage
+    app
   }) => {
     //Actions
-    await home.header.searchForm.inputSearchCriteria(value);
-    await home.header.searchForm.clickEnterSearchField();
-    await musicPage.header.clickMusicSearchButton()
-    await musicPage.track.expectMusicTracksToBeVisible()
-    response = await musicPage.track.clickFavoriteButtonNumberTrackAndGetResponse(1)
-    await musicPage.clickFavoritePlaylist()
-    await musicMyPage.expectPageUrlToHaveParameter(`?query=${value}`)
-    await musicMyPage.track.clickPlayButtonNumberTrack(1)
-    await musicMyPage.player.expectTimeToHaveText("0:04")
-    await musicMyPage.player.clickPauseButton()
-    await musicMyPage.player.clickPlayButton()
+    await app.home.open()
+    await app.home.header.searchForm.inputSearchCriteria(value);
+    await app.home.header.searchForm.clickEnterSearchField();
+    await app.musicPage.header.clickMusicSearchButton()
+    await app.musicPage.track.expectMusicTracksToBeVisible()
+    response = await app.musicPage.track.clickFavoriteButtonNumberTrackAndGetResponse(1)
+    await app.musicPage.clickFavoritePlaylist()
+    await app.musicMyPage.expectPageUrlToHaveParameter(`?query=${value}`)
+    await app.musicMyPage.track.clickPlayButtonNumberTrack(1)
+    await app.musicMyPage.player.expectTimeToHaveText("0:04")
+    await app.musicMyPage.player.clickPauseButton()
+    await app.musicMyPage.player.clickPlayButton()
 
     //Assert
-    await musicMyPage.track.expectAttributeClassOfElement(musicMyPage.track.track(1),
+    await app.musicMyPage.track.expectAttributeClassOfElement(app.musicMyPage.track.track(1),
       "item item--audio active playing")
-    await musicMyPage.track.expectAttributeToHaveValue(musicMyPage.track.playButton(1),
+    await app.musicMyPage.track.expectAttributeToHaveValue(app.musicMyPage.track.playButton(1),
         "xlink:href", /pause/)
-    await musicPage.player.expectAttributeToHaveValue(musicMyPage.player.playButton,
+    await app.musicPage.player.expectAttributeToHaveValue(app.musicMyPage.player.playButton,
         "xlink:href", /pause/)      
   });
 
   test("Check regional search", async ({
-    home,
-    musicPage,
-    page,
-    musicMyPage
+    app
   }) => {
     //Actions
-    await home.header.searchForm.inputSearchCriteria(value);
-    await home.header.searchForm.clickEnterSearchField();
-    await musicPage.header.clickMusicSearchButton()
-    await musicPage.track.expectMusicTracksToBeVisible()
-    response = await musicPage.track.clickFavoriteButtonNumberTrackAndGetResponse(1)
-    await musicPage.clickFavoritePlaylist()
-    await musicMyPage.expectPageUrlToHaveParameter(`?query=${value}`)
-    await musicMyPage.header.clickHamburgerMenuButton();
-    await musicMyPage.header.hamburgerMenu.selectRegion("Germany");
-    await musicMyPage.track.expectMusicTracksToBeVisible()
+    await app.home.open()
+    await app.home.header.searchForm.inputSearchCriteria(value);
+    await app.home.header.searchForm.clickEnterSearchField();
+    await app.musicPage.header.clickMusicSearchButton()
+    await app.musicPage.track.expectMusicTracksToBeVisible()
+    response = await app.musicPage.track.clickFavoriteButtonNumberTrackAndGetResponse(1)
+    await app.musicPage.clickFavoritePlaylist()
+    await app.musicMyPage.expectPageUrlToHaveParameter(`?query=${value}`)
+    await app.musicMyPage.header.clickHamburgerMenuButton();
+    await app.musicMyPage.header.hamburgerMenu.selectRegion("Germany");
+    await app.musicMyPage.track.expectMusicTracksToBeVisible()
     
     //Assert
-    await musicMyPage.track.expectTextsToContainSearchCriteria(musicMyPage.track.tracksName, value.toLowerCase())
-    await musicMyPage.track.expectListToHaveCount(musicMyPage.track.tracksName, 1)
-    await musicMyPage.track.expectAreElementsInListDisplayed(musicMyPage.track.allPlayButton)
-    await musicMyPage.expectHaveUrl(page,  process.env.WEB_URL + `en/music/my?query=${value}&region=de-DE`)
+    await app.musicMyPage.track.expectTextsToContainSearchCriteria(app.musicMyPage.track.tracksName, value.toLowerCase())
+    await app.musicMyPage.track.expectListToHaveCount(app.musicMyPage.track.tracksName, 1)
+    await app.musicMyPage.track.expectAreElementsInListDisplayed(app.musicMyPage.track.allPlayButton)
+    await app.musicMyPage.expectHaveUrl(app.page,  process.env.BASE_URL + `/en/music/my?query=${value}&region=de-DE`)
     
   });

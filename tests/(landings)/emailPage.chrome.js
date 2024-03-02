@@ -1,65 +1,71 @@
-import { test } from "../../utils/fixturePages";
+import { test } from "../../utils/fixtures"
 import { expect } from "../../utils/customMatchers";
 const testData = JSON.parse(
   JSON.stringify(require("../../data/lendings/email/testData.json"))
 );
 
 
-test("Check design of the Email page ", async ({ emailPage },testInfo) => {
+test("Check design of the Email page ", async ({ app },testInfo) => {
   //Actions
-  await emailPage.waitUntilPageIsFullyLoaded();
+  await app.emailPage.open()
+  await app.emailPage.waitUntilPageIsFullyLoaded();
+
   //Assert
-  await emailPage.expectScreenEmailPage(testInfo)
+  await app.emailPage.expectScreenEmailPage(testInfo)
 });
 
 test("Check design dark theme of the  Email page ", async ({
-  emailPage
+  app
 },testInfo) => {
   //Actions
-  await emailPage.waitUntilPageIsFullyLoaded();
-  await emailPage.header.clickHamburgerMenuButton();
-  await emailPage.header.hamburgerMenu.clickThemeDropdownInHamburgerMenu();
-  await emailPage.header.hamburgerMenu.clickDarkInHamburgerMenu();
+  await app.emailPage.open()
+  await app.emailPage.waitUntilPageIsFullyLoaded();
+  await app.emailPage.header.clickHamburgerMenuButton();
+  await app.emailPage.header.hamburgerMenu.clickThemeDropdownInHamburgerMenu();
+  await app.emailPage.header.hamburgerMenu.clickDarkInHamburgerMenu();
 
   //Assert
-  await emailPage.expectScreenEmailPage(testInfo)
+  await app.emailPage.expectScreenEmailPage(testInfo)
 });
 
-for (const { testID, expectedLink, locatorId, expectedTitle,} of testData.introductionAndSupportLinks) {
+for (const { testID, expectedUrl, locatorId, expectedTitle,} of testData.introductionAndSupportLinks) {
   test(`${testID} Check navigation to corresponding pages for  '${locatorId}' link`, async ({
-    emailPage
+    app,context
   }) => {
     //Actions
-    const newPage = await emailPage.clickIntroductionAndSupportLinksAndNavigateToNewPage(locatorId);
+    await app.emailPage.open()
 
     //Assert
-    await emailPage.expectHaveUrl(newPage , new RegExp(expectedLink));
-    await emailPage.expectHaveTitle(newPage ,expectedTitle);
+    await app.emailPage.expectToBeOpenedNewPageAfterClick(
+      app.emailPage.introductionAndSupportLinks(locatorId), expectedUrl )
+  
+    await expect(context.pages()[1]).toHaveTitle(expectedTitle)
   });
 }
 
-for (const { testID, expectedLink, locatorId, buttonName, expectedTitle,} of testData.subscriptionLinks) {
+for (const { testID, expectedUrl, locatorId, buttonName, expectedTitle,} of testData.subscriptionLinks) {
   test(`${testID} Check navigation to corresponding pages for ${buttonName} link`, async ({
-    emailPage
+    app, context
   }) => {
     //Actions
-    const newPage = await emailPage.clickSubscriptionLinksAndNavigateToNewPage(locatorId,buttonName);
-
+    await app.emailPage.open()
+  
     //Assert
-    await emailPage.expectHaveUrl(newPage , new RegExp(expectedLink));
-    await emailPage.expectHaveTitle(newPage ,expectedTitle);
+    await app.emailPage.expectToBeOpenedNewPageAfterClick(
+      app.emailPage.subscriptionLinks(locatorId,buttonName), expectedUrl )
+
+    await expect(context.pages()[1]).toHaveTitle(expectedTitle)
   });
 }
 
-test("Check that buttons have hover effect on email page", async ({ emailPage }) => {
+test("Check that buttons have hover effect on email page", async ({ app }) => {
+  //Actions
+  await app.emailPage.open()
 
   // Assert
-  await emailPage.expectColorsLinksWhenHovering(emailPage.introductionAndSupportButtons, "background", 
-  "rgb(191, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box");
+  await app.emailPage.expectColorsLinksWhenHovering(
+    app.emailPage.introductionAndSupportButtons,
+    "background", 
+    "rgb(191, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box");
 });
 
-test("custom", async ({ home,emailPage, page}) => {
-
-  // Assert
-  await expect(home.footer.emailLink ).opensNewPage("https://dev.swisscows.com/en/swisscows-email");
-});

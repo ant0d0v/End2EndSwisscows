@@ -5,7 +5,7 @@ const downloadFile = "./tests/download";
 
 teardown("Delete file after test run", async () => {
   try {
-    rimraf.sync(authFile);
+    // rimraf.sync(authFile);
     rimraf.sync(downloadFile);;
   } catch (error) {
     console.error("Error deleting file:", error);

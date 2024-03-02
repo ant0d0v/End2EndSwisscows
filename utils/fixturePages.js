@@ -28,6 +28,7 @@ exports.test = base.test.extend({
   app: async ({page}, use) => {
     await use(new Application(page));
   },
+  
   home: async ({ page }, use) => {
     await use(new Home(page));
   },
@@ -89,9 +90,9 @@ exports.test = base.test.extend({
     await home.footer.clickImprintLink();
     await use(new ImprintPage(page));
   },
-  emailPage: async ({ page }, use) => {
-   
-    await use(new EmailPage(page));
+  emailPage: async ({ home }, use) => {
+    const newPage = await home.footer.clickEmailLinkAndNavigateToNewPage();
+    await use(new EmailPage(newPage));
   },
   defaultSearchPage: async ({ home }, use) => {
     await home.clickFourQuestion()

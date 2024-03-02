@@ -19,6 +19,10 @@ export default class VpnPage extends BasePage {
     this.tryNowThreeDayLink = this.page.getByRole('link', { name: 'Try now 3 days for free (' })
   }
   //Actions
+  async open(){
+    await this.openPage("/anonymous-vpn")
+  }
+
   async clickAllLinksAndNavigateToNewPage(id) {
     await this.page.waitForSelector('h3.question', { state: 'visible' });
     const newPage = await this.clickElementAndNavigateToNewPage( this.allLinks(id),`${id}`);

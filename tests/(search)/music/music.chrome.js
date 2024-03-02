@@ -1,422 +1,421 @@
-import { test} from "../../../utils/fixturePages";
-const { expect } = require("@playwright/test");
+import { test} from "../../../utils/fixtures";
 const testData = JSON.parse(
     JSON.stringify(require("../../../data/error/testData.json"))
   );
 
 test("Check 202 No Results Found error page ", async ({
-    home,
-    musicPage
+    app
   }) => {
     //Actions
-    await home.header.searchForm.inputSearchCriteria("@#@$%^$^dasdsad1231");
-    await home.header.searchForm.clickEnterSearchField();
-    await musicPage.header.clickMusicSearchButton()
+    await app.home.open()
+    await app.home.header.searchForm.inputSearchCriteria("@#@$%^$^dasdsad1231");
+    await app.home.header.searchForm.clickEnterSearchField();
+    await app.musicPage.header.clickMusicSearchButton()
     
     //Assert
-    await musicPage.expectElementToHaveText(musicPage.error.contentErrorNoResults,
+    await app.musicPage.expectElementToHaveText(app.musicPage.error.contentErrorNoResults,
       testData.expectedErrorText.noResultsFound202Error)
-    await musicPage.expectElementToBeVisible(musicPage.error.errorImage)
+    await app.musicPage.expectElementToBeVisible(app.musicPage.error.errorImage)
   });
 
   test("Check request is blocked 450 error page ", async ({
-    home,
-    musicPage
+    app
   }) => {
     //Actions
-    await home.header.searchForm.inputSearchCriteria("porn");
-    await home.header.searchForm.clickEnterSearchField();
-    await musicPage.header.clickMusicSearchButton()
+    await app.home.open()
+    await app.home.header.searchForm.inputSearchCriteria("porn");
+    await app.home.header.searchForm.clickEnterSearchField();
+    await app.musicPage.header.clickMusicSearchButton()
 
     //Assert
-    await musicPage.expectElementToHaveText(musicPage.error.contentErrorNoResults, 
+    await app.musicPage.expectElementToHaveText(app.musicPage.error.contentErrorNoResults, 
       testData.expectedErrorText.blocked450Error)
-    await musicPage.expectElementToBeVisible(musicPage.error.errorImage)
+    await app.musicPage.expectElementToBeVisible(app.musicPage.error.errorImage)
   });
 
   test("Check 501 unknown Error Page  ", async ({
-    musicPage
+    app
   }) => {
     //Actions
-    await musicPage.error.open500Page("/music")
+    await app.musicPage.error.open500Page("/music")
+
     //Assert
-    await musicPage.expectElementToHaveText(musicPage.error.contentErrorPage, 
+    await app.musicPage.expectElementToHaveText(app.musicPage.error.contentErrorPage, 
       testData.expectedErrorText.unknown500Error)
-    await musicPage.expectElementToBeVisible(musicPage.error.errorImage)
+    await app.musicPage.expectElementToBeVisible(app.musicPage.error.errorImage)
   });
 
   test("Check play track on music page", async ({
-    home,
-    musicPage
+    app
   }) => {
     //Actions
-    await home.header.searchForm.inputSearchCriteria("Skofka");
-    await home.header.searchForm.clickEnterSearchField();
-    await musicPage.header.clickMusicSearchButton()
-    await musicPage.track.expectMusicTracksToBeVisible()
-    await musicPage.track.clickPlayButtonNumberTrack(1)
+    await app.home.open()
+    await app.home.header.searchForm.inputSearchCriteria("Skofka");
+    await app.home.header.searchForm.clickEnterSearchField();
+    await app.musicPage.header.clickMusicSearchButton()
+    await app.musicPage.track.expectMusicTracksToBeVisible()
+    await app.musicPage.track.clickPlayButtonNumberTrack(1)
 
     //Assert
-    await musicPage.player.expectTimeToHaveText("0:04")
-    await musicPage.track.expectAttributeToHaveValue(musicPage.track.playButton(1),
+    await app.musicPage.player.expectTimeToHaveText("0:04")
+    await app.musicPage.track.expectAttributeToHaveValue(app.musicPage.track.playButton(1),
         "xlink:href", /pause/)
   });
 
   test("Check pause track on music page", async ({
-    home,
-    musicPage
+    app
   }) => {
     //Actions
-    await home.header.searchForm.inputSearchCriteria("Skofka");
-    await home.header.searchForm.clickEnterSearchField();
-    await musicPage.header.clickMusicSearchButton()
-    await musicPage.track.expectMusicTracksToBeVisible()
-    await musicPage.track.clickPlayButtonNumberTrack(1)
-    await musicPage.player.expectTimeToHaveText("0:04" || "0:05")
-    await musicPage.track.clickPauseButtonNumberTrack(1)
+    await app.home.open()
+    await app.home.header.searchForm.inputSearchCriteria("Skofka");
+    await app.home.header.searchForm.clickEnterSearchField();
+    await app.musicPage.header.clickMusicSearchButton()
+    await app.musicPage.track.expectMusicTracksToBeVisible()
+    await app.musicPage.track.clickPlayButtonNumberTrack(1)
+    await app.musicPage.player.expectTimeToHaveText("0:04" || "0:05")
+    await app.musicPage.track.clickPauseButtonNumberTrack(1)
 
     //Assert
-    await musicPage.track.expectAttributeClassOfElement(musicPage.track.track(1),
+    await app.musicPage.track.expectAttributeClassOfElement(app.musicPage.track.track(1),
       "item item--audio active")
-    await musicPage.track.expectAttributeToHaveValue(musicPage.track.playButton(1),
+    await app.musicPage.track.expectAttributeToHaveValue(app.musicPage.track.playButton(1),
         "xlink:href", /play/)
   });
 
   test("Check next button of track on the main page", async ({
-    home,
-    musicPage
+    app
   }) => {
     //Actions
-    await home.header.searchForm.inputSearchCriteria("Skofka");
-    await home.header.searchForm.clickEnterSearchField();
-    await musicPage.header.clickMusicSearchButton()
-    await musicPage.track.expectMusicTracksToBeVisible()
-    await musicPage.track.clickPlayButtonNumberTrack(1)
-    await musicPage.player.expectTimeToHaveText("0:04" || "0:05")
-    await musicPage.player.clickNextButton()
+    await app.home.open()
+    await app.home.header.searchForm.inputSearchCriteria("Skofka");
+    await app.home.header.searchForm.clickEnterSearchField();
+    await app.musicPage.header.clickMusicSearchButton()
+    await app.musicPage.track.expectMusicTracksToBeVisible()
+    await app.musicPage.track.clickPlayButtonNumberTrack(1)
+    await app.musicPage.player.expectTimeToHaveText("0:04" || "0:05")
+    await app.musicPage.player.clickNextButton()
     
     //Assert
-    await musicPage.player.expectTimeToHaveText("0:04" || "0:05")
-    await musicPage.track.expectAttributeClassOfElement(musicPage.track.track(2), /playing/ )
+    await app.musicPage.player.expectTimeToHaveText("0:04" || "0:05")
+    await app.musicPage.track.expectAttributeClassOfElement(app.musicPage.track.track(2), /playing/ )
   });
 
   test("Check previous button of track on the main page", async ({
-    home,
-    musicPage
+    app
   }) => {
     //Actions
-    await home.header.searchForm.inputSearchCriteria("Skofka");
-    await home.header.searchForm.clickEnterSearchField();
-    await musicPage.header.clickMusicSearchButton()
-    await musicPage.track.expectMusicTracksToBeVisible()
-    await musicPage.track.clickPlayButtonNumberTrack(1)
-    await musicPage.player.expectTimeToHaveText("0:04")
-    await musicPage.player.clickNextButton()
-    await musicPage.player.clickPrevButton()
+    await app.home.open()
+    await app.home.header.searchForm.inputSearchCriteria("Skofka");
+    await app.home.header.searchForm.clickEnterSearchField();
+    await app.musicPage.header.clickMusicSearchButton()
+    await app.musicPage.track.expectMusicTracksToBeVisible()
+    await app.musicPage.track.clickPlayButtonNumberTrack(1)
+    await app.musicPage.player.expectTimeToHaveText("0:04")
+    await app.musicPage.player.clickNextButton()
+    await app.musicPage.player.clickPrevButton()
 
     //Assert
-    await musicPage.player.expectTimeToHaveText("0:04")
-    await musicPage.track.expectAttributeClassOfElement(musicPage.track.track(1), /playing/)
+    await app.musicPage.player.expectTimeToHaveText("0:04")
+    await app.musicPage.track.expectAttributeClassOfElement(app.musicPage.track.track(1), /playing/)
   });
 
   test("Check set time in track", async ({
-    home,
-    musicPage
+    app
   }) => {
     //Actions
-    await home.header.searchForm.inputSearchCriteria("Skofka");
-    await home.header.searchForm.clickEnterSearchField();
-    await musicPage.header.clickMusicSearchButton()
-    await musicPage.track.expectMusicTracksToBeVisible()
-    await musicPage.track.clickPlayButtonNumberTrack(1)
-    await musicPage.player.expectTimeToHaveText("0:04")
-    await musicPage.track.clickTimeLineNumberTrack(1)
+    await app.home.open()
+    await app.home.header.searchForm.inputSearchCriteria("Skofka");
+    await app.home.header.searchForm.clickEnterSearchField();
+    await app.musicPage.header.clickMusicSearchButton()
+    await app.musicPage.track.expectMusicTracksToBeVisible()
+    await app.musicPage.track.clickPlayButtonNumberTrack(1)
+    await app.musicPage.player.expectTimeToHaveText("0:04")
+    await app.musicPage.track.clickTimeLineNumberTrack(1)
 
     //Assert
-    await musicPage.track.expectAttributeToHaveValue(musicPage.track.valueProgressBar(1),
+    await app.musicPage.track.expectAttributeToHaveValue(app.musicPage.track.valueProgressBar(1),
       "style", /width: 5/)
-    await musicPage.player.expectAttributeToHaveValue(musicPage.player.progressBar,
+    await app.musicPage.player.expectAttributeToHaveValue(app.musicPage.player.progressBar,
       "style", /width: 5/)  
   });
 
   test("Check set time in the player", async ({
-    home,
-    musicPage
+    app
   }) => {
     //Actions
-    await home.header.searchForm.inputSearchCriteria("Skofka");
-    await home.header.searchForm.clickEnterSearchField();
-    await musicPage.header.clickMusicSearchButton()
-    await musicPage.track.expectMusicTracksToBeVisible()
-    await musicPage.track.clickPlayButtonNumberTrack(1)
-    await musicPage.player.expectTimeToHaveText("0:04")
-    await musicPage.player.clickTimeLine()
+    await app.home.open()
+    await app.home.header.searchForm.inputSearchCriteria("Skofka");
+    await app.home.header.searchForm.clickEnterSearchField();
+    await app.musicPage.header.clickMusicSearchButton()
+    await app.musicPage.track.expectMusicTracksToBeVisible()
+    await app.musicPage.track.clickPlayButtonNumberTrack(1)
+    await app.musicPage.player.expectTimeToHaveText("0:04")
+    await app.musicPage.player.clickTimeLine()
 
     //Assert
-    await musicPage.track.expectAttributeToHaveValue(musicPage.track.valueProgressBar(1),
+    await app.musicPage.track.expectAttributeToHaveValue(app.musicPage.track.valueProgressBar(1),
       "style", /width: 5/)
-    await musicPage.player.expectAttributeToHaveValue(musicPage.player.progressBar,
+    await app.musicPage.player.expectAttributeToHaveValue(app.musicPage.player.progressBar,
       "style", /width: 5/)
   });
 
   test("Check pause track in player on music page", async ({
-    home,
-    musicPage
+    app
   }) => {
     //Actions
-    await home.header.searchForm.inputSearchCriteria("Skofka");
-    await home.header.searchForm.clickEnterSearchField();
-    await musicPage.header.clickMusicSearchButton()
-    await musicPage.track.expectMusicTracksToBeVisible()
-    await musicPage.track.clickPlayButtonNumberTrack(1)
-    await musicPage.player.expectTimeToHaveText("0:04")
-    await musicPage.player.clickPauseButton()
+    await app.home.open()
+    await app.home.header.searchForm.inputSearchCriteria("Skofka");
+    await app.home.header.searchForm.clickEnterSearchField();
+    await app.musicPage.header.clickMusicSearchButton()
+    await app.musicPage.track.expectMusicTracksToBeVisible()
+    await app.musicPage.track.clickPlayButtonNumberTrack(1)
+    await app.musicPage.player.expectTimeToHaveText("0:04")
+    await app.musicPage.player.clickPauseButton()
 
     //Assert
-    await musicPage.track.expectAttributeClassOfElement(musicPage.track.track(1),
+    await app.musicPage.track.expectAttributeClassOfElement(app.musicPage.track.track(1),
       "item item--audio active")
-    await musicPage.track.expectAttributeToHaveValue(musicPage.track.playButton(1),
+    await app.musicPage.track.expectAttributeToHaveValue(app.musicPage.track.playButton(1),
       "xlink:href", /play/)
-    await musicPage.player.expectAttributeToHaveValue(musicPage.player.playButton,
+    await app.musicPage.player.expectAttributeToHaveValue(app.musicPage.player.playButton,
       "xlink:href", /play/)    
   });
 
   test("Check play track in player on music page", async ({
-    home,
-    musicPage
+    app
   }) => {
     //Actions
-    await home.header.searchForm.inputSearchCriteria("Skofka");
-    await home.header.searchForm.clickEnterSearchField();
-    await musicPage.header.clickMusicSearchButton()
-    await musicPage.track.expectMusicTracksToBeVisible()
-    await musicPage.track.clickPlayButtonNumberTrack(1)
-    await musicPage.player.expectTimeToHaveText("0:04")
-    await musicPage.player.clickPauseButton()
-    await musicPage.player.clickPlayButton()
+    await app.home.open()
+    await app.home.header.searchForm.inputSearchCriteria("Skofka");
+    await app.home.header.searchForm.clickEnterSearchField();
+    await app.musicPage.header.clickMusicSearchButton()
+    await app.musicPage.track.expectMusicTracksToBeVisible()
+    await app.musicPage.track.clickPlayButtonNumberTrack(1)
+    await app.musicPage.player.expectTimeToHaveText("0:04")
+    await app.musicPage.player.clickPauseButton()
+    await app.musicPage.player.clickPlayButton()
 
     //Assert
-    await musicPage.track.expectAttributeClassOfElement(musicPage.track.track(1),
+    await app.musicPage.track.expectAttributeClassOfElement(app.musicPage.track.track(1),
       "item item--audio active playing")
-    await musicPage.track.expectAttributeToHaveValue(musicPage.track.playButton(1),
+    await app.musicPage.track.expectAttributeToHaveValue(app.musicPage.track.playButton(1),
         "xlink:href", /pause/)
-    await musicPage.player.expectAttributeToHaveValue(musicPage.player.playButton,
+    await app.musicPage.player.expectAttributeToHaveValue(app.musicPage.player.playButton,
         "xlink:href", /pause/)      
   });
 
   test("Check shuffle function in the player", async ({
-    home,
-    musicPage
+    app
   }) => {
     //Actions
-    await home.header.searchForm.inputSearchCriteria("Skofka");
-    await home.header.searchForm.clickEnterSearchField();
-    await musicPage.header.clickMusicSearchButton()
-    await musicPage.track.expectMusicTracksToBeVisible()
-    await musicPage.track.clickPlayButtonNumberTrack(1)
-    await musicPage.player.expectTimeToHaveText("0:04")
-    await musicPage.player.clickShuffleButton()
-    await musicPage.player.clickNextButton()
+    await app.home.open()
+    await app.home.header.searchForm.inputSearchCriteria("Skofka");
+    await app.home.header.searchForm.clickEnterSearchField();
+    await app.musicPage.header.clickMusicSearchButton()
+    await app.musicPage.track.expectMusicTracksToBeVisible()
+    await app.musicPage.track.clickPlayButtonNumberTrack(1)
+    await app.musicPage.player.expectTimeToHaveText("0:04")
+    await app.musicPage.player.clickShuffleButton()
+    await app.musicPage.player.clickNextButton()
 
     //Assert
-    await musicPage.track.expectAttributeClassOfElement(musicPage.track.track(2),
+    await app.musicPage.track.expectAttributeClassOfElement(app.musicPage.track.track(2),
       "item item--audio")
-    await musicPage.player.expectAttributeClassOfElement(musicPage.player.shuffleButton, /active/) 
+    await app.musicPage.player.expectAttributeClassOfElement(app.musicPage.player.shuffleButton, /active/) 
   });
   test.describe('favorite function', () => { test.use({ mode: "default" })
   test("Check add track in the favorite", async ({
-    home,
-    musicPage
+    app
   }) => {
     //Actions
-    await home.header.searchForm.inputSearchCriteria("Skofka");
-    await home.header.searchForm.clickEnterSearchField();
-    await musicPage.header.clickMusicSearchButton()
-    await musicPage.track.expectMusicTracksToBeVisible()
-    await musicPage.track.clickFavoriteButtonNumberTrack(1)
+    await app.home.open()
+    await app.home.header.searchForm.inputSearchCriteria("Skofka");
+    await app.home.header.searchForm.clickEnterSearchField();
+    await app.musicPage.header.clickMusicSearchButton()
+    await app.musicPage.track.expectMusicTracksToBeVisible()
+    await app.musicPage.track.clickFavoriteButtonNumberTrack(1)
 
     //Assert
-    await musicPage.track.expectAttributeClassOfElement(musicPage.track.favoriteButton(1),
+    await app.musicPage.track.expectAttributeClassOfElement(app.musicPage.track.favoriteButton(1),
       /active/)
-    await musicPage.favoritePlaylist.expectPlaylistToHaveText(/My favorite tracks1/)
-    await musicPage.track.clickFavoriteButtonNumberTrack(1)   
+    await app.musicPage.favoritePlaylist.expectPlaylistToHaveText(/My favorite tracks1/)
+    await app.musicPage.track.clickFavoriteButtonNumberTrack(1)   
   });
 
   test("Check delete track from the favorite", async ({
-    home,
-    musicPage
+    app
   }) => {
     //Actions
-    await home.header.searchForm.inputSearchCriteria("Skofka");
-    await home.header.searchForm.clickEnterSearchField();
-    await musicPage.header.clickMusicSearchButton()
-    await musicPage.track.expectMusicTracksToBeVisible()
-    await musicPage.track.clickFavoriteButtonNumberTrack(1)
-    await musicPage.track.clickPlayButtonNumberTrack(1)
-    await musicPage.player.expectTimeToHaveText("0:04")
-    await musicPage.track.clickFavoriteButtonNumberTrack(1)
+    await app.home.open()
+    await app.home.header.searchForm.inputSearchCriteria("Skofka");
+    await app.home.header.searchForm.clickEnterSearchField();
+    await app.musicPage.header.clickMusicSearchButton()
+    await app.musicPage.track.expectMusicTracksToBeVisible()
+    await app.musicPage.track.clickFavoriteButtonNumberTrack(1)
+    await app.musicPage.track.clickPlayButtonNumberTrack(1)
+    await app.musicPage.player.expectTimeToHaveText("0:04")
+    await app.musicPage.track.clickFavoriteButtonNumberTrack(1)
 
     //Assert
-    await musicPage.track.expectAttributeClassOfElement(musicPage.track.favoriteButton(1),
+    await app.musicPage.track.expectAttributeClassOfElement(app.musicPage.track.favoriteButton(1),
       "button favorite")
-    await musicPage.favoritePlaylist.expectPlaylistToBeHidden()
+    await app.musicPage.favoritePlaylist.expectPlaylistToBeHidden()
   });
 
   test("Check add track in the favorite from player", async ({
-    home,
-    musicPage
+    app
   }) => {
     //Actions
-    await home.header.searchForm.inputSearchCriteria("Skofka");
-    await home.header.searchForm.clickEnterSearchField();
-    await musicPage.header.clickMusicSearchButton()
-    await musicPage.track.expectMusicTracksToBeVisible()
-    await musicPage.track.clickPlayButtonNumberTrack(1)
-    await musicPage.player.expectTimeToHaveText("0:04")
-    await musicPage.player.clickFavoriteButton()
+    await app.home.open()
+    await app.home.header.searchForm.inputSearchCriteria("Skofka");
+    await app.home.header.searchForm.clickEnterSearchField();
+    await app.musicPage.header.clickMusicSearchButton()
+    await app.musicPage.track.expectMusicTracksToBeVisible()
+    await app.musicPage.track.clickPlayButtonNumberTrack(1)
+    await app.musicPage.player.expectTimeToHaveText("0:04")
+    await app.musicPage.player.clickFavoriteButton()
 
     //Assert
-    await musicPage.track.expectAttributeClassOfElement(musicPage.track.favoriteButton(1),/active/)
-    await musicPage.track.expectAttributeClassOfElement(musicPage.player.favoriteButton, /active/)  
-    await musicPage.favoritePlaylist.expectPlaylistToHaveText(/My favorite tracks1/)
-    await musicPage.track.clickFavoriteButtonNumberTrack(1)   
+    await app.musicPage.track.expectAttributeClassOfElement(app.musicPage.track.favoriteButton(1),/active/)
+    await app.musicPage.track.expectAttributeClassOfElement(app.musicPage.player.favoriteButton, /active/)  
+    await app.musicPage.favoritePlaylist.expectPlaylistToHaveText(/My favorite tracks1/)
+    await app.musicPage.track.clickFavoriteButtonNumberTrack(1)   
   });
 
   test("Check delete track from the favorite using player", async ({
-    home,
-    musicPage
+    app
   }) => {
     //Actions
-    await home.header.searchForm.inputSearchCriteria("Skofka");
-    await home.header.searchForm.clickEnterSearchField();
-    await musicPage.header.clickMusicSearchButton()
-    await musicPage.track.expectMusicTracksToBeVisible()
-    await musicPage.track.clickFavoriteButtonNumberTrack(1)
-    await musicPage.track.clickPlayButtonNumberTrack(1)
-    await musicPage.player.expectTimeToHaveText("0:04")
-    await musicPage.player.clickFavoriteButton()
+    await app.home.open()
+    await app.home.header.searchForm.inputSearchCriteria("Skofka");
+    await app.home.header.searchForm.clickEnterSearchField();
+    await app.musicPage.header.clickMusicSearchButton()
+    await app.musicPage.track.expectMusicTracksToBeVisible()
+    await app.musicPage.track.clickFavoriteButtonNumberTrack(1)
+    await app.musicPage.track.clickPlayButtonNumberTrack(1)
+    await app.musicPage.player.expectTimeToHaveText("0:04")
+    await app.musicPage.player.clickFavoriteButton()
 
     //Assert
-    await musicPage.track.expectAttributeClassOfElement(musicPage.track.favoriteButton(1),
+    await app.musicPage.track.expectAttributeClassOfElement(app.musicPage.track.favoriteButton(1),
       "button favorite")
-    await musicPage.track.expectAttributeClassOfElement(musicPage.player.favoriteButton, "button favorite")    
-    await musicPage.favoritePlaylist.expectPlaylistToBeHidden()
+    await app.musicPage.track.expectAttributeClassOfElement(app.musicPage.player.favoriteButton, "button favorite")    
+    await app.musicPage.favoritePlaylist.expectPlaylistToBeHidden()
   });
 });
 
   test("Check infinity scroll to next page", async ({
-    home,
-    musicPage
+    app
   }) => {
     //Actions
-    await home.header.searchForm.inputSearchCriteria("Skofka");
-    await home.header.searchForm.clickEnterSearchField();
-    await musicPage.header.clickMusicSearchButton()
-    await musicPage.track.expectMusicTracksToBeVisible()
-    await musicPage.track.scrollByVisibleTrackNumber(200)
-    await musicPage.preloader.waitUntilPreloaderToBeHidden()
+    await app.home.open()
+    await app.home.header.searchForm.inputSearchCriteria("Skofka");
+    await app.home.header.searchForm.clickEnterSearchField();
+    await app.musicPage.header.clickMusicSearchButton()
+    await app.musicPage.track.expectMusicTracksToBeVisible()
+    await app.musicPage.track.scrollByVisibleTrackNumber(200)
+    await app.musicPage.preloader.waitUntilPreloaderToBeHidden()
 
     //Assert
-    await musicPage.track.expectListToBeGreaterThanOrEqual(musicPage.track.tracksName, 200)
+    await app.musicPage.track.expectListToBeGreaterThanOrEqual(app.musicPage.track.tracksName, 200)
   });
 
   test("Check that music results equals search criteria", async ({
-    home,
-    musicPage
+    app
   }) => {
     //Actions
-    await home.header.searchForm.inputSearchCriteria("billie jean");
-    await home.header.searchForm.clickEnterSearchField();
-    await musicPage.header.clickMusicSearchButton()
-    await musicPage.track.expectMusicTracksToBeVisible()
+    await app.home.open()
+    await app.home.header.searchForm.inputSearchCriteria("billie jean");
+    await app.home.header.searchForm.clickEnterSearchField();
+    await app.musicPage.header.clickMusicSearchButton()
+    await app.musicPage.track.expectMusicTracksToBeVisible()
     
     //Assert
-    await musicPage.track. expectTextsToContainSearchCriteria(musicPage.track.tracksName, "billie jean")
-    await musicPage.track.expectListToHaveCount(musicPage.track.tracksName, 20)
-    await musicPage.track.expectAreElementsInListDisplayed(musicPage.track.allPlayButton)
+    await app.musicPage.track. expectTextsToContainSearchCriteria(app.musicPage.track.tracksName, "billie jean")
+    await app.musicPage.track.expectListToHaveCount(app.musicPage.track.tracksName, 20)
+    await app.musicPage.track.expectAreElementsInListDisplayed(app.musicPage.track.allPlayButton)
   });
 
   test("Check regional search", async ({
-    home,
-    musicPage,
-    page
+    app,
   }) => {
     //Actions
-    await home.header.searchForm.inputSearchCriteria("billie jean");
-    await home.header.searchForm.clickEnterSearchField();
-    await musicPage.header.clickMusicSearchButton()
-    await musicPage.track.expectMusicTracksToBeVisible()
-    await musicPage.header.clickHamburgerMenuButton();
-    await musicPage.header.hamburgerMenu.selectRegion("Germany");
-    await musicPage.track.expectMusicTracksToBeVisible()
+    await app.home.open()
+    await app.home.header.searchForm.inputSearchCriteria("billie jean");
+    await app.home.header.searchForm.clickEnterSearchField();
+    await app.musicPage.header.clickMusicSearchButton()
+    await app.musicPage.track.expectMusicTracksToBeVisible()
+    await app.musicPage.header.clickHamburgerMenuButton();
+    await app.musicPage.header.hamburgerMenu.selectRegion("Germany");
+    await app.musicPage.track.expectMusicTracksToBeVisible()
     
     //Assert
-    await musicPage.track.expectTextsToContainSearchCriteria(musicPage.track.tracksName, "billie jean")
-    await musicPage.track.expectListToHaveCount(musicPage.track.tracksName, 20)
-    await musicPage.track.expectAreElementsInListDisplayed(musicPage.track.allPlayButton)
-    await musicPage.expectHaveUrl(page, process.env.WEB_URL + "en/music?query=billie+jean&region=de-DE")
+    await app.musicPage.track.expectTextsToContainSearchCriteria(app.musicPage.track.tracksName, "billie jean")
+    await app.musicPage.track.expectListToHaveCount(app.musicPage.track.tracksName, 20)
+    await app.musicPage.track.expectAreElementsInListDisplayed(app.musicPage.track.allPlayButton)
+    await app.musicPage.expectHaveUrl(app.page, process.env.BASE_URL + "/en/music?query=billie+jean&region=de-DE")
   });
 
   test("Check the width and visibility images of playlist", async ({
-    home,
-    musicPage,
+    app
   }) => {
     //Actions
-    await home.header.searchForm.inputSearchCriteria("billie jean");
-    await home.header.searchForm.clickEnterSearchField();
-    await musicPage.header.clickMusicSearchButton()
-    await musicPage.track.expectMusicTracksToBeVisible()
+    await app.home.open()
+    await app.home.header.searchForm.inputSearchCriteria("billie jean");
+    await app.home.header.searchForm.clickEnterSearchField();
+    await app.musicPage.header.clickMusicSearchButton()
+    await app.musicPage.track.expectMusicTracksToBeVisible()
     
     //Assert
-    await musicPage.playlist.expectImageToHaveWight("width", 50)
-    await musicPage.playlist.expectListToHaveCount(musicPage.playlist.allImages, 3)
-    await musicPage.playlist.expectAreElementsInListDisplayed(musicPage.playlist.allImages)
+    await app.musicPage.playlist.expectImageToHaveWight("width", 50)
+    await app.musicPage.playlist.expectListToHaveCount(app.musicPage.playlist.allImages, 3)
+    await app.musicPage.playlist.expectAreElementsInListDisplayed(app.musicPage.playlist.allImages)
   });
 
   test("Check the width and visibility images of tracks", async ({
-    home,
-    musicPage,
+    app
   }) => {
     //Actions
-    await home.header.searchForm.inputSearchCriteria("billie jean");
-    await home.header.searchForm.clickEnterSearchField();
-    await musicPage.header.clickMusicSearchButton()
-    await musicPage.track.expectMusicTracksToBeVisible()
+    await app.home.open()
+    await app.home.header.searchForm.inputSearchCriteria("billie jean");
+    await app.home.header.searchForm.clickEnterSearchField();
+    await app.musicPage.header.clickMusicSearchButton()
+    await app.musicPage.track.expectMusicTracksToBeVisible()
     
     //Assert
-    await musicPage.track.expectImageToHaveWight("width", 72)
-    await musicPage.track.expectListToHaveCount(musicPage.track.allImages, 20)
-    await musicPage.track.expectAreElementsInListDisplayed(musicPage.track.allImages)
+    await app.musicPage.track.expectImageToHaveWight("width", 72)
+    await app.musicPage.track.expectListToHaveCount(app.musicPage.track.allImages, 20)
+    await app.musicPage.track.expectAreElementsInListDisplayed(app.musicPage.track.allImages)
   });
   test("Check width and visibility image in player", async ({
-    home,
-    musicPage,
+    app
   }) => {
     //Actions
-    await home.header.searchForm.inputSearchCriteria("billie jean");
-    await home.header.searchForm.clickEnterSearchField();
-    await musicPage.header.clickMusicSearchButton()
-    await musicPage.track.expectMusicTracksToBeVisible()
-    await musicPage.track.clickPlayButtonNumberTrack(1)
+    await app.home.open()
+    await app.home.header.searchForm.inputSearchCriteria("billie jean");
+    await app.home.header.searchForm.clickEnterSearchField();
+    await app.musicPage.header.clickMusicSearchButton()
+    await app.musicPage.track.expectMusicTracksToBeVisible()
+    await app.musicPage.track.clickPlayButtonNumberTrack(1)
     
     //Assert
-    await musicPage.player.expectImageToHaveWight("width", 40)
-    await musicPage.player.expectElementToBeVisible(musicPage.player.image)
+    await app.musicPage.player.expectImageToHaveWight("width", 40)
+    await app.musicPage.player.expectElementToBeVisible(app.musicPage.player.image)
   });
 
   test("Check hovering buttons play/next/prev/pause/heart/ in player", async ({
-    home,
-    musicPage,
+    app
   }) => {
     //Actions
-    await home.header.searchForm.inputSearchCriteria("billie jean");
-    await home.header.searchForm.clickEnterSearchField();
-    await musicPage.header.clickMusicSearchButton()
-    await musicPage.track.expectMusicTracksToBeVisible()
-    await musicPage.track.clickPlayButtonNumberTrack(1)
+    await app.home.open()
+    await app.home.header.searchForm.inputSearchCriteria("billie jean");
+    await app.home.header.searchForm.clickEnterSearchField();
+    await app.musicPage.header.clickMusicSearchButton()
+    await app.musicPage.track.expectMusicTracksToBeVisible()
+    await app.musicPage.track.clickPlayButtonNumberTrack(1)
     
     //Assert
-    await musicPage.player.expectColorsLinksWhenHovering(musicPage.player.allButtons, "color", "rgb(223, 93, 93)");
-    await musicPage.player.expectListToHaveCount(musicPage.player.allButtons, 6);
+    await app.musicPage.player.expectColorsLinksWhenHovering(app.musicPage.player.allButtons, "color", "rgb(223, 93, 93)");
+    await app.musicPage.player.expectListToHaveCount(app.musicPage.player.allButtons, 6);
   });
   
