@@ -22,18 +22,6 @@ export default class VpnPage extends BasePage {
   async open(){
     await this.openPage("/anonymous-vpn")
   }
-
-  async clickAllLinksAndNavigateToNewPage(id) {
-    await this.page.waitForSelector('h3.question', { state: 'visible' });
-    const newPage = await this.clickElementAndNavigateToNewPage( this.allLinks(id),`${id}`);
-    return newPage;
-  }
-  clickLinkInTheSecondQuestionAndNavigateToNewPage = async (name) => {
-    const newPage = await this.clickElementAndNavigateToNewPage( this.allLinksInSecondQuestions(name),
-      `${name} link in the four question`
-    );
-    return newPage;
-  };
   scrollDownToQuestions = async () => {
     await this.scrollByVisibleElement(this.secondQuestion, `second question in accordion menu`);
   }

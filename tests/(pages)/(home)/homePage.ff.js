@@ -1,35 +1,39 @@
 
-import { test } from "../../../utils/fixturePages";
+import { test , expect} from "../../../utils/fixtures";
 const testData = JSON.parse(
   JSON.stringify(require("../../../data/home/testData.json"))
 );
 test('Check that popup "firefox install" redirect to the corresponding page ', async ({
-  home,
+  app, context
 }) => {
-  const externalPage = await home.installSwisscowsLink.clickExtensionPopupAndNavigateToWebStore();
-
+  //Actions
+  await app.home.open()
+ 
   //Assert
-  await home.expectHaveUrl( externalPage, new RegExp(testData.url.extensionFirefoxInstall));
-  await home.expectHaveTitle(externalPage, /Swisscows/);
+  await app.home.expectToBeOpenedNewPageAfterClick(app.home.installSwisscowsLink.extensionPopup, 
+    testData.url.extensionFirefoxInstall)
+  await expect(context.pages()[1]).toHaveTitle( /Swisscows/)
 });
 
-test("Check that popup firefox install Is Displayed", async ({ home }) => {
+test("Check that popup firefox install Is Displayed", async ({ app }) => {
   const expectedText =
     "Stay with us and set Swisscows as your default search engine. ";
+  //Actions
+  await app.home.open() 
 
   //Assert
-  await home.installSwisscowsLink.expectExtensionPopupIsDisplayed();
-  await home.installSwisscowsLink.expectTextExtensionPopup(
-    expectedText
-  );
+  await app.home.installSwisscowsLink.expectExtensionPopupIsDisplayed();
+  await app.home.installSwisscowsLink.expectTextExtensionPopup(expectedText);
 });
 
 test('Check that the "Install Swisscows Block" button redirect to corresponding URL.', async ({
-  home
+  app, context
 }) => {
-  const externalPage = await home.extensionBlock.clickExtensionBlockAndNavigateToWebStore();
+  //Actions
+  await app.home.open()
 
   //Assert
-  await home.expectHaveUrl( externalPage, new RegExp(testData.url.extensionFirefoxInstall));
-  await home.expectHaveTitle(externalPage, /Swisscows/);
+  await app.home.expectToBeOpenedNewPageAfterClick(app.home.extensionBlock.extensionLink, 
+    testData.url.extensionFirefoxInstall)
+  await expect(context.pages()[1]).toHaveTitle( /Swisscows/)
 });

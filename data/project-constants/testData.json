@@ -7,5 +7,6 @@
     
     "TITLE_MAIN_PAGE" : "Your private and anonymous search engine Swisscows",
     "TITLE_PRIVACY_POLICY" : "Privacy Policy | Swisscows",
-    "TITLE_LOGIN_PAGE" : "Login - Swisscows Accounts"
+    "TITLE_LOGIN_PAGE" : "Login - Swisscows Accounts",
+    "RED": "rgb(223, 93, 93)"
 }

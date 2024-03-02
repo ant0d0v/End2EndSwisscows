@@ -6,7 +6,7 @@ const testData = JSON.parse(
 test("Check design of the VPN page ", async ({ app },testInfo) => {
     //Actions
     await app.vpnPage.open()
-    await app.pnPage.waitUntilPageIsFullyLoaded();
+    await app.pnPage.waitUntilPageIsFullyLoaded()
     //Assert
     await app.vpnPage.expectScreenVpnPage(testInfo)
   });
