@@ -161,8 +161,8 @@ for (const { testID, expectedLink, locatorId, expectedTitle,} of main.languagesL
     await app.home.header.hamburgerMenu.clickLanguageLinkInDropdown(locatorId);
     
     //Assert
-    await app.home.expectHaveUrl(app.page, expectedLink);
-    await app.home.expectHaveTitle(app.page, new RegExp(expectedTitle));
+    await app.home.expectHaveUrl(app.home.page, expectedLink);
+    await app.home.expectHaveTitle(app.home.page, new RegExp(expectedTitle));
   });
 }
 

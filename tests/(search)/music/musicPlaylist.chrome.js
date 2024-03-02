@@ -129,5 +129,5 @@ const value = "Skofka";
     //Assert
     await app.musicPlaylistPage.track.expectListToHaveCount(app.musicPlaylistPage.track.tracksName, 20)
     await app.musicPlaylistPage.track.expectAreElementsInListDisplayed(app.musicPlaylistPage.track.allPlayButton)
-    await app.musicPlaylistPage.expectHaveUrl(app.page, expectedUrl);
+    await app.musicPlaylistPage.expectHaveUrl(app.musicPlaylistPage.page, expectedUrl);
   });

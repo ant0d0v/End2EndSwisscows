@@ -353,7 +353,7 @@ test("Check 202 No Results Found error page ", async ({
     await app.musicPage.track.expectTextsToContainSearchCriteria(app.musicPage.track.tracksName, "billie jean")
     await app.musicPage.track.expectListToHaveCount(app.musicPage.track.tracksName, 20)
     await app.musicPage.track.expectAreElementsInListDisplayed(app.musicPage.track.allPlayButton)
-    await app.musicPage.expectHaveUrl(app.page, process.env.BASE_URL + "/en/music?query=billie+jean&region=de-DE")
+    await app.musicPage.expectHaveUrl(app.musicPage.page, process.env.BASE_URL + "/en/music?query=billie+jean&region=de-DE")
   });
 
   test("Check the width and visibility images of playlist", async ({

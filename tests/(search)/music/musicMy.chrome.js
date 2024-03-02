@@ -237,9 +237,11 @@ test("Check No items Found error page ", async ({
     await app.musicMyPage.track.expectMusicTracksToBeVisible()
     
     //Assert
-    await app.musicMyPage.track.expectTextsToContainSearchCriteria(app.musicMyPage.track.tracksName, value.toLowerCase())
+    await app.musicMyPage.track.expectTextsToContainSearchCriteria(
+      app.musicMyPage.track.tracksName, value.toLowerCase())
     await app.musicMyPage.track.expectListToHaveCount(app.musicMyPage.track.tracksName, 1)
     await app.musicMyPage.track.expectAreElementsInListDisplayed(app.musicMyPage.track.allPlayButton)
-    await app.musicMyPage.expectHaveUrl(app.page,  process.env.BASE_URL + `/en/music/my?query=${value}&region=de-DE`)
+    await app.musicMyPage.expectHaveUrl(
+      app.musicMyPage.page,  process.env.BASE_URL + `/en/music/my?query=${value}&region=de-DE`)
     
   });
