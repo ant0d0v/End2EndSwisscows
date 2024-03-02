@@ -1,229 +1,157 @@
-import { test } from "../../utils/fixturePages";
+import { test } from "../../utils/fixtures";
 const testData = JSON.parse(
-  JSON.stringify(require("../../data/header/testData.json"))
-);
-const dateTest = JSON.parse(
   JSON.stringify(require("../../data/hamburger/testData.json"))
 );
 
 test("Check  login User and display of nickname in hamburger menu", async ({
-  home,
-  webPage
+  app
 }) => {
   //Actions
-  await home.header.searchForm.inputSearchCriteria(testData.searchCriteria.first);
-  await home.header.searchForm.clickEnterSearchField();
-  await webPage.header.clickHamburgerMenuButton();
+  await app.home.open()
+  await app.home.header.searchForm.inputSearchCriteria("ukraine");
+  await app.home.header.searchForm.clickEnterSearchField();
+  await app.webPage.header.clickHamburgerMenuButton();
 
   //Assert
-  await webPage.header.hamburgerMenu.expectNicknameUserInHamburgerMenuToHave("TTest");
+  await app.webPage.header.hamburgerMenu.expectNicknameUserInHamburgerMenuToHave("TTest");
 });
 
 test("Check Log Out user and display of login button", async ({
-  home,
-  webPage
+  app
 }) => {
   //Actions
-  await home.header.searchForm.inputSearchCriteria(testData.searchCriteria.first);
-  await home.header.searchForm.clickEnterSearchField();
-  await webPage.header.clickHamburgerMenuButton();
-  await webPage.header.hamburgerMenu.clickLogoutButtonInHamburgerMenu();
-  await webPage.header.clickHamburgerMenuButton();
+  await app.home.open()
+  await app.home.header.searchForm.inputSearchCriteria("best");
+  await app.home.header.searchForm.clickEnterSearchField();
+  await app.webPage.header.clickHamburgerMenuButton();
+  await app.webPage.header.hamburgerMenu.clickLogoutButtonInHamburgerMenu();
+  await app.webPage.header.clickHamburgerMenuButton();
 
   //Assert
-  await webPage.header.hamburgerMenu.expectLoginButtonInHamburgerMenuIsDisplayed();
+  await app.webPage.header.hamburgerMenu.expectLoginButtonInHamburgerMenuIsDisplayed();
 });
 
 test("Texts of the links in the hamburger menu.", async ({
-  home
+  app
 }) => {
-  const expectedTextsOfLinks = [
-    "Set as Startpage",
-    "Make a Default Search Engine",
-    "Who we are",
-    "Media Education",
-    "Charity Project",
-    "Our Datacenter",
-    "Contact us",
-    "Data privacy",
-    "Donation",
-    "Support",
-  ];
   //Actions
-  await home.header.clickHamburgerMenuButton();
+  await app.home.open()
+  await app.home.header.clickHamburgerMenuButton();
 
   //Assert
-  await home.header.hamburgerMenu.expectTextsOfLinksInHamburgerMenu(expectedTextsOfLinks);
+  await app.home.header.hamburgerMenu.expectTextsOfLinksInHamburgerMenu(
+    testData.expectedTextsHamburgerLinks);
 });
 
 test("Check availability and options of localization dropdown menu in hamburger Menu", async ({
-  home
+  app
 }) => {
-  const expectedTextsOfLanguagesDropdown = [
-    "English",
-    "Deutsch",
-    "Español",
-    "Français",
-    "Italiano",
-    "Latviešu",
-    "Magyar",
-    "Nederlands",
-    "Português",
-    "Русский",
-    "Українська",
-  ];
+ ;
   //Actions
-  await home.header.clickHamburgerMenuButton();
-  await home.header.hamburgerMenu.clickLanguagesDropdownInHamburgerMenu();
+  await app.home.open()
+  await app.home.header.clickHamburgerMenuButton();
+  await app.home.header.hamburgerMenu.clickLanguagesDropdownInHamburgerMenu();
 
   //Assert
-  await home.header.hamburgerMenu.expectListToHaveCount(
-    home.header.hamburgerMenu.textsLanguagesDropdownInHamburgerMenu,
-    11
+  await app.home.header.hamburgerMenu.expectListToHaveCount(
+    app.home.header.hamburgerMenu.textsLanguagesDropdownInHamburgerMenu, 11
   );
-  await home.header.hamburgerMenu.expectTextsOfLanguagesInHamburgerMenu(
-    expectedTextsOfLanguagesDropdown
+  await app.home.header.hamburgerMenu.expectTextsOfLanguagesInHamburgerMenu(
+    testData.expectedTextsOfLanguagesDropdown
   );
 });
 
 test("Check  availability and options of region dropdown menu in hamburger menu", async ({
-  home
+  app
 }) => {
-  const expectedTextsOfRegionDropdown = [
-    "Argentina",
-    "Australia",
-    "Austria",
-    "Belgium (FR)",
-    "Belgium (NL)",
-    "Brazil",
-    "Canada (EN)",
-    "Canada (FR)",
-    "Chile",
-    "China",
-    "Denmark",
-    "Finland",
-    "France",
-    "Germany",
-    "Hong Kong SAR",
-    "Hungary",
-    "India",
-    "Indonesia",
-    "Ireland",
-    "Italy",
-    "Japan",
-    "Kazakhstan",
-    "Korea",
-    "Latvia",
-    "Malaysia",
-    "Mexico",
-    "Netherlands",
-    "New Zealand",
-    "Nigeria",
-    "Norway",
-    "Paraguay",
-    "Philippines",
-    "Poland",
-    "Portugal",
-    "Russia",
-    "Saudi Arabia",
-    "South Africa",
-    "Spain",
-    "Sweden",
-    "Switzerland (DE)",
-    "Switzerland (FR)",
-    "Taiwan",
-    "Turkey",
-    "Ukraine",
-    "United Kingdom",
-    "United States (EN)",
-    "United States (ES)",
-    "World-wide",
-  ];
+ 
   //Actions
-  await home.header.clickHamburgerMenuButton();
-  await home.header.hamburgerMenu.clickRegionDropdownInHamburgerMenu();
+  await app.home.open()
+  await app.home.header.clickHamburgerMenuButton();
+  await app.home.header.hamburgerMenu.clickRegionDropdownInHamburgerMenu();
 
   //Assert
-  await home.header.hamburgerMenu.expectListToHaveCount(
-    home.header.hamburgerMenu.textsOfRegionDropdownInHamburgerMenu,
-    48
+  await app.home.header.hamburgerMenu.expectListToHaveCount(
+    app.home.header.hamburgerMenu.textsOfRegionDropdownInHamburgerMenu, 48
   );
-  await home.header.hamburgerMenu.expectTextsOfRegionInHamburgerMenu(
-    expectedTextsOfRegionDropdown
+  await app.home.header.hamburgerMenu.expectTextsOfRegionInHamburgerMenu(
+    testData.expectedTextsOfRegionDropdown
   );
 });
 test("Check theme change to dark theme", async ({
-  home
+  app
 }) => {
   const expectedDarkBackground = /rgb\(24, 26, 28\)/;
   //Actions
-  await home.header.clickHamburgerMenuButton();
-  await home.header.hamburgerMenu.clickThemeDropdownInHamburgerMenu();
-  await home.header.hamburgerMenu.clickDarkInHamburgerMenu();
+  await app.home.open()
+  await app.home.header.clickHamburgerMenuButton();
+  await app.home.header.hamburgerMenu.clickThemeDropdownInHamburgerMenu();
+  await app.home.header.hamburgerMenu.clickDarkInHamburgerMenu();
 
   //Assert
-  await home.header.hamburgerMenu.expectBackgroundColorOfPage(expectedDarkBackground);
+  await app.home.header.hamburgerMenu.expectBackgroundColorOfPage(expectedDarkBackground);
 });
 
 test("Check theme change to light theme", async ({
-  home
+  app
 }) => {
   const expectedLightBackground = /rgb\(250, 251, 253\)/;
   //Actions
-  await home.header.clickHamburgerMenuButton();
-  await home.header.hamburgerMenu.clickThemeDropdownInHamburgerMenu();
-  await home.header.hamburgerMenu.clickLightInHamburgerMenu();
+  await app.home.open()
+  await app.home.header.clickHamburgerMenuButton();
+  await app.home.header.hamburgerMenu.clickThemeDropdownInHamburgerMenu();
+  await app.home.header.hamburgerMenu.clickLightInHamburgerMenu();
 
   //Assert
-  await home.header.hamburgerMenu.expectBackgroundColorOfPage(
+  await app.home.header.hamburgerMenu.expectBackgroundColorOfPage(
     expectedLightBackground
   );
 });
 
 test("Check default theme on first opening the site", async ({
-  home
+  app
 }) => {
   const expectedLightBackground = /rgb\(250, 251, 253\)/;
   //Actions
-  await home.header.clickHamburgerMenuButton();
-  await home.header.hamburgerMenu.clickThemeDropdownInHamburgerMenu();
+  await app.home.open()
+  await app.home.header.clickHamburgerMenuButton();
+  await app.home.header.hamburgerMenu.clickThemeDropdownInHamburgerMenu();
 
   //Assert
-  await home.header.hamburgerMenu.expectAttributeClassOfElement(
-    home.header.hamburgerMenu.defaultThemeInHamburgerMenu,
-    "active"
+  await app.home.header.hamburgerMenu.expectAttributeClassOfElement(
+    app.home.header.hamburgerMenu.defaultThemeInHamburgerMenu, "active"
   );
-  await home.header.hamburgerMenu.expectBackgroundColorOfPage(
+  await app.home.header.hamburgerMenu.expectBackgroundColorOfPage(
     expectedLightBackground
   );
 });
 
-for (const {testID,expectedLink,locatorId,expectedTitle,} of dateTest.regionLinksOfHome) {
+for (const {testID,expectedLink,locatorId,expectedTitle,} of testData.regionLinksOfHome) {
   test(`${testID} Check navigation to corresponding pages for ${locatorId} region`, async ({
-    home,
-    page,
+    app
   }) => {
     //Actions
-    await home.header.clickHamburgerMenuButton();
-    await home.header.hamburgerMenu.clickDropdownRegion();
-    await home.header.hamburgerMenu.clickRegionLinkInDropdown(locatorId);
+    await app.home.open()
+    await app.home.header.clickHamburgerMenuButton();
+    await app.home.header.hamburgerMenu.clickDropdownRegion();
+    await app.home.header.hamburgerMenu.clickRegionLinkInDropdown(locatorId);
 
     //Assert
-    await home.expectHaveUrl(page, expectedLink);
-    await home.expectHaveTitle(page, expectedTitle);
+    await app.home.expectHaveUrl(app.home.page, expectedLink);
+    await app.home.expectHaveTitle(app.home.page, expectedTitle);
   });
 }
-for (const {testID,expectedLink,locatorId,expectedTitle,} of dateTest.staticPagesLinks) {
+for (const {testID,expectedLink,locatorId,expectedTitle,} of testData.staticPagesLinks) {
   test(`${testID}  ${locatorId} content page links navigates to the corresponding page.`, async ({
-    home,
-    page
+    app
   }) => {
     //Actions
-    await home.header.clickHamburgerMenuButton();
-    await home.header.hamburgerMenu.clickLinkOfStaticPage(locatorId);
+    await app.home.open()
+    await app.home.header.clickHamburgerMenuButton();
+    await app.home.header.hamburgerMenu.clickLinkOfStaticPage(locatorId);
 
     //Assert
-    await home.header.hamburgerMenu.expectHaveUrl(page, expectedLink);
-    await home.header.hamburgerMenu.expectHaveTitle(page, expectedTitle);
+    await app.home.header.hamburgerMenu.expectHaveUrl(app.home.page, expectedLink);
+    await app.home.header.hamburgerMenu.expectHaveTitle(app.home.page, expectedTitle);
   });
 }

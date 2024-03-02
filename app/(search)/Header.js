@@ -30,19 +30,7 @@ export default class Header extends BaseComponent {
       `hamburger menu in the header`
     );
   };
-  clickBadgeEmailAndNavigateToNewPage = async () => {
-    const loginPage = await this.clickElementAndNavigateToNewPage(this.badgeEmail,
-      "badge Email"
-    );
-    return loginPage;
-  };
-  clickLinkInHeaderAndNavigateToNewPage = async (id) => {
-    const newPage = await this.clickElementAndNavigateToNewPage(this.linksOfHeader(id),
-      "link of header"
-    );
-    return newPage;
-  };
-
+  
   clickSwisscowsLogo = async () => {
     await this.clickElement(this.logoSwisscows, `Swisscows Logo in the header`);
   };

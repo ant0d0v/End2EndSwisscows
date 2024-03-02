@@ -3,6 +3,9 @@ import { expect } from "../../utils/customMatchers";
 const testData = JSON.parse(
   JSON.stringify(require("../../data/lendings/vpn/testData.json"))
 );
+const constantsData = JSON.parse(
+  JSON.stringify(require("../../data/project-constants/testData.json"))
+);
 test("Check design of the VPN page ", async ({ app },testInfo) => {
     //Actions
     await app.vpnPage.open()
@@ -110,4 +113,16 @@ test("Check design of the VPN page ", async ({ app },testInfo) => {
     // Assert
     await app.vpnPage.expectColorsLinksWhenHovering(app.vpnPage.allButtons, "background", 
     "rgb(0, 93, 119) none repeat scroll 0% 0% / auto padding-box border-box");
+  });
+
+  test("Clicking on the swisscows's logo on vpn page leads to the home page.", async ({
+    app
+  }) => {
+    //Actions
+    await app.vpnPage.open()
+    await app.vpnPage.header.clickSwisscowsVpnLogo();
+  
+    //Assert
+    await app.home.expectHaveUrl(app.home.page, constantsData.URL_MAIN_PAGE);
+    await app.home.expectHaveTitle(app.home.page, constantsData.TITLE_MAIN_PAGE );
   });
