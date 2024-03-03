@@ -1,202 +1,194 @@
-import { test} from " /../../utils/fixturePages";
-const { expect } = require("@playwright/test");
+import { test} from " /../../utils/fixtures";
 
 test("Check next and prev buttons in the video widget", async ({
-    home,
-    webPage
+    app
   }) => {
      
      //Actions
-     await home.header.clickHamburgerMenuButton();
-     await home.header.hamburgerMenu.selectRegion("Germany");
-     await home.header.searchForm.inputSearchCriteria("flovers video");
-     await home.header.searchForm.clickEnterSearchField();
-     await webPage.item.expectWebItemsToBeVisible()
-     await webPage.videoWidget.clickNextButtonUntilInvisible()
-     await webPage.videoWidget.waitElementToBeVisible(webPage.videoWidget.nextButton)
+     await app.home.open()
+     await app.home.header.clickHamburgerMenuButton();
+     await app.home.header.hamburgerMenu.selectRegion("Germany");
+     await app.home.header.searchForm.inputSearchCriteria("flovers video");
+     await app.home.header.searchForm.clickEnterSearchField();
+     await app.webPage.item.expectWebItemsToBeVisible()
+     await app.webPage.videoWidget.clickNextButtonUntilInvisible()
+     await app.webPage.videoWidget.waitElementToBeVisible(app.webPage.videoWidget.nextButton)
      
      //Assert
-     await webPage.videoWidget.expectAttributeToHaveValue(webPage.videoWidget.nextButton, 
+     await app.webPage.videoWidget.expectAttributeToHaveValue(app.webPage.videoWidget.nextButton, 
       "class", /next swiper-button-disabled/)
-     await webPage.videoWidget.clickPrevButtonUntilInvisible()
-     await webPage.videoWidget.expectAttributeToHaveValue(webPage.videoWidget.prevButton, 
+     await app.webPage.videoWidget.clickPrevButtonUntilInvisible()
+     await app.webPage.videoWidget.expectAttributeToHaveValue(app.webPage.videoWidget.prevButton, 
       "class", /prev swiper-button-disabled/)
   });
 
   test("Check the width and visibility of images in the video widget", async ({
-    home,
-    webPage
+    app
   }) => {
      
      //Actions
-     await home.header.clickHamburgerMenuButton();
-     await home.header.hamburgerMenu.selectRegion("Germany");
-     await home.header.searchForm.inputSearchCriteria("flovers video");
-     await home.header.searchForm.clickEnterSearchField();
-     await webPage.item.expectWebItemsToBeVisible()
-     await webPage.videoWidget.waitElementToBeVisible(webPage.videoWidget.nextButton)
+     await app.home.open()
+     await app.home.header.clickHamburgerMenuButton();
+     await app.home.header.hamburgerMenu.selectRegion("Germany");
+     await app.home.header.searchForm.inputSearchCriteria("flovers video");
+     await app.home.header.searchForm.clickEnterSearchField();
+     await app.webPage.item.expectWebItemsToBeVisible()
+     await app.webPage.videoWidget.waitElementToBeVisible(app.webPage.videoWidget.nextButton)
      
      //Assert
-     await webPage.videoWidget.expectAreElementsInListDisplayed(webPage.videoWidget.allImage)
+     await webPage.videoWidget.expectAreElementsInListDisplayed(app.webPage.videoWidget.allImage)
      await webPage.videoWidget.expectImageToHaveWightInWidget("width", 240)
-     await webPage.videoWidget.expectListToHaveCount(webPage.videoWidget.allImage, 10)
+     await webPage.videoWidget.expectListToHaveCount(app.ebPage.videoWidget.allImage, 10)
   });
 
   test("Check click more button in the video widget", async ({
-    home,
-    webPage,
-    videoPage,
-    page
+    app
   }) => {
      
      //Actions
-     await home.header.clickHamburgerMenuButton();
-     await home.header.hamburgerMenu.selectRegion("Germany");
-     await home.header.searchForm.inputSearchCriteria("flovers video");
-     await home.header.searchForm.clickEnterSearchField();
-     await webPage.item.expectWebItemsToBeVisible()
-     await webPage.videoWidget.waitElementToBeVisible(webPage.videoWidget.nextButton)
-     await webPage.videoWidget.clickMoreVideosButton()
+     await app.home.open()
+     await app.home.header.clickHamburgerMenuButton();
+     await app.home.header.hamburgerMenu.selectRegion("Germany");
+     await app.home.header.searchForm.inputSearchCriteria("flovers video");
+     await app.home.header.searchForm.clickEnterSearchField();
+     await app.webPage.item.expectWebItemsToBeVisible()
+     await app.webPage.videoWidget.waitElementToBeVisible(app.webPage.videoWidget.nextButton)
+     await app.webPage.videoWidget.clickMoreVideosButton()
      
      //Assert
-     await videoPage.expectHaveUrl(page,"https://dev.swisscows.com/en/video?query=flovers+video&region=de-DE" )
-     await videoPage.expectHaveTitle(page, "Videos for flovers video - Swisscows" )
+     await app.videoPage.expectHaveUrl(app.videoPage.page, process.env.BASE_URL + "/en/video?query=flovers+video&region=de-DE" )
+     await app.videoPage.expectHaveTitle(app.videoPage.page, "Videos for flovers video - Swisscows" )
   });
 
   test("Check that open video in the video widget", async ({
-    home,
-    webPage,
-    videoPage
+    app
   }) => {
      //Actions
-     await home.header.clickHamburgerMenuButton();
-     await home.header.hamburgerMenu.selectRegion("Germany");
-     await home.header.searchForm.inputSearchCriteria("flovers video");
-     await home.header.searchForm.clickEnterSearchField();
-     await webPage.item.expectWebItemsToBeVisible()
-     await webPage.videoWidget.waitElementToBeVisible(webPage.videoWidget.nextButton)
-     const newPage = await webPage.videoWidget.clickFirstVideoAndNavigateToNewPage()
+     await app.home.open()
+     await app.home.header.clickHamburgerMenuButton();
+     await app.home.header.hamburgerMenu.selectRegion("Germany");
+     await app.home.header.searchForm.inputSearchCriteria("flovers video");
+     await app.home.header.searchForm.clickEnterSearchField();
+     await app.webPage.item.expectWebItemsToBeVisible()
+     await app.webPage.videoWidget.waitElementToBeVisible(app.webPage.videoWidget.nextButton)
      
      //Assert
-     await videoPage.expectHaveUrl(newPage, /www.youtube.com/ )
+     await app.webPage.videoWidget.expectToBeOpenedNewPageAfterClick(
+      app.webPage.videoWidget.firstVideo , /www.youtube.com/)
   });
 
   test("Check the count and visibility of images in the image widget", async ({
-    home,
-    webPage
+    app
   }) => {
      //Actions
-     await home.header.clickHamburgerMenuButton();
-     await home.header.hamburgerMenu.selectRegion("Germany");
-     await home.header.searchForm.inputSearchCriteria("flowers");
-     await home.header.searchForm.clickEnterSearchField();
-     await webPage.item.expectWebItemsToBeVisible()
+     await app.home.open()
+     await app.home.header.clickHamburgerMenuButton();
+     await app.home.header.hamburgerMenu.selectRegion("Germany");
+     await app.home.header.searchForm.inputSearchCriteria("flowers");
+     await app.home.header.searchForm.clickEnterSearchField();
+     await app.webPage.item.expectWebItemsToBeVisible()
      
      //Assert
-     await webPage.imagesWidget.expectAreElementsInListDisplayed(webPage.imagesWidget.allImage)
-     await webPage.imagesWidget.expectListToBeGreaterThanOrEqual(webPage.imagesWidget.allImage, 6)
+     await app.webPage.imagesWidget.expectAreElementsInListDisplayed(app.webPage.imagesWidget.allImage)
+     await app.webPage.imagesWidget.expectListToBeGreaterThanOrEqual(app.webPage.imagesWidget.allImage, 6)
   });
 
   test("Check click more button in the image widget", async ({
-    home,
-    webPage,
-    imagePage,
-    page
+    app
   }) => {
      //Actions
-     await home.header.clickHamburgerMenuButton();
-     await home.header.hamburgerMenu.selectRegion("Germany");
-     await home.header.searchForm.inputSearchCriteria("flowers");
-     await home.header.searchForm.clickEnterSearchField();
-     await webPage.item.expectWebItemsToBeVisible()
-     await webPage.imagesWidget.clickMoreImagesButton()
+     await app.home.open()
+     await app.home.header.clickHamburgerMenuButton();
+     await app.home.header.hamburgerMenu.selectRegion("Germany");
+     await app.home.header.searchForm.inputSearchCriteria("flowers");
+     await app.home.header.searchForm.clickEnterSearchField();
+     await app.webPage.item.expectWebItemsToBeVisible()
+     await app.webPage.imagesWidget.clickMoreImagesButton()
      
      //Assert
-     await imagePage.expectHaveUrl(page,"https://dev.swisscows.com/en/images?query=flowers&region=de-DE" )
-     await imagePage.expectHaveTitle(page, "Images for flowers - Swisscows" )
+     await app.imagePage.expectHaveUrl(app.allImage.page, process.env.BASE_URL + "/en/images?query=flowers&region=de-DE" )
+     await app.imagePage.expectHaveTitle(app.allImage.page, "Images for flowers - Swisscows" )
   });
 
   test("Check that open image in the image widget", async ({
-    home,
-    webPage,
-    imagePage
+    app
   }) => {
      //Actions
-     await home.header.clickHamburgerMenuButton();
-     await home.header.hamburgerMenu.selectRegion("Germany");
-     await home.header.searchForm.inputSearchCriteria("flowers");
-     await home.header.searchForm.clickEnterSearchField();
-     await webPage.item.expectWebItemsToBeVisible()
-     const newPage = await webPage.imagesWidget.clickFirstImageAndNavigateToNewPage()
+     await app.home.open()
+     await app.home.header.clickHamburgerMenuButton();
+     await app.home.header.hamburgerMenu.selectRegion("Germany");
+     await app.home.header.searchForm.inputSearchCriteria("flowers");
+     await app.home.header.searchForm.clickEnterSearchField();
+     await app.webPage.item.expectWebItemsToBeVisible()
      
      //Assert
-     await imagePage.expectNotToHaveUrl(newPage, "https://dev.swisscows.com/en/web?query=flowers&region=de-DE" )
+     await app.webPage.expectNewPageNotToHaveUrlAfterClick(
+      app.webPage.imagesWidget.firstImage , process.env.BASE_URL + "/en/images?query=flowers&region=de-DE")
   });
 
   test("Check title of the image widget", async ({
-    home,
-    webPage
+    app
   }) => {
      
      //Actions
-     await home.header.clickHamburgerMenuButton();
-     await home.header.hamburgerMenu.selectRegion("Germany");
-     await home.header.searchForm.inputSearchCriteria("flowers");
-     await home.header.searchForm.clickEnterSearchField();
-     await webPage.item.expectWebItemsToBeVisible()
+     await app.home.open()
+     await app.home.header.clickHamburgerMenuButton();
+     await app.home.header.hamburgerMenu.selectRegion("Germany");
+     await app.home.header.searchForm.inputSearchCriteria("flowers");
+     await app.home.header.searchForm.clickEnterSearchField();
+     await app.webPage.item.expectWebItemsToBeVisible()
      
      //Assert
-     await webPage.imagesWidget.expectElementToHaveText(webPage.imagesWidget.titleImagesWidget, 
+     await app.webPage.imagesWidget.expectElementToHaveText(app.webPage.imagesWidget.titleImagesWidget, 
       "Images for flowers")
   });
 
   test("Check open news in the news widget", async ({
-    home,
-    webPage,
-    newsPage
+    app
   }) => {
      //Actions
-     await home.header.clickHamburgerMenuButton();
-     await home.header.hamburgerMenu.selectRegion("Germany");
-     await home.header.searchForm.inputSearchCriteria("news Ukraine");
-     await home.header.searchForm.clickEnterSearchField();
-     await webPage.item.expectWebItemsToBeVisible()
-     const newPage = await webPage.newsWidget.clickFirstNewsAndNavigateToNewPage()
+     await app.home.open()
+     await app.home.header.clickHamburgerMenuButton();
+     await app.home.header.hamburgerMenu.selectRegion("Germany");
+     await app.home.header.searchForm.inputSearchCriteria("news Ukraine");
+     await app.home.header.searchForm.clickEnterSearchField();
+     await app.webPage.item.expectWebItemsToBeVisible()
      
      //Assert
-     await newsPage.expectNotToHaveUrl(newPage, "https://dev.swisscows.com/en/web?query=news+Ukraine&region=de-DE" )
+     await app.webPage.expectNewPageNotToHaveUrlAfterClick(
+      app.webPage.newsWidget.firstNews , process.env.BASE_URL + "/en/web?query=news+Ukraine&region=de-DE")
   });
   test("Check the width and visibility of images in the news widget", async ({
-    home,
-    webPage
+    app
   }) => {
      
      //Actions
-     await home.header.clickHamburgerMenuButton();
-     await home.header.hamburgerMenu.selectRegion("Germany");
-     await home.header.searchForm.inputSearchCriteria("news Ukraine");
-     await home.header.searchForm.clickEnterSearchField();
-     await webPage.item.expectWebItemsToBeVisible()
+     await app.home.open()
+     await app.home.header.clickHamburgerMenuButton();
+     await app.home.header.hamburgerMenu.selectRegion("Germany");
+     await app.home.header.searchForm.inputSearchCriteria("news Ukraine");
+     await app.home.header.searchForm.clickEnterSearchField();
+     await app.webPage.item.expectWebItemsToBeVisible()
      
      //Assert
-     await webPage.newsWidget.expectAreElementsInListDisplayed(webPage.newsWidget.allImage)
-     await webPage.newsWidget.expectImageToHaveWightInWidget("width", 160)
-     await webPage.newsWidget.expectListToHaveCount(webPage.newsWidget.allImage, 3)
+     await app.webPage.newsWidget.expectAreElementsInListDisplayed(app.webPage.newsWidget.allImage)
+     await app.webPage.newsWidget.expectImageToHaveWightInWidget("width", 160)
+     await app.webPage.newsWidget.expectListToHaveCount(app.webPage.newsWidget.allImage, 3)
   });
 
   test("Check title of the news widget", async ({
-    home,
-    webPage
+    app
   }) => {
      
      //Actions
-     await home.header.clickHamburgerMenuButton();
-     await home.header.hamburgerMenu.selectRegion("Germany");
-     await home.header.searchForm.inputSearchCriteria("news Ukraine");
-     await home.header.searchForm.clickEnterSearchField();
-     await webPage.item.expectWebItemsToBeVisible()
+     await app.home.open()
+     await app.home.header.clickHamburgerMenuButton();
+     await app.home.header.hamburgerMenu.selectRegion("Germany");
+     await app.home.header.searchForm.inputSearchCriteria("news Ukraine");
+     await app.home.header.searchForm.clickEnterSearchField();
+     await app.webPage.item.expectWebItemsToBeVisible()
      
      //Assert
-     await webPage.newsWidget.expectElementToHaveText(webPage.newsWidget.titleNewsWidget, 
-      "News for news ukraine")
+     await app.webPage.newsWidget.expectElementToHaveText(app.webPage.newsWidget.titleNewsWidget, 
+      "News for news Ukraine")
   });

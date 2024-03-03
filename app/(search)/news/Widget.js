@@ -9,9 +9,7 @@ export default class Widget extends BaseComponent {
     this.allImage = this.page.locator('div.widget.widget-news a.item--news figure.media img')
     this.titleNewsWidget = this.page.getByText('News for news ukraine')
   }
-  clickFirstNewsAndNavigateToNewPage = async () => {
-    return await this.clickElementAndNavigateToNewPage(this.firstNews, `first news in widget`);
-   };
+ 
     //Verify 
   expectImageToHaveWightInWidget = async (property, value) => {
     await this.expectElementsToHaveJSProperty(this.allImage , property, value);

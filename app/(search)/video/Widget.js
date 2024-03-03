@@ -20,9 +20,7 @@ export default class Widget extends BaseComponent {
   clickMoreVideosButton = async () => {
     await this.clickElement(this.moreVideosButton, `More Videos button`);
   };
-  clickFirstVideoAndNavigateToNewPage = async () => {
-   return await this.clickElementAndNavigateToNewPage(this.firstVideo, `first video in widget`);
-  };
+  
   //Verify 
   expectImageToHaveWightInWidget = async (property, value) => {
     await this.expectElementsToHaveJSProperty(this.allImage , property, value);

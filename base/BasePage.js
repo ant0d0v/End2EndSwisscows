@@ -142,6 +142,12 @@ export default class BasePage {
           await expect(locator).toBeOpenedNewPage(expectedUrl)
         }).catch(async (e) => await this.errorHandling(e, this.page));
   }
+  async expectNewPageNotToHaveUrlAfterClick(locator, expectedUrl ){
+    return test.step(`Click on the ${locator} and navigate to new tab and page not to have url `,
+        async () => { 
+          await expect(locator).newPageNoToHaveURL(expectedUrl)
+        }).catch(async (e) => await this.errorHandling(e, this.page));
+  }
 
   async expectHaveTitle(newPage, title) {
     await test.step('Expect a title "to have" a substring', async () => {
