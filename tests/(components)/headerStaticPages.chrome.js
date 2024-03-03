@@ -1,28 +1,9 @@
 import { test, expect } from "../../utils/fixtures";
-const testData  = JSON.parse(
-  JSON.stringify(require("../../data/header/testData.json"))
-);
+
 const constantsData = JSON.parse(
   JSON.stringify(require("../../data/project-constants/testData.json"))
 );
 
-test.describe("test don't use cookie ", () => {
-  test.use({ storageState: { cookies: [], origins: [] } });
-  for (const { testID,expectedLink,locatorId,expectedTitle,} of testData.headerLinks) {
-    test(`${testID} Check that header static badge ${locatorId} link navigate to corresponding pages`, async ({
-      app, context
-    }) => {
-      //Actions
-      await app.home.open()
-      
-      //Assert
-      await app.home.header.expectToBeOpenedNewPageAfterClick(
-        app.home.header.linksInStaticHeader(locatorId), expectedLink)
-
-      await expect(context.pages()[1]).toHaveTitle(new RegExp(expectedTitle))
-    });
-  }
-});
 test("Check charity query counter value at the Beginning", async ({
   app,
 }) => {
@@ -71,8 +52,7 @@ test("Check that display of heart icon message in the header static pages", asyn
 });
 
 test.describe("test use cookie", () => {
-  test.use({ storageState: "./data/auth/user.json" });
-  test("Check that email icon navigates to account/login page if user logged ", async ({
+  test("Check that email badge navigate to account/login page if user logged ", async ({
     app, context
   }) => {
     //Actions
@@ -80,10 +60,50 @@ test.describe("test use cookie", () => {
 
     //Assert
     await app.home.header.expectToBeOpenedNewPageAfterClick(
-      app.home.header.badgeEmail, constantsData.URL_LOGIN_PAGE)
+      app.home.header.badgeEmail.badge, constantsData.URL_LOGIN_PAGE)
 
     await expect(context.pages()[1]).toHaveTitle(constantsData.TITLE_LOGIN_PAGE)
   });
 });
 
+test.describe("test don't use cookie", () => {
+  test.use({ storageState: { cookies: [], origins: [] } });
+    test(`Check that email badge link navigate to corresponding pages`, async ({
+      app, context
+    }) => {
+      //Actions
+      await app.home.open()
+      
+      //Assert
+      await app.home.header.expectToBeOpenedNewPageAfterClick(
+        app.home.header.badgeEmail.badge, constantsData.URL_EMAIL_PAGE)
 
+      await expect(context.pages()[1]).toHaveTitle(constantsData.TITLE_EMAIL_PAGE)
+    });
+
+    test(`Check that Teleguard badge link navigate to corresponding pages`, async ({
+      app, context
+    }) => {
+      //Actions
+      await app.home.open()
+      
+      //Assert
+      await app.home.header.expectToBeOpenedNewPageAfterClick(
+        app.home.header.badgeTeleguard.badge, constantsData.URL_TELEGUARD_PAGE)
+
+      await expect(context.pages()[1]).toHaveTitle(constantsData.TITLE_TELEGUARD_PAGE)
+    });
+
+    test(`Check that VPN badge link navigate to corresponding pages`, async ({
+      app, context
+    }) => {
+      //Actions
+      await app.home.open()
+      
+      //Assert
+      await app.home.header.expectToBeOpenedNewPageAfterClick(
+        app.home.header.badgeVPN.badge, constantsData.URL_VPN_PAGE)
+
+      await expect(context.pages()[1]).toHaveTitle(constantsData.TITLE_VPN_PAGE)
+    });
+  })

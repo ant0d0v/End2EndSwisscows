@@ -1,5 +1,8 @@
 import HamburgerMenu from "../HamburgerMenu";
 import badgeCounter from "../../components/BadgeCounter";
+import BadgeEmail from "../../components/BadgeEmail";
+import BadgeTeleguard from "../../components/BadgeTeleguard";
+import BadgeVPN from "../../components/BadgeVPN";
 import SearchForm from "../SearchForm";
 import BaseComponent from "../../base/BaseComponent";
 
@@ -9,9 +12,11 @@ export default class Header extends BaseComponent {
     this.hamburgerMenu = new HamburgerMenu(page);
     this.badgeCounter = new badgeCounter(page);
     this.searchForm = new SearchForm(page);
+    this.badgeEmail = new BadgeEmail(page);
+    this.badgeTeleguard = new BadgeTeleguard(page);
+    this.badgeVPN = new BadgeVPN(page);
 
     //Locators
-    this.linksOfHeader = (name) => this.page.locator(`a.badge-${name}`);
     this.logoSwisscows = this.page.locator("#header").getByRole("link", { name: "Swisscows", exact: true });
     this.imageSearchButton = this.page.getByRole("link", { name: "Images", exact: true,});
     this.videoSearchButton = this.page.getByRole("link", { name: "Video", exact: true,});
@@ -19,7 +24,6 @@ export default class Header extends BaseComponent {
     this.newsSearchButton = this.page.getByRole("link", {name: "News", exact: true,});
     this.shoppingSearchButton = this.page.getByRole("link", {name: "Shopping",exact: true,});
     this.hamburgerMenuButton = this.page.locator("#header").getByRole("button").nth(2);
-    this.badgeEmail = this.page.locator("div.badges a.badge-email");
     this.filtersButton = this.page.locator('.filters-button')
   }
 

@@ -4,26 +4,5 @@
         "first": "ivanka",
         "second": "ronaldo",
         "third": "news"
-    },
-   
-    "headerLinks": [
-        {
-            "testID": "1",
-            "expectedLink": "https://teleguard.com/en",
-            "locatorId" : "tg",
-            "expectedTitle": "TeleGuard - secure messenger from Switzerland"
-        },
-        {
-            "testID": "2",
-            "expectedLink": "https://dev.swisscows.com/en/anonymous-vpn",
-            "locatorId" : "vpn",
-            "expectedTitle" : "Swisscows"
-        },
-        {
-            "testID": "3",
-            "expectedLink": "https://dev.swisscows.com/en/swisscows-email",
-            "locatorId" : "email",
-            "expectedTitle" :"Swisscows"
-        }
-    ]
+    }
 }

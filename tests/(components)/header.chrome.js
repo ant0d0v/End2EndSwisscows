@@ -96,7 +96,8 @@ test("Check query counter value when searching for shopping", async ({
   await app.shoppingPage.header.badgeCounter.expectCharityBadgeCounterToHaveValue("2");
 });
 
-  test("Check that email icon navigates to account/login page if user logged ", async({
+test.describe("test use cookie", () => {
+  test("Check that email badge navigates to account/login page if user logged ", async({
     app, context
   }) => {
     //Actions
@@ -107,15 +108,15 @@ test("Check query counter value when searching for shopping", async ({
   
     //Assert
     await app.webPage.header.expectToBeOpenedNewPageAfterClick(
-      app.webPage.header.badgeEmail, constantsData.URL_LOGIN_PAGE )
+      app.webPage.header.badgeEmail.badge, constantsData.URL_LOGIN_PAGE )
 
     await expect(context.pages()[1]).toHaveTitle(constantsData.TITLE_LOGIN_PAGE)
   });
+});
 
 test.describe("tests don't use cookie", () => {
   test.use({ storageState: { cookies: [], origins: [] } });
-  for (const { testID, expectedLink, locatorId, expectedTitle, } of testData.headerLinks) {
-    test(`${testID} Check that header badge ${locatorId} link navigate to corresponding pages`, async ({
+    test(`Check that email badge link navigate to corresponding pages`, async ({
       app, context
     }) => {
       //Actions
@@ -126,11 +127,42 @@ test.describe("tests don't use cookie", () => {
       
       //Assert
       await app.webPage.header.expectToBeOpenedNewPageAfterClick(
-        app.webPage.header.linksOfHeader(locatorId), expectedLink)
+        app.webPage.header.badgeEmail.badge, constantsData.URL_EMAIL_PAGE)
 
-      await expect(context.pages()[1]).toHaveTitle(new RegExp(expectedTitle))
+      await expect(context.pages()[1]).toHaveTitle(constantsData.TITLE_EMAIL_PAGE)
     });
-  }
+
+    test(`Check that Teleguard badge link navigate to corresponding pages`, async ({
+      app, context
+    }) => {
+      //Actions
+      await app.home.open()
+      await app.home.header.searchForm.inputSearchCriteria("best");
+      await app.home.header.searchForm.clickEnterSearchField();
+      await app.webPage.item.expectWebItemsToBeVisible()
+      
+      //Assert
+      await app.webPage.header.expectToBeOpenedNewPageAfterClick(
+        app.webPage.header.badgeTeleguard.badge, constantsData.URL_TELEGUARD_PAGE)
+
+      await expect(context.pages()[1]).toHaveTitle(constantsData.TITLE_TELEGUARD_PAGE)
+    });
+
+    test(`Check that vpn badge link navigate to corresponding pages`, async ({
+      app, context
+    }) => {
+      //Actions
+      await app.home.open()
+      await app.home.header.searchForm.inputSearchCriteria("best");
+      await app.home.header.searchForm.clickEnterSearchField();
+      await app.webPage.item.expectWebItemsToBeVisible()
+      
+      //Assert
+      await app.webPage.header.expectToBeOpenedNewPageAfterClick(
+        app.webPage.header.badgeVPN.badge, constantsData.URL_VPN_PAGE)
+
+      await expect(context.pages()[1]).toHaveTitle(constantsData.TITLE_VPN_PAGE)
+    });
 });
 
 test("Check that display of heart icon message in the header", async ({
