@@ -3,7 +3,7 @@ const testData = JSON.parse(
   JSON.stringify(require("../../data/hamburger/testData.json"))
 );
 
-test("Check  login User and display of nickname in hamburger menu", async ({
+test("Check display of nickname and avatar in hamburger menu", async ({
   app
 }) => {
   //Actions
@@ -13,7 +13,8 @@ test("Check  login User and display of nickname in hamburger menu", async ({
   await app.webPage.header.clickHamburgerMenuButton();
 
   //Assert
-  await app.webPage.header.hamburgerMenu.expectNicknameUserInHamburgerMenuToHave("TTest");
+  await app.webPage.header.hamburgerMenu.avatar.expectNicknameToHaveText("TTest");
+  await app.webPage.header.hamburgerMenu.avatar.expectAvatarToBeVisible()
 });
 
 test("Check Log Out user and display of login button", async ({

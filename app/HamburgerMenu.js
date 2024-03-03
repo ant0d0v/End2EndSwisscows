@@ -1,16 +1,17 @@
 import BaseComponent from "../base/BaseComponent";
+import Avatar from "..//components/Avatar"
 import { expect } from '@playwright/test';
 
 export default class HamburgerMenu extends BaseComponent {
   constructor(page) {
     super(page);
+    this.avatar =  new Avatar(this.page);
 
     //Locators
     this.dropdownRegion = this.page.getByText(/Region/);
     this.allContent = this.page.locator("header div.menu");
     this.regionInDropdown = (region) => this.page.getByText(`${region}`, { exact: true });
     this.loginButtonInHamburgerMenu = this.page.getByRole("button", {name: "Login",});
-    this.nicknameInHamburgerMenu = this.page.getByRole("link", {name: "T Test",});
     this.logoutButtonInHamburgerMenu = this.page.getByRole("button", {name: "Logout",});
     this.textsOfLinksInHamburgerMenu = this.page.locator("div.menu.popup li a");
     this.languagesDropdownInHamburgerMenu = this.page.getByText("Language");
@@ -91,9 +92,6 @@ export default class HamburgerMenu extends BaseComponent {
 
   //Verify
 
-  expectNicknameUserInHamburgerMenuToHave = async (text) => {
-    await this.expectElementToHaveText(this.nicknameInHamburgerMenu, text);
-  };
 
   expectLoginButtonInHamburgerMenuIsDisplayed = async () => {
     await this.expectElementToBeVisible(this.loginButtonInHamburgerMenu);
