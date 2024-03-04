@@ -37,7 +37,7 @@ test("Check design of the VPN page ", async ({ app },testInfo) => {
   
       //Assert
       await app.vpnPage.expectToBeOpenedNewPageAfterClick(app.vpnPage.allLinks(locatorId), expectedLink )
-      await expect(context.pages()[1]).toHaveTitle(expectedTitle)
+      await app.vpnPage.expectNewPageToHaveTitle(context, expectedTitle)
     });
   }
   for (const { testID, expectedLink, locatorId, expectedTitle,} of testData.allLinksInSecondQuestions) {
@@ -51,7 +51,7 @@ test("Check design of the VPN page ", async ({ app },testInfo) => {
       
       //Assert
       await app.vpnPage.expectToBeOpenedNewPageAfterClick(app.vpnPage.allLinksInSecondQuestions(locatorId), expectedLink )
-      await expect(context.pages()[1]).toHaveTitle(expectedTitle)
+      await app.vpnPage.expectNewPageToHaveTitle(context, expectedTitle)
     });
   }
   test("Check that all questions were opened on the VPN page.", async ({

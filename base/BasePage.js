@@ -1,5 +1,5 @@
 
-import { expect, test} from "../utils/customMatchers"
+import { expect, test, context} from "../utils/customMatchers"
 
 export default class BasePage {
   constructor(page) {
@@ -31,8 +31,7 @@ export default class BasePage {
   //Actions
   async openPage(path){
     await this.page.goto(process.env.BASE_URL + path)
-  }
-  
+  } 
   async clickElement(element, nameElement) {
     await test.step(`Click on the ${nameElement}`, async () => {
         await element.click();
@@ -147,6 +146,9 @@ export default class BasePage {
         async () => { 
           await expect(locator).newPageNoToHaveURL(expectedUrl)
         }).catch(async (e) => await this.errorHandling(e, this.page));
+  }
+  async expectNewPageToHaveTitle(context, expectedTitle){
+    await expect(await context.pages()[1]).toHaveTitle(expectedTitle)
   }
 
   async expectHaveTitle(newPage, title) {

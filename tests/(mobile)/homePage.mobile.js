@@ -57,7 +57,8 @@ test("Check that the link in the fourth question leads to the expected URL.", as
   //Assert
   await app.home.expectToBeOpenedNewPageAfterClick(
     app.home.linkInTheFourQuestion, main.url.defaultSearchPage)
-  await app.defaultSearchPage.expectH1Text(context.pages()[1], "How to use Swisscows as default search");
+  await app.defaultSearchPage.expectNewPageToHaveTitle(context, 
+    "Install Swisscows and use it as the default search");
 });
 
 test("Check the texts of questions on the home page.", async ({ app}) => {

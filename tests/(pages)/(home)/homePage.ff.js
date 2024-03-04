@@ -12,7 +12,7 @@ test('Check that popup "firefox install" redirect to the corresponding page ', a
   //Assert
   await app.home.expectToBeOpenedNewPageAfterClick(app.home.installSwisscowsLink.extensionPopup, 
     testData.url.extensionFirefoxInstall)
-  await expect(context.pages()[1]).toHaveTitle( /Swisscows/)
+  await app.expectNewPageToHaveTitle(context, /Swisscows/)
 });
 
 test("Check that popup firefox install Is Displayed", async ({ app }) => {
@@ -35,5 +35,5 @@ test('Check that the "Install Swisscows Block" button redirect to corresponding 
   //Assert
   await app.home.expectToBeOpenedNewPageAfterClick(app.home.extensionBlock.extensionLink, 
     testData.url.extensionFirefoxInstall)
-  await expect(context.pages()[1]).toHaveTitle( /Swisscows/)
+  await app.expectNewPageToHaveTitle(context, /Swisscows/)
 });

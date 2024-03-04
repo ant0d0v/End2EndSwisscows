@@ -12,8 +12,7 @@ test('Check that popup "Edge install" redirect to the corresponding page', async
   //Assert
   await app.home.expectToBeOpenedNewPageAfterClick(app.home.installSwisscowsLink.extensionPopup, 
     testData.url.extensionEdgeInstall)
-  await expect(context.pages()[1]).toHaveTitle( /Swisscows/)
- 
+  await app.expectNewPageToHaveTitle(context, /Swisscows/)
 })
 
 test("Check that popup Edge install Is Displayed", async ({app }) => {
@@ -36,6 +35,5 @@ test('Check that the "Install Swisscows Block" button redirect to corresponding 
   //Assert
   await app.home.expectToBeOpenedNewPageAfterClick(app.home.extensionBlock.extensionLink, 
     testData.url.extensionEdgeInstall)
-  await expect(context.pages()[1]).toHaveTitle( /Swisscows/)
- 
+  await app.expectNewPageToHaveTitle(context, /Swisscows/)
 });

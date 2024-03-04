@@ -41,7 +41,7 @@ for (const { testID, expectedUrl, locatorId, expectedTitle,} of testData.introdu
     await app.emailPage.expectToBeOpenedNewPageAfterClick(
       app.emailPage.introductionAndSupportLinks(locatorId), expectedUrl )
   
-    await expect(context.pages()[1]).toHaveTitle(expectedTitle)
+    await app.emailPage.expectNewPageToHaveTitle(context, expectedTitle)
   });
 }
 
@@ -56,7 +56,7 @@ for (const { testID, expectedUrl, locatorId, buttonName, expectedTitle,} of test
     await app.emailPage.expectToBeOpenedNewPageAfterClick(
       app.emailPage.subscriptionLinks(locatorId,buttonName), expectedUrl )
 
-    await expect(context.pages()[1]).toHaveTitle(expectedTitle)
+    await app.emailPage.expectNewPageToHaveTitle(context, expectedTitle)
   });
 }
 

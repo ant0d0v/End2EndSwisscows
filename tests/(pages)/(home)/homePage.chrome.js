@@ -57,8 +57,9 @@ test("Check that the link in the fourth question leads to the expected URL.", as
   //Assert
   await app.home.expectToBeOpenedNewPageAfterClick(
     app.home.linkInTheFourQuestion, main.url.defaultSearchPage)
-  await app.defaultSearchPage.expectH1Text(
-    context.pages()[1], "How to use Swisscows as default search");
+    
+  await app.defaultSearchPage.expectNewPageToHaveTitle(context, 
+    "Install Swisscows and use it as the default search");
 });
 
 test("Check that popup google install Is Displayed", async ({ app }) => {
@@ -81,7 +82,8 @@ test('Check that popup "google install" redirect to the corresponding page', asy
   //Assert
   await app.home.expectToBeOpenedNewPageAfterClick(
     app.home.installSwisscowsLink.extensionPopup, main.url.extensionGoogleInstall)
-  await expect(context.pages()[1]).toHaveTitle( /Swisscows/)
+
+  await app.expectNewPageToHaveTitle(context, /Swisscows/)
 });
 
 test('Check that the "Install Google Block" button redirect to corresponding URL.', async ({
@@ -93,8 +95,8 @@ test('Check that the "Install Google Block" button redirect to corresponding URL
   //Assert
   await app.home.expectToBeOpenedNewPageAfterClick(
     app.home.extensionBlock.extensionLink, main.url.extensionGoogleInstall)
-  await expect(context.pages()[1]).toHaveTitle( /Swisscows/)
-
+    
+  await app.expectNewPageToHaveTitle(context, /Swisscows/)
 });
 
 test("Check the texts of questions on the home page.", async ({ app }) => {
@@ -147,7 +149,7 @@ for (const { testID, expectedLink, locatorId,expectedTitle,} of main.servicesBlo
 
     //Assert
     await app.home.expectToBeOpenedNewPageAfterClick(app.home.linksOfServiceBlock(locatorId), expectedLink)
-    await expect(context.pages()[1]).toHaveTitle(expectedTitle)
+    await app.expectNewPageToHaveTitle(context, expectedTitle)
   });
 }
 for (const { testID, expectedLink, locatorId, expectedTitle,} of main.languagesLinks) {

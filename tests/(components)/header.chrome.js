@@ -1,7 +1,4 @@
 import { test, expect } from "../../utils/fixtures";
-const testData = JSON.parse(
-  JSON.stringify(require("../../data/header/testData.json"))
-);
 const constantsData = JSON.parse(
   JSON.stringify(require("../../data/project-constants/testData.json"))
 );
@@ -109,8 +106,8 @@ test.describe("test use cookie", () => {
     //Assert
     await app.webPage.header.expectToBeOpenedNewPageAfterClick(
       app.webPage.header.badgeEmail.badge, constantsData.URL_LOGIN_PAGE )
-
-    await expect(context.pages()[1]).toHaveTitle(constantsData.TITLE_LOGIN_PAGE)
+    
+    await app.expectNewPageToHaveTitle(context, constantsData.TITLE_LOGIN_PAGE)
   });
 });
 
@@ -129,7 +126,7 @@ test.describe("tests don't use cookie", () => {
       await app.webPage.header.expectToBeOpenedNewPageAfterClick(
         app.webPage.header.badgeEmail.badge, constantsData.URL_EMAIL_PAGE)
 
-      await expect(context.pages()[1]).toHaveTitle(constantsData.TITLE_EMAIL_PAGE)
+      await app.emailPage.expectNewPageToHaveTitle(context, constantsData.TITLE_EMAIL_PAGE)
     });
 
     test(`Check that Teleguard badge link navigate to corresponding pages`, async ({
@@ -145,7 +142,7 @@ test.describe("tests don't use cookie", () => {
       await app.webPage.header.expectToBeOpenedNewPageAfterClick(
         app.webPage.header.badgeTeleguard.badge, constantsData.URL_TELEGUARD_PAGE)
 
-      await expect(context.pages()[1]).toHaveTitle(constantsData.TITLE_TELEGUARD_PAGE)
+      await app.expectNewPageToHaveTitle(context, constantsData.TITLE_TELEGUARD_PAGE)
     });
 
     test(`Check that vpn badge link navigate to corresponding pages`, async ({
@@ -161,7 +158,7 @@ test.describe("tests don't use cookie", () => {
       await app.webPage.header.expectToBeOpenedNewPageAfterClick(
         app.webPage.header.badgeVPN.badge, constantsData.URL_VPN_PAGE)
 
-      await expect(context.pages()[1]).toHaveTitle(constantsData.TITLE_VPN_PAGE)
+      await app.vpnPage.expectNewPageToHaveTitle(context, constantsData.TITLE_VPN_PAGE)
     });
 });
 
