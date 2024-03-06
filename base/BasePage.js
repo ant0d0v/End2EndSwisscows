@@ -100,7 +100,7 @@ export default class BasePage {
   }
   async input(element, text, nameElement) {
     await test.step(`Input text in to the ${nameElement}`, async () => {
-        await element.type(text, { delay: 100 });
+        await element.pressSequentially(text, { delay: 100 });
       })
       .catch(async (e) => await this.errorHandling(e, this.page));
   }

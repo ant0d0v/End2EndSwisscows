@@ -1,11 +1,14 @@
 import BaseComponent from "../../../base/BaseComponent";
 import Player from "./Player";
+import ProxyImage from "../../../components/ProxyImage";
 const { expect } = require("@playwright/test");
 
 export default class Item extends BaseComponent {
   constructor(page) {
     super(page);
     this.player = new Player(page)
+    this.proxyImage = new ProxyImage(page)
+    
 
    //Locators
    this.videoItems = this.page.locator("article.item--video h2")
@@ -24,7 +27,7 @@ export default class Item extends BaseComponent {
     await this.scrollByVisibleElement(this.images.nth(i), "last track");
     }
   }
-  scrollWheelMouseToVideoNumber = async (number) => {
+  scrollWithMouseWheelToVideoNumber = async (number) => {
     for(let i = 0;i < number ; i++){
     await this.page.mouse.wheel(0, 600);  
     await this.scrollByVisibleElement(this.images.nth(i), "last track");

@@ -211,6 +211,6 @@ test("Check 202 No Results Found error page ", async ({
      await newsPage.item.expectNewsItemsToBeVisible()
 
      //Assert
-     await newsPage.proxyImage.expectAttributeSrcAllImagesToHave(newsPage.item.allImage, 
+     await newsPage.item.proxyImage.expectAttributeSrcAllImagesToHave(newsPage.item.allImage, 
         /cdn.swisscows.com/)
   });

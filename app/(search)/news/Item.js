@@ -1,10 +1,13 @@
 import BaseComponent from "../../../base/BaseComponent";
+import ProxyImage from "../../../components/ProxyImage";
 
 const { expect } = require("@playwright/test");
 
 export default class Item extends BaseComponent {
   constructor(page) {
     super(page);
+    this.proxyImage = new ProxyImage(page)
+
     //Locators
     this.newsItems = this.page.locator("article.item--news h2")
     this.allImage = this.page.locator("article.item--news  figure.media img")
