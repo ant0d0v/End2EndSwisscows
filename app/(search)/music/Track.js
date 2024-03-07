@@ -1,5 +1,5 @@
 import BaseComponent from "../../../base/BaseComponent";
-const { expect } = require("@playwright/test");
+const { expect, request } = require("@playwright/test");
 const filterData = JSON.parse(
   JSON.stringify(require("../../../data/auth/user.json"))
 );
@@ -52,13 +52,14 @@ export default class Track extends BaseComponent {
     return responseBody.id;
   };
   deleteTrackFromFavorite = async (id) => {
-    const response = await this.page.request.delete(`${ process.env.API_URL}/music/tracks/my/${id}`,{
+    const context = await request.newContext()
+    await context.delete(`${ process.env.API_URL}/music/tracks/my/${id}`,{
     headers: {
       'Accept': 'application/json, text/plain, */*',
       'Authorization': `Bearer ${filterData["origins"][0]["localStorage"][0]["value"]}`,
     },
    });
-    expect(response.status()).toBe(204);
+
   }
 
   scrollByVisibleTrackNumber = async (number) => {

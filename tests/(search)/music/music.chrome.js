@@ -219,8 +219,7 @@ test("Check 202 No Results Found error page ", async ({
     await app.musicPage.player.clickNextButton()
 
     //Assert
-    await app.musicPage.track.expectAttributeClassOfElement(app.musicPage.track.track(2),
-      "item item--audio")
+    await app.musicPage.track.expectAttributeClassOfElement(app.musicPage.track.track(2), "item item--audio")
     await app.musicPage.player.expectAttributeClassOfElement(app.musicPage.player.shuffleButton, /active/) 
   });
   test.describe('favorite function', () => { test.use({ mode: "default" })
@@ -236,8 +235,7 @@ test("Check 202 No Results Found error page ", async ({
     await app.musicPage.track.clickFavoriteButtonNumberTrack(1)
 
     //Assert
-    await app.musicPage.track.expectAttributeClassOfElement(app.musicPage.track.favoriteButton(1),
-      /active/)
+    await app.musicPage.track.expectAttributeClassOfElement(app.musicPage.track.favoriteButton(1), /active/)
     await app.musicPage.favoritePlaylist.expectPlaylistToHaveText(/My favorite tracks1/)
     await app.musicPage.track.clickFavoriteButtonNumberTrack(1)   
   });
@@ -257,8 +255,7 @@ test("Check 202 No Results Found error page ", async ({
     await app.musicPage.track.clickFavoriteButtonNumberTrack(1)
 
     //Assert
-    await app.musicPage.track.expectAttributeClassOfElement(app.musicPage.track.favoriteButton(1),
-      "button favorite")
+    await app.musicPage.track.expectAttributeClassOfElement(app.musicPage.track.favoriteButton(1), "button favorite")
     await app.musicPage.favoritePlaylist.expectPlaylistToBeHidden()
   });
 
@@ -297,8 +294,7 @@ test("Check 202 No Results Found error page ", async ({
     await app.musicPage.player.clickFavoriteButton()
 
     //Assert
-    await app.musicPage.track.expectAttributeClassOfElement(app.musicPage.track.favoriteButton(1),
-      "button favorite")
+    await app.musicPage.track.expectAttributeClassOfElement(app.musicPage.track.favoriteButton(1),"button favorite")
     await app.musicPage.track.expectAttributeClassOfElement(app.musicPage.player.favoriteButton, "button favorite")    
     await app.musicPage.favoritePlaylist.expectPlaylistToBeHidden()
   });

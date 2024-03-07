@@ -43,4 +43,5 @@ export default class Application extends BasePage {
      this.musicPage= new  MusicPage(this.page);
      this.imagePage = new  ImagePage(this.page);
     }
+    
 }

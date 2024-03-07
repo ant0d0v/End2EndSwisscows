@@ -1,10 +1,10 @@
 const base = require('@playwright/test');
-import Application from "../app/index.js";
 export let favoriteTracksIdForDeletion = []
+import Application from "../app/index.js";
 
 exports.test = base.test.extend({
   app: async ({page}, use) => {
-    const app = new Application(page);
+    const app = new Application(page)
     await use(app);
     if (favoriteTracksIdForDeletion) {
       for (const id of favoriteTracksIdForDeletion) { 
