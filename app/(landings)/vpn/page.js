@@ -38,21 +38,19 @@ export default class VpnPage extends BasePage {
     const downloadPromise = this.page.waitForEvent('download');
 
     await this.clickElement(link, 'windows link');
-  
-    const download = await downloadPromise;
-    await download.saveAs('./tests/download/' + download.suggestedFilename());
-  
+    const download = await downloadPromise;  
     return download;
   }
 
   //Verify
   expectDownloadFileNameToBe = async (download, name) => {
-    expect(download.suggestedFilename()).toBe(name);
+     expect(download.suggestedFilename()).toBe(name);
   }
   expectFileSizeToBeGreaterThan = async (download, sizeByte) => {
     const filePath = (await download.path()).toString();
     expect((await fs.promises.stat(filePath)).size).toBeGreaterThan(sizeByte);
-}
+  }
+ 
   expectScreenVpnPage = async (testInfo) => {
     await this.expectPageToHaveScreenshotWithoutMask(testInfo);
   };

@@ -55,6 +55,7 @@ export default class MusicPlayer extends BaseComponent {
       `favorite button in the player`
     );
   };
+  
   //Verify 
   async expectTimeToHaveText(value) {
     await this.expectTextToContain(this.durationTime,value);

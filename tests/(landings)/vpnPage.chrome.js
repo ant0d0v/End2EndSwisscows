@@ -1,5 +1,4 @@
 import { test } from "../../utils/fixtures"
-import { expect } from "../../utils/customMatchers";
 const testData = JSON.parse(
   JSON.stringify(require("../../data/lendings/vpn/testData.json"))
 );
@@ -90,6 +89,7 @@ test("Check design of the VPN page ", async ({ app },testInfo) => {
     //Assert
     await app.vpnPage.expectDownloadFileNameToBe(windowsExtension, "SwisscowsVPNInstaller.msi")
     await app.vpnPage.expectFileSizeToBeGreaterThan(windowsExtension, 23000000)
+    await windowsExtension.delete();
   
   });
 
@@ -103,7 +103,8 @@ test("Check design of the VPN page ", async ({ app },testInfo) => {
     //Assert
     await app.vpnPage.expectDownloadFileNameToBe(windowsExtension, "SwisscowsVPNInstaller.msi")
     await app.vpnPage.expectFileSizeToBeGreaterThan(windowsExtension, 23000000)
-  
+    await windowsExtension.delete();
+    
   });
 
   test("Check that buttons have hover effect on vpn page", async ({ app }) => {

@@ -15,7 +15,7 @@ const removeRefreshToken = () => {
 };
 
 setup("Login to site", async ({ page }) => {
-  await page.goto(process.env.WEB_URL);
+  await page.goto(process.env.BASE_URL);
   await page.locator("header button.hamburger-menu").click();
   await page.getByRole("button", { name: "Login" }).click();
   await page.getByPlaceholder("Username or email").fill(process.env.USERNAME);

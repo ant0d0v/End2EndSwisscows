@@ -48,7 +48,8 @@ export default class Track extends BaseComponent {
       `favorite button of track with index${index}`
     );
     const response = await responsePromise;
-    return response;
+    const responseBody = await response.json();
+    return responseBody.id;
   };
   deleteTrackFromFavorite = async (id) => {
     const response = await this.page.request.delete(`${ process.env.API_URL}/music/tracks/my/${id}`,{
@@ -70,6 +71,11 @@ export default class Track extends BaseComponent {
     await this.page.waitForSelector("article.item--audio h2",{ state: 'visible' })
     await this.expectAreElementsInListDisplayed(this.tracksName)
   };
+
+  expectTracksNameToContainText = async (value) => {
+    await this.expectTextsToContainSearchCriteria(this.tracksName, value)
+  };
+
   expectImageToHaveWight = async (property, value) => {
     await this.expectElementsToHaveJSProperty(this.allImages , property, value);
   };

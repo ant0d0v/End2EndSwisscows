@@ -19,7 +19,7 @@ export default class MusicMyPage extends BasePage {
   }
   //Verify
   expectPageUrlToHaveParameter = async (query) => {
-    const expectedUrlPattern = new RegExp(`${process.env.WEB_URL}en/music/my\\${query}`);
+    const expectedUrlPattern = new RegExp(`${process.env.BASE_URL}/en/music/my\\${query}`);
     await this.expectHaveUrl(this.page, expectedUrlPattern);
   };
 }
