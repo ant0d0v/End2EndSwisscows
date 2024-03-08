@@ -14,10 +14,11 @@ export default class Track extends BaseComponent {
    this.track = (index) => this.page.locator(`${root}`).nth(index - 1)
    this.lastTrack = (id) => this.page.locator(`${root}`).nth(`${id}`)
    this.favoriteButton = (index) => this.page.locator("button.button.favorite").nth(index - 1)
+   this.allFavoriteButtons = this.page.locator(".button.favorite:nth-child(-n+20)")
    this.valueProgressBar = (index) => this.page.locator(`${root} div.progress-bar div.progress`).nth(index - 1)
    this.timeLine = (index) => this.page.locator(`${root} div.timeline`).nth(index - 1)
    this.playButton = (index) => this.page.locator(`${root} button.play-pause use`).nth(index - 1)
-   this.allPlayButton = this.page.locator(`${root} button.play-pause use`)
+   this.allPlayButtons = this.page.locator(`${root} button.play-pause use`)
    this.allImages = this.page.locator(`${root} img`)
    
   }
@@ -51,6 +52,17 @@ export default class Track extends BaseComponent {
     const responseBody = await response.json();
     return responseBody.id;
   };
+  clickAllFavoriteButtonsOfTracksAndGetResponses = async () => {
+    let responseIDs = [];
+    for (const favoriteButton of await this.allFavoriteButtons.all()) {
+      const responsePromise = this.page.waitForResponse(`${process.env.API_URL}/music/tracks/my`);
+      await this.clickElement(favoriteButton, `favorite button of track`);
+      const response = await responsePromise;
+      const responseBody = await response.json();
+      responseIDs.push(responseBody.id);
+    }
+    return responseIDs;
+  }
   deleteTrackFromFavorite = async (id) => {
     const context = await request.newContext()
     await context.delete(`${ process.env.API_URL}/music/tracks/my/${id}`,{
