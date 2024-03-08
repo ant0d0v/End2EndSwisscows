@@ -18,8 +18,7 @@ test("Check text advertising", async ({
      await webPage.adsText.waitElementToBeVisible(webPage.adsText.textAds)
    
      //Assert
-     await webPage.adsText.expectElementToHaveText(webPage.adsText.textAds,
-      "Ads by Microsoft Data privacy")
+     await webPage.adsText.expectElementToHaveText(webPage.adsText.textAds, "Ads by Microsoft Data privacy")
      await webPage.adsText.expectListToBeGreaterThanOrEqual(webPage.adsText.listAds, 1)
   });
 
