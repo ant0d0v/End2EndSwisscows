@@ -1,8 +1,5 @@
 import BaseComponent from "../../../base/BaseComponent";
 const { expect, request } = require("@playwright/test");
-const filterData = JSON.parse(
-  JSON.stringify(require("../../../data/auth/user.json"))
-);
 
 export default class Track extends BaseComponent {
   constructor(page) {
@@ -63,12 +60,12 @@ export default class Track extends BaseComponent {
     }
     return responseIDs;
   }
-  deleteTrackFromFavorite = async (id) => {
+  deleteTrackFromFavorite = async (id, data) => {
     const context = await request.newContext()
     await context.delete(`${ process.env.API_URL}/music/tracks/my/${id}`,{
     headers: {
       'Accept': 'application/json, text/plain, */*',
-      'Authorization': `Bearer ${filterData["origins"][0]["localStorage"][0]["value"]}`,
+      'Authorization': `Bearer ${data["origins"][0]["localStorage"][0]["value"]}`,
     },
    });
 

@@ -1,0 +1,29 @@
+{
+  "cookies": [
+    {
+      "name": ".AspNetCore.Identity.Application",
+      "value": "CfDJ8MAy1QZLnXBOqVgKN14afupeDt1z06j8susQIglKd3mOxhPyfvFqPkLOE8JKzylVRaSDUxarcAn-rN028Jeo2IEKgsVUHTMhqb6vjQkVnQKpA9HZfAel0J6U_NHav-SsjuQw8Eus_l-4fF9z6esXqHyjBKOUUKVdbEDAEakyK_sntN50T5M1_NiGNv0S_fnsRNE3yc9CBeM41GM7JeVBnL3bHUPpMt-Ryov9OX8esv4-rmZ2cK3ecOaHD0qX3KTeYn-HSfMV1Df3qE6sq8ApJyQ3SKjAMTZ24Umn4w2QSDRMQbGYewZKleoNZc7w2XzJEJYXcyyvgJOKacPmVnT1U1AmXAtp2SmjDzZCPq9bb2GdUG1QbrY_MCNMG-IhcuhOZmaylDwB6qEfdp810fLYXSc3xPvV6BTJJJsLrzPn3B0lzo5yrHt4fJHaFBa-9SGZKif3MxMezDIMe61FwINh1vtlEbbkLAOgNCQwoK_-d-GWqBRRgufrVjS2W0oUkamCSW0sQfyFgKmv-NRMAnhEffzcyHMRZ4BYX2KdgqaCuSysFjbrTTwkaZZ37lTOKE_gRYFPFktAJ3y7hp60YOkCKHz7hXiZkUv7Pa5D-XCLjtVgOeAvyeURO-oyy_SMAlrh4Tj6bdMUU6arrRtkord_ggdfjYk6CQWmHkyqfthwW3yuD9jSztCP2iJ6vLCnpuI6xV5EpjcuM6xxZ4ezSYoige9tggdx_B3Iss9EfyoCf8mZWCt-Tus_9BtleeVVIabjwHp74elyJpJwir7OL9bb6QAhfyKyAwLIzJ-2R1hLkrCBrc_AS8S0lnohpF-TACvplIh3JiuYLa38-FF9PK1h6gloftcFHY0FuBQ_LbGSPyKBoMZb78cxif2kg9y45DD26egkGdKrVTS92nX7yFy9SzQxIrsXTWZM4adb5oGeVs3Agww6pqbsiwNSaZyM7XJnHA",
+      "domain": "accounts.swisscows.com",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "Lax"
+    }
+  ],
+  "origins": [
+    {
+      "origin": "https://swisscows.com",
+      "localStorage": [
+        {
+          "name": "oidc.access_token",
+          "value": "eyJhbGciOiJSUzI1NiIsImtpZCI6IjdEMDJEOEE1RURCOUY2NzU0MzhGMjY5NEEwM0E4QzNBNzlBQTIxNzQiLCJ4NXQiOiJmUUxZcGUyNTluVkRqeWFVb0RxTU9ubXFJWFEiLCJ0eXAiOiJhdCtqd3QifQ.eyJzdWIiOiIyNGQ1OWEwYWRjMWQ0Yzg4OTRkMDU4YTc4ODg3ZWU4YyIsImFtciI6InB3ZCIsIm9pX3Byc3QiOiJzd2lzc2Nvd3MiLCJvaV9hdV9pZCI6IjY1ZWI0ZTczNTgyN2M1OGY1ZTgyZGU4NiIsImNsaWVudF9pZCI6InN3aXNzY293cyIsIm9pX3Rrbl9pZCI6IjY1ZWI0ZTczNTgyN2M1OGY1ZTgyZGU4YyIsInNjb3BlIjoib3BlbmlkIGVtYWlsIHByb2ZpbGUgb2ZmbGluZV9hY2Nlc3MiLCJqdGkiOiIxZGZiZmNkOC0zNzA2LTQxZmMtYjIxMy0zMGI3N2M2MWIyN2QiLCJleHAiOjE3MDk5MjM0NTksImlzcyI6Imh0dHBzOi8vYWNjb3VudHMuc3dpc3Njb3dzLmNvbS8iLCJpYXQiOjE3MDk5MTk4NTl9.jmuR0RzlyQbQdi7wPl2-OAcNSVJWGa4jkJjiNdM519EOjcCBOvCNE_6lnRFSsagJZAw0ovvnXSeelgHBd1vLhcUurZyoI8mhtd2ic-f38sOu7xFQ8HeH2H-kseEy-x-Cn0qDx1awoZw6wGVnj6bzZm4WlSHbf7zdR-n22mRUgaZFFnEDk_D1qj1KLFDTvudBbRQ59fk12fi_ha0zy7Fg2tQizOltZPlhQedG64Di9jl3CT7y5fqqyzQ5J61-Z33J0DN8ERbEbyqFvVdEtOoHeGNVQGMJHetUQvgx39AA7BV59kwdUAPsx2NBBxvnMsISKQxefaUicky5hTAEEwHavQ"
+        },
+        {
+          "name": "oidc.id_token",
+          "value": "eyJhbGciOiJSUzI1NiIsImtpZCI6IjdEMDJEOEE1RURCOUY2NzU0MzhGMjY5NEEwM0E4QzNBNzlBQTIxNzQiLCJ4NXQiOiJmUUxZcGUyNTluVkRqeWFVb0RxTU9ubXFJWFEiLCJ0eXAiOiJKV1QifQ.eyJzdWIiOiIyNGQ1OWEwYWRjMWQ0Yzg4OTRkMDU4YTc4ODg3ZWU4YyIsImFtciI6InB3ZCIsImVtYWlsIjoiYS51ZG92eWNoZW5rbzEyMDNAZ21haWwuY29tIiwibmlja25hbWUiOiLQkNC90YLQvtC9INCj0LTQvtCy0LjRh9C10L3QutC-IiwicmVnaW9uIjoidWstVUEiLCJsb2NhbGUiOiJlcyIsImN1bHR1cmUiOiJlcyIsIm9pX2F1X2lkIjoiNjVlYjRlNzM1ODI3YzU4ZjVlODJkZTg2IiwiYXpwIjoic3dpc3Njb3dzIiwiYXRfaGFzaCI6IndyN3hnb3JTbVBJZ0cyMVJ4VUpldlEiLCJvaV90a25faWQiOiI2NWViNGU3MzU4MjdjNThmNWU4MmRlOGUiLCJhdWQiOiJzd2lzc2Nvd3MiLCJleHAiOjE3MDk5MjM0NTksImlzcyI6Imh0dHBzOi8vYWNjb3VudHMuc3dpc3Njb3dzLmNvbS8iLCJpYXQiOjE3MDk5MTk4NTl9.l6cog5uBz42okGVep2rgzkXWR7T4lipkIn_NdL-rbJdJQ4yNdJxVaVPvNS0Bu5UcxLRi29Rrvn3nMN14LLiwC8buesABVB9Sczc_nModtMZaN27iAG2POESMKSoo1HB-BJ4TKNiGrpWbdkZgWSl4rkygGsZCwnZEWmnGKmc6hnVvkCYyLs2FZ8jwScfJsWpyTg_swy84wz-A-PP8o78d6-2L8lZ98lodfdM73JSP-EOHPsOoAmKsASYtuBfe3CqiCxb-PeKgRGXGdNAeCIDu12DYe3gxgUgetvyx6biHvbaT3gwjQqNrnTMOoffcXfPielRB6iUvurzd-HGh7ZgOhQ"
+        }
+      ]
+    }
+  ]
+}

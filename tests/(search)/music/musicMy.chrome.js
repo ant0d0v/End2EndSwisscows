@@ -1,11 +1,16 @@
-import { test, favoriteTracksIdForDeletion } from "../../../utils/fixtures";
+import { 
+  test, 
+  favoriteTracksIdForDeletionOfInternalUser, 
+  favoriteTracksIdForDeletionOfExternalUser
+} from "../../../utils/fixtures";
 
 const value = "Skofka";
 const testData = JSON.parse(
     JSON.stringify(require("../../../data/error/testData.json"))
   );
-test.describe.configure({ mode: "default" });
-test("Check No items Found error page ", async ({
+test.describe('Internal user', () => {  
+  test.describe.configure({ mode: 'default' });
+  test("Check No items Found error page ", async ({
     app
   }) => {
     //Actions
@@ -82,7 +87,7 @@ test("Check No items Found error page ", async ({
     await app.musicPage.clickFavoritePlaylist()
     await app.musicMyPage.expectPageUrlToHaveParameter(`?query=${value}`)
     await app.musicMyPage.track.clickPlayButtonNumberTrack(1)
-    favoriteTracksIdForDeletion.push(favoriteID);
+    favoriteTracksIdForDeletionOfInternalUser.push(favoriteID);
 
     //Assert
     await app.musicMyPage.player.expectTimeToHaveText("0:04")
@@ -104,7 +109,7 @@ test("Check No items Found error page ", async ({
     await app.musicMyPage.track.clickPlayButtonNumberTrack(1)
     await app.musicMyPage.player.expectTimeToHaveText("0:04")
     await app.musicMyPage.track.clickPauseButtonNumberTrack(1)
-    favoriteTracksIdForDeletion.push(favoriteID);  
+    favoriteTracksIdForDeletionOfInternalUser.push(favoriteID);  
 
     //Assert
     await app.musicMyPage.track.expectAttributeClassOfElement(app.musicMyPage.track.track(1), "item item--audio active")
@@ -126,13 +131,17 @@ test("Check No items Found error page ", async ({
     await app.musicMyPage.track.clickPlayButtonNumberTrack(1)
     await app.musicMyPage.player.expectTimeToHaveText("0:04")
     await app.musicMyPage.track.clickTimeLineNumberTrack(1)
-    favoriteTracksIdForDeletion.push(favoriteID);
+    favoriteTracksIdForDeletionOfInternalUser.push(favoriteID);
 
     //Assert
     await app.musicMyPage.track.expectAttributeToHaveValue(app.musicMyPage.track.valueProgressBar(1), "style", /width: 5/)
     await app.musicMyPage.player.expectAttributeToHaveValue(app.musicMyPage.player.progressBar, "style", /width: 5/) 
   });
+});
 
+test.describe('External user', () => {  
+  test.describe.configure({ mode: 'default' });
+  test.use({ storageState: './data/auth/externalUser.json' });
   test("Check set time in the player", async ({
     app
   }) => {
@@ -148,7 +157,7 @@ test("Check No items Found error page ", async ({
     await app.musicMyPage.track.clickPlayButtonNumberTrack(1)
     await app.musicMyPage.player.expectTimeToHaveText("0:04")
     await app.musicMyPage.player.clickTimeLine()
-    favoriteTracksIdForDeletion.push(favoriteID);  
+    favoriteTracksIdForDeletionOfExternalUser.push(favoriteID);  
 
     //Assert
     await app.musicMyPage.track.expectAttributeToHaveValue(app.musicMyPage.track.valueProgressBar(1), "style", /width: 5/)
@@ -170,7 +179,7 @@ test("Check No items Found error page ", async ({
     await app.musicMyPage.track.clickPlayButtonNumberTrack(1)
     await app.musicMyPage.player.expectTimeToHaveText("0:04")
     await app.musicMyPage.player.clickPauseButton()
-    favoriteTracksIdForDeletion.push(favoriteID);    
+    favoriteTracksIdForDeletionOfExternalUser.push(favoriteID);    
 
     //Assert
     await app.musicPage.track.expectAttributeClassOfElement(app.musicMyPage.track.track(1), "item item--audio active")
@@ -194,7 +203,7 @@ test("Check No items Found error page ", async ({
     await app.musicMyPage.player.expectTimeToHaveText("0:04")
     await app.musicMyPage.player.clickPauseButton()
     await app.musicMyPage.player.clickPlayButton()
-    favoriteTracksIdForDeletion.push(favoriteID);    
+    favoriteTracksIdForDeletionOfExternalUser.push(favoriteID);    
 
     //Assert
     await app.musicMyPage.track.expectAttributeClassOfElement(app.musicMyPage.track.track(1), /active playing/)
@@ -218,7 +227,7 @@ test("Check No items Found error page ", async ({
     await app.musicMyPage.header.clickHamburgerMenuButton();
     await app.musicMyPage.header.hamburgerMenu.selectRegion("Germany");
     await app.musicMyPage.track.expectMusicTracksToBeVisible()
-    favoriteTracksIdForDeletion.push(favoriteID); 
+    favoriteTracksIdForDeletionOfExternalUser.push(favoriteID); 
 
     //Assert
     await app.musicMyPage.track.expectTracksNameToContainText(value.toLowerCase())
@@ -239,9 +248,10 @@ test("Check No items Found error page ", async ({
     const favoriteIDs = await app.musicPage.track.clickAllFavoriteButtonsOfTracksAndGetResponses();
     await app.musicPage.clickFavoritePlaylist()
     await app.musicMyPage.expectPageUrlToHaveParameter(`?query=${value}`)
-    favoriteTracksIdForDeletion.push(...favoriteIDs); 
+    favoriteTracksIdForDeletionOfExternalUser.push(...favoriteIDs); 
   
     //Assert
     await app.musicMyPage.track.expectListToHaveCount(app.musicMyPage.track.tracksName, 20)
     await app.musicMyPage.track.expectAreElementsInListDisplayed(app.musicMyPage.track.allPlayButtons)
   })
+});
