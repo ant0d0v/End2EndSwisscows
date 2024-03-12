@@ -76,12 +76,48 @@ export default class Track extends BaseComponent {
     await this.scrollByVisibleElement(this.lastTrack(i), "last track");
     }
   }
+  
   //Verify
+  expectTracksCount  = async (value) => {
+    await this.expectListToHaveCount(this.tracksName, value)
+  };
   expectMusicTracksToBeVisible = async () => {
     await this.page.waitForSelector("article.item--audio h2",{ state: 'visible' })
     await this.expectAreElementsInListDisplayed(this.tracksName)
   };
+  expectFirstTrackFavoriteButtonIsActive = async () => {
+    await this.expectAttributeClassOfElement(this.favoriteButton(1), /active/)
+  };
+  expectFirstTrackFavoriteButtonIsNotActive = async () => {
+    await this.expectAttributeClassOfElement(this.favoriteButton(1), "button favorite")
+  };
 
+  expectFirstTrackButtonIsPause = async () => {
+    await this.expectAttributeToHaveValue(this.playButton(1),"xlink:href", /pause/)
+  };
+  expectFirstTrackButtonIsPlay = async () => {
+    await this.expectAttributeToHaveValue(this.playButton(1),"xlink:href", /play/)
+  };
+
+  expectFirstTrackIsNotPlaying = async () => {
+    await this.expectAttributeClassOfElement(this.track(1), "item item--audio active")
+  };
+  expectFirstTrackIsNotActive = async () => {
+    await this.expectAttributeClassOfElement(this.track(1), "item item--audio")
+  };
+  expectFirstTrackIsPlaying = async () => {
+    await this.expectAttributeClassOfElement(this.track(1),  /active playing/)
+  };
+  expectSecondTrackIsNotActive = async () => {
+    await this.expectAttributeClassOfElement(this.track(2), "item item--audio")
+  };
+  expectSecondTrackIsPlaying = async () => {
+    await this.expectAttributeClassOfElement(this.track(2),  /active playing/)
+  };
+
+  expectProgressBarOfFirstTrackToHaveTimeValue = async (value) => {
+    await this.expectAttributeToHaveValue(this.valueProgressBar(1), "style", value) 
+  };
   expectTracksNameToContainText = async (value) => {
     await this.expectTextsToContainSearchCriteria(this.tracksName, value)
   };

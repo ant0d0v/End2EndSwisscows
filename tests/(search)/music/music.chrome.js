@@ -58,8 +58,8 @@ test("Check 202 No Results Found error page ", async ({
 
     //Assert
     await app.musicPage.player.expectTimeToHaveText("0:04")
-    await app.musicPage.track.expectAttributeToHaveValue(app.musicPage.track.playButton(1),
-        "xlink:href", /pause/)
+    await app.musicPage.track.expectFirstTrackIsPlaying()
+    await app.musicPage.track.expectFirstTrackButtonIsPause()
   });
 
   test("Check pause track on music page", async ({
@@ -67,19 +67,17 @@ test("Check 202 No Results Found error page ", async ({
   }) => {
     //Actions
     await app.home.open()
-    await app.home.header.searchForm.inputSearchCriteria("Skofka");
+    await app.home.header.searchForm.inputSearchCriteria("Best");
     await app.home.header.searchForm.clickEnterSearchField();
     await app.musicPage.header.clickMusicSearchButton()
     await app.musicPage.track.expectMusicTracksToBeVisible()
     await app.musicPage.track.clickPlayButtonNumberTrack(1)
-    await app.musicPage.player.expectTimeToHaveText("0:04" || "0:05")
+    await app.musicPage.player.expectTimeToHaveText("0:04")
     await app.musicPage.track.clickPauseButtonNumberTrack(1)
 
     //Assert
-    await app.musicPage.track.expectAttributeClassOfElement(app.musicPage.track.track(1),
-      "item item--audio active")
-    await app.musicPage.track.expectAttributeToHaveValue(app.musicPage.track.playButton(1),
-        "xlink:href", /play/)
+    await app.musicPage.track.expectFirstTrackIsNotPlaying()
+    await app.musicPage.track.expectFirstTrackButtonIsPlay()
   });
 
   test("Check next button of track on the main page", async ({
@@ -87,17 +85,17 @@ test("Check 202 No Results Found error page ", async ({
   }) => {
     //Actions
     await app.home.open()
-    await app.home.header.searchForm.inputSearchCriteria("Skofka");
+    await app.home.header.searchForm.inputSearchCriteria("hit 2024");
     await app.home.header.searchForm.clickEnterSearchField();
     await app.musicPage.header.clickMusicSearchButton()
     await app.musicPage.track.expectMusicTracksToBeVisible()
     await app.musicPage.track.clickPlayButtonNumberTrack(1)
-    await app.musicPage.player.expectTimeToHaveText("0:04" || "0:05")
     await app.musicPage.player.clickNextButton()
     
     //Assert
-    await app.musicPage.player.expectTimeToHaveText("0:04" || "0:05")
-    await app.musicPage.track.expectAttributeClassOfElement(app.musicPage.track.track(2), /playing/ )
+    await app.musicPage.player.expectTimeToHaveText("0:05")
+    await app.musicPage.track.expectFirstTrackIsNotActive()
+    await app.musicPage.track.expectSecondTrackIsPlaying()
   });
 
   test("Check previous button of track on the main page", async ({
@@ -105,7 +103,7 @@ test("Check 202 No Results Found error page ", async ({
   }) => {
     //Actions
     await app.home.open()
-    await app.home.header.searchForm.inputSearchCriteria("Skofka");
+    await app.home.header.searchForm.inputSearchCriteria("Eminem");
     await app.home.header.searchForm.clickEnterSearchField();
     await app.musicPage.header.clickMusicSearchButton()
     await app.musicPage.track.expectMusicTracksToBeVisible()
@@ -116,7 +114,8 @@ test("Check 202 No Results Found error page ", async ({
 
     //Assert
     await app.musicPage.player.expectTimeToHaveText("0:04")
-    await app.musicPage.track.expectAttributeClassOfElement(app.musicPage.track.track(1), /playing/)
+    await app.musicPage.track.expectFirstTrackIsPlaying()
+    await app.musicPage.track.expectSecondTrackIsNotActive()
   });
 
   test("Check set time in track", async ({
@@ -124,7 +123,7 @@ test("Check 202 No Results Found error page ", async ({
   }) => {
     //Actions
     await app.home.open()
-    await app.home.header.searchForm.inputSearchCriteria("Skofka");
+    await app.home.header.searchForm.inputSearchCriteria("summer for...");
     await app.home.header.searchForm.clickEnterSearchField();
     await app.musicPage.header.clickMusicSearchButton()
     await app.musicPage.track.expectMusicTracksToBeVisible()
@@ -133,10 +132,8 @@ test("Check 202 No Results Found error page ", async ({
     await app.musicPage.track.clickTimeLineNumberTrack(1)
 
     //Assert
-    await app.musicPage.track.expectAttributeToHaveValue(app.musicPage.track.valueProgressBar(1),
-      "style", /width: 5/)
-    await app.musicPage.player.expectAttributeToHaveValue(app.musicPage.player.progressBar,
-      "style", /width: 5/)  
+    await app.musicPage.track.expectProgressBarOfFirstTrackToHaveTimeValue(/width: 5/)
+    await app.musicPage.player.expectProgressBarToHaveTimeValue(/width: 5/)   
   });
 
   test("Check set time in the player", async ({
@@ -144,7 +141,7 @@ test("Check 202 No Results Found error page ", async ({
   }) => {
     //Actions
     await app.home.open()
-    await app.home.header.searchForm.inputSearchCriteria("Skofka");
+    await app.home.header.searchForm.inputSearchCriteria("Moose");
     await app.home.header.searchForm.clickEnterSearchField();
     await app.musicPage.header.clickMusicSearchButton()
     await app.musicPage.track.expectMusicTracksToBeVisible()
@@ -153,10 +150,8 @@ test("Check 202 No Results Found error page ", async ({
     await app.musicPage.player.clickTimeLine()
 
     //Assert
-    await app.musicPage.track.expectAttributeToHaveValue(app.musicPage.track.valueProgressBar(1),
-      "style", /width: 5/)
-    await app.musicPage.player.expectAttributeToHaveValue(app.musicPage.player.progressBar,
-      "style", /width: 5/)
+    await app.musicPage.track.expectProgressBarOfFirstTrackToHaveTimeValue(/width: 5/)
+    await app.musicPage.player.expectProgressBarToHaveTimeValue(/width: 5/)   
   });
 
   test("Check pause track in player on music page", async ({
@@ -164,7 +159,7 @@ test("Check 202 No Results Found error page ", async ({
   }) => {
     //Actions
     await app.home.open()
-    await app.home.header.searchForm.inputSearchCriteria("Skofka");
+    await app.home.header.searchForm.inputSearchCriteria("8");
     await app.home.header.searchForm.clickEnterSearchField();
     await app.musicPage.header.clickMusicSearchButton()
     await app.musicPage.track.expectMusicTracksToBeVisible()
@@ -173,12 +168,9 @@ test("Check 202 No Results Found error page ", async ({
     await app.musicPage.player.clickPauseButton()
 
     //Assert
-    await app.musicPage.track.expectAttributeClassOfElement(app.musicPage.track.track(1),
-      "item item--audio active")
-    await app.musicPage.track.expectAttributeToHaveValue(app.musicPage.track.playButton(1),
-      "xlink:href", /play/)
-    await app.musicPage.player.expectAttributeToHaveValue(app.musicPage.player.playButton,
-      "xlink:href", /play/)    
+    await app.musicPage.track.expectFirstTrackIsNotPlaying()
+    await app.musicPage.track.expectFirstTrackButtonIsPlay()
+    await app.musicPage.player.expectButtonIsPlay()
   });
 
   test("Check play track in player on music page", async ({
@@ -186,7 +178,7 @@ test("Check 202 No Results Found error page ", async ({
   }) => {
     //Actions
     await app.home.open()
-    await app.home.header.searchForm.inputSearchCriteria("Skofka");
+    await app.home.header.searchForm.inputSearchCriteria("Lady Gaga");
     await app.home.header.searchForm.clickEnterSearchField();
     await app.musicPage.header.clickMusicSearchButton()
     await app.musicPage.track.expectMusicTracksToBeVisible()
@@ -196,12 +188,9 @@ test("Check 202 No Results Found error page ", async ({
     await app.musicPage.player.clickPlayButton()
 
     //Assert
-    await app.musicPage.track.expectAttributeClassOfElement(app.musicPage.track.track(1),
-      "item item--audio active playing")
-    await app.musicPage.track.expectAttributeToHaveValue(app.musicPage.track.playButton(1),
-        "xlink:href", /pause/)
-    await app.musicPage.player.expectAttributeToHaveValue(app.musicPage.player.playButton,
-        "xlink:href", /pause/)      
+    await app.musicPage.track.expectFirstTrackIsPlaying()
+    await app.musicPage.track.expectFirstTrackButtonIsPause()
+    await app.musicPage.player.expectButtonIsPause()   
   });
 
   test("Check shuffle function in the player", async ({
@@ -209,7 +198,7 @@ test("Check 202 No Results Found error page ", async ({
   }) => {
     //Actions
     await app.home.open()
-    await app.home.header.searchForm.inputSearchCriteria("Skofka");
+    await app.home.header.searchForm.inputSearchCriteria("HARD KISS");
     await app.home.header.searchForm.clickEnterSearchField();
     await app.musicPage.header.clickMusicSearchButton()
     await app.musicPage.track.expectMusicTracksToBeVisible()
@@ -219,8 +208,8 @@ test("Check 202 No Results Found error page ", async ({
     await app.musicPage.player.clickNextButton()
 
     //Assert
-    await app.musicPage.track.expectAttributeClassOfElement(app.musicPage.track.track(2), "item item--audio")
-    await app.musicPage.player.expectAttributeClassOfElement(app.musicPage.player.shuffleButton, /active/) 
+    await app.musicPage.track.expectSecondTrackIsNotActive()
+    await app.musicPage.player.expectShuffleButtonIsActive()
   });
   test.describe('favorite function', () => { test.use({ mode: "default" })
   test("Check add track in the favorite", async ({
@@ -228,14 +217,14 @@ test("Check 202 No Results Found error page ", async ({
   }) => {
     //Actions
     await app.home.open()
-    await app.home.header.searchForm.inputSearchCriteria("Skofka");
+    await app.home.header.searchForm.inputSearchCriteria("ACD");
     await app.home.header.searchForm.clickEnterSearchField();
     await app.musicPage.header.clickMusicSearchButton()
     await app.musicPage.track.expectMusicTracksToBeVisible()
     await app.musicPage.track.clickFavoriteButtonNumberTrack(1)
 
     //Assert
-    await app.musicPage.track.expectAttributeClassOfElement(app.musicPage.track.favoriteButton(1), /active/)
+    await app.musicPage.track.expectFirstTrackFavoriteButtonIsActive()
     await app.musicPage.favoritePlaylist.expectPlaylistToHaveText(/My favorite tracks1/)
     await app.musicPage.track.clickFavoriteButtonNumberTrack(1)   
   });
@@ -245,7 +234,7 @@ test("Check 202 No Results Found error page ", async ({
   }) => {
     //Actions
     await app.home.open()
-    await app.home.header.searchForm.inputSearchCriteria("Skofka");
+    await app.home.header.searchForm.inputSearchCriteria("Bruno");
     await app.home.header.searchForm.clickEnterSearchField();
     await app.musicPage.header.clickMusicSearchButton()
     await app.musicPage.track.expectMusicTracksToBeVisible()
@@ -255,7 +244,7 @@ test("Check 202 No Results Found error page ", async ({
     await app.musicPage.track.clickFavoriteButtonNumberTrack(1)
 
     //Assert
-    await app.musicPage.track.expectAttributeClassOfElement(app.musicPage.track.favoriteButton(1), "button favorite")
+    await app.musicPage.track.expectFirstTrackFavoriteButtonIsNotActive()
     await app.musicPage.favoritePlaylist.expectPlaylistToBeHidden()
   });
 
@@ -264,7 +253,7 @@ test("Check 202 No Results Found error page ", async ({
   }) => {
     //Actions
     await app.home.open()
-    await app.home.header.searchForm.inputSearchCriteria("Skofka");
+    await app.home.header.searchForm.inputSearchCriteria("Teri Baaton Mein Aisa Uljha Jiya");
     await app.home.header.searchForm.clickEnterSearchField();
     await app.musicPage.header.clickMusicSearchButton()
     await app.musicPage.track.expectMusicTracksToBeVisible()
@@ -273,8 +262,8 @@ test("Check 202 No Results Found error page ", async ({
     await app.musicPage.player.clickFavoriteButton()
 
     //Assert
-    await app.musicPage.track.expectAttributeClassOfElement(app.musicPage.track.favoriteButton(1),/active/)
-    await app.musicPage.track.expectAttributeClassOfElement(app.musicPage.player.favoriteButton, /active/)  
+    await app.musicPage.track.expectFirstTrackFavoriteButtonIsActive()
+    await app.musicPage.player.expectFavoriteButtonIsActive()
     await app.musicPage.favoritePlaylist.expectPlaylistToHaveText(/My favorite tracks1/)
     await app.musicPage.track.clickFavoriteButtonNumberTrack(1)   
   });
@@ -284,7 +273,7 @@ test("Check 202 No Results Found error page ", async ({
   }) => {
     //Actions
     await app.home.open()
-    await app.home.header.searchForm.inputSearchCriteria("Skofka");
+    await app.home.header.searchForm.inputSearchCriteria("アイドル");
     await app.home.header.searchForm.clickEnterSearchField();
     await app.musicPage.header.clickMusicSearchButton()
     await app.musicPage.track.expectMusicTracksToBeVisible()
@@ -294,8 +283,8 @@ test("Check 202 No Results Found error page ", async ({
     await app.musicPage.player.clickFavoriteButton()
 
     //Assert
-    await app.musicPage.track.expectAttributeClassOfElement(app.musicPage.track.favoriteButton(1),"button favorite")
-    await app.musicPage.track.expectAttributeClassOfElement(app.musicPage.player.favoriteButton, "button favorite")    
+    await app.musicPage.track.expectFirstTrackFavoriteButtonIsNotActive()
+    await app.musicPage.player.expectFavoriteButtonIsNotActive()    
     await app.musicPage.favoritePlaylist.expectPlaylistToBeHidden()
   });
 });
@@ -305,7 +294,7 @@ test("Check 202 No Results Found error page ", async ({
   }) => {
     //Actions
     await app.home.open()
-    await app.home.header.searchForm.inputSearchCriteria("Skofka");
+    await app.home.header.searchForm.inputSearchCriteria("Top 2024");
     await app.home.header.searchForm.clickEnterSearchField();
     await app.musicPage.header.clickMusicSearchButton()
     await app.musicPage.track.expectMusicTracksToBeVisible()
@@ -327,17 +316,18 @@ test("Check 202 No Results Found error page ", async ({
     await app.musicPage.track.expectMusicTracksToBeVisible()
     
     //Assert
-    await app.musicPage.track. expectTextsToContainSearchCriteria(app.musicPage.track.tracksName, "billie jean")
-    await app.musicPage.track.expectListToHaveCount(app.musicPage.track.tracksName, 20)
-    await app.musicPage.track.expectAreElementsInListDisplayed(app.musicPage.track.allPlayButton)
+    await app.musicPage.track.expectTracksNameToContainText("billie jean")
+    await app.musicPage.track.expectTracksCount(20)
+    await app.musicPage.track.expectAreElementsInListDisplayed(app.musicPage.track.allPlayButtons)
   });
 
   test("Check regional search", async ({
     app,
   }) => {
+    const query = "billie jean"
     //Actions
     await app.home.open()
-    await app.home.header.searchForm.inputSearchCriteria("billie jean");
+    await app.home.header.searchForm.inputSearchCriteria(query);
     await app.home.header.searchForm.clickEnterSearchField();
     await app.musicPage.header.clickMusicSearchButton()
     await app.musicPage.track.expectMusicTracksToBeVisible()
@@ -346,10 +336,10 @@ test("Check 202 No Results Found error page ", async ({
     await app.musicPage.track.expectMusicTracksToBeVisible()
     
     //Assert
-    await app.musicPage.track.expectTextsToContainSearchCriteria(app.musicPage.track.tracksName, "billie jean")
-    await app.musicPage.track.expectListToHaveCount(app.musicPage.track.tracksName, 20)
-    await app.musicPage.track.expectAreElementsInListDisplayed(app.musicPage.track.allPlayButton)
-    await app.musicPage.expectHaveUrl(app.musicPage.page, process.env.BASE_URL + "/en/music?query=billie+jean&region=de-DE")
+    await app.musicPage.track.expectTracksNameToContainText(query)
+    await app.musicPage.track.expectTracksCount(20)
+    await app.musicPage.track.expectAreElementsInListDisplayed(app.musicPage.track.allPlayButtons)
+    await app.musicPage.expectHaveUrl(app.musicPage.page, process.env.BASE_URL + `/en/music?query=billie+jean&region=de-DE`)
   });
 
   test("Check the width and visibility images of playlist", async ({
@@ -380,7 +370,7 @@ test("Check 202 No Results Found error page ", async ({
     
     //Assert
     await app.musicPage.track.expectImageToHaveWight("width", 72)
-    await app.musicPage.track.expectListToHaveCount(app.musicPage.track.allImages, 20)
+    await app.musicPage.track.expectTracksCount(20)
     await app.musicPage.track.expectAreElementsInListDisplayed(app.musicPage.track.allImages)
   });
   test("Check width and visibility image in player", async ({

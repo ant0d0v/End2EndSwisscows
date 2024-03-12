@@ -18,10 +18,8 @@ const value = "Skofka";
     await app.musicPlaylistPage.track.clickPauseButtonNumberTrack(1)
 
     //Assert
-    await app.musicPlaylistPage.track.expectAttributeClassOfElement(app.musicPlaylistPage.track.track(1),
-      "item item--audio active")
-    await app.musicPlaylistPage.track.expectAttributeToHaveValue(app.musicPlaylistPage.track.playButton(1),
-        "xlink:href", /play/)
+    await app.musicPlaylistPage.track.expectFirstTrackIsNotPlaying()
+    await app.musicPlaylistPage.track.expectFirstTrackButtonIsPlay()
   });
 
   test("Check next button of track on the main page", async ({
@@ -41,7 +39,7 @@ const value = "Skofka";
     
     //Assert
     await app.musicPlaylistPage.player.expectTimeToHaveText("0:04")
-    await app.musicPlaylistPage.track.expectAttributeClassOfElement(app.musicPlaylistPage.track.track(2), /playing/ )
+    await app.musicPlaylistPage.track.expectSecondTrackIsPlaying()
   });
 
   test("Check previous button of track on the main page", async ({
@@ -62,7 +60,7 @@ const value = "Skofka";
 
     //Assert
     await app.musicPlaylistPage.player.expectTimeToHaveText("0:04")
-    await app.musicPlaylistPage.track.expectAttributeClassOfElement(app.musicPlaylistPage.track.track(1), /playing/)
+    await app.musicPlaylistPage.track.expectFirstTrackIsPlaying()
   });
 
   test("Check set time in track", async ({
@@ -81,10 +79,8 @@ const value = "Skofka";
     await app.musicPlaylistPage.track.clickTimeLineNumberTrack(1)
 
     //Assert
-    await app.musicPlaylistPage.track.expectAttributeToHaveValue(app.musicPlaylistPage.track.valueProgressBar(1),
-      "style", /width: 5/)
-    await app.musicPlaylistPage.player.expectAttributeToHaveValue(app.musicPlaylistPage.player.progressBar,
-      "style", /width: 5/)  
+    await app.musicPlaylistPage.track.expectProgressBarOfFirstTrackToHaveTimeValue(/width: 5/)
+    await app.musicPlaylistPage.player.expectProgressBarToHaveTimeValue(/width: 5/)   
   });
 
 
@@ -105,9 +101,8 @@ const value = "Skofka";
     await app.musicPlaylistPage.player.clickNextButton()
 
     //Assert
-    await app.musicPlaylistPage.track.expectAttributeClassOfElement(app.musicPlaylistPage.track.track(2),
-      "item item--audio")
-    await app.musicPlaylistPage.player.expectAttributeClassOfElement(app.musicPlaylistPage.player.shuffleButton, /active/) 
+    await app.musicPlaylistPage.track.expectSecondTrackIsNotActive()
+    await app.musicPlaylistPage.player.expectShuffleButtonIsActive()
   });
 
   test("Check change region", async ({
@@ -127,7 +122,7 @@ const value = "Skofka";
     await app.musicPlaylistPage.track.expectMusicTracksToBeVisible()
     
     //Assert
-    await app.musicPlaylistPage.track.expectListToHaveCount(app.musicPlaylistPage.track.tracksName, 20)
-    await app.musicPlaylistPage.track.expectAreElementsInListDisplayed(app.musicPlaylistPage.track.allPlayButton)
+    await app.musicPlaylistPage.track.expectTracksCount(20)
+    await app.musicPlaylistPage.track.expectAreElementsInListDisplayed(app.musicPlaylistPage.track.allPlayButtons)
     await app.musicPlaylistPage.expectHaveUrl(app.musicPlaylistPage.page, expectedUrl);
   });

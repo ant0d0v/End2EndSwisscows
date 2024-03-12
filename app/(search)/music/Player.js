@@ -63,5 +63,22 @@ export default class MusicPlayer extends BaseComponent {
   expectImageToHaveWight = async (property, value) => {
     await this.expectElementToHaveJSProperty(this.image , property, value);
   };
-
+  expectProgressBarToHaveTimeValue = async (value) => {
+    await this.expectAttributeToHaveValue(this.progressBar, "style", value) 
+  };
+  expectButtonIsPlay = async () => {
+    await this.expectAttributeToHaveValue(this.playButton,"xlink:href", /play/)
+  };
+  expectButtonIsPause = async () => {
+    await this.expectAttributeToHaveValue(this.playButton,"xlink:href", /pause/)
+  };
+  expectShuffleButtonIsActive = async () => {
+  await this.expectAttributeClassOfElement(this.shuffleButton, /active/) 
+  }
+  expectFavoriteButtonIsActive = async () => {
+    await this.expectAttributeClassOfElement(this.favoriteButton, /active/) 
+  }
+  expectFavoriteButtonIsNotActive = async () => {
+    await this.expectAttributeClassOfElement(this.favoriteButton, "button favorite") 
+  }
 }

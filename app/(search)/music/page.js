@@ -34,4 +34,5 @@ export default class MusicPage extends BasePage {
       `playlist ${index}`
     );
   };
+  
 }

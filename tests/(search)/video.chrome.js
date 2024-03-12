@@ -200,11 +200,9 @@ test("Check infinity scroll to items-pane aside", async ({
     await app.videoPage.item.expectVideoItemsToBeVisible()
     
     //Assert
-    await app.videoPage.item.expectTextsToContainSearchCriteria(
-      app.videoPage.item.videoItems, "Miley Cyrus".toLowerCase())
+    await app.videoPage.item.expectTextsToContainSearchCriteria(app.videoPage.item.videoItems, "Miley Cyrus".toLowerCase())
     await app.videoPage.item.expectListToHaveCount(app.videoPage.item.videoItems, 10)
     await app.videoPage.item.expectAreElementsInListDisplayed(app.videoPage.item.images)
-    await app.videoPage.expectHaveUrl(
-      app.videoPage.page,  process.env.BASE_URL + `/en/video?query=Miley+Cyrus&region=de-DE`)
+    await app.videoPage.expectHaveUrl(app.videoPage.page,  process.env.BASE_URL + `/en/video?query=Miley+Cyrus&region=de-DE`)
     
   });

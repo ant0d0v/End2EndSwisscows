@@ -91,7 +91,7 @@ test.describe('Internal user', () => {
 
     //Assert
     await app.musicMyPage.player.expectTimeToHaveText("0:04")
-    await app.musicMyPage.track.expectAttributeToHaveValue(app.musicMyPage.track.playButton(1), "xlink:href", /pause/)     
+    await app.musicMyPage.track.expectFirstTrackButtonIsPause()     
   });
 
   test("Check pause track on my music page", async ({
@@ -112,8 +112,8 @@ test.describe('Internal user', () => {
     favoriteTracksIdForDeletionOfInternalUser.push(favoriteID);  
 
     //Assert
-    await app.musicMyPage.track.expectAttributeClassOfElement(app.musicMyPage.track.track(1), "item item--audio active")
-    await app.musicMyPage.track.expectAttributeToHaveValue(app.musicMyPage.track.playButton(1), "xlink:href", /play/)    
+    await app.musicMyPage.track.expectFirstTrackIsNotPlaying()
+    await app.musicMyPage.track.expectFirstTrackButtonIsPlay()   
   });
 
   test("Check set time in track", async ({
@@ -134,8 +134,8 @@ test.describe('Internal user', () => {
     favoriteTracksIdForDeletionOfInternalUser.push(favoriteID);
 
     //Assert
-    await app.musicMyPage.track.expectAttributeToHaveValue(app.musicMyPage.track.valueProgressBar(1), "style", /width: 5/)
-    await app.musicMyPage.player.expectAttributeToHaveValue(app.musicMyPage.player.progressBar, "style", /width: 5/) 
+    await app.musicMyPage.track.expectProgressBarOfFirstTrackToHaveTimeValue(/width: 5/)
+    await app.musicMyPage.player.expectProgressBarToHaveTimeValue(/width: 5/) 
   });
 });
 
@@ -160,8 +160,8 @@ test.describe('External user', () => {
     favoriteTracksIdForDeletionOfExternalUser.push(favoriteID);  
 
     //Assert
-    await app.musicMyPage.track.expectAttributeToHaveValue(app.musicMyPage.track.valueProgressBar(1), "style", /width: 5/)
-    await app.musicMyPage.player.expectAttributeToHaveValue(app.musicPage.player.progressBar, "style", /width: 5/) 
+    await app.musicMyPage.track.expectProgressBarOfFirstTrackToHaveTimeValue(/width: 5/)
+    await app.musicMyPage.player.expectProgressBarToHaveTimeValue(/width: 5/) 
   });
 
   test("Check pause track in player on my music page", async ({
@@ -182,9 +182,9 @@ test.describe('External user', () => {
     favoriteTracksIdForDeletionOfExternalUser.push(favoriteID);    
 
     //Assert
-    await app.musicPage.track.expectAttributeClassOfElement(app.musicMyPage.track.track(1), "item item--audio active")
-    await app.musicPage.track.expectAttributeToHaveValue(app.musicMyPage.track.playButton(1), "xlink:href", /play/)
-    await app.musicPage.player.expectAttributeToHaveValue(app.musicMyPage.player.playButton, "xlink:href", /play/)
+    await app.musicMyPage.track.expectFirstTrackIsNotPlaying()
+    await app.musicMyPage.track.expectFirstTrackButtonIsPlay() 
+    await app.musicMyPage.player.expectButtonIsPlay()
   });
 
   test("Check play track in player on my music page", async ({
@@ -206,9 +206,9 @@ test.describe('External user', () => {
     favoriteTracksIdForDeletionOfExternalUser.push(favoriteID);    
 
     //Assert
-    await app.musicMyPage.track.expectAttributeClassOfElement(app.musicMyPage.track.track(1), /active playing/)
-    await app.musicMyPage.track.expectAttributeToHaveValue(app.musicMyPage.track.playButton(1),"xlink:href", /pause/)
-    await app.musicPage.player.expectAttributeToHaveValue(app.musicMyPage.player.playButton,"xlink:href", /pause/)
+    await app.musicMyPage.track.expectFirstTrackIsPlaying()
+    await app.musicMyPage.track.expectFirstTrackButtonIsPause() 
+    await app.musicMyPage.player.expectButtonIsPause()
            
   });
 
@@ -231,7 +231,7 @@ test.describe('External user', () => {
 
     //Assert
     await app.musicMyPage.track.expectTracksNameToContainText(value.toLowerCase())
-    await app.musicMyPage.track.expectListToHaveCount(app.musicMyPage.track.tracksName, 1)
+    await app.musicMyPage.track.expectTracksCount(1)
     await app.musicMyPage.track.expectAreElementsInListDisplayed(app.musicMyPage.track.allPlayButtons)
     await app.musicMyPage.expectPageUrlToHaveParameter(`?query=${value}&region=de-DE`)
   });
@@ -251,7 +251,7 @@ test.describe('External user', () => {
     favoriteTracksIdForDeletionOfExternalUser.push(...favoriteIDs); 
   
     //Assert
-    await app.musicMyPage.track.expectListToHaveCount(app.musicMyPage.track.tracksName, 20)
+    await app.musicMyPage.track.expectTracksCount(20)
     await app.musicMyPage.track.expectAreElementsInListDisplayed(app.musicMyPage.track.allPlayButtons)
   })
 });
