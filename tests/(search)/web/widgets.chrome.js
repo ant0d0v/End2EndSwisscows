@@ -15,12 +15,10 @@ test("Check next and prev buttons in the video widget", async ({
      await app.webPage.videoWidget.waitElementToBeVisible(app.webPage.videoWidget.nextButton)
      
      //Assert
-     await app.webPage.videoWidget.expectAttributeToHaveValue(app.webPage.videoWidget.nextButton, 
-      "class", /next swiper-button-disabled/)
+     await app.webPage.videoWidget.expectNextButtonIsDisabled()
      await app.webPage.videoWidget.clickPrevButtonUntilInvisible()
-     await app.webPage.videoWidget.expectAttributeToHaveValue(app.webPage.videoWidget.prevButton, 
-      "class", /prev swiper-button-disabled/)
-  });
+     await app.webPage.videoWidget.expectPrevButtonIsDisabled()
+    });
 
   test("Check the width and visibility of images in the video widget", async ({
     app
@@ -129,7 +127,6 @@ test("Check next and prev buttons in the video widget", async ({
   test("Check title of the image widget", async ({
     app
   }) => {
-     
      //Actions
      await app.home.open()
      await app.home.header.clickHamburgerMenuButton();
@@ -139,8 +136,7 @@ test("Check next and prev buttons in the video widget", async ({
      await app.webPage.item.expectWebItemsToBeVisible()
      
      //Assert
-     await app.webPage.imagesWidget.expectElementToHaveText(app.webPage.imagesWidget.titleImagesWidget, 
-      "Images for flowers")
+     await app.webPage.imagesWidget.expectTitleToHaveText("Images for flowers")
   });
 
   test("Check open news in the news widget", async ({
@@ -189,6 +185,5 @@ test("Check next and prev buttons in the video widget", async ({
      await app.webPage.item.expectWebItemsToBeVisible()
      
      //Assert
-     await app.webPage.newsWidget.expectElementToHaveText(app.webPage.newsWidget.titleNewsWidget, 
-      "News for news Ukraine")
+     await app.webPage.newsWidget.expectTitleToHaveText("News for news Ukraine")
   });

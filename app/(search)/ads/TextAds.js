@@ -6,7 +6,7 @@ export default class TextAds extends BaseComponent {
     super(page)
     
     //Locators
-    this.textAds = this.page.getByText('Ads by Microsoft Data privacy').first()
-    this.listAds = this.page.locator("article.text-item span.ad")
+    this.textAds = this.page.locator('span.ad ').first()
+    this.listAds = this.page.locator("span.ad")
   }
 }

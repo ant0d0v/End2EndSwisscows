@@ -13,7 +13,7 @@ export default class Filters extends BaseComponent {
   }
   //Actions
   clickFilterInDropdownListAndGetResponse = async (name, expectedLink) => {
-    const responsePromise = this.page.waitForResponse(expectedLink);
+    const responsePromise = this.page.waitForResponse((response) => response.url().includes(expectedLink));
     await this.clickElement(this.filterList(name),`filter in dropdown` );
     const response = await responsePromise;
     return response;

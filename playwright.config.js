@@ -75,11 +75,11 @@ module.exports = defineConfig({
       use: {
         ...devices["Desktop Chrome"],
         channel: "chrome",
-        storageState: "./data/auth/internalUser.json",
+        // storageState: "./data/auth/internalUser.json",
         viewport: { width: 1360, height: 900 },
         screenshot: "only-on-failure",
       },
-      dependencies: ["setup"],
+      // dependencies: ["setup"],
     },
     {
       name: "firefox",

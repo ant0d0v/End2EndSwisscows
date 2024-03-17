@@ -9,10 +9,12 @@ export default class ButtonMenu extends BaseComponent {
     
     }
     //Actions
-
     clickFilterByDate = async() => {
-        await this.clickElement(
-          this.filterByDate,`filter by date in dropdown` );
-      };
+        await this.clickElement(this.filterByDate,`filter by date in dropdown` );
+    };
 
+    //Verify
+    expectFilterByDateIsOpened  = async() => {
+        await this.expectAttributeClassOfElement(this.attributeFilterByDate, /open/)
+    }
 }

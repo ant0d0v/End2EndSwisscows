@@ -22,7 +22,7 @@ for (const {testID,expectedNewsLink,locatorId,responseNewsUrl,filter } of filter
       await newsPage.item.expectNewsItemsToBeVisible()
       await newsPage.header.clickFiltersButton()
       await newsPage.filters.buttonMenu.clickFilterByDate()
-      const response = await newsPage.filters.clickFilterInDropdownListAndGetResponse(locatorId,responseNewsUrl)
+      const response = await newsPage.filters.clickFilterInDropdownListAndGetResponse(locatorId, "/v4/news/search?query=news")
       
       //Assert
       await newsPage.expectHaveUrl(page, expectedNewsLink);

@@ -25,4 +25,10 @@ export default class Widget extends BaseComponent {
   expectImageToHaveWightInWidget = async (property, value) => {
     await this.expectElementsToHaveJSProperty(this.allImage , property, value);
   };
+  expectNextButtonIsDisabled = async () => {
+    await this.expectAttributeToHaveValue(this.nextButton ,  "class", /next swiper-button-disabled/);
+  };
+  expectPrevButtonIsDisabled = async () => {
+    await this.expectAttributeToHaveValue(this.prevButton ,  "class", /next swiper-button-disabled/);
+  };
 }

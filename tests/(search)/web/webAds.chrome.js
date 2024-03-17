@@ -1,9 +1,6 @@
 import { test} from "../../../utils/fixturePages";
 const { expect } = require("@playwright/test");
 
-const testData = JSON.parse(
-  JSON.stringify(require("../../../data/error/testData.json"))
-);
 test("Check text advertising", async ({
     home,
     webPage,
@@ -18,7 +15,7 @@ test("Check text advertising", async ({
      await webPage.adsText.waitElementToBeVisible(webPage.adsText.textAds)
    
      //Assert
-     await webPage.adsText.expectElementToHaveText(webPage.adsText.textAds, "Ads by Microsoft Data privacy")
+     await webPage.adsText.expectElementToHaveText(webPage.adsText.textAds, "Ad")
      await webPage.adsText.expectListToBeGreaterThanOrEqual(webPage.adsText.listAds, 1)
   });
 

@@ -14,4 +14,7 @@ export default class Widget extends BaseComponent {
   expectImageToHaveWightInWidget = async (property, value) => {
     await this.expectElementsToHaveJSProperty(this.allImage , property, value);
   };
+  expectTitleToHaveText = async (value) => {
+    await this.expectElementsToHaveJSProperty(this.titleNewsWidget ,value);
+  };
 }
