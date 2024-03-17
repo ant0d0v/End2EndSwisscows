@@ -14,6 +14,9 @@ export default class CharityPage extends BasePage {
     this.links = (id) => this.page.getByRole("main").getByRole("link", { name: `${id}` });
   }
   //Actions
+  async open(){
+    await this.openPage("/social-projects")
+  }
 
   async clickLinkOnThePage(id) {
     const newPage = await this.clickElementAndNavigateToNewPage(

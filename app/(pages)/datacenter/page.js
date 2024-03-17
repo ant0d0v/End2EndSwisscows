@@ -16,6 +16,9 @@ export default class DatacenterPage extends BasePage {
       this.page.getByRole("main").getByRole("link", { name: `${id}` });
   }
   //Actions
+  async open(){
+    await this.openPage("/data-safe-search-engine")
+  }
 
   async clickLinkOnThePage(id) {
     const newPage = await this.clickElementAndNavigateToNewPage(

@@ -21,6 +21,9 @@ export default class ContactPage extends BasePage {
     this.backToSearchButton = this.page.getByRole('link', { name: 'Back to search' })
   }
   //Actions
+  async open(){
+    await this.openPage("/contact")
+  }
   async clickSendButton() {
     await this.clickElement(this.sendButton, `Send button`);
   }
@@ -47,7 +50,7 @@ export default class ContactPage extends BasePage {
       `Message field`
     );
   }
-
+  
   //Assert
 
   async expectBorderColorFormField(id, expectedValue) {

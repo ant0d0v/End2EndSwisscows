@@ -10,6 +10,10 @@ export default class ImprintPage extends BasePage {
     //Locators
     this.allContent = this.page.locator("main.imprint");
   }
+  //Actions
+  async open(){
+    await this.openPage("/imprint")
+  }
   
   //Verify
   expectScreenImprintPage = async (testInfo) => {

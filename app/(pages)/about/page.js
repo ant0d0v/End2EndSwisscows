@@ -11,6 +11,9 @@ export default class AboutPage extends BasePage {
     this.allLinks = (name) => this.page.getByRole("link", { name: name, exact: true });
   }
   //Actions
+  async open(){
+    await this.openPage("/search-engine-no-tracking")
+  }
   async clickAllLinks(id) {
     await this.clickElement(this.allLinks(id),`${id} link`);
   }

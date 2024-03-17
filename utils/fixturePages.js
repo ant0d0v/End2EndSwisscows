@@ -63,45 +63,34 @@ exports.test = base.test.extend({
     await use(new FooterFull(page));
   },
   charityPage: async ({ page, home }, use) => {
-    await home.footer.clickCharityProjectLink();
     await use(new CharityPage(page));
   },
   datacenterPage: async ({ page, home }, use) => {
-    await home.footer.clickDatacenterLink();
     await use(new DatacenterPage(page));
   },
   mediaEducationPage: async ({ page, home }, use) => {
-    await home.footer.clickEducationLink();
     await use(new MediaEducationPage(page));
   },
   donationPage: async ({ page, home }, use) => {
-    await home.footer.clickDonationLink();
     await use(new DonationPage(page));
   },
   contactPage: async ({ page, home }, use) => {
-    await home.footer.clickContactUsLink();
     await use(new ContactPage(page));
   },
   aboutPage: async ({ page, home }, use) => {
-    await home.footer.clickWhoWeAreLink();
     await use(new AboutPage(page));
   },
   imprintPage: async ({ page, home }, use) => {
-    await home.footer.clickImprintLink();
     await use(new ImprintPage(page));
   },
   emailPage: async ({ home }, use) => {
-    const newPage = await home.footer.clickEmailLinkAndNavigateToNewPage();
     await use(new EmailPage(newPage));
   },
   defaultSearchPage: async ({ home }, use) => {
-    await home.clickFourQuestion()
-    const newPage = await home.clickLinkInTheFourQuestionAndNavigateToDefaultSearchPage();
     await use(new DefaultSearchPage(newPage));
   },
 
   vpnPage: async ({ home }, use) => {
-    const newPage = await home.footer.clickVpnLinkAndNavigateToNewPage();
     await use(new VpnPage(newPage));
   },
   preloader: async ({ page }, use) => {
