@@ -137,8 +137,7 @@ test("Check 202 No Results Found error page ", async ({
      //Assert
      await newsPage.item.expectOldArrayNotToEqualNewArray(oldSearchResult, newSearchResult)
      await newsPage.item.expectListToHaveCount(newsPage.item.newsItems, 10)
-     await newsPage.pagination.expectAttributeClassOfElement(
-        newsPage.pagination.threeNumberInPagination, "number active");
+     await newsPage.pagination.expectThreeNumberIsActive()
   });
 
   test("Check next button in the paging", async ({
@@ -163,8 +162,7 @@ test("Check 202 No Results Found error page ", async ({
      //Assert
      await newsPage.item.expectOldArrayNotToEqualNewArray(oldSearchResult, newSearchResult)
      await newsPage.item.expectListToHaveCount(newsPage.item.newsItems, 10)
-     await newsPage.pagination.expectAttributeClassOfElement(
-       newsPage.pagination.secondNumberInPagination, "number active");
+     await newsPage.pagination.expectSecondNumberIsActive()
   });
 
   test("Check prev button in the paging", async ({
@@ -187,12 +185,10 @@ test("Check 202 No Results Found error page ", async ({
      await newsPage.pagination.clickPrevButton()
      await newsPage.header.badgeCounter.expectCharityBadgeCounterToHaveValue("4");
      
-
      //Assert
-     await newsPage.expectHaveUrl(page, "https://dev.swisscows.com/en/news?query=news&region=de-DE&offset=0")
+     await newsPage.expectHaveUrl(page,  process.env.BASE_URL + "/en/news?query=news&region=de-DE&offset=0")
      await newsPage.item.expectListToHaveCount(newsPage.item.newsItems, 10)
-     await newsPage.pagination.expectAttributeClassOfElement(
-       newsPage.pagination.firstNumberInPagination, "number active");
+     await newsPage.pagination.expectFirstNumberIsActive()
   });
 
   test("Check that image of proxy cdn server", async ({

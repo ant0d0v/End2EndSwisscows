@@ -6,7 +6,7 @@ export default class Item extends BaseComponent {
     super(page);
     //Locators
     this.webItems = this.page.locator("article.item-web h2")
-    this.firstWebItems = this.page.locator("article.item-web h2").first()
+    this.firstWebItem = this.page.locator("article.item-web h2").first()
     this.fiveWebItems = this.page.locator("article.item-web:nth-of-type(-n+5) h2")
   }
   //Actions
@@ -19,7 +19,7 @@ export default class Item extends BaseComponent {
     return texts;
   }
   clickFirstWebItem = async () => {
-    return await this.clickElement(this.firstWebItems, `first web item in search result`);
+    return await this.clickElement(this.firstWebItem, `first web item in search result`);
    };
  
   // Verify

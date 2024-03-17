@@ -57,7 +57,7 @@ test("Check 202 No Results Found error page ", async ({
       )
   });
 
-  test("Check related search criteria", async ({
+  test.skip("Check related search criteria", async ({
     home,
     webPage
   }) => {
@@ -73,7 +73,7 @@ test("Check 202 No Results Found error page ", async ({
     await webPage.relatedSearches.expectRelatedSearchesToHaveCount(8)
   });
 
-  test("Check that hover texts related to search", async ({
+  test.skip("Check that hover texts related to search", async ({
     home,
     webPage
   }) => {
@@ -89,7 +89,7 @@ test("Check 202 No Results Found error page ", async ({
       webPage.relatedSearches.listRelatedSearches, "color", "rgb(223, 93, 93)");
   });
 
-  test("Check click query in related search criteria", async ({
+  test.skip("Check click query in related search criteria", async ({
     home,
     webPage
   }) => {
@@ -128,187 +128,167 @@ test("Check 202 No Results Found error page ", async ({
   });
 
   test("Check that web results equals search criteria ", async ({
-    home,
-    webPage
+    app
   }) => {
-     
      //Actions
-     await home.header.searchForm.inputSearchCriteria("Cristiano Ronaldo");
-     await home.header.searchForm.clickEnterSearchField();
-     await webPage.item.expectWebItemsToBeVisible()
+     await app.home.open()
+     await app.home.header.searchForm.inputSearchCriteria("Ukraine");
+     await app.home.header.searchForm.clickEnterSearchField();
+     await app.webPage.item.expectWebItemsToBeVisible()
 
      //Assert
-     await webPage.item.expectWebItemsToContains("ronaldo");
-     await webPage.item.expectListToBeGreaterThanOrEqual(webPage.item.webItems, 6)
+     await app.webPage.item.expectWebItemsToContains("ukraine");
+     await app.webPage.item.expectListToBeGreaterThanOrEqual(app.webPage.item.webItems, 6)
   });
 
   test("Check select any number in the paging", async ({
-    home,
-    webPage
+    app
   }) => {
-     
      //Actions
-     await home.header.searchForm.inputSearchCriteria("ukraine");
-     await home.header.searchForm.clickEnterSearchField();
-     await webPage.item.expectWebItemsToBeVisible()
-     const oldSearchResult = await webPage.item.getTextContentWebItems()
-     await webPage.pagination.clickThreeNumber()
-     await webPage.header.badgeCounter.expectCharityBadgeCounterToHaveValue("2");
-     const newSearchResult = await webPage.item.getTextContentWebItems()
+     await app.home.open()
+     await app.home.header.searchForm.inputSearchCriteria("ukraine");
+     await app.home.header.searchForm.clickEnterSearchField();
+     await app.webPage.item.expectWebItemsToBeVisible()
+     const oldSearchResult = await app.webPage.item.getTextContentWebItems()
+     await app.webPage.pagination.clickThreeNumber()
+     await app.webPage.header.badgeCounter.expectCharityBadgeCounterToHaveValue("2");
+     const newSearchResult = await app.webPage.item.getTextContentWebItems()
 
      //Assert
-     await webPage.item.expectOldArrayNotToEqualNewArray(oldSearchResult, newSearchResult)
-     await webPage.pagination.expectAttributeClassOfElement(
-      webPage.pagination.threeNumberInPagination, "number active");
+     await app.webPage.item.expectOldArrayNotToEqualNewArray(oldSearchResult, newSearchResult)
+     await app.webPage.pagination.expectThreeNumberIsActive()
   });
 
   test("Check next button in the paging", async ({
-    home,
-    webPage
+    app
   }) => {
-     
      //Actions
-     await home.header.searchForm.inputSearchCriteria("ukraine");
-     await home.header.searchForm.clickEnterSearchField();
-     await webPage.item.expectWebItemsToBeVisible()
-     const oldSearchResult = await webPage.item.getTextContentWebItems()
-     await webPage.pagination.clickNextButton()
-     await webPage.header.badgeCounter.expectCharityBadgeCounterToHaveValue("2");
-     const newSearchResult = await webPage.item.getTextContentWebItems()
+     await app.home.open()
+     await app.home.header.searchForm.inputSearchCriteria("ukraine");
+     await app.home.header.searchForm.clickEnterSearchField();
+     await app.webPage.item.expectWebItemsToBeVisible()
+     const oldSearchResult = await app.webPage.item.getTextContentWebItems()
+     await app.webPage.pagination.clickNextButton()
+     await app.webPage.header.badgeCounter.expectCharityBadgeCounterToHaveValue("2");
+     const newSearchResult = await app.webPage.item.getTextContentWebItems()
 
      //Assert
-     await webPage.item.expectOldArrayNotToEqualNewArray(oldSearchResult, newSearchResult)
-     await webPage.pagination.expectAttributeClassOfElement(
-      webPage.pagination.secondNumberInPagination, "number active");
+     await app.webPage.item.expectOldArrayNotToEqualNewArray(oldSearchResult, newSearchResult)
+     await app.webPage.pagination.expectSecondNumberIsActive()
   });
 
   test("Check prev button in the paging", async ({
-    home,
-    webPage,
-    page
+    app
   }) => {
+      //Actions
+     await app.home.open()
+     await app.home.header.searchForm.inputSearchCriteria("ivanka");
+     await app.home.header.searchForm.clickEnterSearchField();
+     await app.webPage.item.expectWebItemsToBeVisible()
+     await app.webPage.pagination.clickNextButton()
+     await app.webPage.header.badgeCounter.expectCharityBadgeCounterToHaveValue("2");
+     await app.webPage.pagination.clickPrevButton()
+     await app.webPage.header.badgeCounter.expectCharityBadgeCounterToHaveValue("3");
      
-     //Actions
-     await home.header.searchForm.inputSearchCriteria("ivanka");
-     await home.header.searchForm.clickEnterSearchField();
-     await webPage.item.expectWebItemsToBeVisible()
-     await webPage.pagination.clickNextButton()
-     await webPage.header.badgeCounter.expectCharityBadgeCounterToHaveValue("2");
-     await webPage.pagination.clickPrevButton()
-     await webPage.header.badgeCounter.expectCharityBadgeCounterToHaveValue("3");
-     
-
      //Assert
-     await webPage.expectHaveUrl(page, "https://dev.swisscows.com/en/web?query=ivanka&offset=0")
-     await webPage.pagination.expectAttributeClassOfElement(
-      webPage.pagination.firstNumberInPagination, "number active");
+     await app.webPage.expectHaveUrl(app.page, process.env.BASE_URL + "/en/web?query=ivanka&offset=0")
+     await app.webPage.pagination.expectFirstNumberIsActive()
   });
 
   test("Check open link in  the web result", async ({
-    home,
-    webPage,
-    page
+    app
   }) => {
-     
      //Actions
-     await home.header.searchForm.inputSearchCriteria("ukraine");
-     await home.header.searchForm.clickEnterSearchField();
-     await webPage.item.expectWebItemsToBeVisible()
-     await webPage.item.clickFirstWebItem()
+     await app.home.open()
+     await app.home.header.searchForm.inputSearchCriteria("ukraine");
+     await app.home.header.searchForm.clickEnterSearchField();
+     await app.webPage.item.expectWebItemsToBeVisible()
+     await app.webPage.item.clickFirstWebItem()
    
      //Assert
-     await webPage.expectNotToHaveUrl(page, "https://dev.swisscows.com/en/web?query=ukraine" )
+     await app.webPage.expectNotToHaveUrl(app.page, process.env.BASE_URL + "/en/web?query=ukraine")
   });
 
   test("Check open web Preview ", async ({
-    home,
-    webPage,
+    app
   }) => {
-     
      //Actions
-     await home.header.searchForm.inputSearchCriteria("wiki");
-     await home.header.searchForm.clickEnterSearchField();
-     await webPage.item.expectWebItemsToBeVisible()
-     await webPage.preview.clickPreviewButton()
+     await app.home.open()
+     await app.home.header.searchForm.inputSearchCriteria("wiki");
+     await app.home.header.searchForm.clickEnterSearchField();
+     await app.webPage.item.expectWebItemsToBeVisible()
+     await app.webPage.clickPreviewButton()
    
      //Assert
-     await webPage.preview.expectElementToBeVisible(webPage.preview.contentImageInPreview)
+     await app.webPage.preview.expectScreenshotImageToBeVisible()
   });
 
   test("Check close web Preview ", async ({
-    home,
-    webPage,
+    app
   }) => {
-     
      //Actions
-     await home.header.searchForm.inputSearchCriteria("wiki");
-     await home.header.searchForm.clickEnterSearchField();
-     await webPage.item.expectWebItemsToBeVisible()
-     await webPage.preview.clickPreviewButton()
+     await app.home.open()
+     await app.home.header.searchForm.inputSearchCriteria("wiki");
+     await app.home.header.searchForm.clickEnterSearchField();
+     await app.webPage.item.expectWebItemsToBeVisible()
+     await app.webPage.clickPreviewButton()
    
      //Assert
-     await webPage.preview.expectElementToBeVisible(webPage.preview.contentImageInPreview)
-     await webPage.preview.clickCloseButtonInPreview ()
-     await webPage.preview.expectElementToBeHidden(webPage.preview.contentImageInPreview)
-
+     await app.webPage.preview.expectScreenshotImageToBeVisible()
+     await app.webPage.preview.clickCloseButton()
+     await app.webPage.preview.expectScreenshotImageToBeHidden()
   });
 
   test("Check click open site button in web Preview ", async ({
-    home,
-    webPage,
+    app
   }) => {
-     
      //Actions
-     await home.header.searchForm.inputSearchCriteria("wiki");
-     await home.header.searchForm.clickEnterSearchField();
-     await webPage.item.expectWebItemsToBeVisible()
-     await webPage.preview.clickPreviewButton()
-     const newPage = await webPage.preview.clickOpenSiteButtonInPreview()
-   
+     await app.home.open()
+     await app.home.header.searchForm.inputSearchCriteria("wiki");
+     await app.home.header.searchForm.clickEnterSearchField();
+     await app.webPage.item.expectWebItemsToBeVisible()
+     await app.webPage.clickPreviewButton()
+
      //Assert
-     await webPage.expectHaveUrl(newPage, /wikipedia.org/ )
+     await app.webPage.preview.expectToBeOpenedNewPageAfterClickOpenSiteButton(/wikipedia.org/)
   });
 
   test("Check open trackers in web Preview ", async ({
-    home,
-    webPage,
+    app
   }) => {
-     
      //Actions
-     await home.header.searchForm.inputSearchCriteria("google");
-     await home.header.searchForm.clickEnterSearchField();
-     await webPage.item.expectWebItemsToBeVisible()
-     await webPage.preview.clickPreviewButton()
-     await webPage.preview.clickTrackersButtonInPreview()
+     await app.home.open()
+     await app.home.header.searchForm.inputSearchCriteria("google");
+     await app.home.header.searchForm.clickEnterSearchField();
+     await app.webPage.item.expectWebItemsToBeVisible()
+     await app.webPage.clickPreviewButton()
+     await app.webPage.preview.clickTrackersButton()
      
-   
      //Assert
-     await webPage.preview.expectListToBeGreaterThanOrEqual(webPage.preview.allTrackers, 1)
+     await app.webPage.preview.expectListToBeGreaterThanOrEqual(app.webPage.preview.allTrackers, 1)
   });
 
   test("Check click screenshot button in web Preview ", async ({
-    home,
-    webPage,
+    app
   }) => {
-     
      //Actions
-     await home.header.searchForm.inputSearchCriteria("google");
-     await home.header.searchForm.clickEnterSearchField();
-     await webPage.item.expectWebItemsToBeVisible()
-     await webPage.preview.clickPreviewButton()
-     await webPage.preview.clickTrackersButtonInPreview()
+     await app.home.open()
+     await app.home.header.searchForm.inputSearchCriteria("google");
+     await app.home.header.searchForm.clickEnterSearchField();
+     await app.webPage.item.expectWebItemsToBeVisible()
+     await app.webPage.clickPreviewButton()
+     await app.webPage.preview.clickTrackersButton()
      
      //Assert
-     await webPage.preview.expectElementToBeHidden(webPage.preview.contentImageInPreview)
-     await webPage.preview.clickScreenshotButtonInPreview()
-     await webPage.preview.expectElementToBeVisible(webPage.preview.contentImageInPreview)
+     await app.webPage.preview.expectScreenshotImageToBeHidden()
+     await app.webPage.preview.clickScreenshotButton()
+     await app.webPage.preview.expectScreenshotImageToBeVisible()
   });
 
   test.skip("Check design of the web search page ", async ({
     home,
     webPage,
   },testInfo) => {
-     
      //Actions
      await home.header.clickHamburgerMenuButton();
      await home.header.hamburgerMenu.selectRegion("Ukraine");

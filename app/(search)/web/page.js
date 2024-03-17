@@ -33,7 +33,12 @@ export default class WebPage extends BasePage {
     this.preview  = new Preview(page);
     //Locators
    this.webResult = this.page.locator("section.container.page-results div.web-results")
+   this.previewButton = this.page.getByRole('button', { name: 'preview' }).first()
   }
+  //Actions
+  clickPreviewButton = async () => {
+    await this.clickElement(this.previewButton, `preview button`);
+  };
 
   // Verify
   expectScreenWebPage = async (testInfo) => {
