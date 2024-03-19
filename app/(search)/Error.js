@@ -10,11 +10,25 @@ export default class Error extends BaseComponent {
     this.errorImageNoResult = this.page.getByRole('main').getByRole('img').first()
   }
   // Actions
-
-  open404Page = () => {
-    this.page.goto("https://swisscows.com/en/qwerty")
+  open = (endpoint) => {
+    this.openPage(endpoint)
   }
-  open500Page = (endpoint) => {
-    this.page.goto(`https://swisscows.com/en${endpoint}?query= `)
+  handleByMockingStatusCodeResponse = async (endpoint,code) => {
+    await this.page.route(process.env.API_URL + `/v4${endpoint}/*`, async route => {
+      await route.fulfill({
+        status: code,
+      });
+    });
+  }
+
+  //Verify
+  expectContentToHaveText = async ( expectedText) => {
+    await this.expectElementToHaveText(this.contentErrorPage, expectedText)
+  }
+  expectNotResultErrorToHaveText = async ( expectedText) => {
+    await this.expectElementToHaveText(this.contentErrorNoResults, expectedText)
+  }
+  expectErrorImageToBeVisible = async () => {
+    await this.expectElementToBeVisible(this.errorImage)
   }
 }

@@ -7,56 +7,69 @@ const testData = JSON.parse(
 
 
 test("Check 202 No Results Found error page ", async ({
-    home,
-    webPage
+    app
   }) => {
     //Actions
-    await home.header.clickHamburgerMenuButton();
-    await home.header.hamburgerMenu.selectRegion("Ukraine");
-    await home.header.searchForm.inputSearchCriteria("@#@$%^$^dasdsad1231");
-    await home.header.searchForm.clickEnterSearchField();
+    await app.home.open()
+    await app.home.header.searchForm.inputSearchCriteria("././././");
+    await app.home.header.searchForm.clickEnterSearchField();
     
     //Assert
-    await webPage.expectElementToHaveText(webPage.error.contentErrorNoResults,
-      testData.expectedErrorText.noResultsFound202Error)
-    await webPage.expectElementToBeVisible(webPage.error.errorImage)
+    await app.webPage.error.expectNotResultErrorToHaveText(
+      "No results found for \"././././\"SearchTips:Ensure words are spelled correctly.Try rephrasing keywords or using synonyms.Try less specific keywords.Make your queries as concise as possible.")
+    await app.webPage.error.expectErrorImageToBeVisible()
   });
 
   test("Check request is blocked 450 error page ", async ({
-    home,
-    webPage
+    app
   }) => {
     //Actions
-    await home.header.searchForm.inputSearchCriteria("porn");
-    await home.header.searchForm.clickEnterSearchField();
+    await app.home.open()
+    await app.home.header.searchForm.inputSearchCriteria("porn");
+    await app.home.header.searchForm.clickEnterSearchField();
+    
     //Assert
-    await webPage.expectElementToHaveText(webPage.error.contentErrorNoResults, 
-      testData.expectedErrorText.blocked450Error)
-    await webPage.expectElementToBeVisible(webPage.error.errorImage)
+    await app.webPage.error.expectContentToHaveText(testData.expectedErrorText.blocked450Error)
+    await app.webPage.error.expectErrorImageToBeVisible()
+  });
+  
+  test("Check 429 Too many requests", async ({
+    app
+  }) => {
+    //Actions
+    await app.home.open()
+    await app.webPage.error.handleByMockingStatusCodeResponse("/web", 429)
+    await app.home.header.searchForm.inputSearchCriteria("food");
+    await app.home.header.searchForm.clickEnterSearchField();
+  
+    await app.webPage.error.expectContentToHaveText("Too many requestsError 429: Too many requestsThis error often occurs because of a VPN.If you are using a VPN connection, try disabling it or selecting a different location. Then perform the search again.")
+    await app.webPage.error.expectErrorImageToBeVisible()
   });
 
-  test("Check 500 unknown Error Page  ", async ({
-    webPage
+  test("Check 500 unknown Error Page", async ({
+    app
   }) => {
     //Actions
-    await webPage.error.open500Page("/web")
+    await app.home.open()
+    await app.webPage.error.handleByMockingStatusCodeResponse("/web", 500)
+    await app.home.header.searchForm.inputSearchCriteria("food");
+    await app.home.header.searchForm.clickEnterSearchField();
+  
     //Assert
-    await webPage.expectElementToHaveText(webPage.error.contentErrorPage, 
-      testData.expectedErrorText.unknown500Error)
-    await webPage.expectElementToBeVisible(webPage.error.errorImage)
+    await app.webPage.error.expectContentToHaveText(testData.expectedErrorText.unknown500Error)
+    await app.webPage.error.expectErrorImageToBeVisible()
   });
 
   test("Check 404 Page Not Found ", async ({
-    webPage
+    app
   }) => {
     //Actions
-    await webPage.error.open404Page()
-    //Assert
-    await webPage.expectElementToHaveText(webPage.error.contentErrorPage, 
-      testData.expectedErrorText.pageNotFound404Error
-      )
-  });
+    await app.webPage.error.open("/web/123")
 
+    //Assert
+    await app.webPage.error.expectContentToHaveText(testData.expectedErrorText.pageNotFound404Error)
+  });
+  
   test.skip("Check related search criteria", async ({
     home,
     webPage
@@ -111,19 +124,19 @@ test("Check 202 No Results Found error page ", async ({
   });
 
   test("Check Did you mean message in the search field ", async ({
-    home,
-    webPage
+    app
   }) => {
      const query = "appple";
      let expectedResult = "Including results for \"apple\"" + "Do you want results only for " + query + "?";
      
      //Actions
-     await home.header.searchForm.inputSearchCriteria(query);
-     await home.header.searchForm.clickEnterSearchField();
-     await webPage.item.expectWebItemsToBeVisible()
+     await app.home.open()
+     await app.home.header.searchForm.inputSearchCriteria(query);
+     await app.home.header.searchForm.clickEnterSearchField();
+     await app.webPage.item.expectWebItemsToBeVisible()
 
      //Assert
-     await webPage.alternateSearch.expectElementToHaveText(webPage.alternateSearch.textDidYouMeanMessage,
+     await app.webPage.alternateSearch.expectElementToHaveText(app.webPage.alternateSearch.textDidYouMeanMessage,
       expectedResult )
   });
 
