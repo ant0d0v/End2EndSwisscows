@@ -127,8 +127,7 @@ test("Check 202 No Results Found error page ", async ({
     app
   }) => {
      const query = "appple";
-     let expectedResult = "Including results for \"apple\"" + "Do you want results only for " + query + "?";
-     
+   
      //Actions
      await app.home.open()
      await app.home.header.searchForm.inputSearchCriteria(query);
@@ -136,8 +135,8 @@ test("Check 202 No Results Found error page ", async ({
      await app.webPage.item.expectWebItemsToBeVisible()
 
      //Assert
-     await app.webPage.alternateSearch.expectElementToHaveText(app.webPage.alternateSearch.textDidYouMeanMessage,
-      expectedResult )
+     await app.webPage.alternateSearch.expectDidYouMeanMessageToHaveText(
+      "Including results for \"apple\"" + "Do you want results only for " + query + "?")
   });
 
   test("Check that web results equals search criteria ", async ({
