@@ -2,77 +2,75 @@ import { test} from "../../../utils/fixturePages";
 const { expect } = require("@playwright/test");
 
 test("Check text advertising", async ({
-    home,
-    webPage,
+    app
   }) => {
-     
      //Actions
-     await home.header.clickHamburgerMenuButton();
-     await home.header.hamburgerMenu.selectRegion("Germany");
-     await home.header.searchForm.inputSearchCriteria("laptop");
-     await home.header.searchForm.clickEnterSearchField();
-     await webPage.item.expectWebItemsToBeVisible()
-     await webPage.adsText.waitElementToBeVisible(webPage.adsText.textAds)
+     await app.home.open()
+     await app.home.header.clickHamburgerMenuButton();
+     await app.home.header.hamburgerMenu.selectRegion("Germany");
+     await app.home.header.searchForm.inputSearchCriteria("laptop");
+     await app.home.header.searchForm.clickEnterSearchField();
+     await app.webPage.item.expectWebItemsToBeVisible()
+     await app.webPage.adsText.waitUntilAdsToBeVisible()
    
      //Assert
-     await webPage.adsText.expectElementToHaveText(webPage.adsText.textAds, "Ad")
-     await webPage.adsText.expectListToBeGreaterThanOrEqual(webPage.adsText.listAds, 1)
+     await app.webPage.adsText.expectAdsToHaveText("Ads by Microsoft Data privacy")
+     await app.webPage.adsText.expectListToBeGreaterThanOrEqual(app.webPage.adsText.listAds, 1)
+     await app.webPage.adsText.expectListAdsToHaveText("Ad")
   });
 
   test("Check text and image product advertising ", async ({
-    home,
-    webPage,
+    app
   }) => {
      
      //Actions
-     await home.header.clickHamburgerMenuButton();
-     await home.header.hamburgerMenu.selectRegion("Germany");
-     await home.header.searchForm.inputSearchCriteria("crocs price");
-     await home.header.searchForm.clickEnterSearchField();
-     await webPage.item.expectWebItemsToBeVisible()
-     await webPage.adsProduct.waitElementToBeVisible(webPage.adsProduct.textProductsAds)
+     await app.home.open()
+     await app.home.header.clickHamburgerMenuButton();
+     await app.home.header.hamburgerMenu.selectRegion("Germany");
+     await app.home.header.searchForm.inputSearchCriteria("whisky");
+     await app.home.header.searchForm.clickEnterSearchField();
+     await app.webPage.item.expectWebItemsToBeVisible()
+     await app.webPage.adsProduct.waitUntilProductAdsToBeVisible()
    
      //Assert
-     await webPage.adsProduct.expectElementToHaveText(webPage.adsProduct.textProductsAds,
-      "Products for crocs price")
-     await webPage.adsProduct.expectAreElementsInListDisplayed(webPage.adsProduct.allImage)
+     await app.webPage.adsProduct.expectTitleAdsToHaveText("Products for whisky")
+     await app.webPage.adsProduct.expectAreElementsInListDisplayed(app.webPage.adsProduct.allImage)
+     await app.webPage.adsText.expectAdsToHaveText("Ads by Microsoft Data privacy")
   });
 
   test("Check next button and prev button in the product advertising ", async ({
-    home,
-    webPage,
+   app
   }) => {
      
      //Actions
-     await home.header.clickHamburgerMenuButton();
-     await home.header.hamburgerMenu.selectRegion("Germany");
-     await home.header.searchForm.inputSearchCriteria("price iphone in germany ");
-     await home.header.searchForm.clickEnterSearchField();
-     await webPage.item.expectWebItemsToBeVisible()
-     await webPage.adsProduct.waitElementToBeVisible(webPage.adsProduct.nextButton)
-     await webPage.adsProduct.clickNextButtonUntilInvisible()
+     await app.home.open()
+     await app.home.header.clickHamburgerMenuButton();
+     await app.home.header.hamburgerMenu.selectRegion("Germany");
+     await app.home.header.searchForm.inputSearchCriteria("whisky");
+     await app.home.header.searchForm.clickEnterSearchField();
+     await app.webPage.item.expectWebItemsToBeVisible()
+     await app.webPage.adsProduct.waitUntilProductAdsToBeVisible()
+     await app.webPage.adsProduct.clickNextButtonUntilInvisible()
      
      //Assert
-     await webPage.adsProduct.expectAttributeToHaveValue(webPage.adsProduct.nextButton, 
-      "class", /next swiper-button-disabled/)
-     await webPage.adsProduct.clickPrevButtonUntilInvisible()
-     await webPage.adsProduct.expectAttributeToHaveValue(webPage.adsProduct.prevButton, 
-      "class", /prev swiper-button-disabled/)
+     await app.webPage.adsProduct.expectNextButtonIsDisabled()
+     await app.webPage.adsProduct.clickPrevButtonUntilInvisible()
+     await app.webPage.adsProduct.expectPrevButtonIsDisabled()
   });
   test("Check open advertising ", async ({
-    home,
-    webPage
+    app
   }) => {
      
      //Actions
-     await home.header.clickHamburgerMenuButton();
-     await home.header.hamburgerMenu.selectRegion("Germany");
-     await home.header.searchForm.inputSearchCriteria("price iphone in germany");
-     await home.header.searchForm.clickEnterSearchField();
-     await webPage.item.expectWebItemsToBeVisible()
-     await webPage.adsProduct.waitElementToBeVisible(webPage.adsProduct.firstProduct)
-     const newPage = await webPage.adsProduct.clickFirstProductAndNavigateToNewPage()
+     await app.home.open()
+     await app.home.header.clickHamburgerMenuButton();
+     await app.home.header.hamburgerMenu.selectRegion("Germany");
+     await app.home.header.searchForm.inputSearchCriteria("whisky");
+     await app.home.header.searchForm.clickEnterSearchField();
+     await app.webPage.item.expectWebItemsToBeVisible()
+     await app.webPage.adsProduct.waitUntilProductAdsToBeVisible()
+     const newPage = await app.webPage.adsProduct.clickFirstProductAndNavigateToNewPage()
      
      //Assert
-     await webPage.expectNotToHaveUrl(newPage, "https://dev.swisscows.com/en/web?query=price+iphone+in+germany&region=de-DE" )
+     await app.webPage.expectNotToHaveUrl(newPage, process.env.BASE_URL + "/en/web?query=whisky&region=de-DE" )
   });

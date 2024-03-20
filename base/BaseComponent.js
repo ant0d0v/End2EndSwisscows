@@ -13,7 +13,7 @@ export default class BaseComponent extends BasePage {
     .catch(async (e) => await this.errorHandling(e, this.page));
   }
 
-  async waitElementToBeVisible(element) {
+  async waitUntilElementToBeVisible(element) {
     await test.step(`Click on ${element} the until invisible`, async () => {
       let count = 0
       for(count; count <= 15; count++ ){

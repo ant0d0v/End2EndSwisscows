@@ -69,59 +69,6 @@ test("Check 202 No Results Found error page ", async ({
     //Assert
     await app.webPage.error.expectContentToHaveText(testData.expectedErrorText.pageNotFound404Error)
   });
-  
-  test.skip("Check related search criteria", async ({
-    home,
-    webPage
-  }) => {
-     //Actions
-     await home.header.clickHamburgerMenuButton();
-     await home.header.hamburgerMenu.selectRegion("Germany");
-     await home.header.searchForm.inputSearchCriteria("ronaldo");
-     await home.header.searchForm.clickEnterSearchField();
-     await webPage.item.expectWebItemsToBeVisible()
-
-    //Assert
-    await webPage.relatedSearches.expectRelatedSearchesToContains("ronaldo");
-    await webPage.relatedSearches.expectRelatedSearchesToHaveCount(8)
-  });
-
-  test.skip("Check that hover texts related to search", async ({
-    home,
-    webPage
-  }) => {
-     //Actions
-     await home.header.clickHamburgerMenuButton();
-     await home.header.hamburgerMenu.selectRegion("Germany");
-     await home.header.searchForm.inputSearchCriteria("ronaldo");
-     await home.header.searchForm.clickEnterSearchField();
-     await webPage.item.expectWebItemsToBeVisible()
-
-    //Assert
-    await webPage.relatedSearches.expectColorsLinksWhenHovering(
-      webPage.relatedSearches.listRelatedSearches, "color", "rgb(223, 93, 93)");
-  });
-
-  test.skip("Check click query in related search criteria", async ({
-    home,
-    webPage
-  }) => {
-     
-     //Actions
-     await home.header.clickHamburgerMenuButton();
-     await home.header.hamburgerMenu.selectRegion("Germany");
-     await home.header.searchForm.inputSearchCriteria("Cristiano Ronaldo");
-     await home.header.searchForm.clickEnterSearchField();
-     await webPage.item.expectWebItemsToBeVisible()
-     const oldSearchResult = await webPage.item.getTextContentWebItems()
-     await webPage.relatedSearches.clickFirstCriteriaInRelatedSearches()
-     await webPage.header.badgeCounter.expectCharityBadgeCounterToHaveValue("2");
-     const newSearchResult = await webPage.item.getTextContentWebItems()
-
-     //Assert
-     await webPage.item.expectOldArrayNotToEqualNewArray(oldSearchResult, newSearchResult)
-     await webPage.item.expectWebItemsToContains("ronaldo");
-  });
 
   test("Check Did you mean message in the search field ", async ({
     app
