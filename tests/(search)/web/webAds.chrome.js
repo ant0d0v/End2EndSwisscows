@@ -27,13 +27,13 @@ test("Check text advertising", async ({
      await app.home.open()
      await app.home.header.clickHamburgerMenuButton();
      await app.home.header.hamburgerMenu.selectRegion("Germany");
-     await app.home.header.searchForm.inputSearchCriteria("whisky");
+     await app.home.header.searchForm.inputSearchCriteria("parfum");
      await app.home.header.searchForm.clickEnterSearchField();
      await app.webPage.item.expectWebItemsToBeVisible()
      await app.webPage.adsProduct.waitUntilProductAdsToBeVisible()
    
      //Assert
-     await app.webPage.adsProduct.expectTitleAdsToHaveText("Products for whisky")
+     await app.webPage.adsProduct.expectTitleAdsToHaveText("Products for parfum")
      await app.webPage.adsProduct.expectAreElementsInListDisplayed(app.webPage.adsProduct.allImage)
      await app.webPage.adsText.expectAdsToHaveText("Ads by Microsoft Data privacy")
   });
@@ -46,7 +46,7 @@ test("Check text advertising", async ({
      await app.home.open()
      await app.home.header.clickHamburgerMenuButton();
      await app.home.header.hamburgerMenu.selectRegion("Germany");
-     await app.home.header.searchForm.inputSearchCriteria("whisky");
+     await app.home.header.searchForm.inputSearchCriteria("parfum");
      await app.home.header.searchForm.clickEnterSearchField();
      await app.webPage.item.expectWebItemsToBeVisible()
      await app.webPage.adsProduct.waitUntilProductAdsToBeVisible()
@@ -65,12 +65,12 @@ test("Check text advertising", async ({
      await app.home.open()
      await app.home.header.clickHamburgerMenuButton();
      await app.home.header.hamburgerMenu.selectRegion("Germany");
-     await app.home.header.searchForm.inputSearchCriteria("whisky");
+     await app.home.header.searchForm.inputSearchCriteria("parfum");
      await app.home.header.searchForm.clickEnterSearchField();
      await app.webPage.item.expectWebItemsToBeVisible()
      await app.webPage.adsProduct.waitUntilProductAdsToBeVisible()
      const newPage = await app.webPage.adsProduct.clickFirstProductAndNavigateToNewPage()
      
      //Assert
-     await app.webPage.expectNotToHaveUrl(newPage, process.env.BASE_URL + "/en/web?query=whisky&region=de-DE" )
+     await app.webPage.expectNotToHaveUrl(newPage, process.env.BASE_URL + "/en/web?query=parfum&region=de-DE" )
   });

@@ -5,7 +5,7 @@ export default class ProductAds extends BaseComponent {
   constructor(page) {
     super(page);
     //Locators
-    this.textProductsAds = this.page.getByText('Products for whisky')
+    this.textProductsAds = this.page.getByText('Products for parfum')
     this.allImage = this.page.locator("article.item-a8r-product img")
     this.firstProduct = this.page.locator("article.item-a8r-product img").nth(1)
     this.nextButton = this.page.locator(".a8r-product-collection button.next")

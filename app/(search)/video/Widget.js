@@ -4,6 +4,7 @@ const { expect } = require("@playwright/test");
 export default class Widget extends BaseComponent {
   constructor(page) {
     super(page);
+    this.title = this.page.locator(".widget.widget-video .widget-title")
     this.nextButton = this.page.locator('div.widget.widget-video button.next')
     this.prevButton = this.page.locator('div.widget.widget-video button.prev')
     this.allImage = this.page.locator('div.widget.widget-video article.item--video img')
@@ -19,6 +20,9 @@ export default class Widget extends BaseComponent {
   };
   clickMoreVideosButton = async () => {
     await this.clickElement(this.moreVideosButton, `More Videos button`);
+  };
+  waitUntilWidgetToBeVisible = async () => {
+    await this.waitUntilElementToBeVisible(this.title);
   };
   
   //Verify 

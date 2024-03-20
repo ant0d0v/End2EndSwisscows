@@ -8,11 +8,11 @@ test("Check next and prev buttons in the video widget", async ({
      await app.home.open()
      await app.home.header.clickHamburgerMenuButton();
      await app.home.header.hamburgerMenu.selectRegion("Germany");
-     await app.home.header.searchForm.inputSearchCriteria("flovers video");
+     await app.home.header.searchForm.inputSearchCriteria("iphone ");
      await app.home.header.searchForm.clickEnterSearchField();
      await app.webPage.item.expectWebItemsToBeVisible()
      await app.webPage.videoWidget.clickNextButtonUntilInvisible()
-     await app.webPage.videoWidget.waitElementToBeVisible(app.webPage.videoWidget.nextButton)
+     await app.webPage.videoWidget.waitUntilWidgetToBeVisible()
      
      //Assert
      await app.webPage.videoWidget.expectNextButtonIsDisabled()
