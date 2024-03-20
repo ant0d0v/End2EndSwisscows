@@ -13,10 +13,10 @@ export default class ProductAds extends BaseComponent {
 
   }
   //Actions
-  clickNextButtonUntilInvisible = async () => {
+  clickCarouselNextButtonUntilInvisible = async () => {
     await this.clickElementUntilInvisible(this.nextButton);
   };
-  clickPrevButtonUntilInvisible = async () => {
+  clickCarouselPrevButtonUntilInvisible = async () => {
     await this.clickElementUntilInvisible(this.prevButton);
   };
   clickFirstProductAndNavigateToNewPage = async () => {
@@ -27,16 +27,16 @@ export default class ProductAds extends BaseComponent {
   };
 
   //Verify 
-  expectImageToHaveWightInProductAds = async (property, value) => {
+  expectCarouselImageToHaveWightInProductAds = async (property, value) => {
     await this.expectElementsToHaveJSProperty(this.allImage , property, value);
   };
   expectTitleAdsToHaveText = async (value) => {
     await this.expectElementToHaveText(this.textProductsAds, value);
   };
-  expectNextButtonIsDisabled = async () => {
+  expectCarouselNextButtonIsDisabled = async () => {
     await this.expectAttributeToHaveValue(this.nextButton, "class", /next swiper-button-disabled/);
   };
-  expectPrevButtonIsDisabled = async () => {
+  expectCarouselPrevButtonIsDisabled = async () => {
     await this.expectAttributeToHaveValue(this.prevButton, "class", /prev swiper-button-disabled/);
   };
 }

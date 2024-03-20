@@ -50,12 +50,12 @@ test("Check text advertising", async ({
      await app.home.header.searchForm.clickEnterSearchField();
      await app.webPage.item.expectWebItemsToBeVisible()
      await app.webPage.adsProduct.waitUntilProductAdsToBeVisible()
-     await app.webPage.adsProduct.clickNextButtonUntilInvisible()
+     await app.webPage.adsProduct.clickCarouselNextButtonUntilInvisible()
      
      //Assert
-     await app.webPage.adsProduct.expectNextButtonIsDisabled()
-     await app.webPage.adsProduct.clickPrevButtonUntilInvisible()
-     await app.webPage.adsProduct.expectPrevButtonIsDisabled()
+     await app.webPage.adsProduct.expectCarouselNextButtonIsDisabled()
+     await app.webPage.adsProduct.clickCarouselPrevButtonUntilInvisible()
+     await app.webPage.adsProduct.expectCarouselPrevButtonIsDisabled()
   });
   test("Check open advertising ", async ({
     app

@@ -6,7 +6,7 @@ const testData = JSON.parse(
 );
 
 
-test("Check 202 No Results Found error page ", async ({
+test("Check 202 no results error page ", async ({
     app
   }) => {
     //Actions
@@ -31,6 +31,7 @@ test("Check 202 No Results Found error page ", async ({
     //Assert
     await app.webPage.error.expectContentToHaveText(testData.expectedErrorText.blocked450Error)
     await app.webPage.error.expectErrorImageToBeVisible()
+    await app.webPage.error.expectImageToHaveWight(450)
   });
   
   test("Check 429 Too many requests", async ({
@@ -41,9 +42,11 @@ test("Check 202 No Results Found error page ", async ({
     await app.webPage.error.handleByMockingStatusCodeResponse("/web", 429)
     await app.home.header.searchForm.inputSearchCriteria("food");
     await app.home.header.searchForm.clickEnterSearchField();
-  
-    await app.webPage.error.expectContentToHaveText("Too many requestsError 429: Too many requestsThis error often occurs because of a VPN.If you are using a VPN connection, try disabling it or selecting a different location. Then perform the search again.")
+    
+    //Assert
+    await app.webPage.error.expectContentToHaveText(testData.expectedErrorText.TooManyRequestsError)
     await app.webPage.error.expectErrorImageToBeVisible()
+    await app.webPage.error.expectImageToHaveWight(450)
   });
 
   test("Check 500 unknown Error Page", async ({
@@ -58,6 +61,21 @@ test("Check 202 No Results Found error page ", async ({
     //Assert
     await app.webPage.error.expectContentToHaveText(testData.expectedErrorText.unknown500Error)
     await app.webPage.error.expectErrorImageToBeVisible()
+    await app.webPage.error.expectImageToHaveWight(446)
+  });
+  test("Check 501 unsupported region", async ({
+    app
+  }) => {
+    //Actions
+    await app.home.open()
+    await app.webPage.error.handleByMockingStatusCodeResponse("/web", 501)
+    await app.home.header.searchForm.inputSearchCriteria("food");
+    await app.home.header.searchForm.clickEnterSearchField();
+  
+    //Assert
+    await app.webPage.error.expectContentToHaveText(testData.expectedErrorText.unknownRegion501Error)
+    await app.webPage.error.expectErrorImageToBeVisible()
+    await app.webPage.error.expectImageToHaveWight(450)
   });
 
   test("Check 404 Page Not Found ", async ({

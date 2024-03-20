@@ -25,6 +25,9 @@ export default class Error extends BaseComponent {
   expectContentToHaveText = async ( expectedText) => {
     await this.expectElementToHaveText(this.contentErrorPage, expectedText)
   }
+  expectImageToHaveWight = async (value) => {
+    await this.expectElementToHaveJSProperty(this.errorImage , "width", value);
+  };
   expectNotResultErrorToHaveText = async ( expectedText) => {
     await this.expectElementToHaveText(this.contentErrorNoResults, expectedText)
   }
