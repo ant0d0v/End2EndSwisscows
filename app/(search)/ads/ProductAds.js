@@ -13,10 +13,10 @@ export default class ProductAds extends BaseComponent {
 
   }
   //Actions
-  clickCarouselNextButtonUntilInvisible = async () => {
+  clickCarouselNextButtonUntilToBeInvisible = async () => {
     await this.clickElementUntilInvisible(this.nextButton);
   };
-  clickCarouselPrevButtonUntilInvisible = async () => {
+  clickCarouselPrevButtonUntilToBeInvisible = async () => {
     await this.clickElementUntilInvisible(this.prevButton);
   };
   clickFirstProductAndNavigateToNewPage = async () => {
