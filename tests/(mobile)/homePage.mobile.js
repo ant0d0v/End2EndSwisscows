@@ -90,8 +90,8 @@ test("Check design dark theme of the home page ", async ({
 },testInfo) => {
   //Actions
   await app.home.header.clickHamburgerMenuButton();
-  await app.home.header.hamburgerMenu.clickThemeDropdownInHamburgerMenu();
-  await app.home.header.hamburgerMenu.clickDarkInHamburgerMenu();
+  await app.home.header.hamburgerMenu.clickThemeDropdown();
+  await app.home.header.hamburgerMenu.clickDarkTheme();
 
   //Assert
   await app.home.expectScreenHome(testInfo);

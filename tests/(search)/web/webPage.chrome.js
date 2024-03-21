@@ -285,8 +285,8 @@ test("Check 202 no results error page ", async ({
      
      //Actions
      await home.header.clickHamburgerMenuButton();
-     await home.header.hamburgerMenu.clickThemeDropdownInHamburgerMenu();
-     await home.header.hamburgerMenu.clickDarkInHamburgerMenu();
+     await home.header.hamburgerMenu.clickThemeDropdown();
+     await home.header.hamburgerMenu.clickDarkTheme();
      await home.header.clickHamburgerMenuButton();
      await home.header.hamburgerMenu.selectRegion("Ukraine");
      await home.header.searchForm.inputSearchCriteria("adsddss");

@@ -15,8 +15,8 @@ test("Check design of the About page ", async ({ aboutPage },testInfo) => {
     //Actions
     await aboutPage.waitUntilPageIsFullyLoaded();
     await aboutPage.header.clickHamburgerMenuButton();
-    await aboutPage.header.hamburgerMenu.clickThemeDropdownInHamburgerMenu();
-    await aboutPage.header.hamburgerMenu.clickDarkInHamburgerMenu();
+    await aboutPage.header.hamburgerMenu.clickThemeDropdown();
+    await aboutPage.header.hamburgerMenu.clickDarkTheme();
   
     //Assert
     await aboutPage.expectScreenAboutPage(testInfo)

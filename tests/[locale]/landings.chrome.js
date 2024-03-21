@@ -15,7 +15,7 @@ const emailTable = parse(fs.readFileSync(path.join(__dirname, '../../localizatio
       //Actions
       await app.emailPage.open()
       await app.emailPage.header.clickHamburgerMenuButton();
-      await app.emailPage.header.hamburgerMenu.clickLanguagesDropdownInHamburgerMenu();
+      await app.emailPage.header.hamburgerMenu.clickLanguagesDropdown();
       await app.emailPage.header.hamburgerMenu.clickLanguageLinkInDropdown(language);
   
       //Assert
@@ -34,7 +34,7 @@ const emailTable = parse(fs.readFileSync(path.join(__dirname, '../../localizatio
       //Actions
       await app.vpnPage.open()
       await app.vpnPage.header.clickHamburgerMenuButton();
-      await app.vpnPage.header.hamburgerMenu.clickLanguagesDropdownInHamburgerMenu();
+      await app.vpnPage.header.hamburgerMenu.clickLanguagesDropdown();
       await app.vpnPage.header.hamburgerMenu.clickLanguageLinkInDropdown(language);
   
       //Assert

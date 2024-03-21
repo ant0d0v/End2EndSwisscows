@@ -25,11 +25,11 @@ test("Check Log Out user and display of login button", async ({
   await app.home.header.searchForm.inputSearchCriteria("best");
   await app.home.header.searchForm.clickEnterSearchField();
   await app.webPage.header.clickHamburgerMenuButton();
-  await app.webPage.header.hamburgerMenu.clickLogoutButtonInHamburgerMenu();
+  await app.webPage.header.hamburgerMenu.clickLogoutButton();
   await app.webPage.header.clickHamburgerMenuButton();
 
   //Assert
-  await app.webPage.header.hamburgerMenu.expectLoginButtonInHamburgerMenuIsDisplayed();
+  await app.webPage.header.hamburgerMenu.expectLoginButtonIsDisplayed();
 });
 
 test("Texts of the links in the hamburger menu.", async ({
@@ -40,7 +40,7 @@ test("Texts of the links in the hamburger menu.", async ({
   await app.home.header.clickHamburgerMenuButton();
 
   //Assert
-  await app.home.header.hamburgerMenu.expectTextsOfLinksInHamburgerMenu(
+  await app.home.header.hamburgerMenu.expectLinksToHaveText(
     testData.expectedTextsHamburgerLinks);
 });
 
@@ -51,11 +51,11 @@ test("Check availability and options of localization dropdown menu in hamburger 
   //Actions
   await app.home.open()
   await app.home.header.clickHamburgerMenuButton();
-  await app.home.header.hamburgerMenu.clickLanguagesDropdownInHamburgerMenu();
+  await app.home.header.hamburgerMenu.clickLanguagesDropdown();
 
   //Assert
   await app.home.header.hamburgerMenu.expectLanguagesDropdownToHaveCount(11)
-  await app.home.header.hamburgerMenu.expectTextsOfLanguagesInHamburgerMenu(
+  await app.home.header.hamburgerMenu.expectLanguagesDropdownToHaveText(
     testData.expectedTextsOfLanguagesDropdown
   );
 });
@@ -67,11 +67,11 @@ test("Check  availability and options of region dropdown menu in hamburger menu"
   //Actions
   await app.home.open()
   await app.home.header.clickHamburgerMenuButton();
-  await app.home.header.hamburgerMenu.clickRegionDropdownInHamburgerMenu();
+  await app.home.header.hamburgerMenu.clickRegionDropdown();
 
   //Assert
   await app.home.header.hamburgerMenu.expectRegionDropdownToHaveCount(47)
-  await app.home.header.hamburgerMenu.expectTextsOfRegionInHamburgerMenu(
+  await app.home.header.hamburgerMenu.expectRegionDropdownToHaveText(
     testData.expectedTextsOfRegionDropdown
   );
 });
@@ -82,8 +82,8 @@ test("Check theme change to dark theme", async ({
   //Actions
   await app.home.open()
   await app.home.header.clickHamburgerMenuButton();
-  await app.home.header.hamburgerMenu.clickThemeDropdownInHamburgerMenu();
-  await app.home.header.hamburgerMenu.clickDarkInHamburgerMenu();
+  await app.home.header.hamburgerMenu.clickThemeDropdown();
+  await app.home.header.hamburgerMenu.clickDarkTheme();
 
   //Assert
   await app.home.header.hamburgerMenu.expectBackgroundColorOfPage(expectedDarkBackground);
@@ -96,8 +96,8 @@ test("Check theme change to light theme", async ({
   //Actions
   await app.home.open()
   await app.home.header.clickHamburgerMenuButton();
-  await app.home.header.hamburgerMenu.clickThemeDropdownInHamburgerMenu();
-  await app.home.header.hamburgerMenu.clickLightInHamburgerMenu();
+  await app.home.header.hamburgerMenu.clickThemeDropdown();
+  await app.home.header.hamburgerMenu.clickLightTheme();
 
   //Assert
   await app.home.header.hamburgerMenu.expectBackgroundColorOfPage(expectedLightBackground);
@@ -110,7 +110,7 @@ test("Check default theme on first opening the site", async ({
   //Actions
   await app.home.open()
   await app.home.header.clickHamburgerMenuButton();
-  await app.home.header.hamburgerMenu.clickThemeDropdownInHamburgerMenu();
+  await app.home.header.hamburgerMenu.clickThemeDropdown();
 
   //Assert
   await app.home.header.hamburgerMenu.expectDefaultThemeButtonIsActive()

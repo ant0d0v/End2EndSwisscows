@@ -133,8 +133,8 @@ test("Check design dark theme of the home page ", async ({
   //Actions
   await app.home.open()
   await app.home.header.clickHamburgerMenuButton();
-  await app.home.header.hamburgerMenu.clickThemeDropdownInHamburgerMenu();
-  await app. home.header.hamburgerMenu.clickDarkInHamburgerMenu();
+  await app.home.header.hamburgerMenu.clickThemeDropdown();
+  await app. home.header.hamburgerMenu.clickDarkTheme();
 
   //Assert
   await app.home.expectScreenHome(testInfo);
@@ -159,7 +159,7 @@ for (const { testID, expectedLink, locatorId, expectedTitle,} of main.languagesL
     //Actions
     await app.home.open()
     await app.home.header.clickHamburgerMenuButton();
-    await app.home.header.hamburgerMenu.clickLanguagesDropdownInHamburgerMenu();
+    await app.home.header.hamburgerMenu.clickLanguagesDropdown();
     await app.home.header.hamburgerMenu.clickLanguageLinkInDropdown(locatorId);
     
     //Assert

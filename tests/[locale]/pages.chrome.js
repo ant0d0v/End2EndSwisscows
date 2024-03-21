@@ -16,7 +16,7 @@ for (const { test_case, language, expected_content} of mainTable) {
     //Actions
     await app.home.open()
     await app.home.header.clickHamburgerMenuButton();
-    await app.home.header.hamburgerMenu.clickLanguagesDropdownInHamburgerMenu();
+    await app.home.header.hamburgerMenu.clickLanguagesDropdown();
     await app.home.header.hamburgerMenu.clickLanguageLinkInDropdown(language);
 
     //Assert
@@ -36,7 +36,7 @@ for (const { test_case, language, expected_content} of contactTable) {
     //Actions
     await app.contactPage.open()
     await app.contactPage.header.clickHamburgerMenuButton();
-    await app.contactPage.header.hamburgerMenu.clickLanguagesDropdownInHamburgerMenu();
+    await app.contactPage.header.hamburgerMenu.clickLanguagesDropdown();
     await app.contactPage.header.hamburgerMenu.clickLanguageLinkInDropdown(language);
 
     //Assert
@@ -56,7 +56,7 @@ for (const { test_case, language, expected_content} of charityTable) {
     //Actions
     await app.charityPage.open()
     await app.charityPage.header.clickHamburgerMenuButton();
-    await app.charityPage.header.hamburgerMenu.clickLanguagesDropdownInHamburgerMenu();
+    await app.charityPage.header.hamburgerMenu.clickLanguagesDropdown();
     await app.charityPage.header.hamburgerMenu.clickLanguageLinkInDropdown(language);
 
     //Assert
@@ -76,7 +76,7 @@ for (const { test_case, language, expected_content} of datacenterTable) {
     //Actions
     await app.datacenterPage.open()
     await app.datacenterPage.header.clickHamburgerMenuButton();
-    await app.datacenterPage.header.hamburgerMenu.clickLanguagesDropdownInHamburgerMenu();
+    await app.datacenterPage.header.hamburgerMenu.clickLanguagesDropdown();
     await app.datacenterPage.header.hamburgerMenu.clickLanguageLinkInDropdown(language);
 
     //Assert
@@ -93,7 +93,7 @@ for (const { test_case, language, expected_content} of educationTable) {
     //Actions
     await app.mediaEducationPage.open()
     await app.mediaEducationPage.header.clickHamburgerMenuButton();
-    await app.mediaEducationPage.header.hamburgerMenu.clickLanguagesDropdownInHamburgerMenu();
+    await app.mediaEducationPage.header.hamburgerMenu.clickLanguagesDropdown();
     await app.mediaEducationPage.header.hamburgerMenu.clickLanguageLinkInDropdown(language);
 
     //Assert
@@ -115,7 +115,7 @@ for (const { test_case, language, expected_content} of imprintTable) {
     //Actions
     await app.imprintPage.open()
     await app.imprintPage.header.clickHamburgerMenuButton();
-    await app.imprintPage.header.hamburgerMenu.clickLanguagesDropdownInHamburgerMenu();
+    await app.imprintPage.header.hamburgerMenu.clickLanguagesDropdown();
     await app.imprintPage.header.hamburgerMenu.clickLanguageLinkInDropdown(language);
 
     //Assert
@@ -135,7 +135,7 @@ for (const { test_case, language, expected_content} of aboutTable) {
     //Actions
     await app.aboutPage.open()
     await app.aboutPage.header.clickHamburgerMenuButton();
-    await app.aboutPage.header.hamburgerMenu.clickLanguagesDropdownInHamburgerMenu();
+    await app.aboutPage.header.hamburgerMenu.clickLanguagesDropdown();
     await app.aboutPage.header.hamburgerMenu.clickLanguageLinkInDropdown(language);
 
     //Assert

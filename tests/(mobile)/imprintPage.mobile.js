@@ -13,8 +13,8 @@ test("Check design dark theme of the  Imprint page ", async ({
   //Actions
   await imprintPage.waitUntilPageIsFullyLoaded();
   await imprintPage.header.clickHamburgerMenuButton();
-  await imprintPage.header.hamburgerMenu.clickThemeDropdownInHamburgerMenu();
-  await imprintPage.header.hamburgerMenu.clickDarkInHamburgerMenu();
+  await imprintPage.header.hamburgerMenu.clickThemeDropdown();
+  await imprintPage.header.hamburgerMenu.clickDarkTheme();
 
   //Assert
   await imprintPage.expectScreenImprintPage(testInfo)

@@ -15,7 +15,7 @@ const headerHomeTable = parse(fs.readFileSync(path.join(__dirname, '../../locali
       //Actions
       await app.home.open()
       await app.home.header.clickHamburgerMenuButton();
-      await app.home.header.hamburgerMenu.clickLanguagesDropdownInHamburgerMenu();
+      await app.home.header.hamburgerMenu.clickLanguagesDropdown();
       await app.home.header.hamburgerMenu.clickLanguageLinkInDropdown(language);
   
       //Assert
@@ -34,7 +34,7 @@ const headerHomeTable = parse(fs.readFileSync(path.join(__dirname, '../../locali
       //Actions
       await app.home.open()
       await app.home.header.clickHamburgerMenuButton();
-      await app.home.header.hamburgerMenu.clickLanguagesDropdownInHamburgerMenu();
+      await app.home.header.hamburgerMenu.clickLanguagesDropdown();
       await app.home.header.hamburgerMenu.clickLanguageLinkInDropdown(language);
       await app.home.header.clickHamburgerMenuButton();
   

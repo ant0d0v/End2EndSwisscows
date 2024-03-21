@@ -16,8 +16,8 @@ test("Check design of the VPN page ", async ({ app },testInfo) => {
     await app.vpnPage.open()
     await app.vpnPage.waitUntilPageIsFullyLoaded();
     await app.vpnPage.header.clickHamburgerMenuButton();
-    await app.vpnPage.header.hamburgerMenu.clickThemeDropdownInHamburgerMenu();
-    await app.vpnPage.header.hamburgerMenu.clickDarkInHamburgerMenu();
+    await app.vpnPage.header.hamburgerMenu.clickThemeDropdown();
+    await app.vpnPage.header.hamburgerMenu.clickDarkTheme();
   
     //Assert
     await app.vpnPage.expectScreenVpnPage(testInfo)

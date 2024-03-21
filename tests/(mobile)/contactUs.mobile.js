@@ -135,8 +135,8 @@ test("Check design dark theme of the  Contact Us page ", async ({
   //Actions
   await contactPage.waitUntilPageIsFullyLoaded();
   await contactPage.header.clickHamburgerMenuButton();
-  await contactPage.header.hamburgerMenu.clickThemeDropdownInHamburgerMenu();
-  await contactPage.header.hamburgerMenu.clickDarkInHamburgerMenu();
+  await contactPage.header.hamburgerMenu.clickThemeDropdown();
+  await contactPage.header.hamburgerMenu.clickDarkTheme();
 
   //Assert
   await contactPage.expectScreenContactPage(testInfo);
