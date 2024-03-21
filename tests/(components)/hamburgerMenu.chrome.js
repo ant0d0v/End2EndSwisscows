@@ -54,9 +54,7 @@ test("Check availability and options of localization dropdown menu in hamburger 
   await app.home.header.hamburgerMenu.clickLanguagesDropdownInHamburgerMenu();
 
   //Assert
-  await app.home.header.hamburgerMenu.expectListToHaveCount(
-    app.home.header.hamburgerMenu.textsLanguagesDropdownInHamburgerMenu, 11
-  );
+  await app.home.header.hamburgerMenu.expectLanguagesDropdownToHaveCount(11)
   await app.home.header.hamburgerMenu.expectTextsOfLanguagesInHamburgerMenu(
     testData.expectedTextsOfLanguagesDropdown
   );
@@ -72,9 +70,7 @@ test("Check  availability and options of region dropdown menu in hamburger menu"
   await app.home.header.hamburgerMenu.clickRegionDropdownInHamburgerMenu();
 
   //Assert
-  await app.home.header.hamburgerMenu.expectListToHaveCount(
-    app.home.header.hamburgerMenu.textsOfRegionDropdownInHamburgerMenu, 48
-  );
+  await app.home.header.hamburgerMenu.expectRegionDropdownToHaveCount(47)
   await app.home.header.hamburgerMenu.expectTextsOfRegionInHamburgerMenu(
     testData.expectedTextsOfRegionDropdown
   );
@@ -104,9 +100,7 @@ test("Check theme change to light theme", async ({
   await app.home.header.hamburgerMenu.clickLightInHamburgerMenu();
 
   //Assert
-  await app.home.header.hamburgerMenu.expectBackgroundColorOfPage(
-    expectedLightBackground
-  );
+  await app.home.header.hamburgerMenu.expectBackgroundColorOfPage(expectedLightBackground);
 });
 
 test("Check default theme on first opening the site", async ({
@@ -119,12 +113,8 @@ test("Check default theme on first opening the site", async ({
   await app.home.header.hamburgerMenu.clickThemeDropdownInHamburgerMenu();
 
   //Assert
-  await app.home.header.hamburgerMenu.expectAttributeClassOfElement(
-    app.home.header.hamburgerMenu.defaultThemeInHamburgerMenu, "active"
-  );
-  await app.home.header.hamburgerMenu.expectBackgroundColorOfPage(
-    expectedLightBackground
-  );
+  await app.home.header.hamburgerMenu.expectDefaultThemeButtonIsActive()
+  await app.home.header.hamburgerMenu.expectBackgroundColorOfPage(expectedLightBackground);
 });
 
 for (const {testID,expectedLink,locatorId,expectedTitle,} of testData.regionLinksOfHome) {

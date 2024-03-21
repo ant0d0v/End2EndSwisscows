@@ -111,4 +111,14 @@ export default class HamburgerMenu extends BaseComponent {
   expectBackgroundColorOfPage = async (expectedValue) => {
     await expect(this.bodyOfPage).toHaveCSS("background", expectedValue);
   };
+  expectDefaultThemeButtonIsActive = async () => {
+    await this.expectAttributeClassOfElement(this.defaultThemeInHamburgerMenu, "active");
+  };
+
+  expectRegionDropdownToHaveCount = async (number) => {
+    await this.expectListToHaveCount(this.textsOfRegionDropdownInHamburgerMenu, number);
+  };
+  expectLanguagesDropdownToHaveCount = async (number) => {
+    await this.expectListToHaveCount(this.textsLanguagesDropdownInHamburgerMenu, number);
+  };
 }

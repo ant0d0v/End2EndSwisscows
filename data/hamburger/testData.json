@@ -316,13 +316,6 @@
             "locatorId" : "United States (ES)",
             "expectedTitle" : "Your private and anonymous search engine Swisscows"
         }
-        ,
-        {
-            "testID": "48",
-            "expectedLink": "https://dev.swisscows.com/en?region=iv",
-            "locatorId" : "World-wide",
-            "expectedTitle" : "Your private and anonymous search engine Swisscows"
-        }
     ],
     
     "staticPagesLinks": [
@@ -454,7 +447,6 @@
         "Ukraine",
         "United Kingdom",
         "United States (EN)",
-        "United States (ES)",
-        "World-wide"
+        "United States (ES)"
       ]
 }
