@@ -1,26 +1,11 @@
 import { test} from "../../../utils/fixturePages";
 const { expect } = require("@playwright/test");
+import { getYesterdayDay, getPastMonth, getPastYear} from "../../../helpers/dataHelper";
 
 const filterData = JSON.parse(
   JSON.stringify(require("../../../data/filters/testData.json"))
 );
-function getNumberYesterdayDay() {
-  const yesterday = new Date();
-  const data = yesterday.getDate() - 1;
-  return data.toString()
-}
 
-function getNumberPastMonth() {
-  const pastMonth = new Date();
-  const data = (pastMonth.getMonth());
-  return data.toString()
-}
-
-function getNumberPastYear() {
-  const numberPastYear = new Date();
-  const data = (numberPastYear.getFullYear() - 1);
-  return data.toString()
-}
 for (const {testID, expectedWebLink, locatorId, filter} of filterData.byDate) {
   test(`${testID} ${locatorId} filter navigates to the corresponding page.`, async ({ app }) => {
     // Actions
@@ -33,30 +18,16 @@ for (const {testID, expectedWebLink, locatorId, filter} of filterData.byDate) {
     await app.webPage.header.clickFiltersButton();
     await app.webPage.filters.buttonMenu.clickFilterByDate();
 
-    const response = await app.webPage.filters.clickFilterInDropdownListAndGetResponse(locatorId, "/v4/web/search?query=news");
+    const responseDatePublished = await app.webPage.filters.clickFilterInDropdownListAndGetResponse(locatorId, "/v4/web/search?query=news");
 
-    const jsonResponse = await response.json();
-    const expectedDate = getNumberYesterdayDay()
-    const expectedDate1 = getNumberPastMonth()
-    const expectedDate2 = getNumberPastYear()
     await app.webPage.expectHaveUrl(app.page, expectedWebLink);
-    jsonResponse.items.forEach(item => {
-      if (item.datePublished && testID == 1) {
-        const datePublished = item.datePublished;
-        const dateOnly = datePublished.slice(8, 10);
-        expect(dateOnly).toEqual(expectedDate);
-      }
-      if (item.datePublished && testID == 2) {
-        const datePublished = item.datePublished;
-        const dateOnly = datePublished.slice(6, 7);
-        expect(dateOnly).toEqual(expectedDate1);
-      }
-      if (item.datePublished && testID == 3) {
-        const datePublished = item.datePublished;
-        const dateOnly = datePublished.slice(0, 4);
-        expect(dateOnly).toEqual(expectedDate2);
-      }
-    });
+    await app.webPage.filters.expectResponseDatePublishedToEqual(
+      responseDatePublished, 
+      testID,
+      getYesterdayDay,
+      getPastMonth,
+      getPastYear
+      )
   });
 }
   test("Cancel filter and navigates to the corresponding page.", async ({
