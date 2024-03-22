@@ -1,13 +1,7 @@
 import { test } from "../../utils/fixturePages";
-import fs from 'fs';
-import path from 'path';
-import { parse } from 'csv-parse/sync';
+import { readCsvFile } from "../../helpers/csvHelper"
 
-const headerHomeTable = parse(fs.readFileSync(path.join(__dirname, '../../localization/headerHome.csv')), {
-    columns: true,
-    skip_empty_lines: true
-  });
-  
+  const headerHomeTable = readCsvFile('../localization/headerHome.csv')
   for (const { test_case, language, expected_content} of headerHomeTable) {
     test(`${test_case} Check content of header home for  ${language} localization`, async ({
       app
@@ -23,10 +17,7 @@ const headerHomeTable = parse(fs.readFileSync(path.join(__dirname, '../../locali
     });
   }
 
-  const hamburgerTable = parse(fs.readFileSync(path.join(__dirname, '../../localization/hamburgerMenu.csv')), {
-    columns: true,
-    skip_empty_lines: true
-  });
+  const hamburgerTable = readCsvFile('../localization/hamburgerMenu.csv')
   for (const { test_case, language, expected_content} of hamburgerTable) {
     test(`${test_case} Check content of hamburger menu for  ${language} localization`, async ({
       app

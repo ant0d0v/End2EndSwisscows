@@ -1,13 +1,7 @@
 import { test } from "../../utils/fixturePages";
-import fs from 'fs';
-import path from 'path';
-import { parse } from 'csv-parse/sync';
+import { readCsvFile } from "../../helpers/csvHelper"
 
-const emailTable = parse(fs.readFileSync(path.join(__dirname, '../../localization/email.csv')), {
-    columns: true,
-    skip_empty_lines: true
-  });
-  
+  const emailTable = readCsvFile('../localization/email.csv')
   for (const { test_case, language, expected_content} of emailTable) {
     test(`${test_case} Check content of email page for  ${language} localization`, async ({
       app
@@ -22,11 +16,7 @@ const emailTable = parse(fs.readFileSync(path.join(__dirname, '../../localizatio
       await app.emailPage.expectElementToHaveText(app.emailPage.allContent, expected_content)
     });
   }
-  const vpnTable = parse(fs.readFileSync(path.join(__dirname, '../../localization/vpn.csv')), {
-    columns: true,
-    skip_empty_lines: true
-  });
-  
+  const vpnTable = readCsvFile('../localization/vpn.csv')
   for (const { test_case, language, expected_content} of vpnTable) {
     test(`${test_case} Check content of vpn page for  ${language} localization`, async ({
       app

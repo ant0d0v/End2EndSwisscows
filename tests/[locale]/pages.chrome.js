@@ -1,14 +1,7 @@
 import { test } from "../../utils/fixturePages";
-import fs from 'fs';
-import path from 'path';
-import { parse } from 'csv-parse/sync';
+import { readCsvFile, readSpecificCsvFile } from "../../helpers/csvHelper"
 
-
-const mainTable = parse(fs.readFileSync(path.join(__dirname, '../../localization/main.csv')), {
-  columns: true,
-  skip_empty_lines: true
-});
-
+const mainTable = readCsvFile('../localization/main.csv')
 for (const { test_case, language, expected_content} of mainTable) {
   test(`${test_case} Check content of home page for  ${language} localization`, async ({
     app
@@ -24,11 +17,7 @@ for (const { test_case, language, expected_content} of mainTable) {
   });
 }
 
-const contactTable = parse(fs.readFileSync(path.join(__dirname, '../../localization/contact.csv')), {
-  columns: true,
-  skip_empty_lines: true
-});
-
+const contactTable = readCsvFile('../localization/contact.csv')
 for (const { test_case, language, expected_content} of contactTable) {
   test(`${test_case} Check content of contact Us page for  ${language} localization`, async ({
     app
@@ -44,11 +33,7 @@ for (const { test_case, language, expected_content} of contactTable) {
   });
 }
 
-const charityTable = parse(fs.readFileSync(path.join(__dirname, '../../localization/charity.csv')), {
-  columns: true,
-  skip_empty_lines: true
-});
-
+const charityTable = readCsvFile('../localization/charity.csv')
 for (const { test_case, language, expected_content} of charityTable) {
   test(`${test_case} Check content of charity page for  ${language} localization`, async ({
     app
@@ -64,11 +49,7 @@ for (const { test_case, language, expected_content} of charityTable) {
   });
 }
 
-const datacenterTable = parse(fs.readFileSync(path.join(__dirname, '../../localization/datacenter.csv')), {
-  columns: true,
-  skip_empty_lines: true
-});
-
+const datacenterTable = readCsvFile('../localization/datacenter.csv')
 for (const { test_case, language, expected_content} of datacenterTable) {
   test(`${test_case} Check content of datacenter page for  ${language} localization`, async ({
    app
@@ -83,9 +64,8 @@ for (const { test_case, language, expected_content} of datacenterTable) {
     await app.datacenterPage.expectElementToHaveText(app.datacenterPage.allContent, expected_content)
   });
 }
-const educationTable = parse(fs.readFileSync(path.join(__dirname, '../../localization/education.csv')), {
-  columns: true, relax_quotes: true, escape: '\\', ltrim: true, rtrim: true 
-});
+
+const educationTable = readSpecificCsvFile('../localization/education.csv')
 for (const { test_case, language, expected_content} of educationTable) {
   test(`${test_case} Check content of education page for  ${language} localization`, async ({
    app
@@ -101,13 +81,7 @@ for (const { test_case, language, expected_content} of educationTable) {
   });
 }
 
-
-
-const imprintTable = parse(fs.readFileSync(path.join(__dirname, '../../localization/imprint.csv')), {
-  columns: true,
-  skip_empty_lines: true
-});
-
+const imprintTable = readCsvFile('../localization/imprint.csv')
 for (const { test_case, language, expected_content} of imprintTable) {
   test(`${test_case} Check content of imprint page for  ${language} localization`, async ({
     app
@@ -123,11 +97,7 @@ for (const { test_case, language, expected_content} of imprintTable) {
   });
 }
 
-const aboutTable = parse(fs.readFileSync(path.join(__dirname, '../../localization/about.csv')), {
-  columns: true,
-  skip_empty_lines: true
-});
-
+const aboutTable = readCsvFile('../localization/about.csv')
 for (const { test_case, language, expected_content} of aboutTable) {
   test(`${test_case} Check content of About Page page for  ${language} localization`, async ({
     app

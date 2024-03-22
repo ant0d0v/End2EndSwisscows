@@ -1,36 +1,19 @@
-const parse = require("csv-parse/sync");
-const fs = require("fs");
+const fs = require('fs');
+const path = require('path');
+import { parse } from 'csv-parse/sync';
 
 export function readCsvFile(filePath) {
-  const fileData = fs.readFileSync(filePath, "utf-8");
-  let content = [];
-  parse(fileData, {
-    columns: true,
-    skip_empty_lines: true,
-    autoParse: true,
-    bom: true,
-    on_record: (record) => {
-      content.push(splitProperties(record));
-    },
-  });
-
-  return content;
+    const fileData = parse(fs.readFileSync(path.join(__dirname,filePath)), {
+      columns: true,
+      skip_empty_lines: true
+    })
+    return fileData;
+}
+export function readSpecificCsvFile(filePath) {
+  const fileData = parse(fs.readFileSync(path.join(__dirname,filePath)), {
+    columns: true, relax_quotes: true, escape: '\\', ltrim: true, rtrim: true 
+  })
+  return fileData;
 }
 
-function splitProperties(obj) {
-  const result = {};
-
-  for (const key in obj) {
-    if (Object.prototype.hasOwnProperty.call(obj, key)) {
-      const value = obj[key];
-
-      if (typeof value === "string" && value.includes(";")) {
-        result[key] = value.split(";");
-      } else {
-        result[key] = value;
-      }
-    }
-  }
-  return result;
-}
-
+module.exports = { readCsvFile,readSpecificCsvFile };
