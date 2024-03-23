@@ -1,4 +1,4 @@
-import { test} from "../../utils/fixtures";
+import { test} from "../../../utils/fixtures";
 const { expect } = require("@playwright/test");
 
 test("Check that video results equals search criteria", async ({
@@ -27,10 +27,10 @@ test("Check infinity scroll to items-pane aside", async ({
     await app.videoPage.header.clickVideoSearchButton()
     await app.videoPage.item.expectVideoItemsToBeVisible()
     await app.videoPage.item.clickVideoNumber(1)
-    await app.videoPage.item.scrollByVisibleVideoNumber(35)
+    await app.videoPage.item.scrollByVisibleVideoNumber(50)
 
     //Assert
-    await app.videoPage.item.expectListToBeGreaterThanOrEqual(app.videoPage.item.videoItems, 35)
+    await app.videoPage.item.expectListToBeGreaterThanOrEqual(app.videoPage.item.videoItems, 50)
   });
 
   test("Check infinity scroll in video results", async ({
@@ -42,10 +42,10 @@ test("Check infinity scroll to items-pane aside", async ({
     await app.home.header.searchForm.clickEnterSearchField();
     await app.videoPage.header.clickVideoSearchButton()
     await app.videoPage.item.expectVideoItemsToBeVisible()
-    await app.videoPage.item.scrollWithMouseWheelToVideoNumber(90)
+    await app.videoPage.item.scrollWithMouseWheelToVideoNumber(100)
 
     //Assert
-    await app.videoPage.item.expectListToBeGreaterThanOrEqual(app.videoPage.item.images, 90)
+    await app.videoPage.item.expectListToBeGreaterThanOrEqual(app.videoPage.item.images, 100)
   });
 
   test("Check the width and visibility images of items", async ({

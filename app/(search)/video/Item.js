@@ -14,6 +14,7 @@ export default class Item extends BaseComponent {
    this.videoItems = this.page.locator("article.item--video h2")
    this.item = (index) => this.page.locator("article.item--video h2").nth(index)
    this.images = this.page.locator("article.item--video img")
+   this.descriptionList = this.page.locator(".item--video .description")
    
   }
   //Actions
@@ -23,13 +24,13 @@ export default class Item extends BaseComponent {
     );
   };
   scrollByVisibleVideoNumber = async (number) => {
-    for(let i = 0;i < number ; i++){
-    await this.scrollByVisibleElement(this.images.nth(i), "last track");
+    for(let i = 0;i < number ; i+=2){
+    await this.scrollByVisibleElement(this.descriptionList.nth(i), "last track");
     }
   }
   scrollWithMouseWheelToVideoNumber = async (number) => {
-    for(let i = 0;i < number ; i++){
-    await this.page.mouse.wheel(0, 600);  
+    for(let i = 0;i < number ; i+=4){
+    await this.page.mouse.wheel(0, 500);  
     await this.scrollByVisibleElement(this.images.nth(i), "last track");
     }
   }

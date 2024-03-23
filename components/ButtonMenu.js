@@ -17,4 +17,7 @@ export default class ButtonMenu extends BaseComponent {
     expectFilterByDateIsOpened  = async() => {
         await this.expectAttributeClassOfElement(this.attributeFilterByDate, /open/)
     }
+    expectFilterByDateIsClosed = async() => {
+        await this.expectAttributeClassOfElement(this.attributeFilterByDate, "button-menu")
+    }
 }
