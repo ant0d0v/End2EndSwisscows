@@ -4,7 +4,7 @@
         
         {
             "testID": "1",
-            "expectedWebLink": "https://dev.swisscows.com/en/web?query=news&region=de-DE&freshness=Day",
+            "expectedWebLink": "https://dev.swisscows.com/en/web?query=ronaldo&region=de-DE&freshness=Day",
             "expectedNewsLink": "https://dev.swisscows.com/en/news?query=news&region=de-DE&freshness=Day",
             "locatorId" : "Past Day",
             "filter": "Day"
@@ -12,14 +12,14 @@
        
         {
             "testID": "2",
-            "expectedWebLink": "https://dev.swisscows.com/en/web?query=news&region=de-DE&freshness=Month",
+            "expectedWebLink": "https://dev.swisscows.com/en/web?query=ronaldo&region=de-DE&freshness=Month",
             "expectedNewsLink": "https://dev.swisscows.com/en/news?query=news&region=de-DE&freshness=Month",
             "locatorId" : "Past Month",
             "filter": "Month"
         },
         {
             "testID": "3",
-            "expectedWebLink": "https://dev.swisscows.com/en/web?query=news&region=de-DE&freshness=Year",
+            "expectedWebLink": "https://dev.swisscows.com/en/web?query=ronaldo&region=de-DE&freshness=Year",
             "expectedNewsLink": "https://dev.swisscows.com/en/news?query=news&region=de-DE&freshness=Year",
             "locatorId" : "Past Year",
             "filter": "Year"
