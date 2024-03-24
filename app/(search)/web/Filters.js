@@ -8,67 +8,22 @@ export default class Filters extends BaseComponent {
     this.buttonMenu = new ButtonMenu(page);
 
     //Locators
-    this.filterList = (name) => this.page.getByRole('menuitem', { name: `${name}` })
-    this.pastDay = this.page.getByRole('menuitem', { name: 'Past Day' })
-    this.pastMonth = this.page.getByRole('menuitem', { name: 'Past Month' })
-    this.pastYear = this.page.getByRole('menuitem', { name: 'Past Year' })
-    this.dropdownOfFilterByDate = this.page.locator('ul.popup.menu li.menuitem')
+    this.filterByDate = this.page.getByRole('button', { name: 'Filter by date' })
+    this.attributeFilterByDate = this.page.locator("div.button-menu")
   }
   
   //Actions
+  clickByDate = async() => {
+    await this.clickElement(this.filterByDate,`filter by date in dropdown` );
+  };
   
-  clickPastDayFilterAndGetResponse = async (expectedLink) => {
-    const responsePromise = this.page.waitForResponse((response) => response.url().includes(expectedLink));
-    await this.clickElement(this.pastDay, `past day filter in dropdown` );
-    const response = await responsePromise;
-    return response;
-  };
-  clickPastMonthFilterAndGetResponse = async (expectedLink) => {
-    const responsePromise = this.page.waitForResponse((response) => response.url().includes(expectedLink));
-    await this.clickElement(this.pastMonth, `past month filter in dropdown` );
-    const response = await responsePromise;
-    return response;
-  };
-  clickPastYearFilterAndGetResponse = async (expectedLink) => {
-    const responsePromise = this.page.waitForResponse((response) => response.url().includes(expectedLink));
-    await this.clickElement(this.pastYear, `past year filter in dropdown` );
-    const response = await responsePromise;
-    return response;
-  };
-
   //Verify
+  expectByDateIsOpened  = async() => {
+    await this.expectAttributeClassOfElement(this.attributeFilterByDate, /open/)
+  }
 
-  expectFilterByDateDropdownToHaveText = async (expectedText) => {
-    await this.expectElementToHaveText(this.dropdownOfFilterByDate,expectedText)
-  };
-  expectDatePublishedForPastDayToEqual = async (response,  getYesterdayDay) => {
-    const jsonResponse = await response.json();
-    jsonResponse.items.forEach(item => {
-      if (item.datePublished) {
-        const datePublished = item.datePublished;
-        const dateOnly = datePublished.slice(8, 10);
-        expect(dateOnly).toEqual(getYesterdayDay);
-      }
-    });
-  };
-  expectDatePublishedForPastMonthToEqual = async (response, getPastMonth) => {
-    const jsonResponse = await response.json();
-    jsonResponse.items.forEach(item => {
-      if (item.datePublished) {
-        const datePublished = item.datePublished;
-        const dateOnly = datePublished.slice(5, 7);
-        expect(dateOnly).toEqual(getPastMonth);
-      }
-    });
-  };
-  expectDatePublishedForPastYearToEqual = async (response, getPastYear) => {
-    const jsonResponse = await response.json();
-    jsonResponse.items.forEach(item => {
-      if (item.datePublished) {
-        const datePublished = item.datePublished;
-        const dateOnly = datePublished.slice(0, 4);
-        expect(dateOnly).toEqual(getPastYear);
-      }
-    });
-  };
+  expectByDateIsClosed = async() => {
+    await this.expectAttributeClassOfElement(this.attributeFilterByDate, "button-menu")
+  }
+
 }

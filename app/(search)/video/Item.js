@@ -12,6 +12,7 @@ export default class Item extends BaseComponent {
 
    //Locators
    this.videoItems = this.page.locator("article.item--video h2")
+   this.videoResults = this.page.locator(".video-results")
    this.item = (index) => this.page.locator("article.item--video h2").nth(index)
    this.images = this.page.locator("article.item--video img")
    this.descriptionList = this.page.locator(".item--video .description")
@@ -43,5 +44,14 @@ export default class Item extends BaseComponent {
   };
   expectImageToHaveWight = async (property, value) => {
     await this.expectElementsToHaveJSProperty(this.images , property, value);
+  };
+  expectItemsResponsePublisherToEqual = async (response, expectedPublisher) => {
+    const parseResponse = await response.json()
+    for(const item of await parseResponse.items){
+      expect(item.publisher).toEqual(expectedPublisher)
+    }
+  };
+  expectVideoResultsAreTiles = async () => {
+    await this.expectAttributeClassOfElement(this.videoResults, "video-results tiles");
   };
 }

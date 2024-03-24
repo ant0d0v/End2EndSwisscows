@@ -14,12 +14,12 @@ test("Check search results by filter Past day", async ({ app }) => {
   await app.home.header.searchForm.clickEnterSearchField();
   await app.webPage.item.expectWebItemsToBeVisible();
   await app.webPage.header.clickFiltersButton();
-  await app.webPage.filters.buttonMenu.clickFilterByDate();
+  await app.webPage.filters.clickByDate();
 
-  const response = await app.webPage.filters.clickPastDayFilterAndGetResponse("/v4/web/search?query=ronaldo")
+  const response = await app.webPage.filters.buttonMenu.clickPastDayAndGetResponse("/v4/web/search?query=ronaldo")
   
   await app.webPage.expectHaveUrl(app.page, /query=ronaldo&region=de-DE&freshness=Day/);
-  await app.webPage.filters.expectDatePublishedForPastDayToEqual(response, expectedPastDay)
+  await app.webPage.item.expectDatePublishedForPastDayToEqual(response, expectedPastDay)
 });
 
 test("Check search results by filter Past month", async ({ app }) => {
@@ -31,12 +31,12 @@ test("Check search results by filter Past month", async ({ app }) => {
   await app.home.header.searchForm.clickEnterSearchField();
   await app.webPage.item.expectWebItemsToBeVisible();
   await app.webPage.header.clickFiltersButton();
-  await app.webPage.filters.buttonMenu.clickFilterByDate();
+  await app.webPage.filters.clickByDate();
 
-  const response = await app.webPage.filters.clickPastMonthFilterAndGetResponse("/v4/web/search?query=ronaldo")
+  const response = await app.webPage.filters.buttonMenu.clickPastMonthAndGetResponse("/v4/web/search?query=ronaldo")
   
   await app.webPage.expectHaveUrl(app.page, /query=ronaldo&region=de-DE&freshness=Month/);
-  await app.webPage.filters.expectDatePublishedForPastMonthToEqual(response, expectedPastMonth)
+  await app.webPage.item.expectDatePublishedForPastMonthToEqual(response, expectedPastMonth)
 });
 
 test("Check search results by filter Past Year", async ({ app }) => {
@@ -48,12 +48,12 @@ test("Check search results by filter Past Year", async ({ app }) => {
   await app.home.header.searchForm.clickEnterSearchField();
   await app.webPage.item.expectWebItemsToBeVisible();
   await app.webPage.header.clickFiltersButton();
-  await app.webPage.filters.buttonMenu.clickFilterByDate();
+  await app.webPage.filters.clickByDate();
 
-  const response = await app.webPage.filters.clickPastYearFilterAndGetResponse("/v4/web/search?query=ronaldo")
+  const response = await app.webPage.filters.buttonMenu.clickPastYearAndGetResponse("/v4/web/search?query=ronaldo")
   
   await app.webPage.expectHaveUrl(app.page, /query=ronaldo&region=de-DE&freshness=Year/);
-  await app.webPage.filters.expectDatePublishedForPastYearToEqual(response, expectedPastYear)
+  await app.webPage.item.expectDatePublishedForPastYearToEqual(response, expectedPastYear)
 });
 
 test("Cancel filter and navigates to the corresponding page.", async ({
@@ -67,8 +67,8 @@ test("Cancel filter and navigates to the corresponding page.", async ({
   await app.home.header.searchForm.clickEnterSearchField();
   await app.webPage.item.expectWebItemsToBeVisible()
   await app.webPage.header.clickFiltersButton()
-  await app.webPage.filters.buttonMenu.clickFilterByDate()
-  const oldResponse = await app.webPage.filters.clickPastDayFilterAndGetResponse("/v4/web/search?query=ronaldo")
+  await app.webPage.filters.clickByDate()
+  const oldResponse = await app.webPage.filters.buttonMenu.clickPastDayAndGetResponse("/v4/web/search?query=ronaldo")
   const newResponse =  await app.webPage.header.clickFilterButtonAndGetResponse("/v4/web/search?query=ronaldo")   
   
   //Assert
@@ -87,10 +87,10 @@ test("Check list dropdown of filter by date ", async ({
   await app.home.header.searchForm.clickEnterSearchField();
   await app.webPage.item.expectWebItemsToBeVisible()
   await app.webPage.header.clickFiltersButton()
-  await app.webPage.filters.buttonMenu.clickFilterByDate()
+  await app.webPage.filters.clickByDate()
 
   //Assert
-  await app.webPage.filters.expectFilterByDateDropdownToHaveText(
+  await app.webPage.filters.buttonMenu.expectDropdownToHaveText(
     ["All","Past Day","Past Week","Past Month","Past Year"])
 });
 
@@ -105,10 +105,10 @@ test("Check that dropdown of filter by date is opened and closed", async ({
   await app.home.header.searchForm.clickEnterSearchField();
   await app.webPage.item.expectWebItemsToBeVisible()
   await app.webPage.header.clickFiltersButton()
-  await app.webPage.filters.buttonMenu.clickFilterByDate()
+  await app.webPage.filters.clickByDate()
 
   //Assert
-  await app.webPage.filters.buttonMenu.expectFilterByDateIsOpened()
-  await app.webPage.filters.buttonMenu.clickFilterByDate()
-  await app.webPage.filters.buttonMenu.expectFilterByDateIsClosed()
+  await app.webPage.filters.expectByDateIsOpened()
+  await app.webPage.filters.clickByDate()
+  await app.webPage.filters.expectByDateIsClosed()
 });

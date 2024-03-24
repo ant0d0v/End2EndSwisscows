@@ -74,6 +74,6 @@ export default class Header extends BaseComponent {
     const response = await responsePromise;
     return response;
   };
-
+  
   // Verify
 }

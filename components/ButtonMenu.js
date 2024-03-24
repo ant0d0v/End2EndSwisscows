@@ -4,20 +4,46 @@ export default class ButtonMenu extends BaseComponent {
         super(page)
 
         //Locators
-        this.filterByDate = this.page.getByRole('button', { name: 'Filter by date' })
-        this.attributeFilterByDate = this.page.locator("div.button-menu")
-    
+        this.filterList = (name) => this.page.getByRole('menuitem', { name: `${name}` })
+        this.pastDay = this.page.getByRole('menuitem', { name: 'Past Day' })
+        this.pastMonth = this.page.getByRole('menuitem', { name: 'Past Month' })
+        this.pastYear = this.page.getByRole('menuitem', { name: 'Past Year' })
+        this.dropdownOfFilter = this.page.locator('ul.popup.menu li.menuitem')
+        this.filterTableView = this.page.getByRole('menuitem', { name: 'Table view' })
     }
     //Actions
-    clickFilterByDate = async() => {
-        await this.clickElement(this.filterByDate,`filter by date in dropdown` );
+    
+    clickMenuItemAndGetResponse = async (name, expectedLink) => {
+        const responsePromise = this.page.waitForResponse((response) => response.url().includes(expectedLink));
+        await this.clickElement(this.filterList(name),`filter in dropdown` );
+        const response = await responsePromise;
+        return response;
+    };    
+    clickPastDayAndGetResponse = async (expectedLink) => {
+        const responsePromise = this.page.waitForResponse((response) => response.url().includes(expectedLink));
+        await this.clickElement(this.pastDay, `past day filter in dropdown` );
+        const response = await responsePromise;
+        return response;
+    };
+    clickPastMonthAndGetResponse = async (expectedLink) => {
+        const responsePromise = this.page.waitForResponse((response) => response.url().includes(expectedLink));
+        await this.clickElement(this.pastMonth, `past month filter in dropdown` );
+        const response = await responsePromise;
+        return response;
+    };
+    clickPastYearAndGetResponse = async (expectedLink) => {
+        const responsePromise = this.page.waitForResponse((response) => response.url().includes(expectedLink));
+        await this.clickElement(this.pastYear, `past year filter in dropdown` );
+        const response = await responsePromise;
+        return response;
+    };
+    clickMenuItemTableView = async () => {
+        await this.clickElement(this.filterTableView), "filter table view in dropdown`"
     };
 
     //Verify
-    expectFilterByDateIsOpened  = async() => {
-        await this.expectAttributeClassOfElement(this.attributeFilterByDate, /open/)
-    }
-    expectFilterByDateIsClosed = async() => {
-        await this.expectAttributeClassOfElement(this.attributeFilterByDate, "button-menu")
-    }
+    expectDropdownToHaveText = async (expectedText) => {
+        await this.expectElementToHaveText(this.dropdownOfFilter,expectedText)
+    };
+    
 }
