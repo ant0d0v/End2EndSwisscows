@@ -13,13 +13,6 @@ export default class Error extends BaseComponent {
   open = (endpoint) => {
     this.openPage(endpoint)
   }
-  handleByMockingStatusCodeResponse = async (endpoint,code) => {
-    await this.page.route(process.env.API_URL + `/v4${endpoint}/*`, async route => {
-      await route.fulfill({
-        status: code,
-      });
-    });
-  }
 
   //Verify
   expectContentToHaveText = async ( expectedText) => {

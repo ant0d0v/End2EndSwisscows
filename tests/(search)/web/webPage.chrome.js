@@ -1,4 +1,5 @@
 import { test} from "../../../utils/fixturePages";
+import { mockingStatusCodeResponse } from "../../../app/api/route"
 const { expect } = require("@playwright/test");
 
 const testData = JSON.parse(
@@ -39,7 +40,7 @@ test("Check 202 no results error page ", async ({
   }) => {
     //Actions
     await app.home.open()
-    await app.webPage.error.handleByMockingStatusCodeResponse("/web", 429)
+    await app.route.mockResponseStatusCode("/web", 429)
     await app.home.header.searchForm.inputSearchCriteria("food");
     await app.home.header.searchForm.clickEnterSearchField();
     
@@ -54,7 +55,7 @@ test("Check 202 no results error page ", async ({
   }) => {
     //Actions
     await app.home.open()
-    await app.webPage.error.handleByMockingStatusCodeResponse("/web", 500)
+    await app.route.mockResponseStatusCode("/web", 500)
     await app.home.header.searchForm.inputSearchCriteria("food");
     await app.home.header.searchForm.clickEnterSearchField();
   
@@ -68,7 +69,7 @@ test("Check 202 no results error page ", async ({
   }) => {
     //Actions
     await app.home.open()
-    await app.webPage.error.handleByMockingStatusCodeResponse("/web", 501)
+    await app.route.mockResponseStatusCode("/web", 501)
     await app.home.header.searchForm.inputSearchCriteria("food");
     await app.home.header.searchForm.clickEnterSearchField();
   

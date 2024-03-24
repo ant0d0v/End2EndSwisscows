@@ -20,6 +20,7 @@ import ImprintPage from "../app/(pages)/imprint/page";
 import AboutPage from "../app/(pages)/about/page";
 import VpnPage from "../app/(landings)/vpn/page";
 import EmailPage from "../app/(landings)/email/page";
+import Route from "../app/api/route";
 export default class Application extends BasePage {
     constructor(page) {
         super(page);
@@ -42,6 +43,7 @@ export default class Application extends BasePage {
      this.musicMyPage = new  MusicMyPage(this.page);
      this.musicPage= new  MusicPage(this.page);
      this.imagePage = new  ImagePage(this.page);
+     this.route = new  Route(this.page);
     }
     
 }
