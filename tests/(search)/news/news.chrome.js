@@ -6,15 +6,15 @@ const testData = JSON.parse(
 );
 
 test("Check 202 No Results Found error page ", async ({
-    home,
-    newsPage
+    app
   }) => {
     //Actions
-    await home.header.clickHamburgerMenuButton();
-    await home.header.hamburgerMenu.selectRegion("Germany");
-    await home.header.searchForm.inputSearchCriteria("@#@$%^$^dasdsad1231");
-    await home.header.searchForm.clickEnterSearchField();
-    await newsPage.header.clickNewsSearchButton()
+    await app.home.open()
+    await app.home.header.clickHamburgerMenuButton();
+    await app.home.header.hamburgerMenu.selectRegion("Germany");
+    await app.home.header.searchForm.inputSearchCriteria("@#@$%^$^dasdsad1231");
+    await app.home.header.searchForm.clickEnterSearchField();
+    await app.newsPage.header.clickNewsSearchButton()
     
     //Assert
     await newsPage.expectElementToHaveText(newsPage.error.contentErrorNoResults,
