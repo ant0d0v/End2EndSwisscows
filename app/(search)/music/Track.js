@@ -10,7 +10,7 @@ export default class Track extends BaseComponent {
    this.tracksName = this.page.locator(`${root} h2`)
    this.track = (index) => this.page.locator(`${root}`).nth(index - 1)
    this.lastTrack = (id) => this.page.locator(`${root}`).nth(`${id}`)
-   this.favoriteButton = (index) => this.page.locator("button.button.favorite").nth(index - 1)
+   this.favoriteButton = (index) => this.page.locator("article button.favorite").nth(index - 1)
    this.allFavoriteButtons = this.page.locator(".button.favorite:nth-child(-n+20)")
    this.valueProgressBar = (index) => this.page.locator(`${root} div.progress-bar div.progress`).nth(index - 1)
    this.timeLine = (index) => this.page.locator(`${root} div.timeline`).nth(index - 1)
@@ -41,18 +41,19 @@ export default class Track extends BaseComponent {
     );
   };
   clickFavoriteButtonNumberTrackAndGetResponse = async (index) => {
-    const responsePromise = this.page.waitForResponse(`${ process.env.API_URL}/music/tracks/my`)
+    let response;
+    const responsePromise = this.page.waitForResponse(`${ process.env.API_URL}/v1/user/music/tracks`)
     await this.clickElement(this.favoriteButton(index),
       `favorite button of track with index${index}`
     );
-    const response = await responsePromise;
+    response = await responsePromise;
     const responseBody = await response.json();
     return responseBody.id;
   };
   clickAllFavoriteButtonsOfTracksAndGetResponses = async () => {
     let responseIDs = [];
     for (const favoriteButton of await this.allFavoriteButtons.all()) {
-      const responsePromise = this.page.waitForResponse(`${process.env.API_URL}/music/tracks/my`);
+      const responsePromise = this.page.waitForResponse(`${process.env.API_URL}/v1/user/music/tracks`);
       await this.clickElement(favoriteButton, `favorite button of track`);
       const response = await responsePromise;
       const responseBody = await response.json();
@@ -62,7 +63,7 @@ export default class Track extends BaseComponent {
   }
   deleteTrackFromFavorite = async (id, data) => {
     const context = await request.newContext()
-    await context.delete(`${ process.env.API_URL}/music/tracks/my/${id}`,{
+    await context.delete(`${ process.env.API_URL}/v1/user/music/tracks/${id}`,{
     headers: {
       'Accept': 'application/json, text/plain, */*',
       'Authorization': `Bearer ${data["origins"][0]["localStorage"][0]["value"]}`,

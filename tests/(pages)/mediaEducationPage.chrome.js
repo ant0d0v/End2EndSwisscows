@@ -1,4 +1,4 @@
-import { test } from "../../utils/fixturePages";
+import { test } from "../../utils/fixtures";
 const testData = JSON.parse(
   JSON.stringify(
     require("../../data/pages/media-education/testData.json")

@@ -1,4 +1,4 @@
-import { test, expect } from "../../utils/fixturePages";
+import { test, expect } from "../../utils/fixtures";
 
 test("Check design of the About Page page ", async ({ app },testInfo) => {
     //Actions

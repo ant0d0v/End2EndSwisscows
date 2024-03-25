@@ -55,6 +55,16 @@ export default class MusicPlayer extends BaseComponent {
       `favorite button in the player`
     );
   };
+  clickFavoriteButtonAndGetResponse = async () => {
+    let response;
+    const responsePromise = this.page.waitForResponse(`${ process.env.API_URL}/v1/user/music/tracks`)
+    await this.clickElement(this.favoriteButton,
+      `favorite button n the player`
+    );
+    response = await responsePromise;
+    const responseBody = await response.json();
+    return responseBody.id;
+  };
   
   //Verify 
   async expectTimeToHaveText(value) {

@@ -81,6 +81,8 @@ test("Check that buttons have hover over the services block on home page", async
 });
 
 test("Check design of the home page ", async ({ app },testInfo) => {
+  //Actions
+  await app.home.open()
   //Assert
   await app.home.expectScreenHome(testInfo);
 });
@@ -89,6 +91,7 @@ test("Check design dark theme of the home page ", async ({
   app
 },testInfo) => {
   //Actions
+  await app.home.open()
   await app.home.header.clickHamburgerMenuButton();
   await app.home.header.hamburgerMenu.clickThemeDropdown();
   await app.home.header.hamburgerMenu.clickDarkTheme();

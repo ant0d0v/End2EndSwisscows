@@ -1,4 +1,4 @@
-import { test } from "../../utils/fixturePages";
+import { test } from "../../utils/fixtures";
 test("Check design of the Education page ", async ({ app },testInfo) => {
   //Actions
   await app.mediaEducationPage.open()

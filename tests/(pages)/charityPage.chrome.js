@@ -1,4 +1,4 @@
-import { test } from "../../utils/fixturePages";
+import { test } from "../../utils/fixtures";
 const testData = JSON.parse(
   JSON.stringify(
     require("../../data/pages/social-projects/testData.json")
@@ -108,6 +108,7 @@ for (const { testID, expectedLink, locatorId, expectedTitle, } of testData.chari
 test("Check design of the charity page ", async ({ app },testInfo) => {
   //Actions
   await app.charityPage.open()
+  await app.charityPage.expectMapsToBeVisible();
   //Assert
   await app.charityPage.expectScreenCharityPage(testInfo);
 });
@@ -117,7 +118,7 @@ test("Check design dark theme of the charity page ", async ({
 },testInfo) => {
   //Actions
   await app.charityPage.open()
-  await app.charityPage.waitUntilPageIsFullyLoaded();
+  await app.charityPage.expectMapsToBeVisible();
   await app.charityPage.header.clickHamburgerMenuButton();
   await app.charityPage.header.hamburgerMenu.clickThemeDropdown();
   await app.charityPage.header.hamburgerMenu.clickDarkTheme();

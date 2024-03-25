@@ -1,4 +1,4 @@
-import { test } from "../../utils/fixturePages";
+import { test } from "../../utils/fixtures";
 const testData = JSON.parse(
   JSON.stringify(
     require("../../data/pages/datacenter/testData.json")
@@ -52,7 +52,7 @@ test("Check design of the Datacenter page ", async ({ app },testInfo) => {
   //Actions
   await app.datacenterPage.open()
   //Assert
-  await datacenterPage.expectScreenDatacenterPage(testInfo);
+  await app.datacenterPage.expectScreenDatacenterPage(testInfo);
 });
 
 test("Check design dark theme of the Datacenter page ", async ({
@@ -60,7 +60,6 @@ test("Check design dark theme of the Datacenter page ", async ({
 },testInfo) => {
   //Actions
   await app.datacenterPage.open()
-  await app.datacenterPage.waitUntilPageIsFullyLoaded();
   await app.datacenterPage.header.clickHamburgerMenuButton();
   await app.datacenterPage.header.hamburgerMenu.clickThemeDropdown();
   await app.datacenterPage.header.hamburgerMenu.clickDarkTheme();

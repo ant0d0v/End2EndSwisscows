@@ -1,4 +1,4 @@
-import { test, expect } from "../../utils/fixturePages";
+import { test, expect } from "../../utils/fixtures";
 const testData = JSON.parse(
   JSON.stringify(require("../../data/pages/contact/testData.json"))
 );
@@ -144,7 +144,6 @@ test("Check design dark theme of the  Contact Us page ", async ({
 },testInfo) => {
   //Actions
   await app.contactPage.open()
-  await app. contactPage.waitUntilPageIsFullyLoaded();
   await app.contactPage.header.clickHamburgerMenuButton();
   await app.contactPage.header.hamburgerMenu.clickThemeDropdown();
   await app.contactPage.header.hamburgerMenu.clickDarkTheme();

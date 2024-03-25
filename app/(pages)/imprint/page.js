@@ -9,6 +9,7 @@ export default class ImprintPage extends BasePage {
 
     //Locators
     this.allContent = this.page.locator("main.imprint");
+    this.companyInfoImage = this.page.locator(".company-info img");
   }
   //Actions
   async open(){
@@ -18,5 +19,8 @@ export default class ImprintPage extends BasePage {
   //Verify
   expectScreenImprintPage = async (testInfo) => {
     await this.expectPageToHaveScreenshotWithoutMask(testInfo);
+  };
+  expectCompanyInfoImageToBeVisible = async () => {
+    await this.expectElementToBeVisible(this.companyInfoImage);
   };
 }

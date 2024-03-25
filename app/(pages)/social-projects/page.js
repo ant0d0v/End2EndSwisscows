@@ -11,6 +11,7 @@ export default class CharityPage extends BasePage {
 
     //Locators
     this.allContent = this.page.locator("main.social-project");
+    this.mapsImage = this.page.locator("div.map img")
     this.links = (id) => this.page.getByRole("main").getByRole("link", { name: `${id}` });
   }
   //Actions
@@ -29,5 +30,9 @@ export default class CharityPage extends BasePage {
 
   expectScreenCharityPage = async (testInfo) => {
     await this.expectPageToHaveScreenshot(this.videoPlayer.videoPlayer, testInfo);
+  };
+  expectMapsToBeVisible = async () => {
+    await this.page.waitForSelector("div.map img",{ state: 'visible' })
+    await this.expectAreElementsInListDisplayed(this.mapsImage)
   };
 }

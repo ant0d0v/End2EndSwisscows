@@ -1,5 +1,4 @@
-import { test} from "../../../utils/fixturePages";
-import { mockingStatusCodeResponse } from "../../../app/api/route"
+import { test} from "../../../utils/fixtures";
 const { expect } = require("@playwright/test");
 
 const testData = JSON.parse(
@@ -40,7 +39,7 @@ test("Check 202 no results error page ", async ({
   }) => {
     //Actions
     await app.home.open()
-    await app.route.mockResponseStatusCode("/web", 429)
+    await app.route.mockResponseStatusCode("/v4/web", 429)
     await app.home.header.searchForm.inputSearchCriteria("food");
     await app.home.header.searchForm.clickEnterSearchField();
     
@@ -55,7 +54,7 @@ test("Check 202 no results error page ", async ({
   }) => {
     //Actions
     await app.home.open()
-    await app.route.mockResponseStatusCode("/web", 500)
+    await app.route.mockResponseStatusCode("/v4/web", 500)
     await app.home.header.searchForm.inputSearchCriteria("food");
     await app.home.header.searchForm.clickEnterSearchField();
   
@@ -69,7 +68,7 @@ test("Check 202 no results error page ", async ({
   }) => {
     //Actions
     await app.home.open()
-    await app.route.mockResponseStatusCode("/web", 501)
+    await app.route.mockResponseStatusCode("/v4/web", 501)
     await app.home.header.searchForm.inputSearchCriteria("food");
     await app.home.header.searchForm.clickEnterSearchField();
   
@@ -266,39 +265,39 @@ test("Check 202 no results error page ", async ({
   });
 
   test.skip("Check design of the web search page ", async ({
-    home,
-    webPage,
+    app
   },testInfo) => {
      //Actions
-     await home.header.clickHamburgerMenuButton();
-     await home.header.hamburgerMenu.selectRegion("Ukraine");
-     await home.header.searchForm.inputSearchCriteria("adsddss");
-     await home.header.searchForm.clickEnterSearchField();
-     await webPage.item.expectWebItemsToBeVisible()
-     await webPage.waitUntilPageIsFullyLoaded()
+     await app.home.open()
+     await app.home.header.clickHamburgerMenuButton();
+     await app.home.header.hamburgerMenu.selectRegion("Ukraine");
+     await app.home.header.searchForm.inputSearchCriteria("adsddss");
+     await app.home.header.searchForm.clickEnterSearchField();
+     await app.webPage.item.expectWebItemsToBeVisible()
+     await app.webPage.waitUntilPageIsFullyLoaded()
      
      //Assert
-     await webPage.expectScreenWebPage(testInfo)
+     await app.webPage.expectScreenWebPage(testInfo)
   });
 
   test.skip("Check design dark theme of the web search page ", async ({
-    home,
-    webPage,
+    app
   },testInfo) => {
      
      //Actions
-     await home.header.clickHamburgerMenuButton();
-     await home.header.hamburgerMenu.clickThemeDropdown();
-     await home.header.hamburgerMenu.clickDarkTheme();
-     await home.header.clickHamburgerMenuButton();
-     await home.header.hamburgerMenu.selectRegion("Ukraine");
-     await home.header.searchForm.inputSearchCriteria("adsddss");
-     await home.header.searchForm.clickEnterSearchField();
-     await webPage.item.expectWebItemsToBeVisible()
-     await webPage.waitUntilPageIsFullyLoaded()
+     await app.home.open()
+     await app.home.header.clickHamburgerMenuButton();
+     await app.home.header.hamburgerMenu.clickThemeDropdown();
+     await app.home.header.hamburgerMenu.clickDarkTheme();
+     await app.home.header.clickHamburgerMenuButton();
+     await app.home.header.hamburgerMenu.selectRegion("Ukraine");
+     await app.home.header.searchForm.inputSearchCriteria("adsddss");
+     await app.home.header.searchForm.clickEnterSearchField();
+     await app.webPage.item.expectWebItemsToBeVisible()
+     await app.webPage.waitUntilPageIsFullyLoaded()
      
      //Assert
-     await webPage.expectScreenWebPage(testInfo)
+     await app.webPage.expectScreenWebPage(testInfo)
   });
 
 

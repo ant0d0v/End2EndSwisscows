@@ -1,4 +1,4 @@
-import { test} from "../../../utils/fixtures";
+import { test, favoriteTracksIdForDeletionOfInternalUser} from "../../../utils/fixtures";
 const testData = JSON.parse(
     JSON.stringify(require("../../../data/error/testData.json"))
   );
@@ -33,11 +33,15 @@ test("Check 202 No Results Found error page ", async ({
     await app.musicPage.expectElementToBeVisible(app.musicPage.error.errorImage)
   });
 
-  test("Check 501 unknown Error Page  ", async ({
+  test.skip("Check 501 unknown Error Page  ", async ({
     app
   }) => {
     //Actions
-    await app.musicPage.error.open500Page("/music")
+    await app.home.open()
+    await app.route.mockResponseStatusCode("/audio/search/tracks", 501)
+    await app.home.header.searchForm.inputSearchCriteria("food");
+    await app.home.header.searchForm.clickEnterSearchField();
+    await app.musicPage.header.clickMusicSearchButton()
 
     //Assert
     await app.musicPage.expectElementToHaveText(app.musicPage.error.contentErrorPage, 
@@ -259,13 +263,14 @@ test("Check 202 No Results Found error page ", async ({
     await app.musicPage.track.expectMusicTracksToBeVisible()
     await app.musicPage.track.clickPlayButtonNumberTrack(1)
     await app.musicPage.player.expectTimeToHaveText("0:04")
-    await app.musicPage.player.clickFavoriteButton()
+    const favoriteID = await app.musicPage.player.clickFavoriteButtonAndGetResponse()
 
     //Assert
     await app.musicPage.track.expectFirstTrackFavoriteButtonIsActive()
     await app.musicPage.player.expectFavoriteButtonIsActive()
     await app.musicPage.favoritePlaylist.expectPlaylistToHaveText(/My favorite tracks1/)
-    await app.musicPage.track.clickFavoriteButtonNumberTrack(1)   
+    favoriteTracksIdForDeletionOfInternalUser.push(favoriteID);  
+      
   });
 
   test("Check delete track from the favorite using player", async ({

@@ -1,4 +1,4 @@
-import { test } from "../../utils/fixturePages";
+import { test } from "../../utils/fixtures";
 
 test("Check design of the Donation page ", async ({ app},testInfo) => {
   //Actions
@@ -12,7 +12,6 @@ test("Check design dark theme of the  Donation page ", async ({
 },testInfo) => {
   //Actions
   await app.donationPage.open()
-  await app.donationPage.waitUntilPageIsFullyLoaded();
   await app.donationPage.header.clickHamburgerMenuButton();
   await app.donationPage.header.hamburgerMenu.clickThemeDropdown();
   await app.donationPage.header.hamburgerMenu.clickDarkTheme();
