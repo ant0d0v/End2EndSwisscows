@@ -70,7 +70,7 @@ test("Check  availability and options of region dropdown menu in hamburger menu"
   await app.home.header.hamburgerMenu.clickRegionDropdown();
 
   //Assert
-  await app.home.header.hamburgerMenu.expectRegionDropdownToHaveCount(47)
+  await app.home.header.hamburgerMenu.expectRegionDropdownToHaveCount(43)
   await app.home.header.hamburgerMenu.expectRegionDropdownToHaveText(
     testData.expectedTextsOfRegionDropdown
   );

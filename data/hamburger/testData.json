@@ -115,13 +115,6 @@
         }
         ,
         {
-            "testID": "19",
-            "expectedLink": "https://dev.swisscows.com/en?region=en-IE",
-            "locatorId" : "Ireland",
-            "expectedTitle" : "Your private and anonymous search engine Swisscows"
-        }
-        ,
-        {
             "testID": "20",
             "expectedLink": "https://dev.swisscows.com/en?region=it-IT",
             "locatorId" : "Italy",
@@ -132,13 +125,6 @@
             "testID": "21",
             "expectedLink": "https://dev.swisscows.com/en?region=ja-JP",
             "locatorId" : "Japan",
-            "expectedTitle" : "Your private and anonymous search engine Swisscows"
-        }
-        ,
-        {
-            "testID": "22",
-            "expectedLink": "https://dev.swisscows.com/en?region=kk-KZ",
-            "locatorId" : "Kazakhstan",
             "expectedTitle" : "Your private and anonymous search engine Swisscows"
         }
         ,
@@ -185,23 +171,9 @@
         }
         ,
         {
-            "testID": "29",
-            "expectedLink": "https://dev.swisscows.com/en?region=en-NG",
-            "locatorId" : "Nigeria",
-            "expectedTitle" : "Your private and anonymous search engine Swisscows"
-        }
-        ,
-        {
             "testID": "30",
             "expectedLink": "https://dev.swisscows.com/en?region=nb-NO",
             "locatorId" : "Norway",
-            "expectedTitle" : "Your private and anonymous search engine Swisscows"
-        }
-        ,
-        {
-            "testID": "31",
-            "expectedLink": "https://dev.swisscows.com/en?region=es-PY",
-            "locatorId" : "Paraguay",
             "expectedTitle" : "Your private and anonymous search engine Swisscows"
         }
         ,
@@ -419,19 +391,15 @@
         "Hungary",
         "India",
         "Indonesia",
-        "Ireland",
         "Italy",
         "Japan",
-        "Kazakhstan",
         "Korea",
         "Latvia",
         "Malaysia",
         "Mexico",
         "Netherlands",
         "New Zealand",
-        "Nigeria",
         "Norway",
-        "Paraguay",
         "Philippines",
         "Poland",
         "Portugal",

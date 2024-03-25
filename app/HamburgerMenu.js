@@ -94,7 +94,7 @@ export default class HamburgerMenu extends BaseComponent {
 
 
   expectLoginButtonIsDisplayed = async () => {
-    await this.expectElementToBeVisible(this.loginButtonInHamburgerMenu);
+    await this.expectElementToBeVisible(this.loginButton);
   };
   expectLinksToHaveText = async (expectedText) => {
     await this.expectElementToHaveText(
