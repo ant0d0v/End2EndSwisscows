@@ -10,6 +10,10 @@ export default class DefaultSearchPage extends BasePage {
     this.animationImage = this.page.locator('#default-search-opera img').nth(1)
   }
   //Actions
+  async open(){
+    await this.openPage("/default-search")
+  }
+
   async clickAllLinksAndNavigateToNewPage(id, name) {
     const newPage = await this.clickElementAndNavigateToNewPage( this.allLinks(id, name),`${id}`);
     return newPage;

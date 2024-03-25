@@ -1,19 +1,22 @@
 import { test } from "../../utils/fixturePages";
 
-test("Check design of the Donation page ", async ({ donationPage },testInfo) => {
+test("Check design of the Donation page ", async ({ app},testInfo) => {
+  //Actions
+  await app.donationPage.open()
   //Assert
-  await donationPage.expectScreenDonationPage(testInfo);
+  await app.donationPage.expectScreenDonationPage(testInfo);
 });
 
 test("Check design dark theme of the  Donation page ", async ({
-  donationPage
+  app
 },testInfo) => {
   //Actions
-  await donationPage.waitUntilPageIsFullyLoaded();
-  await donationPage.header.clickHamburgerMenuButton();
-  await donationPage.header.hamburgerMenu.clickThemeDropdown();
-  await donationPage.header.hamburgerMenu.clickDarkTheme();
+  await app.donationPage.open()
+  await app.donationPage.waitUntilPageIsFullyLoaded();
+  await app.donationPage.header.clickHamburgerMenuButton();
+  await app.donationPage.header.hamburgerMenu.clickThemeDropdown();
+  await app.donationPage.header.hamburgerMenu.clickDarkTheme();
 
   //Assert
-  await donationPage.expectScreenDonationPage(testInfo);
+  await app.donationPage.expectScreenDonationPage(testInfo);
 });

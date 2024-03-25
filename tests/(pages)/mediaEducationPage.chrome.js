@@ -6,44 +6,52 @@ const testData = JSON.parse(
 );
 test.use({ headless: false });
 
-test("Check that the video is playing", async ({ mediaEducationPage }) => {
+test("Check that the video is playing", async ({ app }) => {
+  //Actions
+  await app.mediaEducationPage.open()
   //Assert
-  await mediaEducationPage.videoPlayer.expectYouTubeVideoToPlay();
+  await app.mediaEducationPage.videoPlayer.expectYouTubeVideoToPlay();
 });
 
 for (const { testID, pdfLink, locatorId } of testData.educationPdfLinks) {
   test(`${testID} Check navigation to corresponding page for  ${locatorId} pdf link and validate pdf`, async ({
-    mediaEducationPage,
+    app
   },testInfo) => {
    //Actions
-    const currentPage = await mediaEducationPage.clickPdfLinkOnThePage(locatorId);
+   await app.mediaEducationPage.open()
+    const currentPage = await app.mediaEducationPage.clickPdfLinkOnThePage(locatorId);
     
    //Assert
-    await mediaEducationPage.expectHaveUrl(currentPage, pdfLink);
-    await mediaEducationPage.expectValidatePdfFile(currentPage, pdfLink,testInfo);
+    await app.mediaEducationPage.expectHaveUrl(currentPage, pdfLink);
+    await app.mediaEducationPage.expectValidatePdfFile(currentPage, pdfLink,testInfo);
   });
 }
 
 
-test("Check design of the Education page ", async ({ mediaEducationPage  },testInfo) => {
+test("Check design of the Education page ", async ({ app },testInfo) => {
+  //Actions
+  await app.mediaEducationPage.open()
   //Assert
-  await mediaEducationPage.expectScreenMediaEducationPage(testInfo);
+  await app.mediaEducationPage.expectScreenMediaEducationPage(testInfo);
 });
 
-test("Check color of flyer button when hovering ", async ({ mediaEducationPage  }) => {
+test("Check color of flyer button when hovering ", async ({ app }) => {
+  //Actions
+  await app.mediaEducationPage.open()
   //Assert
-  await mediaEducationPage.expectColorLinkWhenHovering(mediaEducationPage.flyerButton, "background", /rgb\(191, 0, 0\)/);
+  await app.mediaEducationPage.expectColorLinkWhenHovering(app.mediaEducationPage.flyerButton, "background", /rgb\(191, 0, 0\)/);
 });
 
 test("Check design dark theme of the Education page ", async ({
-  mediaEducationPage 
+  app
 },testInfo) => {
   //Actions
-  await mediaEducationPage.waitUntilPageIsFullyLoaded();
-  await mediaEducationPage.header.clickHamburgerMenuButton();
-  await mediaEducationPage.header.hamburgerMenu.clickThemeDropdown();
-  await mediaEducationPage.header.hamburgerMenu.clickDarkTheme();
+  await app.mediaEducationPage.open()
+  await app.mediaEducationPage.waitUntilPageIsFullyLoaded();
+  await app.mediaEducationPage.header.clickHamburgerMenuButton();
+  await app.mediaEducationPage.header.hamburgerMenu.clickThemeDropdown();
+  await app.mediaEducationPage.header.hamburgerMenu.clickDarkTheme();
 
   //Assert
-  await mediaEducationPage.expectScreenMediaEducationPage(testInfo);
+  await app.mediaEducationPage.expectScreenMediaEducationPage(testInfo);
 });

@@ -1,21 +1,23 @@
 import { test, expect } from "../../utils/fixturePages";
 
-test("Check design of the default search page ", async ({ defaultSearchPage },testInfo) => {
+test("Check design of the default search page ", async ({ app },testInfo) => {
     //Actions
-    await defaultSearchPage.waitUntilPageIsFullyLoaded();
+    await app.defaultSearchPage.open()
+    await app.defaultSearchPage.waitUntilPageIsFullyLoaded();
     //Assert
-    await defaultSearchPage.expectDefaultSearchPage(testInfo)
+    await app.defaultSearchPage.expectDefaultSearchPage(testInfo)
   });
   
   test("Check design dark theme of the default search page ", async ({
-    defaultSearchPage
+    app
   },testInfo) => {
     //Actions
-    await defaultSearchPage.waitUntilPageIsFullyLoaded();
-    await defaultSearchPage.header.clickHamburgerMenuButton();
-    await defaultSearchPage.header.hamburgerMenu.clickThemeDropdown();
-    await defaultSearchPage.header.hamburgerMenu.clickDarkTheme();
+    await app.defaultSearchPage.open()
+    await app.defaultSearchPage.waitUntilPageIsFullyLoaded();
+    await app.defaultSearchPage.header.clickHamburgerMenuButton();
+    await app.defaultSearchPage.header.hamburgerMenu.clickThemeDropdown();
+    await app.defaultSearchPage.header.hamburgerMenu.clickDarkTheme();
   
     //Assert
-    await defaultSearchPage.expectDefaultSearchPage(testInfo)
+    await app.defaultSearchPage.expectDefaultSearchPage(testInfo)
   });

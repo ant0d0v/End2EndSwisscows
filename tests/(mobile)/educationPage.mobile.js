@@ -1,29 +1,28 @@
 import { test } from "../../utils/fixturePages";
-const testData = JSON.parse(
-  JSON.stringify(
-    require("../../data/pages/media-education/testData.json")
-  )
-);
-
-test("Check design of the Education page ", async ({ mediaEducationPage },testInfo) => {
+test("Check design of the Education page ", async ({ app },testInfo) => {
+  //Actions
+  await app.mediaEducationPage.open()
   //Assert
-  await mediaEducationPage.expectScreenMediaEducationPage(testInfo);
+  await app.mediaEducationPage.expectScreenMediaEducationPage(testInfo);
 });
 
-test("Check color of flyer button when hovering ", async ({ mediaEducationPage }) => {
+test("Check color of flyer button when hovering ", async ({ app }) => {
+  //Actions
+  await app.mediaEducationPage.open()
   //Assert
-  await mediaEducationPage.expectColorLinkWhenHovering(mediaEducationPage.flyerButton, "background", /rgb\(191, 0, 0\)/);
+  await app.mediaEducationPage.expectColorLinkWhenHovering(app.mediaEducationPage.flyerButton, "background", /rgb\(191, 0, 0\)/);
 });
 
 test("Check design dark theme of the Education page ", async ({
-  mediaEducationPage
+  app
 },testInfo) => {
   //Actions
-  await mediaEducationPage.waitUntilPageIsFullyLoaded();
-  await mediaEducationPage.header.clickHamburgerMenuButton();
-  await mediaEducationPage.header.hamburgerMenu.clickThemeDropdown();
-  await mediaEducationPage.header.hamburgerMenu.clickDarkTheme();
+  await app.mediaEducationPage.open()
+  await app.mediaEducationPage.waitUntilPageIsFullyLoaded();
+  await app.mediaEducationPage.header.clickHamburgerMenuButton();
+  await app.mediaEducationPage.header.hamburgerMenu.clickThemeDropdown();
+  await app.mediaEducationPage.header.hamburgerMenu.clickDarkTheme();
 
   //Assert
-  await mediaEducationPage.expectScreenMediaEducationPage(testInfo);
+  await app.mediaEducationPage.expectScreenMediaEducationPage(testInfo);
 });
