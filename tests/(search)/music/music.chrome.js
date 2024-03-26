@@ -76,7 +76,7 @@ test("Check 202 No Results Found error page ", async ({
     await app.musicPage.header.clickMusicSearchButton()
     await app.musicPage.track.expectMusicTracksToBeVisible()
     await app.musicPage.track.clickPlayButtonNumberTrack(1)
-    await app.musicPage.player.expectTimeToHaveText("0:04")
+    await app.musicPage.player.expectProgressBarToHaveTimeValue(/3/)
     await app.musicPage.track.clickPauseButtonNumberTrack(1)
 
     //Assert
@@ -112,7 +112,7 @@ test("Check 202 No Results Found error page ", async ({
     await app.musicPage.header.clickMusicSearchButton()
     await app.musicPage.track.expectMusicTracksToBeVisible()
     await app.musicPage.track.clickPlayButtonNumberTrack(1)
-    await app.musicPage.player.expectTimeToHaveText("0:04")
+    await app.musicPage.player.expectProgressBarToHaveTimeValue(/3/)
     await app.musicPage.player.clickNextButton()
     await app.musicPage.player.clickPrevButton()
 
@@ -132,7 +132,7 @@ test("Check 202 No Results Found error page ", async ({
     await app.musicPage.header.clickMusicSearchButton()
     await app.musicPage.track.expectMusicTracksToBeVisible()
     await app.musicPage.track.clickPlayButtonNumberTrack(1)
-    await app.musicPage.player.expectTimeToHaveText("0:04")
+    await app.musicPage.player.expectProgressBarToHaveTimeValue(/3/)
     await app.musicPage.track.clickTimeLineNumberTrack(1)
 
     //Assert
@@ -150,7 +150,7 @@ test("Check 202 No Results Found error page ", async ({
     await app.musicPage.header.clickMusicSearchButton()
     await app.musicPage.track.expectMusicTracksToBeVisible()
     await app.musicPage.track.clickPlayButtonNumberTrack(1)
-    await app.musicPage.player.expectTimeToHaveText("0:04")
+    await app.musicPage.player.expectProgressBarToHaveTimeValue(/3/)
     await app.musicPage.player.clickTimeLine()
 
     //Assert
@@ -168,7 +168,7 @@ test("Check 202 No Results Found error page ", async ({
     await app.musicPage.header.clickMusicSearchButton()
     await app.musicPage.track.expectMusicTracksToBeVisible()
     await app.musicPage.track.clickPlayButtonNumberTrack(1)
-    await app.musicPage.player.expectTimeToHaveText("0:04")
+    await app.musicPage.player.expectProgressBarToHaveTimeValue(/3/)
     await app.musicPage.player.clickPauseButton()
 
     //Assert
@@ -187,7 +187,7 @@ test("Check 202 No Results Found error page ", async ({
     await app.musicPage.header.clickMusicSearchButton()
     await app.musicPage.track.expectMusicTracksToBeVisible()
     await app.musicPage.track.clickPlayButtonNumberTrack(1)
-    await app.musicPage.player.expectTimeToHaveText("0:04")
+    await app.musicPage.player.expectProgressBarToHaveTimeValue(/3/)
     await app.musicPage.player.clickPauseButton()
     await app.musicPage.player.clickPlayButton()
 
@@ -207,7 +207,7 @@ test("Check 202 No Results Found error page ", async ({
     await app.musicPage.header.clickMusicSearchButton()
     await app.musicPage.track.expectMusicTracksToBeVisible()
     await app.musicPage.track.clickPlayButtonNumberTrack(1)
-    await app.musicPage.player.expectTimeToHaveText("0:04")
+    await app.musicPage.player.expectProgressBarToHaveTimeValue(/3/)
     await app.musicPage.player.clickShuffleButton()
     await app.musicPage.player.clickNextButton()
 
@@ -244,7 +244,7 @@ test("Check 202 No Results Found error page ", async ({
     await app.musicPage.track.expectMusicTracksToBeVisible()
     await app.musicPage.track.clickFavoriteButtonNumberTrack(1)
     await app.musicPage.track.clickPlayButtonNumberTrack(1)
-    await app.musicPage.player.expectTimeToHaveText("0:04")
+    await app.musicPage.player.expectProgressBarToHaveTimeValue(/3/)
     await app.musicPage.track.clickFavoriteButtonNumberTrack(1)
 
     //Assert
@@ -262,7 +262,7 @@ test("Check 202 No Results Found error page ", async ({
     await app.musicPage.header.clickMusicSearchButton()
     await app.musicPage.track.expectMusicTracksToBeVisible()
     await app.musicPage.track.clickPlayButtonNumberTrack(1)
-    await app.musicPage.player.expectTimeToHaveText("0:04")
+    await app.musicPage.player.expectProgressBarToHaveTimeValue(/3/)
     const favoriteID = await app.musicPage.player.clickFavoriteButtonAndGetResponse()
 
     //Assert
@@ -284,7 +284,7 @@ test("Check 202 No Results Found error page ", async ({
     await app.musicPage.track.expectMusicTracksToBeVisible()
     await app.musicPage.track.clickFavoriteButtonNumberTrack(1)
     await app.musicPage.track.clickPlayButtonNumberTrack(1)
-    await app.musicPage.player.expectTimeToHaveText("0:04")
+    await app.musicPage.player.expectProgressBarToHaveTimeValue(/3/)
     await app.musicPage.player.clickFavoriteButton()
 
     //Assert

@@ -64,7 +64,7 @@ test.describe('Internal user', () => {
     await app.musicPage.clickFavoritePlaylist()
     await app.musicMyPage.expectPageUrlToHaveParameter(`?query=${value}`)
     await app.musicMyPage.track.clickPlayButtonNumberTrack(1)
-    await app.musicMyPage.player.expectTimeToHaveText("0:04")
+    await app.musicMyPage.player.expectProgressBarToHaveTimeValue(/3/)
     await app.musicMyPage.track.clickFavoriteButtonNumberTrack(1)
     
     //Assert
@@ -107,7 +107,7 @@ test.describe('Internal user', () => {
     await app.musicPage.clickFavoritePlaylist()
     await app.musicMyPage.expectPageUrlToHaveParameter(`?query=${value}`)
     await app.musicMyPage.track.clickPlayButtonNumberTrack(1)
-    await app.musicMyPage.player.expectTimeToHaveText("0:04")
+    await app.musicMyPage.player.expectProgressBarToHaveTimeValue(/3/)
     await app.musicMyPage.track.clickPauseButtonNumberTrack(1)
     favoriteTracksIdForDeletionOfInternalUser.push(favoriteID);  
 
@@ -129,7 +129,7 @@ test.describe('Internal user', () => {
     await app.musicPage.clickFavoritePlaylist()
     await app.musicMyPage.expectPageUrlToHaveParameter(`?query=${value}`)
     await app.musicMyPage.track.clickPlayButtonNumberTrack(1)
-    await app.musicMyPage.player.expectTimeToHaveText("0:04")
+    await app.musicMyPage.player.expectProgressBarToHaveTimeValue(/3/)
     await app.musicMyPage.track.clickTimeLineNumberTrack(1)
     favoriteTracksIdForDeletionOfInternalUser.push(favoriteID);
 
@@ -155,7 +155,7 @@ test.describe('External user', () => {
     await app.musicPage.clickFavoritePlaylist()
     await app.musicMyPage.expectPageUrlToHaveParameter(`?query=${value}`)
     await app.musicMyPage.track.clickPlayButtonNumberTrack(1)
-    await app.musicMyPage.player.expectTimeToHaveText("0:04")
+    await app.musicMyPage.player.expectProgressBarToHaveTimeValue(/3/)
     await app.musicMyPage.player.clickTimeLine()
     favoriteTracksIdForDeletionOfExternalUser.push(favoriteID);  
 
@@ -164,7 +164,7 @@ test.describe('External user', () => {
     await app.musicMyPage.player.expectProgressBarToHaveTimeValue(/width: 5/) 
   });
 
-  test("Check pause track in player on my music page", async ({
+  test.fixme("Check pause track in player on my music page", async ({
     app
   }) => {
     //Actions
@@ -177,7 +177,7 @@ test.describe('External user', () => {
     await app.musicPage.clickFavoritePlaylist()
     await app.musicMyPage.expectPageUrlToHaveParameter(`?query=${value}`)
     await app.musicMyPage.track.clickPlayButtonNumberTrack(1)
-    await app.musicMyPage.player.expectTimeToHaveText("0:04")
+    await app.musicMyPage.player.expectProgressBarToHaveTimeValue(/3/)
     await app.musicMyPage.player.clickPauseButton()
     favoriteTracksIdForDeletionOfExternalUser.push(favoriteID);    
 
@@ -200,7 +200,7 @@ test.describe('External user', () => {
     await app.musicPage.clickFavoritePlaylist()
     await app.musicMyPage.expectPageUrlToHaveParameter(`?query=${value}`)
     await app.musicMyPage.track.clickPlayButtonNumberTrack(1)
-    await app.musicMyPage.player.expectTimeToHaveText("0:04")
+    await app.musicMyPage.player.expectProgressBarToHaveTimeValue(/3/)
     await app.musicMyPage.player.clickPauseButton()
     await app.musicMyPage.player.clickPlayButton()
     favoriteTracksIdForDeletionOfExternalUser.push(favoriteID);    

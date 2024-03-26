@@ -1,4 +1,4 @@
-import { test } from "../../utils/fixturePages";
+import { test } from "../../utils/fixtures";
 import { readCsvFile, readSpecificCsvFile } from "../../helpers/csvHelper"
 
 const mainTable = readCsvFile('../localization/main.csv')

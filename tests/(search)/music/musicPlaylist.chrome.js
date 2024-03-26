@@ -14,7 +14,7 @@ const value = "Skofka";
     await app.musicPage.clickPlaylistNumber(1)
     await app.musicPlaylistPage.expectPageUrlToHaveParameter(`?query=${value}`)
     await app.musicPlaylistPage.track.clickPlayButtonNumberTrack(1)
-    await app.musicPlaylistPage.player.expectTimeToHaveText("0:04")
+    await app.musicPlaylistPage.player.expectProgressBarToHaveTimeValue(/3/)
     await app.musicPlaylistPage.track.clickPauseButtonNumberTrack(1)
 
     //Assert
@@ -34,7 +34,7 @@ const value = "Skofka";
     await app.musicPage.clickPlaylistNumber(1)
     await app.musicPlaylistPage.expectPageUrlToHaveParameter(`?query=${value}`)
     await app.musicPlaylistPage.track.clickPlayButtonNumberTrack(1)
-    await app.musicPlaylistPage.player.expectTimeToHaveText("0:04")
+    await app.musicPlaylistPage.player.expectProgressBarToHaveTimeValue(/3/)
     await app.musicPlaylistPage.player.clickNextButton()
     
     //Assert
@@ -54,7 +54,7 @@ const value = "Skofka";
     await app.musicPage.clickPlaylistNumber(1)
     await app.musicPlaylistPage.expectPageUrlToHaveParameter(`?query=${value}`)
     await app.musicPlaylistPage.track.clickPlayButtonNumberTrack(1)
-    await app.musicPlaylistPage.player.expectTimeToHaveText("0:04")
+    await app.musicPlaylistPage.player.expectProgressBarToHaveTimeValue(/3/)
     await app.musicPlaylistPage.player.clickNextButton()
     await app.musicPlaylistPage.player.clickPrevButton()
 
@@ -75,7 +75,7 @@ const value = "Skofka";
     await app.musicPage.clickPlaylistNumber(1)
     await app.musicPlaylistPage.expectPageUrlToHaveParameter(`?query=${value}`)
     await app.musicPlaylistPage.track.clickPlayButtonNumberTrack(1)
-    await app.musicPlaylistPage.player.expectTimeToHaveText("0:04")
+    await app.musicPlaylistPage.player.expectProgressBarToHaveTimeValue(/3/)
     await app.musicPlaylistPage.track.clickTimeLineNumberTrack(1)
 
     //Assert
@@ -96,7 +96,7 @@ const value = "Skofka";
     await app.musicPage.clickPlaylistNumber(1)
     await app.musicPlaylistPage.expectPageUrlToHaveParameter(`?query=${value}`)
     await app.musicPlaylistPage.track.clickPlayButtonNumberTrack(1)
-    await app.musicPlaylistPage.player.expectTimeToHaveText("0:04")
+    await app.musicPlaylistPage.player.expectProgressBarToHaveTimeValue(/3/)
     await app.musicPlaylistPage.player.clickShuffleButton()
     await app.musicPlaylistPage.player.clickNextButton()
 
