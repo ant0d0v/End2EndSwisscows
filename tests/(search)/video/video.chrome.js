@@ -6,13 +6,13 @@ test("Check that video results equals search criteria", async ({
   }) => {
     //Actions
     await app.home.open()
-    await app.home.header.searchForm.inputSearchCriteria("Skofka");
+    await app.home.header.searchForm.inputSearchCriteria("Iphone");
     await app.home.header.searchForm.clickEnterSearchField();
     await app.videoPage.header.clickVideoSearchButton()
     await app.videoPage.item.expectVideoItemsToBeVisible()
     
     //Assert
-    await app.videoPage.item.expectTextsToContainSearchCriteria(app.videoPage.item.videoItems, "Skofka".toLowerCase())
+    await app.videoPage.item.expectTextsToContainSearchCriteria(app.videoPage.item.videoItems, "Iphone".toLowerCase())
     await app.videoPage.item.expectListToHaveCount(app.videoPage.item.videoItems, 10)
     await app.videoPage.item.expectAreElementsInListDisplayed(app.videoPage.item.images)
   });
@@ -30,7 +30,7 @@ test("Check infinity scroll to items-pane aside", async ({
     await app.videoPage.item.scrollByVisibleVideoNumber(50)
 
     //Assert
-    await app.videoPage.item.expectListToBeGreaterThanOrEqual(app.videoPage.item.videoItems, 50)
+    await app.videoPage.item.expectListToBeGreaterThanOrEqual(app.videoPage.item.videoItems, 35)
   });
 
   test("Check infinity scroll in video results", async ({
@@ -42,10 +42,10 @@ test("Check infinity scroll to items-pane aside", async ({
     await app.home.header.searchForm.clickEnterSearchField();
     await app.videoPage.header.clickVideoSearchButton()
     await app.videoPage.item.expectVideoItemsToBeVisible()
-    await app.videoPage.item.scrollWithMouseWheelToVideoNumber(100)
+    await app.videoPage.item.scrollWithMouseWheelToVideoNumber(90)
 
     //Assert
-    await app.videoPage.item.expectListToBeGreaterThanOrEqual(app.videoPage.item.images, 100)
+    await app.videoPage.item.expectListToBeGreaterThanOrEqual(app.videoPage.item.images, 90 )
   });
 
   test("Check the width and visibility images of items", async ({

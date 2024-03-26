@@ -31,7 +31,7 @@ export default class Item extends BaseComponent {
   }
   scrollWithMouseWheelToVideoNumber = async (number) => {
     for(let i = 0;i < number ; i+=4){
-    await this.page.mouse.wheel(0, 500);  
+    await this.page.mouse.wheel(0, 600);  
     await this.scrollByVisibleElement(this.images.nth(i), "last track");
     }
   }

@@ -1,4 +1,4 @@
-import { test} from "../../../utils/fixturePages";
+import { test} from "../../../utils/fixtures";
 const { expect } = require("@playwright/test");
 
 const filterData = JSON.parse(

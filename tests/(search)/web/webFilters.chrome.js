@@ -1,4 +1,4 @@
-import { test} from "../../../utils/fixturePages";
+import { test} from "../../../utils/fixtures";
 const { expect } = require("@playwright/test");
 import { getYesterdayDay, getPastMonth, getPastYear} from "../../../helpers/dataHelper";
 const expectedPastDay = getYesterdayDay()
