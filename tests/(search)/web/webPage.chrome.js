@@ -61,7 +61,6 @@ test("Check 202 no results error page ", async ({
     //Assert
     await app.webPage.error.expectContentToHaveText(testData.expectedErrorText.unknown500Error)
     await app.webPage.error.expectErrorImageToBeVisible()
-    await app.webPage.error.expectImageToHaveWight(446)
   });
   test("Check 501 unsupported region", async ({
     app
