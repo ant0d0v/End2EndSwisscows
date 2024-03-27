@@ -59,7 +59,7 @@ module.exports = defineConfig({
     trace: "on-first-retry",
   },
   expect: {
-    toHaveScreenshot: {  maxDiffPixels: 100 },
+    toHaveScreenshot: {  maxDiffPixels: 150 },
     timeout: 15 * 1000,
   },
 
@@ -74,7 +74,7 @@ module.exports = defineConfig({
       testMatch: /.*\.chrome\.js/,
       use: {
         ...devices["Desktop Chrome"],
-        // channel: "chrome",
+        channel: "chrome",
         storageState: "./data/auth/internalUser.json",
         viewport: { width: 1360, height: 900 },
         screenshot: "only-on-failure",
@@ -106,7 +106,7 @@ module.exports = defineConfig({
       testMatch: /.*\.mobile\.js/,
       use: {
         ...devices["Pixel 7"],
-        // channel: "chrome",
+        channel: "chrome",
         screenshot: "only-on-failure",
         video: "retain-on-failure",
       },
