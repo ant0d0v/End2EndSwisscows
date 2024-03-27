@@ -1,37 +1,37 @@
-import { test, expect } from "../../utils/fixturePages";
+import { test, expect } from "../../utils/fixtures";
 const testData = JSON.parse(
   JSON.stringify(require("../../data/pages/default-search/testData.json"))
 );
-test("Check design of the default search page ", async ({ defaultSearchPage },testInfo) => {
+test("Check design of the default search page ", async ({ app },testInfo) => {
     //Actions
-    await defaultSearchPage.waitUntilPageIsFullyLoaded();
+    await app.defaultSearchPage.open()
     //Assert
-    await defaultSearchPage.expectDefaultSearchPage(testInfo)
+    await app.defaultSearchPage.expectDefaultSearchPage(testInfo)
   });
   
   test("Check design dark theme of the default search page ", async ({
-    defaultSearchPage
+    app
   },testInfo) => {
     //Actions
-    await defaultSearchPage.waitUntilPageIsFullyLoaded();
-    await defaultSearchPage.header.clickHamburgerMenuButton();
-    await defaultSearchPage.header.hamburgerMenu.clickThemeDropdownInHamburgerMenu();
-    await defaultSearchPage.header.hamburgerMenu.clickDarkInHamburgerMenu();
+    await app.defaultSearchPage.open()
+    await app.defaultSearchPage.header.clickHamburgerMenuButton();
+    await app.defaultSearchPage.header.hamburgerMenu.clickThemeDropdown();
+    await app.defaultSearchPage.header.hamburgerMenu.clickDarkTheme();
   
     //Assert
-    await defaultSearchPage.expectDefaultSearchPage(testInfo)
+    await app.defaultSearchPage.expectDefaultSearchPage(testInfo)
   });
 
   for (const { testID, expectedLink, locatorId, locatorName, expectedTitle,} of testData.allLinks) {
     test(`${testID} Check navigation to corresponding pages for  '${locatorId}' link`, async ({
-      defaultSearchPage
+      app
     }) => {
       //Actions
-      
-      const currentPage = await defaultSearchPage.clickAllLinksAndNavigateToNewPage(locatorId, locatorName,);
+      await app.defaultSearchPage.open()
+      const currentPage = await app.defaultSearchPage.clickAllLinksAndNavigateToNewPage(locatorId, locatorName,);
   
       //Assert
-      await defaultSearchPage.expectHaveUrl(currentPage, new RegExp(expectedLink));
-      await defaultSearchPage.expectHaveTitle(currentPage ,expectedTitle);
+      await app.defaultSearchPage.expectHaveUrl(currentPage, new RegExp(expectedLink));
+      await app.defaultSearchPage.expectHaveTitle(currentPage ,expectedTitle);
     });
   }

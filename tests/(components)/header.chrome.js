@@ -1,270 +1,288 @@
-import { test } from "../../utils/fixturePages";
-const data = JSON.parse(
-  JSON.stringify(require("../../data/header/testData.json"))
-);
-const testData = JSON.parse(
-  JSON.stringify(require("../../data/header/testData.json"))
-);
+import { test, expect } from "../../utils/fixtures";
 const constantsData = JSON.parse(
   JSON.stringify(require("../../data/project-constants/testData.json"))
 );
 
 test("Clicking on the swisscows's logo leads to the home page.", async ({
-  home,
-  webPage
+  app
 }) => {
   //Actions
-  await home.header.searchForm.inputSearchCriteria(testData.searchCriteria.first);
-  await home.header.searchForm.clickEnterSearchField();
-  await webPage.header.clickSwisscowsLogo();
+  await app.home.open()
+  await app.home.header.searchForm.inputSearchCriteria("test123");
+  await app.home.header.searchForm.clickEnterSearchField();
+  await app.webPage.header.clickSwisscowsLogo();
 
   //Assert
-  await home.expectHaveUrl(home.page, constantsData.URL_MAIN_PAGE);
-  await home.expectHaveTitle(home.page, constantsData.TITLE_MAIN_PAGE );
+  await app.home.expectHaveUrl(app.home.page, constantsData.URL_MAIN_PAGE);
+  await app.home.expectHaveTitle(app.home.page, constantsData.TITLE_MAIN_PAGE );
 });
 
 test("Check query counter value when searching for images ", async ({
-  home,
-  imagePage,
-  webPage
+  app
 }) => {
   //Actions
-  await home.header.searchForm.inputSearchCriteria(testData.searchCriteria.third);
-  await home.header.searchForm.clickEnterSearchField();
-  await webPage.item.expectWebItemsToBeVisible()
-  await imagePage.header.clickImageSearchButton();
+  await app.home.open()
+  await app.home.header.searchForm.inputSearchCriteria("ukraine");
+  await app.home.header.searchForm.clickEnterSearchField();
+  await app.webPage.item.expectWebItemsToBeVisible()
+  await app.imagePage.header.clickImageSearchButton();
 
   //Assert
-  await imagePage.header.badgeCounter.expectCharityBadgeCounterToHaveValue("2");
+  await app.imagePage.header.badgeCounter.expectCharityBadgeCounterToHaveValue("2");
 });
 
 test("Check query counter value when searching for video ", async ({
-  videoPage,
-  webPage,
-  home
+  app
 }) => {
   //Actions
-  await home.header.searchForm.inputSearchCriteria(testData.searchCriteria.third);
-  await home.header.searchForm.clickEnterSearchField();
-  await webPage.item.expectWebItemsToBeVisible()
-  await videoPage.header.clickVideoSearchButton();
+  await app.home.open()
+  await app.home.header.searchForm.inputSearchCriteria("forever");
+  await app.home.header.searchForm.clickEnterSearchField();
+  await app.webPage.item.expectWebItemsToBeVisible()
+  await app.videoPage.header.clickVideoSearchButton();
 
   //Assert
-  await videoPage.header.badgeCounter.expectCharityBadgeCounterToHaveValue("2");
+  await app.videoPage.header.badgeCounter.expectCharityBadgeCounterToHaveValue("2");
 });
 
 test("Check query counter value when searching for music", async ({
-    home,
-    webPage,
-    musicPage
+    app
   }) => {
     //Actions
-    await home.header.searchForm.inputSearchCriteria(testData.searchCriteria.third);
-    await home.header.searchForm.clickEnterSearchField();
-    await webPage.item.expectWebItemsToBeVisible()
-    await musicPage.header.clickMusicSearchButton();
+    await app.home.open()
+    await app.home.header.searchForm.inputSearchCriteria("news");
+    await app.home.header.searchForm.clickEnterSearchField();
+    await app.webPage.item.expectWebItemsToBeVisible()
+    await app.musicPage.header.clickMusicSearchButton();
 
     //Assert
-    await musicPage.header.badgeCounter.expectCharityBadgeCounterToHaveValue("2");
+    await app.musicPage.header.badgeCounter.expectCharityBadgeCounterToHaveValue("2");
   });
 
 
 test("Check query counter value when searching for news", async ({
-  home,
-  newsPage,
-  webPage
+  app
 }) => {
   //Actions
-  await home.header.searchForm.inputSearchCriteria(testData.searchCriteria.third);
-  await home.header.searchForm.clickEnterSearchField();
-  await webPage.item.expectWebItemsToBeVisible()
-  await webPage.header.clickHamburgerMenuButton();
-  await webPage.header.hamburgerMenu.selectRegion("Germany");
-  await webPage.item.expectWebItemsToBeVisible()
-  await newsPage.header.clickNewsSearchButton();
+  await app.home.open()
+  await app.home.header.searchForm.inputSearchCriteria("best");
+  await app.home.header.searchForm.clickEnterSearchField();
+  await app.webPage.item.expectWebItemsToBeVisible()
+  await app.webPage.header.clickHamburgerMenuButton();
+  await app.webPage.header.hamburgerMenu.selectRegion("Germany");
+  await app.webPage.item.expectWebItemsToBeVisible()
+  await app.newsPage.header.clickNewsSearchButton();
 
   //Assert
-  await newsPage.header.badgeCounter.expectCharityBadgeCounterToHaveValue("3");
+  await app.newsPage.header.badgeCounter.expectCharityBadgeCounterToHaveValue("3");
 });
 
 test("Check query counter value when searching for shopping", async ({
-  shoppingPage,
-  home,
-  webPage
+  app
 }) => {
   //Actions
-  await home.header.clickHamburgerMenuButton();
-  await home.header.hamburgerMenu.selectRegion("Germany");
-  await home.header.searchForm.inputSearchCriteria(testData.searchCriteria.third);
-  await home.header.searchForm.clickEnterSearchField();
-  await webPage.item.expectWebItemsToBeVisible()
-  await shoppingPage.header.clickShoppingSearchButton();
+  await app.home.open()
+  await app.home.header.clickHamburgerMenuButton();
+  await app.home.header.hamburgerMenu.selectRegion("Germany");
+  await app.home.header.searchForm.inputSearchCriteria("iphone + apple");
+  await app.home.header.searchForm.clickEnterSearchField();
+  await app.webPage.item.expectWebItemsToBeVisible()
+  await app.shoppingPage.header.clickShoppingSearchButton();
 
   //Assert
-  await shoppingPage.header.badgeCounter.expectCharityBadgeCounterToHaveValue("2");
+  await app.shoppingPage.header.badgeCounter.expectCharityBadgeCounterToHaveValue("2");
 });
 
-  test("Check that email icon navigates to account/login page if user logged ", async({
-    home,
-    webPage, 
+test.describe("test use cookie", () => {
+  test("Check that email badge navigates to account/login page if user logged ", async({
+    app, context
   }) => {
     //Actions
-    await home.header.searchForm.inputSearchCriteria(testData.searchCriteria.third);
-    await home.header.searchForm.clickEnterSearchField();
-    await webPage.item.expectWebItemsToBeVisible()
-    const newPage = await webPage.header.clickBadgeEmailAndNavigateToNewPage();
-
+    await app.home.open()
+    await app.home.header.searchForm.inputSearchCriteria("laptop");
+    await app.home.header.searchForm.clickEnterSearchField();
+    await app.webPage.item.expectWebItemsToBeVisible()
+  
     //Assert
-    await webPage.header.expectHaveUrl( newPage, new RegExp( constantsData.URL_LOGIN_PAGE));
-    await webPage.header.expectHaveTitle(newPage, constantsData.TITLE_LOGIN_PAGE);
+    await app.webPage.header.expectToBeOpenedNewPageAfterClick(
+      app.webPage.header.badgeEmail.badge, constantsData.URL_LOGIN_PAGE )
+    
+    await app.expectNewPageToHaveTitle(context, constantsData.TITLE_LOGIN_PAGE)
   });
+});
 
 test.describe("tests don't use cookie", () => {
   test.use({ storageState: { cookies: [], origins: [] } });
-  for (const { testID, expectedLink, locatorId, expectedTitle, } of data.headerLinks) {
-    test(`${testID} Check that header badge ${locatorId} link navigate to corresponding pages`, async ({
-      home,
-      webPage,
+    test(`Check that email badge link navigate to corresponding pages`, async ({
+      app, context
     }) => {
       //Actions
-      await home.header.searchForm.inputSearchCriteria(testData.searchCriteria.third);
-      await home.header.searchForm.clickEnterSearchField();
-      await webPage.item.expectWebItemsToBeVisible()
-      const newPage = await webPage.header.clickLinkInHeaderAndNavigateToNewPage(locatorId);
-
+      await app.home.open()
+      await app.home.header.searchForm.inputSearchCriteria("best");
+      await app.home.header.searchForm.clickEnterSearchField();
+      await app.webPage.item.expectWebItemsToBeVisible()
+      
       //Assert
-      await webPage.header.expectHaveUrl(newPage, expectedLink);
-      await webPage.header.expectHaveTitle(newPage, new RegExp(expectedTitle));
+      await app.webPage.header.expectToBeOpenedNewPageAfterClick(
+        app.webPage.header.badgeEmail.badge, constantsData.URL_EMAIL_PAGE)
+
+      await app.emailPage.expectNewPageToHaveTitle(context, constantsData.TITLE_EMAIL_PAGE)
     });
-  }
+
+    test(`Check that Teleguard badge link navigate to corresponding pages`, async ({
+      app, context
+    }) => {
+      //Actions
+      await app.home.open()
+      await app.home.header.searchForm.inputSearchCriteria("best");
+      await app.home.header.searchForm.clickEnterSearchField();
+      await app.webPage.item.expectWebItemsToBeVisible()
+      
+      //Assert
+      await app.webPage.header.expectToBeOpenedNewPageAfterClick(
+        app.webPage.header.badgeTeleguard.badge, constantsData.URL_TELEGUARD_PAGE)
+
+      await app.expectNewPageToHaveTitle(context, constantsData.TITLE_TELEGUARD_PAGE)
+    });
+
+    test(`Check that vpn badge link navigate to corresponding pages`, async ({
+      app, context
+    }) => {
+      //Actions
+      await app.home.open()
+      await app.home.header.searchForm.inputSearchCriteria("best");
+      await app.home.header.searchForm.clickEnterSearchField();
+      await app.webPage.item.expectWebItemsToBeVisible()
+      
+      //Assert
+      await app.webPage.header.expectToBeOpenedNewPageAfterClick(
+        app.webPage.header.badgeVPN.badge, constantsData.URL_VPN_PAGE)
+
+      await app.vpnPage.expectNewPageToHaveTitle(context, constantsData.TITLE_VPN_PAGE)
+    });
 });
 
 test("Check that display of heart icon message in the header", async ({
-  home,
-  webPage
+  app
 }) => {
   //Actions
-  await home.header.searchForm.inputSearchCriteria(testData.searchCriteria.third);
-  await home.header.searchForm.clickEnterSearchField();
-  await webPage.item.expectWebItemsToBeVisible()
-  await webPage.header.badgeCounter.clickBadgeCounter();
+  await app.home.open()
+  await app.home.header.searchForm.inputSearchCriteria("football");
+  await app.home.header.searchForm.clickEnterSearchField();
+  await app.webPage.item.expectWebItemsToBeVisible()
+  await app.webPage.header.badgeCounter.clickBadgeCounter();
 
   //Assert
-  await webPage.header.badgeCounter.expectPopupCharityBadgeCounterToHaveText(
+  await app.webPage.header.badgeCounter.expectPopupCharityBadgeCounterToHaveText(
     "Charity ProjectThis is the number of your Swisscows searches. On average, 50 search queries finance a children's meal. Register and receive newsletters."
   );
 });
 
 test("Check suggest on the web search", async ({
-  home,
-  webPage
+  app
 }) => {
   //Actions
-  await home.header.searchForm.inputSearchCriteria(testData.searchCriteria.first);
-  await home.header.searchForm.clickEnterSearchField();
-  await webPage.item.expectWebItemsToBeVisible()
-  await webPage.header.searchForm.clickSearchField()
+  await app.home.open()
+  await app.home.header.searchForm.inputSearchCriteria("ivanka");
+  await app.home.header.searchForm.clickEnterSearchField();
+  await app.webPage.item.expectWebItemsToBeVisible()
+  await app.webPage.header.searchForm.clickSearchField()
 
   //Assert
-  await webPage.header.searchForm.expectSuggestIsDisplayed();
-  await webPage.header.searchForm.expectSuggestToHaveCount(5);
-  await webPage.header.searchForm.expectSuggestToContains(testData.searchCriteria.first);
+  await app.webPage.header.searchForm.expectSuggestIsDisplayed();
+  await app.webPage.header.searchForm.expectSuggestToHaveCount(5);
+  await app.webPage.header.searchForm.expectSuggestToContains("ivanka");
 });
 
 test("Check suggest on the image search", async ({
-  home,
-  webPage,
-  imagePage
+  app
 }) => {
   //Actions
-  await home.header.searchForm.inputSearchCriteria(testData.searchCriteria.first);
-  await home.header.searchForm.clickEnterSearchField();
-  await webPage.header.clickImageSearchButton()
-  await imagePage.item.expectImageItemsToBeVisible()
-  await imagePage.header.searchForm.clickSearchField()
+  await app.home.open()
+  await app.home.header.searchForm.inputSearchCriteria("ivanka");
+  await app.home.header.searchForm.clickEnterSearchField();
+  await app.webPage.header.clickImageSearchButton()
+  await app.imagePage.item.expectImageItemsToBeVisible()
+  await app.imagePage.header.searchForm.clickSearchField()
  
   //Assert
-  await imagePage.header.searchForm.expectSuggestIsDisplayed();
-  await imagePage.header.searchForm.expectSuggestToHaveCount(5);
-  await imagePage.header.searchForm.expectSuggestToContains(testData.searchCriteria.first);
+  await app.imagePage.header.searchForm.expectSuggestIsDisplayed();
+  await app.imagePage.header.searchForm.expectSuggestToHaveCount(5);
+  await app.imagePage.header.searchForm.expectSuggestToContains("ivanka");
 });
 
 test("Check suggest on the video search", async ({
-  home,
-  webPage,
-  videoPage
+  app
 }) => {
   //Actions
-  await home.header.searchForm.inputSearchCriteria(testData.searchCriteria.first);
-  await home.header.searchForm.clickEnterSearchField();
-  await webPage.header.clickVideoSearchButton()
-  await videoPage.item.expectVideoItemsToBeVisible()
-  await videoPage.header.searchForm.clickSearchField()
+  await app.home.open()
+  await app.home.header.searchForm.inputSearchCriteria("ivanka");
+  await app.home.header.searchForm.clickEnterSearchField();
+  await app.webPage.header.clickVideoSearchButton()
+  await app.videoPage.item.expectVideoItemsToBeVisible()
+  await app.videoPage.header.searchForm.clickSearchField()
  
   //Assert
-  await videoPage.header.searchForm.expectSuggestIsDisplayed();
-  await videoPage.header.searchForm.expectSuggestToHaveCount(5);
-  await videoPage.header.searchForm.expectSuggestToContains(testData.searchCriteria.first);
+  await app.videoPage.header.searchForm.expectSuggestIsDisplayed();
+  await app.videoPage.header.searchForm.expectSuggestToHaveCount(5);
+  await app.videoPage.header.searchForm.expectSuggestToContains("ivanka");
 });
 
 test("Check suggest on the news search", async ({
-  home,
-  webPage,
-  newsPage
+  app
 }) => {
   //Actions
-  await home.header.searchForm.inputSearchCriteria(testData.searchCriteria.first);
-  await home.header.searchForm.clickEnterSearchField();
-  await webPage.item.expectWebItemsToBeVisible()
-  await webPage.header.clickHamburgerMenuButton();
-  await webPage.header.hamburgerMenu.selectRegion("Germany");
-  await webPage.header.clickNewsSearchButton()
-  await newsPage.item.expectNewsItemsToBeVisible()
-  await newsPage.header.searchForm.clickSearchField()
+  await app.home.open()
+  await app.home.header.searchForm.inputSearchCriteria("ivanka");
+  await app.home.header.searchForm.clickEnterSearchField();
+  await app.webPage.item.expectWebItemsToBeVisible()
+  await app.webPage.header.clickHamburgerMenuButton();
+  await app.webPage.header.hamburgerMenu.selectRegion("Germany");
+  await app.webPage.header.clickNewsSearchButton()
+  await app.newsPage.item.expectNewsItemsToBeVisible()
+  await app.newsPage.header.searchForm.clickSearchField()
  
   //Assert
-  await newsPage.header.searchForm.expectSuggestIsDisplayed();
-  await newsPage.header.searchForm.expectSuggestToHaveCount(5);
-  await newsPage.header.searchForm.expectSuggestToContains(testData.searchCriteria.first);
+  await app.newsPage.header.searchForm.expectSuggestIsDisplayed();
+  await app.newsPage.header.searchForm.expectSuggestToHaveCount(5);
+  await app.newsPage.header.searchForm.expectSuggestToContains("ivanka");
 });
 
 test("Check suggest on the shopping search", async ({
-  home,
-  webPage,
-  shoppingPage
+  app
 }) => {
   //Actions
-  await home.header.searchForm.inputSearchCriteria(testData.searchCriteria.first);
-  await home.header.searchForm.clickEnterSearchField();
-  await webPage.item.expectWebItemsToBeVisible()
-  await webPage.header.clickHamburgerMenuButton();
-  await webPage.header.hamburgerMenu.selectRegion("Germany");
-  await webPage.header.clickShoppingSearchButton()
-  await shoppingPage.item.expectShoppingItemsToBeVisible()
-  await shoppingPage.header.searchForm.clickSearchField()
+  await app.home.open()
+  await app.home.header.searchForm.inputSearchCriteria("ivanka");
+  await app.home.header.searchForm.clickEnterSearchField();
+  await app.webPage.item.expectWebItemsToBeVisible()
+  await app.webPage.header.clickHamburgerMenuButton();
+  await app.webPage.header.hamburgerMenu.selectRegion("Germany");
+  await app.webPage.header.clickShoppingSearchButton()
+  await app.shoppingPage.item.expectShoppingItemsToBeVisible()
+  await app.shoppingPage.header.searchForm.clickSearchField()
  
   //Assert
-  await shoppingPage.header.searchForm.expectSuggestIsDisplayed();
-  await shoppingPage.header.searchForm.expectSuggestToHaveCount(5);
-  await shoppingPage.header.searchForm.expectSuggestToContains(testData.searchCriteria.first);
+  await app.shoppingPage.header.searchForm.expectSuggestIsDisplayed();
+  await app.shoppingPage.header.searchForm.expectSuggestToHaveCount(5);
+  await app.shoppingPage.header.searchForm.expectSuggestToContains("ivanka");
 });
 
 test("Check suggest on the music search", async ({
-  home,
-  webPage,
-  musicPage
+  app
 }) => {
   //Actions
-  await home.header.searchForm.inputSearchCriteria(testData.searchCriteria.first);
-  await home.header.searchForm.clickEnterSearchField();
-  await webPage.header.clickMusicSearchButton()
-  await musicPage.track.expectMusicTracksToBeVisible()
-  await musicPage.header.searchForm.clickSearchField()
+  await app.home.open()
+  await app.home.header.searchForm.inputSearchCriteria("ivanka");
+  await app.home.header.searchForm.clickEnterSearchField();
+  await app.webPage.header.clickMusicSearchButton()
+  await app.musicPage.track.expectMusicTracksToBeVisible()
+  await app.musicPage.header.searchForm.clickSearchField()
  
   //Assert
-  await musicPage.header.searchForm.expectSuggestIsDisplayed();
-  await musicPage.header.searchForm.expectSuggestToHaveCount(5);
-  await musicPage.header.searchForm.expectSuggestToContains(testData.searchCriteria.first);
+  await app.musicPage.header.searchForm.expectSuggestIsDisplayed();
+  await app.musicPage.header.searchForm.expectSuggestToHaveCount(5);
+  await app.musicPage.header.searchForm.expectSuggestToContains("ivanka");
 });
 
 

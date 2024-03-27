@@ -1,43 +1,33 @@
-import { test } from "../../utils/fixturePages";
-import fs from 'fs';
-import path from 'path';
-import { parse } from 'csv-parse/sync';
+import { test } from "../../utils/fixtures";
+import { readCsvFile } from "../../helpers/csvHelper"
 
-const emailTable = parse(fs.readFileSync(path.join(__dirname, '../../localization/email.csv')), {
-    columns: true,
-    skip_empty_lines: true
-  });
-  
+  const emailTable = readCsvFile('../localization/email.csv')
   for (const { test_case, language, expected_content} of emailTable) {
     test(`${test_case} Check content of email page for  ${language} localization`, async ({
-      emailPage
+      app
     }) => {
       //Actions
-      await emailPage.waitUntilPageIsFullyLoaded();
-      await emailPage.header.clickHamburgerMenuButton();
-      await emailPage.header.hamburgerMenu.clickLanguagesDropdownInHamburgerMenu();
-      await emailPage.header.hamburgerMenu.clickLanguageLinkInDropdown(language);
+      await app.emailPage.open()
+      await app.emailPage.header.clickHamburgerMenuButton();
+      await app.emailPage.header.hamburgerMenu.clickLanguagesDropdown();
+      await app.emailPage.header.hamburgerMenu.clickLanguageLinkInDropdown(language);
   
       //Assert
-      await emailPage.expectElementToHaveText(emailPage.allContent, expected_content)
+      await app.emailPage.expectElementToHaveText(app.emailPage.allContent, expected_content)
     });
   }
-  const vpnTable = parse(fs.readFileSync(path.join(__dirname, '../../localization/vpn.csv')), {
-    columns: true,
-    skip_empty_lines: true
-  });
-  
+  const vpnTable = readCsvFile('../localization/vpn.csv')
   for (const { test_case, language, expected_content} of vpnTable) {
     test(`${test_case} Check content of vpn page for  ${language} localization`, async ({
-      vpnPage
+      app
     }) => {
       //Actions
-      await vpnPage.waitUntilPageIsFullyLoaded();
-      await vpnPage.header.clickHamburgerMenuButton();
-      await vpnPage.header.hamburgerMenu.clickLanguagesDropdownInHamburgerMenu();
-      await vpnPage.header.hamburgerMenu.clickLanguageLinkInDropdown(language);
+      await app.vpnPage.open()
+      await app.vpnPage.header.clickHamburgerMenuButton();
+      await app.vpnPage.header.hamburgerMenu.clickLanguagesDropdown();
+      await app.vpnPage.header.hamburgerMenu.clickLanguageLinkInDropdown(language);
   
       //Assert
-      await vpnPage.expectElementToHaveText(vpnPage.allContent, expected_content)
+      await app.vpnPage.expectElementToHaveText(app.vpnPage.allContent, expected_content)
     });
   }

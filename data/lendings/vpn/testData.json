@@ -23,30 +23,36 @@
         },
         {
             "testID": "4",
+            "expectedLink": "^https://play\\.google\\.com/store\\/apps/details\\?id=com.swisscows.vpn",
+            "locatorId" : "Android",
+            "expectedTitle": "Secure Swisscows VPN - Apps on Google Play"
+        },
+        {
+            "testID": "5",
             "expectedLink": "https://blog.swisscows.com/en/browse-anonymously/",
             "locatorId" : "surf anonymously",
             "expectedTitle": "Browse anonymously: This is what you have to watch out for on the Internet"
         },
         {
-            "testID": "5",
+            "testID": "6",
             "expectedLink": "https://accounts.swisscows.com/register",
             "locatorId" : "Register",
             "expectedTitle": "Register - Swisscows Accounts"
         },
         {
-            "testID": "6",
+            "testID": "7",
             "expectedLink": "^https://accounts\\.swisscows\\.com/login\\?ReturnUrl=%2Fproducts%2Fswisscows-vpn-standard",
             "locatorId" : "Monthly CHF 10.00 per month",
             "expectedTitle": "Login - Swisscows Accounts"
         },
         {
-            "testID": "7",
+            "testID": "8",
             "expectedLink": "^https://accounts\\.swisscows\\.com/login\\?ReturnUrl=%2Fproducts%2Fswisscows-vpn-standard",
             "locatorId" : "Annual CHF 7.00 per month CHF",
             "expectedTitle": "Login - Swisscows Accounts"
         },
         {
-            "testID": "8",
+            "testID": "9",
             "expectedLink": "https://support.swisscows.com/swisscows-vpn/",
             "locatorId" : "Go to support page",
             "expectedTitle": "Swisscows Support (Page 1)"

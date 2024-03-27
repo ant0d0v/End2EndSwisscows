@@ -1,21 +1,23 @@
-import { test, expect } from "../../utils/fixturePages";
+import { test, expect } from "../../utils/fixtures";
 
-test("Check design of the Imprint page ", async ({ imprintPage },testInfo) => {
+test("Check design of the Imprint page ", async ({ app },testInfo) => {
   //Actions
-  await imprintPage.waitUntilPageIsFullyLoaded();
+  await app.imprintPage.open()
+  await app.imprintPage.waitUntilPageIsFullyLoaded();
   //Assert
-  await imprintPage.expectScreenImprintPage(testInfo)
+  await app.imprintPage.expectScreenImprintPage(testInfo)
 });
 
 test("Check design dark theme of the  Imprint page ", async ({
-  imprintPage
+  app
 },testInfo) => {
   //Actions
-  await imprintPage.waitUntilPageIsFullyLoaded();
-  await imprintPage.header.clickHamburgerMenuButton();
-  await imprintPage.header.hamburgerMenu.clickThemeDropdownInHamburgerMenu();
-  await imprintPage.header.hamburgerMenu.clickDarkInHamburgerMenu();
+  await app.imprintPage.open()
+  await app.imprintPage.waitUntilPageIsFullyLoaded();
+  await app.imprintPage.header.clickHamburgerMenuButton();
+  await app.imprintPage.header.hamburgerMenu.clickThemeDropdown();
+  await app.imprintPage.header.hamburgerMenu.clickDarkTheme();
 
   //Assert
-  await imprintPage.expectScreenImprintPage(testInfo)
+  await app.imprintPage.expectScreenImprintPage(testInfo)
 });

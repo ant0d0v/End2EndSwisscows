@@ -1,22 +1,26 @@
 import BaseComponent from "../../base/BaseComponent";
 import HamburgerMenu from "../HamburgerMenu";
-import badgeCounter from "../../components/BadgeCounter";
-import searchForm from "../SearchForm";
+import BadgeCounter from "../../components/BadgeCounter";
+import BadgeEmail from "../../components/BadgeEmail";
+import BadgeTeleguard from "../../components/BadgeTeleguard";
+import BadgeVPN from "../../components/BadgeVPN";
+import SearchForm from "../SearchForm";
 export default class Header extends BaseComponent {
   constructor(page) {
     super(page);
     this.hamburgerMenu = new HamburgerMenu(page);
-    this.badgeCounter = new badgeCounter(page);
-    this.searchForm = new searchForm(page);
+    this.badgeCounter = new BadgeCounter(page);
+    this.badgeEmail = new BadgeEmail(page);
+    this.badgeTeleguard = new BadgeTeleguard(page);
+    this.badgeVPN = new BadgeVPN(page);
+    this.searchForm = new SearchForm(page);
 
     //Locators
     this.allContent = this.page.locator("header.header-home");
-    this.linksInStaticHeader = (name) => this.page.locator(`a.badge-${name}`);
     this.hamburgerMenuButton = this.page.locator(
       "header button.hamburger-menu"
     );
     this.logoSwisscows = this.page.getByRole('link', { name: 'Swisscows', exact: true })
-    this.badgeEmail = this.page.locator("div.badges a.badge-email");
   }
 
   //Actions
@@ -30,19 +34,5 @@ export default class Header extends BaseComponent {
   clickSwisscowsLogo = async () => {
     await this.clickElement(this.logoSwisscows, `Swisscows Logo in the header`);
   };
-
-  clickBadgeEmailAndNavigateToNewPage = async () => {
-    const loginPage = await this.clickElementAndNavigateToNewPage(
-      this.badgeEmail,
-      "badge Email"
-    );
-    return loginPage;
-  };
-  clickLinkInStaticHeaderAndNavigateToNewPage = async (id) => {
-    const newPage = await this.clickElementAndNavigateToNewPage(
-      this.linksInStaticHeader(id),
-      "link of header"
-    );
-    return newPage;
-  };
+  
 }

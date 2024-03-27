@@ -4,8 +4,15 @@
     "URL_MAIN_PAGE" : "https://dev.swisscows.com/en",
     "URL_LOGIN_PAGE" : "/accounts.swisscows.com/login\\?ReturnUrl=.*",
     "URL_PRIVACY_POLICY" : "https://dev.swisscows.com/en/privacy",
+    "ULR_EMAIL_PAGE":"https://dev.swisscows.com/en/swisscows-email",
+    "ULR_TELEGUARD_PAGE":"https://teleguard.com/en",
+    "ULR_VPN_PAGE": "https://dev.swisscows.com/en/anonymous-vpn",
     
     "TITLE_MAIN_PAGE" : "Your private and anonymous search engine Swisscows",
     "TITLE_PRIVACY_POLICY" : "Privacy Policy | Swisscows",
-    "TITLE_LOGIN_PAGE" : "Login - Swisscows Accounts"
+    "TITLE_LOGIN_PAGE" : "Login - Swisscows Accounts",
+    "TITLE_EMAIL_PAGE": "Swisscows.email - My secure e-mail",
+    "TITLE_TELEGUARD_PAGE": "TeleGuard - secure messenger from Switzerland",
+    "TITLE_VPN_PAGE": "Surf anonymously with VPN - Secure web surfing with Swisscows",
+    "RED": "rgb(223, 93, 93)"
 }

@@ -1,4 +1,4 @@
-import { test } from "../../utils/fixturePages";
+import { test } from "../../utils/fixtures";
 const testData = JSON.parse(
   JSON.stringify(
     require("../../data/pages/social-projects/testData.json")
@@ -6,106 +6,123 @@ const testData = JSON.parse(
 );
 
 test("Check that border is red and 2px when clicking on the Charity Haiti slider images", async ({
-  charityPage,
+  app
 }) => {
+  //Actions
+  await app.charityPage.open()
   //Assert
-  await charityPage.imagesGallery.expectBorderWhenClickingOnSmallImages(
-    charityPage.imagesGallery.charityHaitiGallerySmallImages,
+  await app.charityPage.imagesGallery.expectBorderWhenClickingOnSmallImages(
+    app.charityPage.imagesGallery.charityHaitiGallerySmallImages,
     "2px solid rgb(223, 93, 93)"
   );
 });
 
 test("Check that border is red and 2px when clicking on the Charity Columbia slider images", async ({
-  charityPage,
+  app
 }) => {
+  //Actions
+  await app.charityPage.open()
   //Assert
-  await charityPage.imagesGallery.expectBorderWhenClickingOnSmallImages(
-    charityPage.imagesGallery.charityColumbiaGallerySmallImages,
+  await app.charityPage.imagesGallery.expectBorderWhenClickingOnSmallImages(
+    app. charityPage.imagesGallery.charityColumbiaGallerySmallImages,
     "2px solid rgb(223, 93, 93)"
   );
 });
 
 test("Check the swipe to left in  Charity Columbia slider ", async ({
-  charityPage,
+  app
 }) => {
   //Actions
-  await charityPage.waitUntilPageIsFullyLoaded();
-  await charityPage.imagesGallery.swipeLeftToLastImage(
-    await charityPage.imagesGallery.charityColumbiaGallerySmallFirstImage,
-    await charityPage.imagesGallery.charityColumbiaGallerySmallLastImage
+  await app.charityPage.open()
+  await app.charityPage.waitUntilPageIsFullyLoaded();
+  await app.charityPage.imagesGallery.swipeLeftToLastImage(
+    await app.charityPage.imagesGallery.charityColumbiaGallerySmallFirstImage,
+    await app.charityPage.imagesGallery.charityColumbiaGallerySmallLastImage
   );
   //Assert
-  await charityPage.imagesGallery.expectAttributeClassOfLastSmallImageCharityColumbiaGallery(
+  await app.charityPage.imagesGallery.expectAttributeClassOfLastSmallImageCharityColumbiaGallery(
     "visible"
   );
 });
 
 test("Check the swipe to left in Charity Haiti slider ", async ({
-  charityPage,
+  app
 }) => {
   //Actions
-  await charityPage.waitUntilPageIsFullyLoaded();
-  await charityPage.imagesGallery.swipeLeftToLastImage(
-    await charityPage.imagesGallery.charityHaitiGallerySmallFirstImage,
-    await charityPage.imagesGallery.charityHaitiGallerySmallLastImage
+  await app.charityPage.open()
+  await app.charityPage.waitUntilPageIsFullyLoaded();
+  await app.charityPage.imagesGallery.swipeLeftToLastImage(
+    await app.charityPage.imagesGallery.charityHaitiGallerySmallFirstImage,
+    await app.charityPage.imagesGallery.charityHaitiGallerySmallLastImage
   );
 
   //Assert
-  await charityPage.imagesGallery.expectAttributeClassOfLastSmallImageCharityHaitiGallery(
+  await app.charityPage.imagesGallery.expectAttributeClassOfLastSmallImageCharityHaitiGallery(
     "visible"
   );
 });
 
 test("Check that small image matches the large image when clicking on the small image in Charity Haiti slider", async ({
-  charityPage,
+  app
 }) => {
+  //Actions
+  await app.charityPage.open()
   //Assert
-  await charityPage.imagesGallery.expectAttributeOfLargeImagesWhenClickingInHaitiGallery(
+  await app.charityPage.imagesGallery.expectAttributeOfLargeImagesWhenClickingInHaitiGallery(
     "active"
   );
 });
 
 test("Check that small image matches the large image when clicking on the small image in Charity Columbia slider", async ({
-  charityPage,
+ app
 }) => {
+  //Actions
+  await app.charityPage.open()
   //Assert
-  await charityPage.imagesGallery.expectAttributeOfLargeImagesWhenClickingInColumbiaGallery(
+  await app.charityPage.imagesGallery.expectAttributeOfLargeImagesWhenClickingInColumbiaGallery(
     "active"
   );
 });
 
-test("Check that the video is playing", async ({ charityPage }) => {
+test("Check that the video is playing", async ({ app }) => {
+  //Actions
+  await app.charityPage.open()
   //Assert
-  await charityPage.videoPlayer.expectVideoToPlay();
+  await app.charityPage.videoPlayer.expectVideoToPlay();
 });
 
 for (const { testID, expectedLink, locatorId, expectedTitle, } of testData.charityLinks) {
   test(`${testID} Check navigation to corresponding page for  ${locatorId} link`, async ({
-    charityPage,
+    app
 
   }) => {
     //Actions
-    const currentPage = await charityPage.clickLinkOnThePage(locatorId);
+    await app.charityPage.open()
+    const currentPage = await app.charityPage.clickLinkOnThePage(locatorId);
 
     //Assert
-    await charityPage.expectHaveUrl(currentPage, expectedLink);
-    await charityPage.expectHaveTitle(currentPage, expectedTitle);
+    await app.charityPage.expectHaveUrl(currentPage, expectedLink);
+    await app.charityPage.expectHaveTitle(currentPage, expectedTitle);
   });
 }
-test("Check design of the charity page ", async ({ charityPage },testInfo) => {
+test("Check design of the charity page ", async ({ app },testInfo) => {
+  //Actions
+  await app.charityPage.open()
+  await app.charityPage.expectMapsToBeVisible();
   //Assert
-  await charityPage.expectScreenCharityPage(testInfo);
+  await app.charityPage.expectScreenCharityPage(testInfo);
 });
 
 test("Check design dark theme of the charity page ", async ({
-  charityPage
+  app
 },testInfo) => {
   //Actions
-  await charityPage.waitUntilPageIsFullyLoaded();
-  await charityPage.header.clickHamburgerMenuButton();
-  await charityPage.header.hamburgerMenu.clickThemeDropdownInHamburgerMenu();
-  await charityPage.header.hamburgerMenu.clickDarkInHamburgerMenu();
+  await app.charityPage.open()
+  await app.charityPage.expectMapsToBeVisible();
+  await app.charityPage.header.clickHamburgerMenuButton();
+  await app.charityPage.header.hamburgerMenu.clickThemeDropdown();
+  await app.charityPage.header.hamburgerMenu.clickDarkTheme();
 
   //Assert
-  await charityPage.expectScreenCharityPage(testInfo);
+  await app.charityPage.expectScreenCharityPage(testInfo);
 });

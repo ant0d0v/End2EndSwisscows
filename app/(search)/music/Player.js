@@ -12,7 +12,9 @@ export default class MusicPlayer extends BaseComponent {
     this.shuffleButton = this.page.getByRole('button', { name: 'Shuffle' })
     this.favoriteButton = this.page.locator(".audio-player button.button.favorite")
     this.timeLine = this.page.locator('.audio-player .timeline')
-    this.durationTime = this.page.getByText('0:04').nth(1)
+    this.durationTime = this.page.locator("div.audio-player div.timeline span").nth(0)
+    this.allButtons = this.page.locator('.audio-player button')
+    this.image = this.page.locator('.audio-player img')
   }
   
   //Actions
@@ -53,9 +55,40 @@ export default class MusicPlayer extends BaseComponent {
       `favorite button in the player`
     );
   };
+  clickFavoriteButtonAndGetResponse = async () => {
+    let response;
+    const responsePromise = this.page.waitForResponse(`${ process.env.API_URL}/v1/user/music/tracks`)
+    await this.clickElement(this.favoriteButton,
+      `favorite button n the player`
+    );
+    response = await responsePromise;
+    const responseBody = await response.json();
+    return responseBody.id;
+  };
+  
   //Verify 
   async expectTimeToHaveText(value) {
-    await this.expectElementToHaveText(this.durationTime,value);
+    await this.expectTextToContain(this.durationTime,value);
   }
-
+  expectImageToHaveWight = async (property, value) => {
+    await this.expectElementToHaveJSProperty(this.image , property, value);
+  };
+  expectProgressBarToHaveTimeValue = async (value) => {
+    await this.expectAttributeToHaveValue(this.progressBar, "style", value) 
+  };
+  expectButtonIsPlay = async () => {
+    await this.expectAttributeToHaveValue(this.playButton,"xlink:href", /play/)
+  };
+  expectButtonIsPause = async () => {
+    await this.expectAttributeToHaveValue(this.playButton,"xlink:href", /pause/)
+  };
+  expectShuffleButtonIsActive = async () => {
+  await this.expectAttributeClassOfElement(this.shuffleButton, /active/) 
+  }
+  expectFavoriteButtonIsActive = async () => {
+    await this.expectAttributeClassOfElement(this.favoriteButton, /active/) 
+  }
+  expectFavoriteButtonIsNotActive = async () => {
+    await this.expectAttributeClassOfElement(this.favoriteButton, "button favorite") 
+  }
 }

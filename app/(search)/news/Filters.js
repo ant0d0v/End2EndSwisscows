@@ -7,16 +7,22 @@ export default class Filters extends BaseComponent {
     super(page);
     this.buttonMenu = new ButtonMenu(page);
 
-    //Locators
-    this.filterList = (name) => this.page.getByRole('menuitem', { name: `${name}` })
-    this.dropdownOfFilterByDate = this.page.locator('ul.popup.menu li.menuitem')
-  }
-  //Actions
-  clickFilterInDropdownListAndGetResponse = async (name, expectedLink) => {
-    const responsePromise = this.page.waitForResponse(expectedLink);
-    await this.clickElement(this.filterList(name),`filter in dropdown` );
-    const response = await responsePromise;
-    return response;
-  };
+     //Locators
+     this.filterByDate = this.page.getByRole('button', { name: 'Filter by date' })
+     this.attributeFilterByDate = this.page.locator("div.button-menu")
+   }
+   
+   //Actions
+   clickByDate = async() => {
+     await this.clickElement(this.filterByDate,`filter by date in dropdown` );
+   };
+   
+   //Verify
+   expectByDateIsOpened  = async() => {
+     await this.expectAttributeClassOfElement(this.attributeFilterByDate, /open/)
+   }
+   expectByDateIsClosed = async() => {
+     await this.expectAttributeClassOfElement(this.attributeFilterByDate, "button-menu")
+   }
   
 }

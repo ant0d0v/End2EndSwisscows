@@ -1,4 +1,4 @@
-import { test, expect } from "../../utils/fixturePages";
+import { test, expect } from "../../utils/fixtures";
 const testData = JSON.parse(
   JSON.stringify(require("../../data/pages/donation/testData.json"))
 );
@@ -6,43 +6,47 @@ test.use({ headless: false });
 
 for (const { testID, pdfLink, locatorId } of testData.donationPdfLinks) {
   test(`${testID} Check navigation to corresponding page for  ${locatorId} pdf link and validate pdf`, async ({
-   donationPage,
+   app
   },testInfo) => {
     //Actions
-    const currentPage = await donationPage.clickPdfLinkOnThePage(locatorId);
+    await app.donationPage.open()
+    const currentPage = await app.donationPage.clickPdfLinkOnThePage(locatorId);
     
     //Assert
-    await donationPage.expectHaveUrl(currentPage, pdfLink);
-    await donationPage.expectValidatePdfFile(currentPage, pdfLink,testInfo);
+    await app.donationPage.expectHaveUrl(currentPage, pdfLink);
+    await app.donationPage.expectValidatePdfFile(currentPage, pdfLink,testInfo);
   });
 }
 for (const { testID, expectedLink, locatorId, expectedTitle, } of testData.donationLinks) {
   test(`${testID} Check navigation to corresponding pages for  ${locatorId} link`, async ({
-    donationPage
+    app
   }) => {
     //Actions
-    const currentPage = await donationPage.clickLinkOnThePage(locatorId);
+    await app.donationPage.open()
+    const currentPage = await app.donationPage.clickLinkOnThePage(locatorId);
 
     //Assert
-    await donationPage.expectHaveUrl(currentPage, expectedLink);
-    await donationPage.expectHaveTitle(currentPage, expectedTitle);
+    await app.donationPage.expectHaveUrl(currentPage, expectedLink);
+    await app.donationPage.expectHaveTitle(currentPage, expectedTitle);
   });
 }
 
-test("Check design of the Donation page ", async ({ donationPage },testInfo) => {
+test("Check design of the Donation page ", async ({ app },testInfo) => {
+  //Actions
+  await app.donationPage.open()
   //Assert
-  await donationPage.expectScreenDonationPage(testInfo);
+  await app.donationPage.expectScreenDonationPage(testInfo);
 });
 
 test("Check design dark theme of the  Donation page ", async ({
-  donationPage
+  app
 },testInfo) => {
   //Actions
-  await donationPage.waitUntilPageIsFullyLoaded();
-  await donationPage.header.clickHamburgerMenuButton();
-  await donationPage.header.hamburgerMenu.clickThemeDropdownInHamburgerMenu();
-  await donationPage.header.hamburgerMenu.clickDarkInHamburgerMenu();
+  await app.donationPage.open()
+  await app.donationPage.header.clickHamburgerMenuButton();
+  await app.donationPage.header.hamburgerMenu.clickThemeDropdown();
+  await app.donationPage.header.hamburgerMenu.clickDarkTheme();
 
   //Assert
-  await donationPage.expectScreenDonationPage(testInfo);
+  await app.donationPage.expectScreenDonationPage(testInfo);
 });

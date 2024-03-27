@@ -1,4 +1,4 @@
-import { test, expect } from "../../utils/fixturePages";
+import { test, expect } from "../../utils/fixtures";
 const testData = JSON.parse(
   JSON.stringify(require("../../data/pages/contact/testData.json"))
 );
@@ -6,138 +6,148 @@ const constantsData = JSON.parse(
   JSON.stringify(require("../../data/project-constants/testData.json"))
 );
 
-test("Check color of Send button when hovering ", async ({ contactPage }) => {
+test("Check color of Send button when hovering ", async ({ app }) => {
+  //Actions
+  await app.contactPage.open()
   //Assert
-  await contactPage.expectColorLinkWhenHovering(contactPage.sendButton, "background", /rgb\(191, 0, 0\)/);
+  await app.contactPage.expectColorLinkWhenHovering(app.contactPage.sendButton, "background", /rgb\(191, 0, 0\)/);
 });
 
 test.skip(`Check border color of name, email, message when sending form with empty fields`, async ({
-  contactPage
+  app
 }) => {
   //Actions
-  await contactPage.clickSendButton();
+  await app.contactPage.open()
+  await app.contactPage.clickSendButton();
   //Assert
-  await contactPage.expectBorderColorFormField(testData.formFields[0].yourName, testData.formFields[0].redColor);
-  await contactPage.expectBorderColorFormField(testData.formFields[1].email, testData.formFields[1].redColor);
-  await contactPage.expectBorderColorFormField(testData.formFields[2].yourMessage, testData.formFields[2].redColor);
+  await app.contactPage.expectBorderColorFormField(testData.formFields[0].yourName, testData.formFields[0].redColor);
+  await app.contactPage.expectBorderColorFormField(testData.formFields[1].email, testData.formFields[1].redColor);
+  await app.contactPage.expectBorderColorFormField(testData.formFields[2].yourMessage, testData.formFields[2].redColor);
 });
 
 test.skip(`Check border color of name, email, message when sending form with name only`, async ({
-  contactPage,
+  app
 }) => {
   //Actions
-  await contactPage.inputYouNameField("Test");
-  await contactPage.clickSendButton();
+  await app.contactPage.open()
+  await app.contactPage.inputYouNameField("Test");
+  await app.contactPage.clickSendButton();
 
   //Assert
-  await contactPage.expectBorderColorFormField(testData.formFields[0].yourName, testData.formFields[0].greyColor);
-  await contactPage.expectBorderColorFormField(testData.formFields[1].email, testData.formFields[1].redColor);
-  await contactPage.expectBorderColorFormField(testData.formFields[2].yourMessage, testData.formFields[2].redColor);
+  await app.contactPage.expectBorderColorFormField(testData.formFields[0].yourName, testData.formFields[0].greyColor);
+  await app.contactPage.expectBorderColorFormField(testData.formFields[1].email, testData.formFields[1].redColor);
+  await app.contactPage.expectBorderColorFormField(testData.formFields[2].yourMessage, testData.formFields[2].redColor);
 });
 
 test.skip(`Check border color of name, email, message when sending form with email only`, async ({
-  contactPage,
+  app
 }) => {
   //Actions
-  await contactPage.inputEmailField("test@gmail.com");
-  await contactPage.clickSendButton();
+  await app.contactPage.open()
+  await app.contactPage.inputEmailField("test@gmail.com");
+  await app.contactPage.clickSendButton();
 
   //Assert
-  await contactPage.expectBorderColorFormField(testData.formFields[0].yourName, testData.formFields[0].redColor);
-  await contactPage.expectBorderColorFormField(testData.formFields[1].email, testData.formFields[1].greyColor);
-  await contactPage.expectBorderColorFormField(testData.formFields[2].yourMessage, testData.formFields[2].redColor);
+  await app.contactPage.expectBorderColorFormField(testData.formFields[0].yourName, testData.formFields[0].redColor);
+  await app.contactPage.expectBorderColorFormField(testData.formFields[1].email, testData.formFields[1].greyColor);
+  await app.contactPage.expectBorderColorFormField(testData.formFields[2].yourMessage, testData.formFields[2].redColor);
 });
 
 test.skip(`Check border color of name, email, message when sending form with message only`, async ({
-  contactPage,
+  app
 }) => {
   //Actions
-  await contactPage.inputMessageField("Check form using automation testing using playwright");
-  await contactPage.clickSendButton();
+  await app.contactPage.open()
+  await app.contactPage.inputMessageField("Check form using automation testing using playwright");
+  await app.contactPage.clickSendButton();
 
   //Assert
-  await contactPage.expectBorderColorFormField(testData.formFields[0].yourName, testData.formFields[0].redColor);
-  await contactPage.expectBorderColorFormField(testData.formFields[1].email, testData.formFields[1].redColor);
-  await contactPage.expectBorderColorFormField(testData.formFields[2].yourMessage, testData.formFields[2].greyColor);
+  await app.contactPage.expectBorderColorFormField(testData.formFields[0].yourName, testData.formFields[0].redColor);
+  await app.contactPage.expectBorderColorFormField(testData.formFields[1].email, testData.formFields[1].redColor);
+  await app.contactPage.expectBorderColorFormField(testData.formFields[2].yourMessage, testData.formFields[2].greyColor);
 });
 
 test(`Check send message using all required fields`, async ({
-  contactPage,page
+  app
 }) => {
   //Actions
-  await contactPage.inputYouNameField("Test");
-  await contactPage.inputEmailField("test@gmail.com");
-  await contactPage.inputMessageField("My test");
-  await contactPage.checkAgreeCheckbox()
-  await contactPage.clickSendButton()
+  await app.contactPage.open()
+  await app.contactPage.inputYouNameField("Test");
+  await app.contactPage.inputEmailField("test@gmail.com");
+  await app.contactPage.inputMessageField("My test");
+  await app.contactPage.checkAgreeCheckbox()
+  await app.contactPage.clickSendButton()
 
   //Assert
-  await contactPage.expectH1Text(page, "Contact us")
-  await contactPage.expectSuccessMessage()
-  await contactPage.expectHaveUrl(page, "https://dev.swisscows.com/en/contact?success=true");
+  await app.contactPage.expectH1Text(app.page, "Contact us")
+  await app.contactPage.expectSuccessMessage()
+  await app.contactPage.expectHaveUrl(app.page, "https://dev.swisscows.com/en/contact?success=true");
   
 });
 
 test(`Check "back to search" button `, async ({
-  contactPage, page, home
+  app
 }) => {
   //Actions
-  await contactPage.inputYouNameField("Test");
-  await contactPage.inputEmailField("test@gmail.com");
-  await contactPage.inputMessageField("My test");
-  await contactPage.checkAgreeCheckbox()
-  await contactPage.clickSendButton()
-  await contactPage.clickBackToSearchButton()
+  await app.contactPage.open()
+  await app.contactPage.inputYouNameField("Test");
+  await app.contactPage.inputEmailField("test@gmail.com");
+  await app.contactPage.inputMessageField("My test");
+  await app.contactPage.checkAgreeCheckbox()
+  await app.contactPage.clickSendButton()
+  await app.contactPage.clickBackToSearchButton()
 
   //Assert
-  await home.expectHaveUrl(page, constantsData.URL_MAIN_PAGE);
-  await home.expectHaveTitle(page,constantsData.TITLE_MAIN_PAGE)
-  
+  await app.home.expectHaveUrl(app.page, constantsData.URL_MAIN_PAGE);
+  await app.home.expectHaveTitle(app.page,constantsData.TITLE_MAIN_PAGE)
 });
 
-
 test(`Check the tooltip when sending a message without the "Agree" checkbox`, async ({
-  contactPage
+  app
 }) => {
   //Actions
-  await contactPage.inputYouNameField("Test");
-  await contactPage.inputEmailField("test@gmail.com");
-  await contactPage.inputMessageField("My test");
-  await contactPage.clickSendButton()
+  await app.contactPage.open()
+  await app.contactPage.inputYouNameField("Test");
+  await app.contactPage.inputEmailField("test@gmail.com");
+  await app.contactPage.inputMessageField("My test");
+  await app.contactPage.clickSendButton()
 
   //Assert
-  await contactPage.expectAgreeCheckboxToHaveProperty("Please check this box if you want to proceed.")
+  await app.contactPage.expectAgreeCheckboxToHaveProperty("Please check this box if you want to proceed.")
 });
 
 test(`Check color of "back to search" when hovering `, async ({ 
-  contactPage 
+  app
 }) => {
   //Actions
-  await contactPage.inputYouNameField("Test");
-  await contactPage.inputEmailField("test@gmail.com");
-  await contactPage.inputMessageField("My test");
-  await contactPage.checkAgreeCheckbox()
-  await contactPage.clickSendButton()
+  await app.contactPage.open()
+  await app.contactPage.inputYouNameField("Test");
+  await app.contactPage.inputEmailField("test@gmail.com");
+  await app.contactPage.inputMessageField("My test");
+  await app.contactPage.checkAgreeCheckbox()
+  await app.contactPage.clickSendButton()
 
   //Assert
-  await contactPage.expectColorLinkWhenHovering(contactPage.backToSearchButton, "background", /rgb\(191, 0, 0\)/);
+  await app.contactPage.expectColorLinkWhenHovering(app.contactPage.backToSearchButton, "background", /rgb\(191, 0, 0\)/);
 });
 
 
-test("Check design of the Contact Us page ", async ({ contactPage },testInfo) => {
+test("Check design of the Contact Us page ", async ({ app },testInfo) => {
+  //Actions
+  await app.contactPage.open()
   //Assert
-  await contactPage.expectScreenContactPage(testInfo);
+  await app.contactPage.expectScreenContactPage(testInfo);
 });
 
 test("Check design dark theme of the  Contact Us page ", async ({
-  contactPage
+  app
 },testInfo) => {
   //Actions
-  await contactPage.waitUntilPageIsFullyLoaded();
-  await contactPage.header.clickHamburgerMenuButton();
-  await contactPage.header.hamburgerMenu.clickThemeDropdownInHamburgerMenu();
-  await contactPage.header.hamburgerMenu.clickDarkInHamburgerMenu();
+  await app.contactPage.open()
+  await app.contactPage.header.clickHamburgerMenuButton();
+  await app.contactPage.header.hamburgerMenu.clickThemeDropdown();
+  await app.contactPage.header.hamburgerMenu.clickDarkTheme();
 
   //Assert
-  await contactPage.expectScreenContactPage(testInfo);
+  await app.contactPage.expectScreenContactPage(testInfo);
 });

@@ -1,33 +1,39 @@
-import { test, expect } from "../../../utils/fixturePages";
+import { test, expect } from "../../../utils/fixtures";
 const testData = JSON.parse(
   JSON.stringify(require("../../../data/home/testData.json"))
 );
 
 test('Check that popup "Edge install" redirect to the corresponding page', async ({
-  home
+  app, context
 }) => {
- const externalPage = await home.installSwisscowsLink.clickExtensionPopupAndNavigateToWebStore();
-
+  //Actions
+  await app.home.open()
+ 
   //Assert
-  await home.expectHaveUrl( externalPage, new RegExp(testData.url.extensionEdgeInstall));
-  await home.expectHaveTitle(externalPage, /Swisscows/);
-});
+  await app.home.expectToBeOpenedNewPageAfterClick(app.home.installSwisscowsLink.extensionPopup, 
+    testData.url.extensionEdgeInstall)
+  await app.expectNewPageToHaveTitle(context, /Swisscows/)
+})
 
-test("Check that popup Edge install Is Displayed", async ({ home }) => {
+test("Check that popup Edge install Is Displayed", async ({app }) => {
   const expectedText =
     "Stay with us and set Swisscows as your default search engine. ";
+  //Actions
+  await app.home.open() 
 
   //Assert
-  await home.installSwisscowsLink.expectExtensionPopupIsDisplayed();
-  await home.installSwisscowsLink.expectTextExtensionPopup(expectedText);
+  await app.home.installSwisscowsLink.expectExtensionPopupIsDisplayed();
+  await app.home.installSwisscowsLink.expectTextExtensionPopup(expectedText);
 });
 
 test('Check that the "Install Swisscows Block" button redirect to corresponding URL.', async ({
-  home
+  app, context
 }) => {
-  const externalPage = await home.extensionBlock.clickExtensionBlockAndNavigateToWebStore();
+  //Actions
+  await app.home.open()
 
   //Assert
-  await home.expectHaveUrl( externalPage, new RegExp(testData.url.extensionEdgeInstall));
-  await home.expectHaveTitle(externalPage, /Swisscows/);
+  await app.home.expectToBeOpenedNewPageAfterClick(app.home.extensionBlock.extensionLink, 
+    testData.url.extensionEdgeInstall)
+  await app.expectNewPageToHaveTitle(context, /Swisscows/)
 });

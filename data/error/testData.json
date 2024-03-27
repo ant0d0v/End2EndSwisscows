@@ -3,10 +3,11 @@
    "expectedErrorText": {
     "noResultsFound202Error": "No results found for \"@#@$%^$^dasdsad1231\"SearchTips:Ensure words are spelled correctly.Try rephrasing keywords or using synonyms.Try less specific keywords.Make your queries as concise as possible.",
     "blocked450Error": "No results found for \"porn\"Error 450: BlockedDear user, search results for the query \"porn\" may contain violence and pornography. Since we have decided on the protection of minors, the search for this query is disabled.Thank you very much for your understanding!",
+    "TooManyRequestsError": "Too many requestsError 429: Too many requestsThis error often occurs because of a VPN.If you are using a VPN connection, try disabling it or selecting a different location. Then perform the search again.",
     "unknown500Error": "Oops! Something is wrongError 500: Internal Server ErrorServer doesn’t respond or something else happened. Please, try to refresh this page.",
     "unknownRegion501Error": "Sorry, there are no search results for your regionError 501: Service UnavailableSearchTips:Try to change the search region.",
-    "pageNotFound404Error" : "Page not foundError 404: Not FoundThis error means: URL you've requested hasn't been found on server. Please check the URL you've pointed. You may wish to go to the start page of the site."
-
+    "pageNotFound404Error" : "Page not foundError 404: Not FoundThis error means: URL you've requested hasn't been found on server. Please check the URL you've pointed. You may wish to go to the start page of the site.",
+    "noItemsFound" : "No items foundYou don't have any favorite tracks yet"
     }
 
 }

@@ -1,21 +1,23 @@
-import { test, expect } from "../../utils/fixturePages";
+import { test, expect } from "../../utils/fixtures";
 
-test("Check design of the About Page page ", async ({ aboutPage },testInfo) => {
+test("Check design of the About Page page ", async ({ app },testInfo) => {
     //Actions
-    await aboutPage.waitUntilPageIsFullyLoaded();
+    await app.aboutPage.open()
+    await app.aboutPage.waitUntilPageIsFullyLoaded();
     //Assert
-    await aboutPage.expectScreenAboutPage(testInfo)
+    await app.aboutPage.expectScreenAboutPage(testInfo)
   });
   
   test("Check design dark theme of the   About Page page ", async ({
-    aboutPage
+    app
   },testInfo) => {
     //Actions
-    await aboutPage.waitUntilPageIsFullyLoaded();
-    await aboutPage.header.clickHamburgerMenuButton();
-    await aboutPage.header.hamburgerMenu.clickThemeDropdownInHamburgerMenu();
-    await aboutPage.header.hamburgerMenu.clickDarkInHamburgerMenu();
+    await app.aboutPage.open()
+    await app.aboutPage.waitUntilPageIsFullyLoaded();
+    await app.aboutPage.header.clickHamburgerMenuButton();
+    await app.aboutPage.header.hamburgerMenu.clickThemeDropdown();
+    await app.aboutPage.header.hamburgerMenu.clickDarkTheme();
   
     //Assert
-    await aboutPage.expectScreenAboutPage(testInfo)
+    await app.aboutPage.expectScreenAboutPage(testInfo)
   });

@@ -19,17 +19,9 @@ export default class VpnPage extends BasePage {
     this.tryNowThreeDayLink = this.page.getByRole('link', { name: 'Try now 3 days for free (' })
   }
   //Actions
-  async clickAllLinksAndNavigateToNewPage(id) {
-    await this.page.waitForSelector('h3.question', { state: 'visible' });
-    const newPage = await this.clickElementAndNavigateToNewPage( this.allLinks(id),`${id}`);
-    return newPage;
+  async open(){
+    await this.openPage("/anonymous-vpn")
   }
-  clickLinkInTheSecondQuestionAndNavigateToNewPage = async (name) => {
-    const newPage = await this.clickElementAndNavigateToNewPage( this.allLinksInSecondQuestions(name),
-      `${name} link in the four question`
-    );
-    return newPage;
-  };
   scrollDownToQuestions = async () => {
     await this.scrollByVisibleElement(this.secondQuestion, `second question in accordion menu`);
   }
@@ -46,21 +38,19 @@ export default class VpnPage extends BasePage {
     const downloadPromise = this.page.waitForEvent('download');
 
     await this.clickElement(link, 'windows link');
-  
-    const download = await downloadPromise;
-    await download.saveAs('./tests/download/' + download.suggestedFilename());
-  
+    const download = await downloadPromise;  
     return download;
   }
 
   //Verify
   expectDownloadFileNameToBe = async (download, name) => {
-    expect(download.suggestedFilename()).toBe(name);
+     expect(download.suggestedFilename()).toBe(name);
   }
   expectFileSizeToBeGreaterThan = async (download, sizeByte) => {
     const filePath = (await download.path()).toString();
     expect((await fs.promises.stat(filePath)).size).toBeGreaterThan(sizeByte);
-}
+  }
+ 
   expectScreenVpnPage = async (testInfo) => {
     await this.expectPageToHaveScreenshotWithoutMask(testInfo);
   };

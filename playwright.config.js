@@ -1,6 +1,5 @@
 import { defineConfig, devices } from "@playwright/test";
 
-
 const qaseConfig = {
   apiToken: "2b46839b9d9e02b42ad387107322a116667b40a193f780dd1cfdad80bf40dc8d",
   projectCode: "SWISSCOWS",
@@ -23,6 +22,7 @@ require('dotenv').config();
  * @see https://playwright.dev/docs/test-configuration
  */
 module.exports = defineConfig({
+  
   snapshotDir: "./tests/snapshots",
   // globalSetup: 'utils/globalSetup.js',
   testDir: "./tests",
@@ -68,11 +68,6 @@ module.exports = defineConfig({
     {
       name: "setup",
       testMatch: /global\.setup\.js/,
-      teardown: "cleanup",
-    },
-    {
-      name: "cleanup",
-      testMatch: /.*\.teardown\.js/,
     },
     {
       name: "chromium",
@@ -80,7 +75,7 @@ module.exports = defineConfig({
       use: {
         ...devices["Desktop Chrome"],
         channel: "chrome",
-        storageState: "./data/auth/user.json",
+        storageState: "./data/auth/internalUser.json",
         viewport: { width: 1360, height: 900 },
         screenshot: "only-on-failure",
       },

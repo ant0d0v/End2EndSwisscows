@@ -1,103 +1,129 @@
-import { test, expect } from "../../utils/fixturePages";
+import { test } from "../../utils/fixtures"
 const testData = JSON.parse(
   JSON.stringify(require("../../data/lendings/vpn/testData.json"))
 );
-test("Check design of the VPN page ", async ({ vpnPage },testInfo) => {
+const constantsData = JSON.parse(
+  JSON.stringify(require("../../data/project-constants/testData.json"))
+);
+test("Check design of the VPN page ", async ({ app },testInfo) => {
     //Actions
-    await vpnPage.waitUntilPageIsFullyLoaded();
+    await app.vpnPage.open()
+    await app.vpnPage.waitUntilPageIsFullyLoaded()
     //Assert
-    await vpnPage.expectScreenVpnPage(testInfo)
+    await app.vpnPage.expectScreenVpnPage(testInfo)
   });
   
   test("Check design dark theme of the  VPN page ", async ({
-    vpnPage
+    app
   },testInfo) => {
     //Actions
-    await vpnPage.waitUntilPageIsFullyLoaded();
-    await vpnPage.header.clickHamburgerMenuButton();
-    await vpnPage.header.hamburgerMenu.clickThemeDropdownInHamburgerMenu();
-    await vpnPage.header.hamburgerMenu.clickDarkInHamburgerMenu();
+    await app.vpnPage.open()
+    await app.vpnPage.waitUntilPageIsFullyLoaded();
+    await app.vpnPage.header.clickHamburgerMenuButton();
+    await app.vpnPage.header.hamburgerMenu.clickThemeDropdown();
+    await app.vpnPage.header.hamburgerMenu.clickDarkTheme();
   
     //Assert
-    await vpnPage.expectScreenVpnPage(testInfo)
+    await app.vpnPage.expectScreenVpnPage(testInfo)
   });
 
   for (const { testID, expectedLink, locatorId, expectedTitle,} of testData.allLinks) {
     test(`${testID} Check navigation to corresponding pages for  '${locatorId}' link`, async ({
-      vpnPage
+      app,context
     }) => {
       //Actions
-      const newPage = await vpnPage.clickAllLinksAndNavigateToNewPage(locatorId);
+      await app.vpnPage.open()
   
       //Assert
-      await vpnPage.expectHaveUrl(newPage , new RegExp(expectedLink));
-      await vpnPage.expectHaveTitle(newPage ,expectedTitle);
+      await app.vpnPage.expectToBeOpenedNewPageAfterClick(app.vpnPage.allLinks(locatorId), expectedLink )
+      await app.vpnPage.expectNewPageToHaveTitle(context, expectedTitle)
     });
   }
   for (const { testID, expectedLink, locatorId, expectedTitle,} of testData.allLinksInSecondQuestions) {
     test(`${testID} Check navigation to corresponding pages for  '${locatorId}' link in Second question`, async ({
-      vpnPage
+      app,context
     }) => {
       //Actions
-      await vpnPage.scrollDownToQuestions()
-      await vpnPage.clickSecondQuestion();
-      const newPage = await vpnPage.clickLinkInTheSecondQuestionAndNavigateToNewPage(locatorId);
-  
+      await app.vpnPage.open()
+      await app.vpnPage.scrollDownToQuestions()
+      await app.vpnPage.clickSecondQuestion();
+      
       //Assert
-      await vpnPage.expectHaveUrl(newPage , new RegExp(expectedLink));
-      await vpnPage.expectHaveTitle(newPage ,expectedTitle);
+      await app.vpnPage.expectToBeOpenedNewPageAfterClick(app.vpnPage.allLinksInSecondQuestions(locatorId), expectedLink )
+      await app.vpnPage.expectNewPageToHaveTitle(context, expectedTitle)
     });
   }
   test("Check that all questions were opened on the VPN page.", async ({
-    vpnPage
+    app
   }) => {
     //Action
-    await vpnPage.scrollDownToQuestions()
-    await vpnPage.clickAllQuestions();
+    await app.vpnPage.open()
+    await app.vpnPage.scrollDownToQuestions()
+    await app.vpnPage.clickAllQuestions();
   
     //Assert
-    await vpnPage.faq.expectQuestionsAreOpened();
+    await app.vpnPage.faq.expectQuestionsAreOpened();
   });
   
   test("Check that a question and answer can be opened and closed on the VPN page.", async ({
-    vpnPage,
+    app
   }) => {
     //Action
-    await vpnPage.scrollDownToQuestions()
-    await vpnPage.clickAllQuestions();
-    await vpnPage.faq.expectQuestionsAreOpened();
-    await vpnPage.clickAllQuestions();
+    await app.vpnPage.open()
+    await app.vpnPage.scrollDownToQuestions()
+    await app.vpnPage.clickAllQuestions();
+    await app.vpnPage.faq.expectQuestionsAreOpened();
+    await app.vpnPage.clickAllQuestions();
+
     //Assert
-    await vpnPage.faq.expectQuestionsAreClosed();
+    await app.vpnPage.faq.expectQuestionsAreClosed();
   });
  
   test("Check download windows vpn extension file", async ({
-    vpnPage
+    app
   }) => {
     //Actions
-    const windowsExtension = await vpnPage.downloadVpnExtensionFile(vpnPage.windowsLink);
+    await app.vpnPage.open()
+    const windowsExtension = await app.vpnPage.downloadVpnExtensionFile(app.vpnPage.windowsLink);
   
     //Assert
-    await vpnPage.expectDownloadFileNameToBe(windowsExtension, "SwisscowsVPNInstaller.msi")
-    await vpnPage.expectFileSizeToBeGreaterThan(windowsExtension, 23000000)
+    await app.vpnPage.expectDownloadFileNameToBe(windowsExtension, "SwisscowsVPNInstaller.msi")
+    await app.vpnPage.expectFileSizeToBeGreaterThan(windowsExtension, 23000000)
+    await windowsExtension.delete();
   
   });
 
   test("Check download windows vpn extension file when clicking try now 3 day link", async ({
-    vpnPage
+    app
   }) => {
     //Actions
-    const windowsExtension = await vpnPage.downloadVpnExtensionFile(vpnPage.tryNowThreeDayLink);
+    await app.vpnPage.open()
+    const windowsExtension = await app.vpnPage.downloadVpnExtensionFile(app.vpnPage.tryNowThreeDayLink);
   
     //Assert
-    await vpnPage.expectDownloadFileNameToBe(windowsExtension, "SwisscowsVPNInstaller.msi")
-    await vpnPage.expectFileSizeToBeGreaterThan(windowsExtension, 23000000)
-  
+    await app.vpnPage.expectDownloadFileNameToBe(windowsExtension, "SwisscowsVPNInstaller.msi")
+    await app.vpnPage.expectFileSizeToBeGreaterThan(windowsExtension, 23000000)
+    await windowsExtension.delete();
+    
   });
 
-  test("Check that buttons have hover effect on vpn page", async ({ vpnPage }) => {
-
+  test("Check that buttons have hover effect on vpn page", async ({ app }) => {
+    //Actions
+    await app.vpnPage.open()
+    
     // Assert
-    await vpnPage.expectColorsLinksWhenHovering(vpnPage.allButtons, "background", 
+    await app.vpnPage.expectColorsLinksWhenHovering(app.vpnPage.allButtons, "background", 
     "rgb(0, 93, 119) none repeat scroll 0% 0% / auto padding-box border-box");
+  });
+
+  test("Clicking on the swisscows's logo on vpn page leads to the home page.", async ({
+    app
+  }) => {
+    //Actions
+    await app.vpnPage.open()
+    await app.vpnPage.header.clickSwisscowsVpnLogo();
+  
+    //Assert
+    await app.home.expectHaveUrl(app.home.page, constantsData.URL_MAIN_PAGE);
+    await app.home.expectHaveTitle(app.home.page, constantsData.TITLE_MAIN_PAGE );
   });

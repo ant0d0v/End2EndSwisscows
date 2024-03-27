@@ -8,15 +8,6 @@ export default class ExtensionPopup extends BaseComponent {
     this.closeButtonInExtensionPopup = this.page.locator("div").filter({ hasText: "Install Swisscows" }).getByRole("button");
   }
   //Actions
-
-  clickExtensionPopupAndNavigateToWebStore = async () => {
-    const newPage = await this.clickElementAndNavigateToNewPage(
-      this.extensionPopup,
-      "popup Install Swisscows link"
-    );
-    return newPage;
-  };
-
   clickCloseButtonInExtensionPopup = async () => {
     await this.clickElement(
       this.closeButtonInExtensionPopup,

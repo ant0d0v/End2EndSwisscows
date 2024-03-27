@@ -17,7 +17,10 @@ export default class DonationPage extends BasePage {
   }
 
   //Actions
-
+  async open(){
+    await this.openPage("/donation")
+  }
+  
   async clickPdfLinkOnThePage(id) {
     const newPage = await this.clickElementAndNavigateToNewPage(
       this.pdfLinks(id),

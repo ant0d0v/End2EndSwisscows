@@ -1,103 +1,101 @@
-import { test } from "../../utils/fixturePages";
-const testData = JSON.parse(
-  JSON.stringify(require("../../data/header/testData.json"))
+import { test } from "../../utils/fixtures";
+const constanta = JSON.parse(
+  JSON.stringify(require("../../data/project-constants/testData.json"))
 );
 const main = JSON.parse(
   JSON.stringify(require("../../data/home/testData.json"))
 );
 
 test("Check that suggest is displayed", async ({
-  home
+  app
 }) => {
-  await home.reloadPage();
-  await home.waitUntilPageIsFullyLoaded();
-  await home.header.searchForm.inputSearchCriteria(testData.searchCriteria.first);
-
+  await app.home.open()
+  await app.home.reloadPage();
+  await app.home.waitUntilPageIsFullyLoaded();
+  await app.home.header.searchForm.inputSearchCriteria("ivanka");
+  
   //Assert
-  await home.header.searchForm.expectSuggestIsDisplayed();
-  await home.header.searchForm.expectSuggestToHaveCount(5);
-  await home.header.searchForm.expectSuggestToContains(
-    testData.searchCriteria.first
-  );
+  await app.home.header.searchForm.expectSuggestIsDisplayed();
+  await app.home.header.searchForm.expectSuggestToHaveCount(5);
+  await app.home.header.searchForm.expectSuggestToContains("ivanka");
 });
 
 test("Check that all questions were opened on the home page.", async ({
-  home,
+  app,
 }) => {
-  //Actions
-  await home.scrollDownToQuestions()
-  await home.clickAllQuestions();
+  //Action
+  await app.home.open()
+  await app.home.scrollDownToQuestions()
+  await app.home.clickAllQuestions();
 
   //Assert
-  await home.faq.expectQuestionsAreOpened();
+  await app.home.faq.expectQuestionsAreOpened();
 });
 
 test("Check that a question and answer can be opened and closed on the home page.", async ({
-  home,
+  app,
 }) => {
-  //Actions
-  await home.scrollDownToQuestions()
-  await home.clickAllQuestions();
-  await home.faq.expectQuestionsAreOpened();
-  await home.clickAllQuestions();
+  //Action
+  await app.home.open()
+  await app.home.scrollDownToQuestions()
+  await app.home.clickAllQuestions();
+  await app.home.faq.expectQuestionsAreOpened()
+  await app.home.clickAllQuestions();
 
   //Assert
-  await home.faq.expectQuestionsAreClosed();
+  await app.home.faq.expectQuestionsAreClosed();
 });
 
 test("Check that the link in the fourth question leads to the expected URL.", async ({
-  home,
+  app, context
 }) => {
-  const expectedH1text = "How to use Swisscows as default search";
-   //Actions
-  await home.scrollDownToQuestions()
-  await home.clickFourQuestion();
-  const DefaultSearchPage = await home.clickLinkInTheFourQuestionAndNavigateToDefaultSearchPage();
-  
+  //Action
+  await app.home.open()
+  await app.home.scrollDownToQuestions()
+  await app.home.clickFourQuestion();
+
   //Assert
-  await home.expectHaveUrl( DefaultSearchPage, main.url.defaultSearchPage);
-  await home.expectH1Text(DefaultSearchPage, expectedH1text);
+  await app.home.expectToBeOpenedNewPageAfterClick(
+    app.home.linkInTheFourQuestion, main.url.defaultSearchPage)
+  await app.defaultSearchPage.expectNewPageToHaveTitle(context, 
+    "Install Swisscows and use it as the default search");
 });
 
-test("Check the texts of questions on the home page.", async ({ home }) => {
-  const expectedAnswers = [
-    "Our anonymous search engine protects the privacy of our users when searching and from inappropriate content when finding it. We do not use cookies or other tracking technologies, with us each search query remains anonymous and each user a guest without a user profile.",
-    "Protecting our users' data is an essential part of our DNA and thus a core promise of the anonymous search engine Swisscows. We do not store data, build search history or deliver ads based on collected data. Our technology is built in such a way that the storage of user data is not even possible.",
-    "With us you are sure to find what you are looking for! Thanks to the cooperation of our anonymous search engine with Bing, as well as over 20 years of experience and research in the field of search technologies and a constant development, there are hardly any search requests that we cannot fulfill. The index-based country search and Swisscow's semantics ensure intelligent and fast finding.",
-    "Switching is possible at any time. To use the anonymous search engine Swisscows as the default search engine in the browser (Chrome, Edge, Firefox, etc.), simply click on the link that appears below the search box and follow the browser-specific instructions. This is as simple and safe as searching with the anonymous search engine Swisscows.",
-    "We earn money with search ads delivered by Bing. Swisscows has an exclusive cooperation agreement with Bing. These ads appear exclusively based on your own search query, which is submitted to Bing. The anonymous search engine Swisscows does not collect personal data and accordingly cannot transmit any data. From each click on an ad, Swisscows receives a share of the advertising revenue from Bing. In this way, we continue to invest in our technology and support social projects.",
-    "Our vision is that every user can be online without fear of surveillance, annoying advertising and unwanted data storage. We have been working towards this goal for over 20 years. Fortunately, data security has now become a relevant topic and many people have understood what all happens to their data completely without their knowledge.We don't want to share our users' data, we want to value it. That's why we developed Swisscows, the anonymous search engine, and other products: • TeleGuard - our data secure messenger (WhatsApp alternative) • Swisscows - works like a firewall and also helps to visit websites anonymously • GetDigest - an AI-based program that helps summarize web content and text documents and quickly delivers the relevant information.Our growing team continues to develop and research innovations that protect users and their privacy on the World Wide Web.",
-  ];
+test("Check the texts of questions on the home page.", async ({ app}) => {
+  //Actions
+  await app.home.open()
 
   //Assert
-  await home.faq.expectListSizeAnswerToQuestions(6);
-  await home.expectElementToHaveText(home.faq.answersToQuestions, expectedAnswers);
+  await app.home.faq.expectListSizeAnswerToQuestions(6);
+  await app.home.expectElementToHaveText(app.home.faq.answersToQuestions, main.accordion.expectedAnswer);
 });
 
 test("Check that buttons have hover over the services block on home page", async ({
-  home,
+  app,
 }) => {
-  const expectedColorWhenHovering = "rgb(223, 93, 93)";
+  //Actions
+  await app.home.open()
 
   //Assert
-  await home.expectColorsLinksWhenHovering(home.buttonOfServiceBlock, "color", expectedColorWhenHovering );
+  await app.home.expectColorsLinksWhenHovering(app.home.buttonOfServiceBlock, "color", constanta.RED);
 });
 
-test("Check design of the home page ", async ({ home },testInfo) => {
-
+test("Check design of the home page ", async ({ app },testInfo) => {
+  //Actions
+  await app.home.open()
   //Assert
-  await home.expectScreenHome(testInfo);
+  await app.home.expectScreenHome(testInfo);
 });
 
 test("Check design dark theme of the home page ", async ({
-  home
+  app
 },testInfo) => {
   //Actions
-
-  await home.header.clickHamburgerMenuButton();
-  await home.header.hamburgerMenu.clickThemeDropdownInHamburgerMenu();
-  await home.header.hamburgerMenu.clickDarkInHamburgerMenu();
+  await app.home.open()
+  await app.home.header.clickHamburgerMenuButton();
+  await app.home.header.hamburgerMenu.clickThemeDropdown();
+  await app.home.header.hamburgerMenu.clickDarkTheme();
 
   //Assert
-  await home.expectScreenHome(testInfo);
+  await app.home.expectScreenHome(testInfo);
 });

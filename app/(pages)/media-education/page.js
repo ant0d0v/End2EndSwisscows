@@ -17,6 +17,9 @@ export default class MediaEducationPage extends BasePage {
   }
 
   //Actions
+  async open(){
+    await this.openPage("/media-education")
+  }
 
   async clickPdfLinkOnThePage(id) {
     const newPage = await this.clickElementAndNavigateToNewPage(this.links(id), `${id}`);

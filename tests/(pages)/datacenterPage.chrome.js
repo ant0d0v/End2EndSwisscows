@@ -1,4 +1,4 @@
-import { test } from "../../utils/fixturePages";
+import { test } from "../../utils/fixtures";
 const testData = JSON.parse(
   JSON.stringify(
     require("../../data/pages/datacenter/testData.json")
@@ -6,55 +6,64 @@ const testData = JSON.parse(
 );
 
 test("Check that border is red and 2px when clicking on the images Datacenter slider", async ({
-  datacenterPage,
+  app
 }) => {
+  //Actions
+  await app.datacenterPage.open()
   //Assert
-  await datacenterPage.imagesGallery.expectBorderWhenClickingOnSmallImages(
-    datacenterPage.imagesGallery.dataCenterGallerySmallImages,
+  await app.datacenterPage.imagesGallery.expectBorderWhenClickingOnSmallImages(
+    app.datacenterPage.imagesGallery.dataCenterGallerySmallImages,
     "2px solid rgb(223, 93, 93)"
   );
 });
 
 test("Check that small image matches the large image when clicking on the small image in Charity Haiti slider", async ({
-  datacenterPage,
+  app
 }) => {
+  //Actions
+  await app.datacenterPage.open()
   //Assert
-  await datacenterPage.imagesGallery.expectAttributeOfLargeImagesWhenClickingInDatacenterGallery(
+  await app.datacenterPage.imagesGallery.expectAttributeOfLargeImagesWhenClickingInDatacenterGallery(
     "active"
   );
 });
 
-test("Check that the video is playing", async ({ datacenterPage }) => {
+test("Check that the video is playing", async ({ app }) => {
+  //Actions
+  await app.datacenterPage.open()
   //Assert
-  await datacenterPage.videoPlayer.expectVideoToPlay();
+  await app.datacenterPage.videoPlayer.expectVideoToPlay();
 });
 
 for (const { testID, expectedLink, locatorId, expectedTitle, } of testData.datacenterLinks) {
   test(`${testID} Check navigation to corresponding page for  ${locatorId} link`, async ({
-    datacenterPage,
+    app
   }) => {
     //Actions
-    const currentPage = await datacenterPage.clickLinkOnThePage(locatorId);
+    await app.datacenterPage.open()
+    const currentPage = await app.datacenterPage.clickLinkOnThePage(locatorId);
 
     //Assert
-    await datacenterPage.expectHaveUrl(currentPage, expectedLink);
-    await datacenterPage.expectHaveTitle(currentPage, expectedTitle);
+    await app.datacenterPage.expectHaveUrl(currentPage, expectedLink);
+    await app.datacenterPage.expectHaveTitle(currentPage, expectedTitle);
   });
 }
-test("Check design of the Datacenter page ", async ({ datacenterPage },testInfo) => {
+test("Check design of the Datacenter page ", async ({ app },testInfo) => {
+  //Actions
+  await app.datacenterPage.open()
   //Assert
-  await datacenterPage.expectScreenDatacenterPage(testInfo);
+  await app.datacenterPage.expectScreenDatacenterPage(testInfo);
 });
 
 test("Check design dark theme of the Datacenter page ", async ({
-  datacenterPage
+  app
 },testInfo) => {
   //Actions
-  await datacenterPage.waitUntilPageIsFullyLoaded();
-  await datacenterPage.header.clickHamburgerMenuButton();
-  await datacenterPage.header.hamburgerMenu.clickThemeDropdownInHamburgerMenu();
-  await datacenterPage.header.hamburgerMenu.clickDarkInHamburgerMenu();
+  await app.datacenterPage.open()
+  await app.datacenterPage.header.clickHamburgerMenuButton();
+  await app.datacenterPage.header.hamburgerMenu.clickThemeDropdown();
+  await app.datacenterPage.header.hamburgerMenu.clickDarkTheme();
 
   //Assert
-  await datacenterPage.expectScreenDatacenterPage(testInfo);
+  await app.datacenterPage.expectScreenDatacenterPage(testInfo);
 });

@@ -29,23 +29,15 @@ export default class Home extends BasePage {
   }
 
   //Actions
+  async open(){
+    await this.openPage("/")
+  }
 
   clickAllQuestions = async () => {
     await this.clickAllElementsInList(this.allQuestions, `questions`);
     return this;
   };
 
-  async clickLinkInServiceBlockAndNavigateToNewPage(id) {
-    const newPage = await this.clickElementAndNavigateToNewPage( this.linksOfServiceBlock(id),`${id}`);
-    return newPage;
-  }
-
-  clickLinkInTheFourQuestionAndNavigateToDefaultSearchPage = async () => {
-    const defaultSearchPage = await this.clickElementAndNavigateToNewPage( this.linkInTheFourQuestion,
-      "link in the four question"
-    );
-    return defaultSearchPage;
-  };
   scrollDownToQuestions = async () => {
     await this.scrollByVisibleElement(this.fourQuestion, `four question in accordion menu`);
   }
@@ -56,7 +48,6 @@ export default class Home extends BasePage {
     );
     return this;
   };
-
 
   // Verify
   

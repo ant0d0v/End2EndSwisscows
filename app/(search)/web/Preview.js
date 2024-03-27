@@ -5,29 +5,26 @@ export default class Preview extends BaseComponent {
   constructor(page) {
     super(page);
     //Locators
-    this.contentImageInPreview = this.page.locator("div.screenshot.fade.in img")
-    this.previewButton = this.page.getByRole('button', { name: 'preview' }).first()
-    this.closeButtonInPreview = this.page.locator("button.close")
-    this.openSiteButtonInPreview = this.page.getByRole('link', { name: 'Open site' })
-    this.trackersButtonInPreview = this.page.getByText('trackers')
-    this.screenshotButtonInPreview = this.page.getByText('Screenshot')
+    this.screenshotImage = this.page.locator("div.screenshot.fade.in img")
+    this.closeButton = this.page.locator("button.close")
+    this.openSiteButton = this.page.getByRole('link', { name: 'Open site' })
+    this.trackersButton = this.page.getByText('trackers')
+    this.screenshotButton = this.page.getByText('Screenshot')
     this.allTrackers = this.page.locator("div.trackers section a")
   }
   //Actions
-  clickPreviewButton = async () => {
-    await this.clickElement(this.previewButton, `preview button`);
+  
+  clickCloseButton = async () => {
+    await this.clickElement(this.closeButton, `close button in preview `);
   };
-  clickCloseButtonInPreview = async () => {
-    await this.clickElement(this.closeButtonInPreview, `close button in preview `);
+  clickTrackersButton = async () => {
+    await this.clickElement(this.trackersButton, `trackers button in preview `);
   };
-  clickTrackersButtonInPreview = async () => {
-    await this.clickElement(this.trackersButtonInPreview, `trackers button in preview `);
+  clickScreenshotButton = async () => {
+    await this.clickElement(this.screenshotButton, `screenshot button in preview `);
   };
-  clickScreenshotButtonInPreview = async () => {
-    await this.clickElement(this.screenshotButtonInPreview, `screenshot button in preview `);
-  };
-  clickOpenSiteButtonInPreview = async () => {
-    return await this.clickElementAndNavigateToNewPage(this.openSiteButtonInPreview, `open site button in preview `);
+  expectToBeOpenedNewPageAfterClickOpenSiteButton = async (expectedUrl) => {
+    await this.expectToBeOpenedNewPageAfterClick(this.openSiteButton, expectedUrl)
   };
 
    // Verify
@@ -35,4 +32,10 @@ export default class Preview extends BaseComponent {
     await this.expectPageToHaveScreenshotWithoutMask(testInfo);
   };
 
+  expectScreenshotImageToBeVisible = async () => {
+    await this.expectElementToBeVisible(this.screenshotImage);
+  };
+  expectScreenshotImageToBeHidden = async () => {
+    await this.expectElementToBeHidden(this.screenshotImage);
+  };
 }
