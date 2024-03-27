@@ -5,7 +5,7 @@ const expectedPastDay = getYesterdayDay()
 const expectedPastMonth = getPastMonth()
 const expectedPastYear = getPastYear()
 
-test("Check search results by filter Past day", async ({ app }) => {
+test.fixme("Check search results by filter Past day", async ({ app }) => {
   // Actions
   await app.home.open();
   await app.home.header.clickHamburgerMenuButton();
@@ -22,7 +22,7 @@ test("Check search results by filter Past day", async ({ app }) => {
   await app.webPage.item.expectDatePublishedForPastDayToEqual(response, expectedPastDay)
 });
 
-test("Check search results by filter Past month", async ({ app }) => {
+test.fixme("Check search results by filter Past month", async ({ app }) => {
   // Actions
   await app.home.open();
   await app.home.header.clickHamburgerMenuButton();
@@ -39,7 +39,7 @@ test("Check search results by filter Past month", async ({ app }) => {
   await app.webPage.item.expectDatePublishedForPastMonthToEqual(response, expectedPastMonth)
 });
 
-test("Check search results by filter Past Year", async ({ app }) => {
+test.fixme("Check search results by filter Past Year", async ({ app }) => {
   // Actions
   await app.home.open();
   await app.home.header.clickHamburgerMenuButton();

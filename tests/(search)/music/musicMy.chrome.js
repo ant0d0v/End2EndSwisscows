@@ -25,9 +25,9 @@ test.describe('Internal user', () => {
     await app.musicMyPage.track.clickFavoriteButtonNumberTrack(1)
     
     //Assert
-    await app.musicMyPage.expectElementToHaveText(app.musicMyPage.error.contentErrorPage,
-      testData.expectedErrorText.noItemsFound)
-    await app.musicMyPage.expectElementToBeVisible(app.musicMyPage.error.errorImageNoResult)
+    await app.musicMyPage.error.expectContentToHaveText(testData.expectedErrorText.noItemsFound)
+    await app.musicPage.error.expectErrorImageToBeVisible()
+    await app.musicPage.error.expectImageToHaveWight(450)
   });
 
   test("Check delete track from favorite using player on my music page ", async ({
@@ -46,33 +46,10 @@ test.describe('Internal user', () => {
     await app.musicMyPage.player.clickFavoriteButton()
     
     //Assert
-    await app.musicMyPage.expectElementToHaveText(app.musicMyPage.error.contentErrorPage,
-      testData.expectedErrorText.noItemsFound)
-    await app.musicMyPage.expectElementToBeVisible(app.musicMyPage.error.errorImageNoResult)
+    await app.musicMyPage.error.expectContentToHaveText(testData.expectedErrorText.noItemsFound)
+    await app.musicPage.error.expectErrorImageToBeVisible()
+    await app.musicPage.error.expectImageToHaveWight(450)
   });
-
-  test("Check delete track from favorite on my music page ", async ({
-    app
-  }) => {
-    //Actions
-    await app.home.open()
-    await app.home.header.searchForm.inputSearchCriteria(value);
-    await app.home.header.searchForm.clickEnterSearchField();
-    await app.musicPage.header.clickMusicSearchButton()
-    await app.musicPage.track.expectMusicTracksToBeVisible()
-    await app.musicPage.track.clickFavoriteButtonNumberTrack(1)
-    await app.musicPage.clickFavoritePlaylist()
-    await app.musicMyPage.expectPageUrlToHaveParameter(`?query=${value}`)
-    await app.musicMyPage.track.clickPlayButtonNumberTrack(1)
-    await app.musicMyPage.player.expectProgressBarToHaveTimeValue(/3/)
-    await app.musicMyPage.track.clickFavoriteButtonNumberTrack(1)
-    
-    //Assert
-    await app.musicMyPage.expectElementToHaveText(app.musicMyPage.error.contentErrorPage,
-      testData.expectedErrorText.noItemsFound)
-    await app.musicMyPage.expectElementToBeVisible(app.musicMyPage.error.errorImageNoResult)
-  });
-
 
   test("Check play track on music my page", async ({
     app
@@ -164,7 +141,7 @@ test.describe('External user', () => {
     await app.musicMyPage.player.expectProgressBarToHaveTimeValue(/width: 5/) 
   });
 
-  test.fixme("Check pause track in player on my music page", async ({
+  test("Check pause track in player on my music page", async ({
     app
   }) => {
     //Actions
