@@ -1,5 +1,71 @@
 import { test} from "../../../utils/fixtures";
 const { expect } = require("@playwright/test");
+const testData = JSON.parse(
+  JSON.stringify(require("../../../data/error/testData.json"))
+);
+
+
+test("Check 202 No Results Found error page ", async ({
+  app
+}) => {
+  //Actions
+  await app.home.open()
+  await app.home.header.searchForm.inputSearchCriteria("@#@$%^$^dasdsad1231");
+  await app.home.header.searchForm.clickEnterSearchField();
+  await app.videoPage.header.clickVideoSearchButton()
+  
+  //Assert
+  await app.videoPage.error.expectNotResultErrorToHaveText(testData.expectedErrorText.noResultsFound202Error)
+  await app.videoPage.error.expectErrorImageToBeVisible()
+  await app.videoPage.error.expectImageToHaveWight(450)
+});
+
+test("Check request is blocked 450 error page ", async ({
+  app
+}) => {
+  //Actions
+  await app.home.open()
+  await app.home.header.searchForm.inputSearchCriteria("porn");
+  await app.home.header.searchForm.clickEnterSearchField();
+  await app.videoPage.header.clickVideoSearchButton()
+
+  //Assert
+  await app.videoPage.error.expectNotResultErrorToHaveText(testData.expectedErrorText.blocked450Error)
+  await app.videoPage.error.expectErrorImageToBeVisible()
+  await app.videoPage.error.expectImageToHaveWight(450)
+});
+
+test("Check 501 unknown Error Page  ", async ({
+  app
+}) => {
+  //Actions
+  await app.home.open()
+  await app.route.mockResponseStatusCode("/v2/videos", 500)
+  await app.home.header.searchForm.inputSearchCriteria("food");
+  await app.home.header.searchForm.clickEnterSearchField();
+  await app.videoPage.header.clickVideoSearchButton()
+
+  //Assert
+  await app.videoPage.error.expectContentToHaveText("Oops! Something is wrongError 500: Internal Server ErrorServer doesn’t respond or something else happened. Please, try to refresh this page.")
+  await app.videoPage.error.expectErrorImageToBeVisible()
+  await app.videoPage.error.expectImageToHaveWight(450)
+});
+
+test("Check 429 Too many requests", async ({
+  app
+}) => {
+  //Actions
+  await app.home.open()
+  await app.route.mockResponseStatusCode("/v2/videos", 429)
+  await app.home.header.searchForm.inputSearchCriteria("food");
+  await app.home.header.searchForm.clickEnterSearchField();
+  await app.videoPage.header.clickVideoSearchButton()
+  
+  //Assert
+  await app.videoPage.error.expectContentToHaveText(testData.expectedErrorText.TooManyRequestsError)
+  await app.videoPage.error.expectErrorImageToBeVisible()
+  await app.videoPage.error.expectImageToHaveWight(450)
+});
 
 test("Check that video results equals search criteria", async ({
     app

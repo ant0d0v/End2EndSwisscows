@@ -17,9 +17,9 @@ test("Check 202 No Results Found error page ", async ({
     await app.newsPage.header.clickNewsSearchButton()
     
     //Assert
-    await app.newsPage.expectElementToHaveText(app.newsPage.error.contentErrorNoResults,
-      testData.expectedErrorText.noResultsFound202Error)
-    await app.newsPage.expectElementToBeVisible(app.newsPage.error.errorImage)
+    await app.newsPage.error.expectNotResultErrorToHaveText(testData.expectedErrorText.noResultsFound202Error)
+    await app.newsPage.error.expectErrorImageToBeVisible()
+    await app.newsPage.error.expectImageToHaveWight(450)
   });
 
   test("Check request is blocked 450 error page ", async ({
@@ -34,20 +34,63 @@ test("Check 202 No Results Found error page ", async ({
     await app.newsPage.header.clickNewsSearchButton()
 
     //Assert
-    await app.newsPage.expectElementToHaveText(app.newsPage.error.contentErrorNoResults, 
-      testData.expectedErrorText.blocked450Error)
-    await app.newsPage.expectElementToBeVisible(app.newsPage.error.errorImage)
+    await app.newsPage.error.expectNotResultErrorToHaveText(testData.expectedErrorText.blocked450Error)
+    await app.newsPage.error.expectErrorImageToBeVisible()
+    await app.newsPage.error.expectImageToHaveWight(450)
   });
 
   test("Check 501 unknown Error Page  ", async ({
     app
   }) => {
     //Actions
-    await newsPage.error.open500Page("/news")
+    await app.home.open()
+    await app.home.header.clickHamburgerMenuButton();
+    await app.home.header.hamburgerMenu.selectRegion("Germany");
+    await app.route.mockResponseStatusCode("/news", 501)
+    await app.home.header.searchForm.inputSearchCriteria("food");
+    await app.home.header.searchForm.clickEnterSearchField();
+    await app.newsPage.header.clickNewsSearchButton()
+
     //Assert
-    await newsPage.expectElementToHaveText(newsPage.error.contentErrorPage, 
-      testData.expectedErrorText.unknownRegion501Error)
-    await newsPage.expectElementToBeVisible(newsPage.error.errorImage)
+    await app.newsPage.error.expectContentToHaveText(testData.expectedErrorText.unknownRegion501Error)
+    await app.newsPage.error.expectErrorImageToBeVisible()
+    await app.newsPage.error.expectImageToHaveWight(450)
+  });
+
+  test("Check 500 unknown Error Page  ", async ({
+    app
+  }) => {
+    //Actions
+    await app.home.open()
+    await app.home.header.clickHamburgerMenuButton();
+    await app.home.header.hamburgerMenu.selectRegion("Germany");
+    await app.route.mockResponseStatusCode("/news", 500)
+    await app.home.header.searchForm.inputSearchCriteria("food");
+    await app.home.header.searchForm.clickEnterSearchField();
+    await app.newsPage.header.clickNewsSearchButton()
+
+    //Assert
+    await app.newsPage.error.expectContentToHaveText("Oops! Something is wrongError 500: Internal Server ErrorServer doesn’t respond or something else happened. Please, try to refresh this page.")
+    await app.newsPage.error.expectErrorImageToBeVisible()
+    await app.newsPage.error.expectImageToHaveWight(450)
+  });
+
+  test("Check 429 Too many requests", async ({
+    app
+  }) => {
+    //Actions
+    await app.home.open()
+    await app.home.header.clickHamburgerMenuButton();
+    await app.home.header.hamburgerMenu.selectRegion("Germany");
+    await app.route.mockResponseStatusCode("/news", 429)
+    await app.home.header.searchForm.inputSearchCriteria("food");
+    await app.home.header.searchForm.clickEnterSearchField();
+    await app.newsPage.header.clickNewsSearchButton()
+    
+    //Assert
+    await app.newsPage.error.expectContentToHaveText(testData.expectedErrorText.TooManyRequestsError)
+    await app.newsPage.error.expectErrorImageToBeVisible()
+    await app.newsPage.error.expectImageToHaveWight(450)
   });
 
   test("Check error region is unsupported", async ({
@@ -65,11 +108,10 @@ test("Check 202 No Results Found error page ", async ({
     await app.newsPage.header.clickHamburgerMenuButton();
     await app.newsPage.header.hamburgerMenu.selectRegion("Ukraine");
     
-
     //Assert
-    await app.newsPage.expectElementToHaveText(app.newsPage.error.contentErrorPage, 
-        testData.expectedErrorText.unknownRegion501Error)
-    await app.newsPage.expectElementToBeVisible(app.newsPage.error.errorImage)
+    await app.newsPage.error.expectContentToHaveText(testData.expectedErrorText.unknownRegion501Error)
+    await app.newsPage.error.expectErrorImageToBeVisible()
+    await app.newsPage.error.expectImageToHaveWight(450)
   });
 
   test("Check search results in news page ", async ({
@@ -96,7 +138,6 @@ test("Check 202 No Results Found error page ", async ({
   test("Check open link in  the news result", async ({
    app
   }) => {
-     
      //Actions
      await app.home.open()
      await app.home.header.clickHamburgerMenuButton();

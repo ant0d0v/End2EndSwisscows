@@ -13,9 +13,9 @@ test("Check 202 No Results Found error page ", async ({
     await app.musicPage.header.clickMusicSearchButton()
     
     //Assert
-    await app.musicPage.expectElementToHaveText(app.musicPage.error.contentErrorNoResults,
-      testData.expectedErrorText.noResultsFound202Error)
-    await app.musicPage.expectElementToBeVisible(app.musicPage.error.errorImage)
+    await app.musicPage.error.expectNotResultErrorToHaveText(testData.expectedErrorText.noResultsFound202Error)
+    await app.musicPage.error.expectErrorImageToBeVisible()
+    await app.musicPage.error.expectImageToHaveWight(450)
   });
 
   test("Check request is blocked 450 error page ", async ({
@@ -28,25 +28,41 @@ test("Check 202 No Results Found error page ", async ({
     await app.musicPage.header.clickMusicSearchButton()
 
     //Assert
-    await app.musicPage.expectElementToHaveText(app.musicPage.error.contentErrorNoResults, 
-      testData.expectedErrorText.blocked450Error)
-    await app.musicPage.expectElementToBeVisible(app.musicPage.error.errorImage)
+    await app.musicPage.error.expectNotResultErrorToHaveText(testData.expectedErrorText.blocked450Error)
+    await app.musicPage.error.expectErrorImageToBeVisible()
+    await app.musicPage.error.expectImageToHaveWight(450)
   });
 
-  test.skip("Check 501 unknown Error Page  ", async ({
+  test("Check 500 unknown Error Page  ", async ({
     app
   }) => {
     //Actions
     await app.home.open()
-    await app.route.mockResponseStatusCode("/audio/search/tracks", 501)
+    await app.route.mockResponseStatusCode("/audio/search", 500)
     await app.home.header.searchForm.inputSearchCriteria("food");
     await app.home.header.searchForm.clickEnterSearchField();
     await app.musicPage.header.clickMusicSearchButton()
 
     //Assert
-    await app.musicPage.expectElementToHaveText(app.musicPage.error.contentErrorPage, 
-      testData.expectedErrorText.unknown500Error)
-    await app.musicPage.expectElementToBeVisible(app.musicPage.error.errorImage)
+    await app.musicPage.error.expectContentToHaveText(testData.expectedErrorText.unknown500Error)
+    await app.musicPage.error.expectErrorImageToBeVisible()
+    await app.musicPage.error.expectImageToHaveWight(450)
+  });
+
+  test("Check 429 Too many requests", async ({
+    app
+  }) => {
+    //Actions
+    await app.home.open()
+    await app.route.mockResponseStatusCode("/audio/search", 429)
+    await app.home.header.searchForm.inputSearchCriteria("food");
+    await app.home.header.searchForm.clickEnterSearchField();
+    await app.musicPage.header.clickMusicSearchButton()
+    
+    //Assert
+    await app.musicPage.error.expectContentToHaveText(testData.expectedErrorText.TooManyRequestsError)
+    await app.musicPage.error.expectErrorImageToBeVisible()
+    await app.musicPage.error.expectImageToHaveWight(450)
   });
 
   test("Check play track on music page", async ({

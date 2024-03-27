@@ -4,6 +4,7 @@ import ItemDetails from "./ItemDetails.js";
 import Item from "./Item.js";
 import Player from "./Player.js";
 import Header from "../Header.js";
+import Error from "../Error.js";
 const { expect, context } = require("@playwright/test");
 
 export default class VideoPage extends BasePage {
@@ -12,6 +13,7 @@ export default class VideoPage extends BasePage {
     this.filters = new Filters(page);
     this.itemDetails = new ItemDetails(page);
     this.item = new Item(page);
+    this.error  = new Error(page);
     this.player = new Player(page);
     this.header  = new Header(page);
   }
