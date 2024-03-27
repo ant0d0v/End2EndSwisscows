@@ -13,9 +13,9 @@ test("Check 202 No Results Found error page ", async ({
     await app.musicPage.header.clickMusicSearchButton()
     
     //Assert
-    await app.musicPage.expectElementToHaveText(app.musicPage.error.contentErrorNoResults,
-      testData.expectedErrorText.noResultsFound202Error)
-    await app.musicPage.expectElementToBeVisible(app.musicPage.error.errorImage)
+    await app.musicPage.error.expectNotResultErrorToHaveText(testData.expectedErrorText.noResultsFound202Error)
+    await app.musicPage.error.expectErrorImageToBeVisible()
+    await app.musicPage.error.expectImageToHaveWight(450)
   });
 
   test("Check request is blocked 450 error page ", async ({
@@ -28,26 +28,121 @@ test("Check 202 No Results Found error page ", async ({
     await app.musicPage.header.clickMusicSearchButton()
 
     //Assert
-    await app.musicPage.expectElementToHaveText(app.musicPage.error.contentErrorNoResults, 
-      testData.expectedErrorText.blocked450Error)
-    await app.musicPage.expectElementToBeVisible(app.musicPage.error.errorImage)
+    await app.musicPage.error.expectNotResultErrorToHaveText(testData.expectedErrorText.blocked450Error)
+    await app.musicPage.error.expectErrorImageToBeVisible()
+    await app.musicPage.error.expectImageToHaveWight(450)
   });
 
-  test.skip("Check 501 unknown Error Page  ", async ({
+  test("Check 500 unknown Error Page  ", async ({
     app
   }) => {
     //Actions
     await app.home.open()
-    await app.route.mockResponseStatusCode("/audio/search/tracks", 501)
+    await app.route.mockResponseStatusCode("/audio/search", 500)
     await app.home.header.searchForm.inputSearchCriteria("food");
     await app.home.header.searchForm.clickEnterSearchField();
     await app.musicPage.header.clickMusicSearchButton()
 
     //Assert
-    await app.musicPage.expectElementToHaveText(app.musicPage.error.contentErrorPage, 
-      testData.expectedErrorText.unknown500Error)
-    await app.musicPage.expectElementToBeVisible(app.musicPage.error.errorImage)
+    await app.musicPage.error.expectContentToHaveText(testData.expectedErrorText.unknown500Error)
+    await app.musicPage.error.expectErrorImageToBeVisible()
+    await app.musicPage.error.expectImageToHaveWight(450)
   });
+
+  test("Check 429 Too many requests", async ({
+    app
+  }) => {
+    //Actions
+    await app.home.open()
+    await app.route.mockResponseStatusCode("/audio/search", 429)
+    await app.home.header.searchForm.inputSearchCriteria("food");
+    await app.home.header.searchForm.clickEnterSearchField();
+    await app.musicPage.header.clickMusicSearchButton()
+    
+    //Assert
+    await app.musicPage.error.expectContentToHaveText(testData.expectedErrorText.TooManyRequestsError)
+    await app.musicPage.error.expectErrorImageToBeVisible()
+    await app.musicPage.error.expectImageToHaveWight(450)
+  });
+  test.describe('favorite function', () => { test.use({ mode: "default" })
+  test("Check add track in the favorite", async ({
+    app
+  }) => {
+    //Actions
+    await app.home.open()
+    await app.home.header.searchForm.inputSearchCriteria("ACD");
+    await app.home.header.searchForm.clickEnterSearchField();
+    await app.musicPage.header.clickMusicSearchButton()
+    await app.musicPage.track.expectMusicTracksToBeVisible()
+    const favoriteID = await app.musicPage.track.clickFavoriteButtonNumberTrackAndGetResponse(1)
+    
+    //Assert
+    await app.musicPage.track.expectFirstTrackFavoriteButtonIsActive()
+    await app.musicPage.favoritePlaylist.expectPlaylistToHaveText(/My favorite tracks1/)
+    favoriteTracksIdForDeletionOfInternalUser.push(favoriteID);
+  });
+
+  test("Check delete track from the favorite", async ({
+    app
+  }) => {
+    //Actions
+    await app.home.open()
+    await app.home.header.searchForm.inputSearchCriteria("Bruno");
+    await app.home.header.searchForm.clickEnterSearchField();
+    await app.musicPage.header.clickMusicSearchButton()
+    await app.musicPage.track.expectMusicTracksToBeVisible()
+    await app.musicPage.track.clickFavoriteButtonNumberTrack(1)
+    await app.musicPage.track.clickPlayButtonNumberTrack(1)
+    await app.musicPage.player.expectProgressBarToHaveTimeValue(/3/)
+    await app.musicPage.track.clickFavoriteButtonNumberTrack(1)
+
+    //Assert
+    await app.musicPage.track.expectFirstTrackFavoriteButtonIsNotActive()
+    await app.musicPage.favoritePlaylist.expectPlaylistToBeHidden()
+  });
+
+  test("Check add track in the favorite from player", async ({
+    app
+  }) => {
+    //Actions
+    await app.home.open()
+    await app.home.header.searchForm.inputSearchCriteria("Teri Baaton Mein Aisa Uljha Jiya");
+    await app.home.header.searchForm.clickEnterSearchField();
+    await app.musicPage.header.clickMusicSearchButton()
+    await app.musicPage.track.expectMusicTracksToBeVisible()
+    await app.musicPage.track.clickPlayButtonNumberTrack(1)
+    await app.musicPage.player.expectProgressBarToHaveTimeValue(/3/)
+    const favoriteID = await app.musicPage.player.clickFavoriteButtonAndGetResponse()
+
+    //Assert
+    await app.musicPage.track.expectFirstTrackFavoriteButtonIsActive()
+    await app.musicPage.player.expectFavoriteButtonIsActive()
+    await app.musicPage.favoritePlaylist.expectPlaylistToHaveText(/My favorite tracks1/)
+    favoriteTracksIdForDeletionOfInternalUser.push(favoriteID);  
+      
+  });
+
+  test("Check delete track from the favorite using player", async ({
+    app
+  }) => {
+    //Actions
+    await app.home.open()
+    await app.home.header.searchForm.inputSearchCriteria("アイドル");
+    await app.home.header.searchForm.clickEnterSearchField();
+    await app.musicPage.header.clickMusicSearchButton()
+    await app.musicPage.track.expectMusicTracksToBeVisible()
+    await app.musicPage.track.clickFavoriteButtonNumberTrack(1)
+    await app.musicPage.track.clickPlayButtonNumberTrack(1)
+    await app.musicPage.player.expectProgressBarToHaveTimeValue(/3/)
+    await app.musicPage.player.clickFavoriteButton()
+
+    //Assert
+    await app.musicPage.track.expectFirstTrackFavoriteButtonIsNotActive()
+    await app.musicPage.player.expectFavoriteButtonIsNotActive()    
+    await app.musicPage.favoritePlaylist.expectPlaylistToBeHidden()
+  });
+});
+
 
   test("Check play track on music page", async ({
     app
@@ -215,85 +310,7 @@ test("Check 202 No Results Found error page ", async ({
     await app.musicPage.track.expectSecondTrackIsNotActive()
     await app.musicPage.player.expectShuffleButtonIsActive()
   });
-  test.describe('favorite function', () => { test.use({ mode: "default" })
-  test("Check add track in the favorite", async ({
-    app
-  }) => {
-    //Actions
-    await app.home.open()
-    await app.home.header.searchForm.inputSearchCriteria("ACD");
-    await app.home.header.searchForm.clickEnterSearchField();
-    await app.musicPage.header.clickMusicSearchButton()
-    await app.musicPage.track.expectMusicTracksToBeVisible()
-    await app.musicPage.track.clickFavoriteButtonNumberTrack(1)
-
-    //Assert
-    await app.musicPage.track.expectFirstTrackFavoriteButtonIsActive()
-    await app.musicPage.favoritePlaylist.expectPlaylistToHaveText(/My favorite tracks1/)
-    await app.musicPage.track.clickFavoriteButtonNumberTrack(1)   
-  });
-
-  test("Check delete track from the favorite", async ({
-    app
-  }) => {
-    //Actions
-    await app.home.open()
-    await app.home.header.searchForm.inputSearchCriteria("Bruno");
-    await app.home.header.searchForm.clickEnterSearchField();
-    await app.musicPage.header.clickMusicSearchButton()
-    await app.musicPage.track.expectMusicTracksToBeVisible()
-    await app.musicPage.track.clickFavoriteButtonNumberTrack(1)
-    await app.musicPage.track.clickPlayButtonNumberTrack(1)
-    await app.musicPage.player.expectProgressBarToHaveTimeValue(/3/)
-    await app.musicPage.track.clickFavoriteButtonNumberTrack(1)
-
-    //Assert
-    await app.musicPage.track.expectFirstTrackFavoriteButtonIsNotActive()
-    await app.musicPage.favoritePlaylist.expectPlaylistToBeHidden()
-  });
-
-  test("Check add track in the favorite from player", async ({
-    app
-  }) => {
-    //Actions
-    await app.home.open()
-    await app.home.header.searchForm.inputSearchCriteria("Teri Baaton Mein Aisa Uljha Jiya");
-    await app.home.header.searchForm.clickEnterSearchField();
-    await app.musicPage.header.clickMusicSearchButton()
-    await app.musicPage.track.expectMusicTracksToBeVisible()
-    await app.musicPage.track.clickPlayButtonNumberTrack(1)
-    await app.musicPage.player.expectProgressBarToHaveTimeValue(/3/)
-    const favoriteID = await app.musicPage.player.clickFavoriteButtonAndGetResponse()
-
-    //Assert
-    await app.musicPage.track.expectFirstTrackFavoriteButtonIsActive()
-    await app.musicPage.player.expectFavoriteButtonIsActive()
-    await app.musicPage.favoritePlaylist.expectPlaylistToHaveText(/My favorite tracks1/)
-    favoriteTracksIdForDeletionOfInternalUser.push(favoriteID);  
-      
-  });
-
-  test("Check delete track from the favorite using player", async ({
-    app
-  }) => {
-    //Actions
-    await app.home.open()
-    await app.home.header.searchForm.inputSearchCriteria("アイドル");
-    await app.home.header.searchForm.clickEnterSearchField();
-    await app.musicPage.header.clickMusicSearchButton()
-    await app.musicPage.track.expectMusicTracksToBeVisible()
-    await app.musicPage.track.clickFavoriteButtonNumberTrack(1)
-    await app.musicPage.track.clickPlayButtonNumberTrack(1)
-    await app.musicPage.player.expectProgressBarToHaveTimeValue(/3/)
-    await app.musicPage.player.clickFavoriteButton()
-
-    //Assert
-    await app.musicPage.track.expectFirstTrackFavoriteButtonIsNotActive()
-    await app.musicPage.player.expectFavoriteButtonIsNotActive()    
-    await app.musicPage.favoritePlaylist.expectPlaylistToBeHidden()
-  });
-});
-
+  
   test("Check infinity scroll to next page", async ({
     app
   }) => {

@@ -6,7 +6,7 @@ export default class Error extends BaseComponent {
     //Locators
     this.contentErrorNoResults = this.page.locator('div').filter({ hasText: 'No results found for' }).nth(1)
     this.contentErrorPage = this.page.locator("div.error div.content")
-    this.errorImage = this.page.getByRole('img', { name: 'Error Image' })
+    this.errorImage = this.page.getByRole('main').locator('img').first()
     this.errorImageNoResult = this.page.getByRole('main').getByRole('img').first()
   }
   // Actions
