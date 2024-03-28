@@ -42,7 +42,7 @@ export default class Track extends BaseComponent {
   };
   clickFavoriteButtonNumberTrackAndGetResponse = async (index) => {
     let response;
-    const responsePromise = this.page.waitForResponse(`${ process.env.API_URL}/v1/user/music/tracks`)
+    const responsePromise = this.page.waitForResponse(`${ process.env.API_URL}/music/tracks/my`)
     await this.clickElement(this.favoriteButton(index),
       `favorite button of track with index${index}`
     );
@@ -53,7 +53,7 @@ export default class Track extends BaseComponent {
   clickAllFavoriteButtonsOfTracksAndGetResponses = async () => {
     let responseIDs = [];
     for (const favoriteButton of await this.allFavoriteButtons.all()) {
-      const responsePromise = this.page.waitForResponse(`${process.env.API_URL}/v1/user/music/tracks`);
+      const responsePromise = this.page.waitForResponse(`${process.env.API_URL}/music/tracks/my`);
       await this.clickElement(favoriteButton, `favorite button of track`);
       const response = await responsePromise;
       const responseBody = await response.json();
@@ -63,7 +63,7 @@ export default class Track extends BaseComponent {
   }
   deleteTrackFromFavorite = async (id, data) => {
     const context = await request.newContext()
-    await context.delete(`${ process.env.API_URL}/v1/user/music/tracks/${id}`,{
+    await context.delete(`${ process.env.API_URL}/music/tracks/my/${id}`,{
     headers: {
       'Accept': 'application/json, text/plain, */*',
       'Authorization': `Bearer ${data["origins"][0]["localStorage"][0]["value"]}`,
