@@ -1,4 +1,4 @@
-export default class SearchBuilder {
+export default class Builder {
     constructor() {
       this.search = {
         headers: {},
@@ -33,34 +33,32 @@ export default class SearchBuilder {
       this.search.params.region = region; 
       return this;
     }
+    setLocaleParam(locale) {
+      this.search.params.locale = locale; 
+      return this;
+    }
     setFreshnessParam(freshness){
       this.search.params.freshness = freshness;
       return this;
     }
-    setAspectParam(aspect ){
-      this.search.params.aspect  = aspect ;
+    setSpellcheckParam(spellcheck ){
+      this.search.params.spellcheck  = spellcheck;
       return this;
     }
-    setSizeParam(size ){
-      this.search.params.size  = size ;
+    setSortOrderParam(sortOrder){
+      this.search.params.sortOrder  = sortOrder;
       return this;
     }
-    setColorParam(color){
-      this.search.params.color = color ;
+    setSortByParam(sortBy){
+      this.search.params.sortBy  = sortBy;
       return this;
     }
-    setTypeParam(type){
-      this.search.params.type = type ;
+    setLanguageParam(language){
+      this.search.params.language = language;
       return this;
     }
-    setContentParam(content){
-      this.search.params.content = content ;
-      return this;
-    }
-    setLicenseParam(license){
-      this.search.params.license = license ;
-      return this;
-    }
+    
+    
     doCheck(){
       return (
         this.search.headers["X-Request-Nonce"] != undefined &&
