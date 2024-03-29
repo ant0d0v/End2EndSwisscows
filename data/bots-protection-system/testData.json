@@ -1,20 +1,20 @@
 
 {
     "WebRateLimit": {
-            "XRequestNonce" : "ZGA0kQ.x8T7dyRCVxWRS-8cALOnSJ3ea",
-            "XRequestSignature": "ps4ok5GzOodQJmo2KLzdFTsvtYD9hLE3j8JKH4dNqBM"
+            "XRequestNonce" : "em08_YPchiuv9j3e3lWzleKL2w~t~F6M",
+            "XRequestSignature": "iPAnsqC8u0X7XsJSysj01TQCgKHOGSaKBzvYvuv2ucg"
         },
     "ImageRateLimit": {
-            "XRequestNonce" : "~AJenVtFPpYheng9.GvAf0bPPPcqZdVh",
-            "XRequestSignature": "ZbgFoE2aASVkLWw7Y-e2qqX0DSuRUKeSA_pYfVHRBGk"
+            "XRequestNonce" : "fSakcXavl4mCnP2cZ0hAXEUiHTiXxs5O",
+            "XRequestSignature": "NRTqO0yJ7EJYByYLwE5keMV0msnfzhwRPi0_DO9lmXk"
         },
     "VideoRateLimit": {
-            "XRequestNonce" : "UzUSjA6FKfn003m1n6X97lAgeTfi3.KH",
-            "XRequestSignature": "PClzC7wcsfjXYU1buHgpW-UTqbBz49CZ4ZZszij3QB0"
+            "XRequestNonce" : "-fBpA0-FTi0TpsS5YDOSlKsflZIYGt29",
+            "XRequestSignature": "uYfH8Zg0xf412jhoHP4bmfFKXkHLkxVcLUiSB4Ub0iE"
         },
     "ShoppingRateLimit": {
-            "XRequestNonce" : "PS8spy3SdQSO4x.DO5Qu7X7PMc0ujUKc",
-            "XRequestSignature": "qVrbsFRyIHLA6xVQhql7L1FizFfZfhfp4067qGZkFJI"
+            "XRequestNonce" : "0M0LW6tNshCX1TKy5RD5PuWSd4l-uk3f",
+            "XRequestSignature": "KTctgfio6_yiASg9zFVljdgvC8NE4MGlfrukH28cMsw"
         },  
 
     "MusicRateLimit": {
@@ -23,20 +23,20 @@
         },
 
     "WebBrazilianBots" : {
-            "XRequestNonce" : "0MIKs_jPHtiUBCI46lwAcPnMb3S6vyn3",
-            "XRequestSignature": "DlagLa8LOWn-E3J7D3yhzncMXN5WAovFiRt_fU0ALJ0"
+            "XRequestNonce" : "CAV63kn8TPu_b54g8vpWMKulRWK4Q8._",
+            "XRequestSignature": "jgtqPOrq_GGXuX07dtxQBW-cVvIc3-FzMX1DZPxF3A8"
         },
     "ImageBrazilianBots" : {
-            "XRequestNonce" : "ZahdNnYJEZ1zNYhN_JmUlwCiHdZCPtlX",
-            "XRequestSignature": "Czd33MRONQL7LzO0PWXvDdd9nsR3FfeTTZN_tiegW5A"
+            "XRequestNonce" : "cBC~NjfVei2hNZYBRXBWm4JXgC.Y5_2_",
+            "XRequestSignature": "1KHwG1oD_jzGtEBA5G8cFjpJRu701gAYWXxaZN7lQ0c"
         },
     "VideoBrazilianBots" : {
-            "XRequestNonce" : "96iC-7kIJKw.XF1dUpFJZtHynn-y6Zqa",
-            "XRequestSignature": "-XAK2mXENfQyK3zNeUmG5DCY5Ho_Nfqo7l2A4yifEMs"
+            "XRequestNonce" : "IeSvJ~nzF-eY2KaynaJOt3J8Gl_JDqVi",
+            "XRequestSignature": "WL1PMu3XPdbz47x54EuMhUQg_kfpFyUNg83O6Unt6AI"
         },
     "ShoppingBrazilianBots" : {
-            "XRequestNonce" : "5IwKV2GH8RXe6Zued5qX7MqRvj3OS8rj",
-            "XRequestSignature": "8yJ3oNuodsbP5_2HQ2U9Y1O9pyHwIFnKD4KPawnJDnI"
+            "XRequestNonce" : "iIhAp3v9B1ggtvnznYwcblf3mPV1~xNz",
+            "XRequestSignature": "vLjmj4HIomVM8TK7afa46Qoz78bU2R6dAalb64J4rzg"
         },
     "MusicBrazilianBots" : {
             "XRequestNonce" : "5IwKV2GH8RXe6Zued5qX7MqRvj3OS8rj",

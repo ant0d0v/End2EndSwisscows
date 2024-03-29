@@ -4,22 +4,23 @@ const testData = JSON.parse(
 );
 test.describe.configure({ mode: "default" });
 test("Brazilian Bots and Error 429 Page /web search @api", async ({
-  searchBuilder,
+  builder,
   searchRequest,
   searchResponse
 }) => {
   // Action
   let response;
   for (let i = 1; i < 13; i++) {
-  response = await searchRequest.sendWebRequestMethodGet(
-    searchBuilder
+  response = await searchRequest.sendGet("/v4/web/search",
+    builder
     .setNonceHeader(testData.WebBrazilianBots.XRequestNonce)
-    .setSignatureHeader(testData.WebBrazilianBots.XRequestNonce)
+    .setSignatureHeader(testData.WebBrazilianBots.XRequestSignature)
     .setQueryParam(`"Otras características considerar"`)
     .setOffsetParam(0)
     .setItemsCountParam(10)
+    .setLocaleParam("de-DE")
     .setFreshnessParam("All")
-    .setRegionParam("uk-UA")
+    .setSpellcheckParam(true)
     .build()
   )}
    // Assert
@@ -27,29 +28,48 @@ test("Brazilian Bots and Error 429 Page /web search @api", async ({
    await searchResponse.expectResponseToBeFalsy(response);
    await expect(response.json()).resolves.toEqual(expect.objectContaining({status: 429,}));
 });
-
-test("Brazilian Bots and Error 429 Page /image search @api", async ({
-  searchBuilder,
+test("Brazilian Bots and Error 429 Page /news search @api", async ({
+  builder,
   searchRequest,
   searchResponse
 }) => {
   // Action
-  const response = await  searchRequest.sendImagesRequestMethodGet(
-    searchBuilder
+  const response = await searchRequest.sendGet("/news/search",
+    builder
+    .setNonceHeader(testData.ImageBrazilianBots.XRequestNonce)
+    .setSignatureHeader(testData.ImageBrazilianBots.XRequestSignature)
+    .setQueryParam(`"Otras características considerar"`)
+    .setRegionParam("de-DE") 
+    .setLanguageParam("de")
+    .setItemsCountParam(10)                
+    .setOffsetParam(0)
+    .setFreshnessParam("All")
+    .setSortOrderParam("Desc")
+    .setSortByParam("Created")
+    .build()
+    ) 
+   // Assert
+   await searchResponse.expectResponseToHaveStatusCode(response, 429);
+   await searchResponse.expectResponseToBeFalsy(response);
+   await expect(response.json()).resolves.toEqual(expect.objectContaining({status: 429,}));
+});
+
+test("Brazilian Bots and Error 429 Page /image search @api", async ({
+  builder,
+  searchRequest,
+  searchResponse
+}) => {
+  // Action
+  const response = await searchRequest.sendGet("/v4/images/search",
+    builder
     .setNonceHeader(testData.ImageBrazilianBots.XRequestNonce)
     .setSignatureHeader(testData.ImageBrazilianBots.XRequestSignature)
     .setQueryParam(`"Otras características considerar"`)                 
     .setOffsetParam(0)
     .setItemsCountParam(50)
-    .setRegionParam("uk-UA")
-    .setFreshnessParam("All")
-    .setAspectParam("All")
-    .setSizeParam("All")
-    .setColorParam("All")
-    .setTypeParam("All")
-    .setContentParam("All")
-    .setLicenseParam("All")
-    .build() 
+    .setLocaleParam("uk-UA")
+    .setSpellcheckParam(true)
+    .build()
     ) 
    // Assert
    await searchResponse.expectResponseToHaveStatusCode(response, 429);
@@ -58,19 +78,20 @@ test("Brazilian Bots and Error 429 Page /image search @api", async ({
 });
 
 test("Brazilian Bots and Error 429 Page /video search @api", async ({
-  searchBuilder,
+  builder,
   searchRequest,
   searchResponse
 }) => {
 
   // Action
-  const response = await searchRequest.sendVideoRequestMethodGet(
-    searchBuilder
+  const response = await searchRequest.sendGet("/v2/videos/search",
+    builder
     .setNonceHeader(testData.VideoBrazilianBots.XRequestNonce)
     .setSignatureHeader(testData.VideoBrazilianBots.XRequestSignature)
     .setQueryParam(`"Otras características considerar"`)
     .setItemsCountParam(10)
     .setRegionParam("uk-UA")
+    .setFreshnessParam("All")
     .build()
     ) 
   // Assert
@@ -80,20 +101,20 @@ test("Brazilian Bots and Error 429 Page /video search @api", async ({
 });
 
 test("Brazilian Bots and Error 429 Page /shopping search @api", async ({
-  searchBuilder,
+  builder,
   searchRequest,
   searchResponse
 }) => {
    // Action
-  const response = await searchRequest.sendShoppingRequestMethodGet(
-    searchBuilder
+  const response = await searchRequest.sendGet("/shopping/search",
+    builder
     .setNonceHeader(testData.ShoppingBrazilianBots.XRequestNonce)
     .setSignatureHeader(testData.ShoppingBrazilianBots.XRequestSignature)
     .setQueryParam(`"Otras características considerar"`)
     .setOffsetParam(0)
     .setItemsCountParam(24)
-    .setSortParam("Popularity")
     .setRegionParam("de-DE")
+    .setSortParam("Popularity")
     .build() 
     ) 
   // Assert
@@ -103,15 +124,15 @@ test("Brazilian Bots and Error 429 Page /shopping search @api", async ({
 });
 
 test("Brazilian Bots and Error 429 Page /music search @api", async ({
-  searchBuilder,
+  builder,
   searchRequest,
   searchResponse
 }) => {
   // Action
-  const response = await searchRequest.sendMusicRequestMethodGet(
-    searchBuilder
-    .setNonceHeader(testData.MusicBrazilianBots.XRequestNonce)
-    .setSignatureHeader(testData.MusicBrazilianBots.XRequestSignature)
+  const response = await searchRequest.sendGet("/audio/search/tracks",
+    builder
+    .setNonceHeader(testData.MusicRateLimit.XRequestNonce)
+    .setSignatureHeader(testData.MusicRateLimit.XRequestSignature)
     .setQueryParam(`"Otras características considerar"`)
     .setOffsetParam(0)
     .setItemsCountParam(20)
@@ -125,21 +146,22 @@ test("Brazilian Bots and Error 429 Page /music search @api", async ({
 });
 
 test("Check Queries Rate Limit for Regular Bot /video search @api", async ({
-  searchBuilder,
+  builder,
   searchRequest,
   searchResponse
 }) => {
 
   // Action
   let response;
-  for (let i = 0; i < 101; i++) {
-  response = await searchRequest.sendVideoRequestMethodGet(
-    searchBuilder
+  for (let i = 0; i < 102; i++) {
+  response = await searchRequest.sendGet("/v2/videos/search",
+    builder
     .setNonceHeader(testData.VideoRateLimit.XRequestNonce)
     .setSignatureHeader(testData.VideoRateLimit.XRequestSignature)
     .setQueryParam("test")
     .setItemsCountParam(10)
-    .setRegionParam("uk-UA")
+    .setRegionParam("de-DE")
+    .setFreshnessParam("All")
     .build()
     )}
   // Assert
@@ -149,21 +171,22 @@ test("Check Queries Rate Limit for Regular Bot /video search @api", async ({
 });
 
 test("Check Queries Rate Limit for Regular Bot /web search @api", async ({
-  searchBuilder,
+  builder,
   searchRequest,
   searchResponse
 }) => {
   // Action
   
-  const response = await searchRequest.sendWebRequestMethodGet(
-    searchBuilder
+  const response = await searchRequest.sendGet("/v4/web/search",
+    builder
     .setNonceHeader(testData.WebRateLimit.XRequestNonce)
-    .setSignatureHeader( testData.WebRateLimit.XRequestSignature)
-    .setQueryParam("good")
+    .setSignatureHeader(testData.WebRateLimit.XRequestSignature)
+    .setQueryParam("test")
     .setOffsetParam(0)
     .setItemsCountParam(10)
+    .setLocaleParam("de-DE")
     .setFreshnessParam("All")
-    .setRegionParam("uk-UA")
+    .setSpellcheckParam(true)
     .build()
   )
    // Assert
@@ -173,27 +196,21 @@ test("Check Queries Rate Limit for Regular Bot /web search @api", async ({
 });
 
 test("Check Queries Rate Limit for Regular Bot /image search @api", async ({
-  searchBuilder,
+  builder,
   searchRequest,
   searchResponse
 }) => {
   // Action
-  const response = await  searchRequest.sendImagesRequestMethodGet(
-    searchBuilder
+  const response = await  searchRequest.sendGet("/v4/images/search",
+    builder
     .setNonceHeader(testData.ImageRateLimit.XRequestNonce)
     .setSignatureHeader(testData.ImageRateLimit.XRequestSignature)
     .setQueryParam("test")                 
     .setOffsetParam(0)
     .setItemsCountParam(50)
-    .setRegionParam("uk-UA")
-    .setFreshnessParam("All")
-    .setAspectParam("All")
-    .setSizeParam("All")
-    .setColorParam("All")
-    .setTypeParam("All")
-    .setContentParam("All")
-    .setLicenseParam("All")
-    .build() 
+    .setLocaleParam("de-DE")
+    .setSpellcheckParam(true)
+    .build()
   ) 
    // Assert
    await searchResponse.expectResponseToHaveStatusCode(response, 429);
@@ -201,20 +218,20 @@ test("Check Queries Rate Limit for Regular Bot /image search @api", async ({
    await expect(response.json()).resolves.toEqual(expect.objectContaining({status: 429,}));
 });
 test("Check Queries Rate Limit for Regular Bot /shopping search @api", async ({
-  searchBuilder,
+  builder,
   searchRequest,
   searchResponse
 }) => {
    // Action
-  const response = await searchRequest.sendShoppingRequestMethodGet(
-    searchBuilder
+  const response = await searchRequest.sendGet("/shopping/search",
+    builder
     .setNonceHeader(testData.ShoppingRateLimit.XRequestNonce)
     .setSignatureHeader(testData.ShoppingRateLimit.XRequestSignature)
-    .setQueryParam("ivanka")
+    .setQueryParam("test")
     .setOffsetParam(0)
     .setItemsCountParam(24)
-    .setSortParam("Popularity")
     .setRegionParam("de-DE")
+    .setSortParam("Popularity")
     .build()
     ) 
   // Assert
@@ -224,16 +241,16 @@ test("Check Queries Rate Limit for Regular Bot /shopping search @api", async ({
 });
 
 test("Check Queries Rate Limit for Regular Bot /music search @api", async ({
-  searchBuilder,
+  builder,
   searchRequest,
   searchResponse
 }) => {
    // Action
-   const response = await searchRequest.sendMusicRequestMethodGet(
-    searchBuilder
+   const response = await searchRequest.sendGet("/audio/search/tracks",
+    builder
     .setNonceHeader(testData.MusicRateLimit.XRequestNonce)
     .setSignatureHeader(testData.MusicRateLimit.XRequestSignature)
-    .setQueryParam("best")
+    .setQueryParam("test")
     .setOffsetParam(0)
     .setItemsCountParam(20)
     .setRegionParam("de-DE")

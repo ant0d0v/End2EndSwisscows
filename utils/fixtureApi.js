@@ -1,7 +1,7 @@
 const base = require("@playwright/test");
-import SearchBuilder from "../api/search/Builder"
-import SearchRequest from "../api/search/Request"
-import SearchResponse from "../api/search/Response"
+import Builder from "../api/Builder"
+import SearchRequest from "../api/SearchRequest"
+import SearchResponse from "../api/SearchResponse"
 
 exports.test = base.test.extend({
   searchRequest: async ({ request }, use) => {
@@ -10,8 +10,8 @@ exports.test = base.test.extend({
   searchResponse: async ({ request }, use) => {
     await use(new SearchResponse(request));
   },
-  searchBuilder : async ({}, use) => {
-    await use(new SearchBuilder());
+  builder : async ({}, use) => {
+    await use(new Builder());
   },
 });
 exports.expect = base.expect;
