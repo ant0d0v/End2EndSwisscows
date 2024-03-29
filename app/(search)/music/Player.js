@@ -36,9 +36,7 @@ export default class MusicPlayer extends BaseComponent {
     );
   };
   clickPauseButton = async () => {
-    await this.clickElement(this.playButton,
-      `pause button in the player`
-    );
+    await this.page.$eval('audio', e => e.pause());
   };
   clickShuffleButton = async () => {
     await this.clickElement(this.shuffleButton,
@@ -69,6 +67,9 @@ export default class MusicPlayer extends BaseComponent {
   //Verify 
   async expectTimeToHaveText(value) {
     await this.expectTextToContain(this.durationTime,value);
+  }
+  async expectTimelineToBeGreaterThan(value) {
+    expect(await this.page.$eval('audio', e => e.currentTime)).toBeGreaterThan(value);
   }
   expectImageToHaveWight = async (property, value) => {
     await this.expectElementToHaveJSProperty(this.image , property, value);
