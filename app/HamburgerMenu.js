@@ -42,9 +42,9 @@ export default class HamburgerMenu extends BaseComponent {
     await this.clickElement(this.linkOfStaticPage(id), `link of static pages`);
   };
 
-  clickloginButton= async () => {
+  clickLoginButton = async () => {
     await this.clickElement(
-      this.loginButtonInHamburgerMenu,`login button in hamburger menu`);
+      this.loginButton,`login button in hamburger menu`);
   };
   clickLogoutButton = async () => {
     await this.clickElement(

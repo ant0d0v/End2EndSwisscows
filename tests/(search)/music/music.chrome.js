@@ -154,9 +154,10 @@ test("Check 202 No Results Found error page ", async ({
     await app.musicPage.header.clickMusicSearchButton()
     await app.musicPage.track.expectMusicTracksToBeVisible()
     await app.musicPage.track.clickPlayButtonNumberTrack(1)
+    await app.musicPage.player.expectTimeToHaveText("0:04")
 
     //Assert
-    await app.musicPage.player.expectTimeToHaveText("0:04")
+    await app.musicPage.player.expectTimelineToBeGreaterThan(0.5)
     await app.musicPage.track.expectFirstTrackIsPlaying()
     await app.musicPage.track.expectFirstTrackButtonIsPause()
   });
@@ -190,9 +191,10 @@ test("Check 202 No Results Found error page ", async ({
     await app.musicPage.track.expectMusicTracksToBeVisible()
     await app.musicPage.track.clickPlayButtonNumberTrack(1)
     await app.musicPage.player.clickNextButton()
+    await app.musicPage.player.expectTimeToHaveText("0:04")
     
     //Assert
-    await app.musicPage.player.expectTimeToHaveText("0:05")
+    await app.musicPage.player.expectTimelineToBeGreaterThan(0.5)
     await app.musicPage.track.expectFirstTrackIsNotActive()
     await app.musicPage.track.expectSecondTrackIsPlaying()
   });
@@ -210,9 +212,10 @@ test("Check 202 No Results Found error page ", async ({
     await app.musicPage.player.expectProgressBarToHaveTimeValue(/3/)
     await app.musicPage.player.clickNextButton()
     await app.musicPage.player.clickPrevButton()
+    await app.musicPage.player.expectTimeToHaveText("0:04")
 
     //Assert
-    await app.musicPage.player.expectTimeToHaveText("0:04")
+    await app.musicPage.player.expectTimelineToBeGreaterThan(0.5)
     await app.musicPage.track.expectFirstTrackIsPlaying()
     await app.musicPage.track.expectSecondTrackIsNotActive()
   });

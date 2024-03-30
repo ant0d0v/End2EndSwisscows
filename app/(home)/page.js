@@ -50,6 +50,9 @@ export default class Home extends BasePage {
   };
 
   // Verify
+  expectSwisscowsLogoToBeVisible = async () => {
+    await this.expectElementToBeVisible(this.logoSwisscows);
+  };
   
   expectScreenHome = async (testInfo) => {
     await this.expectPageToHaveScreenshot(this.widgetHome,testInfo);
