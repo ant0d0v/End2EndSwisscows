@@ -12,6 +12,11 @@ export default class Footer extends BaseComponent {
     this.emailLink = this.page.getByRole('link', { name: 'Swisscows.email' })
     this.vpnLink = this.page.getByText('VPN')
     this.whoWeAreLink = this.page.getByRole('link', { name: 'Who we are' })
+    this.allInternalLinks = (locator) => this.page.getByRole('link', { name: locator, exact: true })
+    this.allExternalLinks = (locator) => this.page.locator('li').filter({ hasText: locator})
+    this.socialNetworksLinks = (index) => this.page.locator(`.social-networks > a:nth-child(${index})`)
+    this.swisscowsAppLinks = (locator) => this.page.getByRole('link', { name: locator })
+    this.swisscowsAppImages = this.page.locator(".app.mobile-hidden .app-link img") 
   }
   //Actions
 
@@ -61,4 +66,13 @@ export default class Footer extends BaseComponent {
     const vpnPage = await this.clickElementAndNavigateToNewPage(this.vpnLink,`VPN link in the footer full`)
     return vpnPage;
   };
+  clickAllInternalLink = async (locator) => {
+    await this.clickElement(this.allInternalLinks(locator),
+      `all internal link in the footer full`
+    );
+  };
+  //Verify
+  expectSwisscowsAppImagesToBeVisible = async () => {
+    await this.expectAreElementsInListDisplayed(this.swisscowsAppImages);
+}    
 }

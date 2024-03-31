@@ -13,6 +13,7 @@ import Preview from "./Preview.js";
 import Error from "../Error.js";
 import Preloader from "../../../components/Preloader.js";
 import BasePage from "../../../base/BasePage.js";
+import Footer from "../../../app/(search)/Footer.js";
 
 export default class WebPage extends BasePage {
   constructor(page) {
@@ -30,6 +31,7 @@ export default class WebPage extends BasePage {
     this.header  = new Header(page);
     this.error = new Error(page)
     this.preloader  = new Preloader(page);
+    this.footer  = new Footer(page);
     this.preview  = new Preview(page);
     //Locators
    this.webResult = this.page.locator("section.container.page-results div.web-results")

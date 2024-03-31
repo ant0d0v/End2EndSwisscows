@@ -1,0 +1,161 @@
+{
+    "internalLinks": [
+        {
+            "testID": "1",
+            "expectedUrl": "https://dev.swisscows.com/en/search-engine-no-tracking",
+            "expectedTitle": "Search engine without tracking - Learn more about us",
+            "locatorId" : "Who we are"
+        },
+        {
+            "testID": "2",
+            "expectedUrl": "https://dev.swisscows.com/en/media-education",
+            "expectedTitle": "Media Education - Extremely Safe Web for Children",
+            "locatorId" : "Media Education"
+        },
+        {
+            "testID": "3",
+            "expectedUrl": "https://dev.swisscows.com/en/social-projects",
+            "expectedTitle": "Social projects - We support social projects",
+            "locatorId" : "Charity Project"
+        },
+        {
+            "testID": "4",
+            "expectedUrl": "https://dev.swisscows.com/en/data-safe-search-engine",
+            "expectedTitle": "Data center – Everything about the Swisscows data center",
+            "locatorId" : "Our Datacenter"
+        },
+        {
+            "testID": "5",
+            "expectedUrl": "https://dev.swisscows.com/en/contact",
+            "expectedTitle": "Contact us",
+            "locatorId" : "Contact us"
+        },
+        {
+            "testID": "6",
+            "expectedUrl": "https://dev.swisscows.com/en/imprint",
+            "expectedTitle": "Imprint | Swisscows",
+            "locatorId" : "Imprint"
+        },
+        {
+            "testID": "7",
+            "expectedUrl": "https://dev.swisscows.com/en/privacy",
+            "expectedTitle": "Privacy Policy | Swisscows",
+            "locatorId" : "Data privacy"
+        },
+        {
+            "testID": "8",
+            "expectedUrl": "https://dev.swisscows.com/en/donation",
+            "expectedTitle": "Search engine without tracking - Donations",
+            "locatorId" : "Donation"
+        }
+    ],
+
+    "externalLinks": [
+        {
+            "testID": "1",
+            "expectedUrl": "https://dev.swisscows.com/en/anonymous-vpn",
+            "expectedTitle": "Surf anonymously with VPN - Secure web surfing with Swisscows",
+            "locatorId" : "VPN"
+        },
+        {
+            "testID": "2",
+            "expectedUrl": "https://dev.swisscows.com/en/swisscows-email",
+            "expectedTitle": "Swisscows.email - My secure e-mail",
+            "locatorId" : "Swisscows.email"
+        },
+        {
+            "testID": "3",
+            "expectedUrl": "https://teleguard.com/en",
+            "expectedTitle": "TeleGuard - secure messenger from Switzerland",
+            "locatorId" : "TeleGuard"
+        },
+        {
+            "testID": "4",
+            "expectedUrl": "https://hesbox.com/en",
+            "expectedTitle": "Enterprise Search Software for companies ",
+            "locatorId" : "HES"
+        },
+        {
+            "testID": "5",
+            "expectedUrl": "https://getdigest.com/en",
+            "expectedTitle": "GetDigest | Get a document summary. Fast!",
+            "locatorId" : "GetDigest"
+        },
+        {
+            "testID": "6",
+            "expectedUrl": "https://shop.swisscows.com/en",
+            "expectedTitle": "Secure your cell phone and car keys with Swisscows Faraday Bag.",
+            "locatorId" : "Faraday Bag"
+        },
+        {
+            "testID": "7",
+            "expectedUrl": "https://swisscows-fanshop.com/",
+            "expectedTitle": "SWISSCOWS FANSHOP – Swisscows",
+            "locatorId" : "Fan-shop"
+        },
+        {
+            "testID": "8",
+            "expectedUrl": "https://blog.swisscows.com/",
+            "expectedTitle": "Blog - Swisscows AG",
+            "locatorId" : "Swisscows Blog"
+        },
+        {
+            "testID": "9",
+            "expectedUrl": "https://support.swisscows.com/",
+            "expectedTitle": "Swisscows Support",
+            "locatorId" : "Support"
+        }
+    ],
+    "socialNetworksLinks": [
+        {
+            "testID": "1",
+            "expectedUrl": "https://www.facebook.com/swisscows/",
+            "expectedTitle": "Swisscows | Facebook",
+            "locatorId" : "1"
+        },
+        {
+            "testID": "2",
+            "expectedUrl": "https://www.instagram.com/swisscows.official/",
+            "expectedTitle": "Swisscows (@swisscows.official) • Instagram photos and videos",
+            "locatorId" : "2"
+        },
+        {
+            "testID": "3",
+            "expectedUrl": "https://www.linkedin.com/company/swisscows/",
+            "expectedTitle": "Swisscows AG | LinkedIn",
+            "locatorId" : "3"
+        },
+        {
+            "testID": "4",
+            "expectedUrl": "https://twitter.com/swisscows_ch",
+            "expectedTitle": "swisscows (@swisscows_ch) / X",
+            "locatorId" : "4"
+        },
+        {
+            "testID": "5",
+            "expectedUrl": "https://teleguard.com/en",
+            "expectedTitle": "TeleGuard - secure messenger from Switzerland",
+            "locatorId" : "5"
+        }
+    ],
+    "swisscowsAppLinks": [
+        {
+            "testID": "1",
+            "expectedUrl": "^https://play.google\\.com/store/apps/details\\?id=com\\.swisscows\\.search",
+            "expectedTitle": "Swisscows Private Search - Apps on Google Play",
+            "locatorId" : "Get it on Google Play"
+        },
+        {
+            "testID": "2",
+            "expectedUrl": "https://apps.apple.com/us/app/swisscows-private-search/id1581108092",
+            "expectedTitle": "Swisscows Private Search on the App Store",
+            "locatorId" : "Download on the App Store"
+        },
+        {
+            "testID": "3",
+            "expectedUrl": "https://company.swisscows.com/en",
+            "expectedTitle": "Swisscows AG |Startpage",
+            "locatorId" : "About Swisscows AG"
+        }
+    ]
+}
