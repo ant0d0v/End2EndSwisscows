@@ -6,6 +6,7 @@ import ItemDetails from "./ItemDetails.js";
 import Item from "./Item.js";
 import ProductAds from "../ads/ProductAds.js";
 import Header from "../Header.js";
+import Error from "../Error.js";
 
 export default class ImagePage extends BasePage {
   constructor(page) {
@@ -16,5 +17,13 @@ export default class ImagePage extends BasePage {
     this.item = new Item(page);
     this.productAds = new ProductAds(page);
     this.header  = new Header(page);
+    this.error = new Error(page)
+
+    //Locators
+    this.favoriteItem = this.page.getByRole('link', { name: 'My images' })
+  }
+  //Verify
+  expectFavoriteItemToHaveText = async (value) => {
+    await this.expectElementToHaveText(this.favoriteItem,value)
   }
 }
