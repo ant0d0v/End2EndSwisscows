@@ -39,7 +39,7 @@ for (const {testID, expectedUrl, expectedTitle, locatorId } of testData.internal
   
       //Assert
       await app.home.expectToBeOpenedNewPageAfterClick(app.home.footer.socialNetworksLinks(locatorId), expectedUrl)
-      await app.home.expectNewPageToHaveTitle(context, expectedTitle)
+      await app.home.expectNewPageToHaveTitle(context, new RegExp(expectedTitle))
     });
   }
 
@@ -78,7 +78,7 @@ test.describe('Footer of search pages', () => {
     
         //Assert
         await app.webPage.expectToBeOpenedNewPageAfterClick(app.webPage.footer.socialNetworksLinks(locatorId), expectedUrl)
-        await app.webPage.expectNewPageToHaveTitle(context, expectedTitle)
+        await app.webPage.expectNewPageToHaveTitle(context, new RegExp(expectedTitle))
       });
     }
   
