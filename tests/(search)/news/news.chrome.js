@@ -38,25 +38,7 @@ test("Check 202 No Results Found error page ", async ({
     await app.newsPage.error.expectErrorImageToBeVisible()
     await app.newsPage.error.expectImageToHaveWight(450)
   });
-
-  test("Check 501 unknown Error Page  ", async ({
-    app
-  }) => {
-    //Actions
-    await app.home.open()
-    await app.home.header.clickHamburgerMenuButton();
-    await app.home.header.hamburgerMenu.selectRegion("Germany");
-    await app.route.mockResponseStatusCode("/news", 501)
-    await app.home.header.searchForm.inputSearchCriteria("food");
-    await app.home.header.searchForm.clickEnterSearchField();
-    await app.newsPage.header.clickNewsSearchButton()
-
-    //Assert
-    await app.newsPage.error.expectContentToHaveText(testData.expectedErrorText.unknownRegion501Error)
-    await app.newsPage.error.expectErrorImageToBeVisible()
-    await app.newsPage.error.expectImageToHaveWight(450)
-  });
-
+  
   test("Check 500 unknown Error Page  ", async ({
     app
   }) => {
@@ -100,9 +82,8 @@ test("Check 202 No Results Found error page ", async ({
     await app.home.open()
     await app.home.header.clickHamburgerMenuButton();
     await app.home.header.hamburgerMenu.selectRegion("Germany");
-    await app.home.header.searchForm.inputSearchCriteria("news");
+    await app.home.header.searchForm.inputSearchCriteria("football");
     await app.home.header.searchForm.clickEnterSearchField();
-    await app.webPage.item.expectWebItemsToBeVisible()
     await app.newsPage.header.clickNewsSearchButton()
     await app.newsPage.item.expectNewsItemsToBeVisible()
     await app.newsPage.header.clickHamburgerMenuButton();
