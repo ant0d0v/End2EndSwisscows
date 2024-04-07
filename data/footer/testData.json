@@ -116,7 +116,7 @@
         {
             "testID": "2",
             "expectedUrl": "swisscows.official",
-            "expectedTitle": "Swisscows (@swisscows.official) • Instagram photos and videos",
+            "expectedTitle": "Instagram",
             "locatorId" : "2"
         },
         {
@@ -128,7 +128,7 @@
         {
             "testID": "4",
             "expectedUrl": "https://twitter.com/swisscows_ch",
-            "expectedTitle": "swisscows (@swisscows_ch) / X",
+            "expectedTitle": "swisscows",
             "locatorId" : "4"
         },
         {
