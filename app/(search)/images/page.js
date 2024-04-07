@@ -18,12 +18,14 @@ export default class ImagePage extends BasePage {
     this.productAds = new ProductAds(page);
     this.header  = new Header(page);
     this.error = new Error(page)
-
     //Locators
     this.favoriteItem = this.page.getByRole('link', { name: 'My images' })
+
   }
-  //Verify
-  expectFavoriteItemToHaveText = async (value) => {
-    await this.expectElementToHaveText(this.favoriteItem,value)
-  }
+  //Actions
+  clickFavoriteItem = async () => {
+    await this.clickElement( this.favoriteItem,
+      `favorite item`
+    );
+  };
 }

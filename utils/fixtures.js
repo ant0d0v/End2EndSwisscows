@@ -5,6 +5,7 @@ const externalData = JSON.parse( JSON.stringify(require("../data/auth/externalUs
 export let favoriteTracksIdForDeletionOfInternalUser = []
 export let favoriteTracksIdForDeletionOfExternalUser = []
 export let favoriteImagesIdForDeletionOfInternalUser = []
+export let favoriteImagesIdForDeletionOfExternalUser = []
 import Application from "../app/index.js";
 
 exports.test = base.test.extend({
@@ -24,6 +25,11 @@ exports.test = base.test.extend({
     if (favoriteImagesIdForDeletionOfInternalUser.length > 0) {
       for (const id of favoriteImagesIdForDeletionOfInternalUser) { 
         await app.imagePage.item.deleteImageFromFavorite(id,internalData);
+      }
+    }
+    if (favoriteImagesIdForDeletionOfExternalUser.length > 0) {
+      for (const id of favoriteImagesIdForDeletionOfExternalUser) { 
+        await app.imagePage.item.deleteImageFromFavorite(id,externalData);
       }
     }
   }

@@ -5,9 +5,13 @@ const { expect } = require("@playwright/test");
 export default class ItemDetails extends BaseComponent {
   constructor(page) {
     super(page);
-    this.item = new Item(page);
     //Locators
-    this.bookmarkButton = this.page.locator("figure button.bookmark")
+    this.itemInDetailsPanel = this.page.locator(".image-view.aside.fade.in")
+    this.imageInDetailsPanel = this.page.locator(".image-view.aside.fade.in .image img").nth(1)
+    this.bookmarkButton = this.page.locator("figure button.bookmark use")
+    this.nextButton = this.page.locator(".details-pane button.next")
+    this.prevButton = this.page.locator(".details-pane button.prev")
+    this.closeButton = this.page.locator(".details-pane button.close")
 
   }
   //Actions
@@ -21,9 +25,48 @@ export default class ItemDetails extends BaseComponent {
     const responseBody = await response.json();
     return responseBody.id;
   };
+  
+  clickBookmarkButton = async () => {
+    await this.clickElement(this.bookmarkButton,
+      `bookmark button of image`
+    );
+  };
+  clickNextButton = async () => {
+    await this.clickElement(this.nextButton,
+      `next button of image`
+    );
+  };
+  clickPrevButton = async () => {
+    await this.clickElement(this.prevButton,
+      `prev button of image`
+    );
+  };
+  clickCloseButton = async () => {
+    await this.clickElement(this.closeButton,
+      `close button of image`
+    );
+  };
+  getByAltAttributeImage = async () => {
+    return await this.imageInDetailsPanel.getAttribute("alt")
+  };
+
   //Verify
 
-  expectFirstTrackFavoriteButtonIsActive = async () => {
-    await this.expectAttributeClassOfElement(this.favoriteButton, /active/)
+  expectBookmarkButtonIsActive = async () => {
+    await this.expectElementToHaveJSProperty(this.bookmarkButton, "href.animVal","/images/icons.svg#bookmark")
   };
+  expectBookmarkButtonIsNotActive = async () => {
+    await this.expectElementToHaveJSProperty(this.bookmarkButton, "href.animVal","/images/icons.svg#bookmark-outline")
+  };
+  expectItemInDetailsPanelToBeHidden = async () => {
+    await this.expectElementToBeHidden(this.itemInDetailsPanel)
+  }
+  expectItemInDetailsPanelToBeVisible = async () => {
+    await this.expectElementToBeVisible(this.itemInDetailsPanel)
+  }
+  expectImageInDetailsPanelToBeVisible = async () => {
+    await this.expectElementToBeVisible(this.imageInDetailsPanel)
+  }
+
+
 }

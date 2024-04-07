@@ -1,14 +1,19 @@
-import BasePage from "../../../base/BasePage.js";
+import BasePage from "../../../../base/BasePage.js";
 const { expect, context } = require("@playwright/test");
-import ItemDetails from "../../../components/(search)/images/ItemDetails.js";
-import Item from "../../../components/(search)/images/Item.js";
-import Header from "../../../components/(search)/Header.js";
+import ItemDetails from "../ItemDetails.js";
+import Item from "../Item.js";
+import Header from "../../Header.js";
 
 export default class ImageMyPage extends BasePage {
   constructor(page) {
     super(page);
-    this.itemDetails = new ItemDetails(page);
     this.item = new Item(page);
+    this.itemDetails = new ItemDetails(page);
     this.header  = new Header(page);
   }
+  //Verify
+  expectPageUrlToHaveParameter = async (query) => {
+    const expectedUrlPattern = new RegExp(`${process.env.BASE_URL}/en/images/my\\${query}`);
+    await this.expectHaveUrl(this.page, expectedUrlPattern);
+  };
 }

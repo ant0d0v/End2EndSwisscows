@@ -3,6 +3,7 @@ import  Home  from "./(home)/page";
 import Preloader from "../components/Preloader";
 import imagesGallery from "../components/ImagesGallery";
 import ImagePage from "../app/(search)/images/page";
+import ImageMyPage from "../app/(search)/images/my/page";
 import MusicPage from "../app/(search)/music/page";
 import MusicMyPage from "../app/(search)/music/my/page";
 import MusicPlaylistPage from "../app/(search)/music/playlist/page";
@@ -44,6 +45,7 @@ export default class Application extends BasePage {
      this.musicMyPage = new  MusicMyPage(this.page);
      this.musicPage= new  MusicPage(this.page);
      this.imagePage = new  ImagePage(this.page);
+     this.imageMyPage = new  ImageMyPage(this.page);
      this.signInPage = new  SignInPage(this.page);
      this.route = new  Route(this.page);
     }
