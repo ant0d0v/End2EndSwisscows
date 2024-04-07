@@ -79,7 +79,7 @@ module.exports = defineConfig({
         viewport: { width: 1360, height: 900 },
         screenshot: "only-on-failure",
       },
-      // dependencies: ["setup"],
+      dependencies: ["setup"],
     },
     {
       name: "firefox",
