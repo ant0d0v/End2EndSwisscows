@@ -251,7 +251,7 @@ test("Check 202 no results error page ", async ({
   }) => {
      //Actions
      await app.home.open()
-     await app.home.header.searchForm.inputSearchCriteria("adsddss");
+     await app.home.header.searchForm.inputSearchCriteria("google");
      await app.home.header.searchForm.clickEnterSearchField();
      await app.webPage.item.expectWebItemsToBeVisible()
      await app.webPage.clickPreviewButton()

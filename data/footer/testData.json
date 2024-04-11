@@ -109,7 +109,7 @@
     "socialNetworksLinks": [
         {
             "testID": "1",
-            "expectedUrl": "https://www.facebook.com/swisscows/",
+            "expectedUrl": "swisscows",
             "expectedTitle": "Swisscows | Facebook",
             "locatorId" : "1"
         },
