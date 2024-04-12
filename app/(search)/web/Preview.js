@@ -9,7 +9,7 @@ export default class Preview extends BaseComponent {
     this.closeButton = this.page.locator("button.close")
     this.openSiteButton = this.page.getByRole('link', { name: 'Open site' })
     this.trackersButton = this.page.getByText('trackers')
-    this.screenshotButton = this.page.getByText('Screenshot')
+    this.screenshotButton = this.page.getByText('Screenshot', { exact: true })
     this.allTrackers = this.page.locator("div.trackers section a")
   }
   //Actions

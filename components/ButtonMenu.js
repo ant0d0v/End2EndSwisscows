@@ -25,18 +25,6 @@ export default class ButtonMenu extends BaseComponent {
         const response = await responsePromise;
         return response;
     };
-    clickPastMonthAndGetResponse = async (expectedLink) => {
-        const responsePromise = this.page.waitForResponse((response) => response.url().includes(expectedLink));
-        await this.clickElement(this.pastMonth, `past month filter in dropdown` );
-        const response = await responsePromise;
-        return response;
-    };
-    clickPastYearAndGetResponse = async (expectedLink) => {
-        const responsePromise = this.page.waitForResponse((response) => response.url().includes(expectedLink));
-        await this.clickElement(this.pastYear, `past year filter in dropdown` );
-        const response = await responsePromise;
-        return response;
-    };
     clickMenuItemTableView = async () => {
         await this.clickElement(this.filterTableView), "filter table view in dropdown`"
     };
