@@ -140,20 +140,20 @@ test("Check Queries Rate Limit for Regular Bot /video search @api", async ({
   // Action
   let response;
   for (let i = 0; i < 102; i++) {
-  response = await searchRequest.sendGet("/v2/videos/search",
-    builder
+    response = await app.api.search.sendGet("/v2/videos/search",
+    app.api.search.videoSearchApiRequest
     .setNonceHeader(testData.VideoRateLimit.XRequestNonce)
     .setSignatureHeader(testData.VideoRateLimit.XRequestSignature)
-    .setQueryParam("test")
-    .setItemsCountParam(10)
-    .setRegionParam("de-DE")
-    .setFreshnessParam("All")
-    .build()
+    .setQuery("test")
+    .setCount(10)
+    .setRegion("de-DE")
+    .setFreshness("All")
     )}
   // Assert
-  await searchResponse.expectResponseToHaveStatusCode(response, 429);
-  await searchResponse.expectResponseToBeFalsy(response);
-  await expect(response.json()).resolves.toEqual(expect.objectContaining({status: 429,}));
+  await app.api.search.response.expectResponseToHaveStatusCode(response, 429);
+  await app.api.search.response.expectBodyToEqual(response , {
+    title:"Too Many Requests",
+    status :429 })
 });
 
 test("Check Queries Rate Limit for Regular Bot /web search @api", async ({
@@ -161,82 +161,81 @@ test("Check Queries Rate Limit for Regular Bot /web search @api", async ({
 }) => {
   // Action
   
-  const response = await searchRequest.sendGet("/v4/web/search",
-    builder
-    .setNonceHeader(testData.WebRateLimit.XRequestNonce)
-    .setSignatureHeader(testData.WebRateLimit.XRequestSignature)
-    .setQueryParam("test")
-    .setOffsetParam(0)
-    .setItemsCountParam(10)
-    .setLocaleParam("de-DE")
-    .setFreshnessParam("All")
-    .setSpellcheckParam(true)
-    .build()
+  const response = await app.api.search.sendGet("/v4/web/search",
+  app.api.search.webSearchApiRequest
+  .setNonceHeader(testData.WebRateLimit.XRequestNonce)
+  .setSignatureHeader(testData.WebRateLimit.XRequestSignature)
+  .setQuery("test")
+  .setOffset(0)
+  .setCount(10)
+  .setLocale("de-DE")
+  .setFreshness("All")
+  .setSpellcheck(true)
   )
    // Assert
-   await searchResponse.expectResponseToHaveStatusCode(response, 429);
-   await searchResponse.expectResponseToBeFalsy(response);
-   await expect(response.json()).resolves.toEqual(expect.objectContaining({status: 429,}));
+  await app.api.search.response.expectResponseToHaveStatusCode(response, 429);
+  await app.api.search.response.expectBodyToEqual(response , {
+    title:"Too Many Requests",
+    status :429 })
 });
 
 test("Check Queries Rate Limit for Regular Bot /image search @api", async ({
   app
 }) => {
   // Action
-  const response = await  searchRequest.sendGet("/v4/images/search",
-    builder
-    .setNonceHeader(testData.ImageRateLimit.XRequestNonce)
-    .setSignatureHeader(testData.ImageRateLimit.XRequestSignature)
-    .setQueryParam("test")                 
-    .setOffsetParam(0)
-    .setItemsCountParam(50)
-    .setLocaleParam("de-DE")
-    .setSpellcheckParam(true)
-    .build()
+  const response = await app.api.search.sendGet("/v4/images/search",
+  app.api.search.imagesSearchApiRequest
+  .setNonceHeader(testData.ImageRateLimit.XRequestNonce)
+  .setSignatureHeader(testData.ImageRateLimit.XRequestSignature)
+  .setQuery("test")                 
+  .setOffset(0)
+  .setCount(50)
+  .setLocale("de-DE")
+  .setSpellcheck(true)
   ) 
-   // Assert
-   await searchResponse.expectResponseToHaveStatusCode(response, 429);
-   await searchResponse.expectResponseToBeFalsy(response);
-   await expect(response.json()).resolves.toEqual(expect.objectContaining({status: 429,}));
+  // Assert
+  await app.api.search.response.expectResponseToHaveStatusCode(response, 429);
+  await app.api.search.response.expectBodyToEqual(response , {
+    title:"Too Many Requests",
+    status :429 })
 });
 test("Check Queries Rate Limit for Regular Bot /shopping search @api", async ({
   app
 }) => {
    // Action
-  const response = await searchRequest.sendGet("/shopping/search",
-    builder
-    .setNonceHeader(testData.ShoppingRateLimit.XRequestNonce)
-    .setSignatureHeader(testData.ShoppingRateLimit.XRequestSignature)
-    .setQueryParam("test")
-    .setOffsetParam(0)
-    .setItemsCountParam(24)
-    .setRegionParam("de-DE")
-    .setSortParam("Popularity")
-    .build()
-    ) 
+   const response = await app.api.search.sendGet("/shopping/search",
+   app.api.search.shoppingSearchApiRequest
+  .setNonceHeader(testData.ShoppingRateLimit.XRequestNonce)
+  .setSignatureHeader(testData.ShoppingRateLimit.XRequestSignature)
+  .setQuery("test")
+  .setOffset(0)
+  .setCount(24)
+  .setRegion("de-DE")
+  .setSort("Popularity")
+  ) 
   // Assert
-  await searchResponse.expectResponseToHaveStatusCode(response, 429);
-  await searchResponse.expectResponseToBeFalsy(response);
-  await expect(response.json()).resolves.toEqual(expect.objectContaining({ status: 429, }));
+  await app.api.search.response.expectResponseToHaveStatusCode(response, 429);
+  await app.api.search.response.expectBodyToEqual(response , {
+    title:"Too Many Requests",
+    status :429 })
 });
 
 test("Check Queries Rate Limit for Regular Bot /music search @api", async ({
   app
 }) => {
    // Action
-   const response = await searchRequest.sendGet("/audio/search/tracks",
-    builder
-    .setNonceHeader(testData.MusicRateLimit.XRequestNonce)
-    .setSignatureHeader(testData.MusicRateLimit.XRequestSignature)
-    .setQueryParam("test")
-    .setOffsetParam(0)
-    .setItemsCountParam(20)
-    .setRegionParam("de-DE")
-    .build()
+   const response = await app.api.search.sendGet("/audio/search/tracks",
+   app.api.search.shoppingSearchApiRequest
+  .setNonceHeader(testData.MusicRateLimit.XRequestNonce)
+  .setSignatureHeader(testData.MusicRateLimit.XRequestSignature)
+  .setQuery("test")
+  .setOffset(0)
+  .setCount(20)
+  .setRegion("de-DE")
   );
   // Assert
-  await searchResponse.expectResponseToHaveStatusCode(response, 429);
-  await searchResponse.expectResponseToBeFalsy(response);
-  await expect(response.json()).resolves.toEqual(expect.objectContaining({ status: 429, }));
- 
+  await app.api.search.response.expectResponseToHaveStatusCode(response, 429);
+  await app.api.search.response.expectBodyToEqual(response , {
+    title:"Too Many Requests",
+    status :429 })
 });

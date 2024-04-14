@@ -43,13 +43,13 @@ for (const {testID,expectedVideoURL,locatorId, expectedPublisher } of filterData
       
       //Assert
       await app.videoPage.expectHaveUrl(app.page, expectedVideoURL);
-      await expect(response.json()).resolves.toEqual(expect.objectContaining({ "request": {
-        "query": "video",
-        "itemsCount": 10,
-        "offset": 0,
-        "region": "de-DE",
-        "freshness": filter
-    },}));
+      await app.api.search.response.expectBodyToEqual(response ,{ "request": {
+        query: "video",
+        itemsCount: 10,
+        offset: 0,
+        region: "de-DE",
+        freshness: filter }
+      });
     });
   }
   test("Check search results by filter Table view", async ({

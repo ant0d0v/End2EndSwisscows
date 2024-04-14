@@ -18,14 +18,14 @@ for (const {testID, expectedWebURL, locatorId} of filterData.byDate) {
     
     //Assert
     await app.webPage.expectHaveUrl(app.page, expectedWebURL);
-    await expect(response.json()).resolves.toEqual(expect.objectContaining( { "context": {
-      "query": "ronaldo",
-      "effectiveQuery": "ronaldo",
-      "offset": 0,
-      "itemsCount": 10,
-      "locale": "en-CA",      
-      "spellcheck": true
-  },}));
+    await app.api.search.response.expectBodyToEqual(response , { "context": {
+      query: "ronaldo",
+      effectiveQuery: "ronaldo",
+      offset: 0,
+      itemsCount: 10,
+      locale: "en-CA",      
+      spellcheck: true }
+    });
   });
 }
 
