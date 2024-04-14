@@ -1,7 +1,6 @@
 import BasePage  from "../base/BasePage";
 import  Home  from "./(home)/page";
-import Preloader from "../components/Preloader";
-import imagesGallery from "../components/ImagesGallery";
+import Api from "../api/api";
 import ImagePage from "../app/(search)/images/page";
 import ImageMyPage from "../app/(search)/images/my/page";
 import MusicPage from "../app/(search)/music/page";
@@ -26,6 +25,7 @@ import Route from "../app/api/route";
 export default class Application extends BasePage {
     constructor(page) {
         super(page);
+     this.api = new Api(this.page.request)
      this.home = new Home(this.page);
      this.emailPage = new EmailPage(this.page);
      this.vpnPage = new VpnPage(this.page);
