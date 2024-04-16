@@ -21,8 +21,8 @@ test("Brazilian Bots and Error 429 Page /web search @api", async ({
      .setSpellcheck(true)
      )}
    // Assert
-   await app.api.search.response.expectResponseToHaveStatusCode(response, 429);
-   await app.api.search.response.expectBodyToEqual(response , {
+  await app.api.search.response.expectResponseToHaveStatusCode(response, 429);
+  await app.api.search.response.expectBodyToEqual(response , {
     title:"Too Many Requests",
     status :429 })
 });
@@ -45,8 +45,8 @@ test("Brazilian Bots and Error 429 Page /news search @api", async ({
   .setSortBy("Created")
   ) 
    // Assert
-   await app.api.search.response.expectResponseToHaveStatusCode(response, 429);
-   await app.api.search.response.expectBodyToEqual(response , {
+  await app.api.search.response.expectResponseToHaveStatusCode(response, 429);
+  await app.api.search.response.expectBodyToEqual(response , {
     title:"Too Many Requests",
     status :429 })
 });
