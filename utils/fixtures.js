@@ -1,12 +1,10 @@
 const base = require('@playwright/test');
-const internalData = JSON.parse( JSON.stringify(require("../data/auth/internalUser.json")));
-const externalData = JSON.parse( JSON.stringify(require("../data/auth/externalUser.json")));
+import Application from "../app/index.js";
 
 export let favoriteTracksIdForDeletionOfInternalUser = []
 export let favoriteTracksIdForDeletionOfExternalUser = []
 export let favoriteImagesIdForDeletionOfInternalUser = []
 export let favoriteImagesIdForDeletionOfExternalUser = []
-import Application from "../app/index.js";
 
 exports.test = base.test.extend({
   app: async ({page}, use) => {
@@ -14,22 +12,22 @@ exports.test = base.test.extend({
     await use(app);
     if (favoriteTracksIdForDeletionOfInternalUser.length > 0) {
       for (const id of favoriteTracksIdForDeletionOfInternalUser) { 
-        await app.musicMyPage.track.deleteTrackFromFavorite(id,internalData);
+        await app.api.user.sendDeleteTrackFromFavorite(id, process.env.TOKEN_INTERNAL_USER);
       }
     }
     if (favoriteTracksIdForDeletionOfExternalUser.length > 0) {
       for (const id of favoriteTracksIdForDeletionOfExternalUser) { 
-        await app.musicMyPage.track.deleteTrackFromFavorite(id,externalData);
+        await app.api.user.sendDeleteTrackFromFavorite(id,process.env.TOKEN_EXTERNAL_USER);
       }
     }
     if (favoriteImagesIdForDeletionOfInternalUser.length > 0) {
       for (const id of favoriteImagesIdForDeletionOfInternalUser) { 
-        await app.imagePage.item.deleteImageFromFavorite(id,internalData);
+        await app.api.user.sendDeleteImageFromFavorite(id, process.env.TOKEN_INTERNAL_USER);
       }
     }
     if (favoriteImagesIdForDeletionOfExternalUser.length > 0) {
       for (const id of favoriteImagesIdForDeletionOfExternalUser) { 
-        await app.imagePage.item.deleteImageFromFavorite(id,externalData);
+        await app.api.user.sendDeleteImageFromFavorite(id,process.env.TOKEN_EXTERNAL_USER);
       }
     }
   }

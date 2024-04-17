@@ -15,15 +15,6 @@ export default class Item extends BaseComponent {
   }
   //Actions
 
-  deleteImageFromFavorite = async (id, data) => {
-    const context = await request.newContext()
-    await context.delete(`${ process.env.API_URL}/v4/user/images/${id}`,{
-    headers: {
-      'Accept': 'application/json, text/plain, */*',
-      'Authorization': `Bearer ${data["origins"][0]["localStorage"][0]["value"]}`,
-    },
-   });
-  }
   clickItemNumber = async (index) => {
     await this.clickElement(this.item(index),
       `item with index${index}`

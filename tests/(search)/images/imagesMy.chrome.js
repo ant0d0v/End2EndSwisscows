@@ -3,7 +3,8 @@ import { test,
     favoriteImagesIdForDeletionOfExternalUser } 
     from "../../../utils/fixtures";
 
-  test.describe('Internal user', () => { test.use({ mode: "default" })
+test.describe('Internal user', () => { 
+  test.describe.configure({ mode: 'default' });
   test("Check redirect to /images when delete last image from my favorite images", async ({
     app
   }) => {
