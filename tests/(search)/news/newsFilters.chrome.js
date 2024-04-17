@@ -25,18 +25,18 @@ for (const {testID,expectedNewsLink,locatorId} of filterData.byDate) {
       
       //Assert
       await app.newsPage.expectHaveUrl(app.page, expectedNewsLink);
-      await expect(response.json()).resolves.toEqual(expect.objectContaining({ "request": {
-        "query": "news",
-        "itemsCount": 10,
-        "region": "de-DE",
-        "offset": 0,
-        "sortBy": "Created",
-        "sortOrder": "Desc",
-        "type": null,
-        "collection": null,
-        "language": "de",
-        "freshness": 0
-    },}));
+      await app.api.search.response.expectBodyToEqual(response ,{ "request": {
+        query: "news",
+        itemsCount: 10,
+        region: "de-DE",
+        offset: 0,
+        sortBy: "Created",
+        sortOrder: "Desc",
+        type: null,
+        collection: null,
+        language: "de",
+        freshness: 0 }
+      });
     });
   }
 

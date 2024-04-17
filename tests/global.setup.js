@@ -1,19 +1,12 @@
 import { test as setup } from "../utils/fixtures";
-import fs from "fs";
+import { 
+  getBearerTokenOfInternalUser, 
+  getBearerTokenOfExternalUser, 
+  removeRefreshToken  
+} from "../helpers/authHelper"
+
 const authFilePathForInternalUser = "./data/auth/internalUser.json";
 const authFilePathForExternalUser = "./data/auth/externalUser.json";
-
-const removeRefreshToken = (authFilePath) => {
-  const authFileContent = fs.readFileSync(authFilePath, "utf-8");
-  let authData = JSON.parse(authFileContent);
-
-  authData.origins.forEach((origin) => {
-    origin.localStorage = origin.localStorage.filter(
-      (item) => item.name !== "oidc.refresh_token"
-    );
-  });
-  fs.writeFileSync(authFilePath, JSON.stringify(authData, null, 2));
-};
 
 setup("Login to site as swisscows user", async ({ app }) => {
   //Action
@@ -30,6 +23,7 @@ setup("Login to site as swisscows user", async ({ app }) => {
   // Run the function to remove the specified element from the origins array
   await app.page.context().storageState({ path: authFilePathForInternalUser });
   removeRefreshToken(authFilePathForInternalUser);
+  process.env.TOKEN_INTERNAL_USER = getBearerTokenOfInternalUser();
 });
 
 setup("Login to site as external user", async ({ app }) => {
@@ -47,4 +41,5 @@ setup("Login to site as external user", async ({ app }) => {
   // Run the function to remove the specified element from the origins array
   await app.page.context().storageState({ path: authFilePathForExternalUser });
   removeRefreshToken(authFilePathForExternalUser);
+  process.env.TOKEN_EXTERNAL_USER =  getBearerTokenOfExternalUser();
 });

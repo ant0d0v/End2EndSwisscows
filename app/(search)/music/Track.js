@@ -61,17 +61,6 @@ export default class Track extends BaseComponent {
     }
     return responseIDs;
   }
-  deleteTrackFromFavorite = async (id, data) => {
-    const context = await request.newContext()
-    await context.delete(`${ process.env.API_URL}/music/tracks/my/${id}`,{
-    headers: {
-      'Accept': 'application/json, text/plain, */*',
-      'Authorization': `Bearer ${data["origins"][0]["localStorage"][0]["value"]}`,
-    },
-   });
-
-  }
-
   scrollByVisibleTrackNumber = async (number) => {
     for(let i = 0;i < number ; i++){
     await this.scrollByVisibleElement(this.lastTrack(i), "last track");
