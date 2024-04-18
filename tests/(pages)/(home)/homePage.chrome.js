@@ -113,6 +113,7 @@ test("Check that buttons have hover over the services block on home page", async
 }) => {
   //Actions
   await app.home.open()
+  await app.home.waitUntilPageIsFullyLoaded()
 
   //Assert
   await app.home.expectColorsLinksWhenHovering(app.home.buttonOfServiceBlock, "color", constanta.RED);
