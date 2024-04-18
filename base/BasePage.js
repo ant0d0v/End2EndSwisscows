@@ -4,8 +4,6 @@ import { expect, test, context} from "../utils/customMatchers"
 export default class BasePage {
   constructor(page) {
     this.page = page;
-    this.h1Text = (page) => page.locator("//h1");
-    this.appLinksInFooter = (page) => page.locator('//div[contains(@class, "app") and contains(@class, "mobile")]')
   }
   /**
    * The function "errorHandling" throws an error message with details about the test failure,
@@ -278,31 +276,31 @@ export default class BasePage {
         await expect(element).toContainText(criteria);
     });
   }
-  async expectH1Text(newPage, text) {
-    await test.step('Expect the page  "to have" h1 text with text', async () => {
-      await this.expectElementToHaveText(this.h1Text(newPage), text);
-    });
-  }
-  async expectPageToHaveScreenshot(element,testInfo) {
+  async expectPageToHaveScreenshot(testInfo, elements, element) {
     await test.step(`Expect screen to be equal to the snapshot of page`, async () => {  
         testInfo.snapshotSuffix = '';
-        await this.waitUntilPageIsFullyLoaded();
+        const imageElements = await elements.all();
+        for (const image of imageElements) {
+          await image.scrollIntoViewIfNeeded();
+          await expect(image).not.toHaveJSProperty('naturalWidth', 0);
+        }
         await expect(this.page).toHaveScreenshot(`${testInfo.title}.png`,{
           fullPage: true,
-          mask: [await element, await this.appLinksInFooter(this.page)],
+          mask: [await element],
         });
       })
       .catch(async (e) => await this.errorHandling(e, this.page));
   }
-  async expectPageToHaveScreenshotWithoutMask(testInfo) {
+  async expectPageToHaveScreenshotWithoutMask(testInfo, elements) {
     await test.step('Expect screen to be equal to the snapshot of page', async () => {
         testInfo.snapshotSuffix = '';
-        await this.waitUntilPageIsFullyLoaded();
+        const imageElements = await elements.all();
+        for (const image of imageElements) {
+          await image.scrollIntoViewIfNeeded();
+          await expect(image).not.toHaveJSProperty('naturalWidth', 0);
+        }
         await expect(this.page).toHaveScreenshot(`${testInfo.title}.png`,{
           fullPage: true,
-          mask: [
-            await this.appLinksInFooter(this.page)
-          ],
         });
       })
       .catch(async (e) => await this.errorHandling(e, this.page));

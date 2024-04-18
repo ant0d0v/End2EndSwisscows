@@ -113,6 +113,7 @@ test("Check that buttons have hover over the services block on home page", async
 }) => {
   //Actions
   await app.home.open()
+  await app.home.waitUntilPageIsFullyLoaded()
 
   //Assert
   await app.home.expectColorsLinksWhenHovering(app.home.buttonOfServiceBlock, "color", constanta.RED);
@@ -135,6 +136,7 @@ test("Check design dark theme of the home page ", async ({
   await app.home.header.clickHamburgerMenuButton();
   await app.home.header.hamburgerMenu.clickThemeDropdown();
   await app. home.header.hamburgerMenu.clickDarkTheme();
+  await app.home.installSwisscowsLink.clickCloseButtonInExtensionPopup();
 
   //Assert
   await app.home.expectScreenHome(testInfo);

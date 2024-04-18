@@ -11,6 +11,7 @@ export default class ContactPage extends BasePage {
     this.header = new Header(page);
 
     //Locators
+    this.allImages = this.page.locator("main.contact img:visible")
     this.sendButton = this.page.getByRole("button", { name: "Send" });
     this.allContent = this.page.locator("main.contact");
     this.checkbox = page.getByLabel('I agree that my data will be')
@@ -62,7 +63,7 @@ export default class ContactPage extends BasePage {
   }
 
   expectScreenContactPage = async (testInfo) => {
-    await this.expectPageToHaveScreenshotWithoutMask(testInfo);
+    await this.expectPageToHaveScreenshotWithoutMask(testInfo, this.allImages);
   };
   expectSuccessMessage = async () => {
     await this.expectElementToBeVisible(this.successMessage)

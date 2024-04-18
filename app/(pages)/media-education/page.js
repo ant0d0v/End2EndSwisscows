@@ -11,6 +11,7 @@ export default class MediaEducationPage extends BasePage {
 
     //Locators
     this.allContent = this.page.locator("main.media-education");
+    this.allImages = this.page.locator("main.media-education img:visible")
     this.links = (id) => this.page.getByRole("link", { name: `${id}` });
     this.player = this.page.locator("div.player")
     this.flyerButton = this.page.getByRole("link", { name: "Open flyer [PDF, 1.49Mb]" });
@@ -29,7 +30,7 @@ export default class MediaEducationPage extends BasePage {
   //Assert
 
   expectScreenMediaEducationPage = async (testInfo) => {
-    await this.expectPageToHaveScreenshot(this.player, testInfo);
+    await this.expectPageToHaveScreenshot(testInfo, this.allImages, this.player);
   };
 
   async expectValidatePdfFile(currentPage, pdf,testInfo) {

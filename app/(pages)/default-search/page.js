@@ -6,6 +6,7 @@ export default class DefaultSearchPage extends BasePage {
     this.header = new Header(page);
      //Locators
     this.allContent = this.page.locator("main.default-search");
+    this.allImages = this.page.locator("main.default-search img:visible")
     this.allLinks = (id, name) => this.page.locator(`#${id}`).getByRole('link', { name: name })
     this.animationImage = this.page.locator('#default-search-opera img').nth(1)
   }
@@ -21,6 +22,6 @@ export default class DefaultSearchPage extends BasePage {
 
   // Verify
   expectDefaultSearchPage = async (testInfo) => {
-    await this.expectPageToHaveScreenshot(this.animationImage,testInfo);
+    await this.expectPageToHaveScreenshot(testInfo, this.allImages, this.animationImage);
   };
 }

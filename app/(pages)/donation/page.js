@@ -11,6 +11,7 @@ export default class DonationPage extends BasePage {
 
     //Locators
     this.pdfLinks = (id) => this.page.getByText(`${id}`);
+    this.allImages = this.page.locator("main.donation img:visible")
     this.paymentBlock = this.page.locator("div.payment-slip ") 
     this.links = (id) =>
       this.page.getByRole("main").getByRole("link", { name: `${id}` });
@@ -39,7 +40,7 @@ export default class DonationPage extends BasePage {
   //Assert
 
   expectScreenDonationPage = async (testInfo) => {
-    await this.expectPageToHaveScreenshot(this.paymentBlock, testInfo);
+    await this.expectPageToHaveScreenshotWithoutMask(testInfo,this.allImages);
   };
 
   async expectValidatePdfFile(currentPage, pdf, testInfo) {

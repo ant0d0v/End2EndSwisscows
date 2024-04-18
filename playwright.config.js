@@ -76,7 +76,7 @@ module.exports = defineConfig({
         ...devices["Desktop Chrome"],
         channel: "chrome",
         storageState: "./data/auth/internalUser.json",
-        viewport: { width: 1360, height: 900 },
+        viewport: { width: 1440, height: 900 },
         screenshot: "only-on-failure",
       },
       dependencies: ["setup"],
@@ -86,7 +86,7 @@ module.exports = defineConfig({
       testMatch: /.*\.ff\.js/,
       use: {
         ...devices["Desktop Firefox"],
-        viewport: { width: 1360, height: 900 },
+        viewport: { width: 1440, height: 900 },
         screenshot: "only-on-failure",
         video: "retain-on-failure",
       },
@@ -96,7 +96,7 @@ module.exports = defineConfig({
       testMatch: /.*\.msedge\.js/,
       use: {
         ...devices["Desktop Edge"],
-        viewport: { width: 1360, height: 900 },
+        viewport: { width: 1440, height: 900 },
         screenshot: "only-on-failure",
         video: "retain-on-failure",
       },

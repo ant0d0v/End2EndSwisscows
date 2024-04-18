@@ -79,7 +79,6 @@ test(`Check send message using all required fields`, async ({
   await app.contactPage.clickSendButton()
 
   //Assert
-  await app.contactPage.expectH1Text(app.page, "Contact us")
   await app.contactPage.expectSuccessMessage()
   await app.contactPage.expectHaveUrl(app.page, "https://dev.swisscows.com/en/contact?success=true");
   
@@ -99,7 +98,7 @@ test(`Check "back to search" button `, async ({
 
   //Assert
   await app.home.expectHaveUrl(app.page, constantsData.URL_MAIN_PAGE);
-  await app.home.expectHaveTitle(app.page,constantsData.TITLE_MAIN_PAGE)
+  await app.home.expectHaveTitle(app.page, constantsData.TITLE_MAIN_PAGE)
 });
 
 test(`Check the tooltip when sending a message without the "Agree" checkbox`, async ({

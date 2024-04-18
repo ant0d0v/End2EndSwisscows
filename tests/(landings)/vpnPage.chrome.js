@@ -8,7 +8,6 @@ const constantsData = JSON.parse(
 test("Check design of the VPN page ", async ({ app },testInfo) => {
     //Actions
     await app.vpnPage.open()
-    await app.vpnPage.waitUntilPageIsFullyLoaded()
     //Assert
     await app.vpnPage.expectScreenVpnPage(testInfo)
   });
@@ -18,7 +17,6 @@ test("Check design of the VPN page ", async ({ app },testInfo) => {
   },testInfo) => {
     //Actions
     await app.vpnPage.open()
-    await app.vpnPage.waitUntilPageIsFullyLoaded();
     await app.vpnPage.header.clickHamburgerMenuButton();
     await app.vpnPage.header.hamburgerMenu.clickThemeDropdown();
     await app.vpnPage.header.hamburgerMenu.clickDarkTheme();
