@@ -135,6 +135,7 @@ test("Check design dark theme of the home page ", async ({
   await app.home.header.clickHamburgerMenuButton();
   await app.home.header.hamburgerMenu.clickThemeDropdown();
   await app. home.header.hamburgerMenu.clickDarkTheme();
+  await app.home.installSwisscowsLink.clickCloseButtonInExtensionPopup();
 
   //Assert
   await app.home.expectScreenHome(testInfo);

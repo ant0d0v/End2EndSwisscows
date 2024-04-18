@@ -10,7 +10,7 @@ const constantsData = JSON.parse(
 test("Check design of the Email page ", async ({ app },testInfo) => {
   //Actions
   await app.emailPage.open()
- 
+
   //Assert
   await app.emailPage.expectScreenEmailPage(testInfo)
 });
