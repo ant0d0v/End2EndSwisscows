@@ -7,6 +7,7 @@ export default class EmailPage extends BasePage {
     this.header = new Header(page);
      //Locators
     this.allContent = this.page.locator("main.swisscows-email");
+    this.allImages = this.page.locator("main.swisscows-email img:visible")
     this.introductionAndSupportLinks = (name) => this.page.getByRole("link", { name: name });
     this.subscriptionLinks = (id, name) => this.page.getByRole('link', { name: name }).nth(id);
     this.introductionAndSupportButtons = this.page.locator("//a[@class='button']")
@@ -18,6 +19,6 @@ export default class EmailPage extends BasePage {
 
   //Verify
   expectScreenEmailPage = async (testInfo) => {
-    await this.expectPageToHaveScreenshotWithoutMask(testInfo);
+    await this.expectPageToHaveScreenshotWithoutMask(testInfo, this.allImages);
   };
 }

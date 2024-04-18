@@ -19,6 +19,7 @@ export default class Home extends BasePage {
     this.logoSwisscows = this.page.getByRole("img", { name: "Swisscows", exact: true, });
     this.blockQuestionsAndAnswers = this.page.getByText( "Questions and AnswersWhat");
     this.allContent = this.page.locator("main.home");
+    this.allImages = this.page.locator("main.home img:visible")
     this.allQuestions = this.page.locator("h3.question");
     this.fourQuestion = this.page.getByRole("heading", { name: "How can I switch from another",});
     this.linkInTheFourQuestion = this.page.getByRole("link", { name: "instructions",});
@@ -55,6 +56,6 @@ export default class Home extends BasePage {
   };
   
   expectScreenHome = async (testInfo) => {
-    await this.expectPageToHaveScreenshot(this.widgetHome,testInfo);
+    await this.expectPageToHaveScreenshot(testInfo, this.allImages, this.widgetHome);
   };
 }

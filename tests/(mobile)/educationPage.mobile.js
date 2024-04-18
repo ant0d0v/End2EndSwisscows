@@ -18,7 +18,6 @@ test("Check design dark theme of the Education page ", async ({
 },testInfo) => {
   //Actions
   await app.mediaEducationPage.open()
-  await app.mediaEducationPage.waitUntilPageIsFullyLoaded();
   await app.mediaEducationPage.header.clickHamburgerMenuButton();
   await app.mediaEducationPage.header.hamburgerMenu.clickThemeDropdown();
   await app.mediaEducationPage.header.hamburgerMenu.clickDarkTheme();

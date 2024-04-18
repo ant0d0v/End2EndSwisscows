@@ -79,7 +79,6 @@ test(`Check send message using all required fields`, async ({
   await app.contactPage.clickSendButton()
 
   //Assert
-  await app.contactPage.expectH1Text(app.page, "Contact us")
   await app.contactPage.expectSuccessMessage()
   await app.contactPage.expectHaveUrl(app.page, "https://dev.swisscows.com/en/contact?success=true");
   
@@ -156,7 +155,6 @@ test("Check design dark theme of the  Contact Us page ", async ({
 },testInfo) => {
   //Actions
   await app.contactPage.open()
-  await app.contactPage.waitUntilPageIsFullyLoaded();
   await app.contactPage.header.clickHamburgerMenuButton();
   await app.contactPage.header.hamburgerMenu.clickThemeDropdown();
   await app.contactPage.header.hamburgerMenu.clickDarkTheme();

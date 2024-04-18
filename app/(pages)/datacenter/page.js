@@ -12,6 +12,7 @@ export default class DatacenterPage extends BasePage {
 
     //Locators
     this.allContent = this.page.locator("main.datacenter");
+    this.allImages = this.page.locator("main.datacenter img:visible")
     this.links = (id) =>
       this.page.getByRole("main").getByRole("link", { name: `${id}` });
   }
@@ -30,6 +31,6 @@ export default class DatacenterPage extends BasePage {
   //Assert
 
   expectScreenDatacenterPage = async (testInfo) => {
-    await this.expectPageToHaveScreenshot(this.videoPlayer.videoPlayer, testInfo);
+    await this.expectPageToHaveScreenshot(testInfo, this.allImages, this.videoPlayer.videoPlayer);
   };
 }

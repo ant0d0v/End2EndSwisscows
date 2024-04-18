@@ -5,7 +5,7 @@ const testData = JSON.parse(
 test("Check design of the About page ", async ({ app },testInfo) => {
     //Actions
     await app.aboutPage.open()
-    await app.aboutPage.waitUntilPageIsFullyLoaded();
+  
     //Assert
     await app.aboutPage.expectScreenAboutPage(testInfo)
   });
@@ -15,7 +15,6 @@ test("Check design of the About page ", async ({ app },testInfo) => {
   },testInfo) => {
     //Actions
     await app.aboutPage.open()
-    await app.aboutPage.waitUntilPageIsFullyLoaded();
     await app.aboutPage.header.clickHamburgerMenuButton();
     await app.aboutPage.header.hamburgerMenu.clickThemeDropdown();
     await app.aboutPage.header.hamburgerMenu.clickDarkTheme();

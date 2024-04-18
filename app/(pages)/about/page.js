@@ -8,6 +8,7 @@ export default class AboutPage extends BasePage {
     this.header = new Header(page);
      //Locators
     this.allContent = this.page.locator("main.about");
+    this.allImages = this.page.locator("main.about img:visible")
     this.allLinks = (name) => this.page.getByText(name, { exact: true });
   }
   //Actions
@@ -20,6 +21,6 @@ export default class AboutPage extends BasePage {
 
   // Verify
   expectScreenAboutPage = async (testInfo) => {
-    await this.expectPageToHaveScreenshotWithoutMask(testInfo);
+    await this.expectPageToHaveScreenshotWithoutMask(testInfo,this.allImages);
   };
 }

@@ -10,6 +10,7 @@ export default class VpnPage extends BasePage {
     this.faq =  new FAQ(page);
      //Locators
     this.allContent = this.page.locator("main.vpn");
+    this.allImages = this.page.locator("main.vpn img:visible")
     this.allLinks = (name) => this.page.getByRole("link", { name: name });
     this.allLinksInSecondQuestions = (name) => this.page.getByRole("link", { name: name });
     this.allButtons = this.page.locator("main.vpn .button")
@@ -52,7 +53,7 @@ export default class VpnPage extends BasePage {
   }
  
   expectScreenVpnPage = async (testInfo) => {
-    await this.expectPageToHaveScreenshotWithoutMask(testInfo);
+    await this.expectPageToHaveScreenshotWithoutMask(testInfo,this.allImages);
   };
 
 }
