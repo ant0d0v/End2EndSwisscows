@@ -34,7 +34,7 @@ test("Check design of the VPN page ", async ({ app },testInfo) => {
   
       //Assert
       await app.vpnPage.expectToBeOpenedNewPageAfterClick(app.vpnPage.allLinks(locatorId), expectedLink )
-      await app.vpnPage.expectNewPageToHaveTitle(context, expectedTitle)
+      await app.expectNewPageToHaveTitle(context, expectedTitle)
     });
   }
   for (const { testID, expectedLink, locatorId, expectedTitle,} of testData.allLinksInSecondQuestions) {
@@ -48,7 +48,7 @@ test("Check design of the VPN page ", async ({ app },testInfo) => {
       
       //Assert
       await app.vpnPage.expectToBeOpenedNewPageAfterClick(app.vpnPage.allLinksInSecondQuestions(locatorId), expectedLink )
-      await app.vpnPage.expectNewPageToHaveTitle(context, expectedTitle)
+      await app.expectNewPageToHaveTitle(context, expectedTitle)
     });
   }
   test("Check that all questions were opened on the VPN page.", async ({
@@ -122,6 +122,6 @@ test("Check design of the VPN page ", async ({ app },testInfo) => {
     await app.vpnPage.header.clickSwisscowsVpnLogo();
   
     //Assert
-    await app.home.expectHaveUrl(app.home.page, constantsData.URL_MAIN_PAGE);
-    await app.home.expectHaveTitle(app.home.page, constantsData.TITLE_MAIN_PAGE );
+    await app.expectHaveUrl(app.page, constantsData.URL_MAIN_PAGE);
+    await app.expectHaveTitle(app.page, constantsData.TITLE_MAIN_PAGE );
   });

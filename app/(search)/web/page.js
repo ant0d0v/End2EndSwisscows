@@ -38,6 +38,10 @@ export default class WebPage extends BasePage {
    this.previewButton = this.page.getByRole('button', { name: 'preview' }).first()
   }
   //Actions
+  async open404(path){
+    await this.openPage(path)
+  }
+  //Actions
   clickPreviewButton = async () => {
     await this.clickElement(this.previewButton, `preview button`);
   };

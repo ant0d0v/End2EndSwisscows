@@ -131,7 +131,7 @@ test("Check 202 No Results Found error page ", async ({
      const newPage = await app.newsPage.item.clickFirstNewsItem()
    
      //Assert
-     await app.newsPage.expectNotToHaveUrl(newPage,  process.env.BASE_URL + "/en/news?query=ukraine&region=de-DE" )
+     await app.expectNotToHaveUrl(newPage,  process.env.BASE_URL + "/en/news?query=ukraine&region=de-DE" )
   });
 
   test("Check select any number in the paging", async ({
@@ -201,7 +201,7 @@ test("Check 202 No Results Found error page ", async ({
      await app.newsPage.header.badgeCounter.expectCharityBadgeCounterToHaveValue("4");
      
      //Assert
-     await app.newsPage.expectHaveUrl(app.page,  process.env.BASE_URL + "/en/news?query=news&region=de-DE&offset=0")
+     await app.expectHaveUrl(app.page,  process.env.BASE_URL + "/en/news?query=news&region=de-DE&offset=0")
      await app.newsPage.item.expectListToHaveCount(app.newsPage.item.newsItems, 10)
      await app.newsPage.pagination.expectFirstNumberIsActive()
   });

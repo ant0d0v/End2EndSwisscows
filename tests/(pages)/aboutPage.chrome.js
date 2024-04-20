@@ -32,7 +32,7 @@ test("Check design of the About page ", async ({ app },testInfo) => {
       await app.aboutPage.clickAllLinks(locatorId);
   
       //Assert
-      await app.aboutPage.expectHaveUrl(app.page, new RegExp(expectedLink));
-      await app.aboutPage.expectHaveTitle(app.page ,expectedTitle);
+      await app.expectHaveUrl(app.page, new RegExp(expectedLink));
+      await app.expectHaveTitle(app.page ,expectedTitle);
     });
   }

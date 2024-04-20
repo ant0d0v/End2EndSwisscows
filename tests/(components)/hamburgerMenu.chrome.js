@@ -128,8 +128,8 @@ for (const {testID,expectedLink,locatorId,expectedTitle,} of testData.regionLink
     await app.home.header.hamburgerMenu.clickRegionLinkInDropdown(locatorId);
 
     //Assert
-    await app.home.expectHaveUrl(app.home.page, expectedLink);
-    await app.home.expectHaveTitle(app.home.page, expectedTitle);
+    await app.expectHaveUrl(app.page, expectedLink);
+    await app.expectHaveTitle(app.page, expectedTitle);
   });
 }
 for (const {testID,expectedLink,locatorId,expectedTitle,} of testData.staticPagesLinks) {
@@ -142,7 +142,7 @@ for (const {testID,expectedLink,locatorId,expectedTitle,} of testData.staticPage
     await app.home.header.hamburgerMenu.clickLinkOfStaticPage(locatorId);
 
     //Assert
-    await app.home.header.hamburgerMenu.expectHaveUrl(app.home.page, expectedLink);
-    await app.home.header.hamburgerMenu.expectHaveTitle(app.home.page, expectedTitle);
+    await app.expectHaveUrl(app.page, expectedLink);
+    await app.expectHaveTitle(app.page, expectedTitle);
   });
 }

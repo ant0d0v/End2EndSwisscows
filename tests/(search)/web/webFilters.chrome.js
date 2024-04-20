@@ -17,7 +17,7 @@ for (const {testID, expectedWebURL, locatorId} of filterData.byDate) {
     const response = await app.webPage.filters.buttonMenu.clickMenuItemAndGetResponse(locatorId, "/v4/web/search?query=ronaldo")
     
     //Assert
-    await app.webPage.expectHaveUrl(app.page, expectedWebURL);
+    await app.expectHaveUrl(app.page, expectedWebURL);
     await app.api.search.response.expectBodyToEqual(response , { "context": {
       query: "ronaldo",
       effectiveQuery: "ronaldo",
@@ -45,7 +45,7 @@ test("Cancel filter and navigates to the corresponding page.", async ({
   const newResponse =  await app.webPage.header.clickFilterButtonAndGetResponse("/v4/web/search?query=ronaldo")   
   
   //Assert
-  await app.webPage.expectHaveUrl(app.page,  process.env.BASE_URL + "/en/web?query=ronaldo&region=de-DE");
+  await app.expectHaveUrl(app.page,  process.env.BASE_URL + "/en/web?query=ronaldo&region=de-DE");
   await expect(oldResponse.json()).resolves.not.toEqual(newResponse.json())
 }); 
 

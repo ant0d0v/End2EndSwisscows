@@ -13,7 +13,7 @@ for (const { test_case, language, expected_content} of mainTable) {
     await app.home.header.hamburgerMenu.clickLanguageLinkInDropdown(language);
 
     //Assert
-    await app.home.expectElementToHaveText(app.home.allContent,expected_content)
+    await app.home.expectPageToHaveText(app.home.allContent,expected_content)
   });
 }
 
@@ -29,7 +29,7 @@ for (const { test_case, language, expected_content} of contactTable) {
     await app.contactPage.header.hamburgerMenu.clickLanguageLinkInDropdown(language);
 
     //Assert
-    await app.contactPage.expectElementToHaveText(app.contactPage.allContent,expected_content)
+    await app.contactPage.expectPageToHaveText(app.contactPage.allContent,expected_content)
   });
 }
 
@@ -45,7 +45,7 @@ for (const { test_case, language, expected_content} of charityTable) {
     await app.charityPage.header.hamburgerMenu.clickLanguageLinkInDropdown(language);
 
     //Assert
-    await app.charityPage.expectElementToHaveText(app.charityPage.allContent, expected_content)
+    await app.charityPage.expectPageToHaveText(app.charityPage.allContent, expected_content)
   });
 }
 
@@ -61,7 +61,7 @@ for (const { test_case, language, expected_content} of datacenterTable) {
     await app.datacenterPage.header.hamburgerMenu.clickLanguageLinkInDropdown(language);
 
     //Assert
-    await app.datacenterPage.expectElementToHaveText(app.datacenterPage.allContent, expected_content)
+    await app.datacenterPage.expectPageToHaveText(app.datacenterPage.allContent, expected_content)
   });
 }
 
@@ -77,7 +77,7 @@ for (const { test_case, language, expected_content} of educationTable) {
     await app.mediaEducationPage.header.hamburgerMenu.clickLanguageLinkInDropdown(language);
 
     //Assert
-    await app.mediaEducationPage.expectElementToHaveText(app.mediaEducationPage.allContent, expected_content)
+    await app.mediaEducationPage.expectPageToHaveText(app.mediaEducationPage.allContent, expected_content)
   });
 }
 
@@ -93,7 +93,7 @@ for (const { test_case, language, expected_content} of imprintTable) {
     await app.imprintPage.header.hamburgerMenu.clickLanguageLinkInDropdown(language);
 
     //Assert
-    await app.imprintPage.expectElementToHaveText(app.imprintPage.allContent, expected_content)
+    await app.imprintPage.expectPageToHaveText(app.imprintPage.allContent, expected_content)
   });
 }
 
@@ -109,6 +109,6 @@ for (const { test_case, language, expected_content} of aboutTable) {
     await app.aboutPage.header.hamburgerMenu.clickLanguageLinkInDropdown(language);
 
     //Assert
-    await app.aboutPage.expectElementToHaveText(app.aboutPage.allContent, expected_content)
+    await app.aboutPage.expectPageToHaveText(app.aboutPage.allContent, expected_content)
   });
 }

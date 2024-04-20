@@ -195,7 +195,7 @@ test("Check infinity scroll to items-pane aside", async ({
     
     //Assert
     await app.videoPage.itemDetails.player.expectElementToBeHidden(app.videoPage.itemDetails.player.videoPlayer)
-    await app.videoPage.expectHaveUrl(app.page, `${process.env.BASE_URL}/en/video?query=Skofka`)       
+    await app.expectHaveUrl(app.page, `${process.env.BASE_URL}/en/video?query=Skofka`)       
   });
 
   test("Check checkbox `Don't remind me again ` ", async ({
@@ -269,6 +269,6 @@ test("Check infinity scroll to items-pane aside", async ({
     await app.videoPage.item.expectTextsToContainSearchCriteria(app.videoPage.item.videoItems, "Miley Cyrus".toLowerCase())
     await app.videoPage.item.expectListToHaveCount(app.videoPage.item.videoItems, 10)
     await app.videoPage.item.expectAreElementsInListDisplayed(app.videoPage.item.images)
-    await app.videoPage.expectHaveUrl(app.videoPage.page,  process.env.BASE_URL + `/en/video?query=Miley+Cyrus&region=de-DE`)
+    await app.expectHaveUrl(app.page,  process.env.BASE_URL + `/en/video?query=Miley+Cyrus&region=de-DE`)
     
   });

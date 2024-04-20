@@ -81,7 +81,7 @@ test("Check 202 no results error page ", async ({
     app
   }) => {
     //Actions
-    await app.webPage.error.open("/web/123")
+    await app.webPage.open404("/web/123")
 
     //Assert
     await app.webPage.error.expectContentToHaveText(testData.expectedErrorText.pageNotFound404Error)
@@ -169,7 +169,7 @@ test("Check 202 no results error page ", async ({
      await app.webPage.header.badgeCounter.expectCharityBadgeCounterToHaveValue("3");
      
      //Assert
-     await app.webPage.expectHaveUrl(app.page, process.env.BASE_URL + "/en/web?query=ivanka&offset=0")
+     await app.expectHaveUrl(app.page, process.env.BASE_URL + "/en/web?query=ivanka&offset=0")
      await app.webPage.pagination.expectFirstNumberIsActive()
   });
 
@@ -184,7 +184,7 @@ test("Check 202 no results error page ", async ({
      await app.webPage.item.clickFirstWebItem()
    
      //Assert
-     await app.webPage.expectNotToHaveUrl(app.page, process.env.BASE_URL + "/en/web?query=ukraine")
+     await app.expectNotToHaveUrl(app.page, process.env.BASE_URL + "/en/web?query=ukraine")
   });
 
   test("Check open web Preview ", async ({

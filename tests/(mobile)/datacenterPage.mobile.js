@@ -42,8 +42,8 @@ for (const { testID, expectedLink, locatorId, expectedTitle, } of testData.datac
     const currentPage = await app.datacenterPage.clickLinkOnThePage(locatorId);
 
     //Assert
-    await app.datacenterPage.expectHaveUrl(currentPage, expectedLink);
-    await app.datacenterPage.expectHaveTitle(currentPage, expectedTitle);
+    await app.expectHaveUrl(currentPage, expectedLink);
+    await app.expectHaveTitle(currentPage, expectedTitle);
   });
 }
 test("Check design of the Datacenter page ", async ({ app},testInfo) => {

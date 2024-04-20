@@ -127,7 +127,7 @@
         },
         {
             "testID": "4",
-            "expectedUrl": "https://twitter.com/swisscows_ch",
+            "expectedUrl": "swisscows_ch",
             "expectedTitle": "swisscows",
             "locatorId" : "4"
         },

@@ -78,7 +78,7 @@ test.describe("test don't use cookie", () => {
       await app.home.header.expectToBeOpenedNewPageAfterClick(
         app.home.header.badgeEmail.badge, constantsData.URL_EMAIL_PAGE)
 
-      await app.emailPage.expectNewPageToHaveTitle(context, constantsData.TITLE_EMAIL_PAGE)
+      await app.expectNewPageToHaveTitle(context, constantsData.TITLE_EMAIL_PAGE)
     });
 
     test(`Check that Teleguard badge link navigate to corresponding pages`, async ({
@@ -104,6 +104,6 @@ test.describe("test don't use cookie", () => {
       await app.home.header.expectToBeOpenedNewPageAfterClick(
         app.home.header.badgeVPN.badge, constantsData.URL_VPN_PAGE)
 
-      await app.vpnPage.expectNewPageToHaveTitle(context, constantsData.TITLE_VPN_PAGE)
+      await app.expectNewPageToHaveTitle(context, constantsData.TITLE_VPN_PAGE)
     });
   })

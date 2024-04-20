@@ -15,6 +15,6 @@ export default class MusicPlaylistPage extends BasePage {
   }
   expectPageUrlToHaveParameter = async (query) => {
     const expectedUrlPattern = new RegExp(`${process.env.BASE_URL}/en/music/playlist\\${query}`);
-    await this.expectHaveUrl(this.page, expectedUrlPattern);
+    await expect(this.page).toHaveURL(expectedUrlPattern);
   };
 }

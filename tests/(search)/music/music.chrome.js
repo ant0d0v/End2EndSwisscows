@@ -364,7 +364,7 @@ test("Check 202 No Results Found error page ", async ({
     await app.musicPage.track.expectTracksNameToContainText(query)
     await app.musicPage.track.expectTracksCount(20)
     await app.musicPage.track.expectAreElementsInListDisplayed(app.musicPage.track.allPlayButtons)
-    await app.musicPage.expectHaveUrl(app.musicPage.page, process.env.BASE_URL + `/en/music?query=billie+jean&region=de-DE`)
+    await app.expectHaveUrl(app.page, process.env.BASE_URL + `/en/music?query=billie+jean&region=de-DE`)
   });
 
   test("Check the width and visibility images of playlist", async ({
@@ -426,7 +426,7 @@ test("Check 202 No Results Found error page ", async ({
     await app.musicPage.track.clickPlayButtonNumberTrack(1)
     
     //Assert
-    await app.musicPage.player.expectColorsLinksWhenHovering(app.musicPage.player.allButtons, "color", "rgb(223, 93, 93)");
+    await app.musicPage.expectColorsLinksWhenHovering(app.musicPage.player.allButtons, "color", "rgb(223, 93, 93)");
     await app.musicPage.player.expectListToHaveCount(app.musicPage.player.allButtons, 6);
   });
   

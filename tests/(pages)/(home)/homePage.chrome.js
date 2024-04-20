@@ -58,7 +58,7 @@ test("Check that the link in the fourth question leads to the expected URL.", as
   await app.home.expectToBeOpenedNewPageAfterClick(
     app.home.linkInTheFourQuestion, main.url.defaultSearchPage)
     
-  await app.defaultSearchPage.expectNewPageToHaveTitle(context, 
+  await app.expectNewPageToHaveTitle(context, 
     "Install Swisscows and use it as the default search");
 });
 
@@ -165,8 +165,8 @@ for (const { testID, expectedLink, locatorId, expectedTitle,} of main.languagesL
     await app.home.header.hamburgerMenu.clickLanguageLinkInDropdown(locatorId);
     
     //Assert
-    await app.home.expectHaveUrl(app.home.page, expectedLink);
-    await app.home.expectHaveTitle(app.home.page, new RegExp(expectedTitle));
+    await app.expectHaveUrl(app.page, expectedLink);
+    await app.expectHaveTitle(app.page, new RegExp(expectedTitle));
   });
 }
 

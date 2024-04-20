@@ -13,8 +13,8 @@ test("Clicking on the swisscows's logo leads to the home page.", async ({
   await app.webPage.header.clickSwisscowsLogo();
 
   //Assert
-  await app.home.expectHaveUrl(app.home.page, constantsData.URL_MAIN_PAGE);
-  await app.home.expectHaveTitle(app.home.page, constantsData.TITLE_MAIN_PAGE );
+  await app.expectHaveUrl(app.page, constantsData.URL_MAIN_PAGE);
+  await app.expectHaveTitle(app.page, constantsData.TITLE_MAIN_PAGE );
 });
 
 test("Check query counter value when searching for images ", async ({
@@ -126,7 +126,7 @@ test.describe("tests don't use cookie", () => {
       await app.webPage.header.expectToBeOpenedNewPageAfterClick(
         app.webPage.header.badgeEmail.badge, constantsData.URL_EMAIL_PAGE)
 
-      await app.emailPage.expectNewPageToHaveTitle(context, constantsData.TITLE_EMAIL_PAGE)
+      await app.expectNewPageToHaveTitle(context, constantsData.TITLE_EMAIL_PAGE)
     });
 
     test(`Check that Teleguard badge link navigate to corresponding pages`, async ({
@@ -158,7 +158,7 @@ test.describe("tests don't use cookie", () => {
       await app.webPage.header.expectToBeOpenedNewPageAfterClick(
         app.webPage.header.badgeVPN.badge, constantsData.URL_VPN_PAGE)
 
-      await app.vpnPage.expectNewPageToHaveTitle(context, constantsData.TITLE_VPN_PAGE)
+      await app.expectNewPageToHaveTitle(context, constantsData.TITLE_VPN_PAGE)
     });
 });
 

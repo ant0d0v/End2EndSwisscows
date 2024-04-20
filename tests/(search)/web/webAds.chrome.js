@@ -72,5 +72,5 @@ test("Check text advertising", async ({
      const newPage = await app.webPage.adsProduct.clickFirstProductAndNavigateToNewPage()
      
      //Assert
-     await app.webPage.expectNotToHaveUrl(newPage, process.env.BASE_URL + "/en/web?query=parfum&region=de-DE" )
+     await app.expectNotToHaveUrl(newPage, process.env.BASE_URL + "/en/web?query=parfum&region=de-DE" )
   });

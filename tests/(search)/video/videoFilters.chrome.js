@@ -20,7 +20,7 @@ for (const {testID,expectedVideoURL,locatorId, expectedPublisher } of filterData
       const response = await app.videoPage.filters.buttonMenu.clickMenuItemAndGetResponse(locatorId, "/v2/videos/search?query=video")
       
       //Assert
-      await app.videoPage.expectHaveUrl(app.page, expectedVideoURL);
+      await app.expectHaveUrl(app.page, expectedVideoURL);
       await app.videoPage.item.expectItemsResponsePublisherToEqual(response, expectedPublisher)
     });
   }
@@ -42,7 +42,7 @@ for (const {testID,expectedVideoURL,locatorId, expectedPublisher } of filterData
       const response = await app.videoPage.filters.buttonMenu.clickMenuItemAndGetResponse(locatorId, "/v2/videos/search?query=video")
       
       //Assert
-      await app.videoPage.expectHaveUrl(app.page, expectedVideoURL);
+      await app.expectHaveUrl(app.page, expectedVideoURL);
       await app.api.search.response.expectBodyToEqual(response ,{ "request": {
         query: "video",
         itemsCount: 10,

@@ -13,7 +13,7 @@ import { readCsvFile } from "../../helpers/csvHelper"
       await app.emailPage.header.hamburgerMenu.clickLanguageLinkInDropdown(language);
   
       //Assert
-      await app.emailPage.expectElementToHaveText(app.emailPage.allContent, expected_content)
+      await app.emailPage.expectPageToHaveText(app.emailPage.allContent, expected_content)
     });
   }
   const vpnTable = readCsvFile('../localization/vpn.csv')
@@ -28,6 +28,6 @@ import { readCsvFile } from "../../helpers/csvHelper"
       await app.vpnPage.header.hamburgerMenu.clickLanguageLinkInDropdown(language);
   
       //Assert
-      await app.vpnPage.expectElementToHaveText(app.vpnPage.allContent, expected_content)
+      await app.vpnPage.expectPageToHaveText(app.vpnPage.allContent, expected_content)
     });
   }
