@@ -103,7 +103,7 @@ test("Check 202 No Results Found error page ", async ({
      await app.home.open()
      await app.home.header.clickHamburgerMenuButton();
      await app.home.header.hamburgerMenu.selectRegion("Germany");
-     await app.home.header.searchForm.inputSearchCriteria("Ukraine");
+     await app.home.header.searchForm.inputSearchCriteria("news");
      await app.home.header.searchForm.clickEnterSearchField();
      await app.webPage.item.expectWebItemsToBeVisible()
      await app.newsPage.header.clickNewsSearchButton()
@@ -131,7 +131,7 @@ test("Check 202 No Results Found error page ", async ({
      const newPage = await app.newsPage.item.clickFirstNewsItem()
    
      //Assert
-     await app.newsPage.expectNotToHaveUrl(newPage, "https://dev.swisscows.com/en/news?query=ukraine&region=de-DE" )
+     await app.newsPage.expectNotToHaveUrl(newPage,  process.env.BASE_URL + "/en/news?query=ukraine&region=de-DE" )
   });
 
   test("Check select any number in the paging", async ({

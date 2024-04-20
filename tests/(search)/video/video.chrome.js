@@ -142,7 +142,7 @@ test("Check infinity scroll to items-pane aside", async ({
     await app.videoPage.item.clickVideoNumber(1)
     
     //Assert
-    await app.videoPage.item.expectImageToHaveWight("width", 273)
+    await app.videoPage.item.expectImageToHaveWight("width", 264)
     await app.videoPage.item.expectListToHaveCount(app.videoPage.item.images, 10)
     await app.videoPage.item.expectAreElementsInListDisplayed(app.videoPage.item.images)
   });

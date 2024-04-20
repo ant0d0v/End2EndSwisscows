@@ -241,14 +241,14 @@ test("Check that images results equals search criteria", async ({
 }) => {
   //Actions
   await app.home.open()
-  await app.home.header.searchForm.inputSearchCriteria("ronaldo");
+  await app.home.header.searchForm.inputSearchCriteria("iphone");
   await app.home.header.searchForm.clickEnterSearchField();
   await app.imagePage.header.clickImageSearchButton()
   await app.imagePage.item.expectImageItemsToBeVisible()
   
   //Assert
-  await app.imagePage.item.expectItemNameToContainText("ronaldo")
-  await app.imagePage.item.expectItemsCount(49 || 50)
+  await app.imagePage.item.expectItemNameToContainText(/iphone/i)
+  await app.imagePage.item.expectItemsCount(50)
 });
 
 test("Check regional search", async ({
@@ -290,7 +290,7 @@ test("Check that image of proxy cdn server", async ({
 }) => {
   //Actions
   await app.home.open()
-  await app.home.header.searchForm.inputSearchCriteria("Ronaldo");
+  await app.home.header.searchForm.inputSearchCriteria("iphone");
   await app.home.header.searchForm.clickEnterSearchField();
   await app.imagePage.header.clickImageSearchButton()
   await app.imagePage.item.expectImageItemsToBeVisible()
