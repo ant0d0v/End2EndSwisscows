@@ -101,8 +101,8 @@ for (const { testID, expectedLink, locatorId, expectedTitle, } of testData.chari
     const currentPage = await app.charityPage.clickLinkOnThePage(locatorId);
 
     //Assert
-    await app.charityPage.expectHaveUrl(currentPage, expectedLink);
-    await app.charityPage.expectHaveTitle(currentPage, expectedTitle);
+    await app.expectHaveUrl(currentPage, expectedLink);
+    await app.expectHaveTitle(currentPage, expectedTitle);
   });
 }
 test("Check design of the charity page ", async ({ app },testInfo) => {

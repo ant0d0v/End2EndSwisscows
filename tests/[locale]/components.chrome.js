@@ -13,7 +13,7 @@ import { readCsvFile } from "../../helpers/csvHelper"
       await app.home.header.hamburgerMenu.clickLanguageLinkInDropdown(language);
   
       //Assert
-      await app.home.expectElementToHaveText(app.home.header.allContent, expected_content)
+      await app.home.header.expectElementToHaveText(app.home.header.allContent, expected_content)
     });
   }
 
@@ -30,6 +30,6 @@ import { readCsvFile } from "../../helpers/csvHelper"
       await app.home.header.clickHamburgerMenuButton();
   
       //Assert
-      await app.home.expectElementToHaveText(app.home.header.hamburgerMenu.allContent,expected_content)
+      await app.home.header.hamburgerMenu.expectElementToHaveText(app.home.header.hamburgerMenu.allContent,expected_content)
     });
   }

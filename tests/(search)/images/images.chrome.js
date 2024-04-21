@@ -265,9 +265,9 @@ test("Check regional search", async ({
   await app.imagePage.item.expectImageItemsToBeVisible()
   
   //Assert
-  await app.imagePage.item.expectItemNameToContainText("red")
+  await app.imagePage.item.expectItemNameToContainText(/red/i)
   await app.imagePage.item.expectItemsCount(50)
-  await app.imagePage.expectHaveUrl(app.imagePage.page, process.env.BASE_URL + `/en/images?query=red&region=de-DE`)
+  await app.expectHaveUrl(app.page, process.env.BASE_URL + `/en/images?query=red&region=de-DE`)
 });
 
 test("Check outline of item when item is selected", async ({

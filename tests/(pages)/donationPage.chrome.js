@@ -13,7 +13,7 @@ for (const { testID, pdfLink, locatorId } of testData.donationPdfLinks) {
     const currentPage = await app.donationPage.clickPdfLinkOnThePage(locatorId);
     
     //Assert
-    await app.donationPage.expectHaveUrl(currentPage, pdfLink);
+    await app.expectHaveUrl(currentPage, pdfLink);
     await app.donationPage.expectValidatePdfFile(currentPage, pdfLink,testInfo);
   });
 }
@@ -26,8 +26,8 @@ for (const { testID, expectedLink, locatorId, expectedTitle, } of testData.donat
     const currentPage = await app.donationPage.clickLinkOnThePage(locatorId);
 
     //Assert
-    await app.donationPage.expectHaveUrl(currentPage, expectedLink);
-    await app.donationPage.expectHaveTitle(currentPage, expectedTitle);
+    await app.expectHaveUrl(currentPage, expectedLink);
+    await app.expectHaveTitle(currentPage, expectedTitle);
   });
 }
 

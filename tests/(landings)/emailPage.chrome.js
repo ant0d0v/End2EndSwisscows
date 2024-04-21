@@ -39,7 +39,7 @@ for (const { testID, expectedUrl, locatorId, expectedTitle,} of testData.introdu
     await app.emailPage.expectToBeOpenedNewPageAfterClick(
       app.emailPage.introductionAndSupportLinks(locatorId), expectedUrl )
   
-    await app.emailPage.expectNewPageToHaveTitle(context, expectedTitle)
+    await app.expectNewPageToHaveTitle(context, expectedTitle)
   });
 }
 
@@ -54,7 +54,7 @@ for (const { testID, expectedUrl, locatorId, buttonName, expectedTitle,} of test
     await app.emailPage.expectToBeOpenedNewPageAfterClick(
       app.emailPage.subscriptionLinks(locatorId,buttonName), expectedUrl )
 
-    await app.emailPage.expectNewPageToHaveTitle(context, expectedTitle)
+    await app.expectNewPageToHaveTitle(context, expectedTitle)
   });
 }
 
@@ -77,7 +77,7 @@ test("Clicking on the swisscows's logo on email page leads to the home page.", a
   await app.emailPage.header.clickSwisscowsEmailLogo();
 
   //Assert
-  await app.home.expectHaveUrl(app.home.page, constantsData.URL_MAIN_PAGE);
-  await app.home.expectHaveTitle(app.home.page, constantsData.TITLE_MAIN_PAGE );
+  await app.expectHaveUrl(app.page, constantsData.URL_MAIN_PAGE);
+  await app.expectHaveTitle(app.page, constantsData.TITLE_MAIN_PAGE );
 });
 

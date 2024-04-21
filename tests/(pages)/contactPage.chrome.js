@@ -80,7 +80,7 @@ test(`Check send message using all required fields`, async ({
 
   //Assert
   await app.contactPage.expectSuccessMessage()
-  await app.contactPage.expectHaveUrl(app.page, "https://dev.swisscows.com/en/contact?success=true");
+  await app.expectHaveUrl(app.page, "https://dev.swisscows.com/en/contact?success=true");
   
 });
 
@@ -97,8 +97,8 @@ test(`Check "back to search" button `, async ({
   await app.contactPage.clickBackToSearchButton()
 
   //Assert
-  await app.home.expectHaveUrl(app.page, constantsData.URL_MAIN_PAGE);
-  await app.home.expectHaveTitle(app.page,constantsData.TITLE_MAIN_PAGE)
+  await app.expectHaveUrl(app.page, constantsData.URL_MAIN_PAGE);
+  await app.expectHaveTitle(app.page,constantsData.TITLE_MAIN_PAGE)
   
 });
 
@@ -139,8 +139,8 @@ test("Check navigation to corresponding pages for  privacy link on the page", as
   const currentPage = await app.contactPage.clickElementAndNavigateToNewPage(app.contactPage.privacyLink);
 
   //Assert
-  await app.contactPage.expectHaveUrl(currentPage, constantsData.URL_PRIVACY_POLICY);
-  await app.contactPage.expectHaveTitle(currentPage, constantsData.TITLE_PRIVACY_POLICY);
+  await app.expectHaveUrl(currentPage, constantsData.URL_PRIVACY_POLICY);
+  await app.expectHaveTitle(currentPage, constantsData.TITLE_PRIVACY_POLICY);
 });
 
 test("Check design of the Contact Us page ", async ({ app },testInfo) => {

@@ -9,11 +9,7 @@ export default class Error extends BaseComponent {
     this.errorImage = this.page.getByRole('main').locator('img').first()
     this.errorImageNoResult = this.page.getByRole('main').getByRole('img').first()
   }
-  // Actions
-  open = (endpoint) => {
-    this.openPage(endpoint)
-  }
-
+  
   //Verify
   expectContentToHaveText = async ( expectedText) => {
     await this.expectElementToHaveText(this.contentErrorPage, expectedText)

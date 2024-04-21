@@ -22,7 +22,7 @@ for (const { testID, pdfLink, locatorId } of testData.educationPdfLinks) {
     const currentPage = await app.mediaEducationPage.clickPdfLinkOnThePage(locatorId);
     
    //Assert
-    await app.mediaEducationPage.expectHaveUrl(currentPage, pdfLink);
+    await app.expectHaveUrl(currentPage, pdfLink);
     await app.mediaEducationPage.expectValidatePdfFile(currentPage, pdfLink,testInfo);
   });
 }

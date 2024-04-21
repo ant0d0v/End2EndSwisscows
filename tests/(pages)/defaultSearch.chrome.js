@@ -31,7 +31,7 @@ test("Check design of the default search page ", async ({ app },testInfo) => {
       const currentPage = await app.defaultSearchPage.clickAllLinksAndNavigateToNewPage(locatorId, locatorName,);
   
       //Assert
-      await app.defaultSearchPage.expectHaveUrl(currentPage, new RegExp(expectedLink));
-      await app.defaultSearchPage.expectHaveTitle(currentPage ,expectedTitle);
+      await app.expectHaveUrl(currentPage, new RegExp(expectedLink));
+      await app.expectHaveTitle(currentPage ,expectedTitle);
     });
   }

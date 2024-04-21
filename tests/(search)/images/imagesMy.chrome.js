@@ -22,7 +22,7 @@ test.describe('Internal user', () => {
     await app.imageMyPage.itemDetails.clickBookmarkButton()
     
     //Assert
-    await app.imagePage.expectHaveUrl(app.imagePage.page, process.env.BASE_URL + `/en/images?query=red`)
+    await app.expectHaveUrl(app.page, process.env.BASE_URL + `/en/images?query=red`)
     await app.imagePage.item.expectItemsCount(50)
   });
 
@@ -118,6 +118,6 @@ test.describe('External user', () => {
     
     //Assert
     await app.imageMyPage.item.expectItemsCount(1)
-    await app.imageMyPage.expectHaveUrl(app.imageMyPage.page, process.env.BASE_URL + `/en/images/my?query=good&region=de-DE`)  
+    await app.expectHaveUrl(app.page, process.env.BASE_URL + `/en/images/my?query=good&region=de-DE`)  
 });
 });

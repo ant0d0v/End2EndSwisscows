@@ -13,8 +13,8 @@ for (const {testID, expectedUrl, expectedTitle, locatorId } of testData.internal
       
   
       //Assert
-      await app.home.expectHaveUrl(app.home.page, expectedUrl);
-      await app.home.expectHaveTitle(app.home.page, expectedTitle);
+      await app.expectHaveUrl(app.page, expectedUrl);
+      await app.expectHaveTitle(app.page, expectedTitle);
     });
   }
   for (const {testID, expectedUrl, expectedTitle, locatorId } of testData.externalLinks) {
@@ -26,7 +26,7 @@ for (const {testID, expectedUrl, expectedTitle, locatorId } of testData.internal
   
       //Assert
       await app.home.expectToBeOpenedNewPageAfterClick(app.home.footer.allExternalLinks(locatorId), expectedUrl)
-      await app.home.expectNewPageToHaveTitle(context, expectedTitle)
+      await app.expectNewPageToHaveTitle(context, expectedTitle)
     });
   }
 
@@ -39,7 +39,7 @@ for (const {testID, expectedUrl, expectedTitle, locatorId } of testData.internal
   
       //Assert
       await app.home.expectToBeOpenedNewPageAfterClick(app.home.footer.socialNetworksLinks(locatorId), expectedUrl)
-      await app.home.expectNewPageToHaveTitle(context, new RegExp(expectedTitle))
+      await app.expectNewPageToHaveTitle(context, new RegExp(expectedTitle))
     });
   }
 
@@ -52,7 +52,7 @@ for (const {testID, expectedUrl, expectedTitle, locatorId } of testData.internal
   
       //Assert
       await app.home.expectToBeOpenedNewPageAfterClick(app.home.footer.swisscowsAppLinks(locatorId), expectedUrl)
-      await app.home.expectNewPageToHaveTitle(context, expectedTitle)
+      await app.expectNewPageToHaveTitle(context, expectedTitle)
     });
   }
   test(`Check swisscows App Images in footer static pages are displayed `, async ({
@@ -78,7 +78,7 @@ test.describe('Footer of search pages', () => {
     
         //Assert
         await app.webPage.expectToBeOpenedNewPageAfterClick(app.webPage.footer.socialNetworksLinks(locatorId), expectedUrl)
-        await app.webPage.expectNewPageToHaveTitle(context, new RegExp(expectedTitle))
+        await app.expectNewPageToHaveTitle(context, new RegExp(expectedTitle))
       });
     }
   
@@ -94,7 +94,7 @@ test.describe('Footer of search pages', () => {
     
         //Assert
         await app.webPage.expectToBeOpenedNewPageAfterClick(app.webPage.footer.swisscowsAppLinks(locatorId), expectedUrl)
-        await app.webPage.expectNewPageToHaveTitle(context, expectedTitle)
+        await app.expectNewPageToHaveTitle(context, expectedTitle)
       });
     }
     test(`Check swisscows App Images in footer search pages are displayed `, async ({

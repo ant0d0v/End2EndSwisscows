@@ -24,7 +24,7 @@ for (const {testID,expectedNewsLink,locatorId} of filterData.byDate) {
         process.env.API_URL + "/news/search?query=news&region=de-DE")
       
       //Assert
-      await app.newsPage.expectHaveUrl(app.page, expectedNewsLink);
+      await app.expectHaveUrl(app.page, expectedNewsLink);
       await app.api.search.response.expectBodyToEqual(response ,{ "request": {
         query: "news",
         itemsCount: 10,
@@ -58,7 +58,7 @@ for (const {testID,expectedNewsLink,locatorId} of filterData.byDate) {
     const newResponse =  await app.newsPage.header.clickFilterButtonAndGetResponse(process.env.API_URL)
     
     //Assert
-    await app.newsPage.expectHaveUrl(app.page, process.env.BASE_URL + "/en/news?query=news&region=de-DE");
+    await app.expectHaveUrl(app.page, process.env.BASE_URL + "/en/news?query=news&region=de-DE");
     await expect(oldResponse.json()).resolves.not.toEqual(newResponse.json())
     await expect(newResponse.json()).resolves.toEqual(expect.objectContaining({ "request": {
         "query": "news",

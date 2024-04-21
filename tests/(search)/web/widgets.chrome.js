@@ -54,8 +54,8 @@ test.fixme("Check next and prev buttons in the video widget", async ({
      await app.webPage.videoWidget.clickMoreVideosButton()
      
      //Assert
-     await app.videoPage.expectHaveUrl(app.videoPage.page, process.env.BASE_URL + "/en/video?query=iphone&region=de-DE" )
-     await app.videoPage.expectHaveTitle(app.videoPage.page, "Videos for iphone - Swisscows" )
+     await app.expectHaveUrl(app.page, process.env.BASE_URL + "/en/video?query=iphone&region=de-DE" )
+     await app.expectHaveTitle(app.page, "Videos for iphone - Swisscows" )
   });
 
   test("Check that open video in the video widget", async ({
