@@ -4,7 +4,8 @@ import Filters from "./Filters.js";
 import RelatedQueries from "./RelatedQueries.js";
 import ItemDetails from "./ItemDetails.js";
 import Item from "./Item.js";
-import ProductAds from "../ads/ProductAds.js";
+import AdsProduct from "../ads/ProductAds.js";
+import AdsText from "../ads/TextAds.js";
 import Header from "../Header.js";
 import Error from "../Error.js";
 
@@ -15,7 +16,8 @@ export default class ImagePage extends BasePage {
     this.relatedQueries = new RelatedQueries(page);
     this.itemDetails = new ItemDetails(page);
     this.item = new Item(page);
-    this.productAds = new ProductAds(page);
+    this.adsProduct = new AdsProduct(page);
+    this.adsText = new AdsText(page);
     this.header  = new Header(page);
     this.error = new Error(page)
     //Locators
