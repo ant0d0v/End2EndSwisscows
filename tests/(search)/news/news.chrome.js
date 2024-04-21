@@ -103,7 +103,7 @@ test("Check 202 No Results Found error page ", async ({
      await app.home.open()
      await app.home.header.clickHamburgerMenuButton();
      await app.home.header.hamburgerMenu.selectRegion("Germany");
-     await app.home.header.searchForm.inputSearchCriteria("news");
+     await app.home.header.searchForm.inputSearchCriteria("ronaldo");
      await app.home.header.searchForm.clickEnterSearchField();
      await app.webPage.item.expectWebItemsToBeVisible()
      await app.newsPage.header.clickNewsSearchButton()

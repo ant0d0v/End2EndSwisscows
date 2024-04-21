@@ -1,6 +1,6 @@
 const { expect, context, test} = require('@playwright/test');
 // Base and utility imports
-import PageHolder from "./PageHolder";
+import PageHolder from "../base/PageHolder";
 import Api from "../api/api";
 import Route from "../app/api/route";
 
@@ -64,12 +64,11 @@ export default class Application extends PageHolder {
         this.route = new Route(this.page);
     }
     //Actions
-    
     async waitForUrlContains(Url) {
         await test.step(`Wait for url ${Url}`, async () => {
             await this.page.waitForURL(Url);
-          })
-      }
+        })
+    }
 
     //Verify
     async expectNewPageToHaveTitle(context, expectedTitle){
@@ -77,7 +76,7 @@ export default class Application extends PageHolder {
     }
     async expectHaveTitle(newPage, title) {
         await test.step('Expect a title "to have" a substring', async () => {
-          await expect(newPage).toHaveTitle(title);
+            await expect(newPage).toHaveTitle(title);
         });
     }
     async expectHaveUrl(newPage, url) {
@@ -87,7 +86,7 @@ export default class Application extends PageHolder {
     }
     async expectNotToHaveUrl(newPage, url) {
         await test.step('Expect a URL "not to have" a string', async () => {
-            await expect(newPage).not.toHaveURL(url);
-         });
-        }  
+          await expect(newPage).not.toHaveURL(url)
+        });
+    }  
 }
