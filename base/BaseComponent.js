@@ -1,6 +1,5 @@
 import { expect, test, context} from "../utils/customMatchers"
-import PageHolder from "../app/PageHolder";
-// const { expect, context, test} = require('@playwright/test');
+import PageHolder from "./PageHolder";
 
 export default class BaseComponent extends PageHolder {
   constructor(page) {

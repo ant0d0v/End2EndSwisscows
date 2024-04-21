@@ -263,42 +263,6 @@ test("Check 202 no results error page ", async ({
      await app.webPage.preview.expectScreenshotImageToBeVisible()
   });
 
-  test.skip("Check design of the web search page ", async ({
-    app
-  },testInfo) => {
-     //Actions
-     await app.home.open()
-     await app.home.header.clickHamburgerMenuButton();
-     await app.home.header.hamburgerMenu.selectRegion("Ukraine");
-     await app.home.header.searchForm.inputSearchCriteria("adsddss");
-     await app.home.header.searchForm.clickEnterSearchField();
-     await app.webPage.item.expectWebItemsToBeVisible()
-     await app.webPage.waitUntilPageIsFullyLoaded()
-     
-     //Assert
-     await app.webPage.expectScreenWebPage(testInfo)
-  });
-
-  test.skip("Check design dark theme of the web search page ", async ({
-    app
-  },testInfo) => {
-     
-     //Actions
-     await app.home.open()
-     await app.home.header.clickHamburgerMenuButton();
-     await app.home.header.hamburgerMenu.clickThemeDropdown();
-     await app.home.header.hamburgerMenu.clickDarkTheme();
-     await app.home.header.clickHamburgerMenuButton();
-     await app.home.header.hamburgerMenu.selectRegion("Ukraine");
-     await app.home.header.searchForm.inputSearchCriteria("adsddss");
-     await app.home.header.searchForm.clickEnterSearchField();
-     await app.webPage.item.expectWebItemsToBeVisible()
-     await app.webPage.waitUntilPageIsFullyLoaded()
-     
-     //Assert
-     await app.webPage.expectScreenWebPage(testInfo)
-  });
-
 
 
  

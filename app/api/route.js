@@ -1,5 +1,5 @@
 const { page } = require("@playwright/test");
-import PageHolder from "../PageHolder";
+import PageHolder from "../../base/PageHolder";
 
 const { expect } = require("@playwright/test");
 
