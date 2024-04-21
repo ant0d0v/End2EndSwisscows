@@ -77,7 +77,7 @@ export default class BaseComponent extends PageHolder {
         return true
       }else{
         await this.page.reload("domcontentloaded");
-        await this.waitUntilPageIsFullyLoaded()
+        await this.page.waitForLoadState("networkidle");
       }
     }
     })
