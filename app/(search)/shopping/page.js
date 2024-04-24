@@ -4,6 +4,7 @@ import Filters from "./Filters.js";
 import Offer from "./Offer.js";
 import Details from "./Details.js";
 import Item from "./Item.js";
+
 import BasePage from "../../../base/BasePage.js";
 import Header from "../Header.js";
 
@@ -17,4 +18,6 @@ export default class ShoppingPage extends BasePage {
     this.item = new Item(page);
     this.header  = new Header(page);
   }
+  //Actions
+  
 }

@@ -7,7 +7,7 @@ export default class AboutPage extends BasePage {
     super(page);
     this.header = new Header(page);
      //Locators
-    this.allContent = this.page.locator("main.about");
+    this.allContent = this.page.locator("main.about")
     this.allImages = this.page.locator("main.about img:visible")
     this.allLinks = (name) => this.page.getByText(name, { exact: true });
   }
@@ -16,7 +16,7 @@ export default class AboutPage extends BasePage {
     await this.openPage("/search-engine-no-tracking")
   }
   async clickAllLinks(id) {
-    await this.clickElement(this.allLinks(id),`${id} link`);
+    await this.clickElement(this.allLinks(id),`${id} link`)
   }
 
   // Verify
