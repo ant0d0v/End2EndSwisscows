@@ -31,34 +31,4 @@ export default class Item extends BaseComponent {
   expectWebItemsToContains = async (criteria) => {
     this.expectTextsToContainSearchCriteria(this.fiveWebItems, criteria);
   };
-  expectDatePublishedForPastDayToEqual = async (response,  getYesterdayDay) => {
-    const jsonResponse = await response.json();
-    jsonResponse.items.forEach(item => {
-      if (item.datePublished) {
-        const datePublished = item.datePublished;
-        const dateOnly = datePublished.slice(8, 10);
-        expect(dateOnly).toEqual(getYesterdayDay);
-      }
-    });
-  };
-  expectDatePublishedForPastMonthToEqual = async (response, getPastMonth) => {
-    const jsonResponse = await response.json();
-    jsonResponse.items.forEach(item => {
-      if (item.datePublished) {
-        const datePublished = item.datePublished;
-        const dateOnly = datePublished.slice(5, 7);
-        expect(dateOnly).toEqual(getPastMonth);
-      }
-    });
-  };
-  expectDatePublishedForPastYearToEqual = async (response, getPastYear) => {
-    const jsonResponse = await response.json();
-    jsonResponse.items.forEach(item => {
-      if (item.datePublished) {
-        const datePublished = item.datePublished;
-        const dateOnly = datePublished.slice(0, 4);
-        expect(dateOnly).toEqual(getPastYear);
-      }
-    });
-  };
 }

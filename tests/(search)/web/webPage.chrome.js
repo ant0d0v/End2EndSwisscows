@@ -81,7 +81,7 @@ test("Check 202 no results error page ", async ({
     app
   }) => {
     //Actions
-    await app.webPage.open404("/web/123")
+    await app.webPage.openNotFound("/web/123")
 
     //Assert
     await app.webPage.error.expectContentToHaveText(testData.expectedErrorText.pageNotFound404Error)
