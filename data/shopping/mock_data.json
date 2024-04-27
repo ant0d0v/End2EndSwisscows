@@ -1,0 +1,302 @@
+{
+    "id": 4612039238,
+    "name": "iPhone 15 256 GB gelb",
+    "brand": {
+        "id": 58,
+        "name": "Apple",
+        "logoUrl": "https://cdn.solutenetwork.com/dynimg/brands_800/58.png"
+    },
+    "category": {
+        "id": 4373,
+        "parentId": 100050,
+        "description": "Handys ohne Vertrag",
+        "relevance": 24807,
+        "imageUrl": "https://cdn.solutenetwork.com/dynimg/0_i78ASV6q1of0p75-xL_RDiIZG_4AexVt1_Cbd3R6KHFoqB03GsZJ_FlIg-TPxsfXnCFm9x0PAouyFcUT8OF_6ascZNw2GLtvka3pJzga0/4373.jpg",
+        "isLeaf": true,
+        "documentTypes": [
+            "product"
+        ],
+        "path": [
+            {
+                "id": 100050,
+                "parentId": null,
+                "description": "Handy & Telefon",
+                "relevance": 31297,
+                "imageUrl": "https://cdn.solutenetwork.com/dynimg/D4hV45ULPeLof0p75-xL_T6iqXpVz_hNlt1_Cbd3R6KHFoqB03GsZJ_FlIg-TPxscv68y-NXAbkKw-l0A89HXoUQ4-HQkdqkQR9r997hlds/100050.jpg",
+                "isLeaf": false,
+                "documentTypes": [
+                    "product"
+                ]
+            },
+            {
+                "id": 4373,
+                "parentId": 100050,
+                "description": "Handys ohne Vertrag",
+                "relevance": 24807,
+                "imageUrl": "https://cdn.solutenetwork.com/dynimg/0_i78ASV6q1of0p75-xL_RDiIZG_4AexVt1_Cbd3R6KHFoqB03GsZJ_FlIg-TPxsfXnCFm9x0PAouyFcUT8OF_6ascZNw2GLtvka3pJzga0/4373.jpg",
+                "isLeaf": true,
+                "documentTypes": [
+                    "product"
+                ]
+            }
+        ]
+    },
+    "baseproductId": 104989,
+    "deal": null,
+    "description": "DIE DYNAMIC ISLAND KOMMT AUF DAS IPHONE 15 – Die Dynamic Island bringt Hinweise und Live Aktivitäten nach vorne – so verpasst du nichts mehr, wenn du gerade etwas anderes machst. Du siehst, wer anruft, ob dein Flug pünktlich ist und noch viel mehr. INNOVATIVES DESIGN – Das iPhone 15 hat ein robustes Design aus durchgefärbtem Glas und Aluminium. Es ist vor Wasser und Staub geschützt. Die Ceramic Shield Vorderseite ist härter als jedes Smartphone Glas. Und das 6,1\" Super Retina XDR Display ist in der Sonne bis zu 2x heller als das des iPhone 14. 48 MP HAUPTKAMERA MIT 2X TELE ZOOM – Die 48 MP Hauptkamera nimmt in superhoher Auflösung auf. So machst du noch einfacher unglaubliche Bilder mit fantastischen Details. Und mit dem 2x Tele Zoom in optischer Qualität gelingt dir die perfekte Nahaufnahme. PORTRÄTS DER NÄCHSTEN GENERATION – Nimm Porträts mit deutlich mehr Details und Farben auf. Tippe einfach, um den Fokus von einem Motiv auf ein anderes zu verschieben – sogar noch nach der Aufnahme. MIT DER POWER DES A16 BIONIC CHIP – Der superschnelle Chip liefert die Power für fortschrittliche Features wie rechenbasierte Fotografie, flüssige Übergänge in der Dynamic Island und Stimmisolation bei Telefongesprächen. Und der A16 Bionic ist unglaublich effizient, damit du Batterie für den ganzen Tag hast. USB C KONNEKTIVITÄT – Mit dem USB C Anschluss kannst du deinen Mac oder das iPad mit dem-sel¬ben Kabel laden wie dein iPhone 15. Mit dem iPhone 15 lassen sich sogar deine Apple Watch und deine AirPods aufladen. WICHTIGE SICHERHEITSFEATURES – Wenn du einen Notdienst kontaktieren musst, aber kein Netz und kein WLAN hast, kannst du Notruf SOS über Satellit nutzen.4 Mit der Unfallerkennung kann das iPhone einen schweren Autounfall erkennen und Hilfe rufen, wenn du es nicht kannst. GEMACHT, UM EINEN UNTERSCHIED ZU MACHEN – Das iPhone kommt mit Datenschutzfeatures, die dafür sorgen, dass du die Kontrolle über deine Daten behältst. Es besteht aus mehr recycelten Materialien, um die Umweltauswirkungen zu minimieren. Und es hat integrierte Features, die das iPhone für alle zugänglicher machen. KOMMT MIT APPLECARE GARANTIE – Jedes iPhone kommt mit einer einjährigen Herstellergarantie und bis zu 90 Tagen kostenlosem technischen Support. Hol dir AppleCare+ oder AppleCare+ mit Diebstahl und Verlust, um deinen Schutz zu verlängern.",
+    "estimatedTotalOffersCount": 25,
+    "externalProductIds": {
+        "asin": [
+            "B0CHX6TVZ4"
+        ],
+        "gtin": [
+            "0195949037320",
+            "0195949037207",
+            "0195949037252"
+        ],
+        "mpn": [
+            "2898063",
+            "3662886",
+            "iphone 15",
+            "mtp83zd/a"
+        ],
+        "pzn": []
+    },
+    "images": [
+        {
+            "purpose": "main",
+            "url": "https://cdn.solutenetwork.com/dynimg/NWqFxrj_j9mVDG54QToVF85P1PpG3tIg-n2-bid-RIKYUVmZMC0Pj8n055T0-3Kbg4527PVLQlpHcKzxjqsMs2VTpN9PO_uj9OI4yJoHL7c7_U1RNafpTgoiqR6CL837A/4612039238_main.jpg"
+        }
+    ],
+    "legalFields": [],
+    "paymentMethods": [
+        {
+            "id": 1,
+            "description": "Visa"
+        },
+        {
+            "id": 2,
+            "description": "American Express"
+        }
+    ],
+    "price": {
+        "max": {
+            "amount": 1169.0,
+            "currency": "EUR"
+        },
+        "min": {
+            "amount": 879.11,
+            "currency": "EUR"
+        }
+    },
+    "properties": [],
+    "relevance": 52.5,
+    "shippingMethods": [
+        {
+            "description": "International"
+        }
+    ],
+    "shortName": null,
+    "type": "product",
+    "url": null,
+    "userReviewSummary": {
+        "count": 0,
+        "rating": null,
+        "feedbackUrl": null
+    },
+    "userReviews": [],
+    "offers": [
+        {
+            "id": 276948230092,
+            "name": "Apple iPhone 15 256GB gelb (Neu differenzbesteuert)",
+            "brand": {
+                "id": 58,
+                "name": "Apple",
+                "logoUrl": "https://cdn.solutenetwork.com/dynimg/brands_800/58.png"
+            },
+            "category": {
+                "id": 4373,
+                "parentId": 100050,
+                "description": "Handys ohne Vertrag",
+                "relevance": 24807,
+                "imageUrl": "https://cdn.solutenetwork.com/dynimg/0_i78ASV6q1of0p75-xL_RDiIZG_4AexVt1_Cbd3R6KHFoqB03GsZJ_FlIg-TPxsfXnCFm9x0PAouyFcUT8OF_6ascZNw2GLtvka3pJzga0/4373.jpg",
+                "isLeaf": true,
+                "documentTypes": [
+                    "product"
+                ],
+                "path": [
+                    {
+                        "id": 100050,
+                        "parentId": null,
+                        "description": "Handy & Telefon",
+                        "relevance": 31297,
+                        "imageUrl": "https://cdn.solutenetwork.com/dynimg/D4hV45ULPeLof0p75-xL_T6iqXpVz_hNlt1_Cbd3R6KHFoqB03GsZJ_FlIg-TPxscv68y-NXAbkKw-l0A89HXoUQ4-HQkdqkQR9r997hlds/100050.jpg",
+                        "isLeaf": false,
+                        "documentTypes": [
+                            "product"
+                        ]
+                    },
+                    {
+                        "id": 4373,
+                        "parentId": 100050,
+                        "description": "Handys ohne Vertrag",
+                        "relevance": 24807,
+                        "imageUrl": "https://cdn.solutenetwork.com/dynimg/0_i78ASV6q1of0p75-xL_RDiIZG_4AexVt1_Cbd3R6KHFoqB03GsZJ_FlIg-TPxsfXnCFm9x0PAouyFcUT8OF_6ascZNw2GLtvka3pJzga0/4373.jpg",
+                        "isLeaf": true,
+                        "documentTypes": [
+                            "product"
+                        ]
+                    }
+                ]
+            },
+            "clickoutUrl": "https://www.billiger.de/common/modules/api/cmodul?mc=kB9JcFHm8Z9l&p=OGBQxv1xiXrtiDOfdN0LnJe3tbSWKwr5d7qGL8MTyOQ6RmIsvl8L8XE-82vg6qVLIp5eUIvJnUoIOpr42O1wKdIxCw-op5vvEFJshuh-uapXxHHOssjlUq2Kut0wGB-DwtAcfUI_JsX&mid=276948230092&id=276948230092&ts=20240427",
+            "description": "Apple iPhone 15 256GB gelb",
+            "externalProductIds": {
+                "asin": [
+                    "B0CHX6TVZ4"
+                ],
+                "gtin": [
+                    "0195949037320"
+                ],
+                "mpn": [
+                    "mtp83zd/a",
+                    "iphone 15",
+                    "3662886",
+                    "2898063"
+                ],
+                "pzn": []
+            },
+            "images": [
+                {
+                    "purpose": "main",
+                    "url": "https://cdn.solutenetwork.com/dynimg/fJofKaDWxNcof0p75-xL_TT6Ge91IreS6hE8nUhH7Pc88MgR1b3VHcWvS03VxtgwM5tF-m5R9Tc8-99ZKBX0w8kzQ-UL-0nVsR-J9iYWtou/276948230092_main.webp"
+                },
+                {
+                    "purpose": "small",
+                    "url": "https://cdn.solutenetwork.com/dynimg/FJpCRIokyMttvVrUsfeFRnJbK6MdmmFTQ_hMn5zos5T_olRSBeQCSEAXhzSr2EMdRObQE_-Ur6aGDzLnaEA33FMtLeL3FVjTDmJlJGqTBlKlAIYGXJrbgU/276948230092_small.webp"
+                },
+                {
+                    "purpose": "large",
+                    "url": "https://cdn.solutenetwork.com/dynimg/739VMT01ffljhDxxDSeSaGXpJ53MH5lvA_hMn5zos5T_olRSBeQCSEAXhzSr2EMdRObQE_-Ur6aGDzLnaEA33FMtLeL3FVjTDmJlJGqTBlKqRPuHcLCU0w/276948230092_large.webp"
+                }
+            ],
+            "legalFields": [],
+            "locationCountries": [
+                "DE"
+            ],
+            "mainImage": "https://cdn.solutenetwork.com/dynimg/fJofKaDWxNcof0p75-xL_TT6Ge91IreS6hE8nUhH7Pc88MgR1b3VHcWvS03VxtgwM5tF-m5R9Tc8-99ZKBX0w8kzQ-UL-0nVsR-J9iYWtou/276948230092_main.webp",
+            "marketplace": {
+                "sellerName": null,
+                "userReviewSummary": null
+            },
+            "price": {
+                "amount": 89385,
+                "currency": "EUR",
+                "shipping": 0,
+                "total": 89385
+            },
+            "priceInfo": {
+                "oldPrice": {
+                    "amount": null,
+                    "currency": null
+                },
+                "price": {
+                    "amount": 893.85,
+                    "currency": "EUR"
+                },
+                "total": {
+                    "amount": 893.85,
+                    "currency": "EUR"
+                },
+                "unitPricing": {
+                    "baseMeasureUnit": null,
+                    "baseMeasureValue": null,
+                    "measureUnit": null,
+                    "measureValue": null,
+                    "text": null
+                },
+                "voucherPrice": {
+                    "amount": null,
+                    "currency": null
+                }
+            },
+            "productId": 4612039238,
+            "promoText": "Jetzt bestellen! Ratenkauf, Lifetime-Garantie & Next-Day-Delivery möglich.",
+            "relevance": 0,
+            "shipping": {
+                "code": "green",
+                "price": {
+                    "amount": 0.0,
+                    "currency": "EUR"
+                },
+                "text": "1-2 Werktage nach Zahlungseingang."
+            },
+            "shop": {
+                "id": 28730,
+                "certificates": [],
+                "company": {
+                    "city": "Wesel",
+                    "country": "Deutschland",
+                    "name": "ZOXS GmbH (buyzoxs.de)",
+                    "street": "Am Schornacker 51",
+                    "zipCode": "46485"
+                },
+                "cpc": {
+                    "amount": 0.295,
+                    "currency": "EUR"
+                },
+                "logoUrl": "https://cdn.solutenetwork.com/dynimg/shops/x/28730.png",
+                "name": "buyzoxs.de",
+                "paymentMethods": [
+                    {
+                        "id": 1,
+                        "description": "Visa"
+                    },
+                    {
+                        "id": 3,
+                        "description": "Eurocard/Mastercard"
+                    },
+                    {
+                        "id": 7,
+                        "description": "Vorkasse"
+                    },
+                    {
+                        "id": 8,
+                        "description": "Rechnung"
+                    },
+                    {
+                        "id": 11,
+                        "description": "Lastschrift"
+                    },
+                    {
+                        "id": 12,
+                        "description": "Andere"
+                    },
+                    {
+                        "id": 13,
+                        "description": "PayPal"
+                    }
+                ],
+                "shippingMethods": [
+                    {
+                        "description": "Post/DHL"
+                    },
+                    {
+                        "description": "GLS"
+                    }
+                ],
+                "url": "https://www.buyzoxs.de/",
+                "userReviewSummary": {
+                    "count": 7,
+                    "rating": 4.5,
+                    "feedbackUrl": "https://www.billiger.de/shops/28730"
+                },
+                "userReviews": []
+            },
+            "type": "offer",
+            "voucher": {
+                "text": null
+            }
+        }
+    ]
+}

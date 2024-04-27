@@ -16,11 +16,14 @@ export default class Details extends BaseComponent {
     this.description = this.root.locator('.description')
     this.less = this.page.getByText('Less')
     this.more = this.page.getByText('More', { exact: true })
-    this.buyButton = this.page.getByRole('button', { name: 'Buy' })
+    this.buyButton = this.root.locator(".button.buy")
     this.paymentsList = this.root.locator(".section.payment-methods li")
     this.shippingList = this.root.locator(".section.shipping-methods li")
   }
   //Actions
+  async clickBuyButton() {
+    await this.clickElement(this.buyButton, "buy button")
+  }
   async clickCloseButton() {
     await this.clickElement(this.closeButton, "close button")
   }
@@ -40,7 +43,10 @@ export default class Details extends BaseComponent {
   }
 
 
-  //Verify 
+  //Verify
+  async expectDetailsImageNotToBeInViewport() {
+    await expect(this.detailsImage).not.toBeInViewport()
+  } 
   async expectDetailsPaneToBeVisible() {
     await this.expectElementToBeVisible(this.root);
   }
