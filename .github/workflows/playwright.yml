@@ -9,7 +9,7 @@ jobs:
     name: 'Playwright Tests - ${{ matrix.project }} - Shard ${{ matrix.shardIndex }} of ${{ matrix.shardTotal }}'
     runs-on: ubuntu-latest
     container:
-      image: mcr.microsoft.com/playwright:v1.41.1-jammy
+      image: mcr.microsoft.com/playwright:v1.43.0-jammy
     strategy:
       fail-fast: false
       matrix:
@@ -66,7 +66,7 @@ jobs:
           retention-days: 1
 
   merge-reports:
-    if: always()
+    if: ${{ !cancelled() }}
     needs: [playwright-shard-tests, playwright-tests]
     runs-on: ubuntu-latest
     steps:
