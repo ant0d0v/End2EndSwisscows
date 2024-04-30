@@ -6,7 +6,7 @@ export default class UserController extends RequestHolder {
   constructor(request) {
     super(request)
   }
-  sendDeleteImageFromFavorite = async (id, token) => {
+  async sendDeleteImageFromFavorite(id, token){
     const context = await request.newContext()
     await context.delete(`${ process.env.API_URL}/v4/user/images/${id}`,{
     headers: {
@@ -16,7 +16,7 @@ export default class UserController extends RequestHolder {
    });
   }
 
-  sendDeleteTrackFromFavorite = async (id, token) => {
+  async sendDeleteTrackFromFavorite (id, token){
     const context = await request.newContext()
     await context.delete(`${ process.env.API_URL}/music/tracks/my/${id}`,{
     headers: {

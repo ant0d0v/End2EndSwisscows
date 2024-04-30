@@ -24,12 +24,12 @@ export default class MusicPage extends BasePage {
     this.playlistNumber = (index) => this.page.locator(`//a[contains(@href, "/en/music/playlist?query=")]`).nth(index - 1)
   }
   //Actions
-  clickFavoritePlaylist = async () => {
+  async clickFavoritePlaylist(){
     await this.clickElement( this.myFavoritePlaylist,
       `favorite playlist`
     );
   };
-  clickPlaylistNumber = async (index) => {
+  async clickPlaylistNumber(index) {
     await this.clickElement( this.playlistNumber(index),
       `playlist ${index}`
     );

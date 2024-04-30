@@ -1,8 +1,4 @@
-import { 
-  test, 
-  favoriteTracksIdForDeletionOfInternalUser, 
-  favoriteTracksIdForDeletionOfExternalUser
-} from "../../../utils/fixtures";
+import { test, deletionIds } from "../../../utils/fixtures";
 
 const value = "Skofka";
 const testData = JSON.parse(
@@ -64,7 +60,7 @@ test.describe('Internal user', () => {
     await app.musicPage.clickFavoritePlaylist()
     await app.musicMyPage.expectPageUrlToHaveParameter(`?query=${value}`)
     await app.musicMyPage.track.clickPlayButtonNumberTrack(1)
-    favoriteTracksIdForDeletionOfInternalUser.push(favoriteID);
+    deletionIds.myTracks.internalUser.push(favoriteID);
 
     //Assert
     await app.musicMyPage.player.expectTimeToHaveText("0:04")
@@ -86,7 +82,7 @@ test.describe('Internal user', () => {
     await app.musicMyPage.track.clickPlayButtonNumberTrack(1)
     await app.musicMyPage.track.expectFirstTrackIsPlaying()
     await app.musicMyPage.track.clickPauseButtonNumberTrack(1)
-    favoriteTracksIdForDeletionOfInternalUser.push(favoriteID);  
+    deletionIds.myTracks.internalUser.push(favoriteID);  
 
     //Assert
     await app.musicMyPage.track.expectFirstTrackIsNotPlaying()
@@ -108,7 +104,7 @@ test.describe('Internal user', () => {
     await app.musicMyPage.track.clickPlayButtonNumberTrack(1)
     await app.musicMyPage.player.expectProgressBarToHaveTimeValue(/3/)
     await app.musicMyPage.track.clickTimeLineNumberTrack(1)
-    favoriteTracksIdForDeletionOfInternalUser.push(favoriteID);
+    deletionIds.myTracks.internalUser.push(favoriteID);
 
     //Assert
     await app.musicMyPage.track.expectProgressBarOfFirstTrackToHaveTimeValue(/width: 5/)
@@ -134,7 +130,7 @@ test.describe('External user', () => {
     await app.musicMyPage.track.clickPlayButtonNumberTrack(1)
     await app.musicMyPage.player.expectProgressBarToHaveTimeValue(/3/)
     await app.musicMyPage.player.clickTimeLine()
-    favoriteTracksIdForDeletionOfExternalUser.push(favoriteID);  
+    deletionIds.myTracks.externalUser.push(favoriteID);  
 
     //Assert
     await app.musicMyPage.track.expectProgressBarOfFirstTrackToHaveTimeValue(/width: 5/)
@@ -156,7 +152,7 @@ test.describe('External user', () => {
     await app.musicMyPage.track.clickPlayButtonNumberTrack(1)
     await app.musicMyPage.track.expectFirstTrackIsPlaying()
     await app.musicMyPage.player.clickPauseButton()
-    favoriteTracksIdForDeletionOfExternalUser.push(favoriteID);    
+    deletionIds.myTracks.externalUser.push(favoriteID);    
 
     //Assert
     await app.musicMyPage.track.expectFirstTrackIsNotPlaying()
@@ -180,7 +176,7 @@ test.describe('External user', () => {
     await app.musicMyPage.player.expectProgressBarToHaveTimeValue(/3/)
     await app.musicMyPage.player.clickPauseButton()
     await app.musicMyPage.player.clickPlayButton()
-    favoriteTracksIdForDeletionOfExternalUser.push(favoriteID);    
+    deletionIds.myTracks.externalUser.push(favoriteID);    
 
     //Assert
     await app.musicMyPage.track.expectFirstTrackIsPlaying()
@@ -204,7 +200,7 @@ test.describe('External user', () => {
     await app.musicMyPage.header.clickHamburgerMenuButton();
     await app.musicMyPage.header.hamburgerMenu.selectRegion("Germany");
     await app.musicMyPage.track.expectMusicTracksToBeVisible()
-    favoriteTracksIdForDeletionOfExternalUser.push(favoriteID); 
+    deletionIds.myTracks.externalUser.push(favoriteID); 
 
     //Assert
     await app.musicMyPage.track.expectTracksNameToContainText(value.toLowerCase())
@@ -225,7 +221,7 @@ test.describe('External user', () => {
     const favoriteIDs = await app.musicPage.track.clickAllFavoriteButtonsOfTracksAndGetResponses();
     await app.musicPage.clickFavoritePlaylist()
     await app.musicMyPage.expectPageUrlToHaveParameter(`?query=${value}`)
-    favoriteTracksIdForDeletionOfExternalUser.push(...favoriteIDs); 
+    deletionIds.myTracks.externalUser.push(...favoriteIDs); 
   
     //Assert
     await app.musicMyPage.track.expectTracksCount(20)

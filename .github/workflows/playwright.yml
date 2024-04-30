@@ -1,21 +1,13 @@
 name: Playwright Tests
-
 on:
   pull_request:
-    branches: [main, master]
-
+    branches: [ main, master ]
 jobs:
-  playwright-shard-tests:
-    name: 'Playwright Tests - ${{ matrix.project }} - Shard ${{ matrix.shardIndex }} of ${{ matrix.shardTotal }}'
+  playwright:
+    name: 'Playwright Tests'
     runs-on: ubuntu-latest
     container:
       image: mcr.microsoft.com/playwright:v1.43.0-jammy
-    strategy:
-      fail-fast: false
-      matrix:
-        project: [chromium, mobile]
-        shardIndex: [1, 2]
-        shardTotal: [2]
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
@@ -25,69 +17,12 @@ jobs:
         run: npm ci
       - name: Install chrome browser
         run: npx playwright install chrome
-      - name: Run Playwright tests using shard
-        run: npm run test:ui --project=${{ matrix.project }} --shard=${{ matrix.shardIndex }}/${{ matrix.shardTotal }}
-      - name: Upload blob report to GitHub Actions Artifacts
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: blob-report-${{ matrix.project }}-shard-${{ matrix.shardIndex }}
-          path: blob-report
-          retention-days: 1
+      - name: Run UI tests
+        run: npm run test:ui
         env:
           HOME: /root
-
-  playwright-tests:
-    name: 'Playwright Tests without shard'
-    if: always()
-    needs: [playwright-shard-tests]
-    runs-on: ubuntu-latest
-    container:
-      image: mcr.microsoft.com/playwright:v1.43.0-jammy
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 18   
-      - name: Install dependencies
-        run: npm ci
-      - name: Install chrome browser
-        run: npx playwright install chrome
-      - name: Run your tests
+      - name: Run API tests
         run: npm run test:api
+        if: always() 
         env:
           HOME: /root
-      - name: Upload blob report to GitHub Actions Artifacts
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: blob-report-api
-          path: blob-report
-          retention-days: 1
-
-  merge-reports:
-    if: ${{ !cancelled() }}
-    needs: [playwright-shard-tests, playwright-tests]
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 18
-      - name: Install dependencies
-        run: npm ci
-      - name: Download blob reports from GitHub Actions Artifacts
-        uses: actions/download-artifact@v4
-        with:
-          path: all-blob-reports
-          pattern: blob-report-*
-          merge-multiple: true
-      - name: Merge into HTML Report
-        run: npx playwright merge-reports --reporter html ./all-blob-reports
-      - name: Upload HTML report
-        uses: actions/upload-artifact@v4
-        with:
-          name: html-report--attempt-${{ github.run_attempt }}
-          path: playwright-report
-          compression-level: 0
-          retention-days: 1

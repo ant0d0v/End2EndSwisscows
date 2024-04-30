@@ -10,8 +10,8 @@ export default class Item extends BaseComponent {
     //Locators
     this.imageItems = this.page.locator("figure.item--image:nth-child(-n+10)")
     this.item = (index) => this.page.locator("figure.item--image").nth(index - 1)
-    this.firstImage = this.page.locator(".item--image img").first()
-    this.allImages = this.page.locator(".item--image img")
+    this.firstImage = this.page.locator(".item--image .image").first()
+    this.allImages = this.page.locator(".item--image .image")
   }
   //Actions
 
@@ -49,7 +49,7 @@ export default class Item extends BaseComponent {
   expectFirstItemIsNotActive = async () => {
     await this.expectAttributeClassOfElement(this.item(1), "item--image")
   };
-  expectItemNameToContainText = async (criteria) => {
+  async expectItemNameToContainText(criteria){
     for (const image of await this.allImages.all()) {
       await expect(image).toHaveAttribute("alt", criteria);
     }

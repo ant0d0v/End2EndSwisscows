@@ -1,7 +1,4 @@
-import { test, 
-    favoriteImagesIdForDeletionOfInternalUser, 
-    favoriteImagesIdForDeletionOfExternalUser } 
-    from "../../../utils/fixtures";
+import { test, deletionIds } from "../../../utils/fixtures";
 
 test.describe('Internal user', () => { 
   test.describe.configure({ mode: 'default' });
@@ -41,8 +38,8 @@ test.describe('Internal user', () => {
     const favoriteIDSecondImage = await app.imagePage.itemDetails.clickBookmarkButtonAndGetResponse()
     await app.imagePage.clickFavoriteItem()
     await app.imageMyPage.expectPageUrlToHaveParameter(`?query=good`)
-    favoriteImagesIdForDeletionOfInternalUser.push(favoriteIDFirstImage);
-    favoriteImagesIdForDeletionOfInternalUser.push(favoriteIDSecondImage);
+    deletionIds.myImages.internalUser.push(favoriteIDFirstImage);
+    deletionIds.myImages.internalUser.push(favoriteIDSecondImage);
   
     //Assert
     await app.imageMyPage.item.expectItemsCount(2)
@@ -71,8 +68,8 @@ test.describe('External user', () => {
     await app.imageMyPage.itemDetails.clickNextButton()
     await app.imageMyPage.item.expectSecondItemIsActive()
     await app.imageMyPage.itemDetails.clickPrevButton()
-    favoriteImagesIdForDeletionOfExternalUser.push(favoriteIDFirstImage);
-    favoriteImagesIdForDeletionOfExternalUser.push(favoriteIDSecondImage);
+    deletionIds.myImages.externalUser.push(favoriteIDFirstImage);
+    deletionIds.myImages.externalUser.push(favoriteIDSecondImage);
 
     //Assert
     await app.imageMyPage.item.expectFirstItemIsActive()
@@ -93,7 +90,7 @@ test.describe('External user', () => {
     await app.imageMyPage.expectPageUrlToHaveParameter(`?query=good`)
     await app.imageMyPage.item.clickItemNumber(1)
     await app.imageMyPage.itemDetails.clickCloseButton()
-    favoriteImagesIdForDeletionOfExternalUser.push(favoriteID);
+    deletionIds.myImages.externalUser.push(favoriteID);
 
     ///Assert
     await app.imageMyPage.itemDetails.expectItemInDetailsPanelToBeHidden()
@@ -114,7 +111,7 @@ test.describe('External user', () => {
     await app.imageMyPage.header.clickHamburgerMenuButton();
     await app.imageMyPage.header.hamburgerMenu.selectRegion("Germany");
     await app.imageMyPage.item.expectImageItemsToBeVisible()
-    favoriteImagesIdForDeletionOfExternalUser.push(favoriteID);
+    deletionIds.myImages.externalUser.push(favoriteID);
     
     //Assert
     await app.imageMyPage.item.expectItemsCount(1)

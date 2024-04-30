@@ -5,7 +5,7 @@ export default class ProxyImage extends BaseComponent {
         super(page)
 }
  //Actions
- expectAttributeSrcAllImagesToHave = async(elements, value) => {
+ async expectAttributeSrcAllImagesToHave(elements, value){
     await test.step('Expect the elements in the array to "have" attribute src with value', async ()=> {
         for (const attribute of await elements.all()) {
             await expect(attribute).toHaveAttribute("src", value);

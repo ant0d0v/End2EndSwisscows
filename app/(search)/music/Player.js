@@ -18,42 +18,42 @@ export default class MusicPlayer extends BaseComponent {
   }
   
   //Actions
-  clickNextButton = async () => {
+  async clickNextButton(){
     await this.clickElement(this.nextButton,
       `next button in the player`
     );
   };
 
-  clickPrevButton = async () => {
+  async clickPrevButton(){
     await this.clickElement(this.prevButton,
       `prev button in the player`
     );
   };
 
-  clickPlayButton = async () => {
+  async clickPlayButton() {
     await this.clickElement(this.playButton,
       `play button in the player`
     );
   };
-  clickPauseButton = async () => {
+  async clickPauseButton() {
     await this.page.$eval('audio', e => e.pause());
   };
-  clickShuffleButton = async () => {
+  async clickShuffleButton (){
     await this.clickElement(this.shuffleButton,
       `shuffle button in the player`
     );
   };
-  clickTimeLine = async () => {
+  async clickTimeLine(){
     await this.clickElement(this.timeLine,
       `time-line in the player`
     );
   };
-  clickFavoriteButton = async () => {
+  async clickFavoriteButton() {
     await this.clickElement(this.favoriteButton,
       `favorite button in the player`
     );
   };
-  clickFavoriteButtonAndGetResponse = async () => {
+  async clickFavoriteButtonAndGetResponse(){
     let response;
     const responsePromise = this.page.waitForResponse(`${ process.env.API_URL}/music/tracks/my`)
     await this.clickElement(this.favoriteButton,
@@ -71,25 +71,25 @@ export default class MusicPlayer extends BaseComponent {
   async expectTimelineToBeGreaterThan(value) {
     expect(await this.page.$eval('audio', e => e.currentTime)).toBeGreaterThan(value);
   }
-  expectImageToHaveWight = async (property, value) => {
+  async expectImageToHaveWight (property, value){
     await this.expectElementToHaveJSProperty(this.image , property, value);
   };
-  expectProgressBarToHaveTimeValue = async (value) => {
+  async expectProgressBarToHaveTimeValue(value){
     await this.expectAttributeToHaveValue(this.progressBar, "style", value) 
   };
-  expectButtonIsPlay = async () => {
+  async expectButtonIsPlay(){
     await this.expectAttributeToHaveValue(this.playButton,"xlink:href", /play/)
   };
-  expectButtonIsPause = async () => {
+  async expectButtonIsPause () {
     await this.expectAttributeToHaveValue(this.playButton,"xlink:href", /pause/)
   };
-  expectShuffleButtonIsActive = async () => {
+  async expectShuffleButtonIsActive (){
   await this.expectAttributeClassOfElement(this.shuffleButton, /active/) 
   }
-  expectFavoriteButtonIsActive = async () => {
+  async expectFavoriteButtonIsActive () {
     await this.expectAttributeClassOfElement(this.favoriteButton, /active/) 
   }
-  expectFavoriteButtonIsNotActive = async () => {
+  async expectFavoriteButtonIsNotActive(){
     await this.expectAttributeClassOfElement(this.favoriteButton, "button favorite") 
   }
 }
