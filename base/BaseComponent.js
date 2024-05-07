@@ -72,7 +72,7 @@ export default class BaseComponent extends PageHolder {
   async waitUntilElementToBeVisible(element) {
     await test.step(`Click on ${element} the until invisible`, async () => {
       let count = 0
-      for(count; count <= 15; count++ ){
+      for(count; count <= 8; count++ ){
       if(await element.isVisible()) {
         return true
       }else{
