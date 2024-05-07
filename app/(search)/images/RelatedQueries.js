@@ -17,5 +17,8 @@ export default class RelatedQueries extends BaseComponent {
   expectFavoriteItemToBeHidden = async () => {
     await this.expectElementToBeHidden(this.favoriteItem)
   }
+  expectFavoriteItemToBeVisible = async () => {
+    await this.expectElementToBeVisible(this.favoriteItem)
+  }
 
 }

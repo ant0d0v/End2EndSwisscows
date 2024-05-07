@@ -8,10 +8,10 @@ export default class FavoritePlaylist extends BaseComponent {
     this.playlist = this.page.getByRole('link', { name: /My favorite tracks/ })
   }
   //Actions
-  expectPlaylistToHaveText = async (value) => {
+  async expectPlaylistToHaveText (value) {
     await this.expectElementToHaveText(this.playlist,value)
   }
-  expectPlaylistToBeHidden = async () => {
+  async expectPlaylistToBeHidden(){
     await this.expectElementToBeHidden(this.playlist)
   }
 }

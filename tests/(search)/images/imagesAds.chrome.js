@@ -8,14 +8,14 @@ const { expect } = require("@playwright/test");
      await app.home.open()
      await app.home.header.clickHamburgerMenuButton();
      await app.home.header.hamburgerMenu.selectRegion("Germany");
-     await app.home.header.searchForm.inputSearchCriteria("parfum");
+     await app.home.header.searchForm.inputSearchCriteria("laptop macbook");
      await app.home.header.searchForm.clickEnterSearchField();
      await app.imagePage.header.clickImageSearchButton()
      await app.imagePage.item.expectImageItemsToBeVisible()
      await app.imagePage.adsProduct.waitUntilProductAdsToBeVisible()
    
      //Assert
-     await app.imagePage.adsProduct.expectTitleAdsToHaveText("Products for parfum")
+     await app.imagePage.adsProduct.expectTitleAdsToHaveText("Products for laptop macbook")
      await app.imagePage.adsProduct.expectAreElementsInListDisplayed(app.imagePage.adsProduct.allImage)
      await app.imagePage.adsText.expectAdsToHaveText("Ads by Microsoft Data privacy")
   });
@@ -28,7 +28,7 @@ const { expect } = require("@playwright/test");
      await app.home.open()
      await app.home.header.clickHamburgerMenuButton();
      await app.home.header.hamburgerMenu.selectRegion("Germany");
-     await app.home.header.searchForm.inputSearchCriteria("parfum");
+     await app.home.header.searchForm.inputSearchCriteria("laptop macbook");
      await app.home.header.searchForm.clickEnterSearchField();
      await app.imagePage.header.clickImageSearchButton()
      await app.imagePage.item.expectImageItemsToBeVisible()
@@ -48,7 +48,7 @@ const { expect } = require("@playwright/test");
      await app.home.open()
      await app.home.header.clickHamburgerMenuButton();
      await app.home.header.hamburgerMenu.selectRegion("Germany");
-     await app.home.header.searchForm.inputSearchCriteria("parfum");
+     await app.home.header.searchForm.inputSearchCriteria("laptop macbook");
      await app.home.header.searchForm.clickEnterSearchField();
      await app.imagePage.header.clickImageSearchButton()
      await app.imagePage.item.expectImageItemsToBeVisible()
@@ -67,7 +67,7 @@ const { expect } = require("@playwright/test");
     await app.home.open()
     await app.home.header.clickHamburgerMenuButton();
     await app.home.header.hamburgerMenu.selectRegion("Germany");
-    await app.home.header.searchForm.inputSearchCriteria("parfum");
+    await app.home.header.searchForm.inputSearchCriteria("laptop macbook");
     await app.home.header.searchForm.clickEnterSearchField();
     await app.imagePage.header.clickImageSearchButton()
     await app.imagePage.item.expectImageItemsToBeVisible()
@@ -85,12 +85,12 @@ const { expect } = require("@playwright/test");
     await app.home.open()
     await app.home.header.clickHamburgerMenuButton();
     await app.home.header.hamburgerMenu.selectRegion("Germany");
-    await app.home.header.searchForm.inputSearchCriteria("lacoste online shop");
+    await app.home.header.searchForm.inputSearchCriteria("laptop macbook");
     await app.home.header.searchForm.clickEnterSearchField();
     await app.imagePage.header.clickImageSearchButton()
     await app.imagePage.item.expectImageItemsToBeVisible()
     await app.imagePage.adsProduct.waitUntilProductAdsToBeVisible()
     
     //Assert
-    await app.imagePage.adsProduct.expectTitleProductsToContains(/lacoste/i)  
+    await app.imagePage.adsProduct.expectTitleProductsToContains(/macbook/i)  
  });

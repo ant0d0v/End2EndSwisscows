@@ -1,6 +1,5 @@
 const { page } = require("@playwright/test");
 import PageHolder from "../../base/PageHolder";
-
 const { expect } = require("@playwright/test");
 
 export default class Route extends PageHolder {
@@ -15,6 +14,12 @@ export default class Route extends PageHolder {
         status: code,
       });
     });
+  }
+  mockResponseBody = async (endpoint, body) => {
+    await this.page.route(process.env.API_URL + `${endpoint}/*`, route => 
+    route.fulfill({
+      contentType: 'application/json',
+      path: body}));
   }
 
 }

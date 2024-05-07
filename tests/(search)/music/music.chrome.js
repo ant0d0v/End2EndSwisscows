@@ -1,4 +1,4 @@
-import { test, favoriteTracksIdForDeletionOfInternalUser} from "../../../utils/fixtures";
+import { test, deletionIds} from "../../../utils/fixtures";
 const testData = JSON.parse(
     JSON.stringify(require("../../../data/error/testData.json"))
   );
@@ -79,7 +79,7 @@ test("Check 202 No Results Found error page ", async ({
     //Assert
     await app.musicPage.track.expectFirstTrackFavoriteButtonIsActive()
     await app.musicPage.favoritePlaylist.expectPlaylistToHaveText(/My favorite tracks1/)
-    favoriteTracksIdForDeletionOfInternalUser.push(favoriteID);
+    deletionIds.myTracks.internalUser.push(favoriteID);
   });
 
   test("Check delete track from the favorite", async ({
@@ -118,7 +118,7 @@ test("Check 202 No Results Found error page ", async ({
     await app.musicPage.track.expectFirstTrackFavoriteButtonIsActive()
     await app.musicPage.player.expectFavoriteButtonIsActive()
     await app.musicPage.favoritePlaylist.expectPlaylistToHaveText(/My favorite tracks1/)
-    favoriteTracksIdForDeletionOfInternalUser.push(favoriteID);  
+    deletionIds.myTracks.internalUser.push(favoriteID);  
       
   });
 

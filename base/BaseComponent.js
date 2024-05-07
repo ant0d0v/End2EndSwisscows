@@ -72,7 +72,7 @@ export default class BaseComponent extends PageHolder {
   async waitUntilElementToBeVisible(element) {
     await test.step(`Click on ${element} the until invisible`, async () => {
       let count = 0
-      for(count; count <= 15; count++ ){
+      for(count; count <= 8; count++ ){
       if(await element.isVisible()) {
         return true
       }else{
@@ -212,6 +212,13 @@ export default class BaseComponent extends PageHolder {
       for (const element of await elements.all()) {
         const elementText = await element.textContent();
         expect(await elementText.toLowerCase()).toContain(criteria);
+      }
+    });
+  }
+  async expectListElementsNotToBeEmpty(elements) {
+    await test.step(`Expect the ${elements} in the array not to be empty`, async () => {
+      for (const element of await elements.all()) {
+        await expect(element).not.toBeEmpty()
       }
     });
   }

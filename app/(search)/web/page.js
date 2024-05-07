@@ -33,12 +33,12 @@ export default class WebPage extends BasePage {
     this.preloader  = new Preloader(page);
     this.footer  = new Footer(page);
     this.preview  = new Preview(page);
+    
     //Locators
-   this.webResult = this.page.locator("section.container.page-results div.web-results")
    this.previewButton = this.page.getByRole('button', { name: 'preview' }).first()
   }
   //Actions
-  async open404(path){
+  async openNotFound(path){
     await this.openPage(path)
   }
   //Actions
@@ -47,7 +47,5 @@ export default class WebPage extends BasePage {
   };
 
   // Verify
-  expectScreenWebPage = async (testInfo) => {
-    await this.expectPageToHaveScreenshot(this.webResult,testInfo);
-  };
+  
 }

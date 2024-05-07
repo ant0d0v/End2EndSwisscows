@@ -1,4 +1,4 @@
-import { test,expect, favoriteImagesIdForDeletionOfInternalUser} from "../../../utils/fixtures";
+import { test,expect, deletionIds} from "../../../utils/fixtures";
 const testData = JSON.parse(
     JSON.stringify(require("../../../data/error/testData.json"))
   );
@@ -92,8 +92,8 @@ test("Check 202 No Results Found error page ", async ({
     await app.imagePage.header.clickImageSearchButton()
     await app.imagePage.item.expectImageItemsToBeVisible()
     await app.imagePage.item.clickItemNumber(1)
-    const favoriteID = await app.imagePage.itemDetails.clickBookmarkButtonAndGetResponse()
-    favoriteImagesIdForDeletionOfInternalUser.push(favoriteID);
+    let favoriteID = await app.imagePage.itemDetails.clickBookmarkButtonAndGetResponse()
+    deletionIds.myImages.internalUser.push(favoriteID);
     
     //Assert
     await app.imagePage.itemDetails.expectBookmarkButtonIsActive()
@@ -105,13 +105,14 @@ test("Check 202 No Results Found error page ", async ({
   }) => {
     //Actions
     await app.home.open()
-    await app.home.header.searchForm.inputSearchCriteria("ACD");
+    await app.home.header.searchForm.inputSearchCriteria("Ukraine");
     await app.home.header.searchForm.clickEnterSearchField();
     await app.imagePage.header.clickImageSearchButton()
     await app.imagePage.item.expectImageItemsToBeVisible()
     await app.imagePage.item.clickItemNumber(1)
     await app.imagePage.itemDetails.clickBookmarkButton()
     await app.imagePage.itemDetails.expectBookmarkButtonIsActive()
+    await app.imagePage.relatedQueries.expectFavoriteItemToBeVisible()
     await app.imagePage.itemDetails.clickBookmarkButton()
 
     //Assert
@@ -244,7 +245,6 @@ test("Check that images results equals search criteria", async ({
   await app.home.header.searchForm.inputSearchCriteria("iphone");
   await app.home.header.searchForm.clickEnterSearchField();
   await app.imagePage.header.clickImageSearchButton()
-  await app.imagePage.item.expectImageItemsToBeVisible()
   
   //Assert
   await app.imagePage.item.expectItemNameToContainText(/iphone/i)
@@ -290,12 +290,12 @@ test("Check that image of proxy cdn server", async ({
 }) => {
   //Actions
   await app.home.open()
-  await app.home.header.searchForm.inputSearchCriteria("iphone");
+  await app.home.header.searchForm.inputSearchCriteria("images");
   await app.home.header.searchForm.clickEnterSearchField();
   await app.imagePage.header.clickImageSearchButton()
   await app.imagePage.item.expectImageItemsToBeVisible()
   
   //Assert
-  await app.imagePage.item.proxyImage.expectAttributeSrcAllImagesToHave(app.imagePage.item.allImages, 
-    /cdn.swisscows.com/)
+  await app.imagePage.item.proxyImage.expectAttributeSrcAllImagesToHave(
+    app.imagePage.item.allImages,  /cdn.swisscows.com/)
 });

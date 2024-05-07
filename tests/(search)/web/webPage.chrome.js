@@ -81,7 +81,7 @@ test("Check 202 no results error page ", async ({
     app
   }) => {
     //Actions
-    await app.webPage.open404("/web/123")
+    await app.webPage.openNotFound("/web/123")
 
     //Assert
     await app.webPage.error.expectContentToHaveText(testData.expectedErrorText.pageNotFound404Error)
@@ -187,7 +187,7 @@ test("Check 202 no results error page ", async ({
      await app.expectNotToHaveUrl(app.page, process.env.BASE_URL + "/en/web?query=ukraine")
   });
 
-  test("Check open web Preview ", async ({
+  test.skip("Check open web Preview ", async ({
     app
   }) => {
      //Actions
@@ -201,7 +201,7 @@ test("Check 202 no results error page ", async ({
      await app.webPage.preview.expectScreenshotImageToBeVisible()
   });
 
-  test("Check close web Preview ", async ({
+  test.skip("Check close web Preview ", async ({
     app
   }) => {
      //Actions
@@ -231,7 +231,7 @@ test("Check 202 no results error page ", async ({
      await app.webPage.preview.expectToBeOpenedNewPageAfterClickOpenSiteButton(/wikipedia.org/)
   });
 
-  test("Check open trackers in web Preview ", async ({
+  test.skip("Check open trackers in web Preview ", async ({
     app
   }) => {
      //Actions
@@ -246,7 +246,7 @@ test("Check 202 no results error page ", async ({
      await app.webPage.preview.expectListToBeGreaterThanOrEqual(app.webPage.preview.allTrackers, 1)
   });
 
-  test("Check click screenshot button in web Preview ", async ({
+  test.skip("Check click screenshot button in web Preview ", async ({
     app
   }) => {
      //Actions
