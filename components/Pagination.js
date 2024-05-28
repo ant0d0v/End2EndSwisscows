@@ -1,14 +1,12 @@
 import BaseComponent from "../base/BaseComponent";
-
+const { expect } = require("@playwright/test");
 export default class Pagination extends BaseComponent {
   constructor(page) {
     super(page);
-    this.threeNumber = this.page.locator("//li[contains(@class, 'number') and .//text()='3']")
-    this.secondNumber = this.page.locator("//li[contains(@class, 'number') and .//text()='2']")
-    this.firstNumber = this.page.locator("//li[contains(@class, 'number') and .//text()='1']")
-    this.nextButton = this.page.locator("li.named.next")
-    this.prevButton = this.page.locator("li.named.previous")
+    this.nextButton = this.page.getByRole('link', { name: 'Next page' })
+    this.prevButton = this.page.getByRole('link', { name: 'Previous page' })
   }
+  //Actions
 
   clickNextButton = async () => {
     await this.clickElement(this.nextButton, `next button in pagination`);
@@ -16,18 +14,15 @@ export default class Pagination extends BaseComponent {
   clickPrevButton = async () => {
     await this.clickElement(this.prevButton, `prev button in pagination `);
   };
-  clickThreeNumber = async () => {
-    await this.clickElement(this.threeNumber, `three number button in pagination `);
-  };
 
   //Verify
-  expectFirstNumberIsActive = async () => {
-    await this.expectAttributeClassOfElement(this.firstNumber, "number active");
+  expectPreviousButtonIsDisabled = async () => {
+    await expect(this.prevButton).toHaveAttribute('disabled');
   }
-  expectSecondNumberIsActive = async () => {
-    await this.expectAttributeClassOfElement(this.secondNumber, "number active");
+  expectPreviousButtonIsEnabled = async () => {
+    await expect(this.prevButton).not.toHaveAttribute('disabled');
   }
-  expectThreeNumberIsActive = async () => {
-    await this.expectAttributeClassOfElement(this.threeNumber, "number active");
+  expectNextButtonIsEnabled = async () => {
+    await expect(this.nextButton).not.toHaveAttribute('disabled');
   }
 }

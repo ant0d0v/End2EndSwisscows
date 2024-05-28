@@ -160,30 +160,6 @@ test("Check product images are visible and wight ", async ({ app }) => {
   await app.shoppingPage.item.expectProductMediaToHaveWidth(208)
 });
 
-test("Check select any number in the paging", async ({
-  app
-}) => {
-   
-   //Actions
-   await app.home.open()
-   await app.home.header.clickHamburgerMenuButton();
-   await app.home.header.hamburgerMenu.selectRegion("Germany");
-   await app.home.header.searchForm.inputSearchCriteria("iphone");
-   await app.home.header.searchForm.clickEnterSearchField();
-   await app.webPage.item.expectWebItemsToBeVisible()
-   await app.webPage.header.clickShoppingSearchButton();
-   await app.shoppingPage.item.expectShoppingItemsToBeVisible();
-   const oldSearchResult = await app.shoppingPage.item.getTextContentProductItems()
-   await app.shoppingPage.pagination.clickThreeNumber()
-   await app.shoppingPage.header.badgeCounter.expectCharityBadgeCounterToHaveValue("3");
-   const newSearchResult = await app.shoppingPage.item.getTextContentProductItems()
-
-   //Assert
-   await app.shoppingPage.item.expectOldArrayNotToEqualNewArray(oldSearchResult, newSearchResult)
-   await app.shoppingPage.item.expectItemsListToHaveCount(24)
-   await app.shoppingPage.pagination.expectThreeNumberIsActive()
-});
-
 test("Check next button in the paging", async ({
   app
 }) => {
@@ -204,7 +180,7 @@ test("Check next button in the paging", async ({
    //Assert
    await app.shoppingPage.item.expectOldArrayNotToEqualNewArray(oldSearchResult, newSearchResult)
    await app.shoppingPage.item.expectItemsListToHaveCount(24)
-   await app.shoppingPage.pagination.expectSecondNumberIsActive()
+   await app.shoppingPage.pagination.expectPreviousButtonIsEnabled()
 });
 
 test("Check prev button in the paging", async ({
@@ -227,5 +203,5 @@ test("Check prev button in the paging", async ({
    //Assert
    await app.expectHaveUrl(app.page,  process.env.BASE_URL + "/en/shopping?query=iphone+sales&region=de-DE&offset=0")
    await app.shoppingPage.item.expectItemsListToHaveCount(24)
-   await app.shoppingPage.pagination.expectFirstNumberIsActive()
+   await app.shoppingPage.pagination.expectPreviousButtonIsDisabled()
 });

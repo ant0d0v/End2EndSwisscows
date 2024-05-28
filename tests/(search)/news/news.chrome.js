@@ -133,31 +133,7 @@ test("Check 202 No Results Found error page ", async ({
      //Assert
      await app.expectNotToHaveUrl(newPage,  process.env.BASE_URL + "/en/news?query=ukraine&region=de-DE" )
   });
-
-  test("Check select any number in the paging", async ({
-    app
-  }) => {
-     
-     //Actions
-     await app.home.open()
-     await app.home.header.clickHamburgerMenuButton();
-     await app.home.header.hamburgerMenu.selectRegion("Germany");
-     await app.home.header.searchForm.inputSearchCriteria("ukraine");
-     await app.home.header.searchForm.clickEnterSearchField();
-     await app.webPage.item.expectWebItemsToBeVisible()
-     await app.newsPage.header.clickNewsSearchButton()
-     await app.newsPage.item.expectNewsItemsToBeVisible()
-     const oldSearchResult = await app.newsPage.item.getTextContentNewsItems()
-     await app.newsPage.pagination.clickThreeNumber()
-     await app.newsPage.header.badgeCounter.expectCharityBadgeCounterToHaveValue("3");
-     const newSearchResult = await app.newsPage.item.getTextContentNewsItems()
-
-     //Assert
-     await app.newsPage.item.expectOldArrayNotToEqualNewArray(oldSearchResult, newSearchResult)
-     await app.newsPage.item.expectListToHaveCount(app.newsPage.item.newsItems, 10)
-     await app.newsPage.pagination.expectThreeNumberIsActive()
-  });
-
+  
   test("Check next button in the paging", async ({
     app
   }) => {
@@ -179,7 +155,7 @@ test("Check 202 No Results Found error page ", async ({
      //Assert
      await app.newsPage.item.expectOldArrayNotToEqualNewArray(oldSearchResult, newSearchResult)
      await app.newsPage.item.expectListToHaveCount(app.newsPage.item.newsItems, 10)
-     await app.newsPage.pagination.expectSecondNumberIsActive()
+     await app.newsPage.pagination.expectPreviousButtonIsEnabled()
   });
 
   test("Check prev button in the paging", async ({
@@ -203,7 +179,7 @@ test("Check 202 No Results Found error page ", async ({
      //Assert
      await app.expectHaveUrl(app.page,  process.env.BASE_URL + "/en/news?query=news&region=de-DE&offset=0")
      await app.newsPage.item.expectListToHaveCount(app.newsPage.item.newsItems, 10)
-     await app.newsPage.pagination.expectFirstNumberIsActive()
+     await app.newsPage.pagination.expectPreviousButtonIsDisabled()
   });
 
   test("Check that image of proxy cdn server", async ({
