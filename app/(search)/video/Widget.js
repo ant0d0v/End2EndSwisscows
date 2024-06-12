@@ -5,10 +5,10 @@ export default class Widget extends BaseComponent {
   constructor(page) {
     super(page);
     this.title = this.page.locator(".widget.widget-video .widget-title")
-    this.nextButton = this.page.locator('div.widget.widget-video button.next')
-    this.prevButton = this.page.locator('div.widget.widget-video button.prev')
-    this.allImage = this.page.locator('div.widget.widget-video article.item--video img')
-    this.firstVideo = this.page.locator('div.widget.widget-video article.item--video img').first()
+    this.nextButton = this.page.locator('.widget-video .widget-buttons button.next')
+    this.prevButton = this.page.locator('.widget-video .widget-buttons button.prev')
+    this.allImage = this.page.locator('.widget-video article.item--video .media.loaded img')
+    this.firstVideo = this.page.locator('.widget-video article.item--video .media.loaded img').first()
     this.moreVideosButton = this.page.getByRole('link', { name: 'More videos' })
   }
   //Actions
@@ -26,13 +26,13 @@ export default class Widget extends BaseComponent {
   };
   
   //Verify 
-  expectImageToHaveWightInWidget = async (property, value) => {
+  expectImagesToHaveWightInWidget = async (property, value) => {
     await this.expectElementsToHaveJSProperty(this.allImage , property, value);
   };
   expectNextButtonIsDisabled = async () => {
-    await this.expectAttributeToHaveValue(this.nextButton ,  "class", /next swiper-button-disabled/);
+    await expect(this.nextButton ).toHaveAttribute("disabled");
   };
   expectPrevButtonIsDisabled = async () => {
-    await this.expectAttributeToHaveValue(this.prevButton ,  "class", /next swiper-button-disabled/);
+    await expect(this.prevButton).toHaveAttribute("disabled");
   };
 }
