@@ -10,22 +10,18 @@ const qaseConfig = {
   environmentId: 1,
   rootSuiteTitle: "End2End",
 };
-
-
 /**
  * Read environment variables from file.
  * https://github.com/motdotla/dotenv
  */
-require('dotenv').config();
-
+require("dotenv").config();
 /**
  * @see https://playwright.dev/docs/test-configuration
  */
-module.exports = defineConfig({
-  
+export default defineConfig({
   snapshotDir: "./tests/snapshots",
   // globalSetup: 'utils/globalSetup.js',
-  testDir: "./tests",
+  testDir: "tests",
   timeout: 5 * 60 * 1000,
   // Limit the number of failures on CI to save resources
   // maxFailures: process.env.CI ? 10 : undefined,
@@ -42,7 +38,8 @@ module.exports = defineConfig({
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   // ["playwright-qase-reporter", qaseConfig]
   reporter: [
-    ["html"],["list"],
+    ["html"],
+    ["list"],
     ["playwright-qase-reporter", qaseConfig],
     ["./reporter/SlowStepReporter.js"],
   ],
@@ -50,17 +47,17 @@ module.exports = defineConfig({
   use: {
     baseURL: "https://dev.swisscows.com/",
     actionTimeout: 25 * 1000,
-    updateSnapshots: 'none',
+    updateSnapshots: "none",
     locale: "en-GB",
     colorScheme: "light",
     screenshot: "only-on-failure",
-  
+
     video: "retain-on-failure",
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: "on-first-retry",
   },
   expect: {
-    toHaveScreenshot: {  maxDiffPixels: 150 },
+    toHaveScreenshot: { maxDiffPixels: 150 },
     timeout: 15 * 1000,
   },
 

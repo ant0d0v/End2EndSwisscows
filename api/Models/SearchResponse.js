@@ -1,5 +1,5 @@
-const { expect, test } = require("@playwright/test");
-import RequestHolder from "../RequestHolder";
+import { expect, test } from "@playwright/test";
+import RequestHolder from "../RequestHolder.js";
 
 export default class SearchResponse extends RequestHolder {
   constructor(request) {

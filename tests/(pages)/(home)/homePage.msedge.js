@@ -1,25 +1,28 @@
-import { test, expect } from "../../../utils/fixtures";
+import { test } from "../../../utils/fixtures.js";
 const testData = JSON.parse(
   JSON.stringify(require("../../../data/home/testData.json"))
 );
 
 test('Check that popup "Edge install" redirect to the corresponding page', async ({
-  app, context
+  app,
+  context,
 }) => {
   //Actions
-  await app.home.open()
- 
-  //Assert
-  await app.home.expectToBeOpenedNewPageAfterClick(app.home.installSwisscowsLink.extensionPopup, 
-    testData.url.extensionEdgeInstall)
-  await app.expectNewPageToHaveTitle(context, /Swisscows/)
-})
+  await app.home.open();
 
-test("Check that popup Edge install Is Displayed", async ({app }) => {
+  //Assert
+  await app.home.expectToBeOpenedNewPageAfterClick(
+    app.home.installSwisscowsLink.extensionPopup,
+    testData.url.extensionEdgeInstall
+  );
+  await app.expectNewPageToHaveTitle(context, /Swisscows/);
+});
+
+test("Check that popup Edge install Is Displayed", async ({ app }) => {
   const expectedText =
     "Stay with us and set Swisscows as your default search engine. ";
   //Actions
-  await app.home.open() 
+  await app.home.open();
 
   //Assert
   await app.home.installSwisscowsLink.expectExtensionPopupIsDisplayed();
@@ -27,13 +30,16 @@ test("Check that popup Edge install Is Displayed", async ({app }) => {
 });
 
 test('Check that the "Install Swisscows Block" button redirect to corresponding URL.', async ({
-  app, context
+  app,
+  context,
 }) => {
   //Actions
-  await app.home.open()
+  await app.home.open();
 
   //Assert
-  await app.home.expectToBeOpenedNewPageAfterClick(app.home.extensionBlock.extensionLink, 
-    testData.url.extensionEdgeInstall)
-  await app.expectNewPageToHaveTitle(context, /Swisscows/)
+  await app.home.expectToBeOpenedNewPageAfterClick(
+    app.home.extensionBlock.extensionLink,
+    testData.url.extensionEdgeInstall
+  );
+  await app.expectNewPageToHaveTitle(context, /Swisscows/);
 });

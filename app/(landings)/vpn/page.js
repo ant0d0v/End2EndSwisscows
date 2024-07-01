@@ -1,7 +1,7 @@
-import BasePage from "../../../base/BasePage";
-import Header from "../../(landings)/vpn/Header";
-import FAQ from "../../../components/FAQ";
-const { expect } = require("@playwright/test");
+import BasePage from "../../../base/BasePage.js";
+import Header from "../../(landings)/vpn/Header.js";
+import FAQ from "../../../components/FAQ.js";
+import { expect } from "@playwright/test";
 import fs from 'fs';
 export default class VpnPage extends BasePage {
   constructor(page) {

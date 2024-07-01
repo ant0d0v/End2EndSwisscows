@@ -1,7 +1,7 @@
-import BaseComponent from "../../../base/BaseComponent";
-import Player from "./Player";
-import ProxyImage from "../../../components/ProxyImage";
-const { expect } = require("@playwright/test");
+import BaseComponent from "../../../base/BaseComponent.js";
+import Player from "./Player.js";
+import ProxyImage from "../../../components/ProxyImage.js";
+import { expect } from "@playwright/test";
 
 export default class Item extends BaseComponent {
   constructor(page) {

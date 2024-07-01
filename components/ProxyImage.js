@@ -1,5 +1,5 @@
-const { expect, context, test} = require('@playwright/test');
-import BaseComponent from '../base/BaseComponent'
+import { expect, test} from '@playwright/test';
+import BaseComponent from "../base/BaseComponent.js";
 export default class ProxyImage extends BaseComponent {
     constructor(page) {
         super(page)

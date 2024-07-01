@@ -1,5 +1,5 @@
-import { expect, test, context} from "../utils/customMatchers"
-import PageHolder from "./PageHolder";
+import { expect, test } from "../utils/customMatchers.js";
+import PageHolder from "./PageHolder.js";
 
 export default class BaseComponent extends PageHolder {
   constructor(page) {

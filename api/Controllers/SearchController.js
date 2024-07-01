@@ -1,12 +1,12 @@
-const { expect, test } = require("@playwright/test");
-import RequestHolder from "../RequestHolder";
-import WebSearchApiRequest from "../Models/WebSearchApiRequest";
-import NewsSearchApiRequest from "../Models/NewsSearchApiRequest";
-import ImagesSearchApiRequest from "../Models/ImagesSearchApiRequest ";
-import VideoSearchApiRequest from "../Models/VideoSearchApiRequest";
-import ShoppingSearchApiRequest from "../Models/ShoppingSearchApiRequest";
-import MusicSearchApiRequest from "../Models/MusicSearchApiRequest";
-import SearchResponse from "../Models/SearchResponse";
+import { test } from "@playwright/test";
+import RequestHolder from "../RequestHolder.js";
+import WebSearchApiRequest from "../Models/WebSearchApiRequest.js";
+import NewsSearchApiRequest from "../Models/NewsSearchApiRequest.js";
+import ImagesSearchApiRequest from "../Models/ImagesSearchApiRequest.js";
+import VideoSearchApiRequest from "../Models/VideoSearchApiRequest.js";
+import ShoppingSearchApiRequest from "../Models/ShoppingSearchApiRequest.js";
+import MusicSearchApiRequest from "../Models/MusicSearchApiRequest.js";
+import SearchResponse from "../Models/SearchResponse.js";
 
 
 export default class SearchController extends RequestHolder {

@@ -1,7 +1,7 @@
-import BasePage from "../../../base/BasePage";
-import imagesGallery  from "../../../components/ImagesGallery";
-import videoPlayer from "../../../components/VideoPlayer";
-import Header from "../../(pages)/Header";
+import BasePage from "../../../base/BasePage.js";
+import imagesGallery from "../../../components/ImagesGallery.js";
+import videoPlayer from "../../../components/VideoPlayer.js";
+import Header from "../../(pages)/Header.js";
 
 export default class DatacenterPage extends BasePage {
   constructor(page) {

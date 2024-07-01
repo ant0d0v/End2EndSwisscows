@@ -1,6 +1,4 @@
-import { test} from "../../../utils/fixtures";
-const { expect } = require("@playwright/test");
-
+import { test} from "../../../utils/fixtures.js";
 test("Check text advertising", async ({
     app
   }) => {

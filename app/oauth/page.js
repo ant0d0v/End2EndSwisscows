@@ -1,4 +1,4 @@
-import BasePage from "../../base/BasePage";
+import BasePage from "../../base/BasePage.js";
 
 export default class SignInPage extends BasePage {
   constructor(page) {

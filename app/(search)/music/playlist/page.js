@@ -3,7 +3,7 @@ import Player from "../Player.js";
 import Track from "../Track.js";
 import Header from "../../Header.js";
 import Error from "../../Error.js";
-const { expect, context } = require("@playwright/test");
+import { expect } from "@playwright/test";
 
 export default class MusicPlaylistPage extends BasePage {
   constructor(page) {

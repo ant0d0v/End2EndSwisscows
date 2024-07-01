@@ -1,7 +1,7 @@
-import BaseComponent from "../../../base/BaseComponent";
-import Offer from "./Offer";
-import Icon from "../../../components/Icon";
-const { expect } = require("@playwright/test");
+import BaseComponent from "../../../base/BaseComponent.js";
+import Offer from "./Offer.js";
+import Icon from "../../../components/Icon.js";
+import { expect } from "@playwright/test";
 
 export default class Details extends BaseComponent {
   constructor(page) {

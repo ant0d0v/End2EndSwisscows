@@ -1,8 +1,9 @@
 
-import { test , expect} from "../../../utils/fixtures";
+import { test } from "../../../utils/fixtures.js";
 const testData = JSON.parse(
   JSON.stringify(require("../../../data/home/testData.json"))
 );
+
 test('Check that popup "firefox install" redirect to the corresponding page ', async ({
   app, context
 }) => {

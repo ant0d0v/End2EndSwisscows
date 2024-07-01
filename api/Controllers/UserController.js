@@ -1,5 +1,5 @@
-const { request } = require("@playwright/test");
-import RequestHolder from "../RequestHolder";
+import { request } from "@playwright/test";
+import RequestHolder from "../RequestHolder.js";
 
 
 export default class UserController extends RequestHolder {

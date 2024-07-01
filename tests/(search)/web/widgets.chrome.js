@@ -1,4 +1,4 @@
-import { test } from " /../../utils/fixtures";
+import { test } from "../../../utils/fixtures.js";
 
 test("Check next and prev buttons in the video widget", async ({ app }) => {
   //Actions

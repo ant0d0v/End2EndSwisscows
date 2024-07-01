@@ -1,7 +1,8 @@
-import { test } from "../../utils/fixtures";
+import { test } from "../../utils/fixtures.js";
 const testData = JSON.parse(
   JSON.stringify(require("../../data/footer/testData.json"))
 );
+
 test.describe('Footer of static pages', () => {  
 for (const {testID, expectedUrl, expectedTitle, locatorId } of testData.internalLinks) {
     test(`${testID} Check navigation to corresponding pages for ${locatorId} internal link in footer static pages`, async ({

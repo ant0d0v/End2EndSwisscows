@@ -1,4 +1,4 @@
-import { test, expect } from "../../../utils/fixtures";
+import { test } from "../../../utils/fixtures.js";
 const constanta = JSON.parse(
   JSON.stringify(require("../../../data/project-constants/testData.json"))
 );

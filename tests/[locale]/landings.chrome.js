@@ -1,5 +1,5 @@
-import { test } from "../../utils/fixtures";
-import { readCsvFile } from "../../helpers/csvHelper"
+import { test } from "../../utils/fixtures.js";
+import { readCsvFile } from "../../helpers/csvHelper.js"
 
   const emailTable = readCsvFile('../localization/email.csv')
   for (const { test_case, language, expected_content} of emailTable) {

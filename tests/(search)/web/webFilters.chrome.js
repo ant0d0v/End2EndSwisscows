@@ -1,8 +1,9 @@
-import { test} from "../../../utils/fixtures";
-const { expect } = require("@playwright/test");
+import { test} from "../../../utils/fixtures.js";
+import { expect } from "@playwright/test";
 const filterData = JSON.parse(
   JSON.stringify(require("../../../data/filters/testData.json"))
 );
+
 for (const {testID, expectedWebURL, locatorId} of filterData.byDate) {
   test(`${testID} Check search results by filter ${locatorId} navigates to the corresponding URL and matches response results`, async ({
     app

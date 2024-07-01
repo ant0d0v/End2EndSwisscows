@@ -1,15 +1,13 @@
-import { test } from "../../utils/fixtures";
+import { test } from "../../utils/fixtures.js";
 const testData = JSON.parse(
-  JSON.stringify(
-    require("../../data/pages/social-projects/testData.json")
-  )
+  JSON.stringify(require("../../data/pages/social-projects/testData.json"))
 );
 
 test("Check that border is red and 2px when clicking on the Charity Haiti slider images", async ({
-  app
+  app,
 }) => {
   //Actions
-  await app.charityPage.open()
+  await app.charityPage.open();
   //Assert
   await app.charityPage.imagesGallery.expectBorderWhenClickingOnSmallImages(
     app.charityPage.imagesGallery.charityHaitiGallerySmallImages,
@@ -18,22 +16,22 @@ test("Check that border is red and 2px when clicking on the Charity Haiti slider
 });
 
 test("Check that border is red and 2px when clicking on the Charity Columbia slider images", async ({
-  app
+  app,
 }) => {
   //Actions
-  await app.charityPage.open()
+  await app.charityPage.open();
   //Assert
   await app.charityPage.imagesGallery.expectBorderWhenClickingOnSmallImages(
-    app. charityPage.imagesGallery.charityColumbiaGallerySmallImages,
+    app.charityPage.imagesGallery.charityColumbiaGallerySmallImages,
     "2px solid rgb(223, 93, 93)"
   );
 });
 
 test("Check the swipe to left in  Charity Columbia slider ", async ({
-  app
+  app,
 }) => {
   //Actions
-  await app.charityPage.open()
+  await app.charityPage.open();
   await app.charityPage.waitUntilPageIsFullyLoaded();
   await app.charityPage.imagesGallery.swipeLeftToLastImage(
     await app.charityPage.imagesGallery.charityColumbiaGallerySmallFirstImage,
@@ -45,11 +43,9 @@ test("Check the swipe to left in  Charity Columbia slider ", async ({
   );
 });
 
-test("Check the swipe to left in Charity Haiti slider ", async ({
-  app
-}) => {
+test("Check the swipe to left in Charity Haiti slider ", async ({ app }) => {
   //Actions
-  await app.charityPage.open()
+  await app.charityPage.open();
   await app.charityPage.waitUntilPageIsFullyLoaded();
   await app.charityPage.imagesGallery.swipeLeftToLastImage(
     await app.charityPage.imagesGallery.charityHaitiGallerySmallFirstImage,
@@ -63,10 +59,10 @@ test("Check the swipe to left in Charity Haiti slider ", async ({
 });
 
 test("Check that small image matches the large image when clicking on the small image in Charity Haiti slider", async ({
-  app
+  app,
 }) => {
   //Actions
-  await app.charityPage.open()
+  await app.charityPage.open();
   //Assert
   await app.charityPage.imagesGallery.expectAttributeOfLargeImagesWhenClickingInHaitiGallery(
     "active"
@@ -74,10 +70,10 @@ test("Check that small image matches the large image when clicking on the small 
 });
 
 test("Check that small image matches the large image when clicking on the small image in Charity Columbia slider", async ({
- app
+  app,
 }) => {
   //Actions
-  await app.charityPage.open()
+  await app.charityPage.open();
   //Assert
   await app.charityPage.imagesGallery.expectAttributeOfLargeImagesWhenClickingInColumbiaGallery(
     "active"
@@ -86,18 +82,22 @@ test("Check that small image matches the large image when clicking on the small 
 
 test("Check that the video is playing", async ({ app }) => {
   //Actions
-  await app.charityPage.open()
+  await app.charityPage.open();
   //Assert
   await app.charityPage.videoPlayer.expectVideoToPlay();
 });
 
-for (const { testID, expectedLink, locatorId, expectedTitle, } of testData.charityLinks) {
+for (const {
+  testID,
+  expectedLink,
+  locatorId,
+  expectedTitle,
+} of testData.charityLinks) {
   test(`${testID} Check navigation to corresponding page for  ${locatorId} link`, async ({
-    app
-
+    app,
   }) => {
     //Actions
-    await app.charityPage.open()
+    await app.charityPage.open();
     const currentPage = await app.charityPage.clickLinkOnThePage(locatorId);
 
     //Assert
@@ -105,16 +105,16 @@ for (const { testID, expectedLink, locatorId, expectedTitle, } of testData.chari
     await app.expectHaveTitle(currentPage, expectedTitle);
   });
 }
-test("Check design of the charity page ", async ({ app },testInfo) => {
+test("Check design of the charity page ", async ({ app }, testInfo) => {
   //Actions
-  await app.charityPage.open()
+  await app.charityPage.open();
   //Assert
   await app.charityPage.expectScreenCharityPage(testInfo);
 });
 
 test("Check design dark theme of the charity page ", async ({
-  app
-},testInfo) => {
+  app,
+}, testInfo) => {
   //Actions
   await app.charityPage.open();
   await app.charityPage.header.clickHamburgerMenuButton();

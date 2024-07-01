@@ -1,5 +1,4 @@
-import { test} from "../../../utils/fixtures";
-const { expect } = require("@playwright/test");
+import { test} from "../../../utils/fixtures.js";
 const value = "Skofka";
 
   test("Check pause track on music page", async ({

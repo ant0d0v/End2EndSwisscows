@@ -1,7 +1,7 @@
-import BasePage from "../../../base/BasePage";
-import videoPlayer from "../../../components/VideoPlayer";
-import Header from "../../(pages)/Header";
-const { expect, test } = require("@playwright/test");
+import BasePage from "../../../base/BasePage.js";
+import videoPlayer from "../../../components/VideoPlayer.js";
+import Header from "../../(pages)/Header.js";
+import  { expect, test } from"@playwright/test";
 
 export default class MediaEducationPage extends BasePage {
   constructor(page) {

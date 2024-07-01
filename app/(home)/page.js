@@ -1,10 +1,9 @@
-const { expect } = require("@playwright/test");
-import Header from "./Header";
-import Footer from "../Footer";
-import InstallSwisscowsLink from "./ExtensionPopup";
-import extensionBlock from "./Extension";
-import FAQ from "../../components/FAQ";
-import BasePage from "../../base/BasePage";
+import Header from "./Header.js";
+import Footer from "../Footer.js";
+import InstallSwisscowsLink from "./ExtensionPopup.js";
+import extensionBlock from "./Extension.js";
+import FAQ from "../../components/FAQ.js";
+import BasePage from "../../base/BasePage.js";
 
 export default class Home extends BasePage {
   constructor(page) {

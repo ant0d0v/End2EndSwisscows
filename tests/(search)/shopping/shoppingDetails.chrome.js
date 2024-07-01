@@ -1,5 +1,5 @@
-import { test } from "../../../utils/fixtures";
-const body = "data/shopping/mock_data.json"
+import { test } from "../../../utils/fixtures.js";
+const body = "data/shopping/mock_data.json" 
 
 test("Check open product details pane", async ({ app }) => {
   //Actions

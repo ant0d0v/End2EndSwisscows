@@ -1,4 +1,4 @@
-import SearchRequestBase from "./SearchRequestBase"
+import SearchRequestBase from "./SearchRequestBase.js"
 export default class VideoSearchApiRequest extends SearchRequestBase{
     constructor(request) {
         super(request);

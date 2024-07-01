@@ -1,5 +1,5 @@
-import BaseComponent from "../../../base/BaseComponent";
-const { expect } = require("@playwright/test");
+import BaseComponent from "../../../base/BaseComponent.js";
+import { expect } from "@playwright/test";
 
 export default class Widget extends BaseComponent {
   constructor(page) {

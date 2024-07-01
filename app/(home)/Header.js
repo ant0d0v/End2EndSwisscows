@@ -1,10 +1,10 @@
-import BaseComponent from "../../base/BaseComponent";
-import HamburgerMenu from "../HamburgerMenu";
-import BadgeCounter from "../../components/BadgeCounter";
-import BadgeEmail from "../../components/BadgeEmail";
-import BadgeTeleguard from "../../components/BadgeTeleguard";
-import BadgeVPN from "../../components/BadgeVPN";
-import SearchForm from "../SearchForm";
+import BaseComponent from "../../base/BaseComponent.js";
+import HamburgerMenu from "../HamburgerMenu.js";
+import BadgeCounter from "../../components/BadgeCounter.js";
+import BadgeEmail from "../../components/BadgeEmail.js";
+import BadgeTeleguard from "../../components/BadgeTeleguard.js";
+import BadgeVPN from "../../components/BadgeVPN.js";
+import SearchForm from "../SearchForm.js";
 export default class Header extends BaseComponent {
   constructor(page) {
     super(page);

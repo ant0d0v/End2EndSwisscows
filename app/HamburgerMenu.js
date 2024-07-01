@@ -1,5 +1,5 @@
-import BaseComponent from "../base/BaseComponent";
-import Avatar from "../components/Avatar"
+import BaseComponent from "../base/BaseComponent.js";
+import Avatar from "../components/Avatar.js";
 import { expect } from '@playwright/test';
 
 export default class HamburgerMenu extends BaseComponent {

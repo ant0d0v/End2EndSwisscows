@@ -1,5 +1,5 @@
-const { expect, context, test} = require('@playwright/test');
-import BaseComponent from "./BaseComponent";
+import { expect,test} from "@playwright/test";
+import BaseComponent from "./BaseComponent.js";
 export default class BasePage extends BaseComponent {
   constructor(page) {
     super(page);

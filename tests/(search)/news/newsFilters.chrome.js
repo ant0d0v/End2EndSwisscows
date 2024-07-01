@@ -1,6 +1,5 @@
-import { test} from "../../../utils/fixtures";
-const { expect } = require("@playwright/test");
-
+import { test} from "../../../utils/fixtures.js";
+import { expect } from "@playwright/test";
 const filterData = JSON.parse(
   JSON.stringify(require("../../../data/filters/testData.json"))
 );

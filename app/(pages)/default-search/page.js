@@ -1,5 +1,5 @@
-import BasePage from "../../../base/BasePage";
-import Header from "../../(pages)/Header";
+import BasePage from "../../../base/BasePage.js";
+import Header from "../../(pages)/Header.js";
 export default class DefaultSearchPage extends BasePage {
   constructor(page) {
     super(page);

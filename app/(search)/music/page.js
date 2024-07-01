@@ -6,8 +6,6 @@ import Track from "./Track.js";
 import Header from "../Header.js";
 import Error from "../Error.js";
 import Preloader from "../../../components/Preloader.js";
-const { expect, context } = require("@playwright/test");
-
 export default class MusicPage extends BasePage {
   constructor(page) {
     super(page);

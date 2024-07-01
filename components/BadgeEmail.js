@@ -1,5 +1,5 @@
-import BaseComponent from "../base/BaseComponent";
-const { expect } = require("@playwright/test");
+import BaseComponent from "../base/BaseComponent.js";
+
 
 export default class BadgeEmail extends BaseComponent {
   constructor(page) {

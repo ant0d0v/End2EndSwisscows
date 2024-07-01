@@ -1,4 +1,4 @@
-import { test, deletionIds } from "../../../utils/fixtures";
+import { test, deletionIds } from "../../../utils/fixtures.js";
 
 test.describe('Internal user', () => { 
   test.describe.configure({ mode: 'default' });
