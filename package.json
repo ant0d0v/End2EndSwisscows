@@ -11,12 +11,12 @@
   "author": "Anton",
   "license": "ISC",
   "devDependencies": {
-    "@playwright/test": "^1.44.0",
+    "@playwright/test": "^1.45.0",
     "@types/node": "^20.8.10"
   },
   "dependencies": {
     "csv-parse": "^5.5.3",
-    "dotenv": "^16.3.1",
+    "dotenv": "^16.4.5",
     "playwright-qase-reporter": "^1.2.2",
     "rimraf": "^5.0.5"
   }
