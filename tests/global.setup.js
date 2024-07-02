@@ -13,12 +13,14 @@ setup("Login to site as swisscows user", async ({ app }) => {
   await app.home.open()
   await app.home.header.clickHamburgerMenuButton();
   await app.home.header.hamburgerMenu.clickLoginButton()
-  await app.signInPage.inputEmail(process.env.USERNAME_INTERNAL_USER)
-  await app.signInPage.inputPassword(process.env.PASSWORD_INTERNAL_USER)
+  await app.signInPage.expectMainImageToBeVisible()
+  await app.signInPage.inputEmail(process.env.USERNAME_INTERNAL_USER);
+  await app.signInPage.pressTab()
+  await app.signInPage.inputPassword(process.env.PASSWORD_INTERNAL_USER);
   await app.signInPage.clickLoginButton()
   
   // Assert
-  await app.home.expectSwisscowsLogoToBeVisible()
+  await app.home.header.expectSwisscowsLogoToBeVisible()
 
   // Run the function to remove the specified element from the origins array
   await app.page.context().storageState({ path: authFilePathForInternalUser });
@@ -31,12 +33,14 @@ setup("Login to site as external user", async ({ app }) => {
   await app.home.open()
   await app.home.header.clickHamburgerMenuButton();
   await app.home.header.hamburgerMenu.clickLoginButton()
-  await app.signInPage.inputEmail(process.env.USERNAME_EXTERNAL_USER)
-  await app.signInPage.inputPassword(process.env.PASSWORD_EXTERNAL_USER)
+  await app.signInPage.expectMainImageToBeVisible();
+  await app.signInPage.inputEmail(process.env.USERNAME_EXTERNAL_USER);
+  await app.signInPage.pressTab();
+  await app.signInPage.inputPassword(process.env.PASSWORD_EXTERNAL_USER);
   await app.signInPage.clickLoginButton()
 
   //Assert
-  await app.home.expectSwisscowsLogoToBeVisible()
+  await app.home.header.expectSwisscowsLogoToBeVisible()
 
   // Run the function to remove the specified element from the origins array
   await app.page.context().storageState({ path: authFilePathForExternalUser });

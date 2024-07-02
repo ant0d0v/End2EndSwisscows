@@ -15,7 +15,6 @@ export default class Home extends BasePage {
     this.faq =  new FAQ(page);
 
     // Locators
-    this.logoSwisscows = this.page.getByRole("img", { name: "Swisscows", exact: true, });
     this.blockQuestionsAndAnswers = this.page.getByText( "Questions and AnswersWhat");
     this.allContent = this.page.locator("main.home");
     this.allImages = this.page.locator("main.home img:visible")
@@ -35,7 +34,6 @@ export default class Home extends BasePage {
 
   clickAllQuestions = async () => {
     await this.clickAllElementsInList(this.allQuestions, `questions`);
-    return this;
   };
 
   scrollDownToQuestions = async () => {
@@ -46,13 +44,9 @@ export default class Home extends BasePage {
     await this.clickElement( this.fourQuestion,
       `four question in accordion menu`
     );
-    return this;
   };
 
   // Verify
-  expectSwisscowsLogoToBeVisible = async () => {
-    await this.expectElementToBeVisible(this.logoSwisscows);
-  };
   
   expectScreenHome = async (testInfo) => {
     await this.expectPageToHaveScreenshot(testInfo, this.allImages, this.widget);

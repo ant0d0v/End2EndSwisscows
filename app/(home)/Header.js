@@ -20,7 +20,7 @@ export default class Header extends BaseComponent {
     this.hamburgerMenuButton = this.page.locator(
       "header button.hamburger-menu"
     );
-    this.logoSwisscows = this.page.getByRole('link', { name: 'Swisscows', exact: true })
+    this.logoSwisscows = this.page.getByRole('heading', { name: 'Anonymous search engine', exact: true })
   }
 
   //Actions
@@ -34,5 +34,8 @@ export default class Header extends BaseComponent {
   clickSwisscowsLogo = async () => {
     await this.clickElement(this.logoSwisscows, `Swisscows Logo in the header`);
   };
-  
+  //Verify
+  expectSwisscowsLogoToBeVisible = async () => {
+    await this.expectElementToBeVisible(this.logoSwisscows);
+  };
 }
