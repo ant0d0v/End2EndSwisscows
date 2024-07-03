@@ -184,6 +184,15 @@ export default class BaseComponent extends PageHolder {
       }
     });
   }
+  async expectAreElementsToBeVisible(elements) {
+    await test.step('Expect the element in the array to "be" visible', async () => {
+       const imageElements = await elements.all();
+       for (const image of imageElements) {
+         await image.scrollIntoViewIfNeeded();
+         await expect(image).not.toHaveJSProperty("naturalWidth", 0);
+       }
+    });
+  }
   async expectTextsToContains(elements, criteria) {
     await test.step('Expect the elements in the array "to contain" a string', async () => {
       for (const element of await elements.all()) {

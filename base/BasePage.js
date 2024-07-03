@@ -27,6 +27,7 @@ export default class BasePage extends BaseComponent {
         }
       )
   }
+  
   //Verify
   async expectColorsLinksWhenHovering(elements, color, expectedValue) {
     await test.step('Expect the elements in the array to "have" css color with value',

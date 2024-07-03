@@ -11,8 +11,6 @@ export default class SignInPage extends BasePage {
   }
   //Actions
   inputEmail = async (value) => {
-    await this.emailField.hover();
-    await this.emailField.focus()
     await this.emailField.fill(value);
   };
   pressTab = async () => {
@@ -26,7 +24,5 @@ export default class SignInPage extends BasePage {
   };
 
   //Verify
-  expectMainImageToBeVisible = async () => {
-    await this.expectElementToBeVisible(this.mainImage);
-  };
+ 
 }
