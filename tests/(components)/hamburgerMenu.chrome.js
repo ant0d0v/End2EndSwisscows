@@ -1,7 +1,6 @@
 import { test } from "../../utils/fixtures.js";
-const testData = JSON.parse(
-  JSON.stringify(require("../../data/hamburger/testData.json"))
-);
+import testData from "../../data/hamburger/testData.json"
+
 test("Check display of nickname and avatar in hamburger menu", async ({
   app,
 }) => {

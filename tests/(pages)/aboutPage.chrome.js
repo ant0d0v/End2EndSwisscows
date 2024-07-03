@@ -1,7 +1,5 @@
 import { test } from "../../utils/fixtures.js";
-const testData = JSON.parse(
-  JSON.stringify(require("../../data/pages/about/testData.json"))
-);
+import testData from "../../data/pages/about/testData.json"
 
 test("Check design of the About page ", async ({ app }, testInfo) => {
   //Actions

@@ -1,7 +1,5 @@
 import { test } from "../../utils/fixtures.js";
-const constantsData = JSON.parse(
-  JSON.stringify(require("../../data/project-constants/testData.json"))
-);
+import constantsData from "../../data/project-constants/testData.json"
 
 test("Clicking on the swisscows's logo leads to the home page.", async ({
   app,

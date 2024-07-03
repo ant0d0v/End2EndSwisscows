@@ -1,7 +1,6 @@
 import { test } from "../../utils/fixtures.js";
-const testData = JSON.parse(
-  JSON.stringify(require("../../data/pages/default-search/testData.json"))
-);
+import testData from "../../data/pages/default-search/testData.json"
+
 test("Check design of the default search page ", async ({ app }, testInfo) => {
   //Actions
   await app.defaultSearchPage.open();

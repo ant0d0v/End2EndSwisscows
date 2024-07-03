@@ -1,7 +1,6 @@
 import { test } from "../../utils/fixtures.js";
-const testData = JSON.parse(
-  JSON.stringify(require("../../data/pages/media-education/testData.json"))
-);
+import testData from "../../data/pages/media-education/testData.json"
+
 test.use({ headless: false });
 
 test("Check that the video is playing", async ({ app }) => {

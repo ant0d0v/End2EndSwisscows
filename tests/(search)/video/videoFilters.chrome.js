@@ -1,7 +1,6 @@
 import { test} from "../../../utils/fixtures.js";
-const filterData = JSON.parse(
-  JSON.stringify(require("../../../data/filters/testData.json"))
-);
+import filterData from "../../../data/filters/testData.json"
+
 for (const {testID,expectedVideoURL,locatorId, expectedPublisher } of filterData.publisher) {
     test(`${testID} Check search results by filter ${locatorId} navigates to the corresponding URL and matches response results`, async ({
       app

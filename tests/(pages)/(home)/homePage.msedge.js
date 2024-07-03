@@ -1,7 +1,5 @@
 import { test } from "../../../utils/fixtures.js";
-const testData = JSON.parse(
-  JSON.stringify(require("../../../data/home/testData.json"))
-);
+import testData from "../../../data/home/testData.json"
 
 test('Check that popup "Edge install" redirect to the corresponding page', async ({
   app,

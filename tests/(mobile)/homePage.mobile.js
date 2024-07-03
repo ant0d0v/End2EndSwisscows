@@ -1,10 +1,6 @@
 import { test } from "../../utils/fixtures.js";
-const constanta = JSON.parse(
-  JSON.stringify(require("../../data/project-constants/testData.json"))
-);
-const main = JSON.parse(
-  JSON.stringify(require("../../data/home/testData.json"))
-);
+import  constanta from "../../data/project-constants/testData.json"
+import  main from "../../data/home/testData.json"
 
 test("Check that suggest is displayed", async ({ app }) => {
   await app.home.open();

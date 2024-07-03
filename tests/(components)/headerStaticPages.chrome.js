@@ -1,7 +1,5 @@
 import { test } from "../../utils/fixtures.js";
-const constantsData = JSON.parse(
-  JSON.stringify(require("../../data/project-constants/testData.json"))
-);
+import constantsData from "../../data/project-constants/testData.json"
 
 test("Check charity query counter value at the Beginning", async ({ app }) => {
   //Actions

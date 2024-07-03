@@ -1,7 +1,6 @@
 import { test } from "../../utils/fixtures.js";
-const testData = JSON.parse(
-  JSON.stringify(require("../../data/pages/datacenter/testData.json"))
-);
+import testData from "../../data/pages/datacenter/testData.json"
+
 test("Check that border is red and 2px when clicking on the images Datacenter slider", async ({
   app,
 }) => {

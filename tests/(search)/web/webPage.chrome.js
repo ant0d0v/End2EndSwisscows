@@ -1,7 +1,5 @@
 import { test } from "../../../utils/fixtures.js";
-const testData = JSON.parse(
-  JSON.stringify(require("../../../data/error/testData.json"))
-);
+import testData from "../../../data/error/testData.json"
 
 test("Check 202 no results error page ", async ({
     app

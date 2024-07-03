@@ -1,10 +1,6 @@
 import { test } from "../../utils/fixtures.js";
-const testData = JSON.parse(
-  JSON.stringify(require("../../data/lendings/vpn/testData.json"))
-);
-const constantsData = JSON.parse(
-  JSON.stringify(require("../../data/project-constants/testData.json"))
-);
+import testData from "../../data/lendings/vpn/testData.json"
+import constantsData from "../../data/project-constants/testData.json"
 
 test("Check design of the VPN page ", async ({ app }, testInfo) => {
   //Actions

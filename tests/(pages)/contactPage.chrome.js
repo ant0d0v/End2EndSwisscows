@@ -1,11 +1,6 @@
 import { test } from "../../utils/fixtures.js";
-const testData = JSON.parse(
-  JSON.stringify(require("../../data/pages/contact/testData.json"))
-);
-const constantsData = JSON.parse(
-  JSON.stringify(require("../../data/project-constants/testData.json"))
-);
-
+import testData from "../../data/pages/contact/testData.json"
+import constantsData from "../../data/project-constants/testData.json"
 
 test("Check color of Send button when hovering ", async ({ app }) => {
   //Actions

@@ -1,7 +1,6 @@
 import { test } from "../../utils/fixtures.js";
-const testData = JSON.parse(
-  JSON.stringify(require("../../data/pages/donation/testData.json"))
-);
+import testData from "../../data/pages/donation/testData.json"
+
 test.use({ headless: false });
 
 for (const { testID, pdfLink, locatorId } of testData.donationPdfLinks) {

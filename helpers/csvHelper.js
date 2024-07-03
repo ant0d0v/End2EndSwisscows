@@ -1,5 +1,5 @@
-const fs = require("fs");
-const path = require("path");
+import fs from "fs";
+import path from "path"
 import { parse } from "csv-parse/sync";
 
 export function readCsvFile(filePath) {
@@ -19,5 +19,3 @@ export function readSpecificCsvFile(filePath) {
   });
   return fileData;
 }
-
-module.exports = { readCsvFile, readSpecificCsvFile };
