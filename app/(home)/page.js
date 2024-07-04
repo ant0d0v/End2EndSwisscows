@@ -16,7 +16,6 @@ export default class Home extends BasePage {
 
     // Locators
     this.blockQuestionsAndAnswers = this.page.getByText( "Questions and AnswersWhat");
-    this.allContent = this.page.locator("main.home");
     this.allImages = this.page.locator("main.home img:visible")
     this.allQuestions = this.page.locator("h3.question");
     this.fourQuestion = this.page.getByRole("heading", { name: "How can I switch from another",});

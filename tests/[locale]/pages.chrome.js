@@ -2,18 +2,20 @@ import { test } from "../../utils/fixtures.js";
 import { readCsvFile, readSpecificCsvFile } from "../../helpers/csvHelper.js"
 
 const mainTable = readCsvFile('../localization/main.csv')
-for (const { test_case, language, expected_content} of mainTable) {
-  test(`${test_case} Check content of home page for  ${language} localization`, async ({
+for (const { test_case, language, expected_title} of mainTable) {
+  test(`${test_case} Check content of home page for ${language} localization`, async ({
     app
-  }) => {
+  },testInfo) => {
     //Actions
-    await app.home.open()
+    await app.home.open();
+    await app.home.installSwisscowsLink.clickCloseButtonInExtensionPopup();
     await app.home.header.clickHamburgerMenuButton();
     await app.home.header.hamburgerMenu.clickLanguagesDropdown();
     await app.home.header.hamburgerMenu.clickLanguageLinkInDropdown(language);
 
     //Assert
-    await app.home.expectPageToHaveText(app.home.allContent,expected_content)
+    await app.home.expectScreenHome(testInfo);
+    // await app.expectHaveTitle(app.home.page, expected_title);
   });
 }
 

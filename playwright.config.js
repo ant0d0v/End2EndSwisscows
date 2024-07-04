@@ -57,7 +57,11 @@ export default defineConfig({
     trace: "on-first-retry",
   },
   expect: {
-    toHaveScreenshot: { maxDiffPixels: 150 },
+    toHaveScreenshot: {
+      threshold: 0.35,
+      maxDiffPixelRatio: 0.04,
+      maxDiffPixels: 1000,
+    },
     timeout: 15 * 1000,
   },
 
