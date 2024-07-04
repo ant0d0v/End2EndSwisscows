@@ -30,6 +30,19 @@ test("Check Log Out user and display of login button", async ({ app }) => {
   await app.webPage.header.hamburgerMenu.expectLoginButtonIsDisplayed();
 });
 
+test("Check redirect to profile when clicking on avatar", async ({
+  app,
+}) => {
+  //Actions
+  await app.home.open();
+  await app.home.header.clickHamburgerMenuButton();
+  await app.home.header.hamburgerMenu.clickAvatar();
+
+  //Assert
+  await app.expectHaveUrl(app.page, /accounts.dev.swisscows.com/);
+  await app.expectHaveTitle(app.page, /Profile - Swisscows Accounts/);
+});
+
 test("Texts of the links in the hamburger menu.", async ({ app }) => {
   //Actions
   await app.home.open();

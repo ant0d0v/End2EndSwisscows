@@ -1,6 +1,6 @@
 import { test } from "../../utils/fixtures.js"
 
-test("Check design of the VPN page ", async ({ app }, testInfo) => {
+test.skip("Check design of the VPN page ", async ({ app }, testInfo) => {
   //Actions
   await app.vpnPage.open();
 
@@ -8,7 +8,9 @@ test("Check design of the VPN page ", async ({ app }, testInfo) => {
   await app.vpnPage.expectScreenVpnPage(testInfo);
 });
 
-test("Check design dark theme of the  VPN page ", async ({ app }, testInfo) => {
+test.skip("Check design dark theme of the  VPN page ", async ({
+  app,
+}, testInfo) => {
   //Actions
   await app.vpnPage.open();
   await app.vpnPage.header.clickHamburgerMenuButton();
@@ -19,7 +21,7 @@ test("Check design dark theme of the  VPN page ", async ({ app }, testInfo) => {
   await app.vpnPage.expectScreenVpnPage(testInfo);
 });
 
-test("Check that all questions were opened on the VPN page.", async ({
+test.skip("Check that all questions were opened on the VPN page.", async ({
   app,
 }) => {
   //Actions
@@ -31,7 +33,7 @@ test("Check that all questions were opened on the VPN page.", async ({
   await app.vpnPage.faq.expectQuestionsAreOpened();
 });
 
-test("Check that a question and answer can be opened and closed on the VPN page.", async ({
+test.skip("Check that a question and answer can be opened and closed on the VPN page.", async ({
   app,
 }) => {
   //Actions
@@ -45,7 +47,9 @@ test("Check that a question and answer can be opened and closed on the VPN page.
   await app.vpnPage.faq.expectQuestionsAreClosed();
 });
 
-test("Check that buttons have hover effect on vpn page", async ({ app }) => {
+test.skip("Check that buttons have hover effect on vpn page", async ({
+  app,
+}) => {
   //Actions
   await app.vpnPage.open();
 

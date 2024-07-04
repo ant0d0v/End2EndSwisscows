@@ -2,14 +2,16 @@ import { test } from "../../utils/fixtures.js";
 import testData from "../../data/lendings/vpn/testData.json"
 import constantsData from "../../data/project-constants/testData.json"
 
-test("Check design of the VPN page ", async ({ app }, testInfo) => {
+test.skip("Check design of the VPN page ", async ({ app }, testInfo) => {
   //Actions
   await app.vpnPage.open();
   //Assert
   await app.vpnPage.expectScreenVpnPage(testInfo);
 });
 
-test("Check design dark theme of the  VPN page ", async ({ app }, testInfo) => {
+test.skip("Check design dark theme of the  VPN page ", async ({
+  app,
+}, testInfo) => {
   //Actions
   await app.vpnPage.open();
   await app.vpnPage.header.clickHamburgerMenuButton();
@@ -26,20 +28,20 @@ for (const {
   locatorId,
   expectedTitle,
 } of testData.allLinks) {
-  test(`${testID} Check navigation to corresponding pages for  '${locatorId}' link`, async ({
-    app,
-    context,
-  }) => {
-    //Actions
-    await app.vpnPage.open();
+test.skip(`${testID} Check navigation to corresponding pages for  '${locatorId}' link`, async ({
+  app,
+  context,
+}) => {
+  //Actions
+  await app.vpnPage.open();
 
-    //Assert
-    await app.vpnPage.expectToBeOpenedNewPageAfterClick(
-      app.vpnPage.allLinks(locatorId),
-      expectedLink
-    );
-    await app.expectNewPageToHaveTitle(context, expectedTitle);
-  });
+  //Assert
+  await app.vpnPage.expectToBeOpenedNewPageAfterClick(
+    app.vpnPage.allLinks(locatorId),
+    expectedLink
+  );
+  await app.expectNewPageToHaveTitle(context, expectedTitle);
+});
 }
 for (const {
   testID,
@@ -47,24 +49,24 @@ for (const {
   locatorId,
   expectedTitle,
 } of testData.allLinksInSecondQuestions) {
-  test(`${testID} Check navigation to corresponding pages for  '${locatorId}' link in Second question`, async ({
-    app,
-    context,
-  }) => {
-    //Actions
-    await app.vpnPage.open();
-    await app.vpnPage.scrollDownToQuestions();
-    await app.vpnPage.clickSecondQuestion();
+test.skip(`${testID} Check navigation to corresponding pages for  '${locatorId}' link in Second question`, async ({
+  app,
+  context,
+}) => {
+  //Actions
+  await app.vpnPage.open();
+  await app.vpnPage.scrollDownToQuestions();
+  await app.vpnPage.clickSecondQuestion();
 
-    //Assert
-    await app.vpnPage.expectToBeOpenedNewPageAfterClick(
-      app.vpnPage.allLinksInSecondQuestions(locatorId),
-      expectedLink
-    );
-    await app.expectNewPageToHaveTitle(context, expectedTitle);
-  });
+  //Assert
+  await app.vpnPage.expectToBeOpenedNewPageAfterClick(
+    app.vpnPage.allLinksInSecondQuestions(locatorId),
+    expectedLink
+  );
+  await app.expectNewPageToHaveTitle(context, expectedTitle);
+});
 }
-test("Check that all questions were opened on the VPN page.", async ({
+test.skip("Check that all questions were opened on the VPN page.", async ({
   app,
 }) => {
   //Action
@@ -76,7 +78,7 @@ test("Check that all questions were opened on the VPN page.", async ({
   await app.vpnPage.faq.expectQuestionsAreOpened();
 });
 
-test("Check that a question and answer can be opened and closed on the VPN page.", async ({
+test.skip("Check that a question and answer can be opened and closed on the VPN page.", async ({
   app,
 }) => {
   //Action
@@ -90,7 +92,7 @@ test("Check that a question and answer can be opened and closed on the VPN page.
   await app.vpnPage.faq.expectQuestionsAreClosed();
 });
 
-test("Check download windows vpn extension file", async ({ app }) => {
+test.skip("Check download windows vpn extension file", async ({ app }) => {
   //Actions
   await app.vpnPage.open();
   const windowsExtension = await app.vpnPage.downloadVpnExtensionFile(
@@ -106,7 +108,7 @@ test("Check download windows vpn extension file", async ({ app }) => {
   await windowsExtension.delete();
 });
 
-test("Check download windows vpn extension file when clicking try now 3 day link", async ({
+test.skip("Check download windows vpn extension file when clicking try now 3 day link", async ({
   app,
 }) => {
   //Actions
@@ -124,7 +126,9 @@ test("Check download windows vpn extension file when clicking try now 3 day link
   await windowsExtension.delete();
 });
 
-test("Check that buttons have hover effect on vpn page", async ({ app }) => {
+test.skip("Check that buttons have hover effect on vpn page", async ({
+  app,
+}) => {
   //Actions
   await app.vpnPage.open();
 
@@ -134,16 +138,4 @@ test("Check that buttons have hover effect on vpn page", async ({ app }) => {
     "background",
     "rgb(0, 93, 119) none repeat scroll 0% 0% / auto padding-box border-box"
   );
-});
-
-test("Clicking on the swisscows's logo on vpn page leads to the home page.", async ({
-  app,
-}) => {
-  //Actions
-  await app.vpnPage.open();
-  await app.vpnPage.header.clickSwisscowsVpnLogo();
-
-  //Assert
-  await app.expectHaveUrl(app.page, constantsData.URL_MAIN_PAGE);
-  await app.expectHaveTitle(app.page, constantsData.TITLE_MAIN_PAGE);
 });

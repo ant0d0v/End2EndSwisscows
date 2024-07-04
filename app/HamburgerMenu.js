@@ -80,6 +80,11 @@ export default class HamburgerMenu extends BaseComponent {
     await this.clickElement(
       this.lightTheme, `light theme in the dropdown of themes in hamburger menu`);
   };
+
+  clickAvatar = async () => {
+    await this.clickElement(this.avatar.image, `avatar in in hamburger menu`);
+  };
+  
   getTextsOfLinksInHamburgerMenu = async () => {
     return this.getTextsOfElements(
       this.textsOfLinksInHamburgerMenu.all(), `links of hamburger menu `);
@@ -118,6 +123,7 @@ export default class HamburgerMenu extends BaseComponent {
   expectRegionDropdownToHaveCount = async (number) => {
     await this.expectListToHaveCount(this.textsRegionDropdown, number);
   };
+
   expectLanguagesDropdownToHaveCount = async (number) => {
     await this.expectListToHaveCount(this.textsLanguagesDropdown, number);
   };

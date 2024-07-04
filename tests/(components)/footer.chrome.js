@@ -10,7 +10,6 @@ for (const {testID, expectedUrl, expectedTitle, locatorId } of testData.internal
       await app.home.open()
       await app.home.footer.clickAllInternalLink(locatorId)
       
-  
       //Assert
       await app.expectHaveUrl(app.page, expectedUrl);
       await app.expectHaveTitle(app.page, expectedTitle);

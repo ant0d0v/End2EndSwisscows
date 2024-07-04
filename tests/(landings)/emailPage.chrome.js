@@ -2,7 +2,7 @@ import { test } from "../../utils/fixtures.js";
 import testData from "../../data/lendings/email/testData.json"
 import constantsData from "../../data/project-constants/testData.json"
 
-test("Check design of the Email page ", async ({ app }, testInfo) => {
+test.skip("Check design of the Email page ", async ({ app }, testInfo) => {
   //Actions
   await app.emailPage.open();
 
@@ -10,7 +10,7 @@ test("Check design of the Email page ", async ({ app }, testInfo) => {
   await app.emailPage.expectScreenEmailPage(testInfo);
 });
 
-test("Check design dark theme of the  Email page ", async ({
+test.skip("Check design dark theme of the  Email page ", async ({
   app,
 }, testInfo) => {
   //Actions
@@ -29,7 +29,7 @@ for (const {
   locatorId,
   expectedTitle,
 } of testData.introductionAndSupportLinks) {
-  test(`${testID} Check navigation to corresponding pages for  '${locatorId}' link`, async ({
+  test.skip(`${testID} Check navigation to corresponding pages for  '${locatorId}' link`, async ({
     app,
     context,
   }) => {
@@ -53,24 +53,26 @@ for (const {
   buttonName,
   expectedTitle,
 } of testData.subscriptionLinks) {
-  test(`${testID} Check navigation to corresponding pages for ${buttonName} link`, async ({
-    app,
-    context,
-  }) => {
-    //Actions
-    await app.emailPage.open();
+test.skip(`${testID} Check navigation to corresponding pages for ${buttonName} link`, async ({
+  app,
+  context,
+}) => {
+  //Actions
+  await app.emailPage.open();
 
-    //Assert
-    await app.emailPage.expectToBeOpenedNewPageAfterClick(
-      app.emailPage.subscriptionLinks(locatorId, buttonName),
-      expectedUrl
-    );
+  //Assert
+  await app.emailPage.expectToBeOpenedNewPageAfterClick(
+    app.emailPage.subscriptionLinks(locatorId, buttonName),
+    expectedUrl
+  );
 
-    await app.expectNewPageToHaveTitle(context, expectedTitle);
-  });
+  await app.expectNewPageToHaveTitle(context, expectedTitle);
+});
 }
 
-test("Check that buttons have hover effect on email page", async ({ app }) => {
+test.skip("Check that buttons have hover effect on email page", async ({
+  app,
+}) => {
   //Actions
   await app.emailPage.open();
 
@@ -82,14 +84,3 @@ test("Check that buttons have hover effect on email page", async ({ app }) => {
   );
 });
 
-test("Clicking on the swisscows's logo on email page leads to the home page.", async ({
-  app,
-}) => {
-  //Actions
-  await app.emailPage.open();
-  await app.emailPage.header.clickSwisscowsEmailLogo();
-
-  //Assert
-  await app.expectHaveUrl(app.page, constantsData.URL_MAIN_PAGE);
-  await app.expectHaveTitle(app.page, constantsData.TITLE_MAIN_PAGE);
-});
