@@ -12,14 +12,22 @@ export default class Header extends BaseComponent {
     this.badgeEmail = new BadgeEmail(page);
     this.badgeTeleguard = new BadgeTeleguard(page);
     this.badgeVPN = new BadgeVPN(page);
-    
+
     //Locators
+    this.badgeCounter = this.page.getByTitle('0').locator('img')
     this.hamburgerMenuButton = this.page.locator(
       "header button.hamburger-menu"
     );
   }
 
   //Actions
+
+  clickBadgeCounter = async () => {
+    await this.clickElement(
+      this.badgeCounter,
+      `charity search counter  in the header`
+    );
+  };
 
   clickHamburgerMenuButton = async () => {
     await this.clickElement(

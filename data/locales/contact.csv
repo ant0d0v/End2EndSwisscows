@@ -1,0 +1,11 @@
+test_case,expected_title,language,languageCode
+1,"Kontakt",Deutsch,de
+2,"Contact",Français,fr
+3,"Contattaci",Italiano,it
+4,"Contáctenos",Español,es
+5,"Contacto",Português,pt
+7,"Kontakt",Magyar,hu
+8,"Sazināties",Latviešu,lv
+9,"Ons contacteren",Nederlands,nl
+9,"Связаться с нами",Русский,ru
+10,"Зв'яжіться з нами",Українська,uk

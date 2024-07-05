@@ -38,7 +38,7 @@ test("Check that display of heart icon message in the header static pages", asyn
 }) => {
   //Actions
   await app.home.open();
-  await app.home.header.badgeCounter.clickBadgeCounter();
+  await app.home.header.clickBadgeCounter();
 
   //Assert
   await app.home.header.badgeCounter.expectPopupCharityBadgeCounterToHaveText(

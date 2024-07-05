@@ -18,6 +18,7 @@ export default class Header extends BaseComponent {
 
     //Locators
     this.logoSwisscows = this.page.locator("#header").getByRole("link", { name: "Swisscows", exact: true });
+    this.searchCounter = this.page.locator("#header").getByText("1");
     this.imageSearchButton = this.page.getByRole("link", { name: "Images", exact: true,});
     this.videoSearchButton = this.page.getByRole("link", { name: "Video", exact: true,});
     this.musicSearchButton = this.page.getByRole("link", { name: "Music", exact: true,});
@@ -73,6 +74,13 @@ export default class Header extends BaseComponent {
     await this.clickElement(this.filtersButton,`filter button` );
     const response = await responsePromise;
     return response;
+  };
+
+  clickBadgeCounter = async () => {
+    await this.clickElement(
+      this.searchCounter,
+      `charity search counter  in the header`
+    );
   };
   
   // Verify

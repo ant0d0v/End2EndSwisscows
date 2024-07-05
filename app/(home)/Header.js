@@ -16,6 +16,7 @@ export default class Header extends BaseComponent {
     this.searchForm = new SearchForm(page);
 
     //Locators
+    this.searchCounter = this.page.getByTitle("0").locator("img");
     this.allContent = this.page.locator("header.header-home");
     this.hamburgerMenuButton = this.page.locator(
       "header button.hamburger-menu"
@@ -24,6 +25,12 @@ export default class Header extends BaseComponent {
   }
 
   //Actions
+  clickBadgeCounter = async () => {
+    await this.clickElement(
+      this.searchCounter,
+      `charity search counter  in the header`
+    );
+  };
 
   clickHamburgerMenuButton = async () => {
     await this.clickElement(

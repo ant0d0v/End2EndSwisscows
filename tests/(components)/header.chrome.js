@@ -186,7 +186,7 @@ test("Check that display of heart icon message in the header", async ({
   await app.home.header.searchForm.inputSearchCriteria("football");
   await app.home.header.searchForm.clickEnterSearchField();
   await app.webPage.item.expectWebItemsToBeVisible();
-  await app.webPage.header.badgeCounter.clickBadgeCounter();
+  await app.webPage.header.clickBadgeCounter();
 
   //Assert
   await app.webPage.header.badgeCounter.expectPopupCharityBadgeCounterToHaveText(

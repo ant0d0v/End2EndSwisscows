@@ -5,6 +5,7 @@ import extensionBlock from "./Extension.js";
 import FAQ from "../../components/FAQ.js";
 import BasePage from "../../base/BasePage.js";
 
+
 export default class Home extends BasePage {
   constructor(page) {
     super(page);
@@ -12,8 +13,9 @@ export default class Home extends BasePage {
     this.footer = new Footer(page);
     this.installSwisscowsLink = new InstallSwisscowsLink(page);
     this.extensionBlock = new extensionBlock(page);
-    this.faq =  new FAQ(page);
-
+    this.faq = new FAQ(page);
+    //Locators of Locales
+  
     // Locators
     this.blockQuestionsAndAnswers = this.page.getByText( "Questions and AnswersWhat");
     this.allImages = this.page.locator("main.home img:visible")
@@ -27,6 +29,7 @@ export default class Home extends BasePage {
   }
 
   //Actions
+  
   async open(){
     await this.openPage("/")
   }

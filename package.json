@@ -17,6 +17,7 @@
   "dependencies": {
     "csv-parse": "^5.5.3",
     "dotenv": "^16.4.5",
+    "i18next": "^23.11.5",
     "playwright-qase-reporter": "^1.2.2",
     "rimraf": "^5.0.5"
   }
