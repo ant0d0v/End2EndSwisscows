@@ -2,69 +2,7 @@
 // import validateText from "../../locales/n18next.js";
 // import { readCsvFile, readSpecificCsvFile } from "../../helpers/csvHelper.js"
 
-// const contactTable = readCsvFile('../localization/contact.csv')
-// for (const { test_case, language, expected_content} of contactTable) {
-//   test(`${test_case} Check content of contact Us page for  ${language} localization`, async ({
-//     app
-//   }) => {
-//     //Actions
-//     await app.contactPage.open()
-//     await app.contactPage.header.clickHamburgerMenuButton();
-//     await app.contactPage.header.hamburgerMenu.clickLanguagesDropdown();
-//     await app.contactPage.header.hamburgerMenu.clickLanguageLinkInDropdown(language);
 
-//     //Assert
-//     await app.contactPage.expectPageToHaveText(app.contactPage.allContent,expected_content)
-//   });
-// }
-
-// const charityTable = readCsvFile('../localization/charity.csv')
-// for (const { test_case, language, expected_content} of charityTable) {
-//   test(`${test_case} Check content of charity page for  ${language} localization`, async ({
-//     app
-//   }) => {
-//     //Actions
-//     await app.charityPage.open()
-//     await app.charityPage.header.clickHamburgerMenuButton();
-//     await app.charityPage.header.hamburgerMenu.clickLanguagesDropdown();
-//     await app.charityPage.header.hamburgerMenu.clickLanguageLinkInDropdown(language);
-
-//     //Assert
-//     await app.charityPage.expectPageToHaveText(app.charityPage.allContent, expected_content)
-//   });
-// }
-
-// const datacenterTable = readCsvFile('../localization/datacenter.csv')
-// for (const { test_case, language, expected_content} of datacenterTable) {
-//   test(`${test_case} Check content of datacenter page for  ${language} localization`, async ({
-//    app
-//   }) => {
-//     //Actions
-//     await app.datacenterPage.open()
-//     await app.datacenterPage.header.clickHamburgerMenuButton();
-//     await app.datacenterPage.header.hamburgerMenu.clickLanguagesDropdown();
-//     await app.datacenterPage.header.hamburgerMenu.clickLanguageLinkInDropdown(language);
-
-//     //Assert
-//     await app.datacenterPage.expectPageToHaveText(app.datacenterPage.allContent, expected_content)
-//   });
-// }
-
-// const educationTable = readSpecificCsvFile('../localization/education.csv')
-// for (const { test_case, language, expected_content} of educationTable) {
-//   test(`${test_case} Check content of education page for  ${language} localization`, async ({
-//    app
-//   }) => {
-//     //Actions
-//     await app.mediaEducationPage.open()
-//     await app.mediaEducationPage.header.clickHamburgerMenuButton();
-//     await app.mediaEducationPage.header.hamburgerMenu.clickLanguagesDropdown();
-//     await app.mediaEducationPage.header.hamburgerMenu.clickLanguageLinkInDropdown(language);
-
-//     //Assert
-//     await app.mediaEducationPage.expectPageToHaveText(app.mediaEducationPage.allContent, expected_content)
-//   });
-// }
 
 // const imprintTable = readCsvFile('../localization/imprint.csv')
 // for (const { test_case, language, expected_content} of imprintTable) {
