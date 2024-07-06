@@ -235,8 +235,16 @@
   "Datacenter_BlockDescription_5": "Die Stromversorgung erfolgt grundsätzlich mit Naturstrom, direkt ab Unterwerk Gais über zwei Mittelspannungsleitungen. Jedes Rack wird über zwei getrennte Stromkreise von den eigenen Trafoanlagen versorgt. Somit ist jederzeit eine vollumfängliche Energieversorgung gesichert – selbst dann, wenn wichtige Anlagenteile in einem der beiden Strompfade versagen sollten. USV- und Netzersatzanlagen überbrücken mögliche Stromausfälle.",
   "Datacenter_BlockDescription_6": "Zusätzlich trägt die hauseigene Photovoltaikanlage zur Stromerzeugung bei. Über eine flächendeckende Photovoltaik-Anlage wird in Eigenregie jährlich 230'000 kWh Strom für die Nutzung im Rechenzentrum erzeugt.",
 
+  "Imprint": "Impressum",
+  "Imprint_Title": "Unternehmensangaben",
+  "Imprint_BlockDescription_1": "Rechtsform Aktiengesellschaft",
+  "Imprint_BlockDescription_2": "Verwaltungsrat Andreas Wiebe (CEO) Verwaltungsratspräsident",
+  "Imprint_BlockDescription_3": "Handelsregisteramt Kanton Thurgau",
+  "Imprint_BlockDescription_4": "Bezirksgericht Stadt Frauenfeld",
+  "Imprint_BlockDescription_5": "Handelsregister CHE-220.068.700",
 
   "Default_Search_Home_Menu": "Standardsuche verwenden",
+
   "Dont_RemindMe_Again": "Nicht mehr erinnern.",
   "Follow_Title": "Folge uns auf:",
   "Footer_About": "Mehr über Swisscows",
@@ -245,7 +253,7 @@
   "GTC": "AGB",
   "Homepage_Description": "Bei unserer anonymen Suchmaschine Swisscows findest du die absolute Sicherheit. Kein Tracking ✓ Anonym suchen ✓ Familienfreundlich ✓ | swisscows.com",
   "Homepage_Title": "Deine private und anonyme Suchmaschine Swisscows",
-  "Imprint": "Impressum",
+  
   "Information": "Informationen",
   "InstallSwisscows": "Swisscows installieren",
   "InstallSwisscowsBlock_Description": "Die Swisscows - Erweiterung erleichtert die anonyme Suche im Internet. Einfach kostenlos installieren und Swisscows direkt ohne Umwege nutzen. ",

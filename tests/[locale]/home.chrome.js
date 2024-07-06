@@ -1,6 +1,6 @@
-import { test } from "../../../utils/fixtures.js";
-import validateText from "../../../locales/n18next.js";
-import { readCsvFile } from "../../../helpers/csvHelper.js";
+import { test } from "../../utils/fixtures.js";
+import validateText from "../../locales/n18next.js";
+import { readCsvFile } from "../../helpers/csvHelper.js";
 
 const home = readCsvFile("../data/locales/home.csv");
 for (const { test_case, language, expected_title, languageCode } of home) {

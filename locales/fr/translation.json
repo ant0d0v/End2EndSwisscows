@@ -235,6 +235,14 @@
   "Datacenter_BlockDescription_5": "L’alimentation électrique est en principe assurée par du courant vert, directement à partir de la centrale de Gais via deux lignes à moyenne tension. Chaque rack est approvisionné par sa propre installation de transformateurs via deux circuits électriques séparés. Ainsi, un approvisionnement en énergie complet est assuré à tout moment, même si des parties essentielles au fonctionnement de l’un des deux circuits électriques venaient à tomber en panne. Les systèmes d’alimentation sans interruption et les installations auxiliaires permettent de faire face à d’éventuelles pannes de courant.",
   "Datacenter_BlockDescription_6": "Notre propre installation photovoltaïque contribue en outre à la production d’électricité.Cette installation photovoltaïque couvrant toute la surface permet de produire en interne 230'000 kWh d’électricité chaque année pour alimenter le centre de données.",
 
+  "Imprint": "L’entreprise",
+  "Imprint_Title": "Informations sur la société",
+  "Imprint_BlockDescription_1": "Forme juridique Stock Corporation",
+  "Imprint_BlockDescription_2": "Conseil exécutif Andreas Wiebe (CEO) Président du Conseil",
+  "Imprint_BlockDescription_3": "Office du registre du commerce canton de Thurgovie",
+  "Imprint_BlockDescription_4": "Tribunal de district ville de Frauenfeld",
+  "Imprint_BlockDescription_5": "Registre du commerce CHE-220.068.700",
+
   "Default_Search_Home_Menu": "Utilisation de recherche standard",
 
   "Dont_RemindMe_Again": "Ne me le rappelle plus",
@@ -245,7 +253,7 @@
   "GTC": "GTC",
   "Homepage_Description": "Avec notre moteur de recherche anonyme Swisscows, tu trouveras la sécurité absolue. Pas de tracking ✓ Recherche anonyme ✓ Adapté aux familles ✓ | swisscows.com",
   "Homepage_Title": "Votre moteur de recherche privé et anonyme Swisscows",
-  "Imprint": "L’entreprise",
+
   "Information": "Information",
   "InstallSwisscows": "Installer Swisscows",
   "InstallSwisscowsBlock_Description": "L’extension de Swisscows facilite la recherche anonyme sur Internet. Installer simplement et gratuitement, et utiliser immédiatement Swisscows. ",

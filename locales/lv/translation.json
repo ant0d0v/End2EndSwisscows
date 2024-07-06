@@ -235,6 +235,14 @@
   "Datacenter_BlockDescription_5": "Energoapgāde pārsvarā notiek ar dabisko strāvu, tieši no Gaisa apakšstacijas pa divām vidējā sprieguma līnijām. Katra iekārtu novietne tiek apgādāta ar divām atsevišķām elektriskajām ķēdēm no savām transformatoru iekārtām. Tas nodrošina pilnīgu energoapgādi visu laiku – pat tad, ja kādā no abiem strāvas apgādes ceļiem nedarbojas svarīgas iekārtas daļas. UPS un tīkla rezerves sistēmas novērš iespējamus strāvas padeves traucējumus.",
   "Datacenter_BlockDescription_6": "Turklāt elektroenerģijas ražošanu nodrošina arī iekšējā fotoelementu iekārta. Plašā fotoelementu sistēma gadā saražo 230 000 kWh elektroenerģijas datu centra vajadzībām.",
 
+  "Imprint": "Izlaides ziņas",
+  "Imprint_Title": "Company information",
+  "Imprint_BlockDescription_1": "Legal Form Stock Corporation",
+  "Imprint_BlockDescription_2": "Executive Board Andreas Wiebe (CEO) Chairman of the Board",
+  "Imprint_BlockDescription_3": "Commercial Registry Office Canton of Thurgau",
+  "Imprint_BlockDescription_4": "District Court City of Frauenfeld",
+  "Imprint_BlockDescription_5": "Commercial Register CHE-220.068.700",
+  
   "Default_Search_Home_Menu": "Noklusējuma meklētājprogramma",
 
   "Dont_RemindMe_Again": "Neatgādiniet man vēlreiz",
@@ -245,7 +253,7 @@
   "GTC": "GTC",
   "Homepage_Description": "Izmantojot mūsu anonīmo meklētājprogrammu Swisscows, jūs atradīsiet pilnīgu drošību. Nav izsekošanas ✓ Anonīma meklēšana ✓ Ģimenēm draudzīgs ✓ | swisscows.com",
   "Homepage_Title": "Jūsu privātā un anonīma meklētājprogramma Swisscows",
-  "Imprint": "Izlaides ziņas",
+
   "Information": "Informācija",
   "InstallSwisscows": "Instalēt Swisscows",
   "InstallSwisscowsBlock_Description": "\"Swisscows\" paplašinājums atvieglo anonīmu meklēšanu internetā. Vienkārši instalējiet \"Swisscows\" bez maksas un lietojiet to tieši, bez apkārtceļiem. ",

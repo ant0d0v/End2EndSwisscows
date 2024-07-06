@@ -235,6 +235,14 @@
   "Datacenter_BlockDescription_5": "El suministro de energía se realiza básicamente con electricidad natural, directamente desde la subestación de gas a través de dos líneas de media tensión. Cada bastidor se alimenta a través de dos circuitos separados de sus propios sistemas de transformadores. Lo que significa que se garantiza un suministro de energía completo en todo momento, incluso en caso de que fallaran componentes importantes de la planta en una de las dos vías de alimentación. Los sistemas SAI (Sistemas de Alimentación Interrumpida) y de apoyo a la red eléctrica evitan los posibles cortes de electricidad.",
   "Datacenter_BlockDescription_6": "Además, la instalación fotovoltaica interna contribuye a la generación de electricidad. Un sistema fotovoltaico en toda la zona se utiliza para generar 230.000 kWh de electricidad al año para su uso en el centro de datos.",
 
+  "Imprint": "Aviso legal",
+  "Imprint_Title": "Información de la empresa",
+  "Imprint_BlockDescription_1": "Forma legal Sociedad anónima",
+  "Imprint_BlockDescription_2": "Consejo de administración Andreas Wiebe (CEO), presidente del consejo de administración",
+  "Imprint_BlockDescription_3": "Oficina de registro comercial Cantón de Thurgau",
+  "Imprint_BlockDescription_4": "Tribunal de Distrito Ciudad de Frauenfeld",
+  "Imprint_BlockDescription_5": "Registro comercial CHE-220.068.700",
+
   "Default_Search_Home_Menu": "Motor de búsqueda predeterminada",
   "Dont_RemindMe_Again": "No me lo recuerdes de nuevo",
   "Follow_Title": "Síguenos en:",
@@ -244,7 +252,7 @@
   "GTC": "GTC",
   "Homepage_Description": "Avec notre moteur de recherche anonyme Swisscows, tu trouveras la sécurité absolue. Pas de tracking ✓ Recherche anonyme ✓ Adapté aux familles ✓ | swisscows.com",
   "Homepage_Title": "Su buscador privado y anónimo Swisscows",
-  "Imprint": "Aviso legal",
+ 
   "Information": "Información",
   "InstallSwisscows": "Instalar Swisscows",
   "InstallSwisscowsBlock_Description": "La extensión Swisscows facilita las búsquedas anónimas en Internet. Instálelo gratuitamente y utilice directamente Swisscows sin complicaciones. ",

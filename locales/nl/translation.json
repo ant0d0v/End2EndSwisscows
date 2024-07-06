@@ -237,6 +237,14 @@
   "Datacenter_BlockDescription_5": "De stroomvoorziening vindt in principe plaats met natuurstroom, direct vanaf het station Gais via twee middenspanningsleidingen. Elke rack wordt via twee gescheiden stroomcircuits door de eigen transformatoren van voeding voorzien. Daarmee wordt dus een omvattende energievoorziening gewaarborgd, zelfs als belangrijke onderdelen van de installatie in één van beide stroompaden defect raken. USV- en noodstroomvoorzieningen overbruggen een mogelijke stroomuitval.",
   "Datacenter_BlockDescription_6": "Daarnaast draagt de eigen fotovoltaïsche installatie bij aan de opwekking van stroom. Via een grote fotovoltaïsche installatie wordt onder eigen beheer jaarlijks 230.000 kWh stroom voor gebruik in het datacentrum opgewekt.",
 
+  "Imprint": "Impressum",
+  "Imprint_Title": "Company information",
+  "Imprint_BlockDescription_1": "Legal Form Stock Corporation",
+  "Imprint_BlockDescription_2": "Executive Board Andreas Wiebe (CEO) Chairman of the Board",
+  "Imprint_BlockDescription_3": "Commercial Registry Office Canton of Thurgau",
+  "Imprint_BlockDescription_4": "District Court City of Frauenfeld",
+  "Imprint_BlockDescription_5": "Commercial Register CHE-220.068.700",
+
   "Default_Search_Home_Menu": "Maak een standaard zoekmachine",
 
   "Dont_RemindMe_Again": "Herinner me er niet meer aan",
@@ -247,7 +255,7 @@
   "GTC": "GTC",
   "Homepage_Description": "Met onze anonieme zoekmachine Swisscows vindt u absolute veiligheid. Geen tracking ✓ Anoniem zoeken ✓ Gezinsvriendelijk ✓ | swisscows.com",
   "Homepage_Title": "Uw privé en anonieme zoekmachine Swisscows",
-  "Imprint": "Impressum",
+  
   "Information": "Informatie",
   "InstallSwisscows": "Swisscows installeren",
   "InstallSwisscowsBlock_Description": "De Swisscows-uitbreiding maakt anoniem zoeken op internet eenvoudiger. Eenvoudig gratis installeren en Swisscows direct zonder omwegen gebruiken. ",
