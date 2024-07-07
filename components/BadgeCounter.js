@@ -6,7 +6,6 @@ export default class BadgeCounter extends BaseComponent {
     super(page);
     //Locators
     this.badgeCounter = this.page.locator(".search-counter .badge");
-    this.charityBadgeCounter = this.page.locator("div.badge span");
     this.popupCharityBadgeCounter = this.page.getByText(
       "Charity ProjectThis is the"
     );

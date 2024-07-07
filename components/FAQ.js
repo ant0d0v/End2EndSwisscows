@@ -4,7 +4,7 @@ export default class FAQ extends BaseComponent {
     super(page);
     //Locators
 
-    this.allAttributeOfQuestions = this.page.locator("div.faq-wrap div");
+    this.allAttributeOfQuestions = this.page.locator(".faq");
     this.answersToQuestions = this.page.locator("p.answer");
   }
   //Actions

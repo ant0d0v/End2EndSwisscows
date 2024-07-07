@@ -9,7 +9,6 @@ export default class HamburgerMenu extends BaseComponent {
 
     //Locators
     this.dropdownRegion = this.page.getByText(/Region/);
-    this.allContent = this.page.locator("header div.menu");
     this.regionInDropdown = (region) => this.page.getByText(`${region}`, { exact: true });
     this.loginButton= this.page.getByRole("button", {name: "Login",});
     this.logoutButton = this.page.getByRole("button", {name: "Logout",});
@@ -20,8 +19,8 @@ export default class HamburgerMenu extends BaseComponent {
     this.darkTheme = this.page.getByText("Dark");
     this.lightTheme = this.page.getByText("Light");
     this.defaultTheme = this.page.locator("li").filter({ hasText: /^Default$/ });
-    this.textsLanguagesDropdown = this.page.locator( "//ul[@class ='menu-dropdown-list']/li");
-    this.textsRegionDropdown = this.page.locator("//ul[@class ='menu-dropdown-list']/li");
+    this.textsLanguagesDropdown = this.page.locator(".menu-dropdown-list li");
+    this.textsRegionDropdown = this.page.locator(".menu-dropdown-list li");
     this.bodyOfPage = this.page.locator("body");
     this.languageLinkInDropdown = (nameLocator) =>this.page.getByText(nameLocator);
     this.regionLinkInDropdown = (nameLocator) => this.page.locator("li").filter({ hasText: nameLocator });
