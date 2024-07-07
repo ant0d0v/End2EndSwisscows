@@ -238,6 +238,7 @@
   "Datacenter_BlockDescription_6": "Power is always supplied by natural current, directly from the Gais substation via two medium-voltage lines. Each rack is supplied by its own transformer via two separate circuits. This always ensures a full power supply - even if important system components should fail in one of the two power paths. UPS and backup power systems bridge possible power failures. In addition, the in-house photovoltaic system contributes to power generation. An area-wide photovoltaic system generates 230,000 kWh of electricity annually for use in the data center.",
 
   "Imprint": "Imprint",
+  "Imprint_Menu": "Aviso Legal",
   "Imprint_Title": "Company information",
   "Imprint_BlockDescription_1": "Legal Form Stock Corporation",
   "Imprint_BlockDescription_2": "Executive Board Andreas Wiebe (CEO) Chairman of the Board",
