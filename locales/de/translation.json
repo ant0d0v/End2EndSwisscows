@@ -226,6 +226,7 @@
   "Contact_Send": "Senden",
 
   "Datacenter": "Unser Datacenter",
+  "Datacenter_Home_Menu": "Unser Datacenter",
   "Datacenter_BlockTitle_1": "Datensichere Suchmaschine: Swisscows ist im sichersten Rechenzentrum aufbewahrt",
   "Datacenter_CertificatDescription": "Das Rechenzentrum erreicht dank Zertifizierung auf TIER IV-Level den höchsten Verfügbarkeitsstandard von 99,998 %.",
   "Datacenter_BlockDescription_1": "Swisscows ist die datensichere Suchmaschine und sorgt für optimale Internetinhalte. Wir betreiben eine Suchmaschine ohne Datenspeicherung und respektieren somit deine Privatsphäre! Wie wir das erreichen? Indem wir keine Daten sammeln, speichern oder verfolgen - du bist bei Swisscows.com zu 100% anonym! Wir sind eine familienfreundliche Suchmaschine, keine Datenspeicherung! Media Education, also die Medienerziehung, wird bei uns gross geschrieben.",
@@ -244,12 +245,15 @@
   "Imprint_BlockDescription_5": "Handelsregister CHE-220.068.700",
 
   "Default_Search_Home_Menu": "Standardsuche verwenden",
+  "Support_Search_Home_Menu": "Support",
 
   "Dont_RemindMe_Again": "Nicht mehr erinnern.",
   "Follow_Title": "Folge uns auf:",
   "Footer_About": "Mehr über Swisscows",
   "Footer_LearnSwisscows": "Lerne mehr über<br /> Swisscows AG",
   "Footer_LearnSwisscows_Mobile": "Lerne mehr über Swisscows&nbsp;AG",
+  "Menu_About": "Über Swisscows",
+  "Menu_AboutAG": "Über Swisscows AG",
   "GTC": "AGB",
   "Homepage_Description": "Bei unserer anonymen Suchmaschine Swisscows findest du die absolute Sicherheit. Kein Tracking ✓ Anonym suchen ✓ Familienfreundlich ✓ | swisscows.com",
   "Homepage_Title": "Deine private und anonyme Suchmaschine Swisscows",
@@ -265,6 +269,7 @@
   "Learn_More": "Mehr erfahren",
 
   "MediaEducation": "Swisscows - Medienerziehung",
+  "MediaEducation_Home_Menu": "Medienerziehung",
   "MediaEducation_OpenFlyer": "Flyer öffnen",
   "MediaEducation_BrochureTitle": "Wichtig!",
   "MediaEducation_BrochureDescription": "Kinder sollten das Internet nicht allein entdecken. Nehmen Sie sich Zeit und entdecken Sie das Internet gemeinsam.",
@@ -282,8 +287,6 @@
   "MediaEducation_BlockDescription_3": "Familie ist die wichtigste Zelle unserer Gesellschaft! Verschwinden Moral und Anstand, dann verschwinden auch Respekt und Nächstenliebe. Die digitalen Medien sind unverzichtbar und stellen dennoch für die noch nicht geformten Wahrnehmungen von Kindern und Jugendlichen eine Gefährdung und Herausforderung dar. Selbst Eltern und Schulen sind darauf nicht vorbereitet.",
   "MediaEducation_BlockDescription_4": "Unsere Kinder wachsen in einer digitalen Umwelt auf, die zum einen viele Vorteile, zum anderen aber auch viele Gefahren mit sich bringt. Es ist die Verantwortung der Eltern und der erziehungsberechtigten Personen, sich mit diesem Thema intensiv zu beschäftigen. Der digitale Wandel ist nicht nur rasch angekommen, sondern treibt mit schneller Geschwindigkeit immer weiter voran (laden Sie unsere kostenlose Broschüre „Digitale Medienerziehung“ herunter).",
   
-  "Menu_About": "Über Swisscows",
-  "Menu_AboutAG": "Über Swisscows AG",
   "Message_SendMail": "Vielen Dank für Ihre Kontaktaufnahme!",
   "Placeholder_Search": "Deine Suche. Deine Sache.",
   "Privacy": "Datenschutz",

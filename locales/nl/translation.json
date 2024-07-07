@@ -228,6 +228,7 @@
   "Contact_Send": "Stuur",
 
   "Datacenter": "Veilige zoekmachine",
+  "Datacenter_Home_Menu": "Ons datacenter",
   "Datacenter_BlockTitle_1": "Veilige zoekmachine: Swisscows wordt in het veiligste datacenter bewaard",
   "Datacenter_CertificatDescription": "Het datacenter behaalt dankzij de certificering op TIER IV-niveau de hoogste beschikbaarheidsstandaard van 99,998%.",
   "Datacenter_BlockDescription_1": "Swisscows is de veilige zoekmachine en zorgt voor de optimale inhoud op het internet. Wij gebruik een zoekmachine zonder gegevensopslag en hebben dus respect voor jouw privacy! Hoe we dat bereiken? Door geen gegevens te verzamelen, op te slaan of te volgen: bij Swisscows.com ben ij 100% anoniem! Wij zijn een gezinsvriendelijke zoekmachine zonder gegevensopslag! Media Education, mediaopvoeding dus, is bij ons zeer belangrijk.",
@@ -246,6 +247,7 @@
   "Imprint_BlockDescription_5": "Commercial Register CHE-220.068.700",
 
   "Default_Search_Home_Menu": "Maak een standaard zoekmachine",
+  "Support_Search_Home_Menu": "Support",
 
   "Dont_RemindMe_Again": "Herinner me er niet meer aan",
   "Follow_Title": "Volg ons op:",
@@ -266,6 +268,7 @@
   "Learn_More": "Leer meer",
 
   "MediaEducation": "Swisscows - media-educatie",
+  "MediaEducation_Home_Menu": "Media-educatie",
   "MediaEducation_OpenFlyer": "Flyer openen",
   "MediaEducation_BrochureTitle": "Belangrijk! ",
   "MediaEducation_BrochureDescription": "Kinderen mogen het internet niet alleen ontdekken. Neem de tijd en ontdek het internet met elkaar.",

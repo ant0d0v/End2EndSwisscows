@@ -226,6 +226,7 @@
   "Contact_Send": "Envoyer",
 
   "Datacenter": "Le moteur de recherche qui sécurise vos données",
+  "Datacenter_Home_Menu": "Notre centre de données",
   "Datacenter_BlockTitle_1": "Le moteur de recherche qui sécurise vos données: Swisscows est stocké dans un centre de données sûr",
   "Datacenter_CertificatDescription": "Grâce à la certification au niveau TIER IV, notre centre de données atteint le standard de disponibilité le plus élevé de 99,998%.",
   "Datacenter_BlockDescription_1": "Swisscows est un moteur de recherche sécurisé pour des contenus Internet optimaux qui ne stocke aucune donnée personnelle et respecte ainsi votre vie privée! Comment nous y parvenons? En ne collectant, ne stockant et ne traçant aucune donnée - vous êtes 100% anonyme sur Swisscows.com! Nous proposons un moteur de recherche adapté pour les familles et nous ne stockons pas vos données! L’éducation aux médias, Media Education, est d’une importance capitale pour nous.",
@@ -244,6 +245,7 @@
   "Imprint_BlockDescription_5": "Registre du commerce CHE-220.068.700",
 
   "Default_Search_Home_Menu": "Utilisation de recherche standard",
+  "Support_Search_Home_Menu": "Support",
 
   "Dont_RemindMe_Again": "Ne me le rappelle plus",
   "Follow_Title": "Suivez-nous sur :",
@@ -263,6 +265,7 @@
   "InstallSwisscowsLink_Firefox": "Installer Swisscows<br /> sur Firefox",
   
   "MediaEducation": "Éducation aux médias — Swisscows",
+  "MediaEducation_Home_Menu": "Éducation aux médias",
   "MediaEducation_OpenFlyer": "Ouvrir le flyer",
   "MediaEducation_BrochureTitle": "Important !",
   "MediaEducation_BrochureDescription": "Les enfants ne devraient pas découvrir Internet tout seuls. Prenez le temps de les accompagner dans leur découverte d’Internet",

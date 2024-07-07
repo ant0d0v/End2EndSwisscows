@@ -50,4 +50,15 @@ async function validateText(page, translationKey, languageCode) {
   });
   await expect(elementByRoleHeader.or(elementText)).toHaveText(expectedText);
 }
-(module.exports = validateText), i18next;
+async function validateTextHamburgerComponent(page, translationKey, languageCode) {
+  const expectedText = i18next.t(translationKey, { lng: languageCode });
+  const locator = expectedText.slice(0, 60);
+  const elementRoleButton = await page.getByRole("button", { name: locator});
+  const elementByRoleBanner = await page.getByRole('banner').locator('li').filter({ hasText: locator , exact: true })
+  await expect(elementRoleButton.or(elementByRoleBanner)).toHaveText(expectedText);
+}
+
+module.exports = {
+  validateText,
+  validateTextHamburgerComponent
+};

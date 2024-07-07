@@ -227,6 +227,7 @@
   "Contact_Send": "Enviar",
 
   "Datacenter": "Data secure search engine",
+  "Datacenter_Home_Menu": "O Nosso Centro de Dados",
   "Datacenter_BlockTitle_1": "Data secure search engine: Swisscows is kept in the most secure data center",
   "Datacenter_CertificatDescription": "Thanks to certification at TIER IV level, the data center achieves the highest availability standard of 99.998%.",
   "Datacenter_BlockDescription_1": "Swisscows is the data secure search engine and provides optimal internet content. We operate a search engine without data storage and thus respect your privacy! How do we achieve that? By not collecting, storing or tracking any data - you are 100% anonymous at Swisscows.com! We are a family friendly search engine without data storage! Media Education is very important to us.",
@@ -245,6 +246,7 @@
   "Imprint_BlockDescription_5": "Commercial Register CHE-220.068.700",
 
   "Default_Search_Home_Menu": "Usar a pesquisa padrão",
+  "Support_Search_Home_Menu": "Support",
 
   "Dont_RemindMe_Again": "Não lembrar mais.",
   "Follow_Title": "Siga-nos em:",
@@ -265,6 +267,7 @@
   "Learn_More": "Saiba mais",
 
   "MediaEducation": "Swisscows – media education",
+  "MediaEducation_Home_Menu": "Educação para os meios de comunicação",
   "MediaEducation_OpenFlyer": "Open flyer",
   "MediaEducation_BrochureTitle": "Important! ",
   "MediaEducation_BrochureDescription": "Children should not discover the Internet alone. Take your time and discover the Internet together.",

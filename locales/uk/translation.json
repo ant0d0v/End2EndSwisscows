@@ -227,6 +227,7 @@
   "Contact_Send": "Надіслати",
 
   "Datacenter": "Безпечна пошукова система",
+  "Datacenter_Home_Menu": "Наш ЦОД",
   "Datacenter_BlockTitle_1": "Пошукова система із захистом даних: Swisscows зберігається в безпечному дата-центрі",
   "Datacenter_CertificatDescription": "Завдяки сертифікації на рівні TIER IV центр обробки даних досягає найвищого стандарту доступності 99,998%.",
   "Datacenter_BlockDescription_1": "Swisscows - це пошукова система із захистом даних, що забезпечує оптимальний інтернет-контент. Наша пошукова система не зберігає ваших даних, тому що ми поважаємо вашу конфіденційність! Як ми цього досягаємо? Без збору, зберігання та відстеження персональних даних, ви на 100 % анонімні на Swisscows.com! Ми сімейна пошукова система без зберігання даних! Медіаосвіта дуже важлива для нас.",
@@ -245,6 +246,7 @@
   "Imprint_BlockDescription_5": "Реєстраційний номер CHE-220.068.700",
   
   "Default_Search_Home_Menu": "Пошук за замовчуванням",
+  "Support_Search_Home_Menu": "Support",
   "Dont_RemindMe_Again": "Не нагадувати знову",
   "Follow_Title": "Слідкуйте за нами:",
   "Footer_About": "Докладніше про Swisscows",
@@ -264,6 +266,7 @@
   "Learn_More": "Детальніше",
   
   "MediaEducation": "Swisscows – медіаосвіта",
+  "MediaEducation_Home_Menu": "Медіаосвіта",
   "MediaEducation_OpenFlyer": "Відкрита брошура",
   "MediaEducation_BrochureTitle": "Важливо! ",
   "MediaEducation_BrochureDescription": "Пам'ятайте, що дитина не повинна відкривати Інтернет самостійно, але знайдіть час, щоб відкрити Інтернет разом.",

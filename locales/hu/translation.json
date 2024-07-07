@@ -226,6 +226,7 @@
   "Contact_Send": "Elküld",
   
   "Datacenter": "Az adatbiztos keresőmotor",
+  "Datacenter_Home_Menu": "Adatközpontok",
   "Datacenter_BlockTitle_1": "Adatbiztos keresőmotor: A Swisscows a legbiztonságosabb adatközpontban található.",
   "Datacenter_CertificatDescription": "Az adatközpont a TIER IV szintű tanúsításnak köszönhetően a legmagasabb, 99,998%-os rendelkezésre állási szinten működik.",
   "Datacenter_BlockDescription_1": "A Swisscows egy adatbiztonságos keresőmotor, és optimális internetes tartalmat nyújt. Adattárolás nélküli keresőmotort üzemeltetünk, így tiszteletben tartjuk a privát szféráját! Hogyan érhetjük ezt el? Azáltal, hogy nem gyűjtünk, tárolunk vagy követünk semmilyen adatot - a Swisscows.com 100%-ban anonim! Családbarát keresőmotor vagyunk, nincs adattárolás! Media Education, vagyis médiaoktatás, nálunk prioritás.",
@@ -244,6 +245,7 @@
   "Imprint_BlockDescription_5": "Commercial Register CHE-220.068.700",
 
   "Default_Search_Home_Menu": "Alapértelmezett keresés",
+  "Support_Search_Home_Menu": "Support",
   "Dont_RemindMe_Again": "Ne emlékeztessen újra",
   "Follow_Title": "Kövessen minket:",
   "Footer_About": "Tudjon meg többet a Swisscows-ról",
@@ -263,6 +265,7 @@
   "Learn_More": "Tanulj többet",
   
   "MediaEducation": "Swisscows – Médiaoktatás",
+  "MediaEducation_Home_Menu": "Médiaoktatás",
   "MediaEducation_OpenFlyer": "Szórólap megnyitása",
   "MediaEducation_BrochureTitle": "Fontos! ",
   "MediaEducation_BrochureDescription": "A gyermekeknek nem szabad egyedül felfedezniük az internetet. Szánjon rá időt, és fedezzék fel együtt.",

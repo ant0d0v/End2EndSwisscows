@@ -1,12 +1,11 @@
-test_case,expected_content,language
-1,"TTestAbmeldenSprache DeutschLand Canada (EN)Design StandardIntegrationAls StartseiteStandardsuche verwendenÜber SwisscowsWer wir sindMedienerziehungSoziale ProjekteUnser DatacenterKontaktDatenschutzSpendeReferenten einladenSupport
-",Deutsch
-2,"TTestDéconnexionLa langue FrançaisRégion Canada (EN)Désign Par défautIntégrationComme page d'accueilUtilisation de recherche standardÀ propos de SwisscowsQui nous sommesÉducation aux médiasProjet de charitéNotre centre de donnéesContactProtection des donnéesDonSupport",Français
-3,"TTestLogoutLingua ItalianoStato Canada (EN)Design PredefinitoInserimentoCome Pagina inizialeUtilizza ricerca standardSu SwisscowsChi siamoEducazione all’uso dei mediaProgetto di caritàIl nostro centro datiContattaciProtezione datiDonazioneSupport",Italiano
-4,"TTestCerrar sesiónIdioma EspañolPaís Canada (EN)Diseño PredeterminadoIntegraciónUsar como página de inicioMotor de búsqueda predeterminadaSobre SwisscowsQuiénes somosEducación mediáticaProyecto benéficoNuestro centro de datosContáctenosProtección de datosDonativoSupport",Español
-5,"TTestUitloggenTaal NederlandsRegio Canada (EN)Design StandaardIntegratieInstellen als startpaginaMaak een standaard zoekmachineOver SwisscowsWie zijn wij?Media-educatieSociale projectenOns datacenterOns contacterenData PrivacyDonatieSupport",Nederlands
-6,"TTestSairIdioma PortuguêsPaís Canada (EN)Design PadrãoIntegraçãoComo Página inicialUsar a pesquisa padrãoSobre a SwisscowsQuem somosEducação para os meios de comunicaçãoProjetos sociaisO Nosso Centro de DadosContactoProteção de DadosDoaçãoSupport",Português
-7,"TTestKilépésNyelv MagyarRégió Canada (EN)Tervezés AlapbeállításkéntIntegrációBeállítás kezdőlapkéntAlapértelmezett keresésRól ről SwisscowsKik vagyunkMédiaoktatásSzociális projektekAdatközpontokKontaktAdatvédelemAdománySupport",Magyar
-8,"TTestIzlogotiesValoda LatviešuReģions Canada (EN)Dizains Pēc noklusējumaIntegrācijaIestatīt kā sākumlapuNoklusējuma meklētājprogrammaPar SwisscowsKas mēs esamMediju izglītībaSociālie projektiMūsu datu centrsSazinātiesDatu konfidencialitāteZiedojumsSupport",Latviešu
-9,"TTestВыйтиЯзык РусскийРегион Canada (EN)Тема По умолчаниюИнтеграцияУстановить cтартовой страницейПоиск по умолчаниюО SwisscowsКто мыМедиаобразованиеБлаготворительностьНаш ЦОДСвязаться с намиПриватностьПожертвованияSupport",Русский
-10,"TTestВийтиМова УкраїнськаРегіон Canada (EN)Тема За замовчуваннямІнтеграціяВстановити стартовою сторінкоюПошук за замовчуваннямПро SwisscowsХто миМедіаосвітаБлагодійністьНаш ЦОДЗв'яжіться з намиПриватністьБлагодійні внескиSupport",Українська
+test_case,language,languageCode
+1,Deutsch,de
+2,Français,fr
+3,Italiano,it
+4,Español,es
+5,Português,pt
+6,Magyar,hu
+7,Latviešu,lv
+8,Nederlands,nl
+9,Русский,ru
+10,Українська,uk

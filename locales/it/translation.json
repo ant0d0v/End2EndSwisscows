@@ -226,6 +226,7 @@
   "Contact_Send": "Inviare",
 
   "Datacenter": "Motore di ricerca sicuro per i dati ",
+  "Datacenter_Home_Menu": "Il nostro centro dati",
   "Datacenter_BlockTitle_1": "Motore di ricerca sicuro per i dati: Swisscows è custodita nel centro di elaborazione dati più sicuro",
   "Datacenter_CertificatDescription": "Grazie alla certificazione TIER livello IV, il centro di elaborazione dati raggiunge, con il 99,998 %, il massimo standard di disponibilità.",
   "Datacenter_BlockDescription_1": "Swisscows ha il motore di ricerca più sicuro per i dati e garantisce contenuti internet ottimali. Gestiamo un motore di ricerca che non memorizza i dati e rispetta così la tua privacy! Come ci riusciamo? Non raccogliendo, salvando o tracciando alcun dato: presso Swisscows.com sei anonimo al 100%! Siamo un motore di ricerca a misura di famiglia, non un archivio di dati! Media Education,  cioè l’educazione ai media, da noi si scrive con la lettera maiuscola. ",
@@ -244,6 +245,7 @@
   "Imprint_BlockDescription_5": "Registro delle imprese CHE-220.068.700",
 
   "Default_Search_Home_Menu": "Utilizza ricerca standard",
+  "Support_Search_Home_Menu": "Support",
 
   "Dont_RemindMe_Again": "Non ricordarmelo più",
   "Follow_Title": "Seguici:",
@@ -264,6 +266,7 @@
   "Learn_More": "Per saperne di più",
 
   "MediaEducation": "Swisscows: educazione mediatica",
+  "MediaEducation_Home_Menu": "Educazione all’uso dei media",
   "MediaEducation_OpenFlyer": "Apri Flyer",
   "MediaEducation_BrochureTitle": "Importante! ",
   "MediaEducation_BrochureDescription": "I bambini non dovrebbero scoprire Internet da soli. Prendetevi del tempo e scoprite Internet insieme.",

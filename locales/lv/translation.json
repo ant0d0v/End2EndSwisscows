@@ -226,6 +226,7 @@
   "Contact_Send": "Sūtīt",
 
   "Datacenter": "Datiem droša meklētājprogramma ",
+  "Datacenter_Home_Menu": "Mūsu datu centrs",
   "Datacenter_BlockTitle_1": "Datiem droša meklētājprogramma: “Swisscows” programma tiek uzglabāta drošākajā datu centrā",
   "Datacenter_CertificatDescription": "Pateicoties TIER IV. pakāpes sertifikācijai, datu centram ir augstākais pieejamības standarts: 99,998 %.",
   "Datacenter_BlockDescription_1": "“Swisscows” ir datiem droša meklētājprogramma un tā nodrošina optimālu interneta saturu. Mēs uzturam meklētājprogrammu bez datu saglabāšanas un tādējādi respektējam tavu privātumu! Kā mēs to panākam? Mēs neapkopojam, nesaglabājam un neizsekojam nekādus datus – ar Swisscows.com tu vari palikt 100% anonīms! Mūsu meklētājprogramma ir ģimenei draudzīga, netiek saglabāti nekādi dati! “Media Education”, t. i. plašsaziņas līdzekļu lietotprasme, pie mums tiek augstu vērtēta.",
@@ -244,6 +245,7 @@
   "Imprint_BlockDescription_5": "Commercial Register CHE-220.068.700",
   
   "Default_Search_Home_Menu": "Noklusējuma meklētājprogramma",
+  "Support_Search_Home_Menu": "Support",
 
   "Dont_RemindMe_Again": "Neatgādiniet man vēlreiz",
   "Follow_Title": "Seko mums:",
@@ -264,6 +266,7 @@
   "Learn_More": "Uzziniet vairāk",
 
   "MediaEducation": "“Swisscows” – medijpratība",
+  "MediaEducation_Home_Menu": "Mediju izglītība",
   "MediaEducation_OpenFlyer": "Atvērt skrejlapu",
   "MediaEducation_BrochureTitle": "Svarīgi! ",
   "MediaEducation_BrochureDescription": "Bērniem nevajadzētu atklāt internetu vieniem. Veltiet tam laiku un atklājiet internetu kopā.",
