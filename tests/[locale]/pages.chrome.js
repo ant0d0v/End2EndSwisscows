@@ -1,5 +1,5 @@
 import { test } from "../../utils/fixtures.js";
-import validateText from "../../locales/n18next.js";
+import { validateText } from "../../locales/n18next.js";
 import { readCsvFile,readSpecificCsvFile } from "../../helpers/csvHelper.js";
 
 const contactTable = readSpecificCsvFile("../data/locales/contact.csv");
