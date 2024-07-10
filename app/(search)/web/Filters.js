@@ -9,7 +9,7 @@ export default class Filters extends BaseComponent {
 
     //Locators
     this.filterByDate = this.page.getByRole('button', { name: 'Filter by date' })
-    this.attributeFilterByDate = this.page.locator("div.button-menu")
+    this.attributeFilterByDate = this.page.locator("button-menu")
   }
   
   //Actions

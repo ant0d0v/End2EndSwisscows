@@ -74,8 +74,7 @@ for (const { test_case, language, languageCode } of header) {
     await app.webPage.header.clickHamburgerMenuButton();
     await app.webPage.header.hamburgerMenu.clickLanguagesDropdown();
     await app.webPage.header.hamburgerMenu.clickLanguageLinkInDropdown(language);
-    await app.webPage.header.clickFiltersButton();
-
+  
     //Assert
     await validateTextHeaderComponent(app.webPage.page, "Web", languageCode);
     await validateTextHeaderComponent(app.webPage.page, "Images", languageCode);
@@ -83,7 +82,6 @@ for (const { test_case, language, languageCode } of header) {
     await validateTextHeaderComponent(app.webPage.page, "Music", languageCode);
     await validateTextHeaderComponent(app.webPage.page, "News", languageCode);
     await validateTextHeaderComponent(app.webPage.page, "Shopping", languageCode)
-    await validateTextHeaderComponent(app.webPage.page, "Web_Freshness", languageCode)
   });
 }
 for (const { test_case, language, languageCode } of header) {

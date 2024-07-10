@@ -111,7 +111,7 @@ test("Check 202 no results error page ", async ({
 
      //Assert
      await app.webPage.item.expectWebItemsToContains("ukraine");
-     await app.webPage.item.expectListToBeGreaterThanOrEqual(app.webPage.item.webItems, 6)
+     await app.webPage.item.expectListToBeGreaterThanOrEqual(app.webPage.item.webItems(/ukraine/), 6)
   });
 
   test("Check next button in the paging", async ({
