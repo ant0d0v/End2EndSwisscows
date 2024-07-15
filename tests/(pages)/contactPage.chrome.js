@@ -203,3 +203,17 @@ test("Check design dark theme of the  Contact Us page ", async ({
   //Assert
   await app.contactPage.expectScreenContactPage(testInfo);
 });
+
+test.skip(`Check error when sending message with 400 status code `, async ({ app }) => {
+  //Actions
+  await app.contactPage.open();
+  await app.contactRoute.mockResponseStatusCode(400);
+  await app.contactPage.inputYouNameField("dada");
+  await app.contactPage.inputEmailField("dasddat@gmail.com");
+  await app.contactPage.inputMessageField("dsadasdsad");
+  await app.contactPage.checkAgreeCheckbox();
+  await app.contactPage.clickSendButton();
+
+  //Assert
+  await app.contactPage.expectSuccessMessage();
+});

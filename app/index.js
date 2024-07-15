@@ -3,6 +3,7 @@ import { expect,test} from "@playwright/test";
 import PageHolder from "../base/PageHolder.js";
 import Api from "../api/api.js";
 import Route from "../app/api/route.js";
+import ContactRoute from "../app/api/contact/route.js";
 
 // Page imports from home directory
 import Home from "./(home)/page.js";
@@ -62,6 +63,7 @@ export default class Application extends PageHolder {
         this.imageMyPage = new ImageMyPage(this.page);
         this.signInPage = new SignInPage(this.page);
         this.route = new Route(this.page);
+        this.contactRoute = new ContactRoute(this.page);
     }
     //Actions
     async waitForUrlContains(Url) {
