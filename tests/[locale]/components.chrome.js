@@ -71,6 +71,7 @@ for (const { test_case, language, languageCode } of header) {
     await app.home.header.hamburgerMenu.selectRegion("Germany")
     await app.home.header.searchForm.inputSearchCriteria("test");
     await app.home.header.searchForm.clickEnterSearchField();
+    await app.webPage.item.expectWebItemsToBeVisible();
     await app.webPage.header.clickHamburgerMenuButton();
     await app.webPage.header.hamburgerMenu.clickLanguagesDropdown();
     await app.webPage.header.hamburgerMenu.clickLanguageLinkInDropdown(language);
@@ -94,6 +95,7 @@ for (const { test_case, language, languageCode } of header) {
     await app.home.header.hamburgerMenu.selectRegion("Germany")
     await app.home.header.searchForm.inputSearchCriteria("test");
     await app.home.header.searchForm.clickEnterSearchField();
+    await app.webPage.item.expectWebItemsToBeVisible();
     await app.webPage.header.clickHamburgerMenuButton();
     await app.webPage.header.hamburgerMenu.clickLanguagesDropdown();
     await app.webPage.header.hamburgerMenu.clickLanguageLinkInDropdown(language);

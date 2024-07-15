@@ -22,7 +22,7 @@ export default class HamburgerMenu extends BaseComponent {
     this.textsLanguagesDropdown = this.page.locator(".menu-dropdown-list li");
     this.textsRegionDropdown = this.page.locator(".menu-dropdown-list li");
     this.bodyOfPage = this.page.locator("body");
-    this.languageLinkInDropdown = (nameLocator) =>this.page.getByText(nameLocator);
+    this.languageLinkInDropdown = (nameLocator) =>this.page.getByText(nameLocator, { exact: true });
     this.regionLinkInDropdown = (nameLocator) => this.page.locator("li").filter({ hasText: nameLocator });
     this.linkOfStaticPage = (nameLocator) => this.page.getByRole("banner").getByRole("link", { name: nameLocator });
   }
