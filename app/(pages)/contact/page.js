@@ -1,9 +1,10 @@
-import BasePage from "../../../base/BasePage";
-import Header from "../../(pages)/Header";
-const { expect, test } = require("@playwright/test");
+import BasePage from "../../../base/BasePage.js";
+import Header from "../../(pages)/Header.js";
+import { expect, test } from "@playwright/test";
 const testData = JSON.parse(
   JSON.stringify(require("../../../data/pages/contact/testData.json"))
 );
+
 
 export default class ContactPage extends BasePage {
   constructor(page) {

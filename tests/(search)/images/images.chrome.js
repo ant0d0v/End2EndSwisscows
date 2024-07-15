@@ -1,7 +1,5 @@
-import { test,expect, deletionIds} from "../../../utils/fixtures";
-const testData = JSON.parse(
-    JSON.stringify(require("../../../data/error/testData.json"))
-  );
+import { test, expect, deletionIds } from "../../../utils/fixtures.js";
+import testData from "../../../data/error/testData.json"
 
 test("Check 202 No Results Found error page ", async ({
     app

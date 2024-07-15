@@ -1,6 +1,6 @@
-import BaseComponent from "../../../base/BaseComponent";
-import Player from "./Player";
-const { expect } = require("@playwright/test");
+import BaseComponent from "../../../base/BaseComponent.js";
+import Player from "./Player.js";
+
 
 export default class ItemDetails extends BaseComponent {
   constructor(page) {

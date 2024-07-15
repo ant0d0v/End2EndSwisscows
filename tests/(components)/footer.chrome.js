@@ -1,7 +1,6 @@
-import { test } from "../../utils/fixtures";
-const testData = JSON.parse(
-  JSON.stringify(require("../../data/footer/testData.json"))
-);
+import { test } from "../../utils/fixtures.js";
+import testData from "../../data/footer/testData.json"
+
 test.describe('Footer of static pages', () => {  
 for (const {testID, expectedUrl, expectedTitle, locatorId } of testData.internalLinks) {
     test(`${testID} Check navigation to corresponding pages for ${locatorId} internal link in footer static pages`, async ({
@@ -11,7 +10,6 @@ for (const {testID, expectedUrl, expectedTitle, locatorId } of testData.internal
       await app.home.open()
       await app.home.footer.clickAllInternalLink(locatorId)
       
-  
       //Assert
       await app.expectHaveUrl(app.page, expectedUrl);
       await app.expectHaveTitle(app.page, expectedTitle);

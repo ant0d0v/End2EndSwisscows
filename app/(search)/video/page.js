@@ -5,7 +5,6 @@ import Item from "./Item.js";
 import Player from "./Player.js";
 import Header from "../Header.js";
 import Error from "../Error.js";
-const { expect, context } = require("@playwright/test");
 
 export default class VideoPage extends BasePage {
   constructor(page) {

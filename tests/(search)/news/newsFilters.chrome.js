@@ -1,9 +1,6 @@
-import { test} from "../../../utils/fixtures";
-const { expect } = require("@playwright/test");
-
-const filterData = JSON.parse(
-  JSON.stringify(require("../../../data/filters/testData.json"))
-);
+import { test} from "../../../utils/fixtures.js";
+import { expect } from "@playwright/test";
+import filterData from "../../../data/filters/testData.json"
 
 for (const {testID,expectedNewsLink,locatorId} of filterData.byDate) {
     test(`${testID}  ${locatorId} filter navigates to the corresponding page.`, async ({

@@ -1,7 +1,4 @@
-const { page } = require("@playwright/test");
-import PageHolder from "../../base/PageHolder";
-const { expect } = require("@playwright/test");
-
+import PageHolder from "../../base/PageHolder.js";
 export default class Route extends PageHolder {
   constructor(page) {
     super(page);

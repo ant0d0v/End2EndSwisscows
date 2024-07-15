@@ -1,10 +1,10 @@
-import BaseComponent from "../../base/BaseComponent";
-import HamburgerMenu from "../HamburgerMenu";
-import BadgeCounter from "../../components/BadgeCounter";
-import BadgeEmail from "../../components/BadgeEmail";
-import BadgeTeleguard from "../../components/BadgeTeleguard";
-import BadgeVPN from "../../components/BadgeVPN";
-import SearchForm from "../SearchForm";
+import BaseComponent from "../../base/BaseComponent.js";
+import HamburgerMenu from "../HamburgerMenu.js";
+import BadgeCounter from "../../components/BadgeCounter.js";
+import BadgeEmail from "../../components/BadgeEmail.js";
+import BadgeTeleguard from "../../components/BadgeTeleguard.js";
+import BadgeVPN from "../../components/BadgeVPN.js";
+import SearchForm from "../SearchForm.js";
 export default class Header extends BaseComponent {
   constructor(page) {
     super(page);
@@ -16,14 +16,21 @@ export default class Header extends BaseComponent {
     this.searchForm = new SearchForm(page);
 
     //Locators
+    this.searchCounter = this.page.getByTitle("0").locator("img");
     this.allContent = this.page.locator("header.header-home");
     this.hamburgerMenuButton = this.page.locator(
       "header button.hamburger-menu"
     );
-    this.logoSwisscows = this.page.getByRole('link', { name: 'Swisscows', exact: true })
+    this.logoSwisscows = this.page.getByRole('heading', { name: 'Anonymous search engine', exact: true })
   }
 
   //Actions
+  clickBadgeCounter = async () => {
+    await this.clickElement(
+      this.searchCounter,
+      `charity search counter  in the header`
+    );
+  };
 
   clickHamburgerMenuButton = async () => {
     await this.clickElement(
@@ -34,5 +41,8 @@ export default class Header extends BaseComponent {
   clickSwisscowsLogo = async () => {
     await this.clickElement(this.logoSwisscows, `Swisscows Logo in the header`);
   };
-  
+  //Verify
+  expectSwisscowsLogoToBeVisible = async () => {
+    await this.expectElementToBeVisible(this.logoSwisscows);
+  };
 }

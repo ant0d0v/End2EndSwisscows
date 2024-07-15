@@ -1,10 +1,10 @@
-import BaseComponent from "../base/BaseComponent";
+import BaseComponent from "../base/BaseComponent.js";
 export default class FAQ extends BaseComponent {
   constructor(page) {
     super(page);
     //Locators
 
-    this.allAttributeOfQuestions = this.page.locator("div.faq-wrap div");
+    this.allAttributeOfQuestions = this.page.locator(".faq");
     this.answersToQuestions = this.page.locator("p.answer");
   }
   //Actions

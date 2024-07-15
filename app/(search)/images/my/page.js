@@ -1,5 +1,5 @@
 import BasePage from "../../../../base/BasePage.js";
-const { expect, context } = require("@playwright/test");
+import { expect } from "@playwright/test";
 import ItemDetails from "../ItemDetails.js";
 import Item from "../Item.js";
 import Header from "../../Header.js";

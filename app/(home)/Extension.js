@@ -1,4 +1,4 @@
-import BaseComponent from "../../base/BaseComponent";
+import BaseComponent from "../../base/BaseComponent.js";
 
 export default class Extension extends BaseComponent {
     constructor(page) {

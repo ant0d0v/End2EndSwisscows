@@ -1,7 +1,6 @@
-const { test, expect } = require("../../utils/fixtures");
-const testData = JSON.parse(
-  JSON.stringify(require("../../data/bots-protection-system/testData.json"))
-);
+import { test } from "../../utils/fixtures.js";
+import testData from "../../data/bots-protection-system/testData.json"
+
 test.describe.configure({ mode: "default" });
 test("Brazilian Bots and Error 429 Page /web search @api", async ({ app }) => {
   // Action

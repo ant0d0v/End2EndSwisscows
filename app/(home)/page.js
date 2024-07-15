@@ -1,10 +1,10 @@
-const { expect } = require("@playwright/test");
-import Header from "./Header";
-import Footer from "../Footer";
-import InstallSwisscowsLink from "./ExtensionPopup";
-import extensionBlock from "./Extension";
-import FAQ from "../../components/FAQ";
-import BasePage from "../../base/BasePage";
+import Header from "./Header.js";
+import Footer from "../Footer.js";
+import InstallSwisscowsLink from "./ExtensionPopup.js";
+import extensionBlock from "./Extension.js";
+import FAQ from "../../components/FAQ.js";
+import BasePage from "../../base/BasePage.js";
+
 
 export default class Home extends BasePage {
   constructor(page) {
@@ -13,12 +13,11 @@ export default class Home extends BasePage {
     this.footer = new Footer(page);
     this.installSwisscowsLink = new InstallSwisscowsLink(page);
     this.extensionBlock = new extensionBlock(page);
-    this.faq =  new FAQ(page);
-
+    this.faq = new FAQ(page);
+    //Locators of Locales
+  
     // Locators
-    this.logoSwisscows = this.page.getByRole("img", { name: "Swisscows", exact: true, });
     this.blockQuestionsAndAnswers = this.page.getByText( "Questions and AnswersWhat");
-    this.allContent = this.page.locator("main.home");
     this.allImages = this.page.locator("main.home img:visible")
     this.allQuestions = this.page.locator("h3.question");
     this.fourQuestion = this.page.getByRole("heading", { name: "How can I switch from another",});
@@ -30,13 +29,13 @@ export default class Home extends BasePage {
   }
 
   //Actions
+  
   async open(){
     await this.openPage("/")
   }
 
   clickAllQuestions = async () => {
     await this.clickAllElementsInList(this.allQuestions, `questions`);
-    return this;
   };
 
   scrollDownToQuestions = async () => {
@@ -47,13 +46,9 @@ export default class Home extends BasePage {
     await this.clickElement( this.fourQuestion,
       `four question in accordion menu`
     );
-    return this;
   };
 
   // Verify
-  expectSwisscowsLogoToBeVisible = async () => {
-    await this.expectElementToBeVisible(this.logoSwisscows);
-  };
   
   expectScreenHome = async (testInfo) => {
     await this.expectPageToHaveScreenshot(testInfo, this.allImages, this.widget);

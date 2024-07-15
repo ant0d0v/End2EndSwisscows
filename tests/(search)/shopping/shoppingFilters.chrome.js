@@ -1,4 +1,4 @@
-import { test } from "../../../utils/fixtures";
+import { test } from "../../../utils/fixtures.js";
 
 test("Check Cheapest first filter ", async ({ app }) => {
   //Actions

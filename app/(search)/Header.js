@@ -1,10 +1,10 @@
-import HamburgerMenu from "../HamburgerMenu";
-import badgeCounter from "../../components/BadgeCounter";
-import BadgeEmail from "../../components/BadgeEmail";
-import BadgeTeleguard from "../../components/BadgeTeleguard";
-import BadgeVPN from "../../components/BadgeVPN";
-import SearchForm from "../SearchForm";
-import BaseComponent from "../../base/BaseComponent";
+import HamburgerMenu from "../HamburgerMenu.js";
+import badgeCounter from "../../components/BadgeCounter.js";
+import BadgeEmail from "../../components/BadgeEmail.js";
+import BadgeTeleguard from "../../components/BadgeTeleguard.js";
+import BadgeVPN from "../../components/BadgeVPN.js";
+import SearchForm from "../SearchForm.js";
+import BaseComponent from "../../base/BaseComponent.js";
 
 export default class Header extends BaseComponent {
   constructor(page) {
@@ -18,12 +18,13 @@ export default class Header extends BaseComponent {
 
     //Locators
     this.logoSwisscows = this.page.locator("#header").getByRole("link", { name: "Swisscows", exact: true });
+    this.searchCounter = this.page.locator("#header").getByText("1");
     this.imageSearchButton = this.page.getByRole("link", { name: "Images", exact: true,});
     this.videoSearchButton = this.page.getByRole("link", { name: "Video", exact: true,});
     this.musicSearchButton = this.page.getByRole("link", { name: "Music", exact: true,});
     this.newsSearchButton = this.page.getByRole("link", {name: "News", exact: true,});
     this.shoppingSearchButton = this.page.getByRole("link", {name: "Shopping",exact: true,});
-    this.hamburgerMenuButton = this.page.locator("#header").getByRole("button").nth(2);
+    this.hamburgerMenuButton = this.page.getByRole('banner').getByRole('button').nth(1)
     this.filtersButton = this.page.locator('.filters-button')
   }
 
@@ -73,6 +74,13 @@ export default class Header extends BaseComponent {
     await this.clickElement(this.filtersButton,`filter button` );
     const response = await responsePromise;
     return response;
+  };
+
+  clickBadgeCounter = async () => {
+    await this.clickElement(
+      this.searchCounter,
+      `charity search counter  in the header`
+    );
   };
   
   // Verify

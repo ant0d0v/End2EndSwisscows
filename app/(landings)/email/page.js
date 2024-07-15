@@ -1,6 +1,5 @@
-import BasePage from "../../../base/BasePage";
-import {expect} from "../../../utils/customMatchers"
-import Header from "../../(landings)/email/Header";
+import BasePage from "../../../base/BasePage.js";
+import Header from "../../(landings)/email/Header.js";
 export default class EmailPage extends BasePage {
   constructor(page) {
     super(page);

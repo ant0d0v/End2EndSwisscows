@@ -1,4 +1,4 @@
-import RequestHolder from "../RequestHolder";
+import RequestHolder from "../RequestHolder.js";
 
 export default class SearchRequestBase extends RequestHolder {
     constructor(request) {

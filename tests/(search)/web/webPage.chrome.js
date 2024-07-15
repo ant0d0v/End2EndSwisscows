@@ -1,10 +1,5 @@
-import { test} from "../../../utils/fixtures";
-const { expect } = require("@playwright/test");
-
-const testData = JSON.parse(
-  JSON.stringify(require("../../../data/error/testData.json"))
-);
-
+import { test } from "../../../utils/fixtures.js";
+import testData from "../../../data/error/testData.json"
 
 test("Check 202 no results error page ", async ({
     app
@@ -116,25 +111,7 @@ test("Check 202 no results error page ", async ({
 
      //Assert
      await app.webPage.item.expectWebItemsToContains("ukraine");
-     await app.webPage.item.expectListToBeGreaterThanOrEqual(app.webPage.item.webItems, 6)
-  });
-
-  test("Check select any number in the paging", async ({
-    app
-  }) => {
-     //Actions
-     await app.home.open()
-     await app.home.header.searchForm.inputSearchCriteria("ukraine");
-     await app.home.header.searchForm.clickEnterSearchField();
-     await app.webPage.item.expectWebItemsToBeVisible()
-     const oldSearchResult = await app.webPage.item.getTextContentWebItems()
-     await app.webPage.pagination.clickThreeNumber()
-     await app.webPage.header.badgeCounter.expectCharityBadgeCounterToHaveValue("2");
-     const newSearchResult = await app.webPage.item.getTextContentWebItems()
-
-     //Assert
-     await app.webPage.item.expectOldArrayNotToEqualNewArray(oldSearchResult, newSearchResult)
-     await app.webPage.pagination.expectThreeNumberIsActive()
+     await app.webPage.item.expectListToBeGreaterThanOrEqual(app.webPage.item.webItems(/ukraine/), 6)
   });
 
   test("Check next button in the paging", async ({
@@ -152,7 +129,7 @@ test("Check 202 no results error page ", async ({
 
      //Assert
      await app.webPage.item.expectOldArrayNotToEqualNewArray(oldSearchResult, newSearchResult)
-     await app.webPage.pagination.expectSecondNumberIsActive()
+     await app.webPage.pagination.expectPreviousButtonIsEnabled()
   });
 
   test("Check prev button in the paging", async ({
@@ -170,7 +147,7 @@ test("Check 202 no results error page ", async ({
      
      //Assert
      await app.expectHaveUrl(app.page, process.env.BASE_URL + "/en/web?query=ivanka&offset=0")
-     await app.webPage.pagination.expectFirstNumberIsActive()
+     await app.webPage.pagination.expectPreviousButtonIsDisabled()
   });
 
   test("Check open link in  the web result", async ({

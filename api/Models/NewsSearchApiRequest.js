@@ -1,4 +1,4 @@
-import SearchRequestBase from "./SearchRequestBase"
+import SearchRequestBase from "./SearchRequestBase.js"
 export default class NewsSearchApiRequest extends SearchRequestBase{
     constructor(request) {
         super(request);

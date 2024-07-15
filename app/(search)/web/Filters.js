@@ -1,6 +1,6 @@
-import BaseComponent from "../../../base/BaseComponent";
-import ButtonMenu from "../../../components/ButtonMenu";
-const { expect } = require("@playwright/test");
+import BaseComponent from "../../../base/BaseComponent.js";
+import ButtonMenu from "../../../components/ButtonMenu.js";
+
 
 export default class Filters extends BaseComponent {
   constructor(page) {
@@ -9,7 +9,7 @@ export default class Filters extends BaseComponent {
 
     //Locators
     this.filterByDate = this.page.getByRole('button', { name: 'Filter by date' })
-    this.attributeFilterByDate = this.page.locator("div.button-menu")
+    this.attributeFilterByDate = this.page.locator("button-menu")
   }
   
   //Actions

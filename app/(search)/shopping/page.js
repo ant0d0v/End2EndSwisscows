@@ -1,5 +1,4 @@
 import  Pagination  from "../../../components/Pagination.js";
-const { expect, context } = require("@playwright/test");
 import Filters from "./Filters.js";
 import Offer from "./Offer.js";
 import Details from "./Details.js";

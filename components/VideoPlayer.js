@@ -1,4 +1,4 @@
-import BaseComponent from "../base/BaseComponent";
+import BaseComponent from "../base/BaseComponent.js";
 import { expect } from '@playwright/test';
 
 export default class VideoPlayer extends BaseComponent {

@@ -1,39 +1,40 @@
-const { expect, context, test} = require('@playwright/test');
+import { expect,test} from "@playwright/test";
 // Base and utility imports
-import PageHolder from "../base/PageHolder";
-import Api from "../api/api";
-import Route from "../app/api/route";
+import PageHolder from "../base/PageHolder.js";
+import Api from "../api/api.js";
+import Route from "../app/api/route.js";
+import ContactRoute from "../app/api/contact/route.js";
 
 // Page imports from home directory
-import Home from "./(home)/page";
+import Home from "./(home)/page.js";
 
 // Page imports from search directory
-import ImagePage from "../app/(search)/images/page";
-import ImageMyPage from "../app/(search)/images/my/page";
-import MusicPage from "../app/(search)/music/page";
-import MusicMyPage from "../app/(search)/music/my/page";
-import MusicPlaylistPage from "../app/(search)/music/playlist/page";
-import VideoPage from "../app/(search)/video/page";
-import WebPage from "../app/(search)/web/page";
-import NewsPage from "../app/(search)/news/page";
-import ShoppingPage from "../app/(search)/shopping/page";
+import ImagePage from "../app/(search)/images/page.js";
+import ImageMyPage from "../app/(search)/images/my/page.js";
+import MusicPage from "../app/(search)/music/page.js";
+import MusicMyPage from "../app/(search)/music/my/page.js";
+import MusicPlaylistPage from "../app/(search)/music/playlist/page.js";
+import VideoPage from "../app/(search)/video/page.js";
+import WebPage from "../app/(search)/web/page.js";
+import NewsPage from "../app/(search)/news/page.js";
+import ShoppingPage from "../app/(search)/shopping/page.js";
 
 // Page imports from pages directory
-import DefaultSearchPage from "../app/(pages)/default-search/page";
-import CharityPage from "../app/(pages)/social-projects/page";
-import DatacenterPage from "../app/(pages)/datacenter/page";
-import MediaEducationPage from "../app/(pages)/media-education/page";
-import DonationPage from "../app/(pages)/donation/page";
-import ContactPage from "../app/(pages)/contact/page";
-import ImprintPage from "../app/(pages)/imprint/page";
-import AboutPage from "../app/(pages)/about/page";
+import DefaultSearchPage from "../app/(pages)/default-search/page.js";
+import CharityPage from "../app/(pages)/social-projects/page.js";
+import DatacenterPage from "../app/(pages)/datacenter/page.js";
+import MediaEducationPage from "../app/(pages)/media-education/page.js";
+import DonationPage from "../app/(pages)/donation/page.js";
+import ContactPage from "../app/(pages)/contact/page.js";
+import ImprintPage from "../app/(pages)/imprint/page.js";
+import AboutPage from "../app/(pages)/about/page.js";
 
 // Page imports from landings directory
-import VpnPage from "../app/(landings)/vpn/page";
-import EmailPage from "../app/(landings)/email/page";
+import VpnPage from "../app/(landings)/vpn/page.js";
+import EmailPage from "../app/(landings)/email/page.js";
 
 // OAuth related page import
-import SignInPage from "../app/oauth/page";
+import SignInPage from "../app/oauth/page.js";
 
 // Application class that uses all the imports
 export default class Application extends PageHolder {
@@ -62,6 +63,7 @@ export default class Application extends PageHolder {
         this.imageMyPage = new ImageMyPage(this.page);
         this.signInPage = new SignInPage(this.page);
         this.route = new Route(this.page);
+        this.contactRoute = new ContactRoute(this.page);
     }
     //Actions
     async waitForUrlContains(Url) {

@@ -1,6 +1,6 @@
-import BaseComponent from "../../../base/BaseComponent";
-import HamburgerMenu from "../../HamburgerMenu";
-import badgeCounter from "../../../components/BadgeCounter";
+import BaseComponent from "../../../base/BaseComponent.js";
+import HamburgerMenu from "../../HamburgerMenu.js";
+import badgeCounter from "../../../components/BadgeCounter.js";
 export default class Header extends BaseComponent {
   constructor(page) {
     super(page);

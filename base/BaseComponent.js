@@ -1,5 +1,5 @@
-import { expect, test, context} from "../utils/customMatchers"
-import PageHolder from "./PageHolder";
+import { expect, test } from "../utils/customMatchers.js";
+import PageHolder from "./PageHolder.js";
 
 export default class BaseComponent extends PageHolder {
   constructor(page) {
@@ -182,6 +182,15 @@ export default class BaseComponent extends PageHolder {
       for (const element of await elements.all()) {
         await expect(element).toBeVisible();
       }
+    });
+  }
+  async expectAreElementsToBeVisible(elements) {
+    await test.step('Expect the element in the array to "be" visible', async () => {
+       const imageElements = await elements.all();
+       for (const image of imageElements) {
+         await image.scrollIntoViewIfNeeded();
+         await expect(image).not.toHaveJSProperty("naturalWidth", 0);
+       }
     });
   }
   async expectTextsToContains(elements, criteria) {

@@ -1,7 +1,5 @@
-import BasePage from "../../../base/BasePage";
-import Header from "../../(pages)/Header";
-const { expect, test } = require("@playwright/test");
-
+import BasePage from "../../../base/BasePage.js";
+import Header from "../../(pages)/Header.js";
 export default class ImprintPage extends BasePage {
   constructor(page) {
     super(page);

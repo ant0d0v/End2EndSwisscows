@@ -1,6 +1,4 @@
-import BaseComponent from "../base/BaseComponent";
-import  expect from "@playwright/test";
-
+import BaseComponent from "../base/BaseComponent.js";
 export default class Preloader extends BaseComponent {
   constructor(page) {
     super(page);

@@ -1,7 +1,7 @@
-import BasePage from "../../../base/BasePage";
-import ImagesGallery  from "../../../components/ImagesGallery";
-import VideoPlayer from "../../../components/VideoPlayer";
-import Header from "../../(pages)/Header";
+import BasePage from "../../../base/BasePage.js";
+import ImagesGallery from "../../../components/ImagesGallery.js";
+import VideoPlayer from "../../../components/VideoPlayer.js";
+import Header from "../../(pages)/Header.js";
 export default class CharityPage extends BasePage {
   constructor(page) {
     super(page);

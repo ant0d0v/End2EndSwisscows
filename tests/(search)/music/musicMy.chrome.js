@@ -1,9 +1,7 @@
-import { test, deletionIds } from "../../../utils/fixtures";
-
+import { test, deletionIds } from "../../../utils/fixtures.js";
 const value = "Skofka";
-const testData = JSON.parse(
-    JSON.stringify(require("../../../data/error/testData.json"))
-  );
+import testData from "../../../data/error/testData.json"
+
 test.describe('Internal user', () => {  
   test.describe.configure({ mode: 'default' });
   test("Check No items Found error page ", async ({

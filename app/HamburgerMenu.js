@@ -1,5 +1,5 @@
-import BaseComponent from "../base/BaseComponent";
-import Avatar from "../components/Avatar"
+import BaseComponent from "../base/BaseComponent.js";
+import Avatar from "../components/Avatar.js";
 import { expect } from '@playwright/test';
 
 export default class HamburgerMenu extends BaseComponent {
@@ -9,7 +9,6 @@ export default class HamburgerMenu extends BaseComponent {
 
     //Locators
     this.dropdownRegion = this.page.getByText(/Region/);
-    this.allContent = this.page.locator("header div.menu");
     this.regionInDropdown = (region) => this.page.getByText(`${region}`, { exact: true });
     this.loginButton= this.page.getByRole("button", {name: "Login",});
     this.logoutButton = this.page.getByRole("button", {name: "Logout",});
@@ -20,10 +19,10 @@ export default class HamburgerMenu extends BaseComponent {
     this.darkTheme = this.page.getByText("Dark");
     this.lightTheme = this.page.getByText("Light");
     this.defaultTheme = this.page.locator("li").filter({ hasText: /^Default$/ });
-    this.textsLanguagesDropdown = this.page.locator( "//ul[@class ='menu-dropdown-list']/li");
-    this.textsRegionDropdown = this.page.locator("//ul[@class ='menu-dropdown-list']/li");
+    this.textsLanguagesDropdown = this.page.locator(".menu-dropdown-list li");
+    this.textsRegionDropdown = this.page.locator(".menu-dropdown-list li");
     this.bodyOfPage = this.page.locator("body");
-    this.languageLinkInDropdown = (nameLocator) =>this.page.getByText(nameLocator);
+    this.languageLinkInDropdown = (nameLocator) =>this.page.getByText(nameLocator, { exact: true });
     this.regionLinkInDropdown = (nameLocator) => this.page.locator("li").filter({ hasText: nameLocator });
     this.linkOfStaticPage = (nameLocator) => this.page.getByRole("banner").getByRole("link", { name: nameLocator });
   }
@@ -80,6 +79,11 @@ export default class HamburgerMenu extends BaseComponent {
     await this.clickElement(
       this.lightTheme, `light theme in the dropdown of themes in hamburger menu`);
   };
+
+  clickAvatar = async () => {
+    await this.clickElement(this.avatar.image, `avatar in in hamburger menu`);
+  };
+  
   getTextsOfLinksInHamburgerMenu = async () => {
     return this.getTextsOfElements(
       this.textsOfLinksInHamburgerMenu.all(), `links of hamburger menu `);
@@ -118,6 +122,7 @@ export default class HamburgerMenu extends BaseComponent {
   expectRegionDropdownToHaveCount = async (number) => {
     await this.expectListToHaveCount(this.textsRegionDropdown, number);
   };
+
   expectLanguagesDropdownToHaveCount = async (number) => {
     await this.expectListToHaveCount(this.textsLanguagesDropdown, number);
   };

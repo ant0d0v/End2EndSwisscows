@@ -1,5 +1,4 @@
 import BasePage from "../../../base/BasePage.js";
-const { expect, context } = require("@playwright/test");
 import Filters from "./Filters.js";
 import RelatedQueries from "./RelatedQueries.js";
 import ItemDetails from "./ItemDetails.js";

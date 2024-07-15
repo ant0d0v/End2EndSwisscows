@@ -1,6 +1,6 @@
-import BaseComponent from "../../../base/BaseComponent";
-import Icon from "../../../components/Icon";
-const { expect } = require("@playwright/test");
+import BaseComponent from "../../../base/BaseComponent.js";
+import Icon from "../../../components/Icon.js";
+
 
 export default class Item extends BaseComponent {
   constructor(page) {

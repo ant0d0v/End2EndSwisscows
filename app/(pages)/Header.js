@@ -1,9 +1,9 @@
-import BaseComponent from "../../base/BaseComponent";
-import HamburgerMenu from "../../app/HamburgerMenu";
-import badgeCounter from "../../components/BadgeCounter";
-import BadgeEmail from "../../components/BadgeEmail";
-import BadgeTeleguard from "../../components/BadgeTeleguard";
-import BadgeVPN from "../../components/BadgeVPN";
+import BaseComponent from "../../base/BaseComponent.js";
+import HamburgerMenu from "../../app/HamburgerMenu.js";
+import badgeCounter from "../../components/BadgeCounter.js";
+import BadgeEmail from "../../components/BadgeEmail.js";
+import BadgeTeleguard from "../../components/BadgeTeleguard.js";
+import BadgeVPN from "../../components/BadgeVPN.js";
 export default class Header extends BaseComponent {
   constructor(page) {
     super(page);
@@ -12,14 +12,22 @@ export default class Header extends BaseComponent {
     this.badgeEmail = new BadgeEmail(page);
     this.badgeTeleguard = new BadgeTeleguard(page);
     this.badgeVPN = new BadgeVPN(page);
-    
+
     //Locators
+    this.badgeCounter = this.page.getByTitle('0').locator('img')
     this.hamburgerMenuButton = this.page.locator(
       "header button.hamburger-menu"
     );
   }
 
   //Actions
+
+  clickBadgeCounter = async () => {
+    await this.clickElement(
+      this.badgeCounter,
+      `charity search counter  in the header`
+    );
+  };
 
   clickHamburgerMenuButton = async () => {
     await this.clickElement(

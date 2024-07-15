@@ -1,13 +1,11 @@
-import BaseComponent from "../../../base/BaseComponent";
-const { expect } = require("@playwright/test");
-
+import BaseComponent from "../../../base/BaseComponent.js";
 export default class Item extends BaseComponent {
   constructor(page) {
     super(page);
     //Locators
-    this.webItems = this.page.locator("article.item-web h2")
-    this.firstWebItem = this.page.locator("article.item-web h2").first()
-    this.fiveWebItems = this.page.locator("article.item-web:nth-of-type(-n+5) h2")
+    this.webItems = this.page.locator("article.item.web-page h2");
+    this.firstWebItem = this.page.locator("article.item.web-page h2").first();
+    this.fiveWebItems = this.page.locator("article.item.web-page:nth-of-type(-n+5) h2")
   }
   //Actions
   getTextContentWebItems = async () => {
@@ -24,7 +22,9 @@ export default class Item extends BaseComponent {
  
   // Verify
   expectWebItemsToBeVisible = async () => {
-    await this.page.waitForSelector("article.item-web h2",{ state: 'visible' })
+    await this.page.waitForSelector("article.item.web-page h2", {
+      state: "visible",
+    });
     await this.expectAreElementsInListDisplayed(this.webItems)
   };
 

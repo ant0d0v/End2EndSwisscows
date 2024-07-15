@@ -5,7 +5,6 @@ import Item from "./Item.js";
 import Header from "../Header.js";
 import Error from "../Error.js";
 import ProxyImage from "../../../components/ProxyImage.js"
-const { expect, context } = require("@playwright/test");
 
 export default class NewsPage extends BasePage {
   constructor(page) {
