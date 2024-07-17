@@ -4,7 +4,7 @@ test("Check design of the About Page page ", async ({ app }, testInfo) => {
   await app.aboutPage.open();
 
   //Assert
-  await app.aboutPage.expectScreenAboutPage(testInfo);
+  await app.aboutPage.takeSnapshot(testInfo);
 });
 
 test("Check design dark theme of the   About Page page ", async ({
@@ -17,5 +17,5 @@ test("Check design dark theme of the   About Page page ", async ({
   await app.aboutPage.header.hamburgerMenu.clickDarkTheme();
 
   //Assert
-  await app.aboutPage.expectScreenAboutPage(testInfo);
+  await app.aboutPage.takeSnapshot(testInfo);
 });

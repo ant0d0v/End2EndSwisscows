@@ -1,12 +1,12 @@
 import { test } from "../../utils/fixtures.js";
-import testData from "../../data/pages/about/testData.json"
+import testData from "../../data/pages/about/testData.json";
 
 test("Check design of the About page ", async ({ app }, testInfo) => {
   //Actions
   await app.aboutPage.open();
 
   //Assert
-  await app.aboutPage.expectScreenAboutPage(testInfo);
+  await app.aboutPage.takeSnapshot(testInfo);
 });
 
 test("Check design dark theme of the   About page", async ({
@@ -19,15 +19,10 @@ test("Check design dark theme of the   About page", async ({
   await app.aboutPage.header.hamburgerMenu.clickDarkTheme();
 
   //Assert
-  await app.aboutPage.expectScreenAboutPage(testInfo);
+  await app.aboutPage.takeSnapshot(testInfo);
 });
 
-for (const {
-  testID,
-  expectedLink,
-  locatorId,
-  expectedTitle,
-} of testData.allLinks) {
+for (const { testID, expectedLink, locatorId, expectedTitle } of testData.allLinks) {
   test(`${testID} Check navigation to corresponding pages for  '${locatorId}' link`, async ({
     app,
   }) => {

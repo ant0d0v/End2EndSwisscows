@@ -1,5 +1,5 @@
 import { test } from "../../utils/fixtures.js";
-import testData from "../../data/pages/social-projects/testData.json"
+import testData from "../../data/pages/social-projects/testData.json";
 
 test("Check that border is red and 2px when clicking on the Charity Haiti slider images", async ({
   app,
@@ -32,8 +32,8 @@ test("Check the swipe to left in  Charity Columbia slider ", async ({
   await app.charityPage.open();
   await app.charityPage.waitUntilPageIsFullyLoaded();
   await app.charityPage.imagesGallery.swipeLeftToLastImage(
-    await app.charityPage.imagesGallery.charityColumbiaGallerySmallFirstImage,
-    await app.charityPage.imagesGallery.charityColumbiaGallerySmallLastImage
+  await app.charityPage.imagesGallery.charityColumbiaGallerySmallFirstImage,
+  await app.charityPage.imagesGallery.charityColumbiaGallerySmallLastImage
   );
   //Assert
   await app.charityPage.imagesGallery.expectAttributeClassOfLastSmallImageCharityColumbiaGallery(
@@ -107,7 +107,7 @@ test("Check design of the charity page ", async ({ app }, testInfo) => {
   //Actions
   await app.charityPage.open();
   //Assert
-  await app.charityPage.expectScreenCharityPage(testInfo);
+  await app.charityPage.takeSnapshot(testInfo);
 });
 
 test("Check design dark theme of the charity page ", async ({
@@ -120,5 +120,5 @@ test("Check design dark theme of the charity page ", async ({
   await app.charityPage.header.hamburgerMenu.clickDarkTheme();
 
   //Assert
-  await app.charityPage.expectScreenCharityPage(testInfo);
+  await app.charityPage.takeSnapshot(testInfo);
 });

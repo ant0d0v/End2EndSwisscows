@@ -1,5 +1,5 @@
 import { test } from "../../utils/fixtures.js";
-import testData from "../../data/pages/social-projects/testData.json"
+import testData from "../../data/pages/social-projects/testData.json";
 
 test("Check that border is red and 2px when clicking on the Charity Haiti slider images", async ({
   app,
@@ -75,7 +75,7 @@ test("Check design of the charity page ", async ({ app }, testInfo) => {
 
   //Assert
   await app.charityPage.expectMapsToBeVisible();
-  await app.charityPage.expectScreenCharityPage(testInfo);
+  await app.charityPage.takeSnapshot(testInfo);
 });
 
 test("Check design dark theme of the charity page ", async ({
@@ -89,5 +89,5 @@ test("Check design dark theme of the charity page ", async ({
   await app.charityPage.header.hamburgerMenu.clickDarkTheme();
 
   //Assert
-  await app.charityPage.expectScreenCharityPage(testInfo);
+  await app.charityPage.takeSnapshot(testInfo);
 });

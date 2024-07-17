@@ -5,7 +5,6 @@ import extensionBlock from "./Extension.js";
 import FAQ from "../../components/FAQ.js";
 import BasePage from "../../base/BasePage.js";
 
-
 export default class Home extends BasePage {
   constructor(page) {
     super(page);
@@ -15,23 +14,32 @@ export default class Home extends BasePage {
     this.extensionBlock = new extensionBlock(page);
     this.faq = new FAQ(page);
     //Locators of Locales
-  
+
     // Locators
-    this.blockQuestionsAndAnswers = this.page.getByText( "Questions and AnswersWhat");
-    this.allImages = this.page.locator("main.home img:visible")
+    this.blockQuestionsAndAnswers = this.page.getByText(
+      "Questions and AnswersWhat"
+    );
+    this.allImages = this.page.locator("main.home img:visible");
     this.allQuestions = this.page.locator("h3.question");
-    this.fourQuestion = this.page.getByRole("heading", { name: "How can I switch from another",});
-    this.linkInTheFourQuestion = this.page.getByRole("link", { name: "instructions",});
+    this.fourQuestion = this.page.getByRole("heading", {
+      name: "How can I switch from another",
+    });
+    this.linkInTheFourQuestion = this.page.getByRole("link", {
+      name: "instructions",
+    });
     this.widget = this.page.locator(".bnnr-widget");
     this.serviceBlock = this.page.locator("div.services-blocks");
-    this.buttonOfServiceBlock = this.page.locator(".services-blocks .services-block-link");
-    this.linksOfServiceBlock = (name) => this.page.getByRole("link", { name: name });
+    this.buttonOfServiceBlock = this.page.locator(
+      ".services-blocks .services-block-link"
+    );
+    this.linksOfServiceBlock = (name) =>
+      this.page.getByRole("link", { name: name });
   }
 
   //Actions
-  
-  async open(){
-    await this.openPage("/")
+
+  async open() {
+    await this.openPage("/");
   }
 
   clickAllQuestions = async () => {
@@ -39,18 +47,26 @@ export default class Home extends BasePage {
   };
 
   scrollDownToQuestions = async () => {
-    await this.scrollByVisibleElement(this.fourQuestion, `four question in accordion menu`);
-  }
+    await this.scrollByVisibleElement(
+      this.fourQuestion,
+      `four question in accordion menu`
+    );
+  };
 
   clickFourQuestion = async () => {
-    await this.clickElement( this.fourQuestion,
+    await this.clickElement(
+      this.fourQuestion,
       `four question in accordion menu`
     );
   };
 
   // Verify
-  
-  expectScreenHome = async (testInfo) => {
-    await this.expectPageToHaveScreenshot(testInfo, this.allImages, this.widget);
+
+  takeSnapshot = async (testInfo) => {
+    await this.expectPageToHaveScreenshot(
+      testInfo,
+      this.allImages,
+      this.widget
+    );
   };
 }

@@ -1,6 +1,6 @@
 import { test } from "../../utils/fixtures.js";
-import  constanta from "../../data/project-constants/testData.json"
-import  main from "../../data/home/testData.json"
+import constanta from "../../data/project-constants/testData.json";
+import main from "../../data/home/testData.json";
 
 test("Check that suggest is displayed", async ({ app }) => {
   await app.home.open();
@@ -90,7 +90,7 @@ test("Check design of the home page ", async ({ app }, testInfo) => {
   //Actions
   await app.home.open();
   //Assert
-  await app.home.expectScreenHome(testInfo);
+  await app.home.takeSnapshot(testInfo);
 });
 
 test("Check design dark theme of the home page ", async ({ app }, testInfo) => {
@@ -102,5 +102,5 @@ test("Check design dark theme of the home page ", async ({ app }, testInfo) => {
   await app.home.header.hamburgerMenu.clickDarkTheme();
 
   //Assert
-  await app.home.expectScreenHome(testInfo);
+  await app.home.takeSnapshot(testInfo);
 });

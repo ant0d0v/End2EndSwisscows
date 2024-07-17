@@ -3,18 +3,18 @@ export default class ItemDetails extends BaseComponent {
   constructor(page) {
     super(page);
     //Locators
-    this.itemInDetailsPanel = this.page.locator(".image-view.aside.fade.in")
-    this.imageInDetailsPanel = this.page.locator(".image-view.aside.fade.in .image img").nth(1)
+    this.itemInDetailsPanel = this.page.locator(".details .image.loaded");
+    this.imageInDetailsPanel = this.page.locator(".details .image.loaded")
     this.bookmarkButton = this.page.locator("figure button.bookmark use")
     this.nextButton = this.page.locator(".details-pane button.next")
     this.prevButton = this.page.locator(".details-pane button.prev")
     this.closeButton = this.page.locator(".details-pane button.close")
-
+    this.openSiteButton = this.page.getByRole("link", { name: "Open site" });
   }
   //Actions
   clickBookmarkButtonAndGetResponse = async () => {
     let response;
-    const responsePromise = this.page.waitForResponse(`${ process.env.API_URL}/v4/user/images`)
+    const responsePromise = this.page.waitForResponse(`${process.env.API_URL}/v4/user/images`)
     await this.clickElement(this.bookmarkButton,
       `bookmark button of image`
     );
@@ -43,6 +43,12 @@ export default class ItemDetails extends BaseComponent {
       `close button of image`
     );
   };
+  
+  clickOpenSiteButton = async () => {
+    await this.clickElement(this.openSiteButton,
+      `Open site button`
+    );
+  };
   getByAltAttributeImage = async () => {
     return await this.imageInDetailsPanel.getAttribute("alt")
   };
@@ -50,10 +56,10 @@ export default class ItemDetails extends BaseComponent {
   //Verify
 
   expectBookmarkButtonIsActive = async () => {
-    await this.expectElementToHaveJSProperty(this.bookmarkButton, "href.animVal","/images/icons.svg#bookmark")
+    await this.expectElementToHaveJSProperty(this.bookmarkButton, "href.animVal", "/images/icons.svg#bookmark")
   };
   expectBookmarkButtonIsNotActive = async () => {
-    await this.expectElementToHaveJSProperty(this.bookmarkButton, "href.animVal","/images/icons.svg#bookmark-outline")
+    await this.expectElementToHaveJSProperty(this.bookmarkButton, "href.animVal", "/images/icons.svg#bookmark-outline")
   };
   expectItemInDetailsPanelToBeHidden = async () => {
     await this.expectElementToBeHidden(this.itemInDetailsPanel)
@@ -64,6 +70,4 @@ export default class ItemDetails extends BaseComponent {
   expectImageInDetailsPanelToBeVisible = async () => {
     await this.expectElementToBeVisible(this.imageInDetailsPanel)
   }
-
-
 }

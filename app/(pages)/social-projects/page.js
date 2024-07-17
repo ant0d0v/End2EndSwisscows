@@ -11,12 +11,13 @@ export default class CharityPage extends BasePage {
 
     //Locators
     this.allContent = this.page.locator("main.social-project");
-    this.mapsImage = this.page.locator("div.map img:visible")
-    this.links = (id) => this.page.getByRole("main").getByRole("link", { name: `${id}` });
+    this.mapsImage = this.page.locator("div.map img:visible");
+    this.links = (id) =>
+      this.page.getByRole("main").getByRole("link", { name: `${id}` });
   }
   //Actions
-  async open(){
-    await this.openPage("/social-projects")
+  async open() {
+    await this.openPage("/social-projects");
   }
 
   async clickLinkOnThePage(id) {
@@ -28,11 +29,15 @@ export default class CharityPage extends BasePage {
   }
   //Assert
 
-  expectScreenCharityPage = async (testInfo) => {
-    await this.expectPageToHaveScreenshot(testInfo, this.mapsImage, this.videoPlayer.videoPlayer );
+  takeSnapshot = async (testInfo) => {
+    await this.expectPageToHaveScreenshot(
+      testInfo,
+      this.mapsImage,
+      this.videoPlayer.videoPlayer
+    );
   };
   expectMapsToBeVisible = async () => {
-    await this.page.waitForSelector("div.map img",{ state: 'visible' })
-    await this.expectAreElementsInListDisplayed(this.mapsImage)
+    await this.page.waitForSelector("div.map img", { state: "visible" });
+    await this.expectAreElementsInListDisplayed(this.mapsImage);
   };
 }

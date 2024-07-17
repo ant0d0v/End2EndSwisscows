@@ -8,10 +8,10 @@ export default class Item extends BaseComponent {
     this.proxyImage = new ProxyImage(page)
 
     //Locators
-    this.imageItems = this.page.locator("figure.item--image:nth-child(-n+10)")
-    this.item = (index) => this.page.locator("figure.item--image").nth(index - 1)
-    this.firstImage = this.page.locator(".item--image .image").first()
-    this.allImages = this.page.locator(".item--image .image")
+    this.imageItems = this.page.locator(".item.image-object:nth-child(-n+10)")
+    this.item = (index) => this.page.locator(".item.image-object").nth(index - 1)
+    this.firstImage = this.page.locator(".item.image-object img").first();
+    this.allImages = this.page.locator(".item.image-object img");
   }
   //Actions
 
@@ -33,7 +33,7 @@ export default class Item extends BaseComponent {
 
   //Verify
   expectImageItemsToBeVisible = async () => {
-    await this.page.waitForSelector("figure.item--image",{ state: 'visible' })
+    await this.page.waitForSelector(".item.image-object img", { state: "visible" });
     await this.expectAreElementsInListDisplayed(this.imageItems)
   };
 

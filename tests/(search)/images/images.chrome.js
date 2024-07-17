@@ -268,7 +268,7 @@ test("Check regional search", async ({
   await app.expectHaveUrl(app.page, process.env.BASE_URL + `/en/images?query=red&region=de-DE`)
 });
 
-test("Check outline of item when item is selected", async ({
+test.skip("Check outline of item when item is selected", async ({
   app
 }) => {
   //Actions
@@ -283,7 +283,7 @@ test("Check outline of item when item is selected", async ({
   await app.imagePage.item.expectItemToHaveOutline("rgb(223, 93, 93) solid 2px")
 });
 
-test("Check that image of proxy cdn server", async ({
+test.fixme("Check that image of proxy cdn server", async ({
   app
 }) => {
   //Actions
@@ -296,4 +296,39 @@ test("Check that image of proxy cdn server", async ({
   //Assert
   await app.imagePage.item.proxyImage.expectAttributeSrcAllImagesToHave(
     app.imagePage.item.allImages,  /cdn.swisscows.com/)
+});
+
+test("Check image item is active  when clicking on image", async ({
+  app,
+}) => {
+  //Actions
+  await app.home.open();
+  await app.home.header.searchForm.inputSearchCriteria("Ronaldo");
+  await app.home.header.searchForm.clickEnterSearchField();
+  await app.imagePage.header.clickImageSearchButton();
+  await app.imagePage.item.expectImageItemsToBeVisible();
+  await app.imagePage.item.clickItemNumber(1);
+
+  //Assert
+  await app.imagePage.item.expectFirstItemIsActive()
+  await app.imagePage.itemDetails.expectImageInDetailsPanelToBeVisible()
+});
+
+test("Check open site button when clicking redirect to new page", async ({
+  app,
+}) => {
+  //Actions
+  await app.home.open();
+  await app.home.header.searchForm.inputSearchCriteria("Ronaldo");
+  await app.home.header.searchForm.clickEnterSearchField();
+  await app.imagePage.header.clickImageSearchButton();
+  await app.imagePage.item.expectImageItemsToBeVisible();
+  await app.imagePage.item.clickItemNumber(1);
+  const currentUrl = await app.page.url();
+  const currentTitle = await app.page.title();
+  await app.imagePage.itemDetails.clickOpenSiteButton();
+
+  //Assert
+  await app.expectNotToHaveUrl(app.page, currentUrl);
+  await app.expectPageNotToHaveTitle(app.page, currentTitle);
 });

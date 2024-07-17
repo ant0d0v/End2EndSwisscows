@@ -1,6 +1,6 @@
 import { test } from "../../utils/fixtures.js";
-import testData from "../../data/pages/contact/testData.json"
-import constantsData from "../../data/project-constants/testData.json"
+import testData from "../../data/pages/contact/testData.json";
+import constantsData from "../../data/project-constants/testData.json";
 
 test("Check color of Send button when hovering ", async ({ app }) => {
   //Actions
@@ -174,7 +174,7 @@ test("Check design of the Contact Us page ", async ({ app }, testInfo) => {
   //Actions
   await app.contactPage.open();
   //Assert
-  await app.contactPage.expectScreenContactPage(testInfo);
+  await app.contactPage.takeSnapshot(testInfo);
 });
 
 test("Check design dark theme of the  Contact Us page ", async ({
@@ -187,5 +187,5 @@ test("Check design dark theme of the  Contact Us page ", async ({
   await app.contactPage.header.hamburgerMenu.clickDarkTheme();
 
   //Assert
-  await app.contactPage.expectScreenContactPage(testInfo);
+  await app.contactPage.takeSnapshot(testInfo);
 });
