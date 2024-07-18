@@ -8,6 +8,7 @@ export default class Error extends BaseComponent {
     this.contentErrorPage = this.page.locator("div.error div.content")
     this.errorImage = this.page.getByRole('main').locator('img').first()
     this.errorImageNoResult = this.page.getByRole('main').getByRole('img').first()
+    this.root = this.page.getByRole("main")
   }
   
   //Verify
@@ -23,4 +24,12 @@ export default class Error extends BaseComponent {
   expectErrorImageToBeVisible = async () => {
     await this.expectElementToBeVisible(this.errorImage)
   }
+  takeSnapshot = async (testInfo) => {
+    await this.expectPageElementToHaveScreenshot(
+      this.root,
+      this.errorImage,
+      testInfo
+    );
+  };
+
 }

@@ -288,3 +288,16 @@ test("Check suggest on the music search", async ({ app }) => {
   await app.musicPage.header.searchForm.expectSuggestToHaveCount(5);
   await app.musicPage.header.searchForm.expectSuggestToContains("ivanka");
 });
+
+test("Check design of header component the search pages", async ({
+  app,
+}, testInfo) => {
+  //Actions
+  await app.home.open();
+  await app.home.header.searchForm.inputSearchCriteria("A");
+  await app.home.header.searchForm.clickEnterSearchField();
+  await app.webPage.item.expectWebItemsToBeVisible();
+
+  //Assert
+  await app.webPage.header.takeSnapshot(testInfo);
+});

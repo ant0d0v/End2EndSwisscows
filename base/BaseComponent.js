@@ -236,4 +236,15 @@ export default class BaseComponent extends PageHolder {
       await expect(element).toBeInViewport();
     });
   }
+  async expectPageElementToHaveScreenshot(locator, elements, testInfo) {
+    await test.step("Expects screen to be equal to the snapshot element of page", async () => {
+      testInfo.snapshotSuffix = "";
+      const imageElements = await elements.all();
+      for (const image of imageElements) {
+        await image.scrollIntoViewIfNeeded();
+        await expect(image).not.toHaveJSProperty("naturalWidth", 0);
+      }
+      await expect(locator).toHaveScreenshot(`${testInfo.title}.png`);
+    });
+  }
 }

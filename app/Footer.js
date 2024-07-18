@@ -74,5 +74,5 @@ export default class Footer extends BaseComponent {
   //Verify
   expectSwisscowsAppImagesToBeVisible = async () => {
     await this.expectAreElementsInListDisplayed(this.swisscowsAppImages);
-}    
+  }    
 }

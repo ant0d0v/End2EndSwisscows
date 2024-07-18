@@ -61,7 +61,7 @@ export default class BasePage extends BaseComponent {
       }
       await expect(this.page).toHaveScreenshot(`${testInfo.title}.png`, {
         fullPage: true,
-        mask: [await element]
+        mask: [await element],
       });
     });
   }
@@ -78,15 +78,5 @@ export default class BasePage extends BaseComponent {
       });
     });
   }
-
-  // async expectLocalizationTextContentOfPage(content,testInfo) {
-  //   await test
-  //     .step(`Validate pdf when clicking  Download payment slip`, async () => {
-  //        testInfo.snapshotSuffix = "";
-  //         expect(await this.page.textContent(`${content}.home`)).toMatchSnapshot({
-  //           name: `${testInfo.title}_.txt`,
-  //         });
-  //       })
-  // }
 }
 

@@ -26,6 +26,7 @@ export default class Header extends BaseComponent {
     this.shoppingSearchButton = this.page.getByRole("link", {name: "Shopping",exact: true,});
     this.hamburgerMenuButton = this.page.getByRole('banner').getByRole('button').nth(1)
     this.filtersButton = this.page.locator('.filters-button')
+    this.root = this.page.locator(".header");
   }
 
   //Actions
@@ -84,4 +85,12 @@ export default class Header extends BaseComponent {
   };
   
   // Verify
+
+  takeSnapshot = async (testInfo) => {
+    await this.expectPageElementToHaveScreenshot(
+      this.root,
+      this.logoSwisscows,
+      testInfo
+    );
+  };
 }

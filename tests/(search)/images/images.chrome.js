@@ -12,14 +12,10 @@ test("Check 202 No Results Found error page ", async ({ app }) => {
   await app.imagePage.header.clickImageSearchButton();
 
   //Assert
-  await app.imagePage.error.expectNotResultErrorToHaveText(
-    testData.expectedErrorText.noResultsFound202Error
-  );
-  await app.imagePage.error.expectErrorImageToBeVisible();
-  await app.imagePage.error.expectImageToHaveWight(450);
+  await app.imagePage.error.takeSnapshot(testInfo);
 });
 
-test("Check request is blocked 450 error page ", async ({ app }) => {
+test("Check request is blocked 450 error page ", async ({ app },testInfo) => {
   //Actions
   await app.home.open();
   await app.home.header.searchForm.inputSearchCriteria("porn");
@@ -27,11 +23,7 @@ test("Check request is blocked 450 error page ", async ({ app }) => {
   await app.imagePage.header.clickImageSearchButton();
 
   //Assert
-  await app.imagePage.error.expectNotResultErrorToHaveText(
-    testData.expectedErrorText.blocked450Error
-  );
-  await app.imagePage.error.expectErrorImageToBeVisible();
-  await app.imagePage.error.expectImageToHaveWight(450);
+  await app.imagePage.error.takeSnapshot(testInfo);
 });
 
 test("Check 500 unknown Error Page  ", async ({ app }) => {
