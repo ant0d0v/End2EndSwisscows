@@ -1,5 +1,5 @@
 import { test } from "../../utils/fixtures.js";
-import testData from "../../data/pages/donation/testData.json"
+import testData from "../../data/pages/donation/testData.json";
 
 test.use({ headless: false });
 
@@ -12,7 +12,7 @@ for (const { testID, pdfLink, locatorId } of testData.donationPdfLinks) {
     const currentPage = await app.donationPage.clickPdfLinkOnThePage(locatorId);
 
     //Assert
-    await app.expectHaveUrl(currentPage, pdfLink);
+    await app.expectPageToHaveUrl(currentPage, pdfLink);
     await app.donationPage.expectValidatePdfFile(
       currentPage,
       pdfLink,
@@ -34,7 +34,7 @@ for (const {
     const currentPage = await app.donationPage.clickLinkOnThePage(locatorId);
 
     //Assert
-    await app.expectHaveUrl(currentPage, expectedLink);
+    await app.expectPageToHaveUrl(currentPage, expectedLink);
     await app.expectHaveTitle(currentPage, expectedTitle);
   });
 }

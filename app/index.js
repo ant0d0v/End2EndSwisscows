@@ -1,4 +1,4 @@
-import { expect,test} from "@playwright/test";
+import { expect, test } from "@playwright/test";
 // Base and utility imports
 import PageHolder from "../base/PageHolder.js";
 import Api from "../api/api.js";
@@ -82,12 +82,12 @@ export default class Application extends PageHolder {
     });
   }
 
-  async expectHaveUrl(newPage, url) {
+  async expectPageToHaveUrl(newPage, url) {
     await test.step('Expect a URL "to have" a string', async () => {
       await expect(newPage).toHaveURL(url);
     });
   }
-  async expectNotToHaveUrl(newPage, url) {
+  async expectPageNotToHaveUrl(newPage, url) {
     await test.step('Expect a URL "not to have" a string', async () => {
       await expect(newPage).not.toHaveURL(url);
     });
@@ -97,5 +97,4 @@ export default class Application extends PageHolder {
       await expect(newPage).not.toHaveTitle(title);
     });
   }
-    
 }

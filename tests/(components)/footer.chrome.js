@@ -1,110 +1,160 @@
 import { test } from "../../utils/fixtures.js";
-import testData from "../../data/footer/testData.json"
+import testData from "../../data/footer/testData.json";
 
-test.describe('Footer of static pages', () => {  
-for (const {testID, expectedUrl, expectedTitle, locatorId } of testData.internalLinks) {
+test.describe("Footer of static pages", () => {
+  for (const {
+    testID,
+    expectedUrl,
+    expectedTitle,
+    locatorId,
+  } of testData.internalLinks) {
     test(`${testID} Check navigation to corresponding pages for ${locatorId} internal link in footer static pages`, async ({
-      app
+      app,
     }) => {
       //Actions
-      await app.home.open()
-      await app.home.footer.clickAllInternalLink(locatorId)
-      
+      await app.home.open();
+      await app.home.footer.clickAllInternalLink(locatorId);
+
       //Assert
-      await app.expectHaveUrl(app.page, expectedUrl);
+      await app.expectPageToHaveUrl(app.page, expectedUrl);
       await app.expectHaveTitle(app.page, expectedTitle);
     });
   }
-  for (const {testID, expectedUrl, expectedTitle, locatorId } of testData.externalLinks) {
+  for (const {
+    testID,
+    expectedUrl,
+    expectedTitle,
+    locatorId,
+  } of testData.externalLinks) {
     test(`${testID} Check navigation to corresponding pages for ${locatorId} external link (Our products and Our Services ) in footer static pages`, async ({
-      app, context
+      app,
+      context,
     }) => {
       //Actions
-      await app.home.open() 
-  
+      await app.home.open();
+
       //Assert
-      await app.home.expectToBeOpenedNewPageAfterClick(app.home.footer.allExternalLinks(locatorId), expectedUrl)
-      await app.expectNewPageToHaveTitle(context, expectedTitle)
+      await app.home.expectToBeOpenedNewPageAfterClick(
+        app.home.footer.allExternalLinks(locatorId),
+        expectedUrl
+      );
+      await app.expectNewPageToHaveTitle(context, expectedTitle);
     });
   }
 
-  for (const {testID, expectedUrl, expectedTitle, locatorId } of testData.socialNetworksLinks) {
+  for (const {
+    testID,
+    expectedUrl,
+    expectedTitle,
+    locatorId,
+  } of testData.socialNetworksLinks) {
     test(`${testID} Check navigation to corresponding pages for ${locatorId} social networks link in footer static pages`, async ({
-      app, context
+      app,
+      context,
     }) => {
       //Actions
-      await app.home.open() 
-  
+      await app.home.open();
+
       //Assert
-      await app.home.expectToBeOpenedNewPageAfterClick(app.home.footer.socialNetworksLinks(locatorId), expectedUrl)
-      await app.expectNewPageToHaveTitle(context, new RegExp(expectedTitle))
+      await app.home.expectToBeOpenedNewPageAfterClick(
+        app.home.footer.socialNetworksLinks(locatorId),
+        expectedUrl
+      );
+      await app.expectNewPageToHaveTitle(context, new RegExp(expectedTitle));
     });
   }
 
-  for (const {testID, expectedUrl, expectedTitle, locatorId } of testData.swisscowsAppLinks) {
+  for (const {
+    testID,
+    expectedUrl,
+    expectedTitle,
+    locatorId,
+  } of testData.swisscowsAppLinks) {
     test(`${testID} Check navigation to corresponding pages for ${locatorId} swisscows App link in footer static pages`, async ({
-      app, context
+      app,
+      context,
     }) => {
       //Actions
-      await app.home.open() 
-  
+      await app.home.open();
+
       //Assert
-      await app.home.expectToBeOpenedNewPageAfterClick(app.home.footer.swisscowsAppLinks(locatorId), expectedUrl)
-      await app.expectNewPageToHaveTitle(context, expectedTitle)
+      await app.home.expectToBeOpenedNewPageAfterClick(
+        app.home.footer.swisscowsAppLinks(locatorId),
+        expectedUrl
+      );
+      await app.expectNewPageToHaveTitle(context, expectedTitle);
     });
   }
   test(`Check swisscows App Images in footer static pages are displayed `, async ({
-    app
+    app,
   }) => {
     //Actions
-    await app.home.open()
-    
+    await app.home.open();
+
     //Assert
-    await app.home.footer.expectSwisscowsAppImagesToBeVisible()
+    await app.home.footer.expectSwisscowsAppImagesToBeVisible();
   });
-})
-test.describe('Footer of search pages', () => {  
-    for (const {testID, expectedUrl, expectedTitle, locatorId } of testData.socialNetworksLinks) {
-      test(`${testID} Check navigation to corresponding pages for ${locatorId} social networks link in footer search pages`, async ({
-        app, context
-      }) => {
-        //Actions
-        await app.home.open()
-        await app.home.header.searchForm.inputSearchCriteria("glory Ukraine");
-        await app.home.header.searchForm.clickEnterSearchField();
-        await app.webPage.item.expectWebItemsToBeVisible() 
-    
-        //Assert
-        await app.webPage.expectToBeOpenedNewPageAfterClick(app.webPage.footer.socialNetworksLinks(locatorId), expectedUrl)
-        await app.expectNewPageToHaveTitle(context, new RegExp(expectedTitle))
-      });
-    }
-  
-    for (const {testID, expectedUrl, expectedTitle, locatorId } of testData.swisscowsAppLinks) {
-      test(`${testID} Check navigation to corresponding pages for ${locatorId} swisscows App link in footer search pages`, async ({
-        app, context
-      }) => {
-        //Actions
-        await app.home.open()
-        await app.home.header.searchForm.inputSearchCriteria("1234567");
-        await app.home.header.searchForm.clickEnterSearchField();
-        await app.webPage.item.expectWebItemsToBeVisible() 
-    
-        //Assert
-        await app.webPage.expectToBeOpenedNewPageAfterClick(app.webPage.footer.swisscowsAppLinks(locatorId), expectedUrl)
-        await app.expectNewPageToHaveTitle(context, expectedTitle)
-      });
-    }
-    test(`Check swisscows App Images in footer search pages are displayed `, async ({
-      app
+});
+test.describe("Footer of search pages", () => {
+  for (const {
+    testID,
+    expectedUrl,
+    expectedTitle,
+    locatorId,
+  } of testData.socialNetworksLinks) {
+    test(`${testID} Check navigation to corresponding pages for ${locatorId} social networks link in footer search pages`, async ({
+      app,
+      context,
     }) => {
       //Actions
-      await app.home.open()
+      await app.home.open();
+      await app.home.header.searchForm.inputSearchCriteria("glory Ukraine");
+      await app.home.header.searchForm.clickEnterSearchField();
+      await app.webPage.item.expectWebItemsToBeVisible();
+
+      //Assert
+      await app.webPage.expectToBeOpenedNewPageAfterClick(
+        app.webPage.footer.socialNetworksLinks(locatorId),
+        expectedUrl
+      );
+      await app.expectNewPageToHaveTitle(context, new RegExp(expectedTitle));
+    });
+  }
+
+  for (const {
+    testID,
+    expectedUrl,
+    expectedTitle,
+    locatorId,
+  } of testData.swisscowsAppLinks) {
+    test(`${testID} Check navigation to corresponding pages for ${locatorId} swisscows App link in footer search pages`, async ({
+      app,
+      context,
+    }) => {
+      //Actions
+      await app.home.open();
       await app.home.header.searchForm.inputSearchCriteria("1234567");
       await app.home.header.searchForm.clickEnterSearchField();
-      await app.webPage.item.expectWebItemsToBeVisible() 
-  
+      await app.webPage.item.expectWebItemsToBeVisible();
+
       //Assert
-      await app.webPage.footer.expectSwisscowsAppImagesToBeVisible()
+      await app.webPage.expectToBeOpenedNewPageAfterClick(
+        app.webPage.footer.swisscowsAppLinks(locatorId),
+        expectedUrl
+      );
+      await app.expectNewPageToHaveTitle(context, expectedTitle);
     });
-  })
+  }
+  test(`Check swisscows App Images in footer search pages are displayed `, async ({
+    app,
+  }) => {
+    //Actions
+    await app.home.open();
+    await app.home.header.searchForm.inputSearchCriteria("1234567");
+    await app.home.header.searchForm.clickEnterSearchField();
+    await app.webPage.item.expectWebItemsToBeVisible();
+
+    //Assert
+    await app.webPage.footer.expectSwisscowsAppImagesToBeVisible();
+  });
+});

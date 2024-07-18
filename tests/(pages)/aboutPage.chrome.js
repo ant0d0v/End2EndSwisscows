@@ -22,7 +22,12 @@ test("Check design dark theme of the   About page", async ({
   await app.aboutPage.takeSnapshot(testInfo);
 });
 
-for (const { testID, expectedLink, locatorId, expectedTitle } of testData.allLinks) {
+for (const {
+  testID,
+  expectedLink,
+  locatorId,
+  expectedTitle,
+} of testData.allLinks) {
   test(`${testID} Check navigation to corresponding pages for  '${locatorId}' link`, async ({
     app,
   }) => {
@@ -31,7 +36,7 @@ for (const { testID, expectedLink, locatorId, expectedTitle } of testData.allLin
     await app.aboutPage.clickAllLinks(locatorId);
 
     //Assert
-    await app.expectHaveUrl(app.page, new RegExp(expectedLink));
+    await app.expectPageToHaveUrl(app.page, new RegExp(expectedLink));
     await app.expectHaveTitle(app.page, expectedTitle);
   });
 }

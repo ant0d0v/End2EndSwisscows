@@ -26,12 +26,19 @@ test("Check the width and visibility of images in the video widget", async ({
   await app.home.header.searchForm.inputSearchCriteria("Ronaldo");
   await app.home.header.searchForm.clickEnterSearchField();
   await app.webPage.item.expectWebItemsToBeVisible();
-  await app.webPage.videoWidget.waitElementToBeVisible(app.webPage.videoWidget.nextButton);
+  await app.webPage.videoWidget.waitElementToBeVisible(
+    app.webPage.videoWidget.nextButton
+  );
 
   //Assert
-  await app.webPage.videoWidget.expectAreElementsInListDisplayed(app.webPage.videoWidget.allImage);
+  await app.webPage.videoWidget.expectAreElementsInListDisplayed(
+    app.webPage.videoWidget.allImage
+  );
   await app.webPage.videoWidget.expectImagesToHaveWightInWidget("width", 240);
-  await app.webPage.videoWidget.expectListToHaveCount(app.webPage.videoWidget.allImage, 4);
+  await app.webPage.videoWidget.expectListToHaveCount(
+    app.webPage.videoWidget.allImage,
+    4
+  );
 });
 
 test("Check click more button in the video widget", async ({ app }) => {
@@ -42,11 +49,16 @@ test("Check click more button in the video widget", async ({ app }) => {
   await app.home.header.searchForm.inputSearchCriteria("iphone");
   await app.home.header.searchForm.clickEnterSearchField();
   await app.webPage.item.expectWebItemsToBeVisible();
-  await app.webPage.videoWidget.waitElementToBeVisible(app.webPage.videoWidget.nextButton);
+  await app.webPage.videoWidget.waitElementToBeVisible(
+    app.webPage.videoWidget.nextButton
+  );
   await app.webPage.videoWidget.clickMoreVideosButton();
 
   //Assert
-  await app.expectHaveUrl(app.page,process.env.BASE_URL + "/en/video?query=iphone&region=de-DE");
+  await app.expectPageToHaveUrl(
+    app.page,
+    process.env.BASE_URL + "/en/video?query=iphone&region=de-DE"
+  );
   await app.expectHaveTitle(app.page, "Videos for iphone - Swisscows");
 });
 

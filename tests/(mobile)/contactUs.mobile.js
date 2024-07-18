@@ -116,7 +116,7 @@ test(`Check send message using all required fields`, async ({ app }) => {
 
   //Assert
   await app.contactPage.expectSuccessMessage();
-  await app.expectHaveUrl(
+  await app.expectPageToHaveUrl(
     app.page,
     "https://dev.swisscows.com/en/contact?success=true"
   );
@@ -133,7 +133,7 @@ test(`Check "back to search" button `, async ({ app }) => {
   await app.contactPage.clickBackToSearchButton();
 
   //Assert
-  await app.expectHaveUrl(app.page, constantsData.URL_MAIN_PAGE);
+  await app.expectPageToHaveUrl(app.page, constantsData.URL_MAIN_PAGE);
   await app.expectHaveTitle(app.page, constantsData.TITLE_MAIN_PAGE);
 });
 

@@ -65,7 +65,7 @@ for (const {
     const currentPage = await app.charityPage.clickLinkOnThePage(locatorId);
 
     //Assert
-    await app.expectHaveUrl(currentPage, expectedLink);
+    await app.expectPageToHaveUrl(currentPage, expectedLink);
     await app.expectHaveTitle(currentPage, expectedTitle);
   });
 }

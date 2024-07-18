@@ -1,5 +1,5 @@
 import { test } from "../../utils/fixtures.js";
-import testData from "../../data/pages/datacenter/testData.json"
+import testData from "../../data/pages/datacenter/testData.json";
 
 test("Check that border is red and 2px when clicking on the images Datacenter slider", async ({
   app,
@@ -45,7 +45,7 @@ for (const {
     const currentPage = await app.datacenterPage.clickLinkOnThePage(locatorId);
 
     //Assert
-    await app.expectHaveUrl(currentPage, expectedLink);
+    await app.expectPageToHaveUrl(currentPage, expectedLink);
     await app.expectHaveTitle(currentPage, expectedTitle);
   });
 }

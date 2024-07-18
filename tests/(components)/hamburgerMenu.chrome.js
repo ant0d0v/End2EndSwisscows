@@ -1,5 +1,5 @@
 import { test } from "../../utils/fixtures.js";
-import testData from "../../data/hamburger/testData.json"
+import testData from "../../data/hamburger/testData.json";
 
 test("Check display of nickname and avatar in hamburger menu", async ({
   app,
@@ -30,16 +30,14 @@ test("Check Log Out user and display of login button", async ({ app }) => {
   await app.webPage.header.hamburgerMenu.expectLoginButtonIsDisplayed();
 });
 
-test("Check redirect to profile when clicking on avatar", async ({
-  app,
-}) => {
+test("Check redirect to profile when clicking on avatar", async ({ app }) => {
   //Actions
   await app.home.open();
   await app.home.header.clickHamburgerMenuButton();
   await app.home.header.hamburgerMenu.clickAvatar();
 
   //Assert
-  await app.expectHaveUrl(app.page, /accounts.dev.swisscows.com/);
+  await app.expectPageToHaveUrl(app.page, /accounts.dev.swisscows.com/);
   await app.expectHaveTitle(app.page, /Profile - Swisscows Accounts/);
 });
 
@@ -141,7 +139,7 @@ for (const {
     await app.home.header.hamburgerMenu.clickRegionLinkInDropdown(locatorId);
 
     //Assert
-    await app.expectHaveUrl(app.page, expectedLink);
+    await app.expectPageToHaveUrl(app.page, expectedLink);
     await app.expectHaveTitle(app.page, expectedTitle);
   });
 }
@@ -160,7 +158,7 @@ for (const {
     await app.home.header.hamburgerMenu.clickLinkOfStaticPage(locatorId);
 
     //Assert
-    await app.expectHaveUrl(app.page, expectedLink);
+    await app.expectPageToHaveUrl(app.page, expectedLink);
     await app.expectHaveTitle(app.page, expectedTitle);
   });
 }

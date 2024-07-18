@@ -7,6 +7,7 @@ import AdsProduct from "../ads/ProductAds.js";
 import AdsText from "../ads/TextAds.js";
 import Header from "../Header.js";
 import Error from "../Error.js";
+import Preloader from "../../../components/Preloader.js";
 
 export default class ImagePage extends BasePage {
   constructor(page) {
@@ -19,6 +20,7 @@ export default class ImagePage extends BasePage {
     this.adsText = new AdsText(page);
     this.header  = new Header(page);
     this.error = new Error(page)
+    this.preloader = new Preloader(page);
     //Locators
     this.favoriteItem = this.page.getByRole('link', { name: 'My images' })
 

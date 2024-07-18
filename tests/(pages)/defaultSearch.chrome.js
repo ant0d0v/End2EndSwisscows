@@ -1,5 +1,5 @@
 import { test } from "../../utils/fixtures.js";
-import testData from "../../data/pages/default-search/testData.json"
+import testData from "../../data/pages/default-search/testData.json";
 
 test("Check design of the default search page ", async ({ app }, testInfo) => {
   //Actions
@@ -40,7 +40,7 @@ for (const {
       );
 
     //Assert
-    await app.expectHaveUrl(currentPage, new RegExp(expectedLink));
+    await app.expectPageToHaveUrl(currentPage, new RegExp(expectedLink));
     await app.expectHaveTitle(currentPage, expectedTitle);
   });
 }

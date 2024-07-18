@@ -1,5 +1,5 @@
 import { test } from "../../utils/fixtures.js";
-import testData from "../../data/pages/media-education/testData.json"
+import testData from "../../data/pages/media-education/testData.json";
 
 test.use({ headless: false });
 
@@ -16,12 +16,11 @@ for (const { testID, pdfLink, locatorId } of testData.educationPdfLinks) {
   }, testInfo) => {
     //Actions
     await app.mediaEducationPage.open();
-    const currentPage = await app.mediaEducationPage.clickPdfLinkOnThePage(
-      locatorId
-    );
+    const currentPage =
+      await app.mediaEducationPage.clickPdfLinkOnThePage(locatorId);
 
     //Assert
-    await app.expectHaveUrl(currentPage, pdfLink);
+    await app.expectPageToHaveUrl(currentPage, pdfLink);
     await app.mediaEducationPage.expectValidatePdfFile(
       currentPage,
       pdfLink,

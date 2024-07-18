@@ -32,8 +32,8 @@ test("Check the swipe to left in  Charity Columbia slider ", async ({
   await app.charityPage.open();
   await app.charityPage.waitUntilPageIsFullyLoaded();
   await app.charityPage.imagesGallery.swipeLeftToLastImage(
-  await app.charityPage.imagesGallery.charityColumbiaGallerySmallFirstImage,
-  await app.charityPage.imagesGallery.charityColumbiaGallerySmallLastImage
+    await app.charityPage.imagesGallery.charityColumbiaGallerySmallFirstImage,
+    await app.charityPage.imagesGallery.charityColumbiaGallerySmallLastImage
   );
   //Assert
   await app.charityPage.imagesGallery.expectAttributeClassOfLastSmallImageCharityColumbiaGallery(
@@ -99,7 +99,7 @@ for (const {
     const currentPage = await app.charityPage.clickLinkOnThePage(locatorId);
 
     //Assert
-    await app.expectHaveUrl(currentPage, expectedLink);
+    await app.expectPageToHaveUrl(currentPage, expectedLink);
     await app.expectHaveTitle(currentPage, expectedTitle);
   });
 }

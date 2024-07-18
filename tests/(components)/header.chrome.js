@@ -1,5 +1,5 @@
 import { test } from "../../utils/fixtures.js";
-import constantsData from "../../data/project-constants/testData.json"
+import constantsData from "../../data/project-constants/testData.json";
 
 test("Clicking on the swisscows's logo leads to the home page.", async ({
   app,
@@ -11,7 +11,7 @@ test("Clicking on the swisscows's logo leads to the home page.", async ({
   await app.webPage.header.clickSwisscowsLogo();
 
   //Assert
-  await app.expectHaveUrl(app.page, constantsData.URL_MAIN_PAGE);
+  await app.expectPageToHaveUrl(app.page, constantsData.URL_MAIN_PAGE);
   await app.expectHaveTitle(app.page, constantsData.TITLE_MAIN_PAGE);
 });
 
