@@ -8,6 +8,7 @@ test("Clicking on the swisscows's logo leads to the home page.", async ({
   await app.home.open();
   await app.home.header.searchForm.inputSearchCriteria("test123");
   await app.home.header.searchForm.clickEnterSearchField();
+  await app.webPage.item.expectWebItemsToBeVisible();
   await app.webPage.header.clickSwisscowsLogo();
 
   //Assert

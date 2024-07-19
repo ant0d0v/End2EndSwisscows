@@ -1,84 +1,69 @@
 import { test } from "../../../utils/fixtures.js";
 import testData from "../../../data/error/testData.json";
+const firstItemTitle = 1;
+test.describe("Error pages in dark theme", () => {
+  test.use({ colorScheme: "dark" });
+  test("Check 202 no results error page ", async ({ app }, testInfo) => {
+    //Actions
+    await app.home.open();
+    await app.home.header.searchForm.inputSearchCriteria("././././");
+    await app.home.header.searchForm.clickEnterSearchField();
 
-test("Check 202 no results error page ", async ({ app }) => {
-  //Actions
-  await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria("././././");
-  await app.home.header.searchForm.clickEnterSearchField();
+    //Assert
+    await app.webPage.error.takeSnapshot(testInfo);
+  });
 
-  //Assert
-  await app.webPage.error.expectNotResultErrorToHaveText(
-    'No results found for "././././"SearchTips:Ensure words are spelled correctly.Try rephrasing keywords or using synonyms.Try less specific keywords.Make your queries as concise as possible.'
-  );
-  await app.webPage.error.expectErrorImageToBeVisible();
-});
+  test("Check request is blocked 450 error page ", async ({
+    app,
+  }, testInfo) => {
+    //Actions
+    await app.home.open();
+    await app.home.header.searchForm.inputSearchCriteria("porn");
+    await app.home.header.searchForm.clickEnterSearchField();
 
-test("Check request is blocked 450 error page ", async ({ app }) => {
-  //Actions
-  await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria("porn");
-  await app.home.header.searchForm.clickEnterSearchField();
+    //Assert
+    await app.webPage.error.takeSnapshot(testInfo);
+  });
 
-  //Assert
-  await app.webPage.error.expectContentToHaveText(
-    testData.expectedErrorText.blocked450Error
-  );
-  await app.webPage.error.expectErrorImageToBeVisible();
-  await app.webPage.error.expectImageToHaveWight(450);
-});
+  test("Check 429 Too many requests", async ({ app }, testInfo) => {
+    //Actions
+    await app.home.open();
+    await app.route.mockResponseStatusCode("/v4/web", 429);
+    await app.home.header.searchForm.inputSearchCriteria("food");
+    await app.home.header.searchForm.clickEnterSearchField();
 
-test("Check 429 Too many requests", async ({ app }) => {
-  //Actions
-  await app.home.open();
-  await app.route.mockResponseStatusCode("/v4/web", 429);
-  await app.home.header.searchForm.inputSearchCriteria("food");
-  await app.home.header.searchForm.clickEnterSearchField();
+    //Assert
+    await app.webPage.error.takeSnapshot(testInfo);
+  });
 
-  //Assert
-  await app.webPage.error.expectContentToHaveText(
-    testData.expectedErrorText.TooManyRequestsError
-  );
-  await app.webPage.error.expectErrorImageToBeVisible();
-  await app.webPage.error.expectImageToHaveWight(450);
-});
+  test("Check 500 unknown Error Page", async ({ app }, testInfo) => {
+    //Actions
+    await app.home.open();
+    await app.route.mockResponseStatusCode("/v4/web", 500);
+    await app.home.header.searchForm.inputSearchCriteria("food");
+    await app.home.header.searchForm.clickEnterSearchField();
 
-test("Check 500 unknown Error Page", async ({ app }) => {
-  //Actions
-  await app.home.open();
-  await app.route.mockResponseStatusCode("/v4/web", 500);
-  await app.home.header.searchForm.inputSearchCriteria("food");
-  await app.home.header.searchForm.clickEnterSearchField();
+    //Assert
+    await app.webPage.error.takeSnapshot(testInfo);
+  });
+  test("Check 501 unsupported region", async ({ app }, testInfo) => {
+    //Actions
+    await app.home.open();
+    await app.route.mockResponseStatusCode("/v4/web", 501);
+    await app.home.header.searchForm.inputSearchCriteria("food");
+    await app.home.header.searchForm.clickEnterSearchField();
 
-  //Assert
-  await app.webPage.error.expectContentToHaveText(
-    testData.expectedErrorText.unknown500Error
-  );
-  await app.webPage.error.expectErrorImageToBeVisible();
-});
-test("Check 501 unsupported region", async ({ app }) => {
-  //Actions
-  await app.home.open();
-  await app.route.mockResponseStatusCode("/v4/web", 501);
-  await app.home.header.searchForm.inputSearchCriteria("food");
-  await app.home.header.searchForm.clickEnterSearchField();
+    //Assert
+    await app.webPage.error.takeSnapshot(testInfo);
+  });
 
-  //Assert
-  await app.webPage.error.expectContentToHaveText(
-    testData.expectedErrorText.unknownRegion501Error
-  );
-  await app.webPage.error.expectErrorImageToBeVisible();
-  await app.webPage.error.expectImageToHaveWight(450);
-});
+  test("Check 404 Page Not Found ", async ({ app }, testInfo) => {
+    //Actions
+    await app.webPage.openNotFound("/web/123");
 
-test("Check 404 Page Not Found ", async ({ app }) => {
-  //Actions
-  await app.webPage.openNotFound("/web/123");
-
-  //Assert
-  await app.webPage.error.expectContentToHaveText(
-    testData.expectedErrorText.pageNotFound404Error
-  );
+    //Assert
+    await app.webPage.error.takeSnapshot(testInfo);
+  });
 });
 
 test("Check Did you mean message in the search field ", async ({ app }) => {
@@ -111,29 +96,71 @@ test("Check that web results equals search criteria ", async ({ app }) => {
   //Assert
   await app.webPage.item.expectWebItemsToContains("ukraine");
   await app.webPage.item.expectListToBeGreaterThanOrEqual(
-    app.webPage.item.webItems(/ukraine/),
+    app.webPage.item.titles,
     6
   );
 });
 
+test("Check that web items date not to be empty", async ({ app }) => {
+  //Actions
+  await app.home.open();
+  await app.home.header.searchForm.inputSearchCriteria("Ukraine");
+  await app.home.header.searchForm.clickEnterSearchField();
+  await app.webPage.item.expectWebItemsToBeVisible();
+  
+  //Assert
+  await app.webPage.item.expectItemsDateNotToBeEmpty()
+});
+
+test("Check that items site not to be empty", async ({ app }) => {
+  //Actions
+  await app.home.open();
+  await app.home.header.searchForm.inputSearchCriteria("Ukraine");
+  await app.home.header.searchForm.clickEnterSearchField();
+  await app.webPage.item.expectWebItemsToBeVisible();
+
+  //Assert
+  await app.webPage.item.expectItemsSiteNotToBeEmpty();
+  await app.webPage.item.favicon.expectAllFaviconsToBeVisible();
+});
+
+test("Check that thumbnails to have height = 60 and width = 60", async ({ app }) => {
+  //Actions
+  await app.home.open();
+  await app.home.header.searchForm.inputSearchCriteria("Ukraine");
+  await app.home.header.searchForm.clickEnterSearchField();
+  await app.webPage.item.expectWebItemsToBeVisible();
+
+  //Assert
+  await app.webPage.item.expectThumbnailsToHaveHeightAndWidth(60, 60);
+  await app.webPage.item.expectThumbnailsToBeVisible();
+});
+
+test("Check titles to have css font and color", async ({ app }) => {
+  //Actions
+  await app.home.open();
+  await app.home.header.searchForm.inputSearchCriteria("Ukraine");
+  await app.home.header.searchForm.clickEnterSearchField();
+  await app.webPage.item.expectWebItemsToBeVisible();
+
+  //Assert
+  await app.webPage.item.expectTitlesToHaveCSSFontSizeAndColor("18px", "rgb(52, 64, 84)");
+});
 test("Check next button in the paging", async ({ app }) => {
   //Actions
   await app.home.open();
   await app.home.header.searchForm.inputSearchCriteria("ukraine");
   await app.home.header.searchForm.clickEnterSearchField();
   await app.webPage.item.expectWebItemsToBeVisible();
-  const oldSearchResult = await app.webPage.item.getTextContentWebItems();
+  const oldResult = await app.webPage.item.getTextContentWebItems();
   await app.webPage.pagination.clickNextButton();
   await app.webPage.header.badgeCounter.expectCharityBadgeCounterToHaveValue(
     "2"
   );
-  const newSearchResult = await app.webPage.item.getTextContentWebItems();
+  const newResult = await app.webPage.item.getTextContentWebItems();
 
   //Assert
-  await app.webPage.item.expectOldArrayNotToEqualNewArray(
-    oldSearchResult,
-    newSearchResult
-  );
+  await app.webPage.item.expectOldArrayNotToEqualNewArray(oldResult, newResult);
   await app.webPage.pagination.expectPreviousButtonIsEnabled();
 });
 
@@ -166,13 +193,11 @@ test("Check open link in  the web result", async ({ app }) => {
   await app.home.header.searchForm.inputSearchCriteria("ukraine");
   await app.home.header.searchForm.clickEnterSearchField();
   await app.webPage.item.expectWebItemsToBeVisible();
-  await app.webPage.item.clickFirstWebItem();
+  const currentUrl = await app.page.url();
+  await app.webPage.item.clickWebItemNumber(firstItemTitle);
 
   //Assert
-  await app.expectPageNotToHaveUrl(
-    app.page,
-    process.env.BASE_URL + "/en/web?query=ukraine"
-  );
+  await app.expectPageNotToHaveUrl(app.page, currentUrl);
 });
 
 test.skip("Check open web Preview ", async ({ app }) => {

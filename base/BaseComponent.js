@@ -124,6 +124,18 @@ export default class BaseComponent extends PageHolder {
       }
     });
   }
+  async expectElementsToHaveCSS(elements, property, value) {
+    await test.step(`Expect the Elements to Have CSS ${property} a ${value} in a array`, async () => {
+      for (const element of await elements.all()) {
+        await expect(element).toHaveCSS(property, value);
+      }
+    });
+  }
+  async expectElementToHaveCSS(element, property, value) {
+    await test.step(`Expect the Element to Have CSS ${property} a ${value} `, async () => {
+        await expect(element).toHaveCSS(property, value);
+    });
+  }
   async expectListToHaveCount(elements, number) {
     await test.step('Expect the elements in the array to "have" a count', async () => {
       await expect(elements).toHaveCount(number);

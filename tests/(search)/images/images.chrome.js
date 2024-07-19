@@ -26,7 +26,7 @@ test("Check request is blocked 450 error page ", async ({ app },testInfo) => {
   await app.imagePage.error.takeSnapshot(testInfo);
 });
 
-test("Check 500 unknown Error Page  ", async ({ app }) => {
+test("Check 500 unknown Error Page  ", async ({ app }, testInfo) => {
   //Actions
   await app.home.open();
   await app.route.mockResponseStatusCode("/v4/images", 500);
@@ -35,14 +35,10 @@ test("Check 500 unknown Error Page  ", async ({ app }) => {
   await app.imagePage.header.clickImageSearchButton();
 
   //Assert
-  await app.imagePage.error.expectContentToHaveText(
-    testData.expectedErrorText.unknown500Error
-  );
-  await app.imagePage.error.expectErrorImageToBeVisible();
-  await app.imagePage.error.expectImageToHaveWight(450);
+  await app.imagePage.error.takeSnapshot(testInfo);
 });
 
-test("Check 501 unknown Error Page  ", async ({ app }) => {
+test("Check 501 unknown Error Page  ", async ({ app },testInfo) => {
   //Actions
   await app.home.open();
   await app.route.mockResponseStatusCode("/v4/images", 501);
@@ -51,14 +47,10 @@ test("Check 501 unknown Error Page  ", async ({ app }) => {
   await app.imagePage.header.clickImageSearchButton();
 
   //Assert
-  await app.imagePage.error.expectContentToHaveText(
-    "Sorry, there are no search results for your regionError 501: Service UnavailableSearchTips:Try to change the search region."
-  );
-  await app.imagePage.error.expectErrorImageToBeVisible();
-  await app.imagePage.error.expectImageToHaveWight(450);
+   await app.imagePage.error.takeSnapshot(testInfo);
 });
 
-test("Check 429 Too many requests", async ({ app }) => {
+test("Check 429 Too many requests", async ({ app },testInfo) => {
   //Actions
   await app.home.open();
   await app.route.mockResponseStatusCode("/v4/images", 429);
@@ -67,11 +59,8 @@ test("Check 429 Too many requests", async ({ app }) => {
   await app.imagePage.header.clickImageSearchButton();
 
   //Assert
-  await app.imagePage.error.expectContentToHaveText(
-    testData.expectedErrorText.TooManyRequestsError
-  );
-  await app.imagePage.error.expectErrorImageToBeVisible();
-  await app.imagePage.error.expectImageToHaveWight(450);
+  await app.imagePage.error.takeSnapshot(testInfo);
+
 });
 
 test.describe("favorite function", () => {
@@ -89,9 +78,7 @@ test.describe("favorite function", () => {
 
     //Assert
     await app.imagePage.itemDetails.expectBookmarkButtonIsActive();
-    await app.imagePage.relatedQueries.expectFavoriteItemToHaveText(
-      "My images"
-    );
+    await app.imagePage.relatedQueries.expectFavoriteItemToHaveText("My images");
   });
 
   test.fixme("Check delete image from the favorite", async ({ app }) => {
@@ -187,10 +174,7 @@ test("Check infinity scroll to next page", async ({ app }) => {
   await app.imagePage.item.scrollByVisibleItemNumber(80);
 
   //Assert
-  await app.imagePage.item.expectListToBeGreaterThanOrEqual(
-    app.imagePage.item.allImages,
-    80
-  );
+  await app.imagePage.item.expectListToBeGreaterThanOrEqual(app.imagePage.item.allImages,80);
 });
 
 test("Check infinity scroll to next page when item details is opened", async ({

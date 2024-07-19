@@ -5,6 +5,7 @@ import BadgeEmail from "../../components/BadgeEmail.js";
 import BadgeTeleguard from "../../components/BadgeTeleguard.js";
 import BadgeVPN from "../../components/BadgeVPN.js";
 import SearchForm from "../SearchForm.js";
+import Logo from "./Logo.js"
 export default class Header extends BaseComponent {
   constructor(page) {
     super(page);
@@ -14,6 +15,7 @@ export default class Header extends BaseComponent {
     this.badgeTeleguard = new BadgeTeleguard(page);
     this.badgeVPN = new BadgeVPN(page);
     this.searchForm = new SearchForm(page);
+    this.logo = new Logo(page)
 
     //Locators
     this.searchCounter = this.page.getByTitle("0").locator("img");
@@ -21,7 +23,6 @@ export default class Header extends BaseComponent {
     this.hamburgerMenuButton = this.page.locator(
       "header button.hamburger-menu"
     );
-    this.logoSwisscows = this.page.getByRole('heading', { name: 'Anonymous search engine', exact: true })
   }
 
   //Actions
@@ -39,10 +40,6 @@ export default class Header extends BaseComponent {
     );
   };
   clickSwisscowsLogo = async () => {
-    await this.clickElement(this.logoSwisscows, `Swisscows Logo in the header`);
-  };
-  //Verify
-  expectSwisscowsLogoToBeVisible = async () => {
-    await this.expectElementToBeVisible(this.logoSwisscows);
+    await this.clickElement(this.logo.swisscows, `Swisscows Logo in the header`);
   };
 }

@@ -4,7 +4,7 @@ export default class Pagination extends BaseComponent {
   constructor(page) {
     super(page);
     this.nextButton = this.page.getByRole('link', { name: 'Next page' })
-    this.prevButton = this.page.getByRole('link', { name: 'Previous page' })
+    this.prevButton = this.page.getByRole("link", { name: "Previous page" });
   }
   //Actions
 

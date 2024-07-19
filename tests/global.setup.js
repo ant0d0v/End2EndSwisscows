@@ -20,7 +20,7 @@ setup("Login to site as swisscows user", async ({ app }) => {
   await app.signInPage.clickLoginButton();
 
   // Assert
-  await app.home.header.expectSwisscowsLogoToBeVisible();
+  await app.home.header.logo.expectSwisscowsLogoToBeVisible();
 
   // Run the function to remove the specified element from the origins array
   await app.page.context().storageState({ path: authFilePathForInternalUser });
@@ -40,7 +40,7 @@ setup("Login to site as external user", async ({ app }) => {
   await app.signInPage.clickLoginButton();
 
   //Assert
-  await app.home.header.expectSwisscowsLogoToBeVisible();
+  await app.home.header.logo.expectSwisscowsLogoToBeVisible();
 
   // Run the function to remove the specified element from the origins array
   await app.page.context().storageState({ path: authFilePathForExternalUser });

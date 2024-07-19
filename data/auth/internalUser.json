@@ -1,29 +1,4 @@
 {
-  "cookies": [
-    {
-      "name": ".AspNetCore.Identity.Application",
-      "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI4Yzc3ZDE4ZjZjOTk0OTExYTBlMTQ4NWNjYWQzMzNjNiIsImVtYWlsIjoicWEzMEBzd2lzc2Nvd3MuZW1haWwiLCJBc3BOZXQuSWRlbnRpdHkuU2VjdXJpdHlTdGFtcCI6IlRDWVRQM0VENDJTWDZGWTVHSUMyT0ZNWk5IQ0w1QUpEIiwiYW1yIjoicHdkIiwibmJmIjoxNzIwMzY3ODc5LCJleHAiOjE3MjI5NTk4NzksImlzcyI6Imh0dHBzOi8vYWNjb3VudHMuc3dpc3Njb3dzLmNvbSIsImF1ZCI6Imh0dHBzOi8vYWNjb3VudHMuc3dpc3Njb3dzLmNvbSJ9.5caITS3hnH_Nar5qKZ2bMNKkAQS2EeIV7RctKBoUnPw",
-      "domain": "accounts.dev.swisscows.com",
-      "path": "/",
-      "expires": 1722959879.77846,
-      "httpOnly": true,
-      "secure": true,
-      "sameSite": "Lax"
-    }
-  ],
-  "origins": [
-    {
-      "origin": "https://dev.swisscows.com",
-      "localStorage": [
-        {
-          "name": "oidc.access_token",
-          "value": "eyJhbGciOiJSUzI1NiIsImtpZCI6IjdEMDJEOEE1RURCOUY2NzU0MzhGMjY5NEEwM0E4QzNBNzlBQTIxNzQiLCJ4NXQiOiJmUUxZcGUyNTluVkRqeWFVb0RxTU9ubXFJWFEiLCJ0eXAiOiJhdCtqd3QifQ.eyJpc3MiOiJodHRwczovL2FjY291bnRzLmRldi5zd2lzc2Nvd3MuY29tLyIsImV4cCI6MTcyMDM3MTQ4MCwiaWF0IjoxNzIwMzY3ODgwLCJzY29wZSI6Im9wZW5pZCBlbWFpbCBwcm9maWxlIG9mZmxpbmVfYWNjZXNzIiwianRpIjoiZjExZDlhZjYtMTg5YS00MmFmLThjYTktMzMwNzZlZTQ1NDBmIiwic3ViIjoiOGM3N2QxOGY2Yzk5NDkxMWEwZTE0ODVjY2FkMzMzYzYiLCJvaV9wcnN0Ijoic3dpc3Njb3dzIiwib2lfYXVfaWQiOiI2NjhhYmIwN2NmMjExNWVmZDgzM2U4NTMiLCJjbGllbnRfaWQiOiJzd2lzc2Nvd3MiLCJvaV90a25faWQiOiI2NjhhYmIwOGNmMjExNWVmZDgzM2U4NWQifQ.MatgIpILPiPKzdM9auezOvNg9moOUdv9YU6Fu6QClzQmRWd_DeqbQ7EOFKcx0htc-WviPwzg9fIVF8QcrdpYw0zVqE8X6akz6X5kgDu784Vton0_zS1d4BU7dTyNuSqkdtAnpLgTsvXTu5XdgNIk8azehIjtrXtzh4Jkq7VZ6yDrqrWG8DF2xZwwzzya0xHnl6QTF3xtZIkxbW6Y3912tWppuxbi7pePTYjM6GndDpda-WJ1Q-TZEMUZA6Yoju71X7SZF2AA_FliZWx7kwJ_nlX9m4UJOfVeop8NvbDhm2O7b5yRtYn2An7gbTIakhkd9svV8iJf0cq3wJ1WG9lFoQ"
-        },
-        {
-          "name": "oidc.id_token",
-          "value": "eyJhbGciOiJSUzI1NiIsImtpZCI6IjdEMDJEOEE1RURCOUY2NzU0MzhGMjY5NEEwM0E4QzNBNzlBQTIxNzQiLCJ4NXQiOiJmUUxZcGUyNTluVkRqeWFVb0RxTU9ubXFJWFEiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2FjY291bnRzLmRldi5zd2lzc2Nvd3MuY29tLyIsImV4cCI6MTcyMDM3MTQ4MCwiaWF0IjoxNzIwMzY3ODgwLCJhdWQiOiJzd2lzc2Nvd3MiLCJzdWIiOiI4Yzc3ZDE4ZjZjOTk0OTExYTBlMTQ4NWNjYWQzMzNjNiIsImVtYWlsIjoicWEzMEBzd2lzc2Nvd3MuZW1haWwiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwibmlja25hbWUiOiJUZXN0IiwicmVnaW9uIjoiVUEiLCJsb2NhbGUiOiJlbiIsImN1bHR1cmUiOiJlbiIsIm9pX2F1X2lkIjoiNjY4YWJiMDdjZjIxMTVlZmQ4MzNlODUzIiwiYXpwIjoic3dpc3Njb3dzIiwiYXRfaGFzaCI6IkwtenFCSU9WVFJfTTkzekZMeG5hd1EiLCJvaV90a25faWQiOiI2NjhhYmIwOGNmMjExNWVmZDgzM2U4NWYifQ.s2EBKXiF0x7bE6MQ0NVRjyzqNt__eG0wk5AOmNO1ZUTG3uKqHUOu2KkzBN0OG2KbEuNKDf_Ce9xBTIlXALP1p9OwlqG0VgyYX8FEtDW8UcCrLeG48da2ENUDGOLX1ven5V-DyShJUQTNz-XELlQfgrZ5ASoHwDshbKNINFlufAJMnw1VytRJbbRrEEDGp3I-AfxyLzq2KeuPeupg6sDdybtYZ-v6_5tgYkxJutGmGgY7KOmxWV-6qdVdqtPGzSN-wlOHSben13_WzI_nbdtMsUNvOpszuqp7mEkSdXONBx964noLqwfpxp9y9t_ZzwgpE7sjcsqM9BlleigX2mW4gg"
-        }
-      ]
-    }
-  ]
+  "cookies": [],
+  "origins": []
 }

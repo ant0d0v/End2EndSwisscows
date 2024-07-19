@@ -4,6 +4,7 @@ import badgeCounter from "../../components/BadgeCounter.js";
 import BadgeEmail from "../../components/BadgeEmail.js";
 import BadgeTeleguard from "../../components/BadgeTeleguard.js";
 import BadgeVPN from "../../components/BadgeVPN.js";
+import Logo from "./Logo.js"
 export default class Header extends BaseComponent {
   constructor(page) {
     super(page);
@@ -12,6 +13,7 @@ export default class Header extends BaseComponent {
     this.badgeEmail = new BadgeEmail(page);
     this.badgeTeleguard = new BadgeTeleguard(page);
     this.badgeVPN = new BadgeVPN(page);
+    this.logo = new Logo(page)
 
     //Locators
     this.badgeCounter = this.page.getByTitle('0').locator('img')
