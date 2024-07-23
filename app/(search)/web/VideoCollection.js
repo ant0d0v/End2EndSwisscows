@@ -1,7 +1,7 @@
 import BaseComponent from "../../../base/BaseComponent.js";
 import { expect } from "@playwright/test";
 
-export default class Widget extends BaseComponent {
+export default class VideoCollection extends BaseComponent {
   constructor(page) {
     super(page);
     this.title = this.page.locator(".widget.widget-video .widget-title")

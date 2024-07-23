@@ -107,9 +107,9 @@ test("Check that web items date not to be empty", async ({ app }) => {
   await app.home.header.searchForm.inputSearchCriteria("Ukraine");
   await app.home.header.searchForm.clickEnterSearchField();
   await app.webPage.item.expectWebItemsToBeVisible();
-  
+
   //Assert
-  await app.webPage.item.expectItemsDateNotToBeEmpty()
+  await app.webPage.item.expectItemsDateNotToBeEmpty();
 });
 
 test("Check that items site not to be empty", async ({ app }) => {
@@ -124,7 +124,9 @@ test("Check that items site not to be empty", async ({ app }) => {
   await app.webPage.item.favicon.expectAllFaviconsToBeVisible();
 });
 
-test("Check that thumbnails to have height = 60 and width = 60", async ({ app }) => {
+test("Check that thumbnails to have height = 60 and width = 60", async ({
+  app,
+}) => {
   //Actions
   await app.home.open();
   await app.home.header.searchForm.inputSearchCriteria("Ukraine");
@@ -144,7 +146,10 @@ test("Check titles to have css font and color", async ({ app }) => {
   await app.webPage.item.expectWebItemsToBeVisible();
 
   //Assert
-  await app.webPage.item.expectTitlesToHaveCSSFontSizeAndColor("18px", "rgb(52, 64, 84)");
+  await app.webPage.item.expectTitlesToHaveCSSFontSizeAndColor(
+    "18px",
+    "rgb(52, 64, 84)"
+  );
 });
 test("Check next button in the paging", async ({ app }) => {
   //Actions
@@ -194,7 +199,7 @@ test("Check open link in  the web result", async ({ app }) => {
   await app.home.header.searchForm.clickEnterSearchField();
   await app.webPage.item.expectWebItemsToBeVisible();
   const currentUrl = await app.page.url();
-  await app.webPage.item.clickWebItemNumber(firstItemTitle);
+  await app.webPage.clickItemNumber(firstItemTitle);
 
   //Assert
   await app.expectPageNotToHaveUrl(app.page, currentUrl);

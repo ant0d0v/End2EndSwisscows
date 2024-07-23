@@ -1,9 +1,9 @@
 import BaseComponent from "../../../base/BaseComponent.js";
-import Favicon from "../../../components/Favicon.js"
+import Favicon from "../../../components/Favicon.js";
 export default class Item extends BaseComponent {
   constructor(page) {
     super(page);
-    this.favicon = new Favicon(page)
+    this.favicon = new Favicon(page);
     //Locators
     this.root = this.page.locator("article.item.web-page");
     this.titles = this.root.locator(".title");
@@ -21,13 +21,6 @@ export default class Item extends BaseComponent {
       texts.push(await element.textContent());
     }
     return texts;
-  };
-
-  clickWebItemNumber = async (index) => {
-    return await this.clickElement(
-      this.title(index),
-      `${index} web item in search result`
-    );
   };
 
   // Verify
@@ -51,7 +44,7 @@ export default class Item extends BaseComponent {
     this.expectListElementsNotToBeEmpty(this.sites);
   };
 
-  expectThumbnailsToHaveHeightAndWidth = async (valueOfHeight, valueOfWidth) => {
+  expectThumbnailsToHaveHeightAndWidth = async (valueOfHeight, valueOfWidth ) => {
     await this.expectElementsToHaveJSProperty(this.thumbnails, "height", valueOfHeight);
     await this.expectElementsToHaveJSProperty(this.thumbnails, "width", valueOfWidth);
   };

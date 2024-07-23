@@ -8,12 +8,12 @@ test("Check next and prev buttons in the video widget", async ({ app }) => {
   await app.home.header.searchForm.inputSearchCriteria("iphone");
   await app.home.header.searchForm.clickEnterSearchField();
   await app.webPage.item.expectWebItemsToBeVisible();
-  await app.webPage.videoWidget.clickNextButtonUntilInvisible();
-  await app.webPage.videoWidget.waitUntilWidgetToBeVisible();
+  await app.webPage.videoCollection.clickNextButtonUntilInvisible();
+  await app.webPage.videoCollection.waitUntilWidgetToBeVisible();
   //Assert
-  await app.webPage.videoWidget.expectNextButtonIsDisabled();
-  await app.webPage.videoWidget.clickPrevButtonUntilInvisible();
-  await app.webPage.videoWidget.expectPrevButtonIsDisabled();
+  await app.webPage.videoCollection.expectNextButtonIsDisabled();
+  await app.webPage.videoCollection.clickPrevButtonUntilInvisible();
+  await app.webPage.videoCollection.expectPrevButtonIsDisabled();
 });
 
 test("Check the width and visibility of images in the video widget", async ({
@@ -26,17 +26,20 @@ test("Check the width and visibility of images in the video widget", async ({
   await app.home.header.searchForm.inputSearchCriteria("Ronaldo");
   await app.home.header.searchForm.clickEnterSearchField();
   await app.webPage.item.expectWebItemsToBeVisible();
-  await app.webPage.videoWidget.waitElementToBeVisible(
-    app.webPage.videoWidget.nextButton
+  await app.webPage.videoCollection.waitElementToBeVisible(
+    app.webPage.videoCollection.nextButton
   );
 
   //Assert
-  await app.webPage.videoWidget.expectAreElementsInListDisplayed(
-    app.webPage.videoWidget.allImage
+  await app.webPage.videoCollection.expectAreElementsInListDisplayed(
+    app.webPage.videoCollection.allImage
   );
-  await app.webPage.videoWidget.expectImagesToHaveWightInWidget("width", 240);
-  await app.webPage.videoWidget.expectListToHaveCount(
-    app.webPage.videoWidget.allImage,
+  await app.webPage.videoCollection.expectImagesToHaveWightInWidget(
+    "width",
+    240
+  );
+  await app.webPage.videoCollection.expectListToHaveCount(
+    app.webPage.videoCollection.allImage,
     4
   );
 });
@@ -49,10 +52,10 @@ test("Check click more button in the video widget", async ({ app }) => {
   await app.home.header.searchForm.inputSearchCriteria("iphone");
   await app.home.header.searchForm.clickEnterSearchField();
   await app.webPage.item.expectWebItemsToBeVisible();
-  await app.webPage.videoWidget.waitElementToBeVisible(
-    app.webPage.videoWidget.nextButton
+  await app.webPage.videoCollection.waitElementToBeVisible(
+    app.webPage.videoCollection.nextButton
   );
-  await app.webPage.videoWidget.clickMoreVideosButton();
+  await app.webPage.videoCollection.clickMoreVideosButton();
 
   //Assert
   await app.expectPageToHaveUrl(
@@ -70,13 +73,13 @@ test("Check that open video in the video widget", async ({ app }) => {
   await app.home.header.searchForm.inputSearchCriteria("iphone");
   await app.home.header.searchForm.clickEnterSearchField();
   await app.webPage.item.expectWebItemsToBeVisible();
-  await app.webPage.videoWidget.waitElementToBeVisible(
-    app.webPage.videoWidget.nextButton
+  await app.webPage.videoCollection.waitElementToBeVisible(
+    app.webPage.videoCollection.nextButton
   );
 
   //Assert
-  await app.webPage.videoWidget.expectToBeOpenedNewPageAfterClick(
-    app.webPage.videoWidget.firstVideo,
+  await app.webPage.videoCollection.expectToBeOpenedNewPageAfterClick(
+    app.webPage.videoCollection.firstVideo,
     /www.youtube.com/
   );
 });
@@ -92,7 +95,7 @@ test("Check open news in the news widget", async ({ app }) => {
 
   //Assert
   await app.webPage.expectNewPageNotToHaveUrlAfterClick(
-    app.webPage.newsWidget.firstNews,
+    app.webPage.newsCollection.firstNews,
     process.env.BASE_URL + "/en/web?query=news+Ukraine&region=de-DE"
   );
 });
@@ -108,12 +111,12 @@ test("Check the width and visibility of images in the news widget", async ({
   await app.webPage.item.expectWebItemsToBeVisible();
 
   //Assert
-  await app.webPage.newsWidget.expectAreElementsInListDisplayed(
-    app.webPage.newsWidget.allImage
+  await app.webPage.newsCollection.expectAreElementsInListDisplayed(
+    app.webPage.newsCollection.allImage
   );
-  await app.webPage.newsWidget.expectImageToHaveWightInWidget("width", 160);
-  await app.webPage.newsWidget.expectListToHaveCount(
-    app.webPage.newsWidget.allImage,
+  await app.webPage.newsCollection.expectImageToHaveWightInWidget("width", 160);
+  await app.webPage.newsCollection.expectListToHaveCount(
+    app.webPage.newsCollection.allImage,
     3
   );
 });
@@ -128,5 +131,7 @@ test("Check title of the news widget", async ({ app }) => {
   await app.webPage.item.expectWebItemsToBeVisible();
 
   //Assert
-  await app.webPage.newsWidget.expectTitleToHaveText("News for news Ukraine");
+  await app.webPage.newsCollection.expectTitleToHaveText(
+    "News for news Ukraine"
+  );
 });

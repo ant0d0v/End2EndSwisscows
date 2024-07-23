@@ -4,13 +4,12 @@ export default class Playlist extends BaseComponent {
     super(page);
   
     //Locators
+    this.root = this.page.locator(".audio-playlist");
     this.trackCount = (index) => this.page.locator(`a[href*="/en/music/playlist?query="] .duration span:first-child`).nth(index - 1)
-    this.allImages = this.page.locator(`a[href*="/en/music/playlist?query="] img`)
+    this.allImages = this.root.locator("img");
   }
   async getTextSumTracksOfPlaylistNumber (index){
-    const text = await this.trackCount(index).innerText();
-    const number = parseInt(text.split(" ").filter(part => !isNaN(parseInt(part)))[0]);
-    return isNaN(number) ? 0 : number;
+    await this.expectElementToHaveText(this.trackCount(index), value);
   }
   //
   async expectImageToHaveWight(property, value){
