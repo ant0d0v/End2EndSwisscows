@@ -6,6 +6,7 @@ export default class MusicPlayer extends BaseComponent {
     super(page);
     //Locators
     this.root = this.page.locator(".audio-player");
+    this.track = this.root.locator(".track");
     this.nextButton = this.page.getByRole("button", { name: "Next track" });
     this.playButton = this.page.getByRole("button", { name: "Play/Pause" });
     this.prevButton = page.getByRole("button", { name: "Previous track" });
@@ -82,4 +83,12 @@ export default class MusicPlayer extends BaseComponent {
   async expectShuffleButtonIsActive() {
     await this.expectAttributeClassOfElement(this.shuffleButton, /active/);
   }
+  async takeSnapshot(testInfo) {
+    await this.expectPageElementToHaveScreenshotWithMask(
+      this.root,
+      this.image,
+      this.track,
+      testInfo
+    );
+  };
 }

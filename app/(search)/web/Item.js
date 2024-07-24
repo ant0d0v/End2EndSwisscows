@@ -26,7 +26,7 @@ export default class Item extends BaseComponent {
   // Verify
 
   expectWebItemsToBeVisible = async () => {
-    await this.page.waitForSelector("article.item.web-page h2", {
+    await this.page.waitForSelector("article.item.web-page .title", {
       state: "visible",
     });
     await this.expectAreElementsInListDisplayed(this.titles);

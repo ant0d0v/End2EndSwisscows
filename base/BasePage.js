@@ -27,30 +27,7 @@ export default class BasePage extends BaseComponent {
   }
 
   //Verify
-  async expectColorsLinksWhenHovering(elements, color, expectedValue) {
-    await test.step('Expect the elements in the array to "have" css color with value', async () => {
-      await expect(elements).toHaveColorsWhenHovering(color, expectedValue);
-    });
-  }
 
-  async expectColorLinkWhenHovering(element, color, expectedValue) {
-    await test.step('Expect the element to "have" css color with value', async () => {
-      await element.hover();
-      await expect(element).toHaveCSS(color, expectedValue);
-    });
-  }
-  async expectPageToHaveText(body, text) {
-    await test.step('Expect the Element(s) "to have" a string', async () => {
-      await expect(body).toHaveText(text);
-    });
-  }
-  async expectLocatorToHaveText(elements, text) {
-    await test.step('Expect the Element(s) "to have" a string', async () => {
-      for (let element of await this.page.locator(elements).all()) {
-        await expect(element).toHaveText(text);
-      }
-    });
-  }
   async expectPageToHaveScreenshot(testInfo, elements, element) {
     await test.step(`Expect screen to be equal to the snapshot of page`, async () => {
       testInfo.snapshotSuffix = "";
@@ -65,6 +42,7 @@ export default class BasePage extends BaseComponent {
       });
     });
   }
+
   async expectPageToHaveScreenshotWithoutMask(testInfo, elements) {
     await test.step("Expect screen to be equal to the snapshot of page", async () => {
       testInfo.snapshotSuffix = "";

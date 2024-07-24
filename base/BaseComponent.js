@@ -133,7 +133,18 @@ export default class BaseComponent extends PageHolder {
   }
   async expectElementToHaveCSS(element, property, value) {
     await test.step(`Expect the Element to Have CSS ${property} a ${value} `, async () => {
-        await expect(element).toHaveCSS(property, value);
+      await expect(element).toHaveCSS(property, value);
+    });
+  }
+  async expectColorsLinksWhenHovering(elements, color, expectedValue) {
+    await test.step('Expect the elements in the array to "have" css color with value', async () => {
+      await expect(elements).toHaveColorsWhenHovering(color, expectedValue);
+    });
+  }
+  async expectColorLinkWhenHovering(element, color, expectedValue) {
+    await test.step('Expect the element to "have" css color with value', async () => {
+      await element.hover();
+      await expect(element).toHaveCSS(color, expectedValue);
     });
   }
   async expectListToHaveCount(elements, number) {
@@ -257,6 +268,24 @@ export default class BaseComponent extends PageHolder {
         await expect(image).not.toHaveJSProperty("naturalWidth", 0);
       }
       await expect(locator).toHaveScreenshot(`${testInfo.title}.png`);
+    });
+  }
+  async expectPageElementToHaveScreenshotWithMask(
+    locator,
+    elements,
+    element,
+    testInfo
+  ) {
+    await test.step("Expects screen to be equal to the snapshot element of page", async () => {
+      testInfo.snapshotSuffix = "";
+      const imageElements = await elements.all();
+      for (const image of imageElements) {
+        await image.scrollIntoViewIfNeeded();
+        await expect(image).not.toHaveJSProperty("naturalWidth", 0);
+      }
+      await expect(locator).toHaveScreenshot(`${testInfo.title}.png`, {
+        mask: [await element],
+      });
     });
   }
 }

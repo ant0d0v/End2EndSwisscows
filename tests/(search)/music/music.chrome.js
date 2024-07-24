@@ -1,6 +1,7 @@
 import { test, deletionIds } from "../../../utils/fixtures.js";
-import testData from "../../../data/error/testData.json";
 const firstTrack = 1;
+const firstPlaylist = 1
+const secondPlaylist = 2;
 
 test.fixme("Check 202 No Results Found error page ", async ({ app }, testInfo) => {
   //Actions
@@ -258,7 +259,7 @@ test("Check shuffle function in the player", async ({ app }) => {
   await app.home.header.searchForm.clickEnterSearchField();
   await app.musicPage.header.clickMusicSearchButton();
   await app.musicPage.track.expectMusicTracksToBeVisible();
-  await app.musicPage.track.clickPlayButtonNumberTrack(1);
+  await app.musicPage.track.clickPlayButtonNumberTrack(firstTrack);
   await app.musicPage.player.expectProgressToHaveValue("2");
   await app.musicPage.player.clickShuffleButton();
   await app.musicPage.player.clickNextButton();
@@ -362,6 +363,7 @@ test("Check the width and visibility images of tracks", async ({ app }) => {
     app.musicPage.track.allImages
   );
 });
+
 test("Check width and visibility image in player", async ({ app }) => {
   //Actions
   await app.home.open();
@@ -378,23 +380,94 @@ test("Check width and visibility image in player", async ({ app }) => {
   );
 });
 
-test.fixme("Check hovering buttons play/next/prev/pause/heart/ in player", async ({
-  app,
-}) => {
+test("Checking the Next button in the slide", async ({ app }) => {
   //Actions
   await app.home.open();
   await app.home.header.searchForm.inputSearchCriteria("billie jean");
   await app.home.header.searchForm.clickEnterSearchField();
   await app.musicPage.header.clickMusicSearchButton();
   await app.musicPage.track.expectMusicTracksToBeVisible();
-  await app.musicPage.track.clickPlayButtonNumberTrack(1);
+  await app.musicPage.playlist.clickNextButton()
+  
+  //Assert
+  await app.musicPage.playlist.expectSwiperSlideIs(firstPlaylist, /slide-prev/);
+  await app.musicPage.playlist.expectSwiperSlideIs(secondPlaylist, /slide-active/);
+  await app.musicPage.playlist.expectPrevButtonIsEnabled();
+});
+
+test("Checking the Prev button in the slide", async ({ app }) => {
+  //Actions
+  await app.home.open();
+  await app.home.header.searchForm.inputSearchCriteria("billie jean");
+  await app.home.header.searchForm.clickEnterSearchField();
+  await app.musicPage.header.clickMusicSearchButton();
+  await app.musicPage.track.expectMusicTracksToBeVisible();
+  await app.musicPage.playlist.clickNextButton()
+  await app.musicPage.playlist.expectPrevButtonIsEnabled();
+  await app.musicPage.playlist.clickPrevButton();
+  
+  //Assert
+  await app.musicPage.playlist.expectSwiperSlideIs(firstPlaylist, /slide-active/);
+  await app.musicPage.playlist.expectSwiperSlideIs(secondPlaylist, /slide-next/);
+  await app.musicPage.playlist.expectPrevButtonIsDisabled();
+});
+
+test("Check design of widget component on music page", async ({
+  app,
+}, testInfo) => {
+  //Actions
+  await app.home.open();
+  await app.home.header.searchForm.inputSearchCriteria("best 2024");
+  await app.home.header.searchForm.clickEnterSearchField();
+  await app.musicPage.header.clickMusicSearchButton();
+  await app.musicPage.track.expectMusicTracksToBeVisible();
 
   //Assert
-  await app.musicPage.expectColorsLinksWhenHovering(app.musicPage.player.allButtons, "background",
-    "rgb(223, 93, 93)"
-  );
-  await app.musicPage.player.expectListToHaveCount(
-    app.musicPage.player.allButtons,
-    7
-  );
+  await app.musicPage.playlist.takeSnapshot(testInfo);
 });
+
+test("Check design of button when track is not playing  on music page", async ({
+  app,
+}, testInfo) => {
+  //Actions
+  await app.home.open();
+  await app.home.header.searchForm.inputSearchCriteria("best 2024");
+  await app.home.header.searchForm.clickEnterSearchField();
+  await app.musicPage.header.clickMusicSearchButton();
+  await app.musicPage.track.expectMusicTracksToBeVisible();
+
+  //Assert
+  await app.musicPage.track.takeSnapshot(testInfo);
+});
+
+test("Check design of button when track is playing  on music page", async ({
+  app,
+}, testInfo) => {
+  //Actions
+  await app.home.open();
+  await app.home.header.searchForm.inputSearchCriteria("best 2024");
+  await app.home.header.searchForm.clickEnterSearchField();
+  await app.musicPage.header.clickMusicSearchButton();
+  await app.musicPage.track.expectMusicTracksToBeVisible();
+  await app.musicPage.track.clickPlayButtonNumberTrack(firstTrack);
+
+  //Assert
+  await app.musicPage.track.takeSnapshot(testInfo);
+});
+
+test("Check design of player component  on music page", async ({
+  app,
+}, testInfo) => {
+  //Actions
+  await app.home.open();
+  await app.home.header.searchForm.inputSearchCriteria("best 2024");
+  await app.home.header.searchForm.clickEnterSearchField();
+  await app.musicPage.header.clickMusicSearchButton();
+  await app.musicPage.track.expectMusicTracksToBeVisible();
+  await app.musicPage.track.clickPlayButtonNumberTrack(firstTrack);
+
+  //Assert
+  await app.musicPage.player.takeSnapshot(testInfo);
+});
+
+

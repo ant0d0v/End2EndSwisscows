@@ -104,4 +104,11 @@ export default class Track extends BaseComponent {
   async expectImageToHaveWight (property, value){
     await this.expectElementsToHaveJSProperty(this.allImages , property, value);
   };
+  takeSnapshot = async (testInfo) => {
+    await this.expectPageElementToHaveScreenshot(
+      this.playButton(1),
+      this.root,
+      testInfo
+    );
+  };
 }

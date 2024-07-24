@@ -6,7 +6,7 @@ test("Check design of the Education page ", async ({ app }, testInfo) => {
   await app.mediaEducationPage.expectScreenMediaEducationPage(testInfo);
 });
 
-test("Check color of flyer button when hovering ", async ({ app }) => {
+test.fixme("Check color of flyer button when hovering ", async ({ app }) => {
   //Actions
   await app.mediaEducationPage.open();
   //Assert

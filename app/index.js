@@ -71,29 +71,34 @@ export default class Application extends PageHolder {
       await this.page.waitForURL(Url);
     });
   }
-
+  
   //Verify
   async expectNewPageToHaveTitle(context, expectedTitle) {
-    await expect(await context.pages()[1]).toHaveTitle(expectedTitle);
+    // await test.step('Expect  page in new tab "to have" title', async () => {
+      await expect(context.pages()[1]).toHaveTitle(expectedTitle);
+    // });
   }
+
   async expectHaveTitle(newPage, title) {
-    await test.step('Expect a title "to have" a substring', async () => {
+    await test.step('Expect page "to have" title', async () => {
       await expect(newPage).toHaveTitle(title);
     });
   }
 
   async expectPageToHaveUrl(newPage, url) {
-    await test.step('Expect a URL "to have" a string', async () => {
+    await test.step('Expect page  "to have"  URL', async () => {
       await expect(newPage).toHaveURL(url);
     });
   }
+
   async expectPageNotToHaveUrl(newPage, url) {
-    await test.step('Expect a URL "not to have" a string', async () => {
+    await test.step('Expect page  "not to have"  URL', async () => {
       await expect(newPage).not.toHaveURL(url);
     });
   }
+
   async expectPageNotToHaveTitle(newPage, title) {
-    await test.step('Expect a title "to have" a substring', async () => {
+    await test.step('Expect page "not  to have" title', async () => {
       await expect(newPage).not.toHaveTitle(title);
     });
   }

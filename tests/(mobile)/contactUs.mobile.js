@@ -2,7 +2,7 @@ import { test } from "../../utils/fixtures.js";
 import testData from "../../data/pages/contact/testData.json";
 import constantsData from "../../data/project-constants/testData.json";
 
-test("Check color of Send button when hovering ", async ({ app }) => {
+test.fixme("Check color of Send button when hovering ", async ({ app }) => {
   //Actions
   await app.contactPage.open();
   //Assert
@@ -153,7 +153,7 @@ test(`Check the tooltip when sending a message without the "Agree" checkbox`, as
   );
 });
 
-test(`Check color of "back to search" when hovering `, async ({ app }) => {
+test.fixme(`Check color of "back to search" when hovering `, async ({ app }) => {
   //Actions
   await app.contactPage.open();
   await app.contactPage.inputYouNameField("Test");

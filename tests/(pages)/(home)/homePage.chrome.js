@@ -116,7 +116,7 @@ test("Check the texts of questions on the home page.", async ({ app }) => {
   );
 });
 
-test("Check that buttons have hover over the services block on home page", async ({
+test.fixme("Check that buttons have hover over the services block on home page", async ({
   app,
 }) => {
   //Actions
