@@ -80,23 +80,47 @@
         }
     ],
 
-    "servicesBlockLinks": [
+    "buttons": [
         {
             "testID": "1",
             "expectedLink": "https://hesbox.com/en",
-            "locatorId" : "Learn more",
+            "locatorId" : "1",
             "expectedTitle": "Enterprise Search Software for companies "
         },
         {
             "testID": "2",
             "expectedLink": "https://swisscows-fanshop.com",
-            "locatorId" :"visit shop",
+            "locatorId" :"2",
             "expectedTitle" : "SWISSCOWS FANSHOP – Swisscows"
         },
         {
             "testID": "3",
             "expectedLink": "https://awiebe.org",
-            "locatorId" : "go to blog",
+            "locatorId" : "3",
+            "expectedTitle" :"Blog - Andreas Wiebe"
+        },
+        {
+            "testID": "4",
+            "expectedLink": "https://awiebe.org",
+            "locatorId" : "4",
+            "expectedTitle" :"Blog - Andreas Wiebe"
+        },
+        {
+            "testID": "5",
+            "expectedLink": "https://awiebe.org",
+            "locatorId" : "5",
+            "expectedTitle" :"Blog - Andreas Wiebe"
+        },
+        {
+            "testID": "6",
+            "expectedLink": "https://awiebe.org",
+            "locatorId" : "6",
+            "expectedTitle" :"Blog - Andreas Wiebe"
+        },
+        {
+            "testID": "7",
+            "expectedLink": "https://awiebe.org",
+            "locatorId" : "7",
             "expectedTitle" :"Blog - Andreas Wiebe"
         }
     ]

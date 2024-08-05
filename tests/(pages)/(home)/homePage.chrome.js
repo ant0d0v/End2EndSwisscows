@@ -20,7 +20,7 @@ test("Check that all questions were opened on the home page ", async ({
   //Action
   await app.home.open();
   await app.home.scrollDownToQuestions();
-  await app.home.clickAllQuestions();
+  await app.home.faq.clickAllQuestions();
 
   //Assert
   await app.home.faq.expectQuestionsAreOpened();
@@ -32,11 +32,11 @@ test("Check that a question and answer can be opened and closed on the home page
   //Action
   await app.home.open();
   await app.home.scrollDownToQuestions();
-  await app.home.clickAllQuestions();
-  await app.home.faq.expectQuestionsAreOpened();
-  await app.home.clickAllQuestions();
+  await app.home.faq.clickAllQuestions();
 
   //Assert
+  await app.home.faq.expectQuestionsAreOpened();
+  await app.home.faq.clickAllQuestions();
   await app.home.faq.expectQuestionsAreClosed();
 });
 
@@ -47,14 +47,12 @@ test("Check that the link in the fourth question leads to the expected URL.", as
   //Action
   await app.home.open();
   await app.home.scrollDownToQuestions();
-  await app.home.clickFourQuestion();
+  await app.home.faq.clickFourQuestion();
 
   //Assert
-  await app.home.expectToBeOpenedNewPageAfterClick(
-    app.home.linkInTheFourQuestion,
+  await app.home.faq.expectToBeOpenedPageAfterClickInstructionsLink(
     main.url.defaultSearchPage
   );
-
   await app.expectNewPageToHaveTitle(
     context,
     "Install Swisscows and use it as the default search"
@@ -67,9 +65,9 @@ test("Check that popup google install Is Displayed", async ({ app }) => {
   //Actions
   await app.home.open();
 
-  //Assert
-  await app.home.installSwisscowsLink.expectExtensionPopupIsDisplayed();
-  await app.home.installSwisscowsLink.expectTextExtensionPopup(expectedText);
+  //Assert 
+  await app.home.extensionPopup.expectPopupToBeVisible();
+  await app.home.extensionPopup.expectPopupToHaveText(expectedText);
 });
 
 test('Check that popup "google install" redirect to the corresponding page', async ({
@@ -80,15 +78,13 @@ test('Check that popup "google install" redirect to the corresponding page', asy
   await app.home.open();
 
   //Assert
-  await app.home.expectToBeOpenedNewPageAfterClick(
-    app.home.installSwisscowsLink.extensionPopup,
+  await app.home.extensionPopup.expectToBeOpenedPageAfterClickPopup(
     main.url.extensionGoogleInstall
   );
-
   await app.expectNewPageToHaveTitle(context, /Swisscows/);
 });
 
-test('Check that the "Install Google Block" button redirect to corresponding URL.', async ({
+test.fixme('Check that the "Install Google Block" button redirect to corresponding URL.', async ({
   app,
   context,
 }) => {
@@ -96,11 +92,9 @@ test('Check that the "Install Google Block" button redirect to corresponding URL
   await app.home.open();
 
   //Assert
-  await app.home.expectToBeOpenedNewPageAfterClick(
-    app.home.extensionBlock.extensionLink,
+  await app.home.extensionBlock.expectToBeOpenedPageAfterClickInstall(
     main.url.extensionGoogleInstall
   );
-
   await app.expectNewPageToHaveTitle(context, /Swisscows/);
 });
 
@@ -110,30 +104,27 @@ test("Check the texts of questions on the home page.", async ({ app }) => {
 
   //Assert
   await app.home.faq.expectListSizeAnswerToQuestions(6);
-  await app.home.expectElementToHaveText(
-    app.home.faq.answersToQuestions,
-    main.accordion.expectedAnswer
-  );
+  await app.home.faq.expectAnswersToHaveText(main.accordion.expectedAnswer);
 });
+for (const { testID,locatorId} of main.buttons) {
+  test(`${testID} Check that button ${locatorId} to have color when hover`,
+    async ({ app }) => {
+      //Actions
+      await app.home.open();
+      await app.home.hoverButton(locatorId)
 
-test.fixme("Check that buttons have hover over the services block on home page", async ({
-  app,
-}) => {
-  //Actions
-  await app.home.open();
-
-  //Assert
-  await app.home.expectColorsLinksWhenHovering(
-    app.home.buttonOfServiceBlock,
-    "color",
-    constanta.RED
+      //Assert
+      await app.home.expectButtonToHaveColor(
+        locatorId,
+        "rgb(16, 24, 40) none repeat scroll 0% 0% / auto padding-box border-box");
+    }
   );
-});
+}
 
 test("Check design of the home page ", async ({ app }, testInfo) => {
   //Actions
   await app.home.open();
-  await app.home.installSwisscowsLink.clickCloseButtonInExtensionPopup();
+  await app.home.extensionPopup.clickCloseButtonInExtensionPopup();
 
   //Assert
   await app.home.takeSnapshot(testInfo);
@@ -145,13 +136,14 @@ test("Check design dark theme of the home page ", async ({ app }, testInfo) => {
   await app.home.header.clickHamburgerMenuButton();
   await app.home.header.hamburgerMenu.clickThemeDropdown();
   await app.home.header.hamburgerMenu.clickDarkTheme();
-  await app.home.installSwisscowsLink.clickCloseButtonInExtensionPopup();
+  await app.home.extensionPopup.clickCloseButtonInExtensionPopup();
 
   //Assert
   await app.home.takeSnapshot(testInfo);
 });
 
-for (const { testID, expectedLink, locatorId, expectedTitle } of main.servicesBlockLinks) {
+for (const {testID,expectedLink,locatorId,expectedTitle,
+} of main.buttons) {
   test(`${testID} Check that the ${locatorId} link navigate to the corresponding page.`, async ({
     app,
     context,

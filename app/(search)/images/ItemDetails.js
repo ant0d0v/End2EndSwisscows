@@ -15,7 +15,7 @@ export default class ItemDetails extends BaseComponent {
     this.bookmarkButton = this.page.locator("figure button.bookmark use");
     this.nextButton = this.page.locator(".details-pane button.next");
     this.prevButton = this.page.locator(".details-pane button.prev");
-    this.closeButton = this.page.locator(".details-pane button.close");
+    this.closeButton = this.page.locator('button[name="close"]');
     this.openSiteButton = this.page.getByRole("link", { name: "Open site" });
   }
   //Actions
@@ -69,6 +69,9 @@ export default class ItemDetails extends BaseComponent {
 
   expectImageInDetailsPanelToBeVisible = async () => {
     await this.expectElementToBeVisible(this.imageInDetailsPanel);
+  };
+  expectDetailsPanelToBeHidden = async () => {
+    await this.expectElementToBeHidden(this.root);
   };
 
   expectDetailsToHaveHeightAndWidth = async (valueOfHeight, valueOfWidth) => {

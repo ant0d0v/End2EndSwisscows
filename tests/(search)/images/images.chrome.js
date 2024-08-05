@@ -1,5 +1,15 @@
 import { test, expect, deletionIds } from "../../../utils/fixtures.js";
-import testData from "../../../data/error/testData.json";
+import { faker } from "@faker-js/faker";
+const randomQuery = faker.helpers.arrayElement([
+  "Cute cat pictures",
+  "DIY home improvement videos",
+  "how to Cook PASTA",
+  "Music videos 2024",
+  "Best coffee shops #near me",
+  "WEATHER TODAY",
+  "Quelle heure est-il à Tokyo?",
+  "Tech news + updates",
+]);
 const firstItem = 1;
 const secondItem = 2;
 const fifthItem = 5; 
@@ -132,19 +142,22 @@ test.fixme("Check prev button in the item details", async ({ app }) => {
   await app.imagePage.item.expectSecondItemIsNotActive();
 });
 
-test.fixme("Check close button in the item details", async ({ app }) => {
+test("Check that details panel to be hidden when clicking close button", async ({
+  app,
+}) => {
   //Actions
   await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria("Ivanka");
+  await app.home.header.searchForm.inputSearchCriteria("A");
   await app.home.header.searchForm.clickEnterSearchField();
   await app.imagePage.header.clickImageSearchButton();
+  await app.imagePage.preloader.expectPreloaderToBeVisible();
   await app.imagePage.item.expectImageItemsToBeVisible();
   await app.imagePage.item.clickItemNumber(firstItem);
-  await app.imagePage.itemDetails.expectItemInDetailsPanelToBeVisible();
+  await app.imagePage.itemDetails.expectImageInDetailsPanelToBeVisible();
   await app.imagePage.itemDetails.clickCloseButton();
 
   //Assert
-  await app.imagePage.itemDetails.expectItemInDetailsPanelToBeHidden();
+  await app.imagePage.itemDetails.expectDetailsPanelToBeHidden();
 });
 
 test("Check image first item equal image in the item details", async ({
@@ -246,7 +259,7 @@ test("Check outline and opacity of item when item is selected", async ({ app }) 
 test("Check that image of proxy cdn server", async ({ app }) => {
   //Actions
   await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria("images");
+  await app.home.header.searchForm.inputSearchCriteria(randomQuery);
   await app.home.header.searchForm.clickEnterSearchField();
   await app.imagePage.header.clickImageSearchButton();
   await app.imagePage.item.expectImageItemsToBeVisible();
@@ -261,7 +274,7 @@ test("Check that image of proxy cdn server", async ({ app }) => {
 test("Check image item is active  when clicking on image", async ({ app }) => {
   //Actions
   await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria("Ronaldo");
+  await app.home.header.searchForm.inputSearchCriteria(randomQuery);
   await app.home.header.searchForm.clickEnterSearchField();
   await app.imagePage.header.clickImageSearchButton();
   await app.imagePage.item.expectImageItemsToBeVisible();
@@ -277,7 +290,7 @@ test("Check open site button when clicking redirect to new page", async ({
 }) => {
   //Actions
   await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria("Ronaldo");
+  await app.home.header.searchForm.inputSearchCriteria(randomQuery);
   await app.home.header.searchForm.clickEnterSearchField();
   await app.imagePage.header.clickImageSearchButton();
   await app.imagePage.item.expectImageItemsToBeVisible();
@@ -296,7 +309,7 @@ test("Check that resolution in details pane to have value", async ({
 }) => {
   //Actions
   await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria("Ronaldo");
+  await app.home.header.searchForm.inputSearchCriteria(randomQuery);
   await app.home.header.searchForm.clickEnterSearchField();
   await app.imagePage.header.clickImageSearchButton();
   await app.imagePage.item.expectImageItemsToBeVisible();
@@ -322,7 +335,7 @@ test("Check that title in details pane to containe text", async ({ app }) => {
 test("Check that site ifrormation in details pane to have value", async ({ app }) => {
   //Actions
   await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria("Ronaldo");
+  await app.home.header.searchForm.inputSearchCriteria(randomQuery);
   await app.home.header.searchForm.clickEnterSearchField();
   await app.imagePage.header.clickImageSearchButton();
   await app.imagePage.item.expectImageItemsToBeVisible();
@@ -349,7 +362,7 @@ test("Check height and width of details pane to have value", async ({ app }) => 
 test("Check that details to be in viewport", async ({ app }) => {
   //Actions
   await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria("A");
+  await app.home.header.searchForm.inputSearchCriteria(randomQuery);
   await app.home.header.searchForm.clickEnterSearchField();
   await app.imagePage.header.clickImageSearchButton();
   await app.imagePage.item.expectImageItemsToBeVisible();
@@ -364,7 +377,7 @@ test("Check preloader on page when Status.LOADING", async ({
 }) => {
   //Actions
   await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria("A");
+  await app.home.header.searchForm.inputSearchCriteria(randomQuery);
   await app.home.header.searchForm.clickEnterSearchField();
   await app.imagePage.header.clickImageSearchButton();
   await app.imagePage.preloader.expectPreloaderToBeVisible();

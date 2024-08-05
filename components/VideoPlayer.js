@@ -27,5 +27,4 @@ export default class VideoPlayer extends BaseComponent {
     await this.clickElement(this.playButtonYouTubeFrame);
     await this.expectTextsToContains(this.currentTimeYouTubeFrame, "0:01");
   }
-  
 }

@@ -199,7 +199,6 @@ test("Check open link in  the web result", async ({ app }) => {
   await app.home.header.searchForm.clickEnterSearchField();
   await app.webPage.item.expectWebItemsToBeVisible();
   const currentUrl = await app.page.url();
-  console.log(currentUrl)
   await app.webPage.clickItemNumber(firstItemTitle);
 
   //Assert

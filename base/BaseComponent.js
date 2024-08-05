@@ -16,6 +16,11 @@ export default class BaseComponent extends PageHolder {
       await element.check();
     });
   }
+  async hoverElement(element, nameElement) {
+    await test.step(`Hover on the ${nameElement}`, async () => {
+      await element.hover();
+    });
+  }
   async clickEnter(element, nameElement) {
     await test.step(`Press enter on the ${nameElement}`, async () => {
       await element.press("Enter");
@@ -175,6 +180,11 @@ export default class BaseComponent extends PageHolder {
   async expectAttributeClassOfElement(element, value) {
     await test.step('Expect the element  to "have" attribute class with value ', async () => {
       await expect(element).toHaveAttribute("class", value);
+    });
+  }
+  async expectElementToHaveClass(element, value) {
+    await test.step('Expect the element  to "have" attribute class with value ', async () => {
+      await expect(element).toHaveClass(value);
     });
   }
   async expectAttributeToHaveValue(element, attribute, value) {

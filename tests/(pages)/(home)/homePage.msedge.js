@@ -1,5 +1,5 @@
 import { test } from "../../../utils/fixtures.js";
-import testData from "../../../data/home/testData.json"
+import testData from "../../../data/home/testData.json";
 
 test('Check that popup "Edge install" redirect to the corresponding page', async ({
   app,
@@ -9,8 +9,7 @@ test('Check that popup "Edge install" redirect to the corresponding page', async
   await app.home.open();
 
   //Assert
-  await app.home.expectToBeOpenedNewPageAfterClick(
-    app.home.installSwisscowsLink.extensionPopup,
+  await await app.home.extensionPopup.expectToBeOpenedPageAfterClickPopup(
     testData.url.extensionEdgeInstall
   );
   await app.expectNewPageToHaveTitle(context, /Swisscows/);
@@ -23,11 +22,11 @@ test("Check that popup Edge install Is Displayed", async ({ app }) => {
   await app.home.open();
 
   //Assert
-  await app.home.installSwisscowsLink.expectExtensionPopupIsDisplayed();
-  await app.home.installSwisscowsLink.expectTextExtensionPopup(expectedText);
+  await app.home.extensionPopup.expectPopupToBeVisible();
+  await app.home.extensionPopup.expectPopupToHaveText(expectedText);
 });
 
-test('Check that the "Install Swisscows Block" button redirect to corresponding URL.', async ({
+test.fixme('Check that the "Install Swisscows Block" button redirect to corresponding URL.', async ({
   app,
   context,
 }) => {

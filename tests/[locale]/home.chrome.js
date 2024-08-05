@@ -9,7 +9,6 @@ for (const { test_case, language, expected_title, languageCode } of home) {
   }, testInfo) => {
     //Actions
     await app.home.open();
-    await app.home.installSwisscowsLink.clickCloseButtonInExtensionPopup();
     await app.home.header.clickHamburgerMenuButton();
     await app.home.header.hamburgerMenu.clickLanguagesDropdown();
     await app.home.header.hamburgerMenu.clickLanguageLinkInDropdown(language);
@@ -41,7 +40,6 @@ for (const { test_case, language, languageCode } of home) {
   }, testInfo) => {
     //Actions
     await app.home.open();
-    await app.home.installSwisscowsLink.clickCloseButtonInExtensionPopup();
     await app.home.header.clickHamburgerMenuButton();
     await app.home.header.hamburgerMenu.clickLanguagesDropdown();
     await app.home.header.hamburgerMenu.clickLanguageLinkInDropdown(language);
@@ -61,7 +59,6 @@ for (const { test_case, language, languageCode } of home) {
   }, testInfo) => {
     //Actions
     await app.home.open();
-    await app.home.installSwisscowsLink.clickCloseButtonInExtensionPopup();
     await app.home.header.clickHamburgerMenuButton();
     await app.home.header.hamburgerMenu.clickLanguagesDropdown();
     await app.home.header.hamburgerMenu.clickLanguageLinkInDropdown(language);

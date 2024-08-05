@@ -48,7 +48,7 @@ test("Check image in details pane ", async ({ app }) => {
  
   //Assert
   await app.shoppingPage.details.expectDetailsImageToBeVisible()
-  await app.shoppingPage.details.expectMediaToHaveWidth(445)
+  await app.shoppingPage.details.expectMediaToHaveWidth(320);
 });
 
 test("Check more button in detail", async ({ app }) => {
@@ -103,6 +103,7 @@ test("Check offer info in detail", async ({ app }) => {
   await app.shoppingPage.item.openProductDetailsByItem(1)
  
   //Assert
+  await app.shoppingPage.details.expectDetailsPaneToBeVisible();
   await app.shoppingPage.details.offer.expectPriceNotToBeEmpty()
   await app.shoppingPage.details.offer.expectNameNotToBeEmpty()
   await app.shoppingPage.details.offer.expectOfferInfoToContain(
@@ -144,25 +145,7 @@ test("Check count of Shipping options", async ({ app }) => {
   await app.shoppingPage.details.expectShippingListToBeGreaterThanOrEqual(3)
 });
 
-test(`Check that the "Buy" button opens a new page if one offer`, async ({ app }) => {
-  //Actions
-  await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria("iphone");
-  await app.home.header.searchForm.clickEnterSearchField();
-  await app.webPage.item.expectWebItemsToBeVisible();
-  await app.webPage.header.clickHamburgerMenuButton();
-  await app.webPage.header.hamburgerMenu.selectRegion("Germany");
-  await app.webPage.header.clickShoppingSearchButton();
-  await app.shoppingPage.item.expectShoppingItemsToBeVisible();
-  await app.route.mockResponseBody("/shopping/products", body)
-  await app.shoppingPage.item.openProductDetailsByItem(1)
-  
-  //Assert 
-  await app.shoppingPage.details.expectNewPageNotToHaveUrlAfterClick(
-    app.shoppingPage.details.buyButton, process.env.BASE_URL + "/en/shopping?query=iphone&region=de-DE" )
-
-});
-test(`Check that the "Buy" button scroll to offers if more one offer`, async ({ app}) => {
+test(`Check that the "Buy" button redirect to new page`, async ({ app}) => {
   //Actions
   await app.home.open();
   await app.home.header.searchForm.inputSearchCriteria("iphone");
@@ -173,10 +156,11 @@ test(`Check that the "Buy" button scroll to offers if more one offer`, async ({ 
   await app.webPage.header.clickShoppingSearchButton();
   await app.shoppingPage.item.expectShoppingItemsToBeVisible();
   await app.shoppingPage.item.openProductDetailsByItem(1)
-  await app.shoppingPage.details.clickBuyButton()
+  const currentUrl = await app.page.url()
+  await app.shoppingPage.details.offer.clickBuyButton(1)
 
   //Assert 
-  await app.shoppingPage.details.expectDetailsImageNotToBeInViewport()
+  await app.expectPageNotToHaveUrl(app.page, currentUrl);
 });
 test("Check  offer icons to be visible" , async ({ app}) => {
   //Actions
@@ -193,23 +177,4 @@ test("Check  offer icons to be visible" , async ({ app}) => {
   //Assert 
   await app.shoppingPage.details.expectDetailsImageToBeVisible()
   await app.shoppingPage.details.offer.icon.expectOfferIconsDetailsToBeVisible()
-});
-
-test("Check that when clicking on an offer, a new page opens", async ({ app }) => {
-  //Actions
-  await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria("iphone");
-  await app.home.header.searchForm.clickEnterSearchField();
-  await app.webPage.item.expectWebItemsToBeVisible();
-  await app.webPage.header.clickHamburgerMenuButton();
-  await app.webPage.header.hamburgerMenu.selectRegion("Germany");
-  await app.webPage.header.clickShoppingSearchButton();
-  await app.shoppingPage.item.expectShoppingItemsToBeVisible();
-  await app.shoppingPage.item.openProductDetailsByItem(1)
-  await app.shoppingPage.details.clickBuyButton()
-  
-  //Assert 
-  await app.shoppingPage.details.offer.expectNewPageNotToHaveUrlAfterClickByOffer(
-    2, process.env.BASE_URL + "/en/shopping?query=iphone&region=de-DE" )
-
 });

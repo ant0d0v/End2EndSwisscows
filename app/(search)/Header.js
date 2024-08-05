@@ -26,7 +26,7 @@ export default class Header extends BaseComponent {
     this.newsSearchButton = this.page.getByRole("link", {name: "News", exact: true,});
     this.shoppingSearchButton = this.page.getByRole("link", {name: "Shopping",exact: true,});
     this.hamburgerMenuButton = this.page.getByRole('banner').getByRole('button').nth(1)
-    this.filtersButton = this.page.locator('.filters-button')
+    this.filtersButton = this.page.getByRole("button", { name: "Filters" });
     this.root = this.page.locator(".header");
   }
 

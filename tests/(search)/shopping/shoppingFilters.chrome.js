@@ -163,7 +163,7 @@ test("Check less and more buttons", async ({ app }) => {
   await app.shoppingPage.filters.clickMore();
 
   // Assert
-  await app.shoppingPage.filters.expectMarkenFilterToHaveCountItems(101);
+  await app.shoppingPage.filters.expectMarkenFilterToHaveCountItems(100);
   await app.shoppingPage.filters.clickLess();
   await app.shoppingPage.filters.expectMarkenFilterToHaveCountItems(11);
 });

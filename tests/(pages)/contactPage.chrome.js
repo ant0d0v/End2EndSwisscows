@@ -1,4 +1,5 @@
 import { test } from "../../utils/fixtures.js";
+import { faker } from "@faker-js/faker";
 import testData from "../../data/pages/contact/testData.json";
 import constantsData from "../../data/project-constants/testData.json";
 
@@ -39,7 +40,7 @@ test.skip(`Check border color of name, email, message when sending form with nam
 }) => {
   //Actions
   await app.contactPage.open();
-  await app.contactPage.inputYouNameField("Test");
+  await app.contactPage.inputYouNameField(faker.person.fullName());
   await app.contactPage.clickSendButton();
 
   //Assert
@@ -108,9 +109,9 @@ test.skip(`Check border color of name, email, message when sending form with mes
 test(`Check send message using all required fields`, async ({ app }) => {
   //Actions
   await app.contactPage.open();
-  await app.contactPage.inputYouNameField("Test");
-  await app.contactPage.inputEmailField("test@gmail.com");
-  await app.contactPage.inputMessageField("My test");
+  await app.contactPage.inputYouNameField(faker.person.fullName());
+  await app.contactPage.inputEmailField(faker.internet.exampleEmail());
+  await app.contactPage.inputMessageField(faker.word.words({ count: { min: 5, max: 10 }}));
   await app.contactPage.checkAgreeCheckbox();
   await app.contactPage.clickSendButton();
 
@@ -125,9 +126,9 @@ test(`Check send message using all required fields`, async ({ app }) => {
 test(`Check "back to search" button `, async ({ app }) => {
   //Actions
   await app.contactPage.open();
-  await app.contactPage.inputYouNameField("Test");
-  await app.contactPage.inputEmailField("test@gmail.com");
-  await app.contactPage.inputMessageField("My test");
+  await app.contactPage.inputYouNameField(faker.person.fullName());
+  await app.contactPage.inputEmailField(faker.internet.exampleEmail());
+  await app.contactPage.inputMessageField(faker.word.words({ count: { min: 5, max: 10 }}));
   await app.contactPage.checkAgreeCheckbox();
   await app.contactPage.clickSendButton();
   await app.contactPage.clickBackToSearchButton();
@@ -142,9 +143,9 @@ test(`Check the tooltip when sending a message without the "Agree" checkbox`, as
 }) => {
   //Actions
   await app.contactPage.open();
-  await app.contactPage.inputYouNameField("Test");
-  await app.contactPage.inputEmailField("test@gmail.com");
-  await app.contactPage.inputMessageField("My test");
+  await app.contactPage.inputYouNameField(faker.person.fullName());
+  await app.contactPage.inputEmailField(faker.internet.exampleEmail());
+  await app.contactPage.inputMessageField(faker.word.words({ count: { min: 5, max: 10 }}));
   await app.contactPage.clickSendButton();
 
   //Assert
@@ -153,12 +154,12 @@ test(`Check the tooltip when sending a message without the "Agree" checkbox`, as
   );
 });
 
-test.fixme(`Check color of "back to search" when hovering `, async ({ app }) => {
+test(`Check color of "back to search" when hovering `, async ({ app }) => {
   //Actions
   await app.contactPage.open();
-  await app.contactPage.inputYouNameField("Test");
-  await app.contactPage.inputEmailField("test@gmail.com");
-  await app.contactPage.inputMessageField("My test");
+  await app.contactPage.inputYouNameField(faker.person.fullName());
+  await app.contactPage.inputEmailField(faker.internet.exampleEmail());
+  await app.contactPage.inputMessageField(faker.word.words({ count: { min: 5, max: 10 }}));
   await app.contactPage.checkAgreeCheckbox();
   await app.contactPage.clickSendButton();
 
@@ -210,9 +211,9 @@ test.skip(`Check error when sending message with 400 status code `, async ({
   //Actions
   await app.contactPage.open();
   await app.contactRoute.mockResponseStatusCode(400);
-  await app.contactPage.inputYouNameField("dada");
-  await app.contactPage.inputEmailField("dasddat@gmail.com");
-  await app.contactPage.inputMessageField("dsadasdsad");
+  await app.contactPage.inputYouNameField(faker.person.fullName());
+  await app.contactPage.inputEmailField(faker.internet.exampleEmail());
+  await app.contactPage.inputMessageField(faker.word.words({ count: { min: 5, max: 10 }}));
   await app.contactPage.checkAgreeCheckbox();
   await app.contactPage.clickSendButton();
 

@@ -4,7 +4,7 @@ export default class Icon extends BaseComponent {
     super(page);
     //Locators
 
-    this.paymentMethods = this.page.locator(".item--product .payment-methods .icon")
+    this.paymentMethods = this.page.locator(".item.product .payment-methods .icon")
     this.paymentMethodsInProductDetails = this.page.locator(".section.payment-methods .icon")
     this.offerIconInProductDetails = this.page.locator(".item--offer img")
   }

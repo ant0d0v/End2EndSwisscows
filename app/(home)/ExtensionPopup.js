@@ -4,8 +4,13 @@ export default class ExtensionPopup extends BaseComponent {
   constructor(page) {
     super(page);
     // Locators
-    this.extensionPopup = this.page.getByRole("link", { name: "Stay with us and set",});
-    this.closeButtonInExtensionPopup = this.page.locator("div").filter({ hasText: "Install Swisscows" }).getByRole("button");
+    this.popup = this.page.getByRole("link", {
+      name: "Stay with us and set",
+    });
+    this.closeButtonInExtensionPopup = this.page
+      .locator("div")
+      .filter({ hasText: "Install Swisscows" })
+      .getByRole("button");
   }
   //Actions
   clickCloseButtonInExtensionPopup = async () => {
@@ -17,10 +22,14 @@ export default class ExtensionPopup extends BaseComponent {
   };
 
   // Verify
-  expectExtensionPopupIsDisplayed = async () => {
-    await this.expectElementToBeVisible(this.extensionPopup);
+  expectToBeOpenedPageAfterClickPopup = async (expectedUrl) => {
+    await this.expectToBeOpenedNewPageAfterClick(this.popup, expectedUrl);
   };
-  expectTextExtensionPopup = async (text) => {
-    this.expectElementToHaveText(this.extensionPopup, text);
+
+  expectPopupToBeVisible = async () => {
+    await this.expectElementToBeVisible(this.popup);
+  };
+  expectPopupToHaveText = async (text) => {
+    this.expectElementToHaveText(this.popup, text);
   };
 }

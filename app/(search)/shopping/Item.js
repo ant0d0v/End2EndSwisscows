@@ -7,7 +7,7 @@ export default class Item extends BaseComponent {
     super(page);
     this.icon = new Icon(page)
     //Locators
-   this.root = this.page.locator(".item--product");
+   this.root = this.page.locator(".item.product");
    this.itemName = this.root.locator(".title")
    this.itemDescription = this.root.locator(".description")
    this.itemPricing = this.root.locator(".price b")
@@ -49,7 +49,7 @@ export default class Item extends BaseComponent {
       await this.expectTextsToContains(this.itemBrand, expectedBrand)
   }
   expectShoppingItemsToBeVisible = async () => {
-    await this.page.waitForSelector("article.item--product h2",{ state: 'visible' })
+    await this.page.waitForSelector("article.item.product .title",{ state: 'visible' })
     await this.expectAreElementsInListDisplayed(this.itemName)
   };
   expectDescriptionItemsNotToBeEmpty = async () => {

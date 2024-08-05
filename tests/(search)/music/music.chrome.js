@@ -1,9 +1,10 @@
 import { test, deletionIds } from "../../../utils/fixtures.js";
+import { faker } from "@faker-js/faker";
 const firstTrack = 1;
 const firstPlaylist = 1
 const secondPlaylist = 2;
 
-test.fixme("Check 202 No Results Found error page ", async ({ app }, testInfo) => {
+test("Check 204 No Results Found error page ", async ({ app }, testInfo) => {
   //Actions
   await app.home.open();
   await app.home.header.searchForm.inputSearchCriteria("@#@$%^$^dasdsad1231");
@@ -11,21 +12,21 @@ test.fixme("Check 202 No Results Found error page ", async ({ app }, testInfo) =
   await app.musicPage.header.clickMusicSearchButton();
 
   //Assert
-  await app.musicPage.error.takeSnapshot(testInfo);
+  await app.musicPage.error.takeSnapshot(testInfo, 204);
 });
 
-test.fixme("Check request is blocked 450 error page ", async ({ app }, testInfo) => {
+test("Check request is blocked 450 error page ", async ({ app }, testInfo) => {
   //Actions
   await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria("porn");
+  await app.home.header.searchForm.inputSearchCriteria("porno");
   await app.home.header.searchForm.clickEnterSearchField();
   await app.musicPage.header.clickMusicSearchButton();
 
   //Assert
-  await app.musicPage.error.takeSnapshot(testInfo);
+  await app.musicPage.error.takeSnapshot(testInfo,450);
 });
 
-test.fixme("Check 500 unknown Error Page  ", async ({ app }, testInfo) => {
+test("Check 500 unknown Error Page  ", async ({ app }, testInfo) => {
   //Actions
   await app.home.open();
   await app.route.mockResponseStatusCode("/audio/search", 500);
@@ -34,10 +35,10 @@ test.fixme("Check 500 unknown Error Page  ", async ({ app }, testInfo) => {
   await app.musicPage.header.clickMusicSearchButton();
 
   //Assert
-  await app.musicPage.error.takeSnapshot(testInfo);
+  await app.musicPage.error.takeSnapshot(testInfo,500);
 });
 
-test.fixme("Check 429 Too many requests", async ({ app }, testInfo) => {
+test("Check 429 Too many requests", async ({ app }, testInfo) => {
   //Actions
   await app.home.open();
   await app.route.mockResponseStatusCode("/audio/search", 429);
@@ -46,14 +47,14 @@ test.fixme("Check 429 Too many requests", async ({ app }, testInfo) => {
   await app.musicPage.header.clickMusicSearchButton();
 
   //Assert
-  await app.musicPage.error.takeSnapshot(testInfo);
+  await app.musicPage.error.takeSnapshot(testInfo,429);
 });
 test.describe("favorite function", () => {
   test.use({ mode: "default" });
   test("Check add track in the favorite", async ({ app }) => {
     //Actions
     await app.home.open();
-    await app.home.header.searchForm.inputSearchCriteria("ACD");
+    await app.home.header.searchForm.inputSearchCriteria(faker.music.songName());
     await app.home.header.searchForm.clickEnterSearchField();
     await app.musicPage.header.clickMusicSearchButton();
     await app.musicPage.track.expectMusicTracksToBeVisible();
@@ -71,7 +72,7 @@ test.describe("favorite function", () => {
   test("Check delete track from the favorite", async ({ app }) => {
     //Actions
     await app.home.open();
-    await app.home.header.searchForm.inputSearchCriteria("Bruno");
+    await app.home.header.searchForm.inputSearchCriteria(faker.music.songName());
     await app.home.header.searchForm.clickEnterSearchField();
     await app.musicPage.header.clickMusicSearchButton();
     await app.musicPage.track.expectMusicTracksToBeVisible();
@@ -88,9 +89,7 @@ test.describe("favorite function", () => {
   test("Check add track in the favorite from player", async ({ app }) => {
     //Actions
     await app.home.open();
-    await app.home.header.searchForm.inputSearchCriteria(
-      "Teri Baaton Mein Aisa Uljha Jiya"
-    );
+    await app.home.header.searchForm.inputSearchCriteria(faker.music.songName());
     await app.home.header.searchForm.clickEnterSearchField();
     await app.musicPage.header.clickMusicSearchButton();
     await app.musicPage.track.expectMusicTracksToBeVisible();
@@ -108,7 +107,7 @@ test.describe("favorite function", () => {
   test("Check delete track from the favorite using player", async ({ app }) => {
     //Actions
     await app.home.open();
-    await app.home.header.searchForm.inputSearchCriteria("both");
+    await app.home.header.searchForm.inputSearchCriteria(faker.music.songName());
     await app.home.header.searchForm.clickEnterSearchField();
     await app.musicPage.header.clickMusicSearchButton();
     await app.musicPage.track.expectMusicTracksToBeVisible();
@@ -126,7 +125,7 @@ test.describe("favorite function", () => {
 test("Check play track on music page", async ({ app }) => {
   //Actions
   await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria("Skofka");
+  await app.home.header.searchForm.inputSearchCriteria(faker.music.songName());
   await app.home.header.searchForm.clickEnterSearchField();
   await app.musicPage.header.clickMusicSearchButton();
   await app.musicPage.track.expectMusicTracksToBeVisible();
@@ -141,7 +140,7 @@ test("Check play track on music page", async ({ app }) => {
 test("Check pause track on music page", async ({ app }) => {
   //Actions
   await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria("Best");
+  await app.home.header.searchForm.inputSearchCriteria(faker.music.songName());
   await app.home.header.searchForm.clickEnterSearchField();
   await app.musicPage.header.clickMusicSearchButton();
   await app.musicPage.track.expectMusicTracksToBeVisible();
@@ -156,7 +155,7 @@ test("Check pause track on music page", async ({ app }) => {
 test("Check next button of track on the main page", async ({ app }) => {
   //Actions
   await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria("hit 2024");
+  await app.home.header.searchForm.inputSearchCriteria(faker.music.songName());
   await app.home.header.searchForm.clickEnterSearchField();
   await app.musicPage.header.clickMusicSearchButton();
   await app.musicPage.track.expectMusicTracksToBeVisible();
@@ -173,7 +172,7 @@ test("Check next button of track on the main page", async ({ app }) => {
 test("Check previous button of track on the main page", async ({ app }) => {
   //Actions
   await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria("Eminem");
+  await app.home.header.searchForm.inputSearchCriteria(faker.music.songName());
   await app.home.header.searchForm.clickEnterSearchField();
   await app.musicPage.header.clickMusicSearchButton();
   await app.musicPage.track.expectMusicTracksToBeVisible();
@@ -192,7 +191,7 @@ test("Check previous button of track on the main page", async ({ app }) => {
 test("Check set time in track", async ({ app }) => {
   //Actions
   await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria("summer for...");
+  await app.home.header.searchForm.inputSearchCriteria(faker.music.songName());
   await app.home.header.searchForm.clickEnterSearchField();
   await app.musicPage.header.clickMusicSearchButton();
   await app.musicPage.track.expectMusicTracksToBeVisible();
@@ -208,7 +207,7 @@ test("Check set time in track", async ({ app }) => {
 test("Check set time in the player", async ({ app }) => {
   //Actions
   await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria("Moose");
+  await app.home.header.searchForm.inputSearchCriteria(faker.music.songName());
   await app.home.header.searchForm.clickEnterSearchField();
   await app.musicPage.header.clickMusicSearchButton();
   await app.musicPage.track.expectMusicTracksToBeVisible();
@@ -224,7 +223,7 @@ test("Check set time in the player", async ({ app }) => {
 test("Check pause track in player on music page", async ({ app }) => {
   //Actions
   await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria("8");
+  await app.home.header.searchForm.inputSearchCriteria(faker.music.songName());
   await app.home.header.searchForm.clickEnterSearchField();
   await app.musicPage.header.clickMusicSearchButton();
   await app.musicPage.track.expectMusicTracksToBeVisible();
@@ -239,7 +238,7 @@ test("Check pause track in player on music page", async ({ app }) => {
 test("Check play track in player on music page", async ({ app }) => {
   //Actions
   await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria("Lady Gaga");
+  await app.home.header.searchForm.inputSearchCriteria(faker.music.songName());
   await app.home.header.searchForm.clickEnterSearchField();
   await app.musicPage.header.clickMusicSearchButton();
   await app.musicPage.track.expectMusicTracksToBeVisible();
@@ -255,7 +254,7 @@ test("Check play track in player on music page", async ({ app }) => {
 test("Check shuffle function in the player", async ({ app }) => {
   //Actions
   await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria("HARD KISS");
+  await app.home.header.searchForm.inputSearchCriteria(faker.music.songName());
   await app.home.header.searchForm.clickEnterSearchField();
   await app.musicPage.header.clickMusicSearchButton();
   await app.musicPage.track.expectMusicTracksToBeVisible();
@@ -272,7 +271,7 @@ test("Check shuffle function in the player", async ({ app }) => {
 test("Check infinity scroll to next page", async ({ app }) => {
   //Actions
   await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria("Top 2024");
+  await app.home.header.searchForm.inputSearchCriteria(faker.music.genre());
   await app.home.header.searchForm.clickEnterSearchField();
   await app.musicPage.header.clickMusicSearchButton();
   await app.musicPage.track.expectMusicTracksToBeVisible();
@@ -351,7 +350,7 @@ test("Check the width and visibility images of playlist", async ({ app }) => {
 test("Check the width and visibility images of tracks", async ({ app }) => {
   //Actions
   await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria("billie jean");
+  await app.home.header.searchForm.inputSearchCriteria(faker.music.songName());
   await app.home.header.searchForm.clickEnterSearchField();
   await app.musicPage.header.clickMusicSearchButton();
   await app.musicPage.track.expectMusicTracksToBeVisible();
@@ -367,7 +366,7 @@ test("Check the width and visibility images of tracks", async ({ app }) => {
 test("Check width and visibility image in player", async ({ app }) => {
   //Actions
   await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria("billie jean");
+  await app.home.header.searchForm.inputSearchCriteria(faker.music.songName());
   await app.home.header.searchForm.clickEnterSearchField();
   await app.musicPage.header.clickMusicSearchButton();
   await app.musicPage.track.expectMusicTracksToBeVisible();
@@ -383,7 +382,7 @@ test("Check width and visibility image in player", async ({ app }) => {
 test("Checking the Next button in the slide", async ({ app }) => {
   //Actions
   await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria("billie jean");
+  await app.home.header.searchForm.inputSearchCriteria(faker.music.genre());
   await app.home.header.searchForm.clickEnterSearchField();
   await app.musicPage.header.clickMusicSearchButton();
   await app.musicPage.track.expectMusicTracksToBeVisible();
@@ -398,7 +397,7 @@ test("Checking the Next button in the slide", async ({ app }) => {
 test("Checking the Prev button in the slide", async ({ app }) => {
   //Actions
   await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria("billie jean");
+  await app.home.header.searchForm.inputSearchCriteria(faker.music.genre());
   await app.home.header.searchForm.clickEnterSearchField();
   await app.musicPage.header.clickMusicSearchButton();
   await app.musicPage.track.expectMusicTracksToBeVisible();
@@ -412,12 +411,12 @@ test("Checking the Prev button in the slide", async ({ app }) => {
   await app.musicPage.playlist.expectPrevButtonIsDisabled();
 });
 
-test("Check design of widget component on music page", async ({
+test("Check design of widget-header component on music page", async ({
   app,
 }, testInfo) => {
   //Actions
   await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria("best 2024");
+  await app.home.header.searchForm.inputSearchCriteria("best tracks");
   await app.home.header.searchForm.clickEnterSearchField();
   await app.musicPage.header.clickMusicSearchButton();
   await app.musicPage.track.expectMusicTracksToBeVisible();
@@ -431,7 +430,7 @@ test("Check design of button when track is not playing  on music page", async ({
 }, testInfo) => {
   //Actions
   await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria("best 2024");
+  await app.home.header.searchForm.inputSearchCriteria(faker.music.songName());
   await app.home.header.searchForm.clickEnterSearchField();
   await app.musicPage.header.clickMusicSearchButton();
   await app.musicPage.track.expectMusicTracksToBeVisible();
@@ -445,7 +444,7 @@ test("Check design of button when track is playing  on music page", async ({
 }, testInfo) => {
   //Actions
   await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria("best 2024");
+  await app.home.header.searchForm.inputSearchCriteria(faker.music.songName());
   await app.home.header.searchForm.clickEnterSearchField();
   await app.musicPage.header.clickMusicSearchButton();
   await app.musicPage.track.expectMusicTracksToBeVisible();
@@ -460,7 +459,7 @@ test("Check design of player component  on music page", async ({
 }, testInfo) => {
   //Actions
   await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria("best 2024");
+  await app.home.header.searchForm.inputSearchCriteria(faker.music.songName());
   await app.home.header.searchForm.clickEnterSearchField();
   await app.musicPage.header.clickMusicSearchButton();
   await app.musicPage.track.expectMusicTracksToBeVisible();

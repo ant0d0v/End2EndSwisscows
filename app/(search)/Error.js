@@ -6,7 +6,7 @@ export default class Error extends BaseComponent {
     //Locators
     this.contentErrorNoResults = this.page.locator('div').filter({ hasText: 'No results found for' }).nth(1)
     this.contentErrorPage = this.page.locator("div.error div.content")
-    this.errorImage = this.page.getByRole('main').locator('img').first()
+    this.errorImage = (error) => this.page.getByRole("heading", { name: error });
     this.errorImageNoResult = this.page.getByRole('main').getByRole('img').first()
     this.root = this.page.getByRole("main")
   }
@@ -24,10 +24,10 @@ export default class Error extends BaseComponent {
   expectErrorImageToBeVisible = async () => {
     await this.expectElementToBeVisible(this.errorImage)
   }
-  takeSnapshot = async (testInfo) => {
+  takeSnapshot = async (testInfo,error) => {
     await this.expectPageElementToHaveScreenshot(
       this.root,
-      this.errorImage,
+      this.errorImage(error),
       testInfo
     );
   };

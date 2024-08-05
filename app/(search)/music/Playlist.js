@@ -6,6 +6,7 @@ export default class Playlist extends BaseComponent {
     //Locators
     this.root = this.page.locator(".audio-playlist");
     this.widget = this.page.locator(".widget");
+    this.widgetHeader = this.page.locator(".widget-header");
     this.trackCount = (index) =>this.page.locator(
           `a[href*="/en/music/playlist?query="] .duration span:first-child`
         )
@@ -43,7 +44,7 @@ export default class Playlist extends BaseComponent {
   }
   takeSnapshot = async (testInfo) => {
     await this.expectPageElementToHaveScreenshotWithMask(
-      this.widget,
+      this.widgetHeader,
       this.allImages,
       this.root,
       testInfo

@@ -13,7 +13,7 @@ export default class Filters extends BaseComponent {
     this.lastFilter = this.page.getByRole('heading', { name: 'Bildwiederholfrequenz' })
     this.more = this.page.getByText('More', { exact: true })
     this.less = this.page.getByText('Less', { exact: true })
-    this.markenFilterItems = this.page.locator(".filter:nth-child(2) .filter-options .filter-item")
+    this.markenFilterItems = this.page.locator(".filter:nth-child(2) .options .item")
   }
   //Actions
   selectMarken = async () => {
