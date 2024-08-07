@@ -108,8 +108,8 @@ test.describe("Footer of search pages", () => {
     }) => {
       //Actions
       await app.home.open();
-      await app.home.header.searchForm.inputSearchCriteria("glory Ukraine");
-      await app.home.header.searchForm.clickEnterSearchField();
+      await app.home.header.searchBar.inputSearchCriteria("glory Ukraine");
+      await app.home.header.searchBar.clickEnterSearchField();
       await app.webPage.item.expectWebItemsToBeVisible();
 
       //Assert
@@ -133,8 +133,8 @@ test.describe("Footer of search pages", () => {
     }) => {
       //Actions
       await app.home.open();
-      await app.home.header.searchForm.inputSearchCriteria("1234567");
-      await app.home.header.searchForm.clickEnterSearchField();
+      await app.home.header.searchBar.inputSearchCriteria("1234567");
+      await app.home.header.searchBar.clickEnterSearchField();
       await app.webPage.item.expectWebItemsToBeVisible();
 
       //Assert
@@ -150,8 +150,8 @@ test.describe("Footer of search pages", () => {
   }) => {
     //Actions
     await app.home.open();
-    await app.home.header.searchForm.inputSearchCriteria("1234567");
-    await app.home.header.searchForm.clickEnterSearchField();
+    await app.home.header.searchBar.inputSearchCriteria("1234567");
+    await app.home.header.searchBar.clickEnterSearchField();
     await app.webPage.item.expectWebItemsToBeVisible();
 
     //Assert
@@ -159,11 +159,13 @@ test.describe("Footer of search pages", () => {
   });
 });
 
-test("Check design of footer component the search pages", async ({ app }, testInfo) => {
+test("Check design of footer component the search pages", async ({
+  app,
+}, testInfo) => {
   //Actions
   await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria("A");
-  await app.home.header.searchForm.clickEnterSearchField();
+  await app.home.header.searchBar.inputSearchCriteria("A");
+  await app.home.header.searchBar.clickEnterSearchField();
   await app.webPage.item.expectWebItemsToBeVisible();
 
   //Assert

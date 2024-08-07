@@ -4,9 +4,9 @@ import testData from "../../../data/error/testData.json";
 test("Check 202 No Results Found error page ", async ({ app }) => {
   //Actions
   await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria("@#@$%^$^dasdsad1231");
-  await app.home.header.searchForm.clickEnterSearchField();
-  await app.videoPage.header.clickVideoSearchButton();
+  await app.home.header.searchBar.inputSearchCriteria("@#@$%^$^dasdsad1231");
+  await app.home.header.searchBar.clickEnterSearchField();
+  await app.videoPage.header.navigation.clickVideoTab();
 
   //Assert
   await app.videoPage.error.expectNotResultErrorToHaveText(
@@ -19,9 +19,9 @@ test("Check 202 No Results Found error page ", async ({ app }) => {
 test("Check request is blocked 450 error page ", async ({ app }) => {
   //Actions
   await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria("porn");
-  await app.home.header.searchForm.clickEnterSearchField();
-  await app.videoPage.header.clickVideoSearchButton();
+  await app.home.header.searchBar.inputSearchCriteria("porn");
+  await app.home.header.searchBar.clickEnterSearchField();
+  await app.videoPage.header.navigation.clickVideoTab();
 
   //Assert
   await app.videoPage.error.expectNotResultErrorToHaveText(
@@ -35,9 +35,9 @@ test("Check 501 unknown Error Page  ", async ({ app }) => {
   //Actions
   await app.home.open();
   await app.route.mockResponseStatusCode("/v2/videos", 500);
-  await app.home.header.searchForm.inputSearchCriteria("food");
-  await app.home.header.searchForm.clickEnterSearchField();
-  await app.videoPage.header.clickVideoSearchButton();
+  await app.home.header.searchBar.inputSearchCriteria("food");
+  await app.home.header.searchBar.clickEnterSearchField();
+  await app.videoPage.header.navigation.clickVideoTab();
 
   //Assert
   await app.videoPage.error.expectContentToHaveText(
@@ -51,9 +51,9 @@ test("Check 429 Too many requests", async ({ app }) => {
   //Actions
   await app.home.open();
   await app.route.mockResponseStatusCode("/v2/videos", 429);
-  await app.home.header.searchForm.inputSearchCriteria("food");
-  await app.home.header.searchForm.clickEnterSearchField();
-  await app.videoPage.header.clickVideoSearchButton();
+  await app.home.header.searchBar.inputSearchCriteria("food");
+  await app.home.header.searchBar.clickEnterSearchField();
+  await app.videoPage.header.navigation.clickVideoTab();
 
   //Assert
   await app.videoPage.error.expectContentToHaveText(
@@ -66,9 +66,9 @@ test("Check 429 Too many requests", async ({ app }) => {
 test("Check that video results equals search criteria", async ({ app }) => {
   //Actions
   await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria("Iphone");
-  await app.home.header.searchForm.clickEnterSearchField();
-  await app.videoPage.header.clickVideoSearchButton();
+  await app.home.header.searchBar.inputSearchCriteria("Iphone");
+  await app.home.header.searchBar.clickEnterSearchField();
+  await app.videoPage.header.navigation.clickVideoTab();
   await app.videoPage.item.expectVideoItemsToBeVisible();
 
   //Assert
@@ -88,9 +88,9 @@ test("Check that video results equals search criteria", async ({ app }) => {
 test("Check infinity scroll to items-pane aside", async ({ app }) => {
   //Actions
   await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria("football");
-  await app.home.header.searchForm.clickEnterSearchField();
-  await app.videoPage.header.clickVideoSearchButton();
+  await app.home.header.searchBar.inputSearchCriteria("football");
+  await app.home.header.searchBar.clickEnterSearchField();
+  await app.videoPage.header.navigation.clickVideoTab();
   await app.videoPage.item.expectVideoItemsToBeVisible();
   await app.videoPage.item.clickVideoNumber(1);
   await app.videoPage.item.scrollByVisibleVideoNumber(50);
@@ -105,9 +105,9 @@ test("Check infinity scroll to items-pane aside", async ({ app }) => {
 test("Check infinity scroll in video results", async ({ app }) => {
   //Actions
   await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria("video");
-  await app.home.header.searchForm.clickEnterSearchField();
-  await app.videoPage.header.clickVideoSearchButton();
+  await app.home.header.searchBar.inputSearchCriteria("video");
+  await app.home.header.searchBar.clickEnterSearchField();
+  await app.videoPage.header.navigation.clickVideoTab();
   await app.videoPage.item.expectVideoItemsToBeVisible();
   await app.videoPage.item.scrollWithMouseWheelToVideoNumber(90);
 
@@ -121,9 +121,9 @@ test("Check infinity scroll in video results", async ({ app }) => {
 test("Check the width and visibility images of items", async ({ app }) => {
   //Actions
   await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria("football");
-  await app.home.header.searchForm.clickEnterSearchField();
-  await app.videoPage.header.clickVideoSearchButton();
+  await app.home.header.searchBar.inputSearchCriteria("football");
+  await app.home.header.searchBar.clickEnterSearchField();
+  await app.videoPage.header.navigation.clickVideoTab();
   await app.videoPage.item.expectVideoItemsToBeVisible();
 
   //Assert
@@ -139,9 +139,9 @@ test("Check the width and visibility images of items in items-pane aside", async
 }) => {
   //Actions
   await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria("football");
-  await app.home.header.searchForm.clickEnterSearchField();
-  await app.videoPage.header.clickVideoSearchButton();
+  await app.home.header.searchBar.inputSearchCriteria("football");
+  await app.home.header.searchBar.clickEnterSearchField();
+  await app.videoPage.header.navigation.clickVideoTab();
   await app.videoPage.item.expectVideoItemsToBeVisible();
   await app.videoPage.item.clickVideoNumber(1);
 
@@ -156,9 +156,9 @@ test("Check the width and visibility images of items in items-pane aside", async
 test("Check play video in player", async ({ app }) => {
   //Actions
   await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria("Skofka");
-  await app.home.header.searchForm.clickEnterSearchField();
-  await app.videoPage.header.clickVideoSearchButton();
+  await app.home.header.searchBar.inputSearchCriteria("Skofka");
+  await app.home.header.searchBar.clickEnterSearchField();
+  await app.videoPage.header.navigation.clickVideoTab();
   await app.videoPage.item.expectVideoItemsToBeVisible();
   await app.videoPage.item.clickVideoNumber(1);
   await app.videoPage.itemDetails.player.clickOkButton();
@@ -170,9 +170,9 @@ test("Check play video in player", async ({ app }) => {
 test("Check description and title of video ", async ({ app }) => {
   //Actions
   await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria("Skofka");
-  await app.home.header.searchForm.clickEnterSearchField();
-  await app.videoPage.header.clickVideoSearchButton();
+  await app.home.header.searchBar.inputSearchCriteria("Skofka");
+  await app.home.header.searchBar.clickEnterSearchField();
+  await app.videoPage.header.navigation.clickVideoTab();
   await app.videoPage.item.expectVideoItemsToBeVisible();
   await app.videoPage.item.clickVideoNumber(1);
 
@@ -190,9 +190,9 @@ test("Check description and title of video ", async ({ app }) => {
 test("Check cancel button of video ", async ({ app }) => {
   //Actions
   await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria("Skofka");
-  await app.home.header.searchForm.clickEnterSearchField();
-  await app.videoPage.header.clickVideoSearchButton();
+  await app.home.header.searchBar.inputSearchCriteria("Skofka");
+  await app.home.header.searchBar.clickEnterSearchField();
+  await app.videoPage.header.navigation.clickVideoTab();
   await app.videoPage.item.expectVideoItemsToBeVisible();
   await app.videoPage.item.clickVideoNumber(1);
   await app.videoPage.itemDetails.player.clickCancelButton();
@@ -210,9 +210,9 @@ test("Check cancel button of video ", async ({ app }) => {
 test("Check checkbox `Don't remind me again ` ", async ({ app }) => {
   //Actions
   await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria("Skofka");
-  await app.home.header.searchForm.clickEnterSearchField();
-  await app.videoPage.header.clickVideoSearchButton();
+  await app.home.header.searchBar.inputSearchCriteria("Skofka");
+  await app.home.header.searchBar.clickEnterSearchField();
+  await app.videoPage.header.navigation.clickVideoTab();
   await app.videoPage.item.expectVideoItemsToBeVisible();
   await app.videoPage.item.clickVideoNumber(1);
   await app.videoPage.itemDetails.player.selectCheckbox();
@@ -232,9 +232,9 @@ test("Check video play if don't select checkbox `Don't remind me again ` ", asyn
 }) => {
   //Actions
   await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria("Skofka");
-  await app.home.header.searchForm.clickEnterSearchField();
-  await app.videoPage.header.clickVideoSearchButton();
+  await app.home.header.searchBar.inputSearchCriteria("Skofka");
+  await app.home.header.searchBar.clickEnterSearchField();
+  await app.videoPage.header.navigation.clickVideoTab();
   await app.videoPage.item.expectVideoItemsToBeVisible();
   await app.videoPage.item.clickVideoNumber(1);
   await app.videoPage.itemDetails.player.clickOkButton();
@@ -250,9 +250,9 @@ test("Check video play if don't select checkbox `Don't remind me again ` ", asyn
 test("Check that image of proxy cdn server", async ({ app }) => {
   //Actions
   await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria("football");
-  await app.home.header.searchForm.clickEnterSearchField();
-  await app.videoPage.header.clickVideoSearchButton();
+  await app.home.header.searchBar.inputSearchCriteria("football");
+  await app.home.header.searchBar.clickEnterSearchField();
+  await app.videoPage.header.navigation.clickVideoTab();
   await app.videoPage.item.expectVideoItemsToBeVisible();
 
   //Assert
@@ -266,9 +266,9 @@ test("Check that image of proxy cdn server", async ({ app }) => {
 test("Check regional search", async ({ app }) => {
   //Actions
   await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria("Ronaldo");
-  await app.home.header.searchForm.clickEnterSearchField();
-  await app.videoPage.header.clickVideoSearchButton();
+  await app.home.header.searchBar.inputSearchCriteria("Ronaldo");
+  await app.home.header.searchBar.clickEnterSearchField();
+  await app.videoPage.header.navigation.clickVideoTab();
   await app.videoPage.item.expectVideoItemsToBeVisible();
   await app.videoPage.header.clickHamburgerMenuButton();
   await app.videoPage.header.hamburgerMenu.selectRegion("Germany");

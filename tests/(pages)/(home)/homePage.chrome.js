@@ -6,12 +6,12 @@ test("Check that suggest is displayed", async ({ app }) => {
   await app.home.open();
   await app.home.reloadPage();
   await app.home.waitUntilPageIsFullyLoaded();
-  await app.home.header.searchForm.inputSearchCriteria("ivanka");
+  await app.home.header.searchBar.inputSearchCriteria("ivanka");
 
   //Assert
-  await app.home.header.searchForm.expectSuggestIsDisplayed();
-  await app.home.header.searchForm.expectSuggestToHaveCount(5);
-  await app.home.header.searchForm.expectSuggestToContains("ivanka");
+  await app.home.header.searchBar.expectSuggestIsDisplayed();
+  await app.home.header.searchBar.expectSuggestToHaveCount(5);
+  await app.home.header.searchBar.expectSuggestToContains("ivanka");
 });
 
 test("Check that all questions were opened on the home page ", async ({
@@ -65,7 +65,7 @@ test("Check that popup google install Is Displayed", async ({ app }) => {
   //Actions
   await app.home.open();
 
-  //Assert 
+  //Assert
   await app.home.extensionPopup.expectPopupToBeVisible();
   await app.home.extensionPopup.expectPopupToHaveText(expectedText);
 });
@@ -84,19 +84,19 @@ test('Check that popup "google install" redirect to the corresponding page', asy
   await app.expectNewPageToHaveTitle(context, /Swisscows/);
 });
 
-test.fixme('Check that the "Install Google Block" button redirect to corresponding URL.', async ({
-  app,
-  context,
-}) => {
-  //Actions
-  await app.home.open();
+test.fixme(
+  'Check that the "Install Google Block" button redirect to corresponding URL.',
+  async ({ app, context }) => {
+    //Actions
+    await app.home.open();
 
-  //Assert
-  await app.home.extensionBlock.expectToBeOpenedPageAfterClickInstall(
-    main.url.extensionGoogleInstall
-  );
-  await app.expectNewPageToHaveTitle(context, /Swisscows/);
-});
+    //Assert
+    await app.home.extensionBlock.expectToBeOpenedPageAfterClickInstall(
+      main.url.extensionGoogleInstall
+    );
+    await app.expectNewPageToHaveTitle(context, /Swisscows/);
+  }
+);
 
 test("Check the texts of questions on the home page.", async ({ app }) => {
   //Actions
@@ -106,19 +106,20 @@ test("Check the texts of questions on the home page.", async ({ app }) => {
   await app.home.faq.expectListSizeAnswerToQuestions(6);
   await app.home.faq.expectAnswersToHaveText(main.accordion.expectedAnswer);
 });
-for (const { testID,locatorId} of main.buttons) {
-  test(`${testID} Check that button ${locatorId} to have color when hover`,
-    async ({ app }) => {
-      //Actions
-      await app.home.open();
-      await app.home.hoverButton(locatorId)
+for (const { testID, locatorId } of main.buttons) {
+  test(`${testID} Check that button ${locatorId} to have color when hover`, async ({
+    app,
+  }) => {
+    //Actions
+    await app.home.open();
+    await app.home.hoverButton(locatorId);
 
-      //Assert
-      await app.home.expectButtonToHaveColor(
-        locatorId,
-        "rgb(16, 24, 40) none repeat scroll 0% 0% / auto padding-box border-box");
-    }
-  );
+    //Assert
+    await app.home.expectButtonToHaveColor(
+      locatorId,
+      "rgb(16, 24, 40) none repeat scroll 0% 0% / auto padding-box border-box"
+    );
+  });
 }
 
 test("Check design of the home page ", async ({ app }, testInfo) => {
@@ -142,8 +143,7 @@ test("Check design dark theme of the home page ", async ({ app }, testInfo) => {
   await app.home.takeSnapshot(testInfo);
 });
 
-for (const {testID,expectedLink,locatorId,expectedTitle,
-} of main.buttons) {
+for (const { testID, expectedLink, locatorId, expectedTitle } of main.buttons) {
   test(`${testID} Check that the ${locatorId} link navigate to the corresponding page.`, async ({
     app,
     context,

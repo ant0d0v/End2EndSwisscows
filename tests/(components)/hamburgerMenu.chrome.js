@@ -6,8 +6,8 @@ test("Check display of nickname and avatar in hamburger menu", async ({
 }) => {
   //Actions
   await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria("ukraine");
-  await app.home.header.searchForm.clickEnterSearchField();
+  await app.home.header.searchBar.inputSearchCriteria("ukraine");
+  await app.home.header.searchBar.clickEnterSearchField();
   await app.webPage.header.clickHamburgerMenuButton();
 
   //Assert
@@ -20,8 +20,8 @@ test("Check display of nickname and avatar in hamburger menu", async ({
 test("Check Log Out user and display of login button", async ({ app }) => {
   //Actions
   await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria("best");
-  await app.home.header.searchForm.clickEnterSearchField();
+  await app.home.header.searchBar.inputSearchCriteria("best");
+  await app.home.header.searchBar.clickEnterSearchField();
   await app.webPage.header.clickHamburgerMenuButton();
   await app.webPage.header.hamburgerMenu.clickLogoutButton();
   await app.webPage.header.clickHamburgerMenuButton();

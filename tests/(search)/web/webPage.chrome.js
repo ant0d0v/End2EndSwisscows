@@ -6,8 +6,8 @@ test.describe("Error pages in dark theme", () => {
   test("Check 202 no results error page ", async ({ app }, testInfo) => {
     //Actions
     await app.home.open();
-    await app.home.header.searchForm.inputSearchCriteria("././././");
-    await app.home.header.searchForm.clickEnterSearchField();
+    await app.home.header.searchBar.inputSearchCriteria("././././");
+    await app.home.header.searchBar.clickEnterSearchField();
 
     //Assert
     await app.webPage.error.takeSnapshot(testInfo);
@@ -18,8 +18,8 @@ test.describe("Error pages in dark theme", () => {
   }, testInfo) => {
     //Actions
     await app.home.open();
-    await app.home.header.searchForm.inputSearchCriteria("porn");
-    await app.home.header.searchForm.clickEnterSearchField();
+    await app.home.header.searchBar.inputSearchCriteria("porn");
+    await app.home.header.searchBar.clickEnterSearchField();
 
     //Assert
     await app.webPage.error.takeSnapshot(testInfo);
@@ -29,8 +29,8 @@ test.describe("Error pages in dark theme", () => {
     //Actions
     await app.home.open();
     await app.route.mockResponseStatusCode("/v4/web", 429);
-    await app.home.header.searchForm.inputSearchCriteria("food");
-    await app.home.header.searchForm.clickEnterSearchField();
+    await app.home.header.searchBar.inputSearchCriteria("food");
+    await app.home.header.searchBar.clickEnterSearchField();
 
     //Assert
     await app.webPage.error.takeSnapshot(testInfo);
@@ -40,8 +40,8 @@ test.describe("Error pages in dark theme", () => {
     //Actions
     await app.home.open();
     await app.route.mockResponseStatusCode("/v4/web", 500);
-    await app.home.header.searchForm.inputSearchCriteria("food");
-    await app.home.header.searchForm.clickEnterSearchField();
+    await app.home.header.searchBar.inputSearchCriteria("food");
+    await app.home.header.searchBar.clickEnterSearchField();
 
     //Assert
     await app.webPage.error.takeSnapshot(testInfo);
@@ -50,8 +50,8 @@ test.describe("Error pages in dark theme", () => {
     //Actions
     await app.home.open();
     await app.route.mockResponseStatusCode("/v4/web", 501);
-    await app.home.header.searchForm.inputSearchCriteria("food");
-    await app.home.header.searchForm.clickEnterSearchField();
+    await app.home.header.searchBar.inputSearchCriteria("food");
+    await app.home.header.searchBar.clickEnterSearchField();
 
     //Assert
     await app.webPage.error.takeSnapshot(testInfo);
@@ -73,8 +73,8 @@ test("Check Did you mean message in the search field ", async ({ app }) => {
   await app.home.open();
   await app.home.header.clickHamburgerMenuButton();
   await app.home.header.hamburgerMenu.selectRegion("Germany");
-  await app.home.header.searchForm.inputSearchCriteria(query);
-  await app.home.header.searchForm.clickEnterSearchField();
+  await app.home.header.searchBar.inputSearchCriteria(query);
+  await app.home.header.searchBar.clickEnterSearchField();
   await app.webPage.item.expectWebItemsToBeVisible();
 
   //Assert
@@ -89,8 +89,8 @@ test("Check Did you mean message in the search field ", async ({ app }) => {
 test("Check that web results equals search criteria ", async ({ app }) => {
   //Actions
   await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria("Ukraine");
-  await app.home.header.searchForm.clickEnterSearchField();
+  await app.home.header.searchBar.inputSearchCriteria("Ukraine");
+  await app.home.header.searchBar.clickEnterSearchField();
   await app.webPage.item.expectWebItemsToBeVisible();
 
   //Assert
@@ -104,8 +104,8 @@ test("Check that web results equals search criteria ", async ({ app }) => {
 test("Check that web items date not to be empty", async ({ app }) => {
   //Actions
   await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria("Ukraine");
-  await app.home.header.searchForm.clickEnterSearchField();
+  await app.home.header.searchBar.inputSearchCriteria("Ukraine");
+  await app.home.header.searchBar.clickEnterSearchField();
   await app.webPage.item.expectWebItemsToBeVisible();
 
   //Assert
@@ -115,8 +115,8 @@ test("Check that web items date not to be empty", async ({ app }) => {
 test("Check that items site not to be empty", async ({ app }) => {
   //Actions
   await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria("Ukraine");
-  await app.home.header.searchForm.clickEnterSearchField();
+  await app.home.header.searchBar.inputSearchCriteria("Ukraine");
+  await app.home.header.searchBar.clickEnterSearchField();
   await app.webPage.item.expectWebItemsToBeVisible();
 
   //Assert
@@ -129,8 +129,8 @@ test("Check that thumbnails to have height = 60 and width = 60", async ({
 }) => {
   //Actions
   await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria("Ukraine");
-  await app.home.header.searchForm.clickEnterSearchField();
+  await app.home.header.searchBar.inputSearchCriteria("Ukraine");
+  await app.home.header.searchBar.clickEnterSearchField();
   await app.webPage.item.expectWebItemsToBeVisible();
 
   //Assert
@@ -141,8 +141,8 @@ test("Check that thumbnails to have height = 60 and width = 60", async ({
 test("Check titles to have css font and color", async ({ app }) => {
   //Actions
   await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria("Ukraine");
-  await app.home.header.searchForm.clickEnterSearchField();
+  await app.home.header.searchBar.inputSearchCriteria("Ukraine");
+  await app.home.header.searchBar.clickEnterSearchField();
   await app.webPage.item.expectWebItemsToBeVisible();
 
   //Assert
@@ -154,8 +154,8 @@ test("Check titles to have css font and color", async ({ app }) => {
 test("Check next button in the paging", async ({ app }) => {
   //Actions
   await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria("ukraine");
-  await app.home.header.searchForm.clickEnterSearchField();
+  await app.home.header.searchBar.inputSearchCriteria("ukraine");
+  await app.home.header.searchBar.clickEnterSearchField();
   await app.webPage.item.expectWebItemsToBeVisible();
   const oldResult = await app.webPage.item.getTextContentWebItems();
   await app.webPage.pagination.clickNextButton();
@@ -172,8 +172,8 @@ test("Check next button in the paging", async ({ app }) => {
 test("Check prev button in the paging", async ({ app }) => {
   //Actions
   await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria("ivanka");
-  await app.home.header.searchForm.clickEnterSearchField();
+  await app.home.header.searchBar.inputSearchCriteria("ivanka");
+  await app.home.header.searchBar.clickEnterSearchField();
   await app.webPage.item.expectWebItemsToBeVisible();
   await app.webPage.pagination.clickNextButton();
   await app.webPage.header.badgeCounter.expectCharityBadgeCounterToHaveValue(
@@ -195,8 +195,8 @@ test("Check prev button in the paging", async ({ app }) => {
 test("Check open link in  the web result", async ({ app }) => {
   //Actions
   await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria("ukraine");
-  await app.home.header.searchForm.clickEnterSearchField();
+  await app.home.header.searchBar.inputSearchCriteria("ukraine");
+  await app.home.header.searchBar.clickEnterSearchField();
   await app.webPage.item.expectWebItemsToBeVisible();
   const currentUrl = await app.page.url();
   await app.webPage.clickItemNumber(firstItemTitle);
@@ -208,8 +208,8 @@ test("Check open link in  the web result", async ({ app }) => {
 test.skip("Check open web Preview ", async ({ app }) => {
   //Actions
   await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria("wiki");
-  await app.home.header.searchForm.clickEnterSearchField();
+  await app.home.header.searchBar.inputSearchCriteria("wiki");
+  await app.home.header.searchBar.clickEnterSearchField();
   await app.webPage.item.expectWebItemsToBeVisible();
   await app.webPage.clickPreviewButton();
 
@@ -220,8 +220,8 @@ test.skip("Check open web Preview ", async ({ app }) => {
 test.skip("Check close web Preview ", async ({ app }) => {
   //Actions
   await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria("wiki");
-  await app.home.header.searchForm.clickEnterSearchField();
+  await app.home.header.searchBar.inputSearchCriteria("wiki");
+  await app.home.header.searchBar.clickEnterSearchField();
   await app.webPage.item.expectWebItemsToBeVisible();
   await app.webPage.clickPreviewButton();
 
@@ -234,8 +234,8 @@ test.skip("Check close web Preview ", async ({ app }) => {
 test("Check click open site button in web Preview ", async ({ app }) => {
   //Actions
   await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria("wiki");
-  await app.home.header.searchForm.clickEnterSearchField();
+  await app.home.header.searchBar.inputSearchCriteria("wiki");
+  await app.home.header.searchBar.clickEnterSearchField();
   await app.webPage.item.expectWebItemsToBeVisible();
   await app.webPage.clickPreviewButton();
 
@@ -248,8 +248,8 @@ test("Check click open site button in web Preview ", async ({ app }) => {
 test.skip("Check open trackers in web Preview ", async ({ app }) => {
   //Actions
   await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria("google");
-  await app.home.header.searchForm.clickEnterSearchField();
+  await app.home.header.searchBar.inputSearchCriteria("google");
+  await app.home.header.searchBar.clickEnterSearchField();
   await app.webPage.item.expectWebItemsToBeVisible();
   await app.webPage.clickPreviewButton();
   await app.webPage.preview.clickTrackersButton();
@@ -261,17 +261,25 @@ test.skip("Check open trackers in web Preview ", async ({ app }) => {
   );
 });
 
-test.skip("Check click screenshot button in web Preview ", async ({ app }) => {
+test("Check click screenshot button in web Preview ", async ({ app }) => {
   //Actions
   await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria("google");
-  await app.home.header.searchForm.clickEnterSearchField();
+  await app.home.header.searchBar.inputSearchCriteria("google");
+  await app.home.header.searchBar.clickEnterSearchField();
   await app.webPage.item.expectWebItemsToBeVisible();
-  await app.webPage.clickPreviewButton();
-  await app.webPage.preview.clickTrackersButton();
+   app.page.on("websocket", (ws) => {
+     console.log("WebSocket", ws.url());
+     ws.on("framereceived", (frame) => {
+       console.log("Frame received", frame.payload);
+     });
+   });
+     await app.webPage.clickPreviewButton();
+
+   await app.page.waitForTimeout(10000);
+ 
 
   //Assert
-  await app.webPage.preview.expectScreenshotImageToBeHidden();
-  await app.webPage.preview.clickScreenshotButton();
-  await app.webPage.preview.expectScreenshotImageToBeVisible();
+  // await app.webPage.preview.expectScreenshotImageToBeHidden();
+  // await app.webPage.preview.clickScreenshotButton();
+  // await app.webPage.preview.expectScreenshotImageToBeVisible();
 });

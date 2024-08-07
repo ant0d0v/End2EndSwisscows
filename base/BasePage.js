@@ -22,7 +22,7 @@ export default class BasePage extends BaseComponent {
 
   async waitUntilPageIsFullyLoaded() {
     await test.step("Wait for all network requests for images to complete", async () => {
-      await await this.page.waitForLoadState("networkidle");
+      await this.page.waitForLoadState("networkidle");
     });
   }
 

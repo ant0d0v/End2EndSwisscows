@@ -1,6 +1,6 @@
 import { test, deletionIds } from "../../../utils/fixtures.js";
 const value = "Skofka";
-const firstTrack = 1
+const firstTrack = 1;
 import testData from "../../../data/error/testData.json";
 
 test.describe("Internal user", () => {
@@ -8,9 +8,9 @@ test.describe("Internal user", () => {
   test("Check No items Found error page ", async ({ app }) => {
     //Actions
     await app.home.open();
-    await app.home.header.searchForm.inputSearchCriteria(value);
-    await app.home.header.searchForm.clickEnterSearchField();
-    await app.musicPage.header.clickMusicSearchButton();
+    await app.home.header.searchBar.inputSearchCriteria(value);
+    await app.home.header.searchBar.clickEnterSearchField();
+    await app.musicPage.header.navigation.clickMusicTab();
     await app.musicPage.track.expectMusicTracksToBeVisible();
     await app.musicPage.track.clickFavoriteButtonNumberTrack(firstTrack);
     await app.musicPage.clickFavoritePlaylist();
@@ -30,9 +30,9 @@ test.describe("Internal user", () => {
   }) => {
     //Actions
     await app.home.open();
-    await app.home.header.searchForm.inputSearchCriteria(value);
-    await app.home.header.searchForm.clickEnterSearchField();
-    await app.musicPage.header.clickMusicSearchButton();
+    await app.home.header.searchBar.inputSearchCriteria(value);
+    await app.home.header.searchBar.clickEnterSearchField();
+    await app.musicPage.header.navigation.clickMusicTab();
     await app.musicPage.track.expectMusicTracksToBeVisible();
     await app.musicPage.track.clickFavoriteButtonNumberTrack(firstTrack);
     await app.musicPage.clickFavoritePlaylist();
@@ -51,9 +51,9 @@ test.describe("Internal user", () => {
   test("Check play track on music my page", async ({ app }) => {
     //Actions
     await app.home.open();
-    await app.home.header.searchForm.inputSearchCriteria(value);
-    await app.home.header.searchForm.clickEnterSearchField();
-    await app.musicPage.header.clickMusicSearchButton();
+    await app.home.header.searchBar.inputSearchCriteria(value);
+    await app.home.header.searchBar.clickEnterSearchField();
+    await app.musicPage.header.navigation.clickMusicTab();
     await app.musicPage.track.expectMusicTracksToBeVisible();
     const favoriteID =
       await app.musicPage.track.clickFavoriteButtonNumberTrackAndGetResponse(1);
@@ -69,9 +69,9 @@ test.describe("Internal user", () => {
   test("Check pause track on my music page", async ({ app }) => {
     //Actions
     await app.home.open();
-    await app.home.header.searchForm.inputSearchCriteria(value);
-    await app.home.header.searchForm.clickEnterSearchField();
-    await app.musicPage.header.clickMusicSearchButton();
+    await app.home.header.searchBar.inputSearchCriteria(value);
+    await app.home.header.searchBar.clickEnterSearchField();
+    await app.musicPage.header.navigation.clickMusicTab();
     await app.musicPage.track.expectMusicTracksToBeVisible();
     const favoriteID =
       await app.musicPage.track.clickFavoriteButtonNumberTrackAndGetResponse(1);
@@ -89,9 +89,9 @@ test.describe("Internal user", () => {
   test("Check set time in track", async ({ app }) => {
     //Actions
     await app.home.open();
-    await app.home.header.searchForm.inputSearchCriteria(value);
-    await app.home.header.searchForm.clickEnterSearchField();
-    await app.musicPage.header.clickMusicSearchButton();
+    await app.home.header.searchBar.inputSearchCriteria(value);
+    await app.home.header.searchBar.clickEnterSearchField();
+    await app.musicPage.header.navigation.clickMusicTab();
     await app.musicPage.track.expectMusicTracksToBeVisible();
     const favoriteID =
       await app.musicPage.track.clickFavoriteButtonNumberTrackAndGetResponse(1);
@@ -114,9 +114,9 @@ test.describe("External user", () => {
   test("Check set time in the player", async ({ app }) => {
     //Actions
     await app.home.open();
-    await app.home.header.searchForm.inputSearchCriteria(value);
-    await app.home.header.searchForm.clickEnterSearchField();
-    await app.musicPage.header.clickMusicSearchButton();
+    await app.home.header.searchBar.inputSearchCriteria(value);
+    await app.home.header.searchBar.clickEnterSearchField();
+    await app.musicPage.header.navigation.clickMusicTab();
     await app.musicPage.track.expectMusicTracksToBeVisible();
     const favoriteID =
       await app.musicPage.track.clickFavoriteButtonNumberTrackAndGetResponse(1);
@@ -128,16 +128,16 @@ test.describe("External user", () => {
     deletionIds.myTracks.externalUser.push(favoriteID);
 
     //Assert
-   await app.musicMyPage.track.expectProgressToHaveValue(firstTrack, "50");
-   await app.musicMyPage.player.expectProgressToHaveValue("50");
+    await app.musicMyPage.track.expectProgressToHaveValue(firstTrack, "50");
+    await app.musicMyPage.player.expectProgressToHaveValue("50");
   });
 
   test("Check pause track in player on my music page", async ({ app }) => {
     //Actions
     await app.home.open();
-    await app.home.header.searchForm.inputSearchCriteria(value);
-    await app.home.header.searchForm.clickEnterSearchField();
-    await app.musicPage.header.clickMusicSearchButton();
+    await app.home.header.searchBar.inputSearchCriteria(value);
+    await app.home.header.searchBar.clickEnterSearchField();
+    await app.musicPage.header.navigation.clickMusicTab();
     await app.musicPage.track.expectMusicTracksToBeVisible();
     const favoriteID =
       await app.musicPage.track.clickFavoriteButtonNumberTrackAndGetResponse(1);
@@ -155,9 +155,9 @@ test.describe("External user", () => {
   test("Check play track in player on my music page", async ({ app }) => {
     //Actions
     await app.home.open();
-    await app.home.header.searchForm.inputSearchCriteria(value);
-    await app.home.header.searchForm.clickEnterSearchField();
-    await app.musicPage.header.clickMusicSearchButton();
+    await app.home.header.searchBar.inputSearchCriteria(value);
+    await app.home.header.searchBar.clickEnterSearchField();
+    await app.musicPage.header.navigation.clickMusicTab();
     await app.musicPage.track.expectMusicTracksToBeVisible();
     const favoriteID =
       await app.musicPage.track.clickFavoriteButtonNumberTrackAndGetResponse(1);
@@ -170,15 +170,15 @@ test.describe("External user", () => {
     deletionIds.myTracks.externalUser.push(favoriteID);
 
     //Assert
-    await app.musicMyPage.track.expectFirstTrackIsPlaying()
+    await app.musicMyPage.track.expectFirstTrackIsPlaying();
   });
 
   test("Check regional search", async ({ app }) => {
     //Actions
     await app.home.open();
-    await app.home.header.searchForm.inputSearchCriteria(value);
-    await app.home.header.searchForm.clickEnterSearchField();
-    await app.musicPage.header.clickMusicSearchButton();
+    await app.home.header.searchBar.inputSearchCriteria(value);
+    await app.home.header.searchBar.clickEnterSearchField();
+    await app.musicPage.header.navigation.clickMusicTab();
     await app.musicPage.track.expectMusicTracksToBeVisible();
     const favoriteID =
       await app.musicPage.track.clickFavoriteButtonNumberTrackAndGetResponse(1);
@@ -207,9 +207,9 @@ test.describe("External user", () => {
   }) => {
     //Actions
     await app.home.open();
-    await app.home.header.searchForm.inputSearchCriteria(value);
-    await app.home.header.searchForm.clickEnterSearchField();
-    await app.musicPage.header.clickMusicSearchButton();
+    await app.home.header.searchBar.inputSearchCriteria(value);
+    await app.home.header.searchBar.clickEnterSearchField();
+    await app.musicPage.header.navigation.clickMusicTab();
     await app.musicPage.track.expectMusicTracksToBeVisible();
     const favoriteIDs =
       await app.musicPage.track.clickAllFavoriteButtonsOfTracksAndGetResponses();

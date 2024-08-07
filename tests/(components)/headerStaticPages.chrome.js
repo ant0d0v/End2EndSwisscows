@@ -25,8 +25,8 @@ test("Check charity query counter value after search and go back to main bage ",
 }) => {
   //Actions
   await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria("ivanka");
-  await app.home.header.searchForm.clickEnterSearchField();
+  await app.home.header.searchBar.inputSearchCriteria("ivanka");
+  await app.home.header.searchBar.clickEnterSearchField();
   await app.webPage.item.expectWebItemsToBeVisible();
   await app.webPage.goBack();
 

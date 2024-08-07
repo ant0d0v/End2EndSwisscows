@@ -12,9 +12,9 @@ for (const {
   }) => {
     //Actions
     await app.home.open();
-    await app.home.header.searchForm.inputSearchCriteria("video");
-    await app.home.header.searchForm.clickEnterSearchField();
-    await app.videoPage.header.clickVideoSearchButton();
+    await app.home.header.searchBar.inputSearchCriteria("video");
+    await app.home.header.searchBar.clickEnterSearchField();
+    await app.videoPage.header.navigation.clickVideoTab();
     await app.videoPage.item.expectVideoItemsToBeVisible();
     await app.videoPage.header.clickFiltersButton();
     await app.videoPage.filters.clickPublisher();
@@ -46,12 +46,12 @@ for (const {
     await app.home.open();
     await app.home.header.clickHamburgerMenuButton();
     await app.home.header.hamburgerMenu.selectRegion("Germany");
-    await app.home.header.searchForm.inputSearchCriteria("video");
-    await app.home.header.searchForm.clickEnterSearchField();
-    await app.videoPage.header.clickVideoSearchButton();
+    await app.home.header.searchBar.inputSearchCriteria("video");
+    await app.home.header.searchBar.clickEnterSearchField();
+    await app.videoPage.header.navigation.clickVideoTab();
     await app.videoPage.item.expectVideoItemsToBeVisible();
     await app.videoPage.header.clickFiltersButton();
-    await app.videoPage.filters.clickByDate();
+    await app.videoPage.filters.clickFilterByDate();
     const response =
       await app.videoPage.filters.buttonMenu.clickMenuItemAndGetResponse(
         locatorId,
@@ -74,9 +74,9 @@ for (const {
 test("Check search results by filter Table view", async ({ app }) => {
   //Actions
   await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria("video");
-  await app.home.header.searchForm.clickEnterSearchField();
-  await app.videoPage.header.clickVideoSearchButton();
+  await app.home.header.searchBar.inputSearchCriteria("video");
+  await app.home.header.searchBar.clickEnterSearchField();
+  await app.videoPage.header.navigation.clickVideoTab();
   await app.videoPage.item.expectVideoItemsToBeVisible();
   await app.videoPage.header.clickFiltersButton();
   await app.videoPage.filters.clickView();
@@ -90,12 +90,12 @@ test("Check search results by filter Table view", async ({ app }) => {
 test("Check list dropdown of filter by date ", async ({ app }) => {
   //Actions
   await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria("ronaldo");
-  await app.home.header.searchForm.clickEnterSearchField();
-  await app.videoPage.header.clickVideoSearchButton();
+  await app.home.header.searchBar.inputSearchCriteria("ronaldo");
+  await app.home.header.searchBar.clickEnterSearchField();
+  await app.videoPage.header.navigation.clickVideoTab();
   await app.videoPage.item.expectVideoItemsToBeVisible();
   await app.videoPage.header.clickFiltersButton();
-  await app.videoPage.filters.clickByDate();
+  await app.videoPage.filters.clickFilterByDate();
 
   //Assert
   await app.videoPage.filters.buttonMenu.expectDropdownToHaveText([
@@ -110,9 +110,9 @@ test("Check list dropdown of filter by date ", async ({ app }) => {
 test("Check list dropdown of filter publisher ", async ({ app }) => {
   //Actions
   await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria("ronaldo");
-  await app.home.header.searchForm.clickEnterSearchField();
-  await app.videoPage.header.clickVideoSearchButton();
+  await app.home.header.searchBar.inputSearchCriteria("ronaldo");
+  await app.home.header.searchBar.clickEnterSearchField();
+  await app.videoPage.header.navigation.clickVideoTab();
   await app.videoPage.item.expectVideoItemsToBeVisible();
   await app.videoPage.header.clickFiltersButton();
   await app.videoPage.filters.clickPublisher();
@@ -128,9 +128,9 @@ test("Check list dropdown of filter publisher ", async ({ app }) => {
 test("Check list dropdown of filter view", async ({ app }) => {
   //Actions
   await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria("ronaldo");
-  await app.home.header.searchForm.clickEnterSearchField();
-  await app.videoPage.header.clickVideoSearchButton();
+  await app.home.header.searchBar.inputSearchCriteria("ronaldo");
+  await app.home.header.searchBar.clickEnterSearchField();
+  await app.videoPage.header.navigation.clickVideoTab();
   await app.videoPage.item.expectVideoItemsToBeVisible();
   await app.videoPage.header.clickFiltersButton();
   await app.videoPage.filters.clickView();
@@ -145,15 +145,15 @@ test("Check list dropdown of filter view", async ({ app }) => {
 test("Check that dropdown of filter by date is opened", async ({ app }) => {
   //Actions
   await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria("ronaldo");
-  await app.home.header.searchForm.clickEnterSearchField();
-  await app.videoPage.header.clickVideoSearchButton();
+  await app.home.header.searchBar.inputSearchCriteria("ronaldo");
+  await app.home.header.searchBar.clickEnterSearchField();
+  await app.videoPage.header.navigation.clickVideoTab();
   await app.videoPage.item.expectVideoItemsToBeVisible();
   await app.videoPage.header.clickFiltersButton();
-  await app.videoPage.filters.clickByDate();
+  await app.videoPage.filters.clickFilterByDate();
 
   //Assert
   await app.videoPage.filters.expectByDateIsOpened();
-  await app.videoPage.filters.clickByDate();
+  await app.videoPage.filters.clickFilterByDate();
   await app.videoPage.filters.expectByDateIsClosed();
 });

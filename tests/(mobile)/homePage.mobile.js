@@ -6,12 +6,12 @@ test("Check that suggest is displayed", async ({ app }) => {
   await app.home.open();
   await app.home.reloadPage();
   await app.home.waitUntilPageIsFullyLoaded();
-  await app.home.header.searchForm.inputSearchCriteria("ivanka");
+  await app.home.header.searchBar.inputSearchCriteria("ivanka");
 
   //Assert
-  await app.home.header.searchForm.expectSuggestIsDisplayed();
-  await app.home.header.searchForm.expectSuggestToHaveCount(5);
-  await app.home.header.searchForm.expectSuggestToContains("ivanka");
+  await app.home.header.searchBar.expectSuggestIsDisplayed();
+  await app.home.header.searchBar.expectSuggestToHaveCount(5);
+  await app.home.header.searchBar.expectSuggestToContains("ivanka");
 });
 
 test("Check that all questions were opened on the home page.", async ({
@@ -72,19 +72,20 @@ test("Check the texts of questions on the home page.", async ({ app }) => {
   );
 });
 
-test.fixme("Check that buttons have hover over the services block on home page", async ({
-  app,
-}) => {
-  //Actions
-  await app.home.open();
+test.fixme(
+  "Check that buttons have hover over the services block on home page",
+  async ({ app }) => {
+    //Actions
+    await app.home.open();
 
-  //Assert
-  await app.home.expectColorsLinksWhenHovering(
-    app.home.buttonOfServiceBlock,
-    "color",
-    constanta.RED
-  );
-});
+    //Assert
+    await app.home.expectColorsLinksWhenHovering(
+      app.home.buttonOfServiceBlock,
+      "color",
+      constanta.RED
+    );
+  }
+);
 
 test("Check design of the home page ", async ({ app }, testInfo) => {
   //Actions

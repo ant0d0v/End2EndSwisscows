@@ -7,9 +7,9 @@ test.describe("Internal user", () => {
   }) => {
     //Actions
     await app.home.open();
-    await app.home.header.searchForm.inputSearchCriteria("red");
-    await app.home.header.searchForm.clickEnterSearchField();
-    await app.imagePage.header.clickImageSearchButton();
+    await app.home.header.searchBar.inputSearchCriteria("red");
+    await app.home.header.searchBar.clickEnterSearchField();
+    await app.imagePage.header.navigation.clickImageTab();
     await app.imagePage.item.expectImageItemsToBeVisible();
     await app.imagePage.item.clickItemNumber(1);
     await app.imagePage.itemDetails.clickBookmarkButton();
@@ -29,9 +29,9 @@ test.describe("Internal user", () => {
   test("Check adding multiple favorites to a my images ", async ({ app }) => {
     //Actions
     await app.home.open();
-    await app.home.header.searchForm.inputSearchCriteria("good");
-    await app.home.header.searchForm.clickEnterSearchField();
-    await app.imagePage.header.clickImageSearchButton();
+    await app.home.header.searchBar.inputSearchCriteria("good");
+    await app.home.header.searchBar.clickEnterSearchField();
+    await app.imagePage.header.navigation.clickImageTab();
     await app.imagePage.item.expectImageItemsToBeVisible();
     await app.imagePage.item.clickItemNumber(1);
     const favoriteIDFirstImage =
@@ -57,9 +57,9 @@ test.describe("External user", () => {
   test("Check prev button in the item details my images ", async ({ app }) => {
     //Actions
     await app.home.open();
-    await app.home.header.searchForm.inputSearchCriteria("good");
-    await app.home.header.searchForm.clickEnterSearchField();
-    await app.imagePage.header.clickImageSearchButton();
+    await app.home.header.searchBar.inputSearchCriteria("good");
+    await app.home.header.searchBar.clickEnterSearchField();
+    await app.imagePage.header.navigation.clickImageTab();
     await app.imagePage.item.expectImageItemsToBeVisible();
     await app.imagePage.item.clickItemNumber(1);
     const favoriteIDFirstImage =
@@ -83,9 +83,9 @@ test.describe("External user", () => {
   test("Check close button in the item details my images ", async ({ app }) => {
     //Actions
     await app.home.open();
-    await app.home.header.searchForm.inputSearchCriteria("good");
-    await app.home.header.searchForm.clickEnterSearchField();
-    await app.imagePage.header.clickImageSearchButton();
+    await app.home.header.searchBar.inputSearchCriteria("good");
+    await app.home.header.searchBar.clickEnterSearchField();
+    await app.imagePage.header.navigation.clickImageTab();
     await app.imagePage.item.expectImageItemsToBeVisible();
     await app.imagePage.item.clickItemNumber(1);
     const favoriteID =
@@ -102,9 +102,9 @@ test.describe("External user", () => {
   test("Check regional search", async ({ app }) => {
     //Actions
     await app.home.open();
-    await app.home.header.searchForm.inputSearchCriteria("good");
-    await app.home.header.searchForm.clickEnterSearchField();
-    await app.imagePage.header.clickImageSearchButton();
+    await app.home.header.searchBar.inputSearchCriteria("good");
+    await app.home.header.searchBar.clickEnterSearchField();
+    await app.imagePage.header.navigation.clickImageTab();
     await app.imagePage.item.expectImageItemsToBeVisible();
     await app.imagePage.item.clickItemNumber(1);
     const favoriteID =

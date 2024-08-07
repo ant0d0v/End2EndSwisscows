@@ -1,11 +1,13 @@
 import BaseComponent from "../base/BaseComponent.js";
-export default class SearchForm extends BaseComponent {
+export default class SearchBar extends BaseComponent {
   constructor(page) {
     super(page);
     this.suggestionItems = this.page.locator("ul.suggestions li");
     this.suggest = this.page.locator("ul.suggestions");
-    this.inputSearch = this.page.getByRole('searchbox')
-    this.placeholderHome = this.page.getByPlaceholder( "Your search. Your business.");
+    this.inputSearch = this.page.getByRole("searchbox");
+    this.placeholderHome = this.page.getByPlaceholder(
+      "Your search. Your business."
+    );
   }
   //Actions
   waitToBeVisibleSuggest = async () => {

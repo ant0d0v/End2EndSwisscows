@@ -1,16 +1,18 @@
 import { test } from "../../../utils/fixtures.js";
 const value = "Skofka";
 const firstTrack = 1;
-const firstPlaylist = 1
+const firstPlaylist = 1;
 test("Check pause track on music page", async ({ app }) => {
   //Actions
   await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria(value);
-  await app.home.header.searchForm.clickEnterSearchField();
-  await app.musicPage.header.clickMusicSearchButton();
+  await app.home.header.searchBar.inputSearchCriteria(value);
+  await app.home.header.searchBar.clickEnterSearchField();
+  await app.musicPage.header.navigation.clickMusicTab();
   await app.musicPage.track.expectMusicTracksToBeVisible();
   await app.musicPage.clickPlaylistNumber(firstPlaylist);
-  await app.musicPlaylistPage.expectPageUrlToHaveParameter(`?query=${value}&id=\\d`);
+  await app.musicPlaylistPage.expectPageUrlToHaveParameter(
+    `?query=${value}&id=\\d`
+  );
   await app.musicPlaylistPage.track.expectMusicTracksToBeVisible();
   await app.musicPlaylistPage.track.clickPlayButtonNumberTrack(firstTrack);
   await app.musicPlaylistPage.player.expectProgressToHaveValue("2");
@@ -23,12 +25,14 @@ test("Check pause track on music page", async ({ app }) => {
 test("Check next button of track on the main page", async ({ app }) => {
   //Actions
   await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria(value);
-  await app.home.header.searchForm.clickEnterSearchField();
-  await app.musicPage.header.clickMusicSearchButton();
+  await app.home.header.searchBar.inputSearchCriteria(value);
+  await app.home.header.searchBar.clickEnterSearchField();
+  await app.musicPage.header.navigation.clickMusicTab();
   await app.musicPage.track.expectMusicTracksToBeVisible();
   await app.musicPage.clickPlaylistNumber(firstPlaylist);
-  await app.musicPlaylistPage.expectPageUrlToHaveParameter(`?query=${value}&id=\\d`);
+  await app.musicPlaylistPage.expectPageUrlToHaveParameter(
+    `?query=${value}&id=\\d`
+  );
   await app.musicPlaylistPage.track.expectMusicTracksToBeVisible();
   await app.musicPlaylistPage.track.clickPlayButtonNumberTrack(firstTrack);
   await app.musicPlaylistPage.player.expectProgressToHaveValue("2");
@@ -42,12 +46,14 @@ test("Check next button of track on the main page", async ({ app }) => {
 test("Check previous button of track on the main page", async ({ app }) => {
   //Actions
   await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria(value);
-  await app.home.header.searchForm.clickEnterSearchField();
-  await app.musicPage.header.clickMusicSearchButton();
+  await app.home.header.searchBar.inputSearchCriteria(value);
+  await app.home.header.searchBar.clickEnterSearchField();
+  await app.musicPage.header.navigation.clickMusicTab();
   await app.musicPage.track.expectMusicTracksToBeVisible();
   await app.musicPage.clickPlaylistNumber(firstPlaylist);
-  await app.musicPlaylistPage.expectPageUrlToHaveParameter(`?query=${value}&id=\\d`);
+  await app.musicPlaylistPage.expectPageUrlToHaveParameter(
+    `?query=${value}&id=\\d`
+  );
   await app.musicPlaylistPage.track.expectMusicTracksToBeVisible();
   await app.musicPlaylistPage.track.clickPlayButtonNumberTrack(firstTrack);
   await app.musicPlaylistPage.player.expectProgressToHaveValue("2");
@@ -62,12 +68,14 @@ test("Check previous button of track on the main page", async ({ app }) => {
 test("Check set time in track", async ({ app }) => {
   //Actions
   await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria(value);
-  await app.home.header.searchForm.clickEnterSearchField();
-  await app.musicPage.header.clickMusicSearchButton();
+  await app.home.header.searchBar.inputSearchCriteria(value);
+  await app.home.header.searchBar.clickEnterSearchField();
+  await app.musicPage.header.navigation.clickMusicTab();
   await app.musicPage.track.expectMusicTracksToBeVisible();
   await app.musicPage.clickPlaylistNumber(firstPlaylist);
-  await app.musicPlaylistPage.expectPageUrlToHaveParameter(`?query=${value}&id=\\d`);
+  await app.musicPlaylistPage.expectPageUrlToHaveParameter(
+    `?query=${value}&id=\\d`
+  );
   await app.musicPlaylistPage.track.expectMusicTracksToBeVisible();
   await app.musicPlaylistPage.track.clickPlayButtonNumberTrack(firstTrack);
   await app.musicPlaylistPage.player.expectProgressToHaveValue("2");
@@ -81,12 +89,14 @@ test("Check set time in track", async ({ app }) => {
 test("Check shuffle function in the player", async ({ app }) => {
   //Actions
   await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria(value);
-  await app.home.header.searchForm.clickEnterSearchField();
-  await app.musicPage.header.clickMusicSearchButton();
+  await app.home.header.searchBar.inputSearchCriteria(value);
+  await app.home.header.searchBar.clickEnterSearchField();
+  await app.musicPage.header.navigation.clickMusicTab();
   await app.musicPage.track.expectMusicTracksToBeVisible();
   await app.musicPage.clickPlaylistNumber(firstPlaylist);
-  await app.musicPlaylistPage.expectPageUrlToHaveParameter(`?query=${value}&id=\\d`);
+  await app.musicPlaylistPage.expectPageUrlToHaveParameter(
+    `?query=${value}&id=\\d`
+  );
   await app.musicPlaylistPage.track.expectMusicTracksToBeVisible();
   await app.musicPlaylistPage.track.clickPlayButtonNumberTrack(firstTrack);
   await app.musicPlaylistPage.player.expectProgressToHaveValue("2");
@@ -104,12 +114,14 @@ test("Check change region", async ({ app }) => {
   );
   //Actions
   await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria(value);
-  await app.home.header.searchForm.clickEnterSearchField();
-  await app.musicPage.header.clickMusicSearchButton();
+  await app.home.header.searchBar.inputSearchCriteria(value);
+  await app.home.header.searchBar.clickEnterSearchField();
+  await app.musicPage.header.navigation.clickMusicTab();
   await app.musicPage.track.expectMusicTracksToBeVisible();
   await app.musicPage.clickPlaylistNumber(firstPlaylist);
-  await app.musicPlaylistPage.expectPageUrlToHaveParameter(`?query=${value}&id=\\d`);
+  await app.musicPlaylistPage.expectPageUrlToHaveParameter(
+    `?query=${value}&id=\\d`
+  );
   await app.musicPlaylistPage.track.expectMusicTracksToBeVisible();
   await app.musicPlaylistPage.header.clickHamburgerMenuButton();
   await app.musicPlaylistPage.header.hamburgerMenu.selectRegion("Germany");

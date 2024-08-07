@@ -1,25 +1,30 @@
 import { test } from "../../../utils/fixtures.js";
 
 test("Check Cheapest first filter ", async ({ app }) => {
+  const query = "iPhone";
   //Actions
   await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria("iPhone");
-  await app.home.header.searchForm.clickEnterSearchField();
+  await app.home.header.searchBar.inputSearchCriteria(query);
+  await app.home.header.searchBar.clickEnterSearchField();
   await app.webPage.item.expectWebItemsToBeVisible();
   await app.webPage.header.clickHamburgerMenuButton();
   await app.webPage.header.hamburgerMenu.selectRegion("Germany");
-  await app.webPage.header.clickShoppingSearchButton();
+  await app.webPage.header.navigation.clickShoppingTab();
   await app.shoppingPage.item.expectShoppingItemsToBeVisible();
   await app.shoppingPage.header.clickFiltersButton();
-  const response = await app.shoppingPage.filters.selectCheapestAndGetResponse("iPhone");
+  const response = await app.shoppingPage.filters.selectFilterAndGetResponse(
+    "Cheapest first"
+  );
   await app.shoppingPage.item.expectShoppingItemsToBeVisible();
   const allPrice = await app.shoppingPage.item.getPriceAllItems();
 
   // Assert
-  await app.shoppingPage.filters.expectListItemsFromCheapestToMostExpensive(allPrice);
+  await app.shoppingPage.filters.expectListItemsFromCheapestToMostExpensive(
+    allPrice
+  );
   await app.api.search.response.expectBodyToEqual(response, {
     request: {
-      query: "iPhone",
+      query: query,
       itemsCount: 24,
       offset: 0,
       filters: {},
@@ -30,25 +35,30 @@ test("Check Cheapest first filter ", async ({ app }) => {
 });
 
 test("Check Most expensive filter", async ({ app }) => {
+  const query = "shoes";
   //Actions
   await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria("shoes");
-  await app.home.header.searchForm.clickEnterSearchField();
+  await app.home.header.searchBar.inputSearchCriteria(query);
+  await app.home.header.searchBar.clickEnterSearchField();
   await app.webPage.item.expectWebItemsToBeVisible();
   await app.webPage.header.clickHamburgerMenuButton();
   await app.webPage.header.hamburgerMenu.selectRegion("Germany");
-  await app.webPage.header.clickShoppingSearchButton();
+  await app.webPage.header.navigation.clickShoppingTab();
   await app.shoppingPage.item.expectShoppingItemsToBeVisible();
   await app.shoppingPage.header.clickFiltersButton();
-  const response = await app.shoppingPage.filters.selectMostExpensiveAndGetResponse("shoes");
+  const response = await app.shoppingPage.filters.selectFilterAndGetResponse(
+    "Most expensive first"
+  );
   await app.shoppingPage.item.expectShoppingItemsToBeVisible();
   const allPrices = await app.shoppingPage.item.getPriceAllItems();
 
   // Assert
-  await app.shoppingPage.filters.expectListItemsFromMostExpensiveToCheapest(allPrices);
+  await app.shoppingPage.filters.expectListItemsFromMostExpensiveToCheapest(
+    allPrices
+  );
   await app.api.search.response.expectBodyToEqual(response, {
     request: {
-      query: "shoes",
+      query: query,
       itemsCount: 24,
       offset: 0,
       filters: {},
@@ -66,16 +76,15 @@ test(`Check select specific "brand" filter`, async ({ app }) => {
   };
   //Actions
   await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria("laptop");
-  await app.home.header.searchForm.clickEnterSearchField();
+  await app.home.header.searchBar.inputSearchCriteria("laptop");
+  await app.home.header.searchBar.clickEnterSearchField();
   await app.webPage.item.expectWebItemsToBeVisible();
   await app.webPage.header.clickHamburgerMenuButton();
   await app.webPage.header.hamburgerMenu.selectRegion("Germany");
-  await app.webPage.header.clickShoppingSearchButton();
+  await app.webPage.header.navigation.clickShoppingTab();
   await app.shoppingPage.item.expectShoppingItemsToBeVisible();
   await app.shoppingPage.header.clickFiltersButton();
-  await app.shoppingPage.filters.selectMarken();
-  await app.shoppingPage.filters.selectBrand(/Apple/);
+  await app.shoppingPage.filters.selectFilter("Marken", /Apple/);
   await app.shoppingPage.item.expectShoppingItemsToBeVisible();
 
   // Assert
@@ -92,23 +101,25 @@ test(`Check select multiple filters specifics "brand" and "Most expensive"`, asy
 }) => {
   //Actions
   await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria("laptop");
-  await app.home.header.searchForm.clickEnterSearchField();
+  await app.home.header.searchBar.inputSearchCriteria("laptop");
+  await app.home.header.searchBar.clickEnterSearchField();
   await app.webPage.item.expectWebItemsToBeVisible();
   await app.webPage.header.clickHamburgerMenuButton();
   await app.webPage.header.hamburgerMenu.selectRegion("Germany");
-  await app.webPage.header.clickShoppingSearchButton();
-  await app.shoppingPage.item.expectShoppingItemsToBeVisible();
+  await app.webPage.header.navigation.clickShoppingTab();
   await app.shoppingPage.header.clickFiltersButton();
-  const response = await app.shoppingPage.filters.selectMostExpensiveAndGetResponse("laptop");
+  await app.shoppingPage.filters.selectFilter("Marken", /Apple/);
   await app.shoppingPage.item.expectShoppingItemsToBeVisible();
-  await app.shoppingPage.filters.selectMarken();
-  await app.shoppingPage.filters.selectBrand(/Apple/);
+  const response = await app.shoppingPage.filters.selectFilterAndGetResponse(
+    "Most expensive first"
+  );
   await app.shoppingPage.item.expectShoppingItemsToBeVisible();
   const allPrices = await app.shoppingPage.item.getPriceAllItems();
 
   // Assert
-  await app.shoppingPage.filters.expectListItemsFromMostExpensiveToCheapest(allPrices);
+  await app.shoppingPage.filters.expectListItemsFromMostExpensiveToCheapest(
+    allPrices
+  );
   await app.api.search.response.expectResponseToHaveStatusCode(response, 200);
   await app.shoppingPage.item.expectBrandProductToContain("Apple");
 });
@@ -116,12 +127,12 @@ test(`Check select multiple filters specifics "brand" and "Most expensive"`, asy
 test("Check that filter is closed ", async ({ app }) => {
   //Actions
   await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria("laptop");
-  await app.home.header.searchForm.clickEnterSearchField();
+  await app.home.header.searchBar.inputSearchCriteria("laptop");
+  await app.home.header.searchBar.clickEnterSearchField();
   await app.webPage.item.expectWebItemsToBeVisible();
   await app.webPage.header.clickHamburgerMenuButton();
   await app.webPage.header.hamburgerMenu.selectRegion("Germany");
-  await app.webPage.header.clickShoppingSearchButton();
+  await app.webPage.header.navigation.clickShoppingTab();
   await app.shoppingPage.item.expectShoppingItemsToBeVisible();
   await app.shoppingPage.header.clickFiltersButton();
   await app.shoppingPage.filters.expectFiltersPaneToBeVisible();
@@ -134,12 +145,12 @@ test("Check that filter is closed ", async ({ app }) => {
 test("Check scrolling to last filter", async ({ app }) => {
   //Actions
   await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria("laptop");
-  await app.home.header.searchForm.clickEnterSearchField();
+  await app.home.header.searchBar.inputSearchCriteria("laptop");
+  await app.home.header.searchBar.clickEnterSearchField();
   await app.webPage.item.expectWebItemsToBeVisible();
   await app.webPage.header.clickHamburgerMenuButton();
   await app.webPage.header.hamburgerMenu.selectRegion("Germany");
-  await app.webPage.header.clickShoppingSearchButton();
+  await app.webPage.header.navigation.clickShoppingTab();
   await app.shoppingPage.item.expectShoppingItemsToBeVisible();
   await app.shoppingPage.header.clickFiltersButton();
   await app.shoppingPage.filters.scrollToLastFilter();
@@ -151,15 +162,15 @@ test("Check scrolling to last filter", async ({ app }) => {
 test("Check less and more buttons", async ({ app }) => {
   //Actions
   await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria("laptop");
-  await app.home.header.searchForm.clickEnterSearchField();
+  await app.home.header.searchBar.inputSearchCriteria("laptop");
+  await app.home.header.searchBar.clickEnterSearchField();
   await app.webPage.item.expectWebItemsToBeVisible();
   await app.webPage.header.clickHamburgerMenuButton();
   await app.webPage.header.hamburgerMenu.selectRegion("Germany");
-  await app.webPage.header.clickShoppingSearchButton();
+  await app.webPage.header.navigation.clickShoppingTab();
   await app.shoppingPage.item.expectShoppingItemsToBeVisible();
   await app.shoppingPage.header.clickFiltersButton();
-  await app.shoppingPage.filters.selectMarken();
+  await app.shoppingPage.filters.selectFilter("Marken", /Apple/);
   await app.shoppingPage.filters.clickMore();
 
   // Assert

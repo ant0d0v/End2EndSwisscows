@@ -6,9 +6,9 @@ test("Check 202 No Results Found error page ", async ({ app }) => {
   await app.home.open();
   await app.home.header.clickHamburgerMenuButton();
   await app.home.header.hamburgerMenu.selectRegion("Germany");
-  await app.home.header.searchForm.inputSearchCriteria("@#@$%^$^dasdsad1231");
-  await app.home.header.searchForm.clickEnterSearchField();
-  await app.newsPage.header.clickNewsSearchButton();
+  await app.home.header.searchBar.inputSearchCriteria("@#@$%^$^dasdsad1231");
+  await app.home.header.searchBar.clickEnterSearchField();
+  await app.newsPage.header.navigation.clickNewsTab();
 
   //Assert
   await app.newsPage.error.expectNotResultErrorToHaveText(
@@ -23,9 +23,9 @@ test("Check request is blocked 450 error page ", async ({ app }) => {
   await app.home.open();
   await app.home.header.clickHamburgerMenuButton();
   await app.home.header.hamburgerMenu.selectRegion("Germany");
-  await app.home.header.searchForm.inputSearchCriteria("porn");
-  await app.home.header.searchForm.clickEnterSearchField();
-  await app.newsPage.header.clickNewsSearchButton();
+  await app.home.header.searchBar.inputSearchCriteria("porn");
+  await app.home.header.searchBar.clickEnterSearchField();
+  await app.newsPage.header.navigation.clickNewsTab();
 
   //Assert
   await app.newsPage.error.expectNotResultErrorToHaveText(
@@ -41,9 +41,9 @@ test("Check 500 unknown Error Page  ", async ({ app }) => {
   await app.home.header.clickHamburgerMenuButton();
   await app.home.header.hamburgerMenu.selectRegion("Germany");
   await app.route.mockResponseStatusCode("/news", 500);
-  await app.home.header.searchForm.inputSearchCriteria("food");
-  await app.home.header.searchForm.clickEnterSearchField();
-  await app.newsPage.header.clickNewsSearchButton();
+  await app.home.header.searchBar.inputSearchCriteria("food");
+  await app.home.header.searchBar.clickEnterSearchField();
+  await app.newsPage.header.navigation.clickNewsTab();
 
   //Assert
   await app.newsPage.error.expectContentToHaveText(
@@ -59,9 +59,9 @@ test("Check 429 Too many requests", async ({ app }) => {
   await app.home.header.clickHamburgerMenuButton();
   await app.home.header.hamburgerMenu.selectRegion("Germany");
   await app.route.mockResponseStatusCode("/news", 429);
-  await app.home.header.searchForm.inputSearchCriteria("food");
-  await app.home.header.searchForm.clickEnterSearchField();
-  await app.newsPage.header.clickNewsSearchButton();
+  await app.home.header.searchBar.inputSearchCriteria("food");
+  await app.home.header.searchBar.clickEnterSearchField();
+  await app.newsPage.header.navigation.clickNewsTab();
 
   //Assert
   await app.newsPage.error.expectContentToHaveText(
@@ -76,9 +76,9 @@ test("Check error region is unsupported", async ({ app }) => {
   await app.home.open();
   await app.home.header.clickHamburgerMenuButton();
   await app.home.header.hamburgerMenu.selectRegion("Germany");
-  await app.home.header.searchForm.inputSearchCriteria("football");
-  await app.home.header.searchForm.clickEnterSearchField();
-  await app.newsPage.header.clickNewsSearchButton();
+  await app.home.header.searchBar.inputSearchCriteria("football");
+  await app.home.header.searchBar.clickEnterSearchField();
+  await app.newsPage.header.navigation.clickNewsTab();
   await app.newsPage.item.expectNewsItemsToBeVisible();
   await app.newsPage.header.clickHamburgerMenuButton();
   await app.newsPage.header.hamburgerMenu.selectRegion("Ukraine");
@@ -96,10 +96,10 @@ test("Check search results in news page ", async ({ app }) => {
   await app.home.open();
   await app.home.header.clickHamburgerMenuButton();
   await app.home.header.hamburgerMenu.selectRegion("Germany");
-  await app.home.header.searchForm.inputSearchCriteria("ronaldo");
-  await app.home.header.searchForm.clickEnterSearchField();
+  await app.home.header.searchBar.inputSearchCriteria("ronaldo");
+  await app.home.header.searchBar.clickEnterSearchField();
   await app.webPage.item.expectWebItemsToBeVisible();
-  await app.newsPage.header.clickNewsSearchButton();
+  await app.newsPage.header.navigation.clickNewsTab();
   await app.newsPage.item.expectNewsItemsToBeVisible();
 
   //Assert
@@ -118,10 +118,10 @@ test("Check open link in  the news result", async ({ app }) => {
   await app.home.open();
   await app.home.header.clickHamburgerMenuButton();
   await app.home.header.hamburgerMenu.selectRegion("Germany");
-  await app.home.header.searchForm.inputSearchCriteria("ukraine");
-  await app.home.header.searchForm.clickEnterSearchField();
+  await app.home.header.searchBar.inputSearchCriteria("ukraine");
+  await app.home.header.searchBar.clickEnterSearchField();
   await app.webPage.item.expectWebItemsToBeVisible();
-  await app.newsPage.header.clickNewsSearchButton();
+  await app.newsPage.header.navigation.clickNewsTab();
   await app.newsPage.item.expectNewsItemsToBeVisible();
   const newPage = await app.newsPage.item.clickFirstNewsItem();
 
@@ -137,10 +137,10 @@ test("Check next button in the paging", async ({ app }) => {
   await app.home.open();
   await app.home.header.clickHamburgerMenuButton();
   await app.home.header.hamburgerMenu.selectRegion("Germany");
-  await app.home.header.searchForm.inputSearchCriteria("ukraine");
-  await app.home.header.searchForm.clickEnterSearchField();
+  await app.home.header.searchBar.inputSearchCriteria("ukraine");
+  await app.home.header.searchBar.clickEnterSearchField();
   await app.webPage.item.expectWebItemsToBeVisible();
-  await app.newsPage.header.clickNewsSearchButton();
+  await app.newsPage.header.navigation.clickNewsTab();
   await app.newsPage.item.expectNewsItemsToBeVisible();
   const oldSearchResult = await app.newsPage.item.getTextContentNewsItems();
   await app.newsPage.pagination.clickNextButton();
@@ -166,10 +166,10 @@ test("Check prev button in the paging", async ({ app }) => {
   await app.home.open();
   await app.home.header.clickHamburgerMenuButton();
   await app.home.header.hamburgerMenu.selectRegion("Germany");
-  await app.home.header.searchForm.inputSearchCriteria("news");
-  await app.home.header.searchForm.clickEnterSearchField();
+  await app.home.header.searchBar.inputSearchCriteria("news");
+  await app.home.header.searchBar.clickEnterSearchField();
   await app.webPage.item.expectWebItemsToBeVisible();
-  await app.newsPage.header.clickNewsSearchButton();
+  await app.newsPage.header.navigation.clickNewsTab();
   await app.newsPage.item.expectNewsItemsToBeVisible();
   await app.newsPage.pagination.clickNextButton();
   await app.newsPage.header.badgeCounter.expectCharityBadgeCounterToHaveValue(
@@ -197,10 +197,10 @@ test("Check that image of proxy cdn server", async ({ app }) => {
   await app.home.open();
   await app.home.header.clickHamburgerMenuButton();
   await app.home.header.hamburgerMenu.selectRegion("Germany");
-  await app.home.header.searchForm.inputSearchCriteria("Ukraine");
-  await app.home.header.searchForm.clickEnterSearchField();
+  await app.home.header.searchBar.inputSearchCriteria("Ukraine");
+  await app.home.header.searchBar.clickEnterSearchField();
   await app.webPage.item.expectWebItemsToBeVisible();
-  await app.newsPage.header.clickNewsSearchButton();
+  await app.newsPage.header.navigation.clickNewsTab();
   await app.newsPage.item.expectNewsItemsToBeVisible();
 
   //Assert

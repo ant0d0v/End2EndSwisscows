@@ -10,13 +10,13 @@ for (const { testID, expectedNewsLink, locatorId } of filterData.byDate) {
     await app.home.open();
     await app.home.header.clickHamburgerMenuButton();
     await app.home.header.hamburgerMenu.selectRegion("Germany");
-    await app.home.header.searchForm.inputSearchCriteria("news");
-    await app.home.header.searchForm.clickEnterSearchField();
+    await app.home.header.searchBar.inputSearchCriteria("news");
+    await app.home.header.searchBar.clickEnterSearchField();
     await app.webPage.item.expectWebItemsToBeVisible();
-    await app.webPage.header.clickNewsSearchButton();
+    await app.webPage.header.navigation.clickNewsTab();
     await app.newsPage.item.expectNewsItemsToBeVisible();
     await app.newsPage.header.clickFiltersButton();
-    await app.newsPage.filters.clickByDate();
+    await app.newsPage.filters.clickFilterByDate();
     const response =
       await app.newsPage.filters.buttonMenu.clickMenuItemAndGetResponse(
         locatorId,
@@ -49,13 +49,13 @@ test("Cancel filter and navigates to the corresponding page.", async ({
   await app.home.open();
   await app.home.header.clickHamburgerMenuButton();
   await app.home.header.hamburgerMenu.selectRegion("Germany");
-  await app.home.header.searchForm.inputSearchCriteria("news");
-  await app.home.header.searchForm.clickEnterSearchField();
+  await app.home.header.searchBar.inputSearchCriteria("news");
+  await app.home.header.searchBar.clickEnterSearchField();
   await app.webPage.item.expectWebItemsToBeVisible();
-  await app.webPage.header.clickNewsSearchButton();
+  await app.webPage.header.navigation.clickNewsTab();
   await app.newsPage.item.expectNewsItemsToBeVisible();
   await app.newsPage.header.clickFiltersButton();
-  await app.newsPage.filters.clickByDate();
+  await app.newsPage.filters.clickFilterByDate();
   const oldResponse =
     await app.newsPage.filters.buttonMenu.clickPastDayAndGetResponse(
       process.env.API_URL
@@ -93,13 +93,13 @@ test("Check list dropdown of filter by date ", async ({ app }) => {
   await app.home.open();
   await app.home.header.clickHamburgerMenuButton();
   await app.home.header.hamburgerMenu.selectRegion("Germany");
-  await app.home.header.searchForm.inputSearchCriteria("ronaldo");
-  await app.home.header.searchForm.clickEnterSearchField();
+  await app.home.header.searchBar.inputSearchCriteria("ronaldo");
+  await app.home.header.searchBar.clickEnterSearchField();
   await app.webPage.item.expectWebItemsToBeVisible();
-  await app.webPage.header.clickNewsSearchButton();
+  await app.webPage.header.navigation.clickNewsTab();
   await app.newsPage.item.expectNewsItemsToBeVisible();
   await app.newsPage.header.clickFiltersButton();
-  await app.newsPage.filters.clickByDate();
+  await app.newsPage.filters.clickFilterByDate();
 
   //Assert
   await app.newsPage.filters.buttonMenu.expectDropdownToHaveText([
@@ -116,16 +116,16 @@ test("Check that dropdown of filter by date is opened", async ({ app }) => {
   await app.home.open();
   await app.home.header.clickHamburgerMenuButton();
   await app.home.header.hamburgerMenu.selectRegion("Germany");
-  await app.home.header.searchForm.inputSearchCriteria("ronaldo");
-  await app.home.header.searchForm.clickEnterSearchField();
+  await app.home.header.searchBar.inputSearchCriteria("ronaldo");
+  await app.home.header.searchBar.clickEnterSearchField();
   await app.webPage.item.expectWebItemsToBeVisible();
-  await app.webPage.header.clickNewsSearchButton();
+  await app.webPage.header.navigation.clickNewsTab();
   await app.newsPage.item.expectNewsItemsToBeVisible();
   await app.newsPage.header.clickFiltersButton();
-  await app.newsPage.filters.clickByDate();
+  await app.newsPage.filters.clickFilterByDate();
 
   //Assert
   await app.newsPage.filters.expectByDateIsOpened();
-  await app.newsPage.filters.clickByDate();
+  await app.newsPage.filters.clickFilterByDate();
   await app.newsPage.filters.expectByDateIsClosed();
 });

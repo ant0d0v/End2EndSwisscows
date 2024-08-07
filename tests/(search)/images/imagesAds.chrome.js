@@ -4,9 +4,9 @@ test("Check text and image product advertising ", async ({ app }) => {
   await app.home.open();
   await app.home.header.clickHamburgerMenuButton();
   await app.home.header.hamburgerMenu.selectRegion("Germany");
-  await app.home.header.searchForm.inputSearchCriteria("laptop macbook");
-  await app.home.header.searchForm.clickEnterSearchField();
-  await app.imagePage.header.clickImageSearchButton();
+  await app.home.header.searchBar.inputSearchCriteria("laptop macbook");
+  await app.home.header.searchBar.clickEnterSearchField();
+  await app.imagePage.header.navigation.clickImageTab();
   await app.imagePage.item.expectImageItemsToBeVisible();
   await app.imagePage.adsProduct.waitUntilProductAdsToBeVisible();
 
@@ -29,9 +29,9 @@ test("Check next button and prev button in the product advertising ", async ({
   await app.home.open();
   await app.home.header.clickHamburgerMenuButton();
   await app.home.header.hamburgerMenu.selectRegion("Germany");
-  await app.home.header.searchForm.inputSearchCriteria("laptop macbook");
-  await app.home.header.searchForm.clickEnterSearchField();
-  await app.imagePage.header.clickImageSearchButton();
+  await app.home.header.searchBar.inputSearchCriteria("laptop macbook");
+  await app.home.header.searchBar.clickEnterSearchField();
+  await app.imagePage.header.navigation.clickImageTab();
   await app.imagePage.item.expectImageItemsToBeVisible();
   await app.imagePage.adsProduct.waitUntilProductAdsToBeVisible();
   await app.imagePage.adsProduct.clickCarouselNextButtonUntilToBeInvisible();
@@ -46,9 +46,9 @@ test("Check open advertising ", async ({ app }) => {
   await app.home.open();
   await app.home.header.clickHamburgerMenuButton();
   await app.home.header.hamburgerMenu.selectRegion("Germany");
-  await app.home.header.searchForm.inputSearchCriteria("laptop macbook");
-  await app.home.header.searchForm.clickEnterSearchField();
-  await app.imagePage.header.clickImageSearchButton();
+  await app.home.header.searchBar.inputSearchCriteria("laptop macbook");
+  await app.home.header.searchBar.clickEnterSearchField();
+  await app.imagePage.header.navigation.clickImageTab();
   await app.imagePage.item.expectImageItemsToBeVisible();
   await app.imagePage.adsProduct.waitUntilProductAdsToBeVisible();
   const newPage =
@@ -66,9 +66,9 @@ test("Check the width and Height of products ads items", async ({ app }) => {
   await app.home.open();
   await app.home.header.clickHamburgerMenuButton();
   await app.home.header.hamburgerMenu.selectRegion("Germany");
-  await app.home.header.searchForm.inputSearchCriteria("laptop macbook");
-  await app.home.header.searchForm.clickEnterSearchField();
-  await app.imagePage.header.clickImageSearchButton();
+  await app.home.header.searchBar.inputSearchCriteria("laptop macbook");
+  await app.home.header.searchBar.clickEnterSearchField();
+  await app.imagePage.header.navigation.clickImageTab();
   await app.imagePage.item.expectImageItemsToBeVisible();
   await app.imagePage.adsProduct.waitUntilProductAdsToBeVisible();
 
@@ -82,9 +82,9 @@ test("Check title of products ads ", async ({ app }) => {
   await app.home.open();
   await app.home.header.clickHamburgerMenuButton();
   await app.home.header.hamburgerMenu.selectRegion("Germany");
-  await app.home.header.searchForm.inputSearchCriteria("laptop macbook");
-  await app.home.header.searchForm.clickEnterSearchField();
-  await app.imagePage.header.clickImageSearchButton();
+  await app.home.header.searchBar.inputSearchCriteria("laptop macbook");
+  await app.home.header.searchBar.clickEnterSearchField();
+  await app.imagePage.header.navigation.clickImageTab();
   await app.imagePage.item.expectImageItemsToBeVisible();
   await app.imagePage.adsProduct.waitUntilProductAdsToBeVisible();
 

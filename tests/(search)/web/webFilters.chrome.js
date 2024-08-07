@@ -1,30 +1,30 @@
 import { test } from "../../../utils/fixtures.js";
 import { expect } from "@playwright/test";
 import filterData from "../../../data/filters/testData.json";
+import { faker } from "@faker-js/faker";
 
-for (const { testID, expectedWebURL, locatorId } of filterData.byDate) {
-  test(`${testID} Check search results by filter ${locatorId} navigates to the corresponding URL and matches response results`, async ({
+for (const { testID, freshnessPart, fiterName } of filterData.byDate) {
+  test(`${testID} Check search results by filter ${fiterName} navigates to the corresponding URL and matches response results`, async ({
     app,
   }) => {
+    const randomQuery = faker.word.sample();
     //Actions
     await app.home.open();
-    await app.home.header.searchForm.inputSearchCriteria("ronaldo");
-    await app.home.header.searchForm.clickEnterSearchField();
+    await app.home.header.searchBar.inputSearchCriteria(randomQuery);
+    await app.home.header.searchBar.clickEnterSearchField();
     await app.webPage.item.expectWebItemsToBeVisible();
-    await app.webPage.header.clickFiltersButton();
-    await app.webPage.filters.clickByDate();
-    const response =
-      await app.webPage.filters.buttonMenu.clickMenuItemAndGetResponse(
-        locatorId,
-        "/v4/web/search?query=ronaldo"
-      );
+    await app.webPage.filters.clickFilterByDate();
+    const response = await app.webPage.filters.selectMenu.selectFilterAndGetResponse(fiterName);
 
     //Assert
-    await app.expectPageToHaveUrl(app.page, expectedWebURL);
+    await app.expectPageToHaveUrl(
+      app.page,
+      `${process.env.BASE_URL}/en/web?query=${randomQuery + freshnessPart}`
+    );
     await app.api.search.response.expectBodyToEqual(response, {
       context: {
-        query: "ronaldo",
-        effectiveQuery: "ronaldo",
+        query: randomQuery,
+        effectiveQuery: randomQuery,
         offset: 0,
         itemsCount: 10,
         locale: "en-CA",
@@ -37,50 +37,38 @@ for (const { testID, expectedWebURL, locatorId } of filterData.byDate) {
 test("Cancel filter and navigates to the corresponding page.", async ({
   app,
 }) => {
+  const randomQuery = faker.word.sample();
   //Actions
   await app.home.open();
   await app.home.header.clickHamburgerMenuButton();
   await app.home.header.hamburgerMenu.selectRegion("Germany");
-  await app.home.header.searchForm.inputSearchCriteria("ronaldo");
-  await app.home.header.searchForm.clickEnterSearchField();
+  await app.home.header.searchBar.inputSearchCriteria(randomQuery);
+  await app.home.header.searchBar.clickEnterSearchField();
   await app.webPage.item.expectWebItemsToBeVisible();
-  await app.webPage.header.clickFiltersButton();
-  await app.webPage.filters.clickByDate();
-  const oldResponse =
-    await app.webPage.filters.buttonMenu.clickPastDayAndGetResponse(
-      "/v4/web/search?query=ronaldo"
-    );
-  const newResponse = await app.webPage.header.clickFilterButtonAndGetResponse(
-    "/v4/web/search?query=ronaldo"
-  );
+  await app.webPage.filters.clickFilterByDate();
+  const oldResponse = await app.webPage.filters.selectMenu.selectFilterAndGetResponse("Past Day");
+  await app.webPage.filters.clickFilterByDate();
+  const newResponse = await app.webPage.filters.selectMenu.selectFilterAndGetResponse("Any time");
 
   //Assert
-  await app.expectPageToHaveUrl(
-    app.page,
-    process.env.BASE_URL + "/en/web?query=ronaldo&region=de-DE"
-  );
+  await app.expectPageToHaveUrl(app.page,process.env.BASE_URL + `/en/web?query=${randomQuery}&region=de-DE`);
   await expect(oldResponse.json()).resolves.not.toEqual(newResponse.json());
 });
 
-test("Check list dropdown of filter by date ", async ({ app }) => {
+test("Check list dropdown of filter by date ", async ({ app },
+  testInfo
+) => {
   //Actions
   await app.home.open();
   await app.home.header.clickHamburgerMenuButton();
   await app.home.header.hamburgerMenu.selectRegion("Germany");
-  await app.home.header.searchForm.inputSearchCriteria("ronaldo");
-  await app.home.header.searchForm.clickEnterSearchField();
+  await app.home.header.searchBar.inputSearchCriteria(faker.word.sample());
+  await app.home.header.searchBar.clickEnterSearchField();
   await app.webPage.item.expectWebItemsToBeVisible();
-  await app.webPage.header.clickFiltersButton();
-  await app.webPage.filters.clickByDate();
+  await app.webPage.filters.clickFilterByDate();
 
   //Assert
-  await app.webPage.filters.buttonMenu.expectDropdownToHaveText([
-    "All",
-    "Past Day",
-    "Past Week",
-    "Past Month",
-    "Past Year",
-  ]);
+  await app.webPage.filters.selectMenu.takeSnapshot(testInfo)
 });
 
 test("Check that dropdown of filter by date is opened and closed", async ({
@@ -90,14 +78,13 @@ test("Check that dropdown of filter by date is opened and closed", async ({
   await app.home.open();
   await app.home.header.clickHamburgerMenuButton();
   await app.home.header.hamburgerMenu.selectRegion("Germany");
-  await app.home.header.searchForm.inputSearchCriteria("ronaldo");
-  await app.home.header.searchForm.clickEnterSearchField();
+  await app.home.header.searchBar.inputSearchCriteria(faker.word.sample());
+  await app.home.header.searchBar.clickEnterSearchField();
   await app.webPage.item.expectWebItemsToBeVisible();
-  await app.webPage.header.clickFiltersButton();
-  await app.webPage.filters.clickByDate();
+  await app.webPage.filters.clickFilterByDate();
 
   //Assert
-  await app.webPage.filters.expectByDateIsOpened();
-  await app.webPage.filters.clickByDate();
-  await app.webPage.filters.expectByDateIsClosed();
+  await app.webPage.filters.expectFilterByDateIs("open");
+  await app.webPage.filters.selectMenu.selectFilter("Past Year");
+  await app.webPage.filters.expectFilterByDateIs("closed");
 });
