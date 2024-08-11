@@ -20,26 +20,83 @@ test("Check text advertising", async ({ app }) => {
   await app.webPage.adsText.expectListAdsToHaveText("Ad");
 });
 
-test("Check text and image product advertising ", async ({ app }) => {
+test("Check design header of product ads", async ({
+  app,
+}, testInfo) => {
   //Actions
   await app.home.open();
   await app.home.header.clickHamburgerMenuButton();
   await app.home.header.hamburgerMenu.selectRegion("Germany");
-  await app.home.header.searchBar.inputSearchCriteria("macbook price");
+  await app.home.header.searchBar.inputSearchCriteria("scotch whisky");
   await app.home.header.searchBar.clickEnterSearchField();
   await app.webPage.item.expectWebItemsToBeVisible();
-  await app.webPage.adsProduct.waitUntilProductAdsToBeVisible();
+  await app.webPage.advertiserProductCollection.waitUntilProductAdsToBeVisible();
+
 
   //Assert
-  await app.webPage.adsProduct.expectTitleAdsToHaveText(
-    "Products for macbook price"
-  );
-  await app.webPage.adsProduct.expectAreElementsInListDisplayed(
-    app.webPage.adsProduct.allImage
-  );
-  await app.webPage.adsText.expectAdsToHaveText(
-    "Ads by Microsoft Data privacy"
-  );
+  await app.webPage.advertiserProductCollection.takeSnapshot(testInfo);
+});
+
+test("Check title of product ads", async ({ app }) => {
+  //Actions
+  await app.home.open();
+  await app.home.header.clickHamburgerMenuButton();
+  await app.home.header.hamburgerMenu.selectRegion("Germany");
+  await app.home.header.searchBar.inputSearchCriteria("scotch whisky");
+  await app.home.header.searchBar.clickEnterSearchField();
+  await app.webPage.item.expectWebItemsToBeVisible();
+  await app.webPage.advertiserProductCollection.waitUntilProductAdsToBeVisible();
+
+  //Assert
+  await app.webPage.avertiserProduct.expectTitleToContain(/scotch/i);
+});
+
+test("Check price and shipping of product ads", async ({ app }) => {
+  //Actions
+  await app.home.open();
+  await app.home.header.clickHamburgerMenuButton();
+  await app.home.header.hamburgerMenu.selectRegion("Germany");
+  await app.home.header.searchBar.inputSearchCriteria("scotch whisky");
+  await app.home.header.searchBar.clickEnterSearchField();
+  await app.webPage.item.expectWebItemsToBeVisible();
+  await app.webPage.advertiserProductCollection.waitUntilProductAdsToBeVisible();
+
+  //Assert
+  await app.webPage.avertiserProduct.expectPricesNotToBeEmpty();
+  await app.webPage.avertiserProduct.expectShippingsNotToBeEmpty();
+});
+
+test("Check the thumbnail width and Height of products ads items", async ({
+  app,
+}) => {
+  //Actions
+  await app.home.open();
+  await app.home.header.clickHamburgerMenuButton();
+  await app.home.header.hamburgerMenu.selectRegion("Germany");
+  await app.home.header.searchBar.inputSearchCriteria("scotch whisky");
+  await app.home.header.searchBar.clickEnterSearchField();
+  await app.webPage.item.expectWebItemsToBeVisible();
+  await app.webPage.advertiserProductCollection.waitUntilProductAdsToBeVisible();
+
+  //Assert
+  await app.webPage.avertiserProduct.expectThumbnailToHaveWidth(178);
+  await app.webPage.avertiserProduct.expectThumbnailToHaveHeight(173);
+});
+
+test("Check open advertising ", async ({ app }) => {
+  //Actions
+  await app.home.open();
+  await app.home.header.clickHamburgerMenuButton();
+  await app.home.header.hamburgerMenu.selectRegion("Germany");
+  await app.home.header.searchBar.inputSearchCriteria("scotch whisky");
+  await app.home.header.searchBar.clickEnterSearchField();
+  await app.webPage.item.expectWebItemsToBeVisible();
+  await app.webPage.advertiserProductCollection.waitUntilProductAdsToBeVisible();
+  const oldUrl = await app.page.url()
+  await app.webPage.avertiserProduct.clickProductAtNumber(1);
+
+  //Assert
+  await app.expectPageNotToHaveUrl(app.page, oldUrl);
 });
 
 test("Check next button and prev button in the product advertising ", async ({
@@ -49,61 +106,14 @@ test("Check next button and prev button in the product advertising ", async ({
   await app.home.open();
   await app.home.header.clickHamburgerMenuButton();
   await app.home.header.hamburgerMenu.selectRegion("Germany");
-  await app.home.header.searchBar.inputSearchCriteria("macbook price");
+  await app.home.header.searchBar.inputSearchCriteria("scotch whisky");
   await app.home.header.searchBar.clickEnterSearchField();
   await app.webPage.item.expectWebItemsToBeVisible();
-  await app.webPage.adsProduct.waitUntilProductAdsToBeVisible();
-  await app.webPage.adsProduct.clickCarouselNextButtonUntilToBeInvisible();
+  await app.webPage.advertiserProductCollection.waitUntilProductAdsToBeVisible();
+  await app.webPage.advertiserProductCollection.clickUntilNextButtonToBeDisabled();
 
   //Assert
   await app.webPage.adsProduct.expectCarouselNextButtonIsDisabled();
   await app.webPage.adsProduct.clickCarouselPrevButtonUntilToBeInvisible();
   await app.webPage.adsProduct.expectCarouselPrevButtonIsDisabled();
-});
-test("Check open advertising ", async ({ app }) => {
-  //Actions
-  await app.home.open();
-  await app.home.header.clickHamburgerMenuButton();
-  await app.home.header.hamburgerMenu.selectRegion("Germany");
-  await app.home.header.searchBar.inputSearchCriteria("macbook price");
-  await app.home.header.searchBar.clickEnterSearchField();
-  await app.webPage.item.expectWebItemsToBeVisible();
-  await app.webPage.adsProduct.waitUntilProductAdsToBeVisible();
-  const newPage =
-    await app.webPage.adsProduct.clickFirstProductAndNavigateToNewPage();
-
-  //Assert
-  await app.expectPageNotToHaveUrl(
-    newPage,
-    process.env.BASE_URL + "/en/web?query=macbook+price&region=de-DE"
-  );
-});
-
-test("Check the width and Height of products ads items", async ({ app }) => {
-  //Actions
-  await app.home.open();
-  await app.home.header.clickHamburgerMenuButton();
-  await app.home.header.hamburgerMenu.selectRegion("Germany");
-  await app.home.header.searchBar.inputSearchCriteria("macbook price");
-  await app.home.header.searchBar.clickEnterSearchField();
-  await app.webPage.item.expectWebItemsToBeVisible();
-  await app.webPage.adsProduct.waitUntilProductAdsToBeVisible();
-
-  //Assert
-  await app.webPage.adsProduct.expectProductToHaveWidth(182);
-  await app.webPage.adsProduct.expectProductToHaveHeight(122);
-});
-
-test("Check title of products ads ", async ({ app }) => {
-  //Actions
-  await app.home.open();
-  await app.home.header.clickHamburgerMenuButton();
-  await app.home.header.hamburgerMenu.selectRegion("Germany");
-  await app.home.header.searchBar.inputSearchCriteria("macbook price");
-  await app.home.header.searchBar.clickEnterSearchField();
-  await app.webPage.item.expectWebItemsToBeVisible();
-  await app.webPage.adsProduct.waitUntilProductAdsToBeVisible();
-
-  //Assert
-  await app.webPage.adsProduct.expectTitleProductsToContains(/macbook/i);
 });

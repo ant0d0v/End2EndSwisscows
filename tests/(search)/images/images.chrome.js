@@ -79,7 +79,7 @@ test.describe("favorite function", () => {
     await app.home.open();
     await app.home.header.searchBar.inputSearchCriteria("ACD");
     await app.home.header.searchBar.clickEnterSearchField();
-    await app.imagePage.header.navigation.clickImageTab();
+    await app.webPage.header.navigation.clickImageTab();
     await app.imagePage.item.expectImageItemsToBeVisible();
     await app.imagePage.item.clickItemNumber(firstItem);
     let favoriteID =
@@ -98,7 +98,7 @@ test.describe("favorite function", () => {
     await app.home.open();
     await app.home.header.searchBar.inputSearchCriteria("Ukraine");
     await app.home.header.searchBar.clickEnterSearchField();
-    await app.imagePage.header.navigation.clickImageTab();
+    await app.webPage.header.navigation.clickImageTab();
     await app.imagePage.item.expectImageItemsToBeVisible();
     await app.imagePage.item.clickItemNumber(firstItem);
     await app.imagePage.itemDetails.clickBookmarkButton();
@@ -117,7 +117,7 @@ test.fixme("Check next button in the item details", async ({ app }) => {
   await app.home.open();
   await app.home.header.searchBar.inputSearchCriteria("ACD");
   await app.home.header.searchBar.clickEnterSearchField();
-  await app.imagePage.header.navigation.clickImageTab();
+  await app.webPage.header.navigation.clickImageTab();
   await app.imagePage.item.expectImageItemsToBeVisible();
   await app.imagePage.item.clickItemNumber(firstItem);
   await app.imagePage.itemDetails.clickNextButton();
@@ -132,7 +132,7 @@ test.fixme("Check prev button in the item details", async ({ app }) => {
   await app.home.open();
   await app.home.header.searchBar.inputSearchCriteria("Blu");
   await app.home.header.searchBar.clickEnterSearchField();
-  await app.imagePage.header.navigation.clickImageTab();
+  await app.webPage.header.navigation.clickImageTab();
   await app.imagePage.item.expectImageItemsToBeVisible();
   await app.imagePage.item.clickItemNumber(firstItem);
   await app.imagePage.itemDetails.clickNextButton();
@@ -151,7 +151,7 @@ test("Check that details panel to be hidden when clicking close button", async (
   await app.home.open();
   await app.home.header.searchBar.inputSearchCriteria("A");
   await app.home.header.searchBar.clickEnterSearchField();
-  await app.imagePage.header.navigation.clickImageTab();
+  await app.webPage.header.navigation.clickImageTab();
   await app.imagePage.preloader.expectPreloaderToBeVisible();
   await app.imagePage.item.expectImageItemsToBeVisible();
   await app.imagePage.item.clickItemNumber(firstItem);
@@ -169,7 +169,7 @@ test("Check image first item equal image in the item details", async ({
   await app.home.open();
   await app.home.header.searchBar.inputSearchCriteria("Ronaldo");
   await app.home.header.searchBar.clickEnterSearchField();
-  await app.imagePage.header.navigation.clickImageTab();
+  await app.webPage.header.navigation.clickImageTab();
   await app.imagePage.item.expectImageItemsToBeVisible();
   const altAttributeFirstImage =
     await app.imagePage.item.getByAltAttributeFirstImage(firstItem);
@@ -186,7 +186,7 @@ test("Check infinity scroll to next page", async ({ app }) => {
   await app.home.open();
   await app.home.header.searchBar.inputSearchCriteria("red");
   await app.home.header.searchBar.clickEnterSearchField();
-  await app.imagePage.header.navigation.clickImageTab();
+  await app.webPage.header.navigation.clickImageTab();
   await app.imagePage.item.expectImageItemsToBeVisible();
   await app.imagePage.item.scrollByVisibleItemNumber(80);
 
@@ -204,7 +204,7 @@ test("Check infinity scroll to next page when item details is opened", async ({
   await app.home.open();
   await app.home.header.searchBar.inputSearchCriteria("red");
   await app.home.header.searchBar.clickEnterSearchField();
-  await app.imagePage.header.navigation.clickImageTab();
+  await app.webPage.header.navigation.clickImageTab();
   await app.imagePage.item.expectImageItemsToBeVisible();
   await app.imagePage.item.clickItemNumber(firstItem);
   await app.imagePage.item.scrollByVisibleItemNumber(80);
@@ -221,7 +221,7 @@ test("Check that images results equals search criteria", async ({ app }) => {
   await app.home.open();
   await app.home.header.searchBar.inputSearchCriteria("iphone");
   await app.home.header.searchBar.clickEnterSearchField();
-  await app.imagePage.header.navigation.clickImageTab();
+  await app.webPage.header.navigation.clickImageTab();
 
   //Assert
   await app.imagePage.item.expectItemNameToContainText(/iphone/i);
@@ -233,7 +233,7 @@ test("Check regional search", async ({ app }) => {
   await app.home.open();
   await app.home.header.searchBar.inputSearchCriteria("red");
   await app.home.header.searchBar.clickEnterSearchField();
-  await app.imagePage.header.navigation.clickImageTab();
+  await app.webPage.header.navigation.clickImageTab();
   await app.imagePage.item.expectImageItemsToBeVisible();
   await app.imagePage.header.clickHamburgerMenuButton();
   await app.imagePage.header.hamburgerMenu.selectRegion("Germany");
@@ -255,7 +255,7 @@ test("Check outline and opacity of item when item is selected", async ({
   await app.home.open();
   await app.home.header.searchBar.inputSearchCriteria("Ronaldo");
   await app.home.header.searchBar.clickEnterSearchField();
-  await app.imagePage.header.navigation.clickImageTab();
+  await app.webPage.header.navigation.clickImageTab();
   await app.imagePage.item.expectImageItemsToBeVisible();
   await app.imagePage.item.clickItemNumber(firstItem);
 
@@ -273,7 +273,7 @@ test("Check that image of proxy cdn server", async ({ app }) => {
   await app.home.open();
   await app.home.header.searchBar.inputSearchCriteria(randomQuery);
   await app.home.header.searchBar.clickEnterSearchField();
-  await app.imagePage.header.navigation.clickImageTab();
+  await app.webPage.header.navigation.clickImageTab();
   await app.imagePage.item.expectImageItemsToBeVisible();
 
   //Assert
@@ -288,7 +288,7 @@ test("Check image item is active  when clicking on image", async ({ app }) => {
   await app.home.open();
   await app.home.header.searchBar.inputSearchCriteria(randomQuery);
   await app.home.header.searchBar.clickEnterSearchField();
-  await app.imagePage.header.navigation.clickImageTab();
+  await app.webPage.header.navigation.clickImageTab();
   await app.imagePage.item.expectImageItemsToBeVisible();
   await app.imagePage.item.clickItemNumber(firstItem);
 
@@ -304,7 +304,7 @@ test("Check open site button when clicking redirect to new page", async ({
   await app.home.open();
   await app.home.header.searchBar.inputSearchCriteria(randomQuery);
   await app.home.header.searchBar.clickEnterSearchField();
-  await app.imagePage.header.navigation.clickImageTab();
+  await app.webPage.header.navigation.clickImageTab();
   await app.imagePage.item.expectImageItemsToBeVisible();
   await app.imagePage.item.clickItemNumber(firstItem);
   const currentUrl = await app.page.url();
@@ -321,7 +321,7 @@ test("Check that resolution in details pane to have value", async ({ app }) => {
   await app.home.open();
   await app.home.header.searchBar.inputSearchCriteria(randomQuery);
   await app.home.header.searchBar.clickEnterSearchField();
-  await app.imagePage.header.navigation.clickImageTab();
+  await app.webPage.header.navigation.clickImageTab();
   await app.imagePage.item.expectImageItemsToBeVisible();
   await app.imagePage.item.clickItemNumber(firstItem);
 
@@ -334,7 +334,7 @@ test("Check that title in details pane to containe text", async ({ app }) => {
   await app.home.open();
   await app.home.header.searchBar.inputSearchCriteria("Ronaldo");
   await app.home.header.searchBar.clickEnterSearchField();
-  await app.imagePage.header.navigation.clickImageTab();
+  await app.webPage.header.navigation.clickImageTab();
   await app.imagePage.item.expectImageItemsToBeVisible();
   await app.imagePage.item.clickItemNumber(firstItem);
 
@@ -349,7 +349,7 @@ test("Check that site ifrormation in details pane to have value", async ({
   await app.home.open();
   await app.home.header.searchBar.inputSearchCriteria(randomQuery);
   await app.home.header.searchBar.clickEnterSearchField();
-  await app.imagePage.header.navigation.clickImageTab();
+  await app.webPage.header.navigation.clickImageTab();
   await app.imagePage.item.expectImageItemsToBeVisible();
   await app.imagePage.item.clickItemNumber(firstItem);
 
@@ -365,7 +365,7 @@ test("Check height and width of details pane to have value", async ({
   await app.home.open();
   await app.home.header.searchBar.inputSearchCriteria("Ronaldo");
   await app.home.header.searchBar.clickEnterSearchField();
-  await app.imagePage.header.navigation.clickImageTab();
+  await app.webPage.header.navigation.clickImageTab();
   await app.imagePage.item.expectImageItemsToBeVisible();
   await app.imagePage.item.clickItemNumber(firstItem);
 
@@ -378,7 +378,7 @@ test("Check that details to be in viewport", async ({ app }) => {
   await app.home.open();
   await app.home.header.searchBar.inputSearchCriteria(randomQuery);
   await app.home.header.searchBar.clickEnterSearchField();
-  await app.imagePage.header.navigation.clickImageTab();
+  await app.webPage.header.navigation.clickImageTab();
   await app.imagePage.item.expectImageItemsToBeVisible();
   await app.imagePage.item.clickItemNumber(fifthItem);
 
@@ -391,7 +391,7 @@ test("Check preloader on page when Status.LOADING", async ({ app }) => {
   await app.home.open();
   await app.home.header.searchBar.inputSearchCriteria(randomQuery);
   await app.home.header.searchBar.clickEnterSearchField();
-  await app.imagePage.header.navigation.clickImageTab();
+  await app.webPage.header.navigation.clickImageTab();
   await app.imagePage.preloader.expectPreloaderToBeVisible();
   await app.imagePage.item.expectImageItemsToBeVisible();
   await app.imagePage.item.clickItemNumber(fifthItem);

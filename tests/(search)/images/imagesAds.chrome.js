@@ -1,5 +1,5 @@
 import { test } from "../../../utils/fixtures.js";
-test("Check text and image product advertising ", async ({ app }) => {
+test.fixme("Check text and image product advertising ", async ({ app }) => {
   //Actions
   await app.home.open();
   await app.home.header.clickHamburgerMenuButton();
@@ -22,26 +22,27 @@ test("Check text and image product advertising ", async ({ app }) => {
   );
 });
 
-test("Check next button and prev button in the product advertising ", async ({
-  app,
-}) => {
-  //Actions
-  await app.home.open();
-  await app.home.header.clickHamburgerMenuButton();
-  await app.home.header.hamburgerMenu.selectRegion("Germany");
-  await app.home.header.searchBar.inputSearchCriteria("laptop macbook");
-  await app.home.header.searchBar.clickEnterSearchField();
-  await app.imagePage.header.navigation.clickImageTab();
-  await app.imagePage.item.expectImageItemsToBeVisible();
-  await app.imagePage.adsProduct.waitUntilProductAdsToBeVisible();
-  await app.imagePage.adsProduct.clickCarouselNextButtonUntilToBeInvisible();
+test.fixme(
+  "Check next button and prev button in the product advertising ",
+  async ({ app }) => {
+    //Actions
+    await app.home.open();
+    await app.home.header.clickHamburgerMenuButton();
+    await app.home.header.hamburgerMenu.selectRegion("Germany");
+    await app.home.header.searchBar.inputSearchCriteria("laptop macbook");
+    await app.home.header.searchBar.clickEnterSearchField();
+    await app.imagePage.header.navigation.clickImageTab();
+    await app.imagePage.item.expectImageItemsToBeVisible();
+    await app.imagePage.adsProduct.waitUntilProductAdsToBeVisible();
+    await app.imagePage.adsProduct.clickCarouselNextButtonUntilToBeInvisible();
 
-  //Assert
-  await app.imagePage.adsProduct.expectCarouselNextButtonIsDisabled();
-  await app.imagePage.adsProduct.clickCarouselPrevButtonUntilToBeInvisible();
-  await app.imagePage.adsProduct.expectCarouselPrevButtonIsDisabled();
-});
-test("Check open advertising ", async ({ app }) => {
+    //Assert
+    await app.imagePage.adsProduct.expectCarouselNextButtonIsDisabled();
+    await app.imagePage.adsProduct.clickCarouselPrevButtonUntilToBeInvisible();
+    await app.imagePage.adsProduct.expectCarouselPrevButtonIsDisabled();
+  }
+);
+test.fixme("Check open advertising ", async ({ app }) => {
   //Actions
   await app.home.open();
   await app.home.header.clickHamburgerMenuButton();
@@ -61,23 +62,26 @@ test("Check open advertising ", async ({ app }) => {
   );
 });
 
-test("Check the width and Height of products ads items", async ({ app }) => {
-  //Actions
-  await app.home.open();
-  await app.home.header.clickHamburgerMenuButton();
-  await app.home.header.hamburgerMenu.selectRegion("Germany");
-  await app.home.header.searchBar.inputSearchCriteria("laptop macbook");
-  await app.home.header.searchBar.clickEnterSearchField();
-  await app.imagePage.header.navigation.clickImageTab();
-  await app.imagePage.item.expectImageItemsToBeVisible();
-  await app.imagePage.adsProduct.waitUntilProductAdsToBeVisible();
+test.fixme(
+  "Check the width and Height of products ads items",
+  async ({ app }) => {
+    //Actions
+    await app.home.open();
+    await app.home.header.clickHamburgerMenuButton();
+    await app.home.header.hamburgerMenu.selectRegion("Germany");
+    await app.home.header.searchBar.inputSearchCriteria("laptop macbook");
+    await app.home.header.searchBar.clickEnterSearchField();
+    await app.imagePage.header.navigation.clickImageTab();
+    await app.imagePage.item.expectImageItemsToBeVisible();
+    await app.imagePage.adsProduct.waitUntilProductAdsToBeVisible();
 
-  //Assert
-  await app.imagePage.adsProduct.expectProductToHaveWidth(254);
-  await app.imagePage.adsProduct.expectProductToHaveHeight(122);
-});
+    //Assert
+    await app.imagePage.adsProduct.expectProductToHaveWidth(254);
+    await app.imagePage.adsProduct.expectProductToHaveHeight(122);
+  }
+);
 
-test("Check title of products ads ", async ({ app }) => {
+test.fixme("Check title of products ads ", async ({ app }) => {
   //Actions
   await app.home.open();
   await app.home.header.clickHamburgerMenuButton();

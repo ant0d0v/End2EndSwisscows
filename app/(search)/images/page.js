@@ -3,7 +3,7 @@ import Filters from "./Filters.js";
 import RelatedQueries from "./RelatedQueries.js";
 import ItemDetails from "./ItemDetails.js";
 import Item from "./Item.js";
-import AdsProduct from "../ads/ProductAds.js";
+import AdsProduct from "../web/AdvertiserProduct.js";
 import AdsText from "../ads/TextAds.js";
 import Header from "../Header.js";
 import Error from "../Error.js";
@@ -18,17 +18,14 @@ export default class ImagePage extends BasePage {
     this.item = new Item(page);
     this.adsProduct = new AdsProduct(page);
     this.adsText = new AdsText(page);
-    this.header  = new Header(page);
-    this.error = new Error(page)
+    this.header = new Header(page);
+    this.error = new Error(page);
     this.preloader = new Preloader(page);
     //Locators
-    this.favoriteItem = this.page.getByRole('link', { name: 'My images' })
-
+    this.favoriteItem = this.page.getByRole("link", { name: "My images" });
   }
   //Actions
   clickFavoriteItem = async () => {
-    await this.clickElement( this.favoriteItem,
-      `favorite item`
-    );
+    await this.clickElement(this.favoriteItem, `favorite item`);
   };
 }

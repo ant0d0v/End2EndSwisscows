@@ -86,9 +86,9 @@ export default class BaseComponent extends PageHolder {
     });
   }
 
-  async clickElementUntilInvisible(element) {
+  async clickUntilElementToBeDisabled(element) {
     await test.step(`Click on ${element} the until invisible`, async () => {
-      while ((await element.isEnabled()) && (await element.isVisible())) {
+      while (await element.isEnabled()) {
         await element.click();
       }
     });
