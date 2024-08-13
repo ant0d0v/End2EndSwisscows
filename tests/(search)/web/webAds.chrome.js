@@ -6,7 +6,7 @@ test("Check text advertising", async ({ app }) => {
   await app.home.header.hamburgerMenu.selectRegion("Germany");
   await app.home.header.searchBar.inputSearchCriteria("macbook price");
   await app.home.header.searchBar.clickEnterSearchField();
-  await app.webPage.item.expectWebItemsToBeVisible();
+  await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
   await app.webPage.adsText.waitUntilAdsToBeVisible();
 
   //Assert
@@ -20,18 +20,15 @@ test("Check text advertising", async ({ app }) => {
   await app.webPage.adsText.expectListAdsToHaveText("Ad");
 });
 
-test("Check design header of product ads", async ({
-  app,
-}, testInfo) => {
+test("Check design header of product ads", async ({ app }, testInfo) => {
   //Actions
   await app.home.open();
   await app.home.header.clickHamburgerMenuButton();
   await app.home.header.hamburgerMenu.selectRegion("Germany");
   await app.home.header.searchBar.inputSearchCriteria("scotch whisky");
   await app.home.header.searchBar.clickEnterSearchField();
-  await app.webPage.item.expectWebItemsToBeVisible();
+  await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
   await app.webPage.advertiserProductCollection.waitUntilProductAdsToBeVisible();
-
 
   //Assert
   await app.webPage.advertiserProductCollection.takeSnapshot(testInfo);
@@ -44,7 +41,7 @@ test("Check title of product ads", async ({ app }) => {
   await app.home.header.hamburgerMenu.selectRegion("Germany");
   await app.home.header.searchBar.inputSearchCriteria("scotch whisky");
   await app.home.header.searchBar.clickEnterSearchField();
-  await app.webPage.item.expectWebItemsToBeVisible();
+  await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
   await app.webPage.advertiserProductCollection.waitUntilProductAdsToBeVisible();
 
   //Assert
@@ -58,7 +55,7 @@ test("Check price and shipping of product ads", async ({ app }) => {
   await app.home.header.hamburgerMenu.selectRegion("Germany");
   await app.home.header.searchBar.inputSearchCriteria("scotch whisky");
   await app.home.header.searchBar.clickEnterSearchField();
-  await app.webPage.item.expectWebItemsToBeVisible();
+  await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
   await app.webPage.advertiserProductCollection.waitUntilProductAdsToBeVisible();
 
   //Assert
@@ -75,7 +72,7 @@ test("Check the thumbnail width and Height of products ads items", async ({
   await app.home.header.hamburgerMenu.selectRegion("Germany");
   await app.home.header.searchBar.inputSearchCriteria("scotch whisky");
   await app.home.header.searchBar.clickEnterSearchField();
-  await app.webPage.item.expectWebItemsToBeVisible();
+  await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
   await app.webPage.advertiserProductCollection.waitUntilProductAdsToBeVisible();
 
   //Assert
@@ -90,9 +87,9 @@ test("Check open advertising ", async ({ app }) => {
   await app.home.header.hamburgerMenu.selectRegion("Germany");
   await app.home.header.searchBar.inputSearchCriteria("scotch whisky");
   await app.home.header.searchBar.clickEnterSearchField();
-  await app.webPage.item.expectWebItemsToBeVisible();
+  await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
   await app.webPage.advertiserProductCollection.waitUntilProductAdsToBeVisible();
-  const oldUrl = await app.page.url()
+  const oldUrl = await app.page.url();
   await app.webPage.avertiserProduct.clickProductAtNumber(1);
 
   //Assert
@@ -108,7 +105,7 @@ test("Check next button and prev button in the product advertising ", async ({
   await app.home.header.hamburgerMenu.selectRegion("Germany");
   await app.home.header.searchBar.inputSearchCriteria("scotch whisky");
   await app.home.header.searchBar.clickEnterSearchField();
-  await app.webPage.item.expectWebItemsToBeVisible();
+  await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
   await app.webPage.advertiserProductCollection.waitUntilProductAdsToBeVisible();
   await app.webPage.advertiserProductCollection.clickUntilNextButtonToBeDisabled();
 

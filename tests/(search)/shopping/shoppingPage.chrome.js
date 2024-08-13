@@ -74,17 +74,11 @@ test("Check error region is unsupported", async ({ app }, testInfo) => {
 test("Check info items { name, symbol price, link, brand}  ", async ({
   app,
 }) => {
-  const expectedInfo = {
-    name: "iPhone",
-    itemPricing: "€",
-    itemLink: "See all offers",
-    itemBrand: "Apple",
-  };
   //Actions
   await app.home.open();
   await app.home.header.searchBar.inputSearchCriteria("iphone");
   await app.home.header.searchBar.clickEnterSearchField();
-  await app.webPage.item.expectWebItemsToBeVisible();
+  await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
   await app.webPage.header.clickHamburgerMenuButton();
   await app.webPage.header.hamburgerMenu.selectRegion("Germany");
   await app.webPage.header.navigation.clickShoppingTab();
@@ -94,12 +88,12 @@ test("Check info items { name, symbol price, link, brand}  ", async ({
 
   //Assert
   await app.shoppingPage.item.expectDescriptionItemsNotToBeEmpty();
-  await app.shoppingPage.item.expectInfoProductToContain(
-    expectedInfo.name,
-    expectedInfo.itemPricing,
-    expectedInfo.itemLink,
-    expectedInfo.itemBrand
-  );
+  await app.shoppingPage.item.expectInfoProductToContain({
+    name: "iPhone",
+    pricing: "€",
+    link: "See all offers",
+    brand: "Apple"
+  });
 });
 
 test("Check payments methods icon of products items ", async ({ app }) => {
@@ -107,7 +101,7 @@ test("Check payments methods icon of products items ", async ({ app }) => {
   await app.home.open();
   await app.home.header.searchBar.inputSearchCriteria(faker.commerce.product());
   await app.home.header.searchBar.clickEnterSearchField();
-  await app.webPage.item.expectWebItemsToBeVisible();
+  await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
   await app.webPage.header.clickHamburgerMenuButton();
   await app.webPage.header.hamburgerMenu.selectRegion("Germany");
   await app.webPage.header.navigation.clickShoppingTab();
@@ -129,7 +123,7 @@ test("Check product images are visible and wight ", async ({ app }) => {
   await app.home.open();
   await app.home.header.searchBar.inputSearchCriteria(faker.commerce.product());
   await app.home.header.searchBar.clickEnterSearchField();
-  await app.webPage.item.expectWebItemsToBeVisible();
+  await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
   await app.webPage.header.clickHamburgerMenuButton();
   await app.webPage.header.hamburgerMenu.selectRegion("Germany");
   await app.webPage.header.navigation.clickShoppingTab();
@@ -147,7 +141,7 @@ test("Check next button in the paging", async ({ app }) => {
   await app.home.header.hamburgerMenu.selectRegion("Germany");
   await app.home.header.searchBar.inputSearchCriteria(faker.commerce.product());
   await app.home.header.searchBar.clickEnterSearchField();
-  await app.webPage.item.expectWebItemsToBeVisible();
+  await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
   await app.webPage.header.navigation.clickShoppingTab();
   await app.shoppingPage.item.expectShoppingItemsToBeVisible();
   const oldSearchResult =

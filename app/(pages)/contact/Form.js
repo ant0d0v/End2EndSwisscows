@@ -25,18 +25,21 @@ export default class Form extends BaseComponent {
   async checkAgreeCheckbox() {
     await this.checkElement(this.checkbox, `Agree checkbox`);
   }
-  async inputYouNameField(text) {
+  
+  async fillContactForm(
+    fields = {
+      nameField: string,
+      emailField: string,
+      messageField: string,
+    }
+  ) {
     await this.page.waitForLoadState("networkidle");
-    await this.input(this.yourNameField, text, `Your name field`);
-  }
-  async inputEmailField(text) {
-    await this.input(this.emailField, text, `Email field`);
-  }
-  async inputMessageField(text) {
-    await this.input(this.yourMessageField, text, `Message field`);
+    await this.input(this.yourNameField, fields.nameField, `Your name field`);
+    await this.input(this.emailField, fields.emailField, `Email field`);
+    await this.input(this.yourMessageField, fields.messageField, `Message field`);
   }
   // Verify
-  
+
   async expectSendButtonWhenHoveringToHaveColor(color) {
     await this.expectColorLinkWhenHovering(
       this.sendButton,
@@ -45,17 +48,33 @@ export default class Form extends BaseComponent {
     );
   }
   expectYourNameFieldToHaveProperty = async (value) => {
-    await this.expectElementToHaveJSProperty(this.yourNameField ,"validationMessage", value);
+    await this.expectElementToHaveJSProperty(
+      this.yourNameField,
+      "validationMessage",
+      value
+    );
   };
   expectEmailFieldToHaveProperty = async (value) => {
-    await this.expectElementToHaveJSProperty(this.emailField,"validationMessage", value);
+    await this.expectElementToHaveJSProperty(
+      this.emailField,
+      "validationMessage",
+      value
+    );
   };
 
   expectYourMessageFieldToHaveProperty = async (value) => {
-    await this.expectElementToHaveJSProperty(this.yourMessageField,"validationMessage", value);
+    await this.expectElementToHaveJSProperty(
+      this.yourMessageField,
+      "validationMessage",
+      value
+    );
   };
 
   expectAgreeCheckboxToHaveProperty = async (value) => {
-    await this.expectElementToHaveJSProperty(this.agreeCheckbox,"validationMessage", value);
+    await this.expectElementToHaveJSProperty(
+      this.agreeCheckbox,
+      "validationMessage",
+      value
+    );
   };
 }

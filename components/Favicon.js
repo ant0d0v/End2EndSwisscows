@@ -1,5 +1,5 @@
 import BaseComponent from "../base/BaseComponent.js";
-export default class Icon extends BaseComponent {
+export default class Favicon extends BaseComponent {
   constructor(page) {
     super(page);
     //Locators

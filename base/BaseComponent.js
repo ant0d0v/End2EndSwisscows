@@ -124,6 +124,7 @@ export default class BaseComponent extends PageHolder {
   }
   async expectElementsToHaveJSProperty(elements, property, value) {
     await test.step(`Expect the Element to Have JS ${property} a ${value} in a array`, async () => {
+      await expect(elements.first()).toHaveJSProperty(property, value);
       for (const element of await elements.all()) {
         await expect(element).toHaveJSProperty(property, value);
       }
@@ -205,6 +206,7 @@ export default class BaseComponent extends PageHolder {
 
   async expectAreElementsInListDisplayed(elements) {
     await test.step('Expect the element in the array to "be" visible', async () => {
+      await expect(elements.first()).toBeVisible();
       for (const element of await elements.all()) {
         await expect(element).toBeVisible();
       }
@@ -254,6 +256,7 @@ export default class BaseComponent extends PageHolder {
   }
   async expectListElementsNotToBeEmpty(elements) {
     await test.step(`Expect the ${elements} in the array not to be empty`, async () => {
+      await expect(elements.first()).not.toBeEmpty();
       for (const element of await elements.all()) {
         await expect(element).not.toBeEmpty();
       }

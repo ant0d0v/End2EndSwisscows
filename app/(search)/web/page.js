@@ -1,6 +1,6 @@
 import Pagination from "../../../components/Pagination.js";
 import Filters from "./Filters.js";
-import Item from "./Item.js";
+import WebPageItem from "./WebPageItem.js";
 import AlternateSearch from "./AlternateSearch.js";
 import RelatedSearches from "./RelatedSearches.js";
 import VideoCollection from "./VideoCollection.js";
@@ -16,17 +16,20 @@ import Footer from "../../../app/(search)/Footer.js";
 import AdvertiserProductCollection from "./AdvertiserProductCollection.js";
 import AdvertiserProduct from "./AdvertiserProduct.js";
 import VideoObject from "./VideoObject.js"
+import Article from "./Article.js";
+import Product from "./Product.js";
+import Skeleton from "./Skeleton.js";
+
 
 export default class WebPage extends BasePage {
   constructor(page) {
     super(page);
     this.pagination = new Pagination(page);
     this.filters = new Filters(page);
-    this.item = new Item(page);
+    this.webPageItem = new WebPageItem(page);
     this.alternateSearch = new AlternateSearch(page);
     this.avertiserProduct = new AdvertiserProduct(page);
     this.advertiserProductCollection = new AdvertiserProductCollection(page);
-    // this.adsText = new AdsText(page);
     this.relatedSearches = new RelatedSearches(page);
     this.videoCollection = new VideoCollection(page);
     this.imagesWidget = new ImagesWidget(page);
@@ -37,27 +40,24 @@ export default class WebPage extends BasePage {
     this.footer = new Footer(page);
     this.preview = new Preview(page);
     this.videoObject = new VideoObject(page);
-
+    this.article = new Article(page);
+    this.product = new Product(page);
+    this.skeleton = new Skeleton(page);
 
     //Locators
-    this.previewButton = this.page
-      .getByRole("button", { name: "preview" })
-      .first();
+    this.items = this.page.locator(".web-results .item");
+    this.titles = this.page.locator(".web-results .item .title");
   }
   //Actions
   async openNotFound(path) {
     await this.openPage(path);
   }
-  clickItemNumber = async (index) => {
-    return await this.clickElement(
-      this.item.title(index),
-      `${index} web item in search result`
-    );
-  };
-
-  clickPreviewButton = async () => {
-    await this.clickElement(this.previewButton, `preview button`);
-  };
 
   // Verify
+  expectResultsToHaveCountItems = async (value) => {
+    await this.expectListToHaveCount(this.items, value);
+  };
+  expectItemsToContains = async (criteria) => {
+    await this.expectTextsToContainSearchCriteria(this.titles, criteria);
+  };
 }

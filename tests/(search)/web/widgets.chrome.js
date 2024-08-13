@@ -7,7 +7,7 @@ test("Check next and prev buttons in the video widget", async ({ app }) => {
   await app.home.header.hamburgerMenu.selectRegion("Germany");
   await app.home.header.searchBar.inputSearchCriteria("iphone");
   await app.home.header.searchBar.clickEnterSearchField();
-  await app.webPage.item.expectWebItemsToBeVisible();
+  await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
   await app.webPage.videoCollection.clickNextButtonUntilInvisible();
   await app.webPage.videoCollection.waitUntilWidgetToBeVisible();
   //Assert
@@ -25,7 +25,7 @@ test("Check the width and visibility of images in the video widget", async ({
   await app.home.header.hamburgerMenu.selectRegion("Germany");
   await app.home.header.searchBar.inputSearchCriteria("Ronaldo");
   await app.home.header.searchBar.clickEnterSearchField();
-  await app.webPage.item.expectWebItemsToBeVisible();
+  await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
   await app.webPage.videoCollection.waitElementToBeVisible(
     app.webPage.videoCollection.nextButton
   );
@@ -51,7 +51,7 @@ test("Check click more button in the video widget", async ({ app }) => {
   await app.home.header.hamburgerMenu.selectRegion("Germany");
   await app.home.header.searchBar.inputSearchCriteria("iphone");
   await app.home.header.searchBar.clickEnterSearchField();
-  await app.webPage.item.expectWebItemsToBeVisible();
+  await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
   await app.webPage.videoCollection.waitElementToBeVisible(
     app.webPage.videoCollection.nextButton
   );
@@ -72,7 +72,7 @@ test("Check that open video in the video widget", async ({ app }) => {
   await app.home.header.hamburgerMenu.selectRegion("Germany");
   await app.home.header.searchBar.inputSearchCriteria("iphone");
   await app.home.header.searchBar.clickEnterSearchField();
-  await app.webPage.item.expectWebItemsToBeVisible();
+  await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
   await app.webPage.videoCollection.waitElementToBeVisible(
     app.webPage.videoCollection.nextButton
   );
@@ -91,7 +91,7 @@ test("Check open news in the news widget", async ({ app }) => {
   await app.home.header.hamburgerMenu.selectRegion("Germany");
   await app.home.header.searchBar.inputSearchCriteria("news Ukraine");
   await app.home.header.searchBar.clickEnterSearchField();
-  await app.webPage.item.expectWebItemsToBeVisible();
+  await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
 
   //Assert
   await app.webPage.expectNewPageNotToHaveUrlAfterClick(
@@ -108,7 +108,7 @@ test("Check the width and visibility of images in the news widget", async ({
   await app.home.header.hamburgerMenu.selectRegion("Germany");
   await app.home.header.searchBar.inputSearchCriteria("news Ukraine");
   await app.home.header.searchBar.clickEnterSearchField();
-  await app.webPage.item.expectWebItemsToBeVisible();
+  await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
 
   //Assert
   await app.webPage.newsCollection.expectAreElementsInListDisplayed(
@@ -128,7 +128,7 @@ test("Check title of the news widget", async ({ app }) => {
   await app.home.header.hamburgerMenu.selectRegion("Germany");
   await app.home.header.searchBar.inputSearchCriteria("news Ukraine");
   await app.home.header.searchBar.clickEnterSearchField();
-  await app.webPage.item.expectWebItemsToBeVisible();
+  await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
 
   //Assert
   await app.webPage.newsCollection.expectTitleToHaveText(

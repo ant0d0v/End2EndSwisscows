@@ -110,7 +110,7 @@ test.describe("Footer of search pages", () => {
       await app.home.open();
       await app.home.header.searchBar.inputSearchCriteria("glory Ukraine");
       await app.home.header.searchBar.clickEnterSearchField();
-      await app.webPage.item.expectWebItemsToBeVisible();
+      await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
 
       //Assert
       await app.webPage.expectToBeOpenedNewPageAfterClick(
@@ -135,7 +135,7 @@ test.describe("Footer of search pages", () => {
       await app.home.open();
       await app.home.header.searchBar.inputSearchCriteria("1234567");
       await app.home.header.searchBar.clickEnterSearchField();
-      await app.webPage.item.expectWebItemsToBeVisible();
+      await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
 
       //Assert
       await app.webPage.expectToBeOpenedNewPageAfterClick(
@@ -152,7 +152,7 @@ test.describe("Footer of search pages", () => {
     await app.home.open();
     await app.home.header.searchBar.inputSearchCriteria("1234567");
     await app.home.header.searchBar.clickEnterSearchField();
-    await app.webPage.item.expectWebItemsToBeVisible();
+    await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
 
     //Assert
     await app.webPage.footer.expectSwisscowsAppImagesToBeVisible();
@@ -166,7 +166,7 @@ test("Check design of footer component the search pages", async ({
   await app.home.open();
   await app.home.header.searchBar.inputSearchCriteria("A");
   await app.home.header.searchBar.clickEnterSearchField();
-  await app.webPage.item.expectWebItemsToBeVisible();
+  await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
 
   //Assert
   await app.webPage.footer.takeSnapshot(testInfo);

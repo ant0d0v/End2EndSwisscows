@@ -6,7 +6,7 @@ test("Check Cheapest first filter ", async ({ app }) => {
   await app.home.open();
   await app.home.header.searchBar.inputSearchCriteria(query);
   await app.home.header.searchBar.clickEnterSearchField();
-  await app.webPage.item.expectWebItemsToBeVisible();
+  await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
   await app.webPage.header.clickHamburgerMenuButton();
   await app.webPage.header.hamburgerMenu.selectRegion("Germany");
   await app.webPage.header.navigation.clickShoppingTab();
@@ -40,7 +40,7 @@ test("Check Most expensive filter", async ({ app }) => {
   await app.home.open();
   await app.home.header.searchBar.inputSearchCriteria(query);
   await app.home.header.searchBar.clickEnterSearchField();
-  await app.webPage.item.expectWebItemsToBeVisible();
+  await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
   await app.webPage.header.clickHamburgerMenuButton();
   await app.webPage.header.hamburgerMenu.selectRegion("Germany");
   await app.webPage.header.navigation.clickShoppingTab();
@@ -78,7 +78,7 @@ test(`Check select specific "brand" filter`, async ({ app }) => {
   await app.home.open();
   await app.home.header.searchBar.inputSearchCriteria("laptop");
   await app.home.header.searchBar.clickEnterSearchField();
-  await app.webPage.item.expectWebItemsToBeVisible();
+  await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
   await app.webPage.header.clickHamburgerMenuButton();
   await app.webPage.header.hamburgerMenu.selectRegion("Germany");
   await app.webPage.header.navigation.clickShoppingTab();
@@ -103,7 +103,7 @@ test(`Check select multiple filters specifics "brand" and "Most expensive"`, asy
   await app.home.open();
   await app.home.header.searchBar.inputSearchCriteria("laptop");
   await app.home.header.searchBar.clickEnterSearchField();
-  await app.webPage.item.expectWebItemsToBeVisible();
+  await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
   await app.webPage.header.clickHamburgerMenuButton();
   await app.webPage.header.hamburgerMenu.selectRegion("Germany");
   await app.webPage.header.navigation.clickShoppingTab();
@@ -129,7 +129,7 @@ test("Check that filter is closed ", async ({ app }) => {
   await app.home.open();
   await app.home.header.searchBar.inputSearchCriteria("laptop");
   await app.home.header.searchBar.clickEnterSearchField();
-  await app.webPage.item.expectWebItemsToBeVisible();
+  await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
   await app.webPage.header.clickHamburgerMenuButton();
   await app.webPage.header.hamburgerMenu.selectRegion("Germany");
   await app.webPage.header.navigation.clickShoppingTab();
@@ -147,7 +147,7 @@ test("Check scrolling to last filter", async ({ app }) => {
   await app.home.open();
   await app.home.header.searchBar.inputSearchCriteria("laptop");
   await app.home.header.searchBar.clickEnterSearchField();
-  await app.webPage.item.expectWebItemsToBeVisible();
+  await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
   await app.webPage.header.clickHamburgerMenuButton();
   await app.webPage.header.hamburgerMenu.selectRegion("Germany");
   await app.webPage.header.navigation.clickShoppingTab();
@@ -164,7 +164,7 @@ test("Check less and more buttons", async ({ app }) => {
   await app.home.open();
   await app.home.header.searchBar.inputSearchCriteria("laptop");
   await app.home.header.searchBar.clickEnterSearchField();
-  await app.webPage.item.expectWebItemsToBeVisible();
+  await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
   await app.webPage.header.clickHamburgerMenuButton();
   await app.webPage.header.hamburgerMenu.selectRegion("Germany");
   await app.webPage.header.navigation.clickShoppingTab();

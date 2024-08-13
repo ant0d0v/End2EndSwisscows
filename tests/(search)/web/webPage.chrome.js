@@ -1,5 +1,5 @@
-import { test } from "../../../utils/fixtures.js";
-import testData from "../../../data/error/testData.json";
+import { test, expect } from "../../../utils/fixtures.js";
+import { faker } from "@faker-js/faker";
 const firstItemTitle = 1;
 test.describe("Error pages in dark theme", () => {
   test.use({ colorScheme: "dark" });
@@ -10,7 +10,7 @@ test.describe("Error pages in dark theme", () => {
     await app.home.header.searchBar.clickEnterSearchField();
 
     //Assert
-    await app.webPage.error.takeSnapshot(testInfo);
+    await app.webPage.error.takeSnapshot(testInfo, 202);
   });
 
   test("Check request is blocked 450 error page ", async ({
@@ -22,7 +22,7 @@ test.describe("Error pages in dark theme", () => {
     await app.home.header.searchBar.clickEnterSearchField();
 
     //Assert
-    await app.webPage.error.takeSnapshot(testInfo);
+    await app.webPage.error.takeSnapshot(testInfo, 450);
   });
 
   test("Check 429 Too many requests", async ({ app }, testInfo) => {
@@ -33,7 +33,7 @@ test.describe("Error pages in dark theme", () => {
     await app.home.header.searchBar.clickEnterSearchField();
 
     //Assert
-    await app.webPage.error.takeSnapshot(testInfo);
+    await app.webPage.error.takeSnapshot(testInfo, 429);
   });
 
   test("Check 500 unknown Error Page", async ({ app }, testInfo) => {
@@ -44,8 +44,9 @@ test.describe("Error pages in dark theme", () => {
     await app.home.header.searchBar.clickEnterSearchField();
 
     //Assert
-    await app.webPage.error.takeSnapshot(testInfo);
+    await app.webPage.error.takeSnapshot(testInfo, 500);
   });
+
   test("Check 501 unsupported region", async ({ app }, testInfo) => {
     //Actions
     await app.home.open();
@@ -54,7 +55,7 @@ test.describe("Error pages in dark theme", () => {
     await app.home.header.searchBar.clickEnterSearchField();
 
     //Assert
-    await app.webPage.error.takeSnapshot(testInfo);
+    await app.webPage.error.takeSnapshot(testInfo, 501);
   });
 
   test("Check 404 Page Not Found ", async ({ app }, testInfo) => {
@@ -75,7 +76,7 @@ test("Check Did you mean message in the search field ", async ({ app }) => {
   await app.home.header.hamburgerMenu.selectRegion("Germany");
   await app.home.header.searchBar.inputSearchCriteria(query);
   await app.home.header.searchBar.clickEnterSearchField();
-  await app.webPage.item.expectWebItemsToBeVisible();
+  await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
 
   //Assert
   await app.webPage.alternateSearch.expectDidYouMeanMessageToHaveText(
@@ -91,81 +92,176 @@ test("Check that web results equals search criteria ", async ({ app }) => {
   await app.home.open();
   await app.home.header.searchBar.inputSearchCriteria("Ukraine");
   await app.home.header.searchBar.clickEnterSearchField();
-  await app.webPage.item.expectWebItemsToBeVisible();
+  await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
 
   //Assert
-  await app.webPage.item.expectWebItemsToContains("ukraine");
-  await app.webPage.item.expectListToBeGreaterThanOrEqual(
-    app.webPage.item.titles,
-    6
-  );
+  await app.webPage.expectItemsToContains("ukraine");
+  await app.webPage.expectResultsToHaveCountItems(10);
+});
+test.describe("Web-page items", () => {
+  test("Check that web items date not to be empty", async ({ app }) => {
+    //Actions
+    await app.home.open();
+    await app.home.header.searchBar.inputSearchCriteria(faker.word.sample());
+    await app.home.header.searchBar.clickEnterSearchField();
+    await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
+
+    //Assert
+    await app.webPage.webPageItem.expectItemsDateNotToBeEmpty();
+  });
+
+  test("Check that web-page item thumbnails to have height = 60 and width = 60", async ({
+    app,
+  }) => {
+    //Actions
+    await app.home.open();
+    await app.home.header.searchBar.inputSearchCriteria(faker.word.sample());
+    await app.home.header.searchBar.clickEnterSearchField();
+    await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
+
+    //Assert
+    await app.webPage.webPageItem.expectThumbnailsToBeVisible();
+    await app.webPage.webPageItem.expectThumbnailsToHaveJSProperty({
+      height: 60,
+      width: 60,
+    });
+  });
+
+  test("Check that web-page items site not to be empty", async ({ app }) => {
+    //Actions
+    await app.home.open();
+    await app.home.header.searchBar.inputSearchCriteria(faker.word.sample());
+    await app.home.header.searchBar.clickEnterSearchField();
+    await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
+
+    //Assert
+    await app.webPage.webPageItem.expectItemsSiteNotToBeEmpty();
+    await app.webPage.webPageItem.favicon.expectAllFaviconsToBeVisible();
+  });
+
+  test("Check titles to have css font and color", async ({ app }) => {
+    //Actions
+    await app.home.open();
+    await app.home.header.searchBar.inputSearchCriteria(faker.word.sample());
+    await app.home.header.searchBar.clickEnterSearchField();
+    await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
+
+    //Assert
+    await app.webPage.webPageItem.expectTitlesToHaveCSS({
+      size: "18px",
+      color: "rgb(52, 64, 84)",
+    });
+  });
+
+  test("Check open link in  the web result", async ({ app }) => {
+    //Actions
+    await app.home.open();
+    await app.home.header.searchBar.inputSearchCriteria(
+      faker.word.words({ count: { min: 2, max: 5 } })
+    );
+    await app.home.header.searchBar.clickEnterSearchField();
+    await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
+    const currentUrl = await app.page.url();
+    await app.webPage.webPageItem.clickTitleAtNumber(firstItemTitle);
+
+    //Assert
+    await app.expectPageNotToHaveUrl(app.page, currentUrl);
+  });
 });
 
-test("Check that web items date not to be empty", async ({ app }) => {
+test.describe("Article items", () => {
+  test("Check that author of the article item exists", async ({ app }) => {
+    //Actions
+    await app.home.open();
+    await app.home.header.clickHamburgerMenuButton();
+    await app.home.header.hamburgerMenu.selectRegion("Germany");
+    await app.home.header.searchBar.inputSearchCriteria("article ukraine war");
+    await app.home.header.searchBar.clickEnterSearchField();
+    await app.webPage.article.expectArticleItemsToBeVisible();
+
+    //Assert
+    await app.webPage.article.expectArticleAuthorNotToBeEmpty();
+  });
+
+  test("Check that article item thumbnails to have height = 60 and width = 60 ", async ({
+    app,
+  }) => {
+    //Actions
+    await app.home.open();
+    await app.home.header.clickHamburgerMenuButton();
+    await app.home.header.hamburgerMenu.selectRegion("Germany");
+    await app.home.header.searchBar.inputSearchCriteria("article ukraine war");
+    await app.home.header.searchBar.clickEnterSearchField();
+    await app.webPage.article.expectArticleItemsToBeVisible();
+
+    //Assert
+    await app.webPage.article.expectThumbnailsToBeVisible();
+    await app.webPage.article.expectThumbnailsToHaveJSProperty({
+      height: 60,
+      width: 60,
+    });
+  });
+
+  test("Check that article items site not to be empty", async ({ app }) => {
+    //Actions
+    await app.home.open();
+    await app.home.header.searchBar.inputSearchCriteria("article ukraine war");
+    await app.home.header.searchBar.clickEnterSearchField();
+    await app.webPage.article.expectArticleItemsToBeVisible();
+
+    //Assert
+    await app.webPage.article.expectItemsSiteNotToBeEmpty();
+    await app.webPage.article.favicon.expectAllFaviconsToBeVisible();
+  });
+});
+
+test.describe("Video object items", () => {
+  test("Check that video object item thumbnails to have height = 64 and width = 86", async ({
+    app,
+  }) => {
+    //Actions
+    await app.home.open();
+    await app.home.header.searchBar.inputSearchCriteria("iphone video youtube");
+    await app.home.header.searchBar.clickEnterSearchField();
+    await app.webPage.videoObject.expectVideoObjectItemsToBeVisible();
+
+    //Assert
+    await app.webPage.videoObject.expectThumbnailsToBeVisible();
+    await app.webPage.videoObject.expectThumbnailsToHaveJSProperty({
+      height: 64,
+      width: 86,
+    });
+  });
+});
+
+test("Check that loader skeleton", async ({ app }, testInfo) => {
   //Actions
   await app.home.open();
-  await app.home.header.searchBar.inputSearchCriteria("Ukraine");
+  await app.home.header.searchBar.inputSearchCriteria(faker.word.sample());
   await app.home.header.searchBar.clickEnterSearchField();
-  await app.webPage.item.expectWebItemsToBeVisible();
 
   //Assert
-  await app.webPage.item.expectItemsDateNotToBeEmpty();
+  await app.webPage.skeleton.takeSnapshot(testInfo);
 });
 
-test("Check that items site not to be empty", async ({ app }) => {
-  //Actions
-  await app.home.open();
-  await app.home.header.searchBar.inputSearchCriteria("Ukraine");
-  await app.home.header.searchBar.clickEnterSearchField();
-  await app.webPage.item.expectWebItemsToBeVisible();
-
-  //Assert
-  await app.webPage.item.expectItemsSiteNotToBeEmpty();
-  await app.webPage.item.favicon.expectAllFaviconsToBeVisible();
-});
-
-test("Check that thumbnails to have height = 60 and width = 60", async ({
-  app,
-}) => {
-  //Actions
-  await app.home.open();
-  await app.home.header.searchBar.inputSearchCriteria("Ukraine");
-  await app.home.header.searchBar.clickEnterSearchField();
-  await app.webPage.item.expectWebItemsToBeVisible();
-
-  //Assert
-  await app.webPage.item.expectThumbnailsToHaveHeightAndWidth(60, 60);
-  await app.webPage.item.expectThumbnailsToBeVisible();
-});
-
-test("Check titles to have css font and color", async ({ app }) => {
-  //Actions
-  await app.home.open();
-  await app.home.header.searchBar.inputSearchCriteria("Ukraine");
-  await app.home.header.searchBar.clickEnterSearchField();
-  await app.webPage.item.expectWebItemsToBeVisible();
-
-  //Assert
-  await app.webPage.item.expectTitlesToHaveCSSFontSizeAndColor(
-    "18px",
-    "rgb(52, 64, 84)"
-  );
-});
 test("Check next button in the paging", async ({ app }) => {
   //Actions
   await app.home.open();
   await app.home.header.searchBar.inputSearchCriteria("ukraine");
   await app.home.header.searchBar.clickEnterSearchField();
-  await app.webPage.item.expectWebItemsToBeVisible();
-  const oldResult = await app.webPage.item.getTextContentWebItems();
+  await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
+  const oldResult = await app.webPage.webPageItem.getTextContentWebItems();
   await app.webPage.pagination.clickNextButton();
   await app.webPage.header.badgeCounter.expectCharityBadgeCounterToHaveValue(
     "2"
   );
-  const newResult = await app.webPage.item.getTextContentWebItems();
+  const newResult = await app.webPage.webPageItem.getTextContentWebItems();
 
   //Assert
-  await app.webPage.item.expectOldArrayNotToEqualNewArray(oldResult, newResult);
+  await app.webPage.webPageItem.expectOldArrayNotToEqualNewArray(
+    oldResult,
+    newResult
+  );
   await app.webPage.pagination.expectPreviousButtonIsEnabled();
 });
 
@@ -174,7 +270,7 @@ test("Check prev button in the paging", async ({ app }) => {
   await app.home.open();
   await app.home.header.searchBar.inputSearchCriteria("ivanka");
   await app.home.header.searchBar.clickEnterSearchField();
-  await app.webPage.item.expectWebItemsToBeVisible();
+  await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
   await app.webPage.pagination.clickNextButton();
   await app.webPage.header.badgeCounter.expectCharityBadgeCounterToHaveValue(
     "2"
@@ -190,96 +286,4 @@ test("Check prev button in the paging", async ({ app }) => {
     process.env.BASE_URL + "/en/web?query=ivanka&offset=0"
   );
   await app.webPage.pagination.expectPreviousButtonIsDisabled();
-});
-
-test("Check open link in  the web result", async ({ app }) => {
-  //Actions
-  await app.home.open();
-  await app.home.header.searchBar.inputSearchCriteria("ukraine");
-  await app.home.header.searchBar.clickEnterSearchField();
-  await app.webPage.item.expectWebItemsToBeVisible();
-  const currentUrl = await app.page.url();
-  await app.webPage.clickItemNumber(firstItemTitle);
-
-  //Assert
-  await app.expectPageNotToHaveUrl(app.page, currentUrl);
-});
-
-test.skip("Check open web Preview ", async ({ app }) => {
-  //Actions
-  await app.home.open();
-  await app.home.header.searchBar.inputSearchCriteria("wiki");
-  await app.home.header.searchBar.clickEnterSearchField();
-  await app.webPage.item.expectWebItemsToBeVisible();
-  await app.webPage.clickPreviewButton();
-
-  //Assert
-  await app.webPage.preview.expectScreenshotImageToBeVisible();
-});
-
-test.skip("Check close web Preview ", async ({ app }) => {
-  //Actions
-  await app.home.open();
-  await app.home.header.searchBar.inputSearchCriteria("wiki");
-  await app.home.header.searchBar.clickEnterSearchField();
-  await app.webPage.item.expectWebItemsToBeVisible();
-  await app.webPage.clickPreviewButton();
-
-  //Assert
-  await app.webPage.preview.expectScreenshotImageToBeVisible();
-  await app.webPage.preview.clickCloseButton();
-  await app.webPage.preview.expectScreenshotImageToBeHidden();
-});
-
-test("Check click open site button in web Preview ", async ({ app }) => {
-  //Actions
-  await app.home.open();
-  await app.home.header.searchBar.inputSearchCriteria("wiki");
-  await app.home.header.searchBar.clickEnterSearchField();
-  await app.webPage.item.expectWebItemsToBeVisible();
-  await app.webPage.clickPreviewButton();
-
-  //Assert
-  await app.webPage.preview.expectToBeOpenedNewPageAfterClickOpenSiteButton(
-    /wikipedia.org/
-  );
-});
-
-test.skip("Check open trackers in web Preview ", async ({ app }) => {
-  //Actions
-  await app.home.open();
-  await app.home.header.searchBar.inputSearchCriteria("google");
-  await app.home.header.searchBar.clickEnterSearchField();
-  await app.webPage.item.expectWebItemsToBeVisible();
-  await app.webPage.clickPreviewButton();
-  await app.webPage.preview.clickTrackersButton();
-
-  //Assert
-  await app.webPage.preview.expectListToBeGreaterThanOrEqual(
-    app.webPage.preview.allTrackers,
-    1
-  );
-});
-
-test("Check click screenshot button in web Preview ", async ({ app }) => {
-  //Actions
-  await app.home.open();
-  await app.home.header.searchBar.inputSearchCriteria("google");
-  await app.home.header.searchBar.clickEnterSearchField();
-  await app.webPage.item.expectWebItemsToBeVisible();
-   app.page.on("websocket", (ws) => {
-     console.log("WebSocket", ws.url());
-     ws.on("framereceived", (frame) => {
-       console.log("Frame received", frame.payload);
-     });
-   });
-     await app.webPage.clickPreviewButton();
-
-   await app.page.waitForTimeout(10000);
- 
-
-  //Assert
-  // await app.webPage.preview.expectScreenshotImageToBeHidden();
-  // await app.webPage.preview.clickScreenshotButton();
-  // await app.webPage.preview.expectScreenshotImageToBeVisible();
 });

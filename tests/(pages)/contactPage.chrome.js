@@ -39,7 +39,11 @@ test(`Check property of name, email, message when sending form with name only`, 
 }) => {
   //Actions
   await app.contactPage.open();
-  await app.contactPage.form.inputYouNameField(faker.person.fullName());
+  await app.contactPage.form.fillContactForm({
+    nameField: faker.person.fullName(),
+    emailField: "",
+    messageField: "",
+  });
   await app.contactPage.form.clickSendButton();
 
   //Assert
@@ -53,7 +57,11 @@ test(`Check property of name, email, message when sending form with email only`,
 }) => {
   //Actions
   await app.contactPage.open();
-  await app.contactPage.form.inputEmailField(faker.internet.exampleEmail());
+  await app.contactPage.form.fillContactForm({
+    nameField: "",
+    emailField: faker.internet.exampleEmail(),
+    messageField: "",
+  });
   await app.contactPage.form.clickSendButton();
 
   //Assert
@@ -67,7 +75,11 @@ test(`Check property of name, email, message when sending form with message only
 }) => {
   //Actions
   await app.contactPage.open();
-  await app.contactPage.form.inputMessageField(faker.word.words({ count: { min: 5, max: 10 } }));
+  await app.contactPage.form.fillContactForm({
+    nameField: "",
+    emailField: "",
+    messageField: faker.word.words({ count: { min: 5, max: 10 } })
+  });
   await app.contactPage.form.clickSendButton();
 
   //Assert
@@ -79,9 +91,11 @@ test(`Check property of name, email, message when sending form with message only
 test(`Check succses message when sending form with all required fields`, async ({ app },testInfo) => {
   //Actions
   await app.contactPage.open();
-  await app.contactPage.form.inputYouNameField(faker.person.fullName());
-  await app.contactPage.form.inputEmailField(faker.internet.exampleEmail());
-  await app.contactPage.form.inputMessageField(faker.word.words({ count: { min: 5, max: 10 } }));
+  await app.contactPage.form.fillContactForm({
+    nameField: faker.person.fullName(),
+    emailField: faker.internet.exampleEmail(),
+    messageField: faker.word.words({ count: { min: 5, max: 10 } }),
+  });
   await app.contactPage.form.checkAgreeCheckbox();
   await app.contactPage.form.clickSendButton();
 
@@ -92,9 +106,11 @@ test(`Check succses message when sending form with all required fields`, async (
 test(`Check "back to search" button `, async ({ app }) => {
   //Actions
   await app.contactPage.open();
-  await app.contactPage.form.inputYouNameField(faker.person.fullName());
-  await app.contactPage.form.inputEmailField(faker.internet.exampleEmail());
-  await app.contactPage.form.inputMessageField(faker.word.words({ count: { min: 5, max: 10 }}));
+  await app.contactPage.form.fillContactForm({
+    nameField: faker.person.fullName(),
+    emailField: faker.internet.exampleEmail(),
+    messageField: faker.word.words({ count: { min: 5, max: 10 } }),
+  });
   await app.contactPage.form.checkAgreeCheckbox();
   await app.contactPage.form.clickSendButton();
   await app.contactPage.clickBackToSearchButton();
@@ -109,9 +125,11 @@ test(`Check the tooltip when sending a message without the "Agree" checkbox`, as
 }) => {
   //Actions
   await app.contactPage.open();
-  await app.contactPage.form.inputYouNameField(faker.person.fullName());
-  await app.contactPage.form.inputEmailField(faker.internet.exampleEmail());
-  await app.contactPage.form.inputMessageField(faker.word.words({ count: { min: 5, max: 10 } }));
+  await app.contactPage.form.fillContactForm({
+    nameField: faker.person.fullName(),
+    emailField: faker.internet.exampleEmail(),
+    messageField: faker.word.words({ count: { min: 5, max: 10 } }),
+  });
   await app.contactPage.form.clickSendButton();
 
   //Assert
@@ -123,9 +141,11 @@ test(`Check the tooltip when sending a message without the "Agree" checkbox`, as
 test(`Check color of "back to search" when hovering `, async ({ app }) => {
   //Actions
   await app.contactPage.open();
-  await app.contactPage.form.inputYouNameField(faker.person.fullName());
-  await app.contactPage.form.inputEmailField(faker.internet.exampleEmail());
-  await app.contactPage.form.inputMessageField(faker.word.words({ count: { min: 5, max: 10 } }));
+  await app.contactPage.form.fillContactForm({
+    nameField: faker.person.fullName(),
+    emailField: faker.internet.exampleEmail(),
+    messageField: faker.word.words({ count: { min: 5, max: 10 } }),
+  });
   await app.contactPage.form.checkAgreeCheckbox();
   await app.contactPage.form.clickSendButton();
 
@@ -174,9 +194,11 @@ test.skip(`Check error when sending message with 400 status code `, async ({
   //Actions
   await app.contactPage.open();
   await app.contactRoute.mockResponseStatusCode(400);
-  await app.contactPage.form.inputYouNameField(faker.person.fullName());
-  await app.contactPage.form.inputEmailField(faker.internet.exampleEmail());
-  await app.contactPage.form.inputMessageField(faker.word.words({ count: { min: 5, max: 10 }}));
+  await app.contactPage.form.fillContactForm({
+    nameField: faker.person.fullName(),
+    emailField: faker.internet.exampleEmail(),
+    messageField: faker.word.words({ count: { min: 5, max: 10 } }),
+  });
   await app.contactPage.form.checkAgreeCheckbox();
   await app.contactPage.form.clickSendButton();
 

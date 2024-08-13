@@ -12,9 +12,12 @@ for (const { testID, freshnessPart, fiterName } of filterData.byDate) {
     await app.home.open();
     await app.home.header.searchBar.inputSearchCriteria(randomQuery);
     await app.home.header.searchBar.clickEnterSearchField();
-    await app.webPage.item.expectWebItemsToBeVisible();
+    await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
     await app.webPage.filters.clickFilterByDate();
-    const response = await app.webPage.filters.selectMenu.selectFilterAndGetResponse(fiterName);
+    const response =
+      await app.webPage.filters.selectMenu.selectFilterAndGetResponse(
+        fiterName
+      );
 
     //Assert
     await app.expectPageToHaveUrl(
@@ -44,31 +47,34 @@ test("Cancel filter and navigates to the corresponding page.", async ({
   await app.home.header.hamburgerMenu.selectRegion("Germany");
   await app.home.header.searchBar.inputSearchCriteria(randomQuery);
   await app.home.header.searchBar.clickEnterSearchField();
-  await app.webPage.item.expectWebItemsToBeVisible();
+  await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
   await app.webPage.filters.clickFilterByDate();
-  const oldResponse = await app.webPage.filters.selectMenu.selectFilterAndGetResponse("Past Day");
+  const oldResponse =
+    await app.webPage.filters.selectMenu.selectFilterAndGetResponse("Past Day");
   await app.webPage.filters.clickFilterByDate();
-  const newResponse = await app.webPage.filters.selectMenu.selectFilterAndGetResponse("Any time");
+  const newResponse =
+    await app.webPage.filters.selectMenu.selectFilterAndGetResponse("Any time");
 
   //Assert
-  await app.expectPageToHaveUrl(app.page,process.env.BASE_URL + `/en/web?query=${randomQuery}&region=de-DE`);
+  await app.expectPageToHaveUrl(
+    app.page,
+    process.env.BASE_URL + `/en/web?query=${randomQuery}&region=de-DE`
+  );
   await expect(oldResponse.json()).resolves.not.toEqual(newResponse.json());
 });
 
-test("Check list dropdown of filter by date ", async ({ app },
-  testInfo
-) => {
+test("Check list dropdown of filter by date ", async ({ app }, testInfo) => {
   //Actions
   await app.home.open();
   await app.home.header.clickHamburgerMenuButton();
   await app.home.header.hamburgerMenu.selectRegion("Germany");
   await app.home.header.searchBar.inputSearchCriteria(faker.word.sample());
   await app.home.header.searchBar.clickEnterSearchField();
-  await app.webPage.item.expectWebItemsToBeVisible();
+  await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
   await app.webPage.filters.clickFilterByDate();
 
   //Assert
-  await app.webPage.filters.selectMenu.takeSnapshot(testInfo)
+  await app.webPage.filters.selectMenu.takeSnapshot(testInfo);
 });
 
 test("Check that dropdown of filter by date is opened and closed", async ({
@@ -80,7 +86,7 @@ test("Check that dropdown of filter by date is opened and closed", async ({
   await app.home.header.hamburgerMenu.selectRegion("Germany");
   await app.home.header.searchBar.inputSearchCriteria(faker.word.sample());
   await app.home.header.searchBar.clickEnterSearchField();
-  await app.webPage.item.expectWebItemsToBeVisible();
+  await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
   await app.webPage.filters.clickFilterByDate();
 
   //Assert

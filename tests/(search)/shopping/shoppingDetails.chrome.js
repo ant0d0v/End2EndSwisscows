@@ -6,7 +6,7 @@ test("Check open product details pane", async ({ app }) => {
   await app.home.open();
   await app.home.header.searchBar.inputSearchCriteria(faker.commerce.product());
   await app.home.header.searchBar.clickEnterSearchField();
-  await app.webPage.item.expectWebItemsToBeVisible();
+  await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
   await app.webPage.header.clickHamburgerMenuButton();
   await app.webPage.header.hamburgerMenu.selectRegion("Germany");
   await app.webPage.header.navigation.clickShoppingTab();
@@ -22,7 +22,7 @@ test("Check close product details pane", async ({ app }) => {
   await app.home.open();
   await app.home.header.searchBar.inputSearchCriteria(faker.commerce.product());
   await app.home.header.searchBar.clickEnterSearchField();
-  await app.webPage.item.expectWebItemsToBeVisible();
+  await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
   await app.webPage.header.clickHamburgerMenuButton();
   await app.webPage.header.hamburgerMenu.selectRegion("Germany");
   await app.webPage.header.navigation.clickShoppingTab();
@@ -40,7 +40,7 @@ test("Check image in details pane ", async ({ app }) => {
   await app.home.open();
   await app.home.header.searchBar.inputSearchCriteria("adidas");
   await app.home.header.searchBar.clickEnterSearchField();
-  await app.webPage.item.expectWebItemsToBeVisible();
+  await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
   await app.webPage.header.clickHamburgerMenuButton();
   await app.webPage.header.hamburgerMenu.selectRegion("Germany");
   await app.webPage.header.navigation.clickShoppingTab();
@@ -57,7 +57,7 @@ test("Check more button in detail", async ({ app }) => {
   await app.home.open();
   await app.home.header.searchBar.inputSearchCriteria(faker.commerce.product());
   await app.home.header.searchBar.clickEnterSearchField();
-  await app.webPage.item.expectWebItemsToBeVisible();
+  await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
   await app.webPage.header.clickHamburgerMenuButton();
   await app.webPage.header.hamburgerMenu.selectRegion("Germany");
   await app.webPage.header.navigation.clickShoppingTab();
@@ -76,7 +76,7 @@ test("Check less button in detail", async ({ app }) => {
   await app.home.open();
   await app.home.header.searchBar.inputSearchCriteria(faker.commerce.product());
   await app.home.header.searchBar.clickEnterSearchField();
-  await app.webPage.item.expectWebItemsToBeVisible();
+  await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
   await app.webPage.header.clickHamburgerMenuButton();
   await app.webPage.header.hamburgerMenu.selectRegion("Germany");
   await app.webPage.header.navigation.clickShoppingTab();
@@ -100,7 +100,7 @@ test("Check offer info in detail", async ({ app }) => {
   await app.home.open();
   await app.home.header.searchBar.inputSearchCriteria("adidas");
   await app.home.header.searchBar.clickEnterSearchField();
-  await app.webPage.item.expectWebItemsToBeVisible();
+  await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
   await app.webPage.header.clickHamburgerMenuButton();
   await app.webPage.header.hamburgerMenu.selectRegion("Germany");
   await app.webPage.header.navigation.clickShoppingTab();
@@ -122,7 +122,7 @@ test("Check count of payments options", async ({ app }) => {
   await app.home.open();
   await app.home.header.searchBar.inputSearchCriteria("adidas");
   await app.home.header.searchBar.clickEnterSearchField();
-  await app.webPage.item.expectWebItemsToBeVisible();
+  await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
   await app.webPage.header.clickHamburgerMenuButton();
   await app.webPage.header.hamburgerMenu.selectRegion("Germany");
   await app.webPage.header.navigation.clickShoppingTab();
@@ -139,7 +139,7 @@ test("Check count of Shipping options", async ({ app }) => {
   await app.home.open();
   await app.home.header.searchBar.inputSearchCriteria("adidas");
   await app.home.header.searchBar.clickEnterSearchField();
-  await app.webPage.item.expectWebItemsToBeVisible();
+  await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
   await app.webPage.header.clickHamburgerMenuButton();
   await app.webPage.header.hamburgerMenu.selectRegion("Germany");
   await app.webPage.header.navigation.clickShoppingTab();
@@ -155,7 +155,7 @@ test(`Check that the "Buy" button redirect to new page`, async ({ app }) => {
   await app.home.open();
   await app.home.header.searchBar.inputSearchCriteria("iphone");
   await app.home.header.searchBar.clickEnterSearchField();
-  await app.webPage.item.expectWebItemsToBeVisible();
+  await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
   await app.webPage.header.clickHamburgerMenuButton();
   await app.webPage.header.hamburgerMenu.selectRegion("Germany");
   await app.webPage.header.navigation.clickShoppingTab();
@@ -172,7 +172,7 @@ test("Check  offer icons to be visible", async ({ app }) => {
   await app.home.open();
   await app.home.header.searchBar.inputSearchCriteria("iphone");
   await app.home.header.searchBar.clickEnterSearchField();
-  await app.webPage.item.expectWebItemsToBeVisible();
+  await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
   await app.webPage.header.clickHamburgerMenuButton();
   await app.webPage.header.hamburgerMenu.selectRegion("Germany");
   await app.webPage.header.navigation.clickShoppingTab();

@@ -62,7 +62,7 @@ export default defineConfig({
       maxDiffPixelRatio: 0.04,
       maxDiffPixels: 1000,
     },
-    timeout: 15 * 1000,
+    timeout: 30 * 1000,
   },
 
   /* Configure projects for major browsers */

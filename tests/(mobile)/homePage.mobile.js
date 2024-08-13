@@ -4,8 +4,6 @@ import main from "../../data/home/testData.json";
 
 test("Check that suggest is displayed", async ({ app }) => {
   await app.home.open();
-  await app.home.reloadPage();
-  await app.home.waitUntilPageIsFullyLoaded();
   await app.home.header.searchBar.inputSearchCriteria("ivanka");
 
   //Assert

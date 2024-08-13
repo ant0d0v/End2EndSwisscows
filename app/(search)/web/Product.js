@@ -1,12 +1,15 @@
 import BaseComponent from "../../../base/BaseComponent.js";
 import Favicon from "../../../components/Favicon.js";
-export default class Item extends BaseComponent {
+import Rating from "../../../components/Rating.js";
+export default class Product extends BaseComponent {
   constructor(page) {
     super(page);
-    this.favicon = new Favicon(page);
+      this.favicon = new Favicon(page);
+      this.rating = new Rating(page);
     //Locators
-    this.root = this.page.locator("article.item.web-page");
+    this.root = this.page.locator("article.item.product");
     this.titles = this.root.locator(".title");
+    this.author = this.root.locator(".author");
     this.title = (index) => this.root.locator(".title").nth(index - 1);
     this.fiveTitles = this.root.locator(":nth-of-type(-n+5) .title");
     this.dates = this.root.locator(".date");
@@ -25,7 +28,7 @@ export default class Item extends BaseComponent {
 
   // Verify
 
-  expectWebItemsToBeVisible = async () => {
+  expectWebPageItemsToBeVisible = async () => {
     await this.page.waitForSelector("article.item.web-page .title", {
       state: "visible",
     });
@@ -44,9 +47,20 @@ export default class Item extends BaseComponent {
     this.expectListElementsNotToBeEmpty(this.sites);
   };
 
-  expectThumbnailsToHaveHeightAndWidth = async (valueOfHeight, valueOfWidth ) => {
-    await this.expectElementsToHaveJSProperty(this.thumbnails, "height", valueOfHeight);
-    await this.expectElementsToHaveJSProperty(this.thumbnails, "width", valueOfWidth);
+  expectThumbnailsToHaveHeightAndWidth = async (
+    valueOfHeight,
+    valueOfWidth
+  ) => {
+    await this.expectElementsToHaveJSProperty(
+      this.thumbnails,
+      "height",
+      valueOfHeight
+    );
+    await this.expectElementsToHaveJSProperty(
+      this.thumbnails,
+      "width",
+      valueOfWidth
+    );
   };
 
   expectThumbnailsToBeVisible = async () => {

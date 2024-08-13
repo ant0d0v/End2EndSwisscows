@@ -98,7 +98,7 @@ test("Check search results in news page ", async ({ app }) => {
   await app.home.header.hamburgerMenu.selectRegion("Germany");
   await app.home.header.searchBar.inputSearchCriteria("ronaldo");
   await app.home.header.searchBar.clickEnterSearchField();
-  await app.webPage.item.expectWebItemsToBeVisible();
+  await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
   await app.newsPage.header.navigation.clickNewsTab();
   await app.newsPage.item.expectNewsItemsToBeVisible();
 
@@ -120,7 +120,7 @@ test("Check open link in  the news result", async ({ app }) => {
   await app.home.header.hamburgerMenu.selectRegion("Germany");
   await app.home.header.searchBar.inputSearchCriteria("ukraine");
   await app.home.header.searchBar.clickEnterSearchField();
-  await app.webPage.item.expectWebItemsToBeVisible();
+  await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
   await app.newsPage.header.navigation.clickNewsTab();
   await app.newsPage.item.expectNewsItemsToBeVisible();
   const newPage = await app.newsPage.item.clickFirstNewsItem();
@@ -139,7 +139,7 @@ test("Check next button in the paging", async ({ app }) => {
   await app.home.header.hamburgerMenu.selectRegion("Germany");
   await app.home.header.searchBar.inputSearchCriteria("ukraine");
   await app.home.header.searchBar.clickEnterSearchField();
-  await app.webPage.item.expectWebItemsToBeVisible();
+  await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
   await app.newsPage.header.navigation.clickNewsTab();
   await app.newsPage.item.expectNewsItemsToBeVisible();
   const oldSearchResult = await app.newsPage.item.getTextContentNewsItems();
@@ -168,7 +168,7 @@ test("Check prev button in the paging", async ({ app }) => {
   await app.home.header.hamburgerMenu.selectRegion("Germany");
   await app.home.header.searchBar.inputSearchCriteria("news");
   await app.home.header.searchBar.clickEnterSearchField();
-  await app.webPage.item.expectWebItemsToBeVisible();
+  await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
   await app.newsPage.header.navigation.clickNewsTab();
   await app.newsPage.item.expectNewsItemsToBeVisible();
   await app.newsPage.pagination.clickNextButton();
@@ -199,7 +199,7 @@ test("Check that image of proxy cdn server", async ({ app }) => {
   await app.home.header.hamburgerMenu.selectRegion("Germany");
   await app.home.header.searchBar.inputSearchCriteria("Ukraine");
   await app.home.header.searchBar.clickEnterSearchField();
-  await app.webPage.item.expectWebItemsToBeVisible();
+  await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
   await app.newsPage.header.navigation.clickNewsTab();
   await app.newsPage.item.expectNewsItemsToBeVisible();
 

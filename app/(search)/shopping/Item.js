@@ -41,20 +41,19 @@ export default class Item extends BaseComponent {
   }
   //Verify
   async expectInfoProductToContain(
-    expectedName,
-    expectedPricing,
-    expectedLink,
-    expectedBrand
+    expectedInfo = {
+      name: value,
+      pricing: value,
+      link: value,
+      brand: value,
+    }
   ) {
-    await this.expectTextsToContains(this.itemName, expectedName);
-    await this.expectTextsToContains(this.itemPricing, expectedPricing);
-    await this.expectTextsToContains(this.itemLink, expectedLink);
-    await this.expectTextsToContains(this.itemBrand, expectedBrand);
+    await this.expectTextsToContains(this.itemName, expectedInfo.name);
+    await this.expectTextsToContains(this.itemPricing, expectedInfo.pricing);
+    await this.expectTextsToContains(this.itemLink, expectedInfo.link);
+    await this.expectTextsToContains(this.itemBrand, expectedInfo.brand);
   }
   expectShoppingItemsToBeVisible = async () => {
-    await this.page.waitForSelector("article.item.product .title", {
-      state: "visible",
-    });
     await this.expectAreElementsInListDisplayed(this.itemName);
   };
   expectDescriptionItemsNotToBeEmpty = async () => {
