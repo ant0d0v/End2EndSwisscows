@@ -4,7 +4,7 @@ export default class Logo extends BaseComponent {
     super(page);
 
     //Locators
-    this.swisscows = this.page.getByRole('img', { name: 'Swisscows', exact: true })
+    this.swisscows = this.page.locator(".logo-home img");
   }
     
     //Verify

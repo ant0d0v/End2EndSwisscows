@@ -18,7 +18,6 @@ setup("Login to site as swisscows user", async ({ app }) => {
   await app.signInPage.pressTab();
   await app.signInPage.inputPassword(process.env.PASSWORD_INTERNAL_USER);
   await app.signInPage.clickLoginButton();
-  await app.page.waitForTimeout(3000)
 
   // Assert
   await app.home.header.logo.expectSwisscowsLogoToBeVisible();
@@ -39,7 +38,7 @@ setup("Login to site as external user", async ({ app }) => {
   await app.signInPage.pressTab();
   await app.signInPage.inputPassword(process.env.PASSWORD_EXTERNAL_USER);
   await app.signInPage.clickLoginButton();
-  await app.page.waitForTimeout(3000);
+
   //Assert
   await app.home.header.logo.expectSwisscowsLogoToBeVisible();
 

@@ -6,7 +6,7 @@ export default class AlternateSearch extends BaseComponent {
     super(page);
     
     //Locators
-    this.textDidYouMeanMessage = this.page.getByText('Including results for "apple"Do you want results only for appple?')
+    this.textDidYouMeanMessage = this.page.locator(".web-results .message");
   }
 
   //Verify

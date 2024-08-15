@@ -1,4 +1,5 @@
 import { test, expect } from "../../../utils/fixtures.js";
+import { randomQueryWithVideoItemSearch } from "../../../helpers/random.js"
 import { faker } from "@faker-js/faker";
 const firstItemTitle = 1;
 test.describe("Error pages in dark theme", () => {
@@ -68,7 +69,7 @@ test.describe("Error pages in dark theme", () => {
 });
 
 test("Check Did you mean message in the search field ", async ({ app }) => {
-  const query = "appple";
+  const query = "smasung";
 
   //Actions
   await app.home.open();
@@ -80,7 +81,7 @@ test("Check Did you mean message in the search field ", async ({ app }) => {
 
   //Assert
   await app.webPage.alternateSearch.expectDidYouMeanMessageToHaveText(
-    'Including results for "apple"' +
+    'Including results for "samsung"' +
       "Do you want results only for " +
       query +
       "?"
@@ -221,7 +222,7 @@ test.describe("Video object items", () => {
   }) => {
     //Actions
     await app.home.open();
-    await app.home.header.searchBar.inputSearchCriteria("iphone video youtube");
+    await app.home.header.searchBar.inputSearchCriteria(randomQueryWithVideoItemSearch());
     await app.home.header.searchBar.clickEnterSearchField();
     await app.webPage.videoObject.expectVideoObjectItemsToBeVisible();
 
