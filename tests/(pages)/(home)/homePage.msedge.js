@@ -15,28 +15,13 @@ test('Check that popup "Edge install" redirect to the corresponding page', async
   await app.expectNewPageToHaveTitle(context, /Swisscows/);
 });
 
-test("Check that popup Edge install Is Displayed", async ({ app }) => {
+test("Check that popup Edge install Is Displayed", async ({ app },testInfo) => {
   const expectedText =
     "Stay with us and set Swisscows as your default search engine. ";
   //Actions
   await app.home.open();
 
   //Assert
-  await app.home.extensionPopup.expectPopupToBeVisible();
-  await app.home.extensionPopup.expectPopupToHaveText(expectedText);
+  await app.home.extensionPopup.takeSnapshot(testInfo);
 });
 
-test.fixme('Check that the "Install Swisscows Block" button redirect to corresponding URL.', async ({
-  app,
-  context,
-}) => {
-  //Actions
-  await app.home.open();
-
-  //Assert
-  await app.home.expectToBeOpenedNewPageAfterClick(
-    app.home.extensionBlock.extensionLink,
-    testData.url.extensionEdgeInstall
-  );
-  await app.expectNewPageToHaveTitle(context, /Swisscows/);
-});

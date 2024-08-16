@@ -18,12 +18,13 @@ export default class Home extends BasePage {
     //Locators of Locales
 
     // Locators
-    this.blockQuestionsAndAnswers = this.page.getByText( "Questions and AnswersWhat");
+    this.blockQuestionsAndAnswers = this.page.getByText(
+      "Questions and AnswersWhat"
+    );
     this.allImages = this.page.locator("main.home img:visible");
-    this.buttons = (index) => this.page.locator(".button").nth(index -1);
-    this.serviceBlock = this.page.locator("div.services-blocks");
-    this.buttonOfServiceBlock = this.page.locator(".services-blocks .services-block-link");
-    this.linksOfServiceBlock = (name) => this.page.getByRole("link", { name: name });
+
+    this.links = (name) =>
+      this.page.getByRole("link", { name: name });
   }
 
   //Actions
@@ -31,9 +32,17 @@ export default class Home extends BasePage {
   async open() {
     await this.openPage("/");
   }
-  hoverButton = async (index) => {
-    await this.hoverElement(this.buttons(index), `button ${index}`);
-  };
+  async expectToBeOpenedNewPageAfterClickLinks(
+    data = {
+      locator: element,
+      expectedLink: string,
+    }
+  ) {
+    await this.expectToBeOpenedNewPageAfterClick(
+      this.links(data.locator),
+      data.expectedLink
+    );
+  }
 
   scrollDownToQuestions = async () => {
     await this.scrollByVisibleElement(
@@ -43,9 +52,6 @@ export default class Home extends BasePage {
   };
 
   // Verify
-  expectButtonToHaveColor = async (index,value) => {
-    await this.expectElementToHaveCSS(this.buttons(index), "background", value);
-  };
   takeSnapshot = async (testInfo) => {
     await this.expectPageToHaveScreenshot(
       testInfo,

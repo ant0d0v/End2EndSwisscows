@@ -4,6 +4,8 @@ export default class ExtensionPopup extends BaseComponent {
   constructor(page) {
     super(page);
     // Locators
+    this.root = this.page.locator(".home-link-instruction.popup");
+    this.images = this.root.locator("img");
     this.popup = this.page.getByRole("link", {
       name: "Stay with us and set",
     });
@@ -31,5 +33,13 @@ export default class ExtensionPopup extends BaseComponent {
   };
   expectPopupToHaveText = async (text) => {
     this.expectElementToHaveText(this.popup, text);
+  };
+
+  takeSnapshot = async (testInfo) => {
+    await this.expectPageElementToHaveScreenshot(
+      this.root,
+      this.images,
+      testInfo
+    );
   };
 }
