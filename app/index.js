@@ -34,7 +34,7 @@ import VpnPage from "../app/(landings)/vpn/page.js";
 import EmailPage from "../app/(landings)/email/page.js";
 
 // OAuth related page import
-import SignInPage from "../app/oauth/page.js";
+
 
 // Application class that uses all the imports
 export default class Application extends PageHolder {
@@ -61,7 +61,6 @@ export default class Application extends PageHolder {
     this.musicPage = new MusicPage(this.page);
     this.imagePage = new ImagePage(this.page);
     this.imageMyPage = new ImageMyPage(this.page);
-    this.signInPage = new SignInPage(this.page);
     this.route = new Route(this.page);
     this.contactRoute = new ContactRoute(this.page);
   }

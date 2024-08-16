@@ -1,7 +1,7 @@
 import { test as base } from "@playwright/test";
 import Application from "../app/index.js";
 import AdminApplication from "../admin/app/index.js";
-import AccountsApplication from "../accounts/index.js";
+import AccountsApplication from "../accounts/app/index.js";
 export let deletionIds = {
   myTracks: {
     internalUser: [],

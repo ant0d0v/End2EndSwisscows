@@ -13,13 +13,11 @@ setup("Login to site as swisscows user", async ({accounts, app }) => {
   await app.home.open();
   await app.home.header.clickHamburgerMenuButton();
   await app.home.header.hamburgerMenu.clickLoginButton();
-  await accounts.app.loginPage.waitUntilPageIsFullyLoaded();
-  await accounts.app.loginPage.inputEmail(process.env.USERNAME_INTERNAL_USER);
-  await accounts.app.loginPage.pressTab();
-  await accounts.app.loginPage.inputPassword(
-    process.env.PASSWORD_INTERNAL_USER
-  );
-  await accounts.app.loginPage.clickLoginButton();
+  await accounts.app.loginPage.form.fill({
+    emailField: process.env.USERNAME_INTERNAL_USER,
+    passwordField: process.env.PASSWORD_INTERNAL_USER,
+  }); 
+  await accounts.app.loginPage.form.clickLoginButton();
 
   // Assert
   await app.home.header.logo.expectSwisscowsLogoToBeVisible();
@@ -36,12 +34,11 @@ setup("Login to site as external user", async ({ accounts, app }) => {
   await app.home.header.clickHamburgerMenuButton();
   await app.home.header.hamburgerMenu.clickLoginButton();
   await accounts.app.loginPage.waitUntilPageIsFullyLoaded();
-  await accounts.app.loginPage.inputEmail(process.env.USERNAME_EXTERNAL_USER);
-  await accounts.app.loginPage.pressTab();
-  await accounts.app.loginPage.inputPassword(
-    process.env.PASSWORD_EXTERNAL_USER
-  );
-  await accounts.app.loginPage.clickLoginButton();
+  await accounts.app.loginPage.form.fill({
+    emailField: process.env.USERNAME_EXTERNAL_USER,
+    passwordField: process.env.PASSWORD_EXTERNAL_USER,
+  }); 
+  await accounts.app.loginPage.form.clickLoginButton();
 
   //Assert
   await app.home.header.logo.expectSwisscowsLogoToBeVisible();

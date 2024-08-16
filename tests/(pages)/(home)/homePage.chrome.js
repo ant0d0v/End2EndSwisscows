@@ -1,15 +1,17 @@
 import { test } from "../../../utils/fixtures.js";
-import constanta from "../../../data/project-constants/testData.json";
+import { faker } from "@faker-js/faker";
 import main from "../../../data/home/testData.json";
 
 test("Check that suggest is displayed", async ({ app }) => {
+  let randomQuery = faker.word.sample();
+  
   await app.home.open();
-  await app.home.header.searchBar.inputSearchCriteria("ivanka");
+  await app.home.header.searchBar.inputSearchCriteria(randomQuery);
 
   //Assert
   await app.home.header.searchBar.expectSuggestIsDisplayed();
   await app.home.header.searchBar.expectSuggestToHaveCount(5);
-  await app.home.header.searchBar.expectSuggestToContains("ivanka");
+  await app.home.header.searchBar.expectSuggestToContains(randomQuery);
 });
 
 test("Check that all questions were opened on the home page ", async ({
