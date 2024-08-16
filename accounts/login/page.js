@@ -1,6 +1,6 @@
 import BasePage from "../../base/BasePage.js";
 
-export default class SignInPage extends BasePage {
+export default class LoginPage extends BasePage {
   constructor(page) {
     super(page);
     this.emailField = this.page.getByPlaceholder("Username or email");
@@ -13,7 +13,7 @@ export default class SignInPage extends BasePage {
     await this.emailField.fill(value);
   };
   pressTab = async () => {
-    await this.emailField.press("Tab")
+    await this.emailField.press("Tab");
   };
   inputPassword = async (value) => {
     await this.passwordField.fill(value);
@@ -23,5 +23,4 @@ export default class SignInPage extends BasePage {
   };
 
   //Verify
- 
 }
