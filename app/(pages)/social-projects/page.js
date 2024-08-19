@@ -12,20 +12,19 @@ export default class CharityPage extends BasePage {
     //Locators
     this.allContent = this.page.locator("main.social-project");
     this.mapsImage = this.page.locator("div.map img:visible");
-    this.links = (id) =>
-      this.page.getByRole("main").getByRole("link", { name: `${id}` });
+    this.keyshiftLink = this.page.getByRole("link", {
+      name: "https://keyshift.com/en/",
+    });
   }
   //Actions
   async open() {
     await this.openPage("/social-projects");
   }
 
-  async clickLinkOnThePage(id) {
-    const newPage = await this.clickElementAndNavigateToNewPage(
-      this.links(id),
-      `${id}`
+  async expectToBeOpenedPageAfterClickKeyshiftLink(expectedLink) {
+    await this.expectToBeOpenedNewPageAfterClick(
+      this.keyshiftLink, expectedLink
     );
-    return newPage;
   }
   //Assert
 
@@ -37,7 +36,6 @@ export default class CharityPage extends BasePage {
     );
   };
   expectMapsToBeVisible = async () => {
-    await this.page.waitForSelector("div.map img", { state: "visible" });
-    await this.expectAreElementsInListDisplayed(this.mapsImage);
+    await this.expectAreElementsToBeVisible(this.mapsImage);
   };
 }

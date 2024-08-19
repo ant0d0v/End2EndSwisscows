@@ -1,49 +1,28 @@
 import { test } from "../../utils/fixtures.js";
-import testData from "../../data/pages/donation/testData.json";
 
-test.use({ headless: false });
 
-for (const { testID, pdfLink, locatorId } of testData.donationPdfLinks) {
-  test(`${testID} Check navigation to corresponding page for  ${locatorId} pdf link and validate pdf`, async ({
-    app,
-  }, testInfo) => {
-    //Actions
-    await app.donationPage.open();
-    const currentPage = await app.donationPage.clickPdfLinkOnThePage(locatorId);
+test(`Check navigation to corresponding page when cliking keyshift link`, async ({
+  app, context
+}) => {
+  //Actions
+  await app.donationPage.open();
 
-    //Assert
-    await app.expectPageToHaveUrl(currentPage, pdfLink);
-    await app.donationPage.expectValidatePdfFile(
-      currentPage,
-      pdfLink,
-      testInfo
-    );
-  });
-}
-for (const {
-  testID,
-  expectedLink,
-  locatorId,
-  expectedTitle,
-} of testData.donationLinks) {
-  test(`${testID} Check navigation to corresponding pages for  ${locatorId} link`, async ({
-    app,
-  }) => {
-    //Actions
-    await app.donationPage.open();
-    const currentPage = await app.donationPage.clickLinkOnThePage(locatorId);
+  //Assert
+  await app.charityPage.expectToBeOpenedPageAfterClickKeyshiftLink(
+    "https://keyshift.com/en/donation"
+  );
+  await app.expectNewPageToHaveTitle(
+    context,
+    "KeyShift – to transform people and lives."
+  );
+});
 
-    //Assert
-    await app.expectPageToHaveUrl(currentPage, expectedLink);
-    await app.expectHaveTitle(currentPage, expectedTitle);
-  });
-}
 
 test("Check design of the Donation page ", async ({ app }, testInfo) => {
   //Actions
   await app.donationPage.open();
   //Assert
-  await app.donationPage.expectScreenDonationPage(testInfo);
+  await app.donationPage.takeSnapshot(testInfo);
 });
 
 test("Check design dark theme of the  Donation page ", async ({
@@ -56,5 +35,5 @@ test("Check design dark theme of the  Donation page ", async ({
   await app.donationPage.header.hamburgerMenu.clickDarkTheme();
 
   //Assert
-  await app.donationPage.expectScreenDonationPage(testInfo);
+  await app.donationPage.takeSnapshot(testInfo);
 });

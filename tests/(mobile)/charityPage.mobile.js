@@ -51,24 +51,7 @@ test("Check that the video is playing", async ({ app }) => {
   await app.charityPage.videoPlayer.expectVideoToPlay();
 });
 
-for (const {
-  testID,
-  expectedLink,
-  locatorId,
-  expectedTitle,
-} of testData.charityLinks) {
-  test(`${testID} Check navigation to corresponding page for  ${locatorId} link`, async ({
-    app,
-  }) => {
-    //Actions
-    await app.charityPage.open();
-    const currentPage = await app.charityPage.clickLinkOnThePage(locatorId);
 
-    //Assert
-    await app.expectPageToHaveUrl(currentPage, expectedLink);
-    await app.expectHaveTitle(currentPage, expectedTitle);
-  });
-}
 test("Check design of the charity page ", async ({ app }, testInfo) => {
   //Actions
   await app.charityPage.open();

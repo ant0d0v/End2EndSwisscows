@@ -62,20 +62,5 @@
             "locatorId" : "Українська",
             "expectedTitle" :"Swisscows - Ваша приватна та анонімна пошукова система"
         }
-    ],
-
-    "charityLinks": [
-        {
-            "testID": "1",
-            "expectedLink": "https://dev.swisscows.com/en/anonymous-vpn",
-            "locatorId" : "Swisscows VPN",
-            "expectedTitle": "Surf anonymously with VPN - Secure web surfing with Swisscows"
-        },
-        {
-            "testID": "2",
-            "expectedLink": "https://teleguard.com/en",
-            "locatorId" : "TeleGuard",
-            "expectedTitle": "TeleGuard - secure messenger from Switzerland"
-        }
     ]
 }

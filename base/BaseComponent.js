@@ -149,8 +149,8 @@ export default class BaseComponent extends PageHolder {
   }
   async expectColorLinkWhenHovering(element, color, expectedValue) {
     await test.step('Expect the element to "have" css color with value', async () => {
-      await element.hover();
-      await expect(element).toHaveCSS(color, expectedValue);
+      await element.first().hover();
+      await expect(element.first()).toHaveCSS(color, expectedValue);
     });
   }
   async expectListToHaveCount(elements, number) {

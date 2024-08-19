@@ -10,17 +10,19 @@ export default class Item extends BaseComponent {
     this.proxyImage = new ProxyImage(page)
     
 
-   //Locators
-   this.videoItems = this.page.locator("article.item--video h2")
+  //Locators
+  this.root = this.page.locator("article.video-object");
+  this.thumbnail = this.root.locator(".thumbnail");
+   this.videoItems = this.page.locator("article.video-object");
    this.videoResults = this.page.locator(".video-results")
-   this.item = (index) => this.page.locator("article.item--video h2").nth(index)
-   this.images = this.page.locator("article.item--video img")
-   this.descriptionList = this.page.locator(".item--video .description")
+   this.item = (index) => this.page.locator("article.video-object .title").nth(index)
+   this.images = this.page.locator("article.video-object .thumbnail");
+   this.descriptionList = this.page.locator("article.video-object .description")
    
   }
   //Actions
   clickVideoNumber = async (index) => {
-    await this.clickElement( this.item(index),
+    await this.clickElement( this.thumbnail.nth(index - 1),
       `video item with index${index}`
     );
   };
@@ -39,7 +41,6 @@ export default class Item extends BaseComponent {
   
   //Verify
   expectVideoItemsToBeVisible = async () => {
-    await this.page.waitForSelector("article.item--video h2:nth-child(-n+10)",{ state: 'visible' })
     await this.expectAreElementsInListDisplayed(this.videoItems)
   };
   expectImageToHaveWight = async (property, value) => {

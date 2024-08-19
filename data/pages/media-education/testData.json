@@ -64,16 +64,30 @@
         }
     ],
 
-    "educationPdfLinks": [
+    "pdfLinks": [
         {
             "testID": "1",
-            "pdfLink": "https://dev.swisscows.com/docs/Medienerziehung_2020_06_EN.pdf",
-            "locatorId" : "“Digital media education”"
+            "link": "https://dev.swisscows.com/docs/Medienerziehung_2020_06_EN.pdf",
+            "name" : "“Digital media education”"
         },
         {
             "testID": "2",
-            "pdfLink": "https://dev.swisscows.com/docs/Medienerziehung_2020_06_EN.pdf",
-            "locatorId" : "Open flyer [PDF, 1.49Mb]"
+            "link": "https://dev.swisscows.com/docs/Medienerziehung_2020_06_EN.pdf",
+            "name" : "Open flyer [PDF, 1.49Mb]"
+        }
+    ],
+    "links": [
+        {
+            "testID": "1",
+            "link": "https://keyshift.com/en",
+            "name" : "https://keyshift.com/en",
+            "title": "KeyShift – to transform people and lives."
+        },
+        {
+            "testID": "2",
+            "link": "https://keyshift.com/en/cases",
+            "name" : "https://keyshift.com/en/cases#mediaeducation",
+            "title": "KeyShift – to transform people and lives."
         }
     ]
 }

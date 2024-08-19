@@ -1,5 +1,5 @@
 import { test } from "../../utils/fixtures.js";
-import testData from "../../data/pages/social-projects/testData.json";
+
 
 test("Check that border is red and 2px when clicking on the Charity Haiti slider images", async ({
   app,
@@ -30,11 +30,9 @@ test("Check the swipe to left in  Charity Columbia slider ", async ({
 }) => {
   //Actions
   await app.charityPage.open();
-  await app.charityPage.waitUntilPageIsFullyLoaded();
-  await app.charityPage.imagesGallery.swipeLeftToLastImage(
-    await app.charityPage.imagesGallery.charityColumbiaGallerySmallFirstImage,
-    await app.charityPage.imagesGallery.charityColumbiaGallerySmallLastImage
-  );
+  await app.charityPage.expectMapsToBeVisible();
+  await app.charityPage.imagesGallery.swipeLeftColumbiaSlider()
+
   //Assert
   await app.charityPage.imagesGallery.expectAttributeClassOfLastSmallImageCharityColumbiaGallery(
     "visible"
@@ -44,11 +42,8 @@ test("Check the swipe to left in  Charity Columbia slider ", async ({
 test("Check the swipe to left in Charity Haiti slider ", async ({ app }) => {
   //Actions
   await app.charityPage.open();
-  await app.charityPage.waitUntilPageIsFullyLoaded();
-  await app.charityPage.imagesGallery.swipeLeftToLastImage(
-    await app.charityPage.imagesGallery.charityHaitiGallerySmallFirstImage,
-    await app.charityPage.imagesGallery.charityHaitiGallerySmallLastImage
-  );
+  await app.charityPage.expectMapsToBeVisible();
+  await app.charityPage.imagesGallery.swipeLeftCharitySlider();
 
   //Assert
   await app.charityPage.imagesGallery.expectAttributeClassOfLastSmallImageCharityHaitiGallery(
@@ -85,24 +80,17 @@ test("Check that the video is playing", async ({ app }) => {
   await app.charityPage.videoPlayer.expectVideoToPlay();
 });
 
-for (const {
-  testID,
-  expectedLink,
-  locatorId,
-  expectedTitle,
-} of testData.charityLinks) {
-  test(`${testID} Check navigation to corresponding page for  ${locatorId} link`, async ({
-    app,
-  }) => {
-    //Actions
-    await app.charityPage.open();
-    const currentPage = await app.charityPage.clickLinkOnThePage(locatorId);
-
-    //Assert
-    await app.expectPageToHaveUrl(currentPage, expectedLink);
-    await app.expectHaveTitle(currentPage, expectedTitle);
+test(`Check navigation to corresponding page when cliking keyshift link`, async ({ app, context}) => {
+  //Actions
+  await app.charityPage.open();
+  
+  //Assert
+  await app.charityPage.expectToBeOpenedPageAfterClickKeyshiftLink(
+    "https://keyshift.com/en/donation"
+  );
+  await app.expectNewPageToHaveTitle(context, "KeyShift – to transform people and lives.");
   });
-}
+
 test("Check design of the charity page ", async ({ app }, testInfo) => {
   //Actions
   await app.charityPage.open();

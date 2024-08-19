@@ -15,7 +15,7 @@
             "expectedLink": "https://chromewebstore.google.com/detail/swisscows/ibimaeimnogcdnjmmlpodbhhbejnpaij",
             "locatorId" : "default-search-chrome",
             "locatorName" : "Install Swisscows",
-            "expectedTitle": "Swisscows"
+            "expectedTitle": "Swisscows - Chrome Web Store"
         },
         {
             "testID": "3",

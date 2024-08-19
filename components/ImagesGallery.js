@@ -7,30 +7,34 @@ const testData = JSON.parse(
 export default class ImagesGallery extends BaseComponent {
   constructor(page) {
     super(page);
-
     //Locators
     this.charityHaitiGallerySmallImages = (id) => this.page.locator(`div:nth-child(2) > .swiper-wrapper > div:nth-child(${id})`).first();
     this.charityHaitiGalleryLargeImages = (id) => this.page.locator(`.swiper-wrapper > div:nth-child(${id})`).first();
-    this.charityColumbiaGallerySmallImages = (id) => this.page.locator(`div:nth-child(16) > div:nth-child(2) > .swiper-wrapper > div:nth-child(${id})`);
-    this.charityColumbiaGalleryLargeImages = (id) => this.page.locator(`div:nth-child(16) > div > .swiper-wrapper > div:nth-child(${id})`).first()
-    this.charityColumbiaGallerySmallFirstImage = this.page.locator(
-      "div:nth-child(16) > div:nth-child(2) > .swiper-wrapper > div:nth-child(1)"
-    );
-    this.charityColumbiaGallerySmallLastImage = this.page.locator(
-      "div:nth-child(16) > div:nth-child(2) > .swiper-wrapper > div:nth-child(9)"
-    );
-    this.charityHaitiGallerySmallFirstImage = this.page.locator("div:nth-child(2) > .swiper-wrapper > div:nth-child(2)").first();
-    this.charityHaitiGallerySmallLastImage = this.page.locator("div:nth-child(2) > .swiper-wrapper > div:nth-child(10)").first();
+    this.charityColumbiaGallerySmallImages = (id) => this.page.locator(`div:nth-child(18) > div:nth-child(2) > .swiper-wrapper > div:nth-child(${id})`)
+    this.charityColumbiaGalleryLargeImages = (id) => this.page.locator(`div:nth-child(18) > div > .swiper-wrapper > div:nth-child(${id})`).first()
+    
     this.dataCenterGallerySmallImages = (id) => this.page.locator(`div:nth-child(2) > .swiper-wrapper > div:nth-child(${id})`);
     this.dataCenterGalleryLargeImages = (id) => this.page.locator(`.swiper-wrapper > div:nth-child(${id})`).first();
   }
 
   //Actions
-  async swipeLeftToLastImage(firstImage, lastImage) {
-    await this.swipeLeft(firstImage, lastImage)
-    await this.clickElement(lastImage)
+
+  async swipeLeftColumbiaSlider() {
+    await this.swipeLeft(
+      this.charityColumbiaGallerySmallImages(1),
+      this.charityColumbiaGallerySmallImages(9)
+    );
+    await this.clickElement(this.charityColumbiaGallerySmallImages(9));
   }
 
+  async swipeLeftCharitySlider() {
+    await this.swipeLeft(
+      this.charityHaitiGallerySmallImages(2),
+      this.charityHaitiGallerySmallImages(10)
+    );
+    await this.clickElement(this.charityHaitiGallerySmallImages(10));
+  }
+  
   //Assert
   async expectBorderWhenClickingOnSmallImages(elements, expectedValue) {
     for (const { imageID } of await testData.idImagesOfSlider) {
@@ -60,12 +64,14 @@ export default class ImagesGallery extends BaseComponent {
   }
 
   async expectAttributeClassOfLastSmallImageCharityColumbiaGallery(expectedValue) {
-    await this.expectAttributeClassOfElement(this.charityColumbiaGallerySmallLastImage,
+    await this.expectAttributeClassOfElement(
+      this.charityColumbiaGallerySmallImages(9),
       `swiper-slide swiper-slide-thumb-active swiper-slide-visible swiper-slide-fully-${expectedValue}`
     );
   }
    async expectAttributeClassOfLastSmallImageCharityHaitiGallery(expectedValue) {
-    await this.expectAttributeClassOfElement( this.charityHaitiGallerySmallLastImage,
+    await this.expectAttributeClassOfElement(
+      this.charityHaitiGallerySmallImages(10),
       `swiper-slide swiper-slide-thumb-active swiper-slide-${expectedValue}`
     );
   }

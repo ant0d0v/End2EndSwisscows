@@ -2,17 +2,17 @@
 {
     
 
-    "allLinks": [
+    "links": [
         {
             "testID": "1",
-            "expectedLink": "https://dev.swisscows.com/en",
-            "locatorId" : "Swisscows",
+            "link": "https://dev.swisscows.com/en",
+            "name" : "Swisscows",
             "expectedTitle": "Your private and anonymous search engine Swisscows"
         },
         {
             "testID": "2",
-            "expectedLink": "https://dev.swisscows.com/en/privacy",
-            "locatorId" : "privacy policy",
+            "link": "https://dev.swisscows.com/en/privacy",
+            "name" : "privacy policy",
             "expectedTitle": "Privacy Policy | Swisscows"
         }
     ]
