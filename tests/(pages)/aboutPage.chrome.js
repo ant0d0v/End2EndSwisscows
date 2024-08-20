@@ -15,21 +15,16 @@ test("Check design dark theme of the   About page", async ({
   //Actions
   await app.aboutPage.open();
   await app.aboutPage.header.clickHamburgerMenuButton();
-  await app.aboutPage.header.hamburgerMenu.clickThemeDropdown();
-  await app.aboutPage.header.hamburgerMenu.clickDarkTheme();
+  await app.aboutPage.header.hamburgerMenu.selectTheme("Dark");
 
   //Assert
   await app.aboutPage.takeSnapshot(testInfo);
 });
 
-for (const {
-  testID,
-  link,
-  name,
-  expectedTitle,
-} of testData.links) {
+for (const { testID, link, name, expectedTitle } of testData.links) {
   test(`${testID} Check navigation to corresponding pages for  '${name}' link`, async ({
-    app, context
+    app,
+    context,
   }) => {
     //Actions
     await app.aboutPage.open();

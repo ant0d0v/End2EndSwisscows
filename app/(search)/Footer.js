@@ -11,9 +11,30 @@ export default class Footer extends BaseComponent {
     this.root = this.page.getByRole("contentinfo");
   }
   //Verify
-  expectSwisscowsAppImagesToBeVisible = async () => {
-    await this.expectAreElementsInListDisplayed(this.swisscowsAppImages);
+  expectToBeOpenedNewPageAfterClickSocialNetworksLinks = async (
+    data = {
+      locator: string,
+      expected: string,
+    }
+  ) => {
+    await this.expectToBeOpenedNewPageAfterClick(
+      this.socialNetworksLinks(data.locator),
+      data.expected
+    );
   };
+
+  expectToBeOpenedNewPageAfterClickAppLinks = async (
+    data = {
+      locator: string,
+      expected: string,
+    }
+  ) => {
+    await this.expectToBeOpenedNewPageAfterClick(
+      this.swisscowsAppLinks(data.locator),
+      data.expected
+    );
+  };
+  
   takeSnapshot = async (testInfo) => {
     await this.expectPageElementToHaveScreenshot(
       this.root,

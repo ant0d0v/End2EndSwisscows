@@ -1,4 +1,4 @@
-import { test } from "../../utils/fixtures.js"
+import { test } from "../../utils/fixtures.js";
 
 test.skip("Check design of the VPN page ", async ({ app }, testInfo) => {
   //Actions
@@ -14,8 +14,7 @@ test.skip("Check design dark theme of the  VPN page ", async ({
   //Actions
   await app.vpnPage.open();
   await app.vpnPage.header.clickHamburgerMenuButton();
-  await app.vpnPage.header.hamburgerMenu.clickThemeDropdown();
-  await app.vpnPage.header.hamburgerMenu.clickDarkTheme();
+  await app.vpnPage.header.hamburgerMenu.selectTheme("Dark");
 
   //Assert
   await app.vpnPage.expectScreenVpnPage(testInfo);

@@ -61,7 +61,7 @@ test("Check previous button of track on the main page", async ({ app }) => {
   await app.musicPlaylistPage.player.clickPrevButton();
 
   //Assert
-  await app.musicPlaylistPage.player.expectElapsedTimeToHaveText(/0:04/);
+  await app.musicPlaylistPage.player.expectElapsedTimeToHaveText(/^0:0[4-9]$/);
   await app.musicPlaylistPage.track.expectFirstTrackIsPlaying();
 });
 

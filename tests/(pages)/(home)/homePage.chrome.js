@@ -104,8 +104,7 @@ test("Check design dark theme of the home page ", async ({ app }, testInfo) => {
   //Actions
   await app.home.open();
   await app.home.header.clickHamburgerMenuButton();
-  await app.home.header.hamburgerMenu.clickThemeDropdown();
-  await app.home.header.hamburgerMenu.clickDarkTheme();
+  await app.home.header.hamburgerMenu.selectTheme("Dark");
   await app.home.extensionPopup.clickCloseButtonInExtensionPopup();
 
   //Assert

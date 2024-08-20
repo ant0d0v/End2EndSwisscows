@@ -1,8 +1,8 @@
 import { test } from "../../utils/fixtures.js";
 
-
 test(`Check navigation to corresponding page when cliking keyshift link`, async ({
-  app, context
+  app,
+  context,
 }) => {
   //Actions
   await app.donationPage.open();
@@ -17,7 +17,6 @@ test(`Check navigation to corresponding page when cliking keyshift link`, async 
   );
 });
 
-
 test("Check design of the Donation page ", async ({ app }, testInfo) => {
   //Actions
   await app.donationPage.open();
@@ -31,8 +30,7 @@ test("Check design dark theme of the  Donation page ", async ({
   //Actions
   await app.donationPage.open();
   await app.donationPage.header.clickHamburgerMenuButton();
-  await app.donationPage.header.hamburgerMenu.clickThemeDropdown();
-  await app.donationPage.header.hamburgerMenu.clickDarkTheme();
+  await app.donationPage.header.hamburgerMenu.selectTheme("Dark");
 
   //Assert
   await app.donationPage.takeSnapshot(testInfo);

@@ -10,7 +10,7 @@ test("Check that the video is playing", async ({ app }) => {
   await app.mediaEducationPage.videoPlayer.expectYouTubeVideoToPlay();
 });
 
-for (const { testID, link, name} of testData.pdfLinks) {
+for (const { testID, link, name } of testData.pdfLinks) {
   test(`${testID} Check navigation to corresponding page for  ${name} pdf link and validate pdf`, async ({
     app,
   }, testInfo) => {
@@ -30,46 +30,48 @@ for (const { testID, link, name} of testData.pdfLinks) {
   });
 }
 
-  for (const { testID, link, name, title } of testData.links) {
-    test(`${testID} Check navigation to corresponding page for  ${name} link`, async ({
-      app, context
-    }) => {
-      //Actions
-      await app.mediaEducationPage.open();
-   
-      //Assert
-      await app.mediaEducationPage.expectToBeOpenedNewPageAfterClickLinks({
-        locator: name,
-        expected: link,
-      });
-      await app.expectNewPageToHaveTitle(context, title);
-    });
-  }
-
-  test("Check design of the Education page ", async ({ app }, testInfo) => {
-    //Actions
-    await app.mediaEducationPage.open();
-    //Assert
-    await app.mediaEducationPage.takeSnapshot(testInfo);
-  });
-
-  test("Check color of flyer button when hovering ", async ({ app }) => {
-    //Actions
-    await app.mediaEducationPage.open();
-
-    //Assert
-    await app.mediaEducationPage.expectColorWhenHoveringOnPdfButton(/rgb\(191, 0, 0\)/);
-  });
-
-  test("Check design dark theme of the Education page ", async ({
+for (const { testID, link, name, title } of testData.links) {
+  test(`${testID} Check navigation to corresponding page for  ${name} link`, async ({
     app,
-  }, testInfo) => {
+    context,
+  }) => {
     //Actions
     await app.mediaEducationPage.open();
-    await app.mediaEducationPage.header.clickHamburgerMenuButton();
-    await app.mediaEducationPage.header.hamburgerMenu.clickThemeDropdown();
-    await app.mediaEducationPage.header.hamburgerMenu.clickDarkTheme();
 
     //Assert
-    await app.mediaEducationPage.takeSnapshot(testInfo);
+    await app.mediaEducationPage.expectToBeOpenedNewPageAfterClickLinks({
+      locator: name,
+      expected: link,
+    });
+    await app.expectNewPageToHaveTitle(context, title);
   });
+}
+
+test("Check design of the Education page ", async ({ app }, testInfo) => {
+  //Actions
+  await app.mediaEducationPage.open();
+  //Assert
+  await app.mediaEducationPage.takeSnapshot(testInfo);
+});
+
+test("Check color of flyer button when hovering ", async ({ app }) => {
+  //Actions
+  await app.mediaEducationPage.open();
+
+  //Assert
+  await app.mediaEducationPage.expectColorWhenHoveringOnPdfButton(
+    /rgb\(191, 0, 0\)/
+  );
+});
+
+test("Check design dark theme of the Education page ", async ({
+  app,
+}, testInfo) => {
+  //Actions
+  await app.mediaEducationPage.open();
+  await app.mediaEducationPage.header.clickHamburgerMenuButton();
+  await app.mediaEducationPage.header.hamburgerMenu.selectTheme("Dark");
+
+  //Assert
+  await app.mediaEducationPage.takeSnapshot(testInfo);
+});

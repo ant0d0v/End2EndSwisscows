@@ -21,7 +21,7 @@ export default class Header extends BaseComponent {
     this.navigation = new Navigation(page);
 
     //Locators
-    this.searchCounter = this.page.locator("#header").getByText("1");
+    this.searchCounter = this.page.locator(".search-counter");
     this.hamburgerMenuButton = this.page
       .getByRole("banner")
       .getByRole("button")
@@ -70,7 +70,7 @@ export default class Header extends BaseComponent {
   takeSnapshot = async (testInfo) => {
     await this.expectPageElementToHaveScreenshot(
       this.root,
-      this.logoSwisscows,
+      this.logo.swisscows,
       testInfo
     );
   };

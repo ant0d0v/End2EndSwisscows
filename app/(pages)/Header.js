@@ -16,7 +16,7 @@ export default class Header extends BaseComponent {
     this.logo = new Logo(page)
 
     //Locators
-    this.badgeCounter = this.page.getByTitle('0').locator('img')
+    this.badgeCounter = this.page.locator(".search-counter");
     this.hamburgerMenuButton = this.page.locator(
       "header button.hamburger-menu"
     );

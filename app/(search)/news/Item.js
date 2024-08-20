@@ -8,7 +8,7 @@ export default class Item extends BaseComponent {
     this.proxyImage = new ProxyImage(page)
 
     //Locators
-    this.newsItems = this.page.locator("article.item--news h2")
+    this.newsItems = this.page.locator(".item.news-article");
     this.allImage = this.page.locator("article.item--news  figure.media img")
     this.firstNewsItem = this.page.locator("article.item--news h2").first()
   }
@@ -33,7 +33,6 @@ export default class Item extends BaseComponent {
   };
 
   expectNewsItemsToBeVisible = async () => {
-    await this.page.waitForSelector("article.item--news h2",{ state: 'visible' })
     await this.expectAreElementsInListDisplayed(this.newsItems)
   };
 

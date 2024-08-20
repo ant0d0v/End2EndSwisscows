@@ -12,13 +12,13 @@ export default class DatacenterPage extends BasePage {
 
     //Locators
     this.allContent = this.page.locator("main.datacenter");
-    this.allImages = this.page.locator("main.datacenter img:visible")
+    this.allImages = this.page.locator("main.datacenter img:visible");
     this.links = (id) =>
       this.page.getByRole("main").getByRole("link", { name: `${id}` });
   }
   //Actions
-  async open(){
-    await this.openPage("/data-safe-search-engine")
+  async open() {
+    await this.openPage("/data-safe-search-engine");
   }
 
   async clickLinkOnThePage(id) {
@@ -30,7 +30,11 @@ export default class DatacenterPage extends BasePage {
   }
   //Assert
 
-  expectScreenDatacenterPage = async (testInfo) => {
-    await this.expectPageToHaveScreenshot(testInfo, this.allImages, this.videoPlayer.videoPlayer);
+  takeSnapshot = async (testInfo) => {
+    await this.expectPageToHaveScreenshot(
+      testInfo,
+      this.allImages,
+      this.videoPlayer.videoPlayer
+    );
   };
 }

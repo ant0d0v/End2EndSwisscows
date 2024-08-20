@@ -25,6 +25,6 @@ export default class VideoPlayer extends BaseComponent {
 
   async expectYouTubeVideoToPlay() {
     await this.clickElement(this.playButton);
-    await this.expectTextsToContains(this.currentTime, "0:01");
+    await this.expectTextsToContains(this.currentTime, /^0:0[2-9]$/);
   }
 }

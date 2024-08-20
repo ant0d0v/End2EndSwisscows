@@ -53,7 +53,7 @@ test("Check design of the Datacenter page ", async ({ app }, testInfo) => {
   //Actions
   await app.datacenterPage.open();
   //Assert
-  await app.datacenterPage.expectScreenDatacenterPage(testInfo);
+  await app.datacenterPage.takeSnapshot(testInfo);
 });
 
 test("Check design dark theme of the Datacenter page ", async ({
@@ -62,9 +62,8 @@ test("Check design dark theme of the Datacenter page ", async ({
   //Actions
   await app.datacenterPage.open();
   await app.datacenterPage.header.clickHamburgerMenuButton();
-  await app.datacenterPage.header.hamburgerMenu.clickThemeDropdown();
-  await app.datacenterPage.header.hamburgerMenu.clickDarkTheme();
+  await app.datacenterPage.header.hamburgerMenu.selectTheme("Dark");
 
   //Assert
-  await app.datacenterPage.expectScreenDatacenterPage(testInfo);
+  await app.datacenterPage.takeSnapshot(testInfo);
 });

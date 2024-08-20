@@ -1,10 +1,10 @@
-import { test } from "../../utils/fixtures.js" 
+import { test } from "../../utils/fixtures.js";
 
 test("Check design of the default search page ", async ({ app }, testInfo) => {
   //Actions
   await app.defaultSearchPage.open();
   //Assert
-  await app.defaultSearchPage.expectDefaultSearchPage(testInfo);
+  await app.defaultSearchPage.takeSnapshot(testInfo);
 });
 
 test("Check design dark theme of the default search page ", async ({
@@ -13,9 +13,8 @@ test("Check design dark theme of the default search page ", async ({
   //Actions
   await app.defaultSearchPage.open();
   await app.defaultSearchPage.header.clickHamburgerMenuButton();
-  await app.defaultSearchPage.header.hamburgerMenu.clickThemeDropdown();
-  await app.defaultSearchPage.header.hamburgerMenu.clickDarkTheme();
+  await app.defaultSearchPage.header.hamburgerMenu.selectTheme("Dark");
 
   //Assert
-  await app.defaultSearchPage.expectDefaultSearchPage(testInfo);
+  await app.defaultSearchPage.takeSnapshot(testInfo);
 });

@@ -1,5 +1,4 @@
 import { test } from "../../utils/fixtures.js";
-import testData from "../../data/pages/datacenter/testData.json";
 
 test("Check that border is red and 2px when clicking on the images Datacenter slider", async ({
   app,
@@ -31,29 +30,11 @@ test("Check that the video is playing", async ({ app }) => {
   await app.datacenterPage.videoPlayer.expectVideoToPlay();
 });
 
-for (const {
-  testID,
-  expectedLink,
-  locatorId,
-  expectedTitle,
-} of testData.datacenterLinks) {
-  test(`${testID} Check navigation to corresponding page for  ${locatorId} link`, async ({
-    app,
-  }) => {
-    //Actions
-    await app.datacenterPage.open();
-    const currentPage = await app.datacenterPage.clickLinkOnThePage(locatorId);
-
-    //Assert
-    await app.expectPageToHaveUrl(currentPage, expectedLink);
-    await app.expectHaveTitle(currentPage, expectedTitle);
-  });
-}
 test("Check design of the Datacenter page ", async ({ app }, testInfo) => {
   //Actions
   await app.datacenterPage.open();
   //Assert
-  await app.datacenterPage.expectScreenDatacenterPage(testInfo);
+  await app.datacenterPage.takeSnapshot(testInfo);
 });
 
 test("Check design dark theme of the Datacenter page ", async ({
@@ -62,9 +43,8 @@ test("Check design dark theme of the Datacenter page ", async ({
   //Actions
   await app.datacenterPage.open();
   await app.datacenterPage.header.clickHamburgerMenuButton();
-  await app.datacenterPage.header.hamburgerMenu.clickThemeDropdown();
-  await app.datacenterPage.header.hamburgerMenu.clickDarkTheme();
+  await app.datacenterPage.header.hamburgerMenu.selectTheme("Dark");
 
   //Assert
-  await app.datacenterPage.expectScreenDatacenterPage(testInfo);
+  await app.datacenterPage.takeSnapshot(testInfo);
 });

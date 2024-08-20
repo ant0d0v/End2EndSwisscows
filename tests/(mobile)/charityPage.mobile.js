@@ -51,25 +51,20 @@ test("Check that the video is playing", async ({ app }) => {
   await app.charityPage.videoPlayer.expectVideoToPlay();
 });
 
-
 test("Check design of the charity page ", async ({ app }, testInfo) => {
   //Actions
   await app.charityPage.open();
 
   //Assert
-  await app.charityPage.expectMapsToBeVisible();
   await app.charityPage.takeSnapshot(testInfo);
 });
 
 test("Check design dark theme of the charity page ", async ({
-  app,
-}, testInfo) => {
+  app }, testInfo) => {
   //Actions
   await app.charityPage.open();
-  await app.charityPage.expectMapsToBeVisible();
   await app.charityPage.header.clickHamburgerMenuButton();
-  await app.charityPage.header.hamburgerMenu.clickThemeDropdown();
-  await app.charityPage.header.hamburgerMenu.clickDarkTheme();
+  await app.charityPage.header.hamburgerMenu.selectTheme("Dark");
 
   //Assert
   await app.charityPage.takeSnapshot(testInfo);

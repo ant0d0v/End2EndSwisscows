@@ -34,16 +34,14 @@ test("Check charity query counter value after search and go back to main bage ",
   await app.home.header.badgeCounter.expectCharityBadgeCounterToHaveValue("1");
 });
 test("Check that display of heart icon message in the header static pages", async ({
-  app,
-}) => {
+  app
+},testInfo) => {
   //Actions
   await app.home.open();
   await app.home.header.clickBadgeCounter();
 
   //Assert
-  await app.home.header.badgeCounter.expectPopupCharityBadgeCounterToHaveText(
-    "Charity ProjectThis is the number of your Swisscows searches. On average, 50 search queries finance a children's meal. Register and receive newsletters."
-  );
+  await app.home.header.badgeCounter.takeSnapshot(testInfo);
 });
 
 test.describe("test use cookie", () => {

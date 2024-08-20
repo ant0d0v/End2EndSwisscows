@@ -16,8 +16,6 @@ test('Check that popup "firefox install" redirect to the corresponding page ', a
 });
 
 test("Check that popup firefox install Is Displayed", async ({ app }, testInfo) => {
-  const expectedText =
-    "Stay with us and set Swisscows as your default search engine. ";
   //Actions
   await app.home.open();
 

@@ -21,7 +21,7 @@ export default class DefaultSearchPage extends BasePage {
   }
 
   // Verify
-  expectDefaultSearchPage = async (testInfo) => {
+  takeSnapshot = async (testInfo) => {
     await this.expectPageToHaveScreenshot(testInfo, this.allImages, this.animationImage);
   };
 }

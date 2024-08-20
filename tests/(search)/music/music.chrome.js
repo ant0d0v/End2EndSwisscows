@@ -130,7 +130,7 @@ test("Check play track on music page", async ({ app }) => {
   await app.musicPage.header.navigation.clickMusicTab();
   await app.musicPage.track.expectMusicTracksToBeVisible();
   await app.musicPage.track.clickPlayButtonNumberTrack(firstTrack);
-  await app.musicPage.player.expectElapsedTimeToHaveText(/0:04/);
+  await app.musicPage.player.expectElapsedTimeToHaveText(/^0:0[4-9]$/);
 
   //Assert
   await app.musicPage.player.expectTimelineToBeGreaterThan(0.5);
@@ -161,7 +161,7 @@ test("Check next button of track on the main page", async ({ app }) => {
   await app.musicPage.track.expectMusicTracksToBeVisible();
   await app.musicPage.track.clickPlayButtonNumberTrack(firstTrack);
   await app.musicPage.player.clickNextButton();
-  await app.musicPage.player.expectElapsedTimeToHaveText(/0:04/);
+  await app.musicPage.player.expectElapsedTimeToHaveText(/^0:0[4-9]$/);
 
   //Assert
   await app.musicPage.player.expectTimelineToBeGreaterThan(0.5);

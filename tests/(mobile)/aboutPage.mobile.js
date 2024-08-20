@@ -13,8 +13,7 @@ test("Check design dark theme of the   About Page page ", async ({
   //Actions
   await app.aboutPage.open();
   await app.aboutPage.header.clickHamburgerMenuButton();
-  await app.aboutPage.header.hamburgerMenu.clickThemeDropdown();
-  await app.aboutPage.header.hamburgerMenu.clickDarkTheme();
+  await app.aboutPage.header.hamburgerMenu.selectTheme("Dark");
 
   //Assert
   await app.aboutPage.takeSnapshot(testInfo);

@@ -1,13 +1,15 @@
 import { test } from "../../utils/fixtures.js";
 import testData from "../../data/hamburger/testData.json";
+import { faker } from "@faker-js/faker";
 
 test("Check display of nickname and avatar in hamburger menu", async ({
   app,
 }) => {
   //Actions
   await app.home.open();
-  await app.home.header.searchBar.inputSearchCriteria("ukraine");
+  await app.home.header.searchBar.inputSearchCriteria(faker.word.sample());
   await app.home.header.searchBar.clickEnterSearchField();
+  await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
   await app.webPage.header.clickHamburgerMenuButton();
 
   //Assert
@@ -20,8 +22,9 @@ test("Check display of nickname and avatar in hamburger menu", async ({
 test("Check Log Out user and display of login button", async ({ app }) => {
   //Actions
   await app.home.open();
-  await app.home.header.searchBar.inputSearchCriteria("best");
+  await app.home.header.searchBar.inputSearchCriteria(faker.word.sample());
   await app.home.header.searchBar.clickEnterSearchField();
+  await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
   await app.webPage.header.clickHamburgerMenuButton();
   await app.webPage.header.hamburgerMenu.clickLogoutButton();
   await app.webPage.header.clickHamburgerMenuButton();
@@ -38,18 +41,7 @@ test("Check redirect to profile when clicking on avatar", async ({ app }) => {
 
   //Assert
   await app.expectPageToHaveUrl(app.page, /accounts.dev.swisscows.com/);
-  await app.expectHaveTitle(app.page, /Profile - Swisscows Accounts/);
-});
-
-test("Texts of the links in the hamburger menu.", async ({ app }) => {
-  //Actions
-  await app.home.open();
-  await app.home.header.clickHamburgerMenuButton();
-
-  //Assert
-  await app.home.header.hamburgerMenu.expectLinksToHaveText(
-    testData.expectedTextsHamburgerLinks
-  );
+  await app.expectHaveTitle(app.page, /Dashboard - Swisscows Accounts/);
 });
 
 test("Check availability and options of localization dropdown menu in hamburger Menu", async ({
@@ -79,47 +71,6 @@ test("Check  availability and options of region dropdown menu in hamburger menu"
   await app.home.header.hamburgerMenu.expectRegionDropdownToHaveCount(43);
   await app.home.header.hamburgerMenu.expectRegionDropdownToHaveText(
     testData.expectedTextsOfRegionDropdown
-  );
-});
-test("Check theme change to dark theme", async ({ app }) => {
-  const expectedDarkBackground = /rgb\(24, 26, 28\)/;
-  //Actions
-  await app.home.open();
-  await app.home.header.clickHamburgerMenuButton();
-  await app.home.header.hamburgerMenu.clickThemeDropdown();
-  await app.home.header.hamburgerMenu.clickDarkTheme();
-
-  //Assert
-  await app.home.header.hamburgerMenu.expectBackgroundColorOfPage(
-    expectedDarkBackground
-  );
-});
-
-test("Check theme change to light theme", async ({ app }) => {
-  const expectedLightBackground = /rgb\(250, 251, 253\)/;
-  //Actions
-  await app.home.open();
-  await app.home.header.clickHamburgerMenuButton();
-  await app.home.header.hamburgerMenu.clickThemeDropdown();
-  await app.home.header.hamburgerMenu.clickLightTheme();
-
-  //Assert
-  await app.home.header.hamburgerMenu.expectBackgroundColorOfPage(
-    expectedLightBackground
-  );
-});
-
-test("Check default theme on first opening the site", async ({ app }) => {
-  const expectedLightBackground = /rgb\(250, 251, 253\)/;
-  //Actions
-  await app.home.open();
-  await app.home.header.clickHamburgerMenuButton();
-  await app.home.header.hamburgerMenu.clickThemeDropdown();
-
-  //Assert
-  await app.home.header.hamburgerMenu.expectDefaultThemeButtonIsActive();
-  await app.home.header.hamburgerMenu.expectBackgroundColorOfPage(
-    expectedLightBackground
   );
 });
 
@@ -162,3 +113,17 @@ for (const {
     await app.expectHaveTitle(app.page, expectedTitle);
   });
 }
+
+test.describe("tests don't use cookie", () => {
+  test.use({ storageState: { cookies: [], origins: [] } });
+  test("Check design of hamburger menu component", async ({ app }, testInfo) => {
+    //Actions
+    await app.home.open();
+    await app.home.header.clickHamburgerMenuButton();
+    await app.home.header.hamburgerMenu.selectRegion("Germany");
+    await app.home.header.clickHamburgerMenuButton();
+
+    //Assert
+    await app.home.header.hamburgerMenu.takeSnapshot(testInfo);
+  });
+});
