@@ -64,13 +64,30 @@ export default class MusicPlayer extends BaseComponent {
   async expectElapsedTimeToHaveText(value) {
     await this.expectTextToContain(this.elapsedTime, value);
   }
+
   async expectTimelineToBeGreaterThan(value) {
     expect(
       await this.page.$eval("audio", (e) => e.currentTime)
     ).toBeGreaterThan(value);
   }
-  async expectImageToHaveWight(property, value) {
-    await this.expectElementToHaveJSProperty(this.image, property, value);
+
+  async expectPlayerImageToBeVisible() {
+    await this.expectElementToBeVisible(this.image);
+  }
+
+  async expectImageToHavePropetry(
+    expectedProperty = { width: value, height: value }
+  ) {
+    await this.expectElementToHaveJSProperty(
+      this.image,
+      "width",
+      expectedProperty.width
+    );
+    await this.expectElementToHaveJSProperty(
+      this.image,
+      "height",
+      expectedProperty.height
+    );
   }
   async expectProgressToHaveValue(value) {
     await this.expectAttributeToHaveValue(
@@ -90,5 +107,5 @@ export default class MusicPlayer extends BaseComponent {
       this.track,
       testInfo
     );
-  };
+  }
 }

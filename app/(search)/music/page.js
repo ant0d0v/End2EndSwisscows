@@ -27,9 +27,9 @@ export default class MusicPage extends BasePage {
       `favorite playlist`
     );
   };
-  async clickPlaylistNumber(index) {
-    await this.clickElement( this.playlistNumber(index),
-      `playlist ${index}`
+  async clickPlaylistAt(playlist = { number: index }) {
+    await this.clickElement( this.playlistNumber(playlist.number - 1),
+      `playlist ${playlist.number}`
     );
   };
   

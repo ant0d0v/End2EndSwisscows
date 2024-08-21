@@ -4,17 +4,15 @@ export default class Playlist extends BaseComponent {
     super(page);
 
     //Locators
-    this.root = this.page.locator(".audio-playlist");
     this.widget = this.page.locator(".widget");
-    this.widgetHeader = this.page.locator(".widget-header");
-    this.trackCount = (index) =>this.page.locator(
-          `a[href*="/en/music/playlist?query="] .duration span:first-child`
-        )
-        .nth(index - 1);
-    this.allImages = this.root.locator("img");
-    this.nextButton = this.page.locator("header").filter({ hasText: "Playlists" }).getByRole("button").nth(1);
-    this.prevButton = this.page.locator("header").filter({ hasText: "Playlists" }).getByRole("button").first();
-    this.swiperSlide = (index) => this.page.locator(".widget .swiper-slide").nth(index - 1);
+    this.playlist = this.widget.locator(".audio-playlist");
+    this.header = this.widget.locator(".widget-header");
+    this.trackCount = (index) =>
+      this.page.locator(`a[href*="/en/music/playlist?query="] .duration span:first-child`).nth(index - 1);
+    this.images = this.widget.locator("img");
+    this.nextButton = this.widget.locator("button.next");
+    this.prevButton = this.widget.locator("button.prev");
+    this.slides = this.widget.locator(".swiper-slide");
   }
   //Actions
   async getTextSumTracksOfPlaylistNumber(index) {
@@ -27,11 +25,35 @@ export default class Playlist extends BaseComponent {
     await this.clickElement(this.prevButton, `next button`);
   }
   //Verify
-  async expectImageToHaveWight(property, value) {
-    await this.expectElementsToHaveJSProperty(this.allImages, property, value);
+
+  async expectImagesPlaylistToBeVisible() {
+    await this.expectAreElementsInListDisplayed(this.images);
   }
-  async expectSwiperSlideIs(index, value) {
-    await this.expectAttributeClassOfElement(this.swiperSlide(index), value);
+  async expectPlaylistsCount(value) {
+    await this.expectListToHaveCount(this.images, value);
+  }
+
+  async expectImageToHavePropetry(
+    expectedProperty = { width: value, height: value }
+  ) {
+    await this.expectElementsToHaveJSProperty(
+      this.images,
+      "width",
+      expectedProperty.width
+    );
+    await this.expectElementsToHaveJSProperty(
+      this.images,
+      "height",
+      expectedProperty.height
+    );
+  }
+  async expectToHaveAttributeSlideAt(
+    expected = { number: index, attribute: value }
+  ) {
+    await this.expectAttributeClassOfElement(
+      this.slides.nth(expected.number - 1),
+      expected.attribute
+    );
   }
   async expectPrevButtonIsDisabled() {
     await this.expectAttributeClassOfElement(this.prevButton, /disabled/);
@@ -42,11 +64,15 @@ export default class Playlist extends BaseComponent {
   async expectPrevButtonIsEnabled() {
     await this.expectAttributeClassOfElement(this.prevButton, "prev");
   }
+  async expectToBeHiddenPlaylistAt(playlist = { number: index }) {
+    await this.expectElementToBeHidden(this.playlist.nth(playlist.number - 1));
+  }
+
   takeSnapshot = async (testInfo) => {
     await this.expectPageElementToHaveScreenshotWithMask(
-      this.widgetHeader,
-      this.allImages,
-      this.root,
+      this.header,
+      this.images,
+      this.playlist,
       testInfo
     );
   };

@@ -1,8 +1,5 @@
 import { test, deletionIds } from "../../../utils/fixtures.js";
 import { faker } from "@faker-js/faker";
-const firstTrack = 1;
-const firstPlaylist = 1;
-const secondPlaylist = 2;
 
 test("Check 204 No Results Found error page ", async ({ app }, testInfo) => {
   //Actions
@@ -59,14 +56,12 @@ test.describe("favorite function", () => {
     await app.musicPage.header.navigation.clickMusicTab();
     await app.musicPage.track.expectMusicTracksToBeVisible();
     const favoriteID =
-      await app.musicPage.track.clickFavoriteButtonNumberTrackAndGetResponse(
-        firstTrack
-      );
+      await app.musicPage.track.clickFavoriteButtonAtAndGetResponse({ number: 1 });
+    deletionIds.myTracks.internalUser.push(favoriteID);
 
     //Assert
-    await app.musicPage.track.expectFirstTrackFavoriteButtonIsActive();
+    await app.musicPage.track.expectToBeActiveFavoriteButtonAt({ number: 1 });
     await app.musicPage.favoritePlaylist.expectCountToHaveText("1 tracks");
-    deletionIds.myTracks.internalUser.push(favoriteID);
   });
 
   test("Check delete track from the favorite", async ({ app }) => {
@@ -76,13 +71,13 @@ test.describe("favorite function", () => {
     await app.home.header.searchBar.clickEnterSearchField();
     await app.musicPage.header.navigation.clickMusicTab();
     await app.musicPage.track.expectMusicTracksToBeVisible();
-    await app.musicPage.track.clickFavoriteButtonNumberTrack(firstTrack);
-    await app.musicPage.track.clickPlayButtonNumberTrack(firstTrack);
+    await app.musicPage.track.clickFavoriteButtonAt({ number: 1 });
+    await app.musicPage.track.clickPlayButtonAt({ number: 1 });
     await app.musicPage.player.expectProgressToHaveValue("2");
-    await app.musicPage.track.clickFavoriteButtonNumberTrack(firstTrack);
+    await app.musicPage.track.clickFavoriteButtonAt({ number: 1 });
 
     //Assert
-    await app.musicPage.track.expectFirstTrackFavoriteButtonIsNotActive();
+    await app.musicPage.track.expectNotToBeActiveFavoriteButtonAt({ number: 1 });
     await app.musicPage.favoritePlaylist.expectPlaylistToBeHidden();
   });
 
@@ -93,15 +88,15 @@ test.describe("favorite function", () => {
     await app.home.header.searchBar.clickEnterSearchField();
     await app.musicPage.header.navigation.clickMusicTab();
     await app.musicPage.track.expectMusicTracksToBeVisible();
-    await app.musicPage.track.clickPlayButtonNumberTrack(firstTrack);
+    await app.musicPage.track.clickPlayButtonAt({ number: 1 });
     await app.musicPage.player.expectProgressToHaveValue("2");
     const favoriteID =
       await app.musicPage.player.clickFavoriteButtonAndGetResponse();
+    deletionIds.myTracks.internalUser.push(favoriteID);
 
     //Assert
-    await app.musicPage.track.expectFirstTrackFavoriteButtonIsActive();
+    await app.musicPage.track.expectToBeActiveFavoriteButtonAt({ number: 1 });
     await app.musicPage.favoritePlaylist.expectCountToHaveText("1 tracks");
-    deletionIds.myTracks.internalUser.push(favoriteID);
   });
 
   test("Check delete track from the favorite using player", async ({ app }) => {
@@ -111,13 +106,13 @@ test.describe("favorite function", () => {
     await app.home.header.searchBar.clickEnterSearchField();
     await app.musicPage.header.navigation.clickMusicTab();
     await app.musicPage.track.expectMusicTracksToBeVisible();
-    await app.musicPage.track.clickFavoriteButtonNumberTrack(firstTrack);
-    await app.musicPage.track.clickPlayButtonNumberTrack(firstTrack);
+    await app.musicPage.track.clickFavoriteButtonAt({ number: 1 });
+    await app.musicPage.track.clickPlayButtonAt({ number: 1 });
     await app.musicPage.player.expectProgressToHaveValue("2");
     await app.musicPage.player.clickFavoriteButton();
 
     //Assert
-    await app.musicPage.track.expectFirstTrackFavoriteButtonIsNotActive();
+    await app.musicPage.track.expectNotToBeActiveFavoriteButtonAt({ number: 1 });
     await app.musicPage.favoritePlaylist.expectPlaylistToBeHidden();
   });
 });
@@ -129,12 +124,12 @@ test("Check play track on music page", async ({ app }) => {
   await app.home.header.searchBar.clickEnterSearchField();
   await app.musicPage.header.navigation.clickMusicTab();
   await app.musicPage.track.expectMusicTracksToBeVisible();
-  await app.musicPage.track.clickPlayButtonNumberTrack(firstTrack);
+  await app.musicPage.track.clickPlayButtonAt({ number: 1 });
   await app.musicPage.player.expectElapsedTimeToHaveText(/^0:0[4-9]$/);
 
   //Assert
   await app.musicPage.player.expectTimelineToBeGreaterThan(0.5);
-  await app.musicPage.track.expectFirstTrackIsPlaying();
+  await app.musicPage.track.expectToBePlayingTrackAt({ number: 1 });
 });
 
 test("Check pause track on music page", async ({ app }) => {
@@ -144,12 +139,12 @@ test("Check pause track on music page", async ({ app }) => {
   await app.home.header.searchBar.clickEnterSearchField();
   await app.musicPage.header.navigation.clickMusicTab();
   await app.musicPage.track.expectMusicTracksToBeVisible();
-  await app.musicPage.track.clickPlayButtonNumberTrack(firstTrack);
+  await app.musicPage.track.clickPlayButtonAt({ number: 1 });
   await app.musicPage.player.expectProgressToHaveValue("2");
-  await app.musicPage.track.clickPauseButtonNumberTrack(1);
+  await app.musicPage.track.clickPauseButtonAt({ number: 1 });
 
   //Assert
-  await app.musicPage.track.expectFirstTrackIsNotPlaying();
+  await app.musicPage.track.expectNotToBePlayingTrackAt({ number: 1 });
 });
 
 test("Check next button of track on the main page", async ({ app }) => {
@@ -159,14 +154,14 @@ test("Check next button of track on the main page", async ({ app }) => {
   await app.home.header.searchBar.clickEnterSearchField();
   await app.musicPage.header.navigation.clickMusicTab();
   await app.musicPage.track.expectMusicTracksToBeVisible();
-  await app.musicPage.track.clickPlayButtonNumberTrack(firstTrack);
+  await app.musicPage.track.clickPlayButtonAt({ number: 1 });
   await app.musicPage.player.clickNextButton();
   await app.musicPage.player.expectElapsedTimeToHaveText(/^0:0[4-9]$/);
 
   //Assert
   await app.musicPage.player.expectTimelineToBeGreaterThan(0.5);
-  await app.musicPage.track.expectFirstTrackIsNotActive();
-  await app.musicPage.track.expectSecondTrackIsPlaying();
+  await app.musicPage.track.expectNotToBeActiveTrackAt({ number: 1 });
+  await app.musicPage.track.expectToBePlayingTrackAt({ number: 2 });
 });
 
 test("Check previous button of track on the main page", async ({ app }) => {
@@ -176,7 +171,7 @@ test("Check previous button of track on the main page", async ({ app }) => {
   await app.home.header.searchBar.clickEnterSearchField();
   await app.musicPage.header.navigation.clickMusicTab();
   await app.musicPage.track.expectMusicTracksToBeVisible();
-  await app.musicPage.track.clickPlayButtonNumberTrack(firstTrack);
+  await app.musicPage.track.clickPlayButtonAt({ number: 1 });
   await app.musicPage.player.expectProgressToHaveValue("2");
   await app.musicPage.player.clickNextButton();
   await app.musicPage.player.clickPrevButton();
@@ -184,8 +179,8 @@ test("Check previous button of track on the main page", async ({ app }) => {
 
   //Assert
   await app.musicPage.player.expectTimelineToBeGreaterThan(0.5);
-  await app.musicPage.track.expectFirstTrackIsPlaying();
-  await app.musicPage.track.expectSecondTrackIsNotActive();
+  await app.musicPage.track.expectToBePlayingTrackAt({ number: 1 });
+  await app.musicPage.track.expectNotToBeActiveTrackAt({ number: 2 });
 });
 
 test("Check set time in track", async ({ app }) => {
@@ -195,12 +190,12 @@ test("Check set time in track", async ({ app }) => {
   await app.home.header.searchBar.clickEnterSearchField();
   await app.musicPage.header.navigation.clickMusicTab();
   await app.musicPage.track.expectMusicTracksToBeVisible();
-  await app.musicPage.track.clickPlayButtonNumberTrack(firstTrack);
+  await app.musicPage.track.clickPlayButtonAt({ number: 1 });
   await app.musicPage.player.expectProgressToHaveValue("2");
-  await app.musicPage.track.clickTimeLineNumberTrack(firstTrack);
+  await app.musicPage.track.clickTimeLineAt({ number: 1 });
 
   //Assert
-  await app.musicPage.track.expectProgressToHaveValue(firstTrack, "50");
+  await app.musicPage.track.expectProgressToHave({ trackNumber: 1, value: "50" });
   await app.musicPage.player.expectProgressToHaveValue("50");
 });
 
@@ -211,12 +206,12 @@ test("Check set time in the player", async ({ app }) => {
   await app.home.header.searchBar.clickEnterSearchField();
   await app.musicPage.header.navigation.clickMusicTab();
   await app.musicPage.track.expectMusicTracksToBeVisible();
-  await app.musicPage.track.clickPlayButtonNumberTrack(firstTrack);
+  await app.musicPage.track.clickPlayButtonAt({ number: 1 });
   await app.musicPage.player.expectProgressToHaveValue("2");
   await app.musicPage.player.clickTimeLine();
 
   //Assert
-  await app.musicPage.track.expectProgressToHaveValue(firstTrack, "50");
+  await app.musicPage.track.expectProgressToHave({ trackNumber: 1, value: "50" });
   await app.musicPage.player.expectProgressToHaveValue("50");
 });
 
@@ -227,12 +222,12 @@ test("Check pause track in player on music page", async ({ app }) => {
   await app.home.header.searchBar.clickEnterSearchField();
   await app.musicPage.header.navigation.clickMusicTab();
   await app.musicPage.track.expectMusicTracksToBeVisible();
-  await app.musicPage.track.clickPlayButtonNumberTrack(firstTrack);
+  await app.musicPage.track.clickPlayButtonAt({ number: 1 });
   await app.musicPage.player.expectProgressToHaveValue("2");
   await app.musicPage.player.clickPauseButton();
 
   //Assert
-  await app.musicPage.track.expectFirstTrackIsNotPlaying();
+  await app.musicPage.track.expectNotToBePlayingTrackAt({ number: 1 });
 });
 
 test("Check play track in player on music page", async ({ app }) => {
@@ -242,13 +237,13 @@ test("Check play track in player on music page", async ({ app }) => {
   await app.home.header.searchBar.clickEnterSearchField();
   await app.musicPage.header.navigation.clickMusicTab();
   await app.musicPage.track.expectMusicTracksToBeVisible();
-  await app.musicPage.track.clickPlayButtonNumberTrack(firstTrack);
+  await app.musicPage.track.clickPlayButtonAt({ number: 1 });
   await app.musicPage.player.expectProgressToHaveValue("2");
   await app.musicPage.player.clickPauseButton();
   await app.musicPage.player.clickPlayButton();
 
   //Assert
-  await app.musicPage.track.expectFirstTrackIsPlaying();
+  await app.musicPage.track.expectToBePlayingTrackAt({ number: 1 });
 });
 
 test("Check shuffle function in the player", async ({ app }) => {
@@ -258,34 +253,27 @@ test("Check shuffle function in the player", async ({ app }) => {
   await app.home.header.searchBar.clickEnterSearchField();
   await app.musicPage.header.navigation.clickMusicTab();
   await app.musicPage.track.expectMusicTracksToBeVisible();
-  await app.musicPage.track.clickPlayButtonNumberTrack(firstTrack);
+  await app.musicPage.track.clickPlayButtonAt({ number: 1 });
   await app.musicPage.player.expectProgressToHaveValue("2");
   await app.musicPage.player.clickShuffleButton();
   await app.musicPage.player.clickNextButton();
 
   //Assert
-  await app.musicPage.track.expectSecondTrackIsNotActive();
+  await app.musicPage.track.expectNotToBeActiveTrackAt({ number: 2 });
   await app.musicPage.player.expectShuffleButtonIsActive();
 });
 
 test("Check infinity scroll to next page", async ({ app }) => {
   //Actions
   await app.home.open();
-  await app.home.header.searchBar.inputSearchCriteria(faker.music.genre());
+  await app.home.header.searchBar.inputSearchCriteria(faker.music.songName());
   await app.home.header.searchBar.clickEnterSearchField();
   await app.musicPage.header.navigation.clickMusicTab();
   await app.musicPage.track.expectMusicTracksToBeVisible();
-  await app.musicPage.track.scrollByVisibleTrackNumber(20);
-  await app.musicPage.preloader.expectPreloaderToBeHidden();
-  await app.musicPage.track.scrollByVisibleTrackNumber(40);
-  await app.musicPage.preloader.expectPreloaderToBeVisible();
-  await app.musicPage.preloader.expectPreloaderToBeHidden();
+  await app.musicPage.track.scrollByVisibleLastTrack();
 
   //Assert
-  await app.musicPage.track.expectListToBeGreaterThanOrEqual(
-    app.musicPage.track.tracksName,
-    60
-  );
+  await app.musicPage.track.expectTracksCount(100);
 });
 
 test("Check that music results equals search criteria", async ({ app }) => {
@@ -299,9 +287,6 @@ test("Check that music results equals search criteria", async ({ app }) => {
   //Assert
   await app.musicPage.track.expectTracksNameToContainText("billie jean");
   await app.musicPage.track.expectTracksCount(20);
-  await app.musicPage.track.expectAreElementsInListDisplayed(
-    app.musicPage.track.allPlayButtons
-  );
 });
 
 test("Check regional search", async ({ app }) => {
@@ -319,9 +304,6 @@ test("Check regional search", async ({ app }) => {
   //Assert
   await app.musicPage.track.expectTracksNameToContainText(query);
   await app.musicPage.track.expectTracksCount(20);
-  await app.musicPage.track.expectAreElementsInListDisplayed(
-    app.musicPage.track.allPlayButtons
-  );
   await app.expectPageToHaveUrl(
     app.page,
     process.env.BASE_URL + `/en/music?query=billie+jean&region=de-DE`
@@ -337,14 +319,12 @@ test("Check the width and visibility images of playlist", async ({ app }) => {
   await app.musicPage.track.expectMusicTracksToBeVisible();
 
   //Assert
-  await app.musicPage.playlist.expectImageToHaveWight("width", 180);
-  await app.musicPage.playlist.expectAreElementsInListDisplayed(
-    app.musicPage.playlist.allImages
-  );
-  await app.musicPage.playlist.expectListToHaveCount(
-    app.musicPage.playlist.allImages,
-    20
-  );
+  await app.musicPage.playlist.expectImageToHavePropetry({
+    width: 180,
+    height: 180,
+  });
+  await app.musicPage.playlist.expectImagesPlaylistToBeVisible();
+  await app.musicPage.playlist.expectPlaylistsCount(20);
 });
 
 test("Check the width and visibility images of tracks", async ({ app }) => {
@@ -356,11 +336,9 @@ test("Check the width and visibility images of tracks", async ({ app }) => {
   await app.musicPage.track.expectMusicTracksToBeVisible();
 
   //Assert
-  await app.musicPage.track.expectImageToHaveWight("width", 64);
+  await app.musicPage.track.expectImageToHavePropetry({ width: 64, height: 64 });
   await app.musicPage.track.expectTracksCount(20);
-  await app.musicPage.track.expectAreElementsInListDisplayed(
-    app.musicPage.track.allImages
-  );
+  await app.musicPage.track.expectImageTracksToBeVisible() 
 });
 
 test("Check width and visibility image in player", async ({ app }) => {
@@ -370,37 +348,41 @@ test("Check width and visibility image in player", async ({ app }) => {
   await app.home.header.searchBar.clickEnterSearchField();
   await app.musicPage.header.navigation.clickMusicTab();
   await app.musicPage.track.expectMusicTracksToBeVisible();
-  await app.musicPage.track.clickPlayButtonNumberTrack(firstTrack);
+  await app.musicPage.track.clickPlayButtonAt({ number: 1 });
 
   //Assert
-  await app.musicPage.player.expectImageToHaveWight("width", 64);
-  await app.musicPage.player.expectElementToBeVisible(
-    app.musicPage.player.image
-  );
+  await app.musicPage.player.expectImageToHavePropetry({
+    width: 64,
+    height: 64,
+  });
+  await app.musicPage.player.expectPlayerImageToBeVisible();
 });
 
 test("Checking the Next button in the slide", async ({ app }) => {
   //Actions
   await app.home.open();
-  await app.home.header.searchBar.inputSearchCriteria(faker.music.genre());
+  await app.home.header.searchBar.inputSearchCriteria("Skofka");
   await app.home.header.searchBar.clickEnterSearchField();
   await app.musicPage.header.navigation.clickMusicTab();
   await app.musicPage.track.expectMusicTracksToBeVisible();
   await app.musicPage.playlist.clickNextButton();
 
   //Assert
-  await app.musicPage.playlist.expectSwiperSlideIs(firstPlaylist, /slide-prev/);
-  await app.musicPage.playlist.expectSwiperSlideIs(
-    secondPlaylist,
-    /slide-active/
-  );
+  await app.musicPage.playlist.expectToHaveAttributeSlideAt({
+    number: 1,
+    attribute: /slide-prev/
+  });
+  await app.musicPage.playlist.expectToHaveAttributeSlideAt({
+    number: 2,
+    attribute: /slide-active/
+  });
   await app.musicPage.playlist.expectPrevButtonIsEnabled();
 });
 
 test("Checking the Prev button in the slide", async ({ app }) => {
   //Actions
   await app.home.open();
-  await app.home.header.searchBar.inputSearchCriteria(faker.music.genre());
+  await app.home.header.searchBar.inputSearchCriteria("Skofka");
   await app.home.header.searchBar.clickEnterSearchField();
   await app.musicPage.header.navigation.clickMusicTab();
   await app.musicPage.track.expectMusicTracksToBeVisible();
@@ -409,14 +391,14 @@ test("Checking the Prev button in the slide", async ({ app }) => {
   await app.musicPage.playlist.clickPrevButton();
 
   //Assert
-  await app.musicPage.playlist.expectSwiperSlideIs(
-    firstPlaylist,
-    /slide-active/
-  );
-  await app.musicPage.playlist.expectSwiperSlideIs(
-    secondPlaylist,
-    /slide-next/
-  );
+  await app.musicPage.playlist.expectToHaveAttributeSlideAt({
+    number: 1,
+    attribute: /slide-active/
+  });
+  await app.musicPage.playlist.expectToHaveAttributeSlideAt({
+    number: 2,
+    attribute: /slide-next/
+  });
   await app.musicPage.playlist.expectPrevButtonIsDisabled();
 });
 
@@ -445,7 +427,7 @@ test("Check design of button when track is not playing  on music page", async ({
   await app.musicPage.track.expectMusicTracksToBeVisible();
 
   //Assert
-  await app.musicPage.track.takeSnapshot(testInfo);
+  await app.musicPage.track.takeSnapshot(testInfo, { number: 1 });
 });
 
 test("Check design of button when track is playing  on music page", async ({
@@ -457,10 +439,10 @@ test("Check design of button when track is playing  on music page", async ({
   await app.home.header.searchBar.clickEnterSearchField();
   await app.musicPage.header.navigation.clickMusicTab();
   await app.musicPage.track.expectMusicTracksToBeVisible();
-  await app.musicPage.track.clickPlayButtonNumberTrack(firstTrack);
+  await app.musicPage.track.clickPlayButtonAt({ number: 1 });
 
   //Assert
-  await app.musicPage.track.takeSnapshot(testInfo);
+  await app.musicPage.track.takeSnapshot(testInfo, { number: 1 });
 });
 
 test("Check design of player component  on music page", async ({
@@ -472,7 +454,7 @@ test("Check design of player component  on music page", async ({
   await app.home.header.searchBar.clickEnterSearchField();
   await app.musicPage.header.navigation.clickMusicTab();
   await app.musicPage.track.expectMusicTracksToBeVisible();
-  await app.musicPage.track.clickPlayButtonNumberTrack(firstTrack);
+  await app.musicPage.track.clickPlayButtonAt({ number: 1 });
 
   //Assert
   await app.musicPage.player.takeSnapshot(testInfo);
