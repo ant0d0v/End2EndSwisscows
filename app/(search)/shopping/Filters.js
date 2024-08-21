@@ -7,8 +7,9 @@ export default class Filters extends BaseComponent {
     //Locators
     this.filtersPanel = this.page.getByText("Sort ByBy popularityCheapest");
     this.filter = (name) => this.page.getByRole("heading", { name: name });
-    this.item = (name) => this.page.locator("li").filter({ hasText: name }).getByRole('img')
-    this.sortItem = (name) => this.page.locator("li").filter({ hasText: name })
+    this.item = (name) =>
+      this.page.locator("li").filter({ hasText: name }).getByRole("img");
+    this.sortItem = (name) => this.page.locator("li").filter({ hasText: name });
     this.lastFilter = this.page.getByRole("heading", {
       name: "Bildwiederholfrequenz",
     });
@@ -19,9 +20,13 @@ export default class Filters extends BaseComponent {
     );
   }
   //Actions
-  selectFilter = async (filterName, itemName) => {
-    await this.clickElement(this.filter(filterName), `filter ${filterName}`);
-    await this.clickElement(this.item(itemName), `item  ${itemName}`);
+  selectFilter = async (
+    filters = {
+      name: string,
+      option: string
+    }) => {
+    await this.clickElement(this.filter(filters.name), `filter ${filters.name}`);
+    await this.clickElement(this.item(filters.option), `item  ${filters.option}`);
   };
   clickMore = async () => {
     await this.clickElement(this.more, `more`);

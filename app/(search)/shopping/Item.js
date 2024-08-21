@@ -12,8 +12,8 @@ export default class Item extends BaseComponent {
     this.itemPricing = this.root.locator(".price b");
     this.itemLink = this.root.locator(".link");
     this.itemBrand = this.root.locator(".brand");
-    this.itemImage = this.root.locator(".media img");
-    this.itemMedia = this.root.locator(".media");
+    this.images = this.root.locator(".thumbnail img");
+    this.thumbnails = this.root.locator(".thumbnail");
   }
   getPriceAllItems = async () => {
     const priceItems = [];
@@ -32,9 +32,9 @@ export default class Item extends BaseComponent {
     }
     return texts;
   };
-  async selectProductAtNumber(index) {
+  async selectProductAt(products = { number: value}) {
     const items = await this.itemName.all();
-    await items[index - 1].click();
+    await items[products.number - 1].click();
   }
   async expectItemsListToHaveCount(value) {
     await this.expectListToHaveCount(this.root, value);
@@ -63,20 +63,21 @@ export default class Item extends BaseComponent {
     await this.expectTextsToContains(this.itemBrand, expectedBrand);
   }
   async expectProductImagesToBeVisible() {
-    await this.expectAreElementsInListDisplayed(this.itemImage);
+    await this.expectAreElementsInListDisplayed(this.images);
   }
-  async expectProductMediaToHaveWidth(value) {
+  async expectProductMediaToHaveProperty( expected = {
+      width: value,
+      height: value,
+    }) {
     await this.expectElementsToHaveJSProperty(
-      this.itemMedia,
+      this.thumbnails,
       "offsetWidth",
-      value
+      expected.width
     );
-  }
-  async expectProductMediaToHaveHeight(value) {
     await this.expectElementsToHaveJSProperty(
-      this.itemMedia,
-      " offsetHeight",
-      value
+      this.thumbnails,
+      "offsetHeight",
+      expected.height
     );
   }
 }

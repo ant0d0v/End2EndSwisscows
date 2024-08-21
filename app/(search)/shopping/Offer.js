@@ -11,22 +11,37 @@ export default class Offer extends BaseComponent {
     this.price = this.root.locator(".pricing .price b");
     this.name = this.root.locator(".site");
     this.priceShipping = this.root.locator(".shipping .price");
-    this.buyButton = (index) =>
-       this.page.getByRole("link", { name: "Buy" }).nth(index - 1);
+    this.buyButton = this.page.getByRole("link", { name: "Buy" });
   }
   //Actions
-  async clickBuyButton(index) {
-    await this.clickElement(this.buyButton(index), "buy button");
+  async clickBuyButtonAt(buttons = { number: index }) {
+    await this.clickElement(
+      this.buyButton.nth(buttons.number - 1),
+      "buy button"
+    );
   }
   //Verify
-  async expectOfferInfoToContain(expectedName, expectedPriceShipping) {
-    await this.expectTextsToContains(this.price, expectedName);
-    await this.expectTextsToContains(this.priceShipping, expectedPriceShipping);
+  async expectOfferInfoToContain(
+    expected = { pricing: value, priceShipping: value }
+  ) {
+    await this.expectTextsToContains(this.price, expected.name);
+    await this.expectTextsToContains(
+      this.priceShipping,
+      expected.priceShipping
+    );
   }
   expectPriceNotToBeEmpty = async () => {
     await this.expectListElementsNotToBeEmpty(this.price);
   };
   expectNameNotToBeEmpty = async () => {
     await this.expectListElementsNotToBeEmpty(this.name);
+  };
+
+  takeSnapshot = async (testInfo, expected = { buttonNumber: value }) => {
+    await this.expectPageElementToHaveScreenshot(
+      this.buyButton.nth(expected.buttonNumber - 1),
+      this.buyButton,
+      testInfo
+    );
   };
 }

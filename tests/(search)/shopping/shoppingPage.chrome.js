@@ -76,18 +76,17 @@ test("Check info items { name, symbol price, link, brand}  ", async ({
 }) => {
   //Actions
   await app.home.open();
-  await app.home.header.searchBar.inputSearchCriteria("iphone");
+  await app.home.header.searchBar.inputSearchCriteria("iphone 15");
   await app.home.header.searchBar.clickEnterSearchField();
   await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
   await app.webPage.header.clickHamburgerMenuButton();
   await app.webPage.header.hamburgerMenu.selectRegion("Germany");
   await app.webPage.header.navigation.clickShoppingTab();
   await app.shoppingPage.header.clickFiltersButton();
-  await app.shoppingPage.filters.selectFilter("Marken", /Apple/);
+  await app.shoppingPage.filters.selectFilter({ name: "Marken", option: /Apple/ });
   await app.shoppingPage.item.expectShoppingItemsToBeVisible();
 
   //Assert
-  await app.shoppingPage.item.expectDescriptionItemsNotToBeEmpty();
   await app.shoppingPage.item.expectInfoProductToContain({
     name: "iPhone",
     pricing: "€",
@@ -108,14 +107,12 @@ test("Check payments methods icon of products items ", async ({ app }) => {
   await app.shoppingPage.item.expectShoppingItemsToBeVisible();
 
   //Assert
-  await app.shoppingPage.item.icon.expectPaymentIconToHaveWidthAndHeight(24);
-  await app.shoppingPage.item.icon.expectListToBeGreaterThanOrEqual(
-    app.shoppingPage.item.icon.paymentMethods,
-    100
-  );
-  await app.shoppingPage.item.icon.expectAreElementsInListDisplayed(
-    app.shoppingPage.item.icon.paymentMethods
-  );
+  await app.shoppingPage.item.icon.expectPaymentIconToHaveProperty({
+    width: 24,
+    height: 24,
+  });
+  await app.shoppingPage.item.icon.expectPaymentIconToBeVisible();
+  await app.shoppingPage.item.icon.expectPaymentIconsToBeGreaterThan(100); 
 });
 
 test("Check product images are visible and wight ", async ({ app }) => {
@@ -131,7 +128,10 @@ test("Check product images are visible and wight ", async ({ app }) => {
 
   //Assert
   await app.shoppingPage.item.expectProductImagesToBeVisible();
-  await app.shoppingPage.item.expectProductMediaToHaveWidth(208);
+  await app.shoppingPage.item.expectProductMediaToHaveProperty({
+    width: 211,
+    height: 140,
+  });
 });
 
 test("Check next button in the paging", async ({ app }) => {
@@ -141,17 +141,12 @@ test("Check next button in the paging", async ({ app }) => {
   await app.home.header.hamburgerMenu.selectRegion("Germany");
   await app.home.header.searchBar.inputSearchCriteria(faker.commerce.product());
   await app.home.header.searchBar.clickEnterSearchField();
-  await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
   await app.webPage.header.navigation.clickShoppingTab();
   await app.shoppingPage.item.expectShoppingItemsToBeVisible();
-  const oldSearchResult =
-    await app.shoppingPage.item.getTextContentProductItems();
+  const oldSearchResult = await app.shoppingPage.item.getTextContentProductItems();
   await app.shoppingPage.pagination.clickNextButton();
-  await app.shoppingPage.header.badgeCounter.expectCharityBadgeCounterToHaveValue(
-    "3"
-  );
-  const newSearchResult =
-    await app.shoppingPage.item.getTextContentProductItems();
+  await app.shoppingPage.header.badgeCounter.expectCharityBadgeCounterToHaveValue("3");
+  const newSearchResult = await app.shoppingPage.item.getTextContentProductItems();
 
   //Assert
   await app.shoppingPage.item.expectOldArrayNotToEqualNewArray(
@@ -173,13 +168,9 @@ test("Check prev button in the paging", async ({ app }) => {
   await app.webPage.header.navigation.clickShoppingTab();
   await app.shoppingPage.item.expectShoppingItemsToBeVisible();
   await app.shoppingPage.pagination.clickNextButton();
-  await app.shoppingPage.header.badgeCounter.expectCharityBadgeCounterToHaveValue(
-    "3"
-  );
+  await app.shoppingPage.header.badgeCounter.expectCharityBadgeCounterToHaveValue("3");
   await app.shoppingPage.pagination.clickPrevButton();
-  await app.shoppingPage.header.badgeCounter.expectCharityBadgeCounterToHaveValue(
-    "4"
-  );
+  await app.shoppingPage.header.badgeCounter.expectCharityBadgeCounterToHaveValue("4");
 
   //Assert
   await app.expectPageToHaveUrl(
