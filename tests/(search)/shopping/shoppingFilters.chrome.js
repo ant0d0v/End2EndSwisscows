@@ -168,3 +168,20 @@ test("Check less and more buttons", async ({ app }) => {
   await app.shoppingPage.filters.clickLess();
   await app.shoppingPage.filters.expectMarkenFilterToHaveCountItems(11);
 });
+
+test("Check design filter component", async ({ app },testInfo) => {
+  //Actions
+  await app.home.open();
+  await app.home.header.searchBar.inputSearchCriteria("iphone");
+  await app.home.header.searchBar.clickEnterSearchField();
+  await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
+  await app.webPage.header.clickHamburgerMenuButton();
+  await app.webPage.header.hamburgerMenu.selectRegion("Germany");
+  await app.webPage.header.navigation.clickShoppingTab();
+  await app.shoppingPage.item.expectShoppingItemsToBeVisible();
+  await app.shoppingPage.header.clickFiltersButton();
+  await app.shoppingPage.filters.clickDropdownFilterBy({ name: "Kategorien" });
+
+  // Assert
+  await app.shoppingPage.filters.takeSnapshot(testInfo)
+});
