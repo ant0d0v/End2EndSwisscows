@@ -108,11 +108,11 @@ test("Check offer info in detail", async ({ app }) => {
 
   //Assert
   await app.shoppingPage.details.expectDetailsPaneToBeVisible();
-  await app.shoppingPage.details.offer.expectPriceNotToBeEmpty();
-  await app.shoppingPage.details.offer.expectNameNotToBeEmpty();
   await app.shoppingPage.details.offer.expectOfferInfoToContain({
-    name: "€",
-    priceShipping:"shipping"
+    siteName: /\w+/,
+    pricing: /€\s*\d+(\.\d{1,2})?/,
+    priceShipping: "shipping",
+    availability: /\w+/,
   });
 });
 
@@ -130,7 +130,7 @@ test("Check count of payments options", async ({ app }) => {
 
   //Assert
   await app.shoppingPage.details.expectPaymentListToBeGreaterThanOrEqual(3);
-  await app.shoppingPage.details.icon.expectPaymentIconDetailsToBeVisible();
+  await app.shoppingPage.details.expectPaymentIconsToBeVisible();
 });
 
 test("Check count of Shipping options", async ({ app }) => {
@@ -198,8 +198,8 @@ test("Check  offer icons to be visible", async ({ app }) => {
 
   //Assert
   await app.shoppingPage.details.expectDetailsImageToBeVisible();
-  await app.shoppingPage.details.offer.icon.expectTrustedIconsToBeVisible();
-  await app.shoppingPage.details.offer.icon.expectTrustedIconsToHaveProperty({
+  await app.shoppingPage.details.offer.expectTrustedIconsToBeVisible();
+  await app.shoppingPage.details.offer.expectTrustedIconsToHaveProperty({
     width: 16,
     height: 16
   });

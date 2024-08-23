@@ -8,6 +8,7 @@ export default class Details extends BaseComponent {
     super(page);
     this.offer = new Offer(page);
     this.icon = new Icon(page);
+    
     //Locators
     this.root = this.page.locator(".product-details");
     this.detailsMedia = this.root.locator(".media");
@@ -19,6 +20,9 @@ export default class Details extends BaseComponent {
     this.paymentsList = this.root.locator(".section.payment-methods li");
     this.shippingList = this.root.locator(".section.shipping-methods li");
     this.brandImage = this.root.locator(".branding img");
+    this.paymentMethodsIcons = this.root.locator(
+      ".section.payment-methods .icon"
+    );
   }
   //Actions
   async clickCloseButton() {
@@ -99,5 +103,8 @@ export default class Details extends BaseComponent {
   async expectShippingListToBeGreaterThanOrEqual(value) {
     await this.scrollByVisibleElement(this.shippingList.first());
     await this.expectListToBeGreaterThanOrEqual(this.shippingList, value);
+  }
+  async expectPaymentIconsToBeVisible() {
+    await this.expectAreElementsInListDisplayed(this.paymentMethodsIcons);
   }
 }

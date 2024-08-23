@@ -9,9 +9,11 @@ export default class Offer extends BaseComponent {
     //Locators
     this.root = this.page.locator(".offer");
     this.price = this.root.locator(".pricing .price b");
-    this.name = this.root.locator(".site");
+    this.siteName = this.root.locator(".site");
     this.priceShipping = this.root.locator(".shipping .price");
     this.buyButton = this.page.getByRole("link", { name: "Buy" });
+    this.trustedIcon = this.root.locator(".trusted svg");
+    this.availability = this.root.locator(".availability");
   }
   //Actions
   async clickBuyButtonAt(buttons = { number: index }) {
@@ -20,22 +22,33 @@ export default class Offer extends BaseComponent {
       "buy button"
     );
   }
+
   //Verify
   async expectOfferInfoToContain(
-    expected = { pricing: value, priceShipping: value }
+    expected = { siteName: value, pricing: value, priceShipping: value, availability: value }
   ) {
-    await this.expectTextsToContains(this.price, expected.name);
-    await this.expectTextsToContains(
-      this.priceShipping,
-      expected.priceShipping
+    await this.expectTextsToContains(this.siteName, expected.siteName);
+    await this.expectTextsToContains(this.price, expected.pricing);
+    await this.expectTextsToContains(this.priceShipping, expected.priceShipping);
+    await this.expectTextsToContains(this.availability, expected.availability);
+  }
+
+  async expectTrustedIconsToBeVisible() {
+    await this.expectAreElementsInListDisplayed(this.trustedIcon);
+  }
+
+  async expectTrustedIconsToHaveProperty(
+    expected = {
+      width: value,
+      height: value,
+    }
+  ) {
+    await this.icon.expectIconsToHaveProperty(
+      this.trustedIcon,
+      expected.width,
+      expected.height
     );
   }
-  expectPriceNotToBeEmpty = async () => {
-    await this.expectListElementsNotToBeEmpty(this.price);
-  };
-  expectNameNotToBeEmpty = async () => {
-    await this.expectListElementsNotToBeEmpty(this.name);
-  };
 
   takeSnapshot = async (testInfo, expected = { buttonNumber: value }) => {
     await this.expectPageElementToHaveScreenshot(
