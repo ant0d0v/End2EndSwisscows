@@ -223,6 +223,7 @@ export default class BaseComponent extends PageHolder {
   }
   async expectTextsToContains(elements, criteria) {
     await test.step('Expect the elements in the array "to contain" a string', async () => {
+      await expect(elements.first()).toContainText(criteria);
       for (const element of await elements.all()) {
         await expect(element).toContainText(criteria);
       }

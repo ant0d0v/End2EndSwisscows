@@ -1,8 +1,7 @@
 import BaseComponent from "../base/BaseComponent.js";
 import { expect } from '@playwright/test';
-const testData = JSON.parse(
-  JSON.stringify(require("../data/images-gallery/testData.json"))
-);
+import testData from "../data/images-gallery/testData.json";
+
 
 export default class ImagesGallery extends BaseComponent {
   constructor(page) {

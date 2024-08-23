@@ -34,43 +34,24 @@
         {
             "testID": "1",
             "expectedVideoURL": "https://dev.swisscows.com/en/video?query=video&publisher=YouTube",
-            "locatorId" : "YouTube",
-            "expectedPublisher": "YouTube"
+            "fiterName" : "YouTube",
+            "expectedPublisher": "YouTube",
+            "publisherPart": "&publisher=YouTube"
         },
        
         {
             "testID": "2",
             "expectedVideoURL": "https://dev.swisscows.com/en/video?query=video&publisher=Vimeo",
-            "locatorId" : "Vimeo",
-            "expectedPublisher": "Vimeo"
+            "fiterName" : "Vimeo",
+            "expectedPublisher": "Vimeo",
+            "publisherPart": "&publisher=Vimeo"
         },
         {
             "testID": "3",
             "expectedVideoURL": "https://dev.swisscows.com/en/video?query=video&publisher=DailyMotion",
-            "locatorId" : "DailyMotion",
-            "expectedPublisher": "DailyMotion"
-        }
-    ],
-    "view": [
-        
-        {
-            "testID": "1",
-            "expectedVideoURL": "https://dev.swisscows.com/en/video?query=video&publisher=YouTube",
-            "locatorId" : "YouTube",
-            "expectedPublisher": "YouTube"
-        },
-       
-        {
-            "testID": "2",
-            "expectedVideoURL": "https://dev.swisscows.com/en/video?query=video&publisher=Vimeo",
-            "locatorId" : "Vimeo",
-            "expectedPublisher": "Vimeo"
-        },
-        {
-            "testID": "3",
-            "expectedVideoURL": "https://dev.swisscows.com/en/video?query=video&publisher=DailyMotion",
-            "locatorId" : "DailyMotion",
-            "expectedPublisher": "DailyMotion"
+            "fiterName" : "DailyMotion",
+            "expectedPublisher": "DailyMotion",
+            "publisherPart": "&publisher=DailyMotion"
         }
     ]
 

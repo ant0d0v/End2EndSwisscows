@@ -10,8 +10,7 @@ export default class HamburgerMenu extends BaseComponent {
     //Locators
     this.root = this.page.locator(".menu.popup");
     this.dropdownRegion = this.page.getByText(/Region/);
-    this.regionInDropdown = (region) =>
-      this.page.getByText(`${region}`, { exact: true });
+    this.regionInDropdown = (region) => this.page.locator("li").filter({ hasText: `${region}` });
     this.loginButton = this.page.getByRole("button", { name: "Login" });
     this.logoutButton = this.page.getByRole("button", { name: "Logout" });
     this.languagesDropdown = this.page.getByText("Language");

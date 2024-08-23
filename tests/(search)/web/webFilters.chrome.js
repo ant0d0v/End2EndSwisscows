@@ -15,9 +15,10 @@ for (const { testID, freshnessPart, fiterName } of filterData.byDate) {
     await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
     await app.webPage.filters.clickFilterByDate();
     const response =
-      await app.webPage.filters.selectMenu.selectFilterAndGetResponse(
-        fiterName
-      );
+      await app.webPage.filters.selectMenu.selectFilterAndGetResponse({
+        endpoint: "/v4/web",
+        locator: fiterName,
+      });
 
     //Assert
     await app.expectPageToHaveUrl(

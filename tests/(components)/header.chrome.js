@@ -240,7 +240,7 @@ test("Check suggest on the video search", async ({ app }) => {
   );
   await app.home.header.searchBar.clickEnterSearchField();
   await app.webPage.header.navigation.clickVideoTab();
-  await app.videoPage.item.expectVideoItemsToBeVisible();
+  await app.videoPage.videoObject.expectVideoItemsToBeVisible();
   await app.videoPage.header.searchBar.clickSearchField();
 
   //Assert
@@ -272,7 +272,9 @@ test("Check suggest on the shopping search", async ({ app }) => {
   let randomQuery = faker.commerce.product();
   //Actions
   await app.home.open();
-  await app.home.header.searchBar.inputSearchCriteria(randomQuery.toLocaleLowerCase());
+  await app.home.header.searchBar.inputSearchCriteria(
+    randomQuery.toLocaleLowerCase()
+  );
   await app.home.header.searchBar.clickEnterSearchField();
   await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
   await app.webPage.header.clickHamburgerMenuButton();
@@ -293,7 +295,9 @@ test("Check suggest on the music search", async ({ app }) => {
   let randomQuery = faker.music.songName();
   //Actions
   await app.home.open();
-  await app.home.header.searchBar.inputSearchCriteria(randomQuery.toLocaleLowerCase());
+  await app.home.header.searchBar.inputSearchCriteria(
+    randomQuery.toLocaleLowerCase()
+  );
   await app.home.header.searchBar.clickEnterSearchField();
   await app.webPage.header.navigation.clickMusicTab();
   await app.musicPage.track.expectMusicTracksToBeVisible();
@@ -302,7 +306,9 @@ test("Check suggest on the music search", async ({ app }) => {
   //Assert
   await app.musicPage.header.searchBar.expectSuggestIsDisplayed();
   await app.musicPage.header.searchBar.expectSuggestToHaveCount(5);
-  await app.musicPage.header.searchBar.expectSuggestToContains(randomQuery.toLocaleLowerCase());
+  await app.musicPage.header.searchBar.expectSuggestToContains(
+    randomQuery.toLocaleLowerCase()
+  );
 });
 
 test("Check design of header component the search pages", async ({

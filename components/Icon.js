@@ -69,4 +69,11 @@ export default class Icon extends BaseComponent {
       expected.height
     );
   }
+  takeSnapshotIconAt = async (testInfo, element, index ) => {
+    await this.expectPageElementToHaveScreenshot(
+      element.nth(index - 1),
+      element,
+      testInfo
+    );
+  }
 }

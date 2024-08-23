@@ -8,11 +8,11 @@ export default class SelectMenu extends BaseComponent {
     this.filterName = (name) => this.page.getByLabel(name);
   }
   //Actions
-  selectFilterAndGetResponse = async (name) => {
+  selectFilterAndGetResponse = async (expected = { endpoint: part, locator: value }) => {
     const responsePromise = this.page.waitForResponse(
-      `${process.env.API_URL}/v4/web/search?query*`
+      `${process.env.API_URL}${ expected.endpoint }/search?query*`
     );
-    await this.clickElement(this.filterName(name), `filter in dropdown`);
+    await this.clickElement(this.filterName(expected.locator), `filter in dropdown`);
     const response = await responsePromise;
     return response;
   };
