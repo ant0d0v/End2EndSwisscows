@@ -17,7 +17,7 @@ for (const {
     await app.home.header.searchBar.inputSearchCriteria(randomQuery);
     await app.home.header.searchBar.clickEnterSearchField();
     await app.videoPage.header.navigation.clickVideoTab();
-    await app.videoPage.videoObject.expectVideoItemsToBeVisible();
+    await app.videoPage.item.expectVideoItemsToBeVisible();
     await app.videoPage.filters.clickFilterBy("All publishers");
     const response =
       await app.videoPage.filters.selectMenu.selectFilterAndGetResponse({
@@ -26,17 +26,18 @@ for (const {
       });
 
     //Assert
-    await app.expectPageToHaveUrl( app.page,
+    await app.expectPageToHaveUrl(
+      app.page,
       `${process.env.BASE_URL}/en/video?query=${randomQuery + publisherPart}`
     );
-    await app.videoPage.videoObject.expectItemsResponsePublisherToEqual(
+    await app.videoPage.item.expectItemsResponsePublisherToEqual(
       response,
       expectedPublisher
     );
   });
 }
 
-for (const { testID, freshnessPart, fiterName, filter} of filterData.byDate) {
+for (const { testID, freshnessPart, fiterName, filter } of filterData.byDate) {
   test(`${testID} Check search results by filter ${fiterName} navigates to the corresponding URL and matches response results`, async ({
     app,
   }) => {
@@ -46,15 +47,17 @@ for (const { testID, freshnessPart, fiterName, filter} of filterData.byDate) {
     await app.home.header.searchBar.inputSearchCriteria(randomQuery);
     await app.home.header.searchBar.clickEnterSearchField();
     await app.videoPage.header.navigation.clickVideoTab();
-    await app.videoPage.videoObject.expectVideoItemsToBeVisible();
+    await app.videoPage.item.expectVideoItemsToBeVisible();
     await app.videoPage.filters.clickFilterBy("Any time");
-    const response = await app.videoPage.filters.selectMenu.selectFilterAndGetResponse({
+    const response =
+      await app.videoPage.filters.selectMenu.selectFilterAndGetResponse({
         endpoint: "/v2/videos",
-        locator: fiterName
+        locator: fiterName,
       });
 
     //Assert
-    await app.expectPageToHaveUrl(app.page,
+    await app.expectPageToHaveUrl(
+      app.page,
       `${process.env.BASE_URL}/en/video?query=${randomQuery + freshnessPart}`
     );
     await app.api.search.response.expectBodyToEqual(response, {
@@ -69,44 +72,45 @@ for (const { testID, freshnessPart, fiterName, filter} of filterData.byDate) {
   });
 }
 
-test("Check list dropdown of filter by date ", async ({ app }, testInfo ) => {
+test("Check list dropdown of filter by date ", async ({ app }, testInfo) => {
   //Actions
   await app.home.open();
   await app.home.header.searchBar.inputSearchCriteria(faker.word.sample());
   await app.home.header.searchBar.clickEnterSearchField();
   await app.videoPage.header.navigation.clickVideoTab();
-  await app.videoPage.videoObject.expectVideoItemsToBeVisible();
+  await app.videoPage.item.expectVideoItemsToBeVisible();
   await app.videoPage.filters.clickFilterBy("Any time");
 
   //Assert
   await app.videoPage.filters.selectMenu.takeSnapshot(testInfo);
 });
 
-test("Check list dropdown of filter publisher ", async ({ app },testInfo) => {
+test("Check list dropdown of filter publisher ", async ({ app }, testInfo) => {
   //Actions
   await app.home.open();
   await app.home.header.searchBar.inputSearchCriteria(faker.word.sample());
   await app.home.header.searchBar.clickEnterSearchField();
   await app.videoPage.header.navigation.clickVideoTab();
-  await app.videoPage.videoObject.expectVideoItemsToBeVisible();
+  await app.videoPage.item.expectVideoItemsToBeVisible();
   await app.videoPage.filters.clickFilterBy("All publishers");
 
   //Assert
   await app.videoPage.filters.selectMenu.takeSnapshot(testInfo);
 });
 
-
-test("Check that dropdown of filter by publishers is opened", async ({ app }) => {
+test("Check that dropdown of filter by publishers is opened", async ({
+  app,
+}) => {
   //Actions
   await app.home.open();
   await app.home.header.searchBar.inputSearchCriteria(faker.word.sample());
   await app.home.header.searchBar.clickEnterSearchField();
   await app.videoPage.header.navigation.clickVideoTab();
-  await app.videoPage.videoObject.expectVideoItemsToBeVisible();
+  await app.videoPage.item.expectVideoItemsToBeVisible();
   await app.videoPage.filters.clickFilterBy("All publishers");
 
   //Assert
-  await app.videoPage.filters.expectFilterAllPublisherIs("open")
+  await app.videoPage.filters.expectFilterAllPublisherIs("open");
   await app.webPage.filters.selectMenu.selectFilter("Vimeo");
   await app.videoPage.filters.expectFilterAllPublisherIs("closed");
 });

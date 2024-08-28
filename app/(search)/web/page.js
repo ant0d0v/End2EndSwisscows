@@ -5,9 +5,7 @@ import AlternateSearch from "./AlternateSearch.js";
 import RelatedSearches from "./RelatedSearches.js";
 import VideoCollection from "./VideoCollection.js";
 import Header from "../Header.js";
-import ImagesWidget from "../images/Widget.js";
 import NewsCollection from "./NewsCollection.js";
-import AdsText from "../ads/TextAds.js";
 import Preview from "./Preview.js";
 import Error from "../Error.js";
 import Preloader from "../../../components/Preloader.js";
@@ -32,7 +30,6 @@ export default class WebPage extends BasePage {
     this.advertiserProductCollection = new AdvertiserProductCollection(page);
     this.relatedSearches = new RelatedSearches(page);
     this.videoCollection = new VideoCollection(page);
-    this.imagesWidget = new ImagesWidget(page);
     this.newsCollection = new NewsCollection(page);
     this.header = new Header(page);
     this.error = new Error(page);

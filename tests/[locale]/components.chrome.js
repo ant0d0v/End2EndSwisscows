@@ -201,7 +201,7 @@ for (const { test_case, language, languageCode } of header) {
     await app.home.header.searchBar.inputSearchCriteria("test");
     await app.home.header.searchBar.clickEnterSearchField();
     await app.videoPage.header.navigation.clickVideoTab();
-    await app.videoPage.videoObject.expectVideoItemsToBeVisible();
+    await app.videoPage.item.expectVideoItemsToBeVisible();
     await app.videoPage.header.clickHamburgerMenuButton();
     await app.videoPage.header.hamburgerMenu.clickLanguagesDropdown();
     await app.videoPage.header.hamburgerMenu.clickLanguageLinkInDropdown(

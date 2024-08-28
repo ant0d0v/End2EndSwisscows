@@ -240,7 +240,7 @@ test("Check suggest on the video search", async ({ app }) => {
   );
   await app.home.header.searchBar.clickEnterSearchField();
   await app.webPage.header.navigation.clickVideoTab();
-  await app.videoPage.videoObject.expectVideoItemsToBeVisible();
+  await app.videoPage.item.expectVideoItemsToBeVisible();
   await app.videoPage.header.searchBar.clickSearchField();
 
   //Assert

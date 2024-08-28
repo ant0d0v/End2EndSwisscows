@@ -10,23 +10,45 @@ export default class AdvertiserProductCollection extends BaseComponent {
     this.nextButton = this.root.locator(".widget-buttons .next");
     this.prevButton = this.root.locator(".widget-buttons .prev");
     this.adsLink = this.page.getByRole("link", { name: "Ads" });
+    this.product = this.root.locator(".product");
+    this.title = this.product.locator(".title");
+    this.price = this.product.locator(".pricing .price");
+    this.shipping = this.product.locator(".pricing .shipping");
+    this.site = this.product.locator(".site");
+    this.image = this.product.locator("img");
+    this.thumbnail = this.product.locator(".thumbnail");
   }
   //Actions
+  clickProductAt = async (product = { number: index }) => {
+    await this.clickElement(this.product.nth(product.number - 1));
+  };
+
+  expectToBeOpenedNewPageAfterClickAdsLink = async (
+    expected = { expectedUrl: value }
+  ) => {
+    await this.expectToBeOpenedNewPageAfterClick(this.adsLink, expected.expectedUrl);
+  };
+
   clickUntilNextButtonToBeDisabled = async () => {
     await this.clickUntilElementToBeDisabled(this.nextButton);
   };
   clickUntilPrevButtonToBeDisabled = async () => {
-    await this.clickUntilElementToBeDisabled(this.nextButton);
+    await this.clickUntilElementToBeDisabled(this.prevButton);
   };
+
   waitUntilProductAdsToBeVisible = async () => {
     await this.waitUntilElementToBeVisible(this.widgetTitle);
   };
 
-  clickFirstProductAndNavigateToNewPage = async () => {
-    return await this.clickElementAndNavigateToNewPage(this.firstProduct);
+  //Verify
+  expectLastProductImageToBeInViewport = async () => {
+    await this.expectElementToBeInViewport(this.image.last());
   };
 
-  //Verify
+  expectFirstProductImageToBeInViewport = async () => {
+    await this.expectElementToBeInViewport(this.image.first());
+  };
+
   takeSnapshot = async (testInfo) => {
     await this.expectPageElementToHaveScreenshot(
       this.widgetHeader,
@@ -34,41 +56,37 @@ export default class AdvertiserProductCollection extends BaseComponent {
       testInfo
     );
   };
-  expectCarouselImageToHaveWightInProductAds = async (property, value) => {
-    await this.expectElementsToHaveJSProperty(this.allImage, property, value);
-  };
+
   expectTitleAdsToHaveText = async (value) => {
     await this.expectElementToHaveText(this.textProductsAds, value);
   };
-  expectTitleProductsToContains = async (value) => {
-    await this.expectTextsToContains(this.allTitle, value);
-  };
-  expectCarouselNextButtonIsDisabled = async () => {
-    await this.expectAttributeToHaveValue(
-      this.nextButton,
-      "class",
-      /next swiper-button-disabled/
-    );
-  };
-  expectCarouselPrevButtonIsDisabled = async () => {
-    await this.expectAttributeToHaveValue(
-      this.prevButton,
-      "class",
-      /prev swiper-button-disabled/
-    );
-  };
-  expectProductToHaveWidth = async (value) => {
+
+  async expectInfoProductToContain(
+    expectedInfo = {
+      title: value,
+      price: value,
+      site: value,
+      shipping: value,
+    }
+  ) {
+    await this.expectTextsToContains(this.title, expectedInfo.title);
+    await this.expectTextsToContains(this.price, expectedInfo.price);
+    await this.expectTextsToContains(this.site, expectedInfo.site);
+    await this.expectTextsToContains(this.shipping, expectedInfo.shipping);
+  }
+
+  expectThumbnailToHaveProperty = async (
+    expected = { width: value, height: value }
+  ) => {
     await this.expectElementsToHaveJSProperty(
-      this.allMediaProducts,
+      this.thumbnail,
       "offsetWidth",
-      value
+      expected.width
     );
-  };
-  expectProductToHaveHeight = async (value) => {
     await this.expectElementsToHaveJSProperty(
-      this.allMediaProducts,
+      this.thumbnail,
       "offsetHeight",
-      value
+      expected.height
     );
   };
 }

@@ -53,12 +53,12 @@ test("Check that video results equals search criteria", async ({ app }) => {
   await app.home.header.searchBar.inputSearchCriteria("Iphone");
   await app.home.header.searchBar.clickEnterSearchField();
   await app.videoPage.header.navigation.clickVideoTab();
-  await app.videoPage.videoObject.expectVideoItemsToBeVisible();
+  await app.videoPage.item.expectVideoItemsToBeVisible();
 
   //Assert
-  await app.videoPage.videoObject.expectVideoTitleToContain(/iphone/i);
-  await app.videoPage.videoObject.expectVideoResultToHaveCount(10);
-  await app.videoPage.videoObject.expectVideoImageToBeVisible();
+  await app.videoPage.item.expectVideoTitleToContain(/iphone/i);
+  await app.videoPage.item.expectVideoResultToHaveCount(10);
+  await app.videoPage.item.expectVideoImageToBeVisible();
 });
 
 test("Check infinity scroll in video results", async ({ app }) => {
@@ -67,11 +67,11 @@ test("Check infinity scroll in video results", async ({ app }) => {
   await app.home.header.searchBar.inputSearchCriteria(faker.music.songName());
   await app.home.header.searchBar.clickEnterSearchField();
   await app.videoPage.header.navigation.clickVideoTab();
-  await app.videoPage.videoObject.expectVideoItemsToBeVisible();
-  await app.videoPage.videoObject.scrollByVisibleLastVideo();
+  await app.videoPage.item.expectVideoItemsToBeVisible();
+  await app.videoPage.item.scrollByVisibleLastVideo();
 
   //Assert
-  await app.videoPage.videoObject.expectVideoResultToHaveCount(40);
+  await app.videoPage.item.expectVideoResultToHaveCount(40);
 });
 
 test("Check the width,height and visibility images of items", async ({
@@ -82,55 +82,57 @@ test("Check the width,height and visibility images of items", async ({
   await app.home.header.searchBar.inputSearchCriteria(faker.music.songName());
   await app.home.header.searchBar.clickEnterSearchField();
   await app.videoPage.header.navigation.clickVideoTab();
-  await app.videoPage.videoObject.expectVideoItemsToBeVisible();
+  await app.videoPage.item.expectVideoItemsToBeVisible();
 
   //Assert
-  await app.videoPage.videoObject.expectImageToHaveProperty({
+  await app.videoPage.item.expectImageToHaveProperty({
     width: 284,
     height: 160,
   });
-  await app.videoPage.videoObject.expectVideoResultToHaveCount(10);
-  await app.videoPage.videoObject.expectVideoImageToBeVisible();
+  await app.videoPage.item.expectVideoResultToHaveCount(10);
+  await app.videoPage.item.expectVideoImageToBeVisible();
 });
 
 test("Check the design play icon of video object", async ({
-  app
-},testInfo) => {
+  app,
+}, testInfo) => {
   //Actions
   await app.home.open();
   await app.home.header.searchBar.inputSearchCriteria(faker.music.songName());
   await app.home.header.searchBar.clickEnterSearchField();
   await app.videoPage.header.navigation.clickVideoTab();
-  await app.videoPage.videoObject.expectVideoItemsToBeVisible();
+  await app.videoPage.item.expectVideoItemsToBeVisible();
 
   //Assert
-  await app.videoPage.videoObject.takeSnapshotPlayIconAt(testInfo, { number: 1 })
+  await app.videoPage.item.takeSnapshotPlayIconAt(testInfo, { number: 1 });
 });
 
 test("Check the design error icon of video object", async ({
-  app
-},testInfo) => {
+  app,
+}, testInfo) => {
   //Actions
   await app.home.open();
   await app.home.header.searchBar.inputSearchCriteria(faker.music.songName());
   await app.home.header.searchBar.clickEnterSearchField();
   await app.videoPage.header.navigation.clickVideoTab();
-  await app.videoPage.videoObject.expectVideoItemsToBeVisible();
+  await app.videoPage.item.expectVideoItemsToBeVisible();
 
   //Assert
-  await app.videoPage.videoObject.takeSnapshotErrorIconAt(testInfo, { number: 1 });
+  await app.videoPage.item.takeSnapshotErrorIconAt(testInfo, { number: 1 });
 });
 
-test("Check the design view icon of video object", async ({ app }, testInfo) => {
+test("Check the design view icon of video object", async ({
+  app,
+}, testInfo) => {
   //Actions
   await app.home.open();
   await app.home.header.searchBar.inputSearchCriteria(faker.music.songName());
   await app.home.header.searchBar.clickEnterSearchField();
   await app.videoPage.header.navigation.clickVideoTab();
-  await app.videoPage.videoObject.expectVideoItemsToBeVisible();
+  await app.videoPage.item.expectVideoItemsToBeVisible();
 
   //Assert
-  await app.videoPage.videoObject.takeSnapshotViewsIconAt(testInfo, {
+  await app.videoPage.item.takeSnapshotViewsIconAt(testInfo, {
     number: 1,
   });
 });
@@ -143,11 +145,11 @@ test("Check the info video object { site, description, data, views }", async ({
   await app.home.header.searchBar.inputSearchCriteria(faker.music.songName());
   await app.home.header.searchBar.clickEnterSearchField();
   await app.videoPage.header.navigation.clickVideoTab();
-  await app.videoPage.videoObject.expectVideoItemsToBeVisible();
+  await app.videoPage.item.expectVideoItemsToBeVisible();
 
   //Assert
-  await app.videoPage.videoObject.expectVideoDescriptionNotToBeEmpty();
-  await app.videoPage.videoObject.expectVideoInfoToContain({
+  await app.videoPage.item.expectVideoDescriptionNotToBeEmpty();
+  await app.videoPage.item.expectVideoInfoToContain({
     site: /^(DailyMotion|Vimeo|YouTube)$/,
     views: /^\d+(\.\d+)?[MK]?\sviews$/,
     date: /^[A-Za-z]{3} \d{1,2}, \d{4}$/,
@@ -162,12 +164,12 @@ test("Check the info video object { site, description, data, views } when openin
   await app.home.header.searchBar.inputSearchCriteria(faker.music.songName());
   await app.home.header.searchBar.clickEnterSearchField();
   await app.videoPage.header.navigation.clickVideoTab();
-  await app.videoPage.videoObject.expectVideoItemsToBeVisible();
-  await app.videoPage.videoObject.clickVideoImageAt({ number: 1 });
+  await app.videoPage.item.expectVideoItemsToBeVisible();
+  await app.videoPage.item.clickVideoImageAt({ number: 1 });
 
   //Assert
-  await app.videoPage.videoObject.expectVideoDescriptionNotToBeEmpty();
-  await app.videoPage.videoObject.expectVideoInfoToContain({
+  await app.videoPage.item.expectVideoDescriptionNotToBeEmpty();
+  await app.videoPage.item.expectVideoInfoToContain({
     site: /^(DailyMotion|Vimeo|YouTube)$/,
     views: /^\d+(\.\d+)?[MK]?\sviews$/,
     date: /^[A-Za-z]{3} \d{1,2}, \d{4}$/,
@@ -180,8 +182,8 @@ test("Check play video in player", async ({ app }) => {
   await app.home.header.searchBar.inputSearchCriteria("Skofka");
   await app.home.header.searchBar.clickEnterSearchField();
   await app.videoPage.header.navigation.clickVideoTab();
-  await app.videoPage.videoObject.expectVideoItemsToBeVisible();
-  await app.videoPage.videoObject.clickVideoImageAt({ number: 1 });
+  await app.videoPage.item.expectVideoItemsToBeVisible();
+  await app.videoPage.item.clickVideoImageAt({ number: 1 });
   await app.videoPage.player.clickOkButton();
 
   //Assert
@@ -194,8 +196,8 @@ test("Check open video of vimeo owner", async ({ app }) => {
   await app.home.header.searchBar.inputSearchCriteria("R O M A on Vimeo");
   await app.home.header.searchBar.clickEnterSearchField();
   await app.videoPage.header.navigation.clickVideoTab();
-  await app.videoPage.videoObject.expectVideoItemsToBeVisible();
-  await app.videoPage.videoObject.clickVideoImageAt({ number: 1 });
+  await app.videoPage.item.expectVideoItemsToBeVisible();
+  await app.videoPage.item.clickVideoImageAt({ number: 1 });
 
   //Assert
   await app.videoPage.player.expectToBeOpenedPageAfterClick({
@@ -207,13 +209,13 @@ test("Check open video of vimeo owner", async ({ app }) => {
 test("Check open video of dailymotion owner", async ({ app }) => {
   //Actions
   await app.home.open();
-  await app.home.header.searchBar.inputSearchCriteria("dailymotion owner");
+  await app.home.header.searchBar.inputSearchCriteria(
+    "https://www.dailymotion.com/video/x7zxchl"
+  );
   await app.home.header.searchBar.clickEnterSearchField();
-  await app.videoPage.header.navigation.clickVideoTab();
-  await app.videoPage.header.clickHamburgerMenuButton();
-  await app.videoPage.header.hamburgerMenu.selectRegion("Ukraine");
-  await app.videoPage.videoObject.expectVideoItemsToBeVisible();
-  await app.videoPage.videoObject.clickVideoImageAt({ number: 1 });
+  await app.videoPage.header.navigation.clickVideoTab(); 
+  await app.videoPage.item.expectVideoItemsToBeVisible();
+  await app.videoPage.item.clickVideoImageAt({ number: 1 });
 
   //Assert
   await app.videoPage.player.expectToBeOpenedPageAfterClick({
@@ -222,17 +224,19 @@ test("Check open video of dailymotion owner", async ({ app }) => {
   });
 });
 
-test("Check open video when clicking title of video object", async ({ app }) => {
+test("Check open video when clicking title of video object", async ({
+  app,
+}) => {
   //Actions
   await app.home.open();
   await app.home.header.searchBar.inputSearchCriteria(faker.music.songName());
   await app.home.header.searchBar.clickEnterSearchField();
   await app.videoPage.header.navigation.clickVideoTab();
-  await app.videoPage.videoObject.expectVideoItemsToBeVisible();
-  await app.videoPage.videoObject.clickVideoTitleAt({ number: 1 });
+  await app.videoPage.item.expectVideoItemsToBeVisible();
+  await app.videoPage.item.clickVideoTitleAt({ number: 1 });
 
   //Assert
-  await app.expectPageToHaveUrl( app.page, /youtube.com/);
+  await app.expectPageToHaveUrl(app.page, /youtube.com/);
 });
 
 test("Check design of video Privacy Warning", async ({ app }, testInfo) => {
@@ -241,8 +245,8 @@ test("Check design of video Privacy Warning", async ({ app }, testInfo) => {
   await app.home.header.searchBar.inputSearchCriteria(faker.music.songName());
   await app.home.header.searchBar.clickEnterSearchField();
   await app.videoPage.header.navigation.clickVideoTab();
-  await app.videoPage.videoObject.expectVideoItemsToBeVisible();
-  await app.videoPage.videoObject.clickVideoImageAt({ number: 1 });
+  await app.videoPage.item.expectVideoItemsToBeVisible();
+  await app.videoPage.item.clickVideoImageAt({ number: 1 });
 
   //Assert
   await app.videoPage.player.takeSnapshot(testInfo);
@@ -256,8 +260,8 @@ test(`Check design of Video unavailable vimeo owner`, async ({
   await app.home.header.searchBar.inputSearchCriteria("R O M A on Vimeo");
   await app.home.header.searchBar.clickEnterSearchField();
   await app.videoPage.header.navigation.clickVideoTab();
-  await app.videoPage.videoObject.expectVideoItemsToBeVisible();
-  await app.videoPage.videoObject.clickVideoImageAt({ number: 1 });
+  await app.videoPage.item.expectVideoItemsToBeVisible();
+  await app.videoPage.item.clickVideoImageAt({ number: 1 });
 
   //Assert
   await app.videoPage.player.takeSnapshot(testInfo);
@@ -268,13 +272,13 @@ test(`Check design of Video unavailable dailymotion owner`, async ({
 }, testInfo) => {
   //Actions
   await app.home.open();
-  await app.home.header.searchBar.inputSearchCriteria("dailymotion owner");
+  await app.home.header.searchBar.inputSearchCriteria(
+    "https://www.dailymotion.com/video/x7zxchl"
+  );
   await app.home.header.searchBar.clickEnterSearchField();
   await app.videoPage.header.navigation.clickVideoTab();
-  await app.videoPage.header.clickHamburgerMenuButton();
-  await app.videoPage.header.hamburgerMenu.selectRegion("Ukraine");
-  await app.videoPage.videoObject.expectVideoItemsToBeVisible();
-  await app.videoPage.videoObject.clickVideoImageAt({ number: 1 });
+  await app.videoPage.item.expectVideoItemsToBeVisible();
+  await app.videoPage.item.clickVideoImageAt({ number: 1 });
 
   //Assert
   await app.videoPage.player.takeSnapshot(testInfo);
@@ -286,22 +290,22 @@ test("Check cancel button of Video unavailable warning ", async ({ app }) => {
   await app.home.header.searchBar.inputSearchCriteria("R O M A on Vimeo");
   await app.home.header.searchBar.clickEnterSearchField();
   await app.videoPage.header.navigation.clickVideoTab();
-  await app.videoPage.videoObject.expectVideoItemsToBeVisible();
-  await app.videoPage.videoObject.clickVideoImageAt({ number: 1 });
+  await app.videoPage.item.expectVideoItemsToBeVisible();
+  await app.videoPage.item.clickVideoImageAt({ number: 1 });
   await app.videoPage.player.clickCancelButton();
 
   //Assert
   await app.videoPage.player.expectPlayerToBeHidden();
 });
- 
+
 test("Check cancel button of Privacy Warning ", async ({ app }) => {
   //Actions
   await app.home.open();
   await app.home.header.searchBar.inputSearchCriteria("Skofka");
   await app.home.header.searchBar.clickEnterSearchField();
   await app.videoPage.header.navigation.clickVideoTab();
-  await app.videoPage.videoObject.expectVideoItemsToBeVisible();
-  await app.videoPage.videoObject.clickVideoImageAt({ number: 1 });
+  await app.videoPage.item.expectVideoItemsToBeVisible();
+  await app.videoPage.item.clickVideoImageAt({ number: 1 });
   await app.videoPage.player.clickCancelButton();
 
   //Assert
@@ -318,12 +322,12 @@ test("Check checkbox `Don't remind me again ` ", async ({ app }) => {
   await app.home.header.searchBar.inputSearchCriteria("Skofka");
   await app.home.header.searchBar.clickEnterSearchField();
   await app.videoPage.header.navigation.clickVideoTab();
-  await app.videoPage.videoObject.expectVideoItemsToBeVisible();
-  await app.videoPage.videoObject.clickVideoImageAt({ number: 1 });
+  await app.videoPage.item.expectVideoItemsToBeVisible();
+  await app.videoPage.item.clickVideoImageAt({ number: 1 });
   await app.videoPage.player.selectCheckbox();
   await app.videoPage.player.clickOkButton();
   await app.videoPage.reloadPage();
-  await app.videoPage.videoObject.clickVideoImageAt({ number: 1 });
+  await app.videoPage.item.clickVideoImageAt({ number: 1 });
 
   //Assert
   await app.videoPage.player.expectTimeToHaveText(/^0:0[2-4]$/);
@@ -337,11 +341,11 @@ test("Check video play if don't select checkbox `Don't remind me again ` ", asyn
   await app.home.header.searchBar.inputSearchCriteria(faker.music.songName());
   await app.home.header.searchBar.clickEnterSearchField();
   await app.videoPage.header.navigation.clickVideoTab();
-  await app.videoPage.videoObject.expectVideoItemsToBeVisible();
-  await app.videoPage.videoObject.clickVideoImageAt({ number: 1 });
+  await app.videoPage.item.expectVideoItemsToBeVisible();
+  await app.videoPage.item.clickVideoImageAt({ number: 1 });
   await app.videoPage.player.clickOkButton();
   await app.videoPage.reloadPage();
-  await app.videoPage.videoObject.clickVideoImageAt({ number: 1 });
+  await app.videoPage.item.clickVideoImageAt({ number: 1 });
 
   //Assert
   await app.videoPage.player.takeSnapshot(testInfo);
@@ -353,11 +357,11 @@ test("Check that image of proxy cdn server", async ({ app }) => {
   await app.home.header.searchBar.inputSearchCriteria(faker.music.songName());
   await app.home.header.searchBar.clickEnterSearchField();
   await app.videoPage.header.navigation.clickVideoTab();
-  await app.videoPage.videoObject.expectVideoItemsToBeVisible();
+  await app.videoPage.item.expectVideoItemsToBeVisible();
 
   //Assert
-  await app.videoPage.videoObject.expectVideoResultToHaveCount(10);
-  await app.videoPage.videoObject.expectAllImagesToHaveAttribute(/cdn.swisscows.com/);
+  await app.videoPage.item.expectVideoResultToHaveCount(10);
+  await app.videoPage.item.expectAllImagesToHaveAttribute(/cdn.swisscows.com/);
 });
 
 test("Check regional search", async ({ app }) => {
@@ -366,15 +370,15 @@ test("Check regional search", async ({ app }) => {
   await app.home.header.searchBar.inputSearchCriteria("iphone");
   await app.home.header.searchBar.clickEnterSearchField();
   await app.videoPage.header.navigation.clickVideoTab();
-  await app.videoPage.videoObject.expectVideoItemsToBeVisible();
+  await app.videoPage.item.expectVideoItemsToBeVisible();
   await app.videoPage.header.clickHamburgerMenuButton();
   await app.videoPage.header.hamburgerMenu.selectRegion("Germany");
-  await app.videoPage.videoObject.expectVideoItemsToBeVisible();
+  await app.videoPage.item.expectVideoItemsToBeVisible();
 
   //Assert
-  await app.videoPage.videoObject.expectVideoTitleToContain(/iphone/i);
-  await app.videoPage.videoObject.expectVideoResultToHaveCount(10);
-  await app.videoPage.videoObject.expectVideoImageToBeVisible();
+  await app.videoPage.item.expectVideoTitleToContain(/iphone/i);
+  await app.videoPage.item.expectVideoResultToHaveCount(10);
+  await app.videoPage.item.expectVideoImageToBeVisible();
   await app.expectPageToHaveUrl(
     app.page,
     process.env.BASE_URL + `/en/video?query=iphone&region=de-DE`
