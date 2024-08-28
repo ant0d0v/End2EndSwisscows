@@ -9,17 +9,18 @@ test('Check that popup "Edge install" redirect to the corresponding page', async
   await app.home.open();
 
   //Assert
-  await await app.home.extensionPopup.expectToBeOpenedPageAfterClickPopup(
+  await await app.home.header.extensionPopup.expectToBeOpenedPageAfterClickPopup(
     testData.url.extensionEdgeInstall
   );
   await app.expectNewPageToHaveTitle(context, /Swisscows/);
 });
 
-test("Check that popup Edge install Is Displayed", async ({ app },testInfo) => {
+test("Check that popup Edge install Is Displayed", async ({
+  app,
+}, testInfo) => {
   //Actions
   await app.home.open();
 
   //Assert
-  await app.home.extensionPopup.takeSnapshot(testInfo);
+  await app.home.header.extensionPopup.takeSnapshot(testInfo);
 });
-

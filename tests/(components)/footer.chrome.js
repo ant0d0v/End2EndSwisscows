@@ -93,8 +93,8 @@ test.describe("Footer of search pages", () => {
     }) => {
       //Actions
       await app.home.open();
-      await app.home.header.searchBar.inputSearchCriteria(faker.word.sample());
-      await app.home.header.searchBar.clickEnterSearchField();
+      await app.home.header.searchForm.inputSearchCriteria(faker.word.sample());
+      await app.home.header.searchForm.clickEnterSearchField();
       await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
 
       //Assert
@@ -118,8 +118,8 @@ test.describe("Footer of search pages", () => {
     }) => {
       //Actions
       await app.home.open();
-      await app.home.header.searchBar.inputSearchCriteria(faker.word.sample());
-      await app.home.header.searchBar.clickEnterSearchField();
+      await app.home.header.searchForm.inputSearchCriteria(faker.word.sample());
+      await app.home.header.searchForm.clickEnterSearchField();
       await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
 
       //Assert
@@ -136,8 +136,8 @@ test.describe("Footer of search pages", () => {
   }, testInfo) => {
     //Actions
     await app.home.open();
-    await app.home.header.searchBar.inputSearchCriteria(faker.word.sample());
-    await app.home.header.searchBar.clickEnterSearchField();
+    await app.home.header.searchForm.inputSearchCriteria(faker.word.sample());
+    await app.home.header.searchForm.clickEnterSearchField();
     await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
 
     //Assert

@@ -6,8 +6,8 @@ test("Check 204 No Results Found error page ", async ({ app }, testInfo) => {
   await app.home.open();
   await app.home.header.clickHamburgerMenuButton();
   await app.home.header.hamburgerMenu.selectRegion("Germany");
-  await app.home.header.searchBar.inputSearchCriteria("@#@$%^$^dasdsad1231");
-  await app.home.header.searchBar.clickEnterSearchField();
+  await app.home.header.searchForm.inputSearchCriteria("@#@$%^$^dasdsad1231");
+  await app.home.header.searchForm.clickEnterSearchField();
   await app.webPage.header.navigation.clickShoppingTab();
 
   //Assert
@@ -19,8 +19,8 @@ test("Check request is blocked 450 error page ", async ({ app }, testInfo) => {
   await app.home.open();
   await app.home.header.clickHamburgerMenuButton();
   await app.home.header.hamburgerMenu.selectRegion("Germany");
-  await app.home.header.searchBar.inputSearchCriteria("porn");
-  await app.home.header.searchBar.clickEnterSearchField();
+  await app.home.header.searchForm.inputSearchCriteria("porn");
+  await app.home.header.searchForm.clickEnterSearchField();
   await app.webPage.header.navigation.clickShoppingTab();
 
   //Assert
@@ -33,8 +33,8 @@ test("Check 500 unknown Error Page  ", async ({ app }, testInfo) => {
   await app.home.header.clickHamburgerMenuButton();
   await app.home.header.hamburgerMenu.selectRegion("Germany");
   await app.route.mockResponseStatusCode("/shopping", 500);
-  await app.home.header.searchBar.inputSearchCriteria("food");
-  await app.home.header.searchBar.clickEnterSearchField();
+  await app.home.header.searchForm.inputSearchCriteria("food");
+  await app.home.header.searchForm.clickEnterSearchField();
   await app.webPage.header.navigation.clickShoppingTab();
 
   //Assert
@@ -47,8 +47,8 @@ test("Check 429 Too many requests", async ({ app }, testInfo) => {
   await app.home.header.clickHamburgerMenuButton();
   await app.home.header.hamburgerMenu.selectRegion("Germany");
   await app.route.mockResponseStatusCode("/shopping", 429);
-  await app.home.header.searchBar.inputSearchCriteria("food");
-  await app.home.header.searchBar.clickEnterSearchField();
+  await app.home.header.searchForm.inputSearchCriteria("food");
+  await app.home.header.searchForm.clickEnterSearchField();
   await app.webPage.header.navigation.clickShoppingTab();
 
   //Assert
@@ -60,8 +60,10 @@ test("Check error region is unsupported", async ({ app }, testInfo) => {
   await app.home.open();
   await app.home.header.clickHamburgerMenuButton();
   await app.home.header.hamburgerMenu.selectRegion("Germany");
-  await app.home.header.searchBar.inputSearchCriteria(faker.commerce.product());
-  await app.home.header.searchBar.clickEnterSearchField();
+  await app.home.header.searchForm.inputSearchCriteria(
+    faker.commerce.product()
+  );
+  await app.home.header.searchForm.clickEnterSearchField();
   await app.webPage.header.navigation.clickShoppingTab();
   await app.shoppingPage.item.expectShoppingItemsToBeVisible();
   await app.shoppingPage.header.clickHamburgerMenuButton();
@@ -76,8 +78,10 @@ test("Check info items { name, symbol price, link, brand}  ", async ({
 }) => {
   //Actions
   await app.home.open();
-  await app.home.header.searchBar.inputSearchCriteria(faker.commerce.product());
-  await app.home.header.searchBar.clickEnterSearchField();
+  await app.home.header.searchForm.inputSearchCriteria(
+    faker.commerce.product()
+  );
+  await app.home.header.searchForm.clickEnterSearchField();
   await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
   await app.webPage.header.clickHamburgerMenuButton();
   await app.webPage.header.hamburgerMenu.selectRegion("Germany");
@@ -96,8 +100,10 @@ test("Check info items { name, symbol price, link, brand}  ", async ({
 test("Check payments methods icon of products items ", async ({ app }) => {
   //Actions
   await app.home.open();
-  await app.home.header.searchBar.inputSearchCriteria(faker.commerce.product());
-  await app.home.header.searchBar.clickEnterSearchField();
+  await app.home.header.searchForm.inputSearchCriteria(
+    faker.commerce.product()
+  );
+  await app.home.header.searchForm.clickEnterSearchField();
   await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
   await app.webPage.header.clickHamburgerMenuButton();
   await app.webPage.header.hamburgerMenu.selectRegion("Germany");
@@ -110,14 +116,16 @@ test("Check payments methods icon of products items ", async ({ app }) => {
     height: 24,
   });
   await app.shoppingPage.item.expectPaymentIconToBeVisible();
-  await app.shoppingPage.item.expectPaymentIconsToBeGreaterThan(100); 
+  await app.shoppingPage.item.expectPaymentIconsToBeGreaterThan(100);
 });
 
 test("Check product images are visible and wight ", async ({ app }) => {
   //Actions
   await app.home.open();
-  await app.home.header.searchBar.inputSearchCriteria(faker.commerce.product());
-  await app.home.header.searchBar.clickEnterSearchField();
+  await app.home.header.searchForm.inputSearchCriteria(
+    faker.commerce.product()
+  );
+  await app.home.header.searchForm.clickEnterSearchField();
   await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
   await app.webPage.header.clickHamburgerMenuButton();
   await app.webPage.header.hamburgerMenu.selectRegion("Germany");
@@ -137,14 +145,20 @@ test("Check next button in the paging", async ({ app }) => {
   await app.home.open();
   await app.home.header.clickHamburgerMenuButton();
   await app.home.header.hamburgerMenu.selectRegion("Germany");
-  await app.home.header.searchBar.inputSearchCriteria(faker.commerce.product());
-  await app.home.header.searchBar.clickEnterSearchField();
+  await app.home.header.searchForm.inputSearchCriteria(
+    faker.commerce.product()
+  );
+  await app.home.header.searchForm.clickEnterSearchField();
   await app.webPage.header.navigation.clickShoppingTab();
   await app.shoppingPage.item.expectShoppingItemsToBeVisible();
-  const oldSearchResult = await app.shoppingPage.item.getTextContentProductItems();
+  const oldSearchResult =
+    await app.shoppingPage.item.getTextContentProductItems();
   await app.shoppingPage.pagination.clickNextButton();
-  await app.shoppingPage.header.badgeCounter.expectCharityBadgeCounterToHaveValue("3");
-  const newSearchResult = await app.shoppingPage.item.getTextContentProductItems();
+  await app.shoppingPage.header.badgeCounter.expectCharityBadgeCounterToHaveValue(
+    "3"
+  );
+  const newSearchResult =
+    await app.shoppingPage.item.getTextContentProductItems();
 
   //Assert
   await app.shoppingPage.item.expectOldArrayNotToEqualNewArray(
@@ -161,14 +175,18 @@ test("Check prev button in the paging", async ({ app }) => {
   await app.home.open();
   await app.home.header.clickHamburgerMenuButton();
   await app.home.header.hamburgerMenu.selectRegion("Germany");
-  await app.home.header.searchBar.inputSearchCriteria(randomQuery);
-  await app.home.header.searchBar.clickEnterSearchField();
+  await app.home.header.searchForm.inputSearchCriteria(randomQuery);
+  await app.home.header.searchForm.clickEnterSearchField();
   await app.webPage.header.navigation.clickShoppingTab();
   await app.shoppingPage.item.expectShoppingItemsToBeVisible();
   await app.shoppingPage.pagination.clickNextButton();
-  await app.shoppingPage.header.badgeCounter.expectCharityBadgeCounterToHaveValue("3");
+  await app.shoppingPage.header.badgeCounter.expectCharityBadgeCounterToHaveValue(
+    "3"
+  );
   await app.shoppingPage.pagination.clickPrevButton();
-  await app.shoppingPage.header.badgeCounter.expectCharityBadgeCounterToHaveValue("4");
+  await app.shoppingPage.header.badgeCounter.expectCharityBadgeCounterToHaveValue(
+    "4"
+  );
 
   //Assert
   await app.expectPageToHaveUrl(

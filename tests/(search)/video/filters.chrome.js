@@ -14,8 +14,8 @@ for (const {
     const randomQuery = faker.word.sample();
     //Actions
     await app.home.open();
-    await app.home.header.searchBar.inputSearchCriteria(randomQuery);
-    await app.home.header.searchBar.clickEnterSearchField();
+    await app.home.header.searchForm.inputSearchCriteria(randomQuery);
+    await app.home.header.searchForm.clickEnterSearchField();
     await app.videoPage.header.navigation.clickVideoTab();
     await app.videoPage.item.expectVideoItemsToBeVisible();
     await app.videoPage.filters.clickFilterBy("All publishers");
@@ -44,8 +44,8 @@ for (const { testID, freshnessPart, fiterName, filter } of filterData.byDate) {
     const randomQuery = faker.word.sample();
     //Actions
     await app.home.open();
-    await app.home.header.searchBar.inputSearchCriteria(randomQuery);
-    await app.home.header.searchBar.clickEnterSearchField();
+    await app.home.header.searchForm.inputSearchCriteria(randomQuery);
+    await app.home.header.searchForm.clickEnterSearchField();
     await app.videoPage.header.navigation.clickVideoTab();
     await app.videoPage.item.expectVideoItemsToBeVisible();
     await app.videoPage.filters.clickFilterBy("Any time");
@@ -75,8 +75,8 @@ for (const { testID, freshnessPart, fiterName, filter } of filterData.byDate) {
 test("Check list dropdown of filter by date ", async ({ app }, testInfo) => {
   //Actions
   await app.home.open();
-  await app.home.header.searchBar.inputSearchCriteria(faker.word.sample());
-  await app.home.header.searchBar.clickEnterSearchField();
+  await app.home.header.searchForm.inputSearchCriteria(faker.word.sample());
+  await app.home.header.searchForm.clickEnterSearchField();
   await app.videoPage.header.navigation.clickVideoTab();
   await app.videoPage.item.expectVideoItemsToBeVisible();
   await app.videoPage.filters.clickFilterBy("Any time");
@@ -88,8 +88,8 @@ test("Check list dropdown of filter by date ", async ({ app }, testInfo) => {
 test("Check list dropdown of filter publisher ", async ({ app }, testInfo) => {
   //Actions
   await app.home.open();
-  await app.home.header.searchBar.inputSearchCriteria(faker.word.sample());
-  await app.home.header.searchBar.clickEnterSearchField();
+  await app.home.header.searchForm.inputSearchCriteria(faker.word.sample());
+  await app.home.header.searchForm.clickEnterSearchField();
   await app.videoPage.header.navigation.clickVideoTab();
   await app.videoPage.item.expectVideoItemsToBeVisible();
   await app.videoPage.filters.clickFilterBy("All publishers");
@@ -103,8 +103,8 @@ test("Check that dropdown of filter by publishers is opened", async ({
 }) => {
   //Actions
   await app.home.open();
-  await app.home.header.searchBar.inputSearchCriteria(faker.word.sample());
-  await app.home.header.searchBar.clickEnterSearchField();
+  await app.home.header.searchForm.inputSearchCriteria(faker.word.sample());
+  await app.home.header.searchForm.clickEnterSearchField();
   await app.videoPage.header.navigation.clickVideoTab();
   await app.videoPage.item.expectVideoItemsToBeVisible();
   await app.videoPage.filters.clickFilterBy("All publishers");

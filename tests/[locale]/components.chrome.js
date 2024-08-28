@@ -141,8 +141,8 @@ for (const { test_case, language, languageCode } of header) {
     await app.home.open();
     await app.home.header.clickHamburgerMenuButton();
     await app.home.header.hamburgerMenu.selectRegion("Germany");
-    await app.home.header.searchBar.inputSearchCriteria("test");
-    await app.home.header.searchBar.clickEnterSearchField();
+    await app.home.header.searchForm.inputSearchCriteria("test");
+    await app.home.header.searchForm.clickEnterSearchField();
     await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
     await app.webPage.header.clickHamburgerMenuButton();
     await app.webPage.header.hamburgerMenu.clickLanguagesDropdown();
@@ -171,8 +171,8 @@ for (const { test_case, language, languageCode } of header) {
     await app.home.open();
     await app.home.header.clickHamburgerMenuButton();
     await app.home.header.hamburgerMenu.selectRegion("Germany");
-    await app.home.header.searchBar.inputSearchCriteria("test");
-    await app.home.header.searchBar.clickEnterSearchField();
+    await app.home.header.searchForm.inputSearchCriteria("test");
+    await app.home.header.searchForm.clickEnterSearchField();
     await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
     await app.webPage.header.clickHamburgerMenuButton();
     await app.webPage.header.hamburgerMenu.clickLanguagesDropdown();
@@ -198,8 +198,8 @@ for (const { test_case, language, languageCode } of header) {
     await app.home.open();
     await app.home.header.clickHamburgerMenuButton();
     await app.home.header.hamburgerMenu.selectRegion("Germany");
-    await app.home.header.searchBar.inputSearchCriteria("test");
-    await app.home.header.searchBar.clickEnterSearchField();
+    await app.home.header.searchForm.inputSearchCriteria("test");
+    await app.home.header.searchForm.clickEnterSearchField();
     await app.videoPage.header.navigation.clickVideoTab();
     await app.videoPage.item.expectVideoItemsToBeVisible();
     await app.videoPage.header.clickHamburgerMenuButton();

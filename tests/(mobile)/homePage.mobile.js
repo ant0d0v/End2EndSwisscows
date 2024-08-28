@@ -6,12 +6,12 @@ test("Check that suggest is displayed", async ({ app }) => {
   let randomQuery = faker.word.sample();
 
   await app.home.open();
-  await app.home.header.searchBar.inputSearchCriteria(randomQuery.toLocaleLowerCase());
+  await app.home.header.searchForm.inputSearchCriteria(randomQuery.toLocaleLowerCase());
 
   //Assert
-  await app.home.header.searchBar.expectSuggestIsDisplayed();
-  await app.home.header.searchBar.expectSuggestToHaveCount(5);
-  await app.home.header.searchBar.expectSuggestToContains(randomQuery);
+  await app.home.header.searchForm.expectSuggestIsDisplayed();
+  await app.home.header.searchForm.expectSuggestToHaveCount(5);
+  await app.home.header.searchForm.expectSuggestToContains(randomQuery);
 });
 
 test("Check that all questions were opened on the home page.", async ({

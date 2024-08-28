@@ -10,8 +10,8 @@ for (const { testID, freshnessPart, fiterName } of filterData.byDate) {
     const randomQuery = faker.word.sample();
     //Actions
     await app.home.open();
-    await app.home.header.searchBar.inputSearchCriteria(randomQuery);
-    await app.home.header.searchBar.clickEnterSearchField();
+    await app.home.header.searchForm.inputSearchCriteria(randomQuery);
+    await app.home.header.searchForm.clickEnterSearchField();
     await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
     await app.webPage.filters.clickFilterByDate();
     const response =
@@ -46,8 +46,8 @@ test("Cancel filter and navigates to the corresponding page.", async ({
   await app.home.open();
   await app.home.header.clickHamburgerMenuButton();
   await app.home.header.hamburgerMenu.selectRegion("Germany");
-  await app.home.header.searchBar.inputSearchCriteria(randomQuery);
-  await app.home.header.searchBar.clickEnterSearchField();
+  await app.home.header.searchForm.inputSearchCriteria(randomQuery);
+  await app.home.header.searchForm.clickEnterSearchField();
   await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
   await app.webPage.filters.clickFilterByDate();
   const oldResponse =
@@ -69,8 +69,8 @@ test("Check list dropdown of filter by date ", async ({ app }, testInfo) => {
   await app.home.open();
   await app.home.header.clickHamburgerMenuButton();
   await app.home.header.hamburgerMenu.selectRegion("Germany");
-  await app.home.header.searchBar.inputSearchCriteria(faker.word.sample());
-  await app.home.header.searchBar.clickEnterSearchField();
+  await app.home.header.searchForm.inputSearchCriteria(faker.word.sample());
+  await app.home.header.searchForm.clickEnterSearchField();
   await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
   await app.webPage.filters.clickFilterByDate();
 
@@ -85,8 +85,8 @@ test("Check that dropdown of filter by date is opened and closed", async ({
   await app.home.open();
   await app.home.header.clickHamburgerMenuButton();
   await app.home.header.hamburgerMenu.selectRegion("Germany");
-  await app.home.header.searchBar.inputSearchCriteria(faker.word.sample());
-  await app.home.header.searchBar.clickEnterSearchField();
+  await app.home.header.searchForm.inputSearchCriteria(faker.word.sample());
+  await app.home.header.searchForm.clickEnterSearchField();
   await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
   await app.webPage.filters.clickFilterByDate();
 

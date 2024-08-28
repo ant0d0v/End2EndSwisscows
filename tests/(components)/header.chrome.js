@@ -7,8 +7,8 @@ test("Clicking on the swisscows's logo leads to the home page.", async ({
 }) => {
   //Actions
   await app.home.open();
-  await app.home.header.searchBar.inputSearchCriteria(faker.word.sample());
-  await app.home.header.searchBar.clickEnterSearchField();
+  await app.home.header.searchForm.inputSearchCriteria(faker.word.sample());
+  await app.home.header.searchForm.clickEnterSearchField();
   await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
   await app.webPage.header.clickSwisscowsLogo();
 
@@ -22,8 +22,8 @@ test("Check query counter value when searching for images ", async ({
 }) => {
   //Actions
   await app.home.open();
-  await app.home.header.searchBar.inputSearchCriteria(faker.word.sample());
-  await app.home.header.searchBar.clickEnterSearchField();
+  await app.home.header.searchForm.inputSearchCriteria(faker.word.sample());
+  await app.home.header.searchForm.clickEnterSearchField();
   await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
   await app.imagePage.header.navigation.clickImageTab();
 
@@ -36,8 +36,8 @@ test("Check query counter value when searching for images ", async ({
 test("Check query counter value when searching for video ", async ({ app }) => {
   //Actions
   await app.home.open();
-  await app.home.header.searchBar.inputSearchCriteria(faker.word.sample());
-  await app.home.header.searchBar.clickEnterSearchField();
+  await app.home.header.searchForm.inputSearchCriteria(faker.word.sample());
+  await app.home.header.searchForm.clickEnterSearchField();
   await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
   await app.videoPage.header.navigation.clickVideoTab();
 
@@ -50,8 +50,8 @@ test("Check query counter value when searching for video ", async ({ app }) => {
 test("Check query counter value when searching for music", async ({ app }) => {
   //Actions
   await app.home.open();
-  await app.home.header.searchBar.inputSearchCriteria(faker.word.sample());
-  await app.home.header.searchBar.clickEnterSearchField();
+  await app.home.header.searchForm.inputSearchCriteria(faker.word.sample());
+  await app.home.header.searchForm.clickEnterSearchField();
   await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
   await app.musicPage.header.navigation.clickMusicTab();
 
@@ -64,8 +64,8 @@ test("Check query counter value when searching for music", async ({ app }) => {
 test("Check query counter value when searching for news", async ({ app }) => {
   //Actions
   await app.home.open();
-  await app.home.header.searchBar.inputSearchCriteria("news");
-  await app.home.header.searchBar.clickEnterSearchField();
+  await app.home.header.searchForm.inputSearchCriteria("news");
+  await app.home.header.searchForm.clickEnterSearchField();
   await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
   await app.webPage.header.clickHamburgerMenuButton();
   await app.webPage.header.hamburgerMenu.selectRegion("Germany");
@@ -85,8 +85,8 @@ test("Check query counter value when searching for shopping", async ({
   await app.home.open();
   await app.home.header.clickHamburgerMenuButton();
   await app.home.header.hamburgerMenu.selectRegion("Germany");
-  await app.home.header.searchBar.inputSearchCriteria(faker.word.sample());
-  await app.home.header.searchBar.clickEnterSearchField();
+  await app.home.header.searchForm.inputSearchCriteria(faker.word.sample());
+  await app.home.header.searchForm.clickEnterSearchField();
   await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
   await app.shoppingPage.header.navigation.clickShoppingTab();
 
@@ -103,8 +103,8 @@ test.describe("test use cookie", () => {
   }) => {
     //Actions
     await app.home.open();
-    await app.home.header.searchBar.inputSearchCriteria(faker.word.sample());
-    await app.home.header.searchBar.clickEnterSearchField();
+    await app.home.header.searchForm.inputSearchCriteria(faker.word.sample());
+    await app.home.header.searchForm.clickEnterSearchField();
     await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
 
     //Assert
@@ -125,8 +125,8 @@ test.describe("tests don't use cookie", () => {
   }) => {
     //Actions
     await app.home.open();
-    await app.home.header.searchBar.inputSearchCriteria(faker.word.sample());
-    await app.home.header.searchBar.clickEnterSearchField();
+    await app.home.header.searchForm.inputSearchCriteria(faker.word.sample());
+    await app.home.header.searchForm.clickEnterSearchField();
     await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
 
     //Assert
@@ -144,8 +144,8 @@ test.describe("tests don't use cookie", () => {
   }) => {
     //Actions
     await app.home.open();
-    await app.home.header.searchBar.inputSearchCriteria(faker.word.sample());
-    await app.home.header.searchBar.clickEnterSearchField();
+    await app.home.header.searchForm.inputSearchCriteria(faker.word.sample());
+    await app.home.header.searchForm.clickEnterSearchField();
     await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
 
     //Assert
@@ -166,8 +166,8 @@ test.describe("tests don't use cookie", () => {
   }) => {
     //Actions
     await app.home.open();
-    await app.home.header.searchBar.inputSearchCriteria(faker.word.sample());
-    await app.home.header.searchBar.clickEnterSearchField();
+    await app.home.header.searchForm.inputSearchCriteria(faker.word.sample());
+    await app.home.header.searchForm.clickEnterSearchField();
     await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
 
     //Assert
@@ -183,8 +183,8 @@ test.describe("tests don't use cookie", () => {
 test("Check design of popup badge counter", async ({ app }, testInfo) => {
   //Actions
   await app.home.open();
-  await app.home.header.searchBar.inputSearchCriteria(faker.word.sample());
-  await app.home.header.searchBar.clickEnterSearchField();
+  await app.home.header.searchForm.inputSearchCriteria(faker.word.sample());
+  await app.home.header.searchForm.clickEnterSearchField();
   await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
   await app.webPage.header.clickBadgeCounter();
 
@@ -196,10 +196,10 @@ test("Check suggest on the web search", async ({ app }) => {
   let randomQuery = faker.word.sample();
   //Actions
   await app.home.open();
-  await app.home.header.searchBar.inputSearchCriteria(
+  await app.home.header.searchForm.inputSearchCriteria(
     randomQuery.toLocaleLowerCase()
   );
-  await app.home.header.searchBar.clickEnterSearchField();
+  await app.home.header.searchForm.clickEnterSearchField();
   await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
   await app.webPage.header.searchBar.clickSearchField();
 
@@ -215,10 +215,10 @@ test("Check suggest on the image search", async ({ app }) => {
   let randomQuery = faker.word.sample();
   //Actions
   await app.home.open();
-  await app.home.header.searchBar.inputSearchCriteria(
+  await app.home.header.searchForm.inputSearchCriteria(
     randomQuery.toLocaleLowerCase()
   );
-  await app.home.header.searchBar.clickEnterSearchField();
+  await app.home.header.searchForm.clickEnterSearchField();
   await app.webPage.header.navigation.clickImageTab();
   await app.imagePage.item.expectImageItemsToBeVisible();
   await app.imagePage.header.searchBar.clickSearchField();
@@ -235,10 +235,10 @@ test("Check suggest on the video search", async ({ app }) => {
   let randomQuery = faker.word.sample();
   //Actions
   await app.home.open();
-  await app.home.header.searchBar.inputSearchCriteria(
+  await app.home.header.searchForm.inputSearchCriteria(
     randomQuery.toLocaleLowerCase()
   );
-  await app.home.header.searchBar.clickEnterSearchField();
+  await app.home.header.searchForm.clickEnterSearchField();
   await app.webPage.header.navigation.clickVideoTab();
   await app.videoPage.item.expectVideoItemsToBeVisible();
   await app.videoPage.header.searchBar.clickSearchField();
@@ -256,8 +256,8 @@ test("Check suggest on the news search", async ({ app }) => {
   await app.home.open();
   await app.home.header.clickHamburgerMenuButton();
   await app.home.header.hamburgerMenu.selectRegion("Germany");
-  await app.home.header.searchBar.inputSearchCriteria("ukraine");
-  await app.home.header.searchBar.clickEnterSearchField();
+  await app.home.header.searchForm.inputSearchCriteria("ukraine");
+  await app.home.header.searchForm.clickEnterSearchField();
   await app.webPage.header.navigation.clickNewsTab();
   await app.newsPage.item.expectNewsItemsToBeVisible();
   await app.newsPage.header.searchBar.clickSearchField();
@@ -272,10 +272,10 @@ test("Check suggest on the shopping search", async ({ app }) => {
   let randomQuery = faker.commerce.product();
   //Actions
   await app.home.open();
-  await app.home.header.searchBar.inputSearchCriteria(
+  await app.home.header.searchForm.inputSearchCriteria(
     randomQuery.toLocaleLowerCase()
   );
-  await app.home.header.searchBar.clickEnterSearchField();
+  await app.home.header.searchForm.clickEnterSearchField();
   await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
   await app.webPage.header.clickHamburgerMenuButton();
   await app.webPage.header.hamburgerMenu.selectRegion("Germany");
@@ -295,10 +295,10 @@ test("Check suggest on the music search", async ({ app }) => {
   let randomQuery = faker.music.songName();
   //Actions
   await app.home.open();
-  await app.home.header.searchBar.inputSearchCriteria(
+  await app.home.header.searchForm.inputSearchCriteria(
     randomQuery.toLocaleLowerCase()
   );
-  await app.home.header.searchBar.clickEnterSearchField();
+  await app.home.header.searchForm.clickEnterSearchField();
   await app.webPage.header.navigation.clickMusicTab();
   await app.musicPage.track.expectMusicTracksToBeVisible();
   await app.musicPage.header.searchBar.clickSearchField();
@@ -316,8 +316,8 @@ test("Check design of header component the search pages", async ({
 }, testInfo) => {
   //Actions
   await app.home.open();
-  await app.home.header.searchBar.inputSearchCriteria("A");
-  await app.home.header.searchBar.clickEnterSearchField();
+  await app.home.header.searchForm.inputSearchCriteria("A");
+  await app.home.header.searchForm.clickEnterSearchField();
   await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
 
   //Assert
