@@ -73,9 +73,9 @@ export default class Application extends PageHolder {
   
   //Verify
   async expectNewPageToHaveTitle(context, expectedTitle) {
-    // await test.step('Expect  page in new tab "to have" title', async () => {
+    await test.step('Expect  page in new tab "to have" title', async () => {
       await expect(context.pages()[1]).toHaveTitle(expectedTitle);
-    // });
+    });
   }
 
   async expectHaveTitle(newPage, title) {

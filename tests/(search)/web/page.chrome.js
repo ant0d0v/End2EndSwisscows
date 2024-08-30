@@ -1,7 +1,7 @@
 import { test, expect } from "../../../utils/fixtures.js";
 import { randomQueryWithVideoItemSearch } from "../../../helpers/random.js";
 import { faker } from "@faker-js/faker";
-const firstItemTitle = 1;
+
 test.describe("Error pages in dark theme", () => {
   test.use({ colorScheme: "dark" });
   test("Check 202 no results error page ", async ({ app }, testInfo) => {
@@ -100,7 +100,7 @@ test("Check that web results equals search criteria ", async ({ app }) => {
   await app.webPage.expectResultsToHaveCountItems(10);
 });
 test.describe("Web-page items", () => {
-  test("Check that web items date not to be empty", async ({ app }) => {
+  test("Check  web items {date, site, title, description}", async ({ app }) => {
     //Actions
     await app.home.open();
     await app.home.header.searchForm.inputSearchCriteria(faker.word.sample());
@@ -108,7 +108,12 @@ test.describe("Web-page items", () => {
     await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
 
     //Assert
-    await app.webPage.webPageItem.expectItemsDateNotToBeEmpty();
+    await app.webPage.webPageItem.expectItemsDescriptionNotToBeEmpty();
+    await app.webPage.webPageItem.expectItemInfoToContain({
+      title: /\w+/,
+      site: /(?:www\.)?[a-zA-Z0-9-]+\.[a-zA-Z]{2,}(?:\/[^\s]*)?/,
+      date: /^[A-Za-z]{3} \d{1,2}, \d{4}$/,
+    });
   });
 
   test("Check that web-page item thumbnails to have height = 60 and width = 60", async ({
@@ -126,18 +131,6 @@ test.describe("Web-page items", () => {
       height: 60,
       width: 60,
     });
-  });
-
-  test("Check that web-page items site not to be empty", async ({ app }) => {
-    //Actions
-    await app.home.open();
-    await app.home.header.searchForm.inputSearchCriteria(faker.word.sample());
-    await app.home.header.searchForm.clickEnterSearchField();
-    await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
-
-    //Assert
-    await app.webPage.webPageItem.expectItemsSiteNotToBeEmpty();
-    await app.webPage.webPageItem.favicon.expectAllFaviconsToBeVisible();
   });
 
   test("Check titles to have css font and color", async ({ app }) => {
@@ -163,7 +156,7 @@ test.describe("Web-page items", () => {
     await app.home.header.searchForm.clickEnterSearchField();
     await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
     const currentUrl = await app.page.url();
-    await app.webPage.webPageItem.clickTitleAtNumber(firstItemTitle);
+    await app.webPage.webPageItem.clickTitleAt({ number: 1 });
 
     //Assert
     await app.expectPageNotToHaveUrl(app.page, currentUrl);
@@ -171,7 +164,9 @@ test.describe("Web-page items", () => {
 });
 
 test.describe("Article items", () => {
-  test("Check that author of the article item exists", async ({ app }) => {
+  test("Check that article items {date, site, title, description, author}", async ({
+    app,
+  }) => {
     //Actions
     await app.home.open();
     await app.home.header.clickHamburgerMenuButton();
@@ -181,7 +176,13 @@ test.describe("Article items", () => {
     await app.webPage.article.expectArticleItemsToBeVisible();
 
     //Assert
-    await app.webPage.article.expectArticleAuthorNotToBeEmpty();
+    await app.webPage.article.expectItemsDescriptionNotToBeEmpty();
+    await app.webPage.article.expectItemInfoToContain({
+      author: /\w+/,
+      title: /\w+/,
+      site: /(?:www\.)?[a-zA-Z0-9-]+\.[a-zA-Z]{2,}(?:\/[^\s]*)?/,
+      date: /^[A-Za-z]{3} \d{1,2}, \d{4}$/,
+    });
   });
 
   test("Check that article item thumbnails to have height = 60 and width = 60 ", async ({
@@ -203,16 +204,21 @@ test.describe("Article items", () => {
     });
   });
 
-  test("Check that article items site not to be empty", async ({ app }) => {
+  test("Check open new page when clicking image of article item", async ({
+    app,
+  }) => {
     //Actions
     await app.home.open();
+    await app.home.header.clickHamburgerMenuButton();
+    await app.home.header.hamburgerMenu.selectRegion("Germany");
     await app.home.header.searchForm.inputSearchCriteria("article ukraine war");
     await app.home.header.searchForm.clickEnterSearchField();
     await app.webPage.article.expectArticleItemsToBeVisible();
+    const currentUrl = await app.page.url();
+    await app.webPage.article.clickImageAt({ number: 1 });
 
     //Assert
-    await app.webPage.article.expectItemsSiteNotToBeEmpty();
-    await app.webPage.article.favicon.expectAllFaviconsToBeVisible();
+    await app.expectPageNotToHaveUrl(app.page, currentUrl);
   });
 });
 
@@ -222,6 +228,8 @@ test.describe("Video object items", () => {
   }) => {
     //Actions
     await app.home.open();
+    await app.home.header.clickHamburgerMenuButton();
+    await app.home.header.hamburgerMenu.selectRegion("Germany");
     await app.home.header.searchForm.inputSearchCriteria(
       randomQueryWithVideoItemSearch()
     );
@@ -234,6 +242,43 @@ test.describe("Video object items", () => {
       height: 64,
       width: 86,
     });
+  });
+  test("Check that video object item {date, site, title, description}", async ({
+    app,
+  }) => {
+    //Actions
+    await app.home.open();
+    await app.home.header.clickHamburgerMenuButton();
+    await app.home.header.hamburgerMenu.selectRegion("Germany");
+    await app.home.header.searchForm.inputSearchCriteria(
+      randomQueryWithVideoItemSearch()
+    );
+    await app.home.header.searchForm.clickEnterSearchField();
+    await app.webPage.videoObject.expectVideoObjectItemsToBeVisible();
+
+    //Assert
+    await app.webPage.videoObject.expectItemsDescriptionNotToBeEmpty();
+    await app.webPage.videoObject.expectItemInfoToContain({
+      title: /\w+/,
+      site: /(?:www\.)?[a-zA-Z0-9-]+\.[a-zA-Z]{2,}(?:\/[^\s]*)?/,
+      date: /^[A-Za-z]{3} \d{1,2}, \d{4}$/,
+    });
+  });
+  test("Check open new page when clicking image of video object item", async ({ app }) => {
+    //Actions
+    await app.home.open();
+     await app.home.header.clickHamburgerMenuButton();
+     await app.home.header.hamburgerMenu.selectRegion("Germany");
+     await app.home.header.searchForm.inputSearchCriteria(
+       randomQueryWithVideoItemSearch()
+     );
+    await app.home.header.searchForm.clickEnterSearchField();
+    await app.webPage.videoObject.expectVideoObjectItemsToBeVisible();
+    const currentUrl = await app.page.url();
+    await app.webPage.videoObject.clickImageAt({ number: 1 });
+
+    //Assert
+    await app.expectPageNotToHaveUrl(app.page, currentUrl);
   });
 });
 
@@ -250,7 +295,9 @@ test("Check that loader skeleton", async ({ app }, testInfo) => {
 test("Check next button in the paging", async ({ app }) => {
   //Actions
   await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria("ukraine");
+  await app.home.header.searchForm.inputSearchCriteria(
+    faker.word.words({ count: { min: 2, max: 5 } })
+  );
   await app.home.header.searchForm.clickEnterSearchField();
   await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
   const oldResult = await app.webPage.webPageItem.getTextContentWebItems();

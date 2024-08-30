@@ -17,6 +17,7 @@ import VideoObject from "./VideoObject.js"
 import Article from "./Article.js";
 import Product from "./Product.js";
 import Skeleton from "./Skeleton.js";
+import FAQ from "./FAQPage.js";
 
 
 export default class WebPage extends BasePage {
@@ -31,6 +32,7 @@ export default class WebPage extends BasePage {
     this.relatedSearches = new RelatedSearches(page);
     this.videoCollection = new VideoCollection(page);
     this.newsCollection = new NewsCollection(page);
+    this.newsCollection = new NewsCollection(page);
     this.header = new Header(page);
     this.error = new Error(page);
     this.preloader = new Preloader(page);
@@ -40,6 +42,7 @@ export default class WebPage extends BasePage {
     this.article = new Article(page);
     this.product = new Product(page);
     this.skeleton = new Skeleton(page);
+    this.faq = new FAQ(page)
 
     //Locators
     this.items = this.page.locator(".web-results .item");

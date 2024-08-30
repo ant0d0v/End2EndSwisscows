@@ -9,30 +9,31 @@ export default class WebPageItem extends BaseComponent {
     this.titles = this.root.locator(".title");
     this.dates = this.root.locator(".date");
     this.sites = this.root.locator(".site");
+    this.descriptions = this.root.locator(".description");
     this.thumbnails = this.root.locator(".thumbnail img");
     this.previewButton = this.root.locator(".button");
   }
   //Actions
   getTextContentWebItems = async () => {
     const texts = [];
-    const elements = await this.fiveTitles.all();
+    const elements = await this.root.all();
     for (let element of elements) {
       texts.push(await element.textContent());
     }
     return texts;
   };
 
-  clickTitleAtNumber = async (index) => {
+  clickTitleAt = async (titles = { number: index }) => {
     await this.clickElement(
-      this.titles.nth(index),
-      `${index} web item in search result`
+      this.titles.nth(titles.number - 1),
+      `${titles.number - 1} web item in search result`
     );
   };
 
-  clickPreviewButtonAt = async (index) => {
+  clickPreviewButtonAt = async (buttons = { number: index }) => {
     await this.clickElement(
-      this.previewButton.nth(index - 1),
-      `${index} preview of item in search result`
+      this.previewButton.nth(buttons.number - 1),
+      `${buttons.number - 1} preview of item in search result`
     );
   };
 
@@ -50,13 +51,22 @@ export default class WebPageItem extends BaseComponent {
     await this.expectAreElementsInListDisplayed(this.titles);
   };
 
-  expectItemsDateNotToBeEmpty = async () => {
-    await this.expectListElementsNotToBeEmpty(this.dates);
+
+  expectItemsDescriptionNotToBeEmpty = async () => {
+    await this.expectListElementsNotToBeEmpty(this.descriptions);
   };
 
-  expectItemsSiteNotToBeEmpty = async () => {
-    await this.expectListElementsNotToBeEmpty(this.sites);
-  };
+  async expectItemInfoToContain(
+    expectedInfo = {
+      title: value,
+      site: value,
+      date: value,
+    }
+  ) {
+    await this.expectTextsToContains(this.titles, expectedInfo.title);
+    await this.expectTextsToContains(this.sites, expectedInfo.site);
+    await this.expectTextsToContains(this.dates, expectedInfo.date);
+  }
 
   expectThumbnailsToHaveJSProperty = async (
     expectedProperty = {

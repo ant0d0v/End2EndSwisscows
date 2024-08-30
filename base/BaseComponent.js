@@ -180,6 +180,7 @@ export default class BaseComponent extends PageHolder {
 
   async expectAttributeClassAllElements(elements, value) {
     await test.step('Expect the elements in the array to "have" attribute class with value', async () => {
+      await expect(elements.first()).toHaveAttribute("class", value);
       for (const attribute of await elements.all()) {
         await expect(attribute).toHaveAttribute("class", value);
       }

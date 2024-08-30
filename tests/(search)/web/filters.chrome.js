@@ -51,10 +51,16 @@ test("Cancel filter and navigates to the corresponding page.", async ({
   await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
   await app.webPage.filters.clickFilterByDate();
   const oldResponse =
-    await app.webPage.filters.selectMenu.selectFilterAndGetResponse("Past Day");
+    await app.webPage.filters.selectMenu.selectFilterAndGetResponse({
+      endpoint: "/v4/web",
+      locator: "Past Day",
+    });
   await app.webPage.filters.clickFilterByDate();
   const newResponse =
-    await app.webPage.filters.selectMenu.selectFilterAndGetResponse("Any time");
+    await app.webPage.filters.selectMenu.selectFilterAndGetResponse({
+      endpoint: "/v4/web",
+      locator: "Any time",
+    });
 
   //Assert
   await app.expectPageToHaveUrl(

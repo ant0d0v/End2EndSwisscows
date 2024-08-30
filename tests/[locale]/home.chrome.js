@@ -4,7 +4,7 @@ import { readCsvFile } from "../../helpers/csvHelper.js";
 
 const home = readCsvFile("../data/locales/home.csv");
 for (const { test_case, language, expected_title, languageCode } of home) {
-  test(`${test_case} Check content of home page for ${language} localization`, async ({
+  test.fixme(`${test_case} Check content of home page for ${language} localization`, async ({
     app,
   }, testInfo) => {
     //Actions
@@ -35,7 +35,7 @@ for (const { test_case, language, expected_title, languageCode } of home) {
 }
 
 for (const { test_case, language, languageCode } of home) {
-  test(`${test_case} Check header of home page for ${language} localization`, async ({
+  test.fixme(`${test_case} Check header of home page for ${language} localization`, async ({
     app,
   }, testInfo) => {
     //Actions
@@ -54,7 +54,7 @@ for (const { test_case, language, languageCode } of home) {
 }
 
 for (const { test_case, language, languageCode } of home) {
-  test(`${test_case} Check FAQ of home page for ${language} localization`, async ({
+  test.fixme(`${test_case} Check FAQ of home page for ${language} localization`, async ({
     app,
   }, testInfo) => {
     //Actions

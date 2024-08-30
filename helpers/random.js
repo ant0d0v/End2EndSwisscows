@@ -32,7 +32,6 @@ export function randomString(length) {
 export function randomQueryWithVideoItemSearch() {
   const word = faker.helpers.arrayElement([
     "iphone youtube",
-    "Video Result",
     "video + ronaldo"
   ]);
   return word;

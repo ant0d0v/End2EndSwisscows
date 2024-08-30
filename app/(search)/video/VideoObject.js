@@ -99,6 +99,7 @@ export default class Item extends BaseComponent {
     await this.expectTextsToContains(this.views, expectedInfo.views);
     await this.expectTextsToContains(this.date, expectedInfo.date);
   }
+  
   expectVideoDescriptionNotToBeEmpty = async () => {
     await this.expectListElementsNotToBeEmpty(this.description);
   };

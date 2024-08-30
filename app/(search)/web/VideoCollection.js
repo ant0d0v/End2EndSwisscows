@@ -1,38 +1,101 @@
 import BaseComponent from "../../../base/BaseComponent.js";
+import Icon from "../../../components/Icon.js";
 import { expect } from "@playwright/test";
 
 export default class VideoCollection extends BaseComponent {
   constructor(page) {
     super(page);
-    this.title = this.page.locator(".widget.widget-video .widget-title")
-    this.nextButton = this.page.locator('.widget-video .widget-buttons button.next')
-    this.prevButton = this.page.locator('.widget-video .widget-buttons button.prev')
-    this.allImage = this.page.locator('.widget-video article.item--video .media.loaded img')
-    this.firstVideo = this.page.locator('.widget-video article.item--video .media.loaded img').first()
-    this.moreVideosButton = this.page.getByRole('link', { name: 'More videos' })
+    this.icon = new Icon(this.page);
+
+    //Locators
+    this.root = this.page.locator(".widget.widget-video");
+    this.widgetHeader = this.root.locator(".widget-header");
+    this.widgetTitle = this.root.locator(".widget-title");
+    this.titles = this.root.locator(".title");
+    this.sites = this.root.locator(".site");
+    this.nextButton = this.root.locator(".widget-buttons button.next");
+    this.prevButton = this.root.locator(".widget-buttons button.prev");
+    this.images = this.root.locator(".media.loaded img");
+    this.slides = this.root.locator(".swiper-slide");
+    this.moreVideosButton = this.page.getByRole("link", {
+      name: "More videos",
+    });
+    this.errorIcon = this.root.locator(".media.loaded .error.icon");
   }
   //Actions
-  clickNextButtonUntilInvisible = async () => {
-    await this.clickElementUntilInvisible(this.nextButton);
+  clickNextButton = async () => {
+    await this.clickElement(this.nextButton, `next button`);
   };
-  clickPrevButtonUntilInvisible = async () => {
-    await this.clickElementUntilInvisible(this.prevButton);
+  clickPrevButton = async () => {
+    await this.clickElement(this.prevButton, `prev button`);
   };
   clickMoreVideosButton = async () => {
     await this.clickElement(this.moreVideosButton, `More Videos button`);
   };
   waitUntilWidgetToBeVisible = async () => {
-    await this.waitUntilElementToBeVisible(this.title);
+    await this.waitUntilElementToBeVisible(this.widgetTitle);
   };
-  
-  //Verify 
-  expectImagesToHaveWightInWidget = async (property, value) => {
-    await this.expectElementsToHaveJSProperty(this.allImage , property, value);
+
+  //Verify
+  async expectToHaveAttributeSlideAt(
+    expected = { number: index, attribute: value }
+  ) {
+    await this.expectAttributeClassOfElement(
+      this.slides.nth(expected.number - 1),
+      expected.attribute
+    );
+  }
+  expectAllImagesToBeVisible = async () => {
+    await this.expectAreElementsInListDisplayed(this.images);
   };
-  expectNextButtonIsDisabled = async () => {
-    await expect(this.nextButton ).toHaveAttribute("disabled");
+
+  expectToBeOpenedNewPageAfterClickImageAt = async (
+    expected = { number: index, expectedUrl: value }
+  ) => {
+    await this.expectToBeOpenedNewPageAfterClick(
+      this.images.nth(expected.number - 1),
+      expected.expectedUrl
+    );
   };
-  expectPrevButtonIsDisabled = async () => {
-    await expect(this.prevButton).toHaveAttribute("disabled");
+
+  expectImagesToHaveProperty = async (
+    expected = { width: value, height: value }
+  ) => {
+    await this.expectElementsToHaveJSProperty(
+      this.images,
+      "width",
+      expected.width
+    );
+    await this.expectElementsToHaveJSProperty(
+      this.images,
+      "height",
+      expected.height
+    );
+  };
+  async expectVideoInfoToContain(
+    expectedInfo = {
+      title: value,
+      site: value
+    }
+  ) {
+    await this.expectTextsToContains(this.titles, expectedInfo.title);
+    await this.expectTextsToContains(this.sites, expectedInfo.site);
+  }
+
+  takeSnapshotWidgetHeader = async (testInfo) => {
+    await this.expectPageElementToHaveScreenshot(
+      this.widgetHeader,
+      this.widgetHeader,
+      testInfo
+    );
+  };
+  takeSnapshotErrorIconAt = async (testInfo, expected = { number: value }) => {
+    const elementHandle = await this.images.first();
+    await elementHandle.evaluate((element) => element.setAttribute("src", ""));
+    await this.icon.takeSnapshotIconAt(
+      testInfo,
+      this.errorIcon,
+      expected.number
+    );
   };
 }

@@ -3,7 +3,8 @@ import{ expect } from "@playwright/test";
 export default class Pagination extends BaseComponent {
   constructor(page) {
     super(page);
-    this.nextButton = this.page.getByRole('link', { name: 'Next page' })
+    this.root = this.page.locator(".pagination");
+    this.nextButton = this.page.getByRole("link", { name: "Next page" });
     this.prevButton = this.page.getByRole("link", { name: "Previous page" });
   }
   //Actions
@@ -17,12 +18,20 @@ export default class Pagination extends BaseComponent {
 
   //Verify
   expectPreviousButtonIsDisabled = async () => {
-    await expect(this.prevButton).toHaveAttribute('disabled');
-  }
+    await expect(this.prevButton).toHaveAttribute("disabled");
+  };
   expectPreviousButtonIsEnabled = async () => {
-    await expect(this.prevButton).not.toHaveAttribute('disabled');
-  }
+    await expect(this.prevButton).not.toHaveAttribute("disabled");
+  };
   expectNextButtonIsEnabled = async () => {
-    await expect(this.nextButton).not.toHaveAttribute('disabled');
-  }
+    await expect(this.nextButton).not.toHaveAttribute("disabled");
+  };
+
+  takeSnapshot = async (testInfo) => {
+    await this.expectPageElementToHaveScreenshot(
+      this.root,
+      this.nextButton,
+      testInfo
+    );
+  };
 }

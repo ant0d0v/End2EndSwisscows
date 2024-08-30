@@ -1,27 +1,23 @@
 import BaseComponent from "../../../base/BaseComponent.js";
 import Favicon from "../../../components/Favicon.js";
-export default class Article extends BaseComponent {
+export default class VideoObject extends BaseComponent {
   constructor(page) {
     super(page);
     this.favicon = new Favicon(page);
     //Locators
     this.root = this.page.locator("article.item.video-object");
     this.titles = this.root.locator(".title");
-    this.author = this.root.locator(".author");
-    this.title = (index) => this.root.locator(".title").nth(index - 1);
-    this.fiveTitles = this.root.locator(":nth-of-type(-n+5) .title");
     this.dates = this.root.locator(".date");
     this.sites = this.root.locator(".site");
+    this.descriptions = this.root.locator(".description");
     this.thumbnails = this.root.locator(".thumbnail img");
   }
   //Actions
-  getTextContentWebItems = async () => {
-    const texts = [];
-    const elements = await this.fiveTitles.all();
-    for (let element of elements) {
-      texts.push(await element.textContent());
-    }
-    return texts;
+  clickImageAt = async (thumbnails = { number: index }) => {
+    await this.clickElement(
+      this.thumbnails.nth(thumbnails.number - 1),
+      `${thumbnails.number - 1} image of video object item in search result`
+    );
   };
 
   // Verify
@@ -30,18 +26,21 @@ export default class Article extends BaseComponent {
     await this.expectAreElementsInListDisplayed(this.titles);
   };
 
-  expectWebItemsToContains = async (criteria) => {
-    this.expectTextsToContainSearchCriteria(this.fiveTitles, criteria);
+  expectItemsDescriptionNotToBeEmpty = async () => {
+    await this.expectListElementsNotToBeEmpty(this.descriptions);
   };
 
-  expectItemsDateNotToBeEmpty = async () => {
-    this.expectListElementsNotToBeEmpty(this.dates);
-  };
-
-  expectItemsSiteNotToBeEmpty = async () => {
-    this.expectListElementsNotToBeEmpty(this.sites);
-  };
-
+  async expectItemInfoToContain(
+    expectedInfo = {
+      title: value,
+      site: value,
+      date: value,
+    }
+  ) {
+    await this.expectTextsToContains(this.titles, expectedInfo.title);
+    await this.expectTextsToContains(this.sites, expectedInfo.site);
+    await this.expectTextsToContains(this.dates, expectedInfo.date);
+  }
   expectThumbnailsToHaveJSProperty = async (
     expectedProperty = {
       height: value,
@@ -62,10 +61,5 @@ export default class Article extends BaseComponent {
 
   expectThumbnailsToBeVisible = async () => {
     await this.expectAreElementsInListDisplayed(this.thumbnails);
-  };
-
-  expectTitlesToHaveCSSFontSizeAndColor = async (size, color) => {
-    await this.expectElementsToHaveCSS(this.titles, "font-size", size);
-    await this.expectElementsToHaveCSS(this.titles, "color", color);
   };
 }

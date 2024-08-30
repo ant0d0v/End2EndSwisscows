@@ -8,12 +8,18 @@ export default class Article extends BaseComponent {
     this.root = this.page.locator("article.item.article");
     this.titles = this.root.locator(".title");
     this.author = this.root.locator(".author");
-    this.title = (index) => this.root.locator(".title").nth(index - 1);
     this.dates = this.root.locator(".date");
     this.sites = this.root.locator(".site");
+    this.descriptions = this.root.locator(".description");
     this.thumbnails = this.root.locator(".thumbnail img");
   }
   //Actions
+  clickImageAt = async (thumbnails = { number: index }) => {
+    await this.clickElement(
+      this.thumbnails.nth(thumbnails.number - 1),
+      `${thumbnails.number - 1} image of article item in search result`
+    );
+  };
 
   // Verify
 
@@ -21,13 +27,23 @@ export default class Article extends BaseComponent {
     await this.expectAreElementsInListDisplayed(this.titles);
   };
 
-  expectArticleAuthorNotToBeEmpty = async () => {
-    await this.expectListElementsNotToBeEmpty(this.author);
+  expectItemsDescriptionNotToBeEmpty = async () => {
+    await this.expectListElementsNotToBeEmpty(this.descriptions);
   };
 
-  expectItemsSiteNotToBeEmpty = async () => {
-    await this.expectListElementsNotToBeEmpty(this.sites);
-  };
+  async expectItemInfoToContain(
+    expectedInfo = {
+      author: value,
+      title: value,
+      site: value,
+      date: value,
+    }
+  ) {
+    await this.expectTextsToContains(this.author, expectedInfo.author);
+    await this.expectTextsToContains(this.titles, expectedInfo.title);
+    await this.expectTextsToContains(this.sites, expectedInfo.site);
+    await this.expectTextsToContains(this.dates, expectedInfo.date);
+  }
 
   expectThumbnailsToHaveJSProperty = async (
     expectedProperty = {

@@ -5,7 +5,7 @@ test("Check open web Preview ", async ({ app }) => {
   await app.home.header.searchForm.inputSearchCriteria("wiki");
   await app.home.header.searchForm.clickEnterSearchField();
   await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
-  await app.webPage.webPageItem.clickPreviewButtonAt(1);
+  await app.webPage.webPageItem.clickPreviewButtonAt({ number: 1 });
 
   //Assert
   await app.webPage.preview.expectScreenshotImageAtNumberToBeVisible(1);
@@ -17,7 +17,7 @@ test("Check close web Preview ", async ({ app }) => {
   await app.home.header.searchForm.inputSearchCriteria("wiki");
   await app.home.header.searchForm.clickEnterSearchField();
   await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
-  await app.webPage.webPageItem.clickPreviewButtonAt(1);
+  await app.webPage.webPageItem.clickPreviewButtonAt({ number: 1 });
 
   //Assert
   await app.webPage.preview.expectScreenshotImageAtNumberToBeVisible(1);
@@ -31,7 +31,7 @@ test("Check click open site button in web Preview ", async ({ app }) => {
   await app.home.header.searchForm.inputSearchCriteria("wiki");
   await app.home.header.searchForm.clickEnterSearchField();
   await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
-  await app.webPage.webPageItem.clickPreviewButtonAt(1);
+  await app.webPage.webPageItem.clickPreviewButtonAt({ number: 1 });
 
   //Assert
   await app.webPage.preview.expectToBeOpenedNewPageAfterClickOpenSiteButton(
@@ -45,7 +45,7 @@ test("Check verified title in Preview ", async ({ app }, testInfo) => {
   await app.home.header.searchForm.inputSearchCriteria("wiki");
   await app.home.header.searchForm.clickEnterSearchField();
   await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
-  await app.webPage.webPageItem.clickPreviewButtonAt(1);
+  await app.webPage.webPageItem.clickPreviewButtonAt({ number: 1 });
 
   //Assert
   await app.webPage.preview.takeVerifiedTitleSnapshot(testInfo);
@@ -56,7 +56,7 @@ test("Check found trakers title in Preview ", async ({ app }, testInfo) => {
   await app.home.header.searchForm.inputSearchCriteria("google");
   await app.home.header.searchForm.clickEnterSearchField();
   await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
-  await app.webPage.webPageItem.clickPreviewButtonAt(1);
+  await app.webPage.webPageItem.clickPreviewButtonAt({ number: 1 });
 
   //Assert
   await app.webPage.preview.expectScreenshotImageAtNumberToBeVisible(1);
@@ -69,7 +69,7 @@ test("Check navigation in Preview ", async ({ app }, testInfo) => {
   await app.home.header.searchForm.inputSearchCriteria("google");
   await app.home.header.searchForm.clickEnterSearchField();
   await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
-  await app.webPage.webPageItem.clickPreviewButtonAt(1);
+  await app.webPage.webPageItem.clickPreviewButtonAt({ number: 1 });
 
   //Assert
   await app.webPage.preview.expectScreenshotImageAtNumberToBeVisible(1);
@@ -82,7 +82,7 @@ test("Check next button in  Preview ", async ({ app }) => {
   await app.home.header.searchForm.inputSearchCriteria("wiki");
   await app.home.header.searchForm.clickEnterSearchField();
   await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
-  await app.webPage.webPageItem.clickPreviewButtonAt(1);
+  await app.webPage.webPageItem.clickPreviewButtonAt({ number: 1 });
   await app.webPage.preview.clickNextButton();
 
   //Assert
@@ -102,7 +102,7 @@ test("Check prev button in  Preview ", async ({ app }) => {
   await app.home.header.searchForm.inputSearchCriteria("wiki");
   await app.home.header.searchForm.clickEnterSearchField();
   await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
-  await app.webPage.webPageItem.clickPreviewButtonAt(1);
+  await app.webPage.webPageItem.clickPreviewButtonAt({ number: 1 });
   await app.webPage.preview.clickNextButton();
 
   //Assert
@@ -129,7 +129,7 @@ test("Check prev button to be hidden  when clicking next button ", async ({
   await app.home.header.searchForm.inputSearchCriteria("wiki");
   await app.home.header.searchForm.clickEnterSearchField();
   await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
-  await app.webPage.webPageItem.clickPreviewButtonAt(1);
+  await app.webPage.webPageItem.clickPreviewButtonAt({ number: 1 });
   await app.webPage.preview.clickNextButton();
 
   //Assert
@@ -141,10 +141,10 @@ test("Check prev button to be hidden  when clicking next button ", async ({
 test("Check description is full when clicking more ", async ({ app }) => {
   //Actions
   await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria("wiki");
+  await app.home.header.searchForm.inputSearchCriteria("wiki ronaldo");
   await app.home.header.searchForm.clickEnterSearchField();
   await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
-  await app.webPage.webPageItem.clickPreviewButtonAt(1);
+  await app.webPage.webPageItem.clickPreviewButtonAt({ number: 1 });
   await app.webPage.preview.clickMore();
 
   //Assert
@@ -154,10 +154,10 @@ test("Check description is full when clicking more ", async ({ app }) => {
 test("Check description isn't full when clicking less ", async ({ app }) => {
   //Actions
   await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria("wiki");
+  await app.home.header.searchForm.inputSearchCriteria("wiki ronaldo");
   await app.home.header.searchForm.clickEnterSearchField();
   await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
-  await app.webPage.webPageItem.clickPreviewButtonAt(1);
+  await app.webPage.webPageItem.clickPreviewButtonAt({ number: 1 });
   await app.webPage.preview.clickMore();
 
   //Assert
@@ -174,7 +174,7 @@ test("Check that screenshot to have height = 439 and width = 780 in Preview ", a
   await app.home.header.searchForm.inputSearchCriteria("wiki");
   await app.home.header.searchForm.clickEnterSearchField();
   await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
-  await app.webPage.webPageItem.clickPreviewButtonAt(1);
+  await app.webPage.webPageItem.clickPreviewButtonAt({ number: 1 });
 
   //Assert
   await app.webPage.preview.expectScreenshotImageAtNumberToBeVisible(1);

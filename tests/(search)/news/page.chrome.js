@@ -1,7 +1,6 @@
 import { test } from "../../../utils/fixtures.js";
-import testData from "../../../data/error/testData.json";
 
-test("Check 202 No Results Found error page ", async ({ app }) => {
+test("Check 202 No Results Found error page ", async ({ app }, testInfo) => {
   //Actions
   await app.home.open();
   await app.home.header.clickHamburgerMenuButton();
@@ -11,14 +10,10 @@ test("Check 202 No Results Found error page ", async ({ app }) => {
   await app.newsPage.header.navigation.clickNewsTab();
 
   //Assert
-  await app.newsPage.error.expectNotResultErrorToHaveText(
-    testData.expectedErrorText.noResultsFound202Error
-  );
-  await app.newsPage.error.expectErrorImageToBeVisible();
-  await app.newsPage.error.expectImageToHaveWight(450);
+  await app.newsPage.error.takeSnapshot(testInfo, 202);
 });
 
-test("Check request is blocked 450 error page ", async ({ app }) => {
+test("Check request is blocked 450 error page ", async ({ app },testInfo) => {
   //Actions
   await app.home.open();
   await app.home.header.clickHamburgerMenuButton();
@@ -28,14 +23,10 @@ test("Check request is blocked 450 error page ", async ({ app }) => {
   await app.newsPage.header.navigation.clickNewsTab();
 
   //Assert
-  await app.newsPage.error.expectNotResultErrorToHaveText(
-    testData.expectedErrorText.blocked450Error
-  );
-  await app.newsPage.error.expectErrorImageToBeVisible();
-  await app.newsPage.error.expectImageToHaveWight(450);
+  await app.newsPage.error.takeSnapshot(testInfo, 450);
 });
 
-test("Check 500 unknown Error Page  ", async ({ app }) => {
+test("Check 500 unknown Error Page  ", async ({ app }, testInfo) => {
   //Actions
   await app.home.open();
   await app.home.header.clickHamburgerMenuButton();
@@ -46,14 +37,10 @@ test("Check 500 unknown Error Page  ", async ({ app }) => {
   await app.newsPage.header.navigation.clickNewsTab();
 
   //Assert
-  await app.newsPage.error.expectContentToHaveText(
-    "Oops! Something is wrongError 500: Internal Server ErrorServer doesn’t respond or something else happened. Please, try to refresh this page."
-  );
-  await app.newsPage.error.expectErrorImageToBeVisible();
-  await app.newsPage.error.expectImageToHaveWight(450);
+  await app.newsPage.error.takeSnapshot(testInfo, 500);
 });
 
-test("Check 429 Too many requests", async ({ app }) => {
+test("Check 429 Too many requests", async ({ app }, testInfo ) => {
   //Actions
   await app.home.open();
   await app.home.header.clickHamburgerMenuButton();
@@ -64,14 +51,10 @@ test("Check 429 Too many requests", async ({ app }) => {
   await app.newsPage.header.navigation.clickNewsTab();
 
   //Assert
-  await app.newsPage.error.expectContentToHaveText(
-    testData.expectedErrorText.TooManyRequestsError
-  );
-  await app.newsPage.error.expectErrorImageToBeVisible();
-  await app.newsPage.error.expectImageToHaveWight(450);
+  await app.newsPage.error.takeSnapshot(testInfo, 429);
 });
 
-test("Check error region is unsupported", async ({ app }) => {
+test("Check error region is unsupported", async ({ app }, testInfo ) => {
   //Actions
   await app.home.open();
   await app.home.header.clickHamburgerMenuButton();
@@ -84,11 +67,7 @@ test("Check error region is unsupported", async ({ app }) => {
   await app.newsPage.header.hamburgerMenu.selectRegion("Ukraine");
 
   //Assert
-  await app.newsPage.error.expectContentToHaveText(
-    testData.expectedErrorText.unknownRegion501Error
-  );
-  await app.newsPage.error.expectErrorImageToBeVisible();
-  await app.newsPage.error.expectImageToHaveWight(450);
+  await app.newsPage.error.takeSnapshot(testInfo, 501);
 });
 
 test("Check search results in news page ", async ({ app }) => {
@@ -103,17 +82,12 @@ test("Check search results in news page ", async ({ app }) => {
   await app.newsPage.item.expectNewsItemsToBeVisible();
 
   //Assert
-  await app.newsPage.item.expectAreElementsInListDisplayed(
-    app.newsPage.item.allImage
-  );
-  await app.newsPage.item.expectImageToHaveWightInSearchResult("width", 210);
-  await app.newsPage.item.expectListToHaveCount(
-    app.newsPage.item.newsItems,
-    10
-  );
+  await app.newsPage.item.expectImageItemsToBeVisible()
+  await app.newsPage.item.expectImageToHaveProperty({ width: 60, height: 60 });
+  await app.newsPage.item.expectNewsResultToHaveCount(10)
 });
 
-test("Check open link in  the news result", async ({ app }) => {
+test("Check open page when clicking title of item", async ({ app }) => {
   //Actions
   await app.home.open();
   await app.home.header.clickHamburgerMenuButton();
@@ -123,13 +97,28 @@ test("Check open link in  the news result", async ({ app }) => {
   await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
   await app.newsPage.header.navigation.clickNewsTab();
   await app.newsPage.item.expectNewsItemsToBeVisible();
-  const newPage = await app.newsPage.item.clickFirstNewsItem();
+  const currentUrl = await app.page.url();
+  await app.newsPage.item.clickTitleItemAt({ number: 1});
 
   //Assert
-  await app.expectPageNotToHaveUrl(
-    newPage,
-    process.env.BASE_URL + "/en/news?query=ukraine&region=de-DE"
-  );
+  await app.expectPageNotToHaveUrl(app.page, currentUrl);
+});
+
+test("Check open page when clicking image of item", async ({ app }) => {
+  //Actions
+  await app.home.open();
+  await app.home.header.clickHamburgerMenuButton();
+  await app.home.header.hamburgerMenu.selectRegion("Germany");
+  await app.home.header.searchForm.inputSearchCriteria("ukraine");
+  await app.home.header.searchForm.clickEnterSearchField();
+  await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
+  await app.newsPage.header.navigation.clickNewsTab();
+  await app.newsPage.item.expectNewsItemsToBeVisible();
+  const currentUrl = await app.page.url();
+  await app.newsPage.item.clickImageItemAt({ number: 1 });
+
+  //Assert
+  await app.expectPageNotToHaveUrl(app.page, currentUrl);
 });
 
 test("Check next button in the paging", async ({ app }) => {
@@ -150,14 +139,8 @@ test("Check next button in the paging", async ({ app }) => {
   const newSearchResult = await app.newsPage.item.getTextContentNewsItems();
 
   //Assert
-  await app.newsPage.item.expectOldArrayNotToEqualNewArray(
-    oldSearchResult,
-    newSearchResult
-  );
-  await app.newsPage.item.expectListToHaveCount(
-    app.newsPage.item.newsItems,
-    10
-  );
+  await app.newsPage.item.expectOldArrayNotToEqualNewArray(oldSearchResult, newSearchResult);
+  await app.newsPage.item.expectNewsResultToHaveCount(10);
   await app.newsPage.pagination.expectPreviousButtonIsEnabled();
 });
 
@@ -172,23 +155,13 @@ test("Check prev button in the paging", async ({ app }) => {
   await app.newsPage.header.navigation.clickNewsTab();
   await app.newsPage.item.expectNewsItemsToBeVisible();
   await app.newsPage.pagination.clickNextButton();
-  await app.newsPage.header.badgeCounter.expectCharityBadgeCounterToHaveValue(
-    "3"
-  );
+  await app.newsPage.header.badgeCounter.expectCharityBadgeCounterToHaveValue("3");
   await app.newsPage.pagination.clickPrevButton();
-  await app.newsPage.header.badgeCounter.expectCharityBadgeCounterToHaveValue(
-    "4"
-  );
+  await app.newsPage.header.badgeCounter.expectCharityBadgeCounterToHaveValue("4");
 
   //Assert
-  await app.expectPageToHaveUrl(
-    app.page,
-    process.env.BASE_URL + "/en/news?query=news&region=de-DE&offset=0"
-  );
-  await app.newsPage.item.expectListToHaveCount(
-    app.newsPage.item.newsItems,
-    10
-  );
+  await app.expectPageToHaveUrl(app.page, process.env.BASE_URL + "/en/news?query=news&region=de-DE&offset=0");
+  await app.newsPage.item.expectNewsResultToHaveCount(10);
   await app.newsPage.pagination.expectPreviousButtonIsDisabled();
 });
 
@@ -204,8 +177,41 @@ test("Check that image of proxy cdn server", async ({ app }) => {
   await app.newsPage.item.expectNewsItemsToBeVisible();
 
   //Assert
-  await app.newsPage.item.proxyImage.expectAttributeSrcAllImagesToHave(
-    app.newsPage.item.allImage,
-    /cdn.swisscows.com/
-  );
+  await app.newsPage.item.expectAllImagesToHaveAttribute(/cdn.swisscows.com/);
+});
+
+test("Check design pagination component", async ({ app }, testInfo) => {
+  //Actions
+  await app.home.open();
+  await app.home.header.clickHamburgerMenuButton();
+  await app.home.header.hamburgerMenu.selectRegion("Germany");
+  await app.home.header.searchForm.inputSearchCriteria("news");
+  await app.home.header.searchForm.clickEnterSearchField();
+  await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
+  await app.newsPage.header.navigation.clickNewsTab();
+  await app.newsPage.item.expectNewsItemsToBeVisible();
+
+  //Assert
+  await app.newsPage.pagination.takeSnapshot(testInfo);
+});
+
+test("Check the info news article { site, description, date, title } in search result", async ({
+  app,
+}) => {
+  //Actions
+  await app.home.open();
+  await app.home.header.clickHamburgerMenuButton();
+  await app.home.header.hamburgerMenu.selectRegion("Germany");
+  await app.home.header.searchForm.inputSearchCriteria("news");
+  await app.home.header.searchForm.clickEnterSearchField();
+  await app.newsPage.header.navigation.clickNewsTab();
+  await app.newsPage.item.expectNewsItemsToBeVisible();
+
+  //Assert
+  await app.newsPage.item.expectItemDescriptionNotToBeEmpty()
+  await app.newsPage.item.expectNewsInfoToContain({
+    title: /\w+/,
+    site: /(?:www\.)?[a-zA-Z0-9-]+\.[a-zA-Z]{2,}(?:\/[^\s]*)?/,
+    date: /(\d+)\s*hours?\s+ago/,
+  });
 });

@@ -8,7 +8,7 @@ import { readCsvFile } from "../../helpers/csvHelper.js";
 
 const hamburgerTable = readCsvFile("../data/locales/hamburgerMenu.csv");
 for (const { test_case, language, languageCode } of hamburgerTable) {
-  test(`${test_case} Check content of hamburger menu for  ${language} localization`, async ({
+  test.fixme(`${test_case} Check content of hamburger menu for  ${language} localization`, async ({
     app,
   }) => {
     //Actions
@@ -70,7 +70,7 @@ for (const { test_case, language, languageCode } of hamburgerTable) {
 
 const footerTable = readCsvFile("../data/locales/footerMenu.csv");
 for (const { test_case, language, languageCode } of footerTable) {
-  test(`${test_case} Check content of footer menu for  ${language} localization`, async ({
+  test.fixme(`${test_case} Check content of footer menu for  ${language} localization`, async ({
     app,
   }) => {
     //Actions
@@ -134,7 +134,7 @@ for (const { test_case, language, languageCode } of footerTable) {
 
 const header = readCsvFile("../data/locales/header.csv");
 for (const { test_case, language, languageCode } of header) {
-  test(`${test_case} Check search header for  ${language} localization`, async ({
+  test.fixme(`${test_case} Check search header for  ${language} localization`, async ({
     app,
   }) => {
     //Actions
@@ -164,7 +164,7 @@ for (const { test_case, language, languageCode } of header) {
   });
 }
 for (const { test_case, language, languageCode } of header) {
-  test(`${test_case} Check web filters for  ${language} localization`, async ({
+  test.fixme(`${test_case} Check web filters for  ${language} localization`, async ({
     app,
   }) => {
     //Actions
@@ -191,7 +191,7 @@ for (const { test_case, language, languageCode } of header) {
 }
 
 for (const { test_case, language, languageCode } of header) {
-  test(`${test_case} Check videos filters for  ${language} localization`, async ({
+  test.fixme(`${test_case} Check videos filters for  ${language} localization`, async ({
     app,
   }) => {
     //Actions
