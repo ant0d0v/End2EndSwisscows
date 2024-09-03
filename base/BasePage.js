@@ -22,35 +22,12 @@ export default class BasePage extends BaseComponent {
 
   async waitUntilPageIsFullyLoaded() {
     await test.step("Wait for all network requests for images to complete", async () => {
-      await await this.page.waitForLoadState("networkidle");
+      await this.page.waitForLoadState("networkidle");
     });
   }
 
   //Verify
-  async expectColorsLinksWhenHovering(elements, color, expectedValue) {
-    await test.step('Expect the elements in the array to "have" css color with value', async () => {
-      await expect(elements).toHaveColorsWhenHovering(color, expectedValue);
-    });
-  }
 
-  async expectColorLinkWhenHovering(element, color, expectedValue) {
-    await test.step('Expect the element to "have" css color with value', async () => {
-      await element.hover();
-      await expect(element).toHaveCSS(color, expectedValue);
-    });
-  }
-  async expectPageToHaveText(body, text) {
-    await test.step('Expect the Element(s) "to have" a string', async () => {
-      await expect(body).toHaveText(text);
-    });
-  }
-  async expectLocatorToHaveText(elements, text) {
-    await test.step('Expect the Element(s) "to have" a string', async () => {
-      for (let element of await this.page.locator(elements).all()) {
-        await expect(element).toHaveText(text);
-      }
-    });
-  }
   async expectPageToHaveScreenshot(testInfo, elements, element) {
     await test.step(`Expect screen to be equal to the snapshot of page`, async () => {
       testInfo.snapshotSuffix = "";
@@ -61,10 +38,11 @@ export default class BasePage extends BaseComponent {
       }
       await expect(this.page).toHaveScreenshot(`${testInfo.title}.png`, {
         fullPage: true,
-        mask: [await element]
+        mask: [await element],
       });
     });
   }
+
   async expectPageToHaveScreenshotWithoutMask(testInfo, elements) {
     await test.step("Expect screen to be equal to the snapshot of page", async () => {
       testInfo.snapshotSuffix = "";
@@ -78,15 +56,5 @@ export default class BasePage extends BaseComponent {
       });
     });
   }
-
-  // async expectLocalizationTextContentOfPage(content,testInfo) {
-  //   await test
-  //     .step(`Validate pdf when clicking  Download payment slip`, async () => {
-  //        testInfo.snapshotSuffix = "";
-  //         expect(await this.page.textContent(`${content}.home`)).toMatchSnapshot({
-  //           name: `${testInfo.title}_.txt`,
-  //         });
-  //       })
-  // }
 }
 

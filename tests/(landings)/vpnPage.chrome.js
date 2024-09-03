@@ -1,6 +1,6 @@
 import { test } from "../../utils/fixtures.js";
-import testData from "../../data/lendings/vpn/testData.json"
-import constantsData from "../../data/project-constants/testData.json"
+import testData from "../../data/lendings/vpn/testData.json";
+import constantsData from "../../data/project-constants/testData.json";
 
 test.skip("Check design of the VPN page ", async ({ app }, testInfo) => {
   //Actions
@@ -15,8 +15,7 @@ test.skip("Check design dark theme of the  VPN page ", async ({
   //Actions
   await app.vpnPage.open();
   await app.vpnPage.header.clickHamburgerMenuButton();
-  await app.vpnPage.header.hamburgerMenu.clickThemeDropdown();
-  await app.vpnPage.header.hamburgerMenu.clickDarkTheme();
+  await app.vpnPage.header.hamburgerMenu.selectTheme("Dark");
 
   //Assert
   await app.vpnPage.expectScreenVpnPage(testInfo);
@@ -28,20 +27,20 @@ for (const {
   locatorId,
   expectedTitle,
 } of testData.allLinks) {
-test.skip(`${testID} Check navigation to corresponding pages for  '${locatorId}' link`, async ({
-  app,
-  context,
-}) => {
-  //Actions
-  await app.vpnPage.open();
+  test.skip(`${testID} Check navigation to corresponding pages for  '${locatorId}' link`, async ({
+    app,
+    context,
+  }) => {
+    //Actions
+    await app.vpnPage.open();
 
-  //Assert
-  await app.vpnPage.expectToBeOpenedNewPageAfterClick(
-    app.vpnPage.allLinks(locatorId),
-    expectedLink
-  );
-  await app.expectNewPageToHaveTitle(context, expectedTitle);
-});
+    //Assert
+    await app.vpnPage.expectToBeOpenedNewPageAfterClick(
+      app.vpnPage.allLinks(locatorId),
+      expectedLink
+    );
+    await app.expectNewPageToHaveTitle(context, expectedTitle);
+  });
 }
 for (const {
   testID,
@@ -49,22 +48,22 @@ for (const {
   locatorId,
   expectedTitle,
 } of testData.allLinksInSecondQuestions) {
-test.skip(`${testID} Check navigation to corresponding pages for  '${locatorId}' link in Second question`, async ({
-  app,
-  context,
-}) => {
-  //Actions
-  await app.vpnPage.open();
-  await app.vpnPage.scrollDownToQuestions();
-  await app.vpnPage.clickSecondQuestion();
+  test.skip(`${testID} Check navigation to corresponding pages for  '${locatorId}' link in Second question`, async ({
+    app,
+    context,
+  }) => {
+    //Actions
+    await app.vpnPage.open();
+    await app.vpnPage.scrollDownToQuestions();
+    await app.vpnPage.clickSecondQuestion();
 
-  //Assert
-  await app.vpnPage.expectToBeOpenedNewPageAfterClick(
-    app.vpnPage.allLinksInSecondQuestions(locatorId),
-    expectedLink
-  );
-  await app.expectNewPageToHaveTitle(context, expectedTitle);
-});
+    //Assert
+    await app.vpnPage.expectToBeOpenedNewPageAfterClick(
+      app.vpnPage.allLinksInSecondQuestions(locatorId),
+      expectedLink
+    );
+    await app.expectNewPageToHaveTitle(context, expectedTitle);
+  });
 }
 test.skip("Check that all questions were opened on the VPN page.", async ({
   app,

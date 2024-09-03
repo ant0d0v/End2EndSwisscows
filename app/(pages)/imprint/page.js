@@ -7,16 +7,16 @@ export default class ImprintPage extends BasePage {
 
     //Locators
     this.allContent = this.page.locator("main.imprint");
-    this.allImages = this.page.locator("main.imprint img:visible")
+    this.allImages = this.page.locator("main.imprint img:visible");
     this.companyInfoImage = this.page.locator(".company-info img");
   }
   //Actions
-  async open(){
-    await this.openPage("/imprint")
+  async open() {
+    await this.openPage("/imprint");
   }
-  
+
   //Verify
-  expectScreenImprintPage = async (testInfo) => {
+  takeSnapshot = async (testInfo) => {
     await this.expectPageToHaveScreenshotWithoutMask(testInfo, this.allImages);
   };
   expectCompanyInfoImageToBeVisible = async () => {

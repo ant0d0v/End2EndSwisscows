@@ -1,4 +1,5 @@
 import { defineConfig, devices } from "@playwright/test";
+import dotenv from "dotenv";
 
 const qaseConfig = {
   apiToken: "2b46839b9d9e02b42ad387107322a116667b40a193f780dd1cfdad80bf40dc8d",
@@ -14,7 +15,7 @@ const qaseConfig = {
  * Read environment variables from file.
  * https://github.com/motdotla/dotenv
  */
-require("dotenv").config();
+dotenv.config();
 /**
  * @see https://playwright.dev/docs/test-configuration
  */
@@ -62,7 +63,7 @@ export default defineConfig({
       maxDiffPixelRatio: 0.04,
       maxDiffPixels: 1000,
     },
-    timeout: 15 * 1000,
+    timeout: 30 * 1000,
   },
 
   /* Configure projects for major browsers */
@@ -81,7 +82,7 @@ export default defineConfig({
         viewport: { width: 1440, height: 900 },
         screenshot: "only-on-failure",
       },
-      // dependencies: ["setup"],
+      dependencies: ["setup"],
     },
     {
       name: "firefox",

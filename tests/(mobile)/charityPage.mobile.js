@@ -1,5 +1,5 @@
 import { test } from "../../utils/fixtures.js";
-import testData from "../../data/pages/social-projects/testData.json"
+import testData from "../../data/pages/social-projects/testData.json";
 
 test("Check that border is red and 2px when clicking on the Charity Haiti slider images", async ({
   app,
@@ -51,43 +51,21 @@ test("Check that the video is playing", async ({ app }) => {
   await app.charityPage.videoPlayer.expectVideoToPlay();
 });
 
-for (const {
-  testID,
-  expectedLink,
-  locatorId,
-  expectedTitle,
-} of testData.charityLinks) {
-  test(`${testID} Check navigation to corresponding page for  ${locatorId} link`, async ({
-    app,
-  }) => {
-    //Actions
-    await app.charityPage.open();
-    const currentPage = await app.charityPage.clickLinkOnThePage(locatorId);
-
-    //Assert
-    await app.expectHaveUrl(currentPage, expectedLink);
-    await app.expectHaveTitle(currentPage, expectedTitle);
-  });
-}
 test("Check design of the charity page ", async ({ app }, testInfo) => {
   //Actions
   await app.charityPage.open();
 
   //Assert
-  await app.charityPage.expectMapsToBeVisible();
-  await app.charityPage.expectScreenCharityPage(testInfo);
+  await app.charityPage.takeSnapshot(testInfo);
 });
 
 test("Check design dark theme of the charity page ", async ({
-  app,
-}, testInfo) => {
+  app }, testInfo) => {
   //Actions
   await app.charityPage.open();
-  await app.charityPage.expectMapsToBeVisible();
   await app.charityPage.header.clickHamburgerMenuButton();
-  await app.charityPage.header.hamburgerMenu.clickThemeDropdown();
-  await app.charityPage.header.hamburgerMenu.clickDarkTheme();
+  await app.charityPage.header.hamburgerMenu.selectTheme("Dark");
 
   //Assert
-  await app.charityPage.expectScreenCharityPage(testInfo);
+  await app.charityPage.takeSnapshot(testInfo);
 });

@@ -1,11 +1,11 @@
 import { test } from "../../utils/fixtures.js";
-import testData from "../../data/pages/default-search/testData.json"
+import testData from "../../data/pages/default-search/testData.json";
 
 test("Check design of the default search page ", async ({ app }, testInfo) => {
   //Actions
   await app.defaultSearchPage.open();
   //Assert
-  await app.defaultSearchPage.expectDefaultSearchPage(testInfo);
+  await app.defaultSearchPage.takeSnapshot(testInfo);
 });
 
 test("Check design dark theme of the default search page ", async ({
@@ -14,11 +14,10 @@ test("Check design dark theme of the default search page ", async ({
   //Actions
   await app.defaultSearchPage.open();
   await app.defaultSearchPage.header.clickHamburgerMenuButton();
-  await app.defaultSearchPage.header.hamburgerMenu.clickThemeDropdown();
-  await app.defaultSearchPage.header.hamburgerMenu.clickDarkTheme();
+  await app.defaultSearchPage.header.hamburgerMenu.selectTheme("Dark");
 
   //Assert
-  await app.defaultSearchPage.expectDefaultSearchPage(testInfo);
+  await app.defaultSearchPage.takeSnapshot(testInfo);
 });
 
 for (const {
@@ -40,7 +39,7 @@ for (const {
       );
 
     //Assert
-    await app.expectHaveUrl(currentPage, new RegExp(expectedLink));
+    await app.expectPageToHaveUrl(currentPage, new RegExp(expectedLink));
     await app.expectHaveTitle(currentPage, expectedTitle);
   });
 }

@@ -1,4 +1,4 @@
-import { expect,test} from "@playwright/test";
+import { expect, test } from "@playwright/test";
 // Base and utility imports
 import PageHolder from "../base/PageHolder.js";
 import Api from "../api/api.js";
@@ -34,61 +34,71 @@ import VpnPage from "../app/(landings)/vpn/page.js";
 import EmailPage from "../app/(landings)/email/page.js";
 
 // OAuth related page import
-import SignInPage from "../app/oauth/page.js";
+
 
 // Application class that uses all the imports
 export default class Application extends PageHolder {
-    constructor(page) {
-        super(page);
-        this.api = new Api(this.page.request);
-        this.home = new Home(this.page);
-        this.emailPage = new EmailPage(this.page);
-        this.vpnPage = new VpnPage(this.page);
-        this.aboutPage = new AboutPage(this.page);
-        this.imprintPage = new ImprintPage(this.page);
-        this.contactPage = new ContactPage(this.page);
-        this.donationPage = new DonationPage(this.page);
-        this.mediaEducationPage = new MediaEducationPage(this.page);
-        this.datacenterPage = new DatacenterPage(this.page);
-        this.charityPage = new CharityPage(this.page);
-        this.defaultSearchPage = new DefaultSearchPage(this.page);
-        this.shoppingPage = new ShoppingPage(this.page);
-        this.newsPage = new NewsPage(this.page);
-        this.webPage = new WebPage(this.page);
-        this.videoPage = new VideoPage(this.page);
-        this.musicPlaylistPage = new MusicPlaylistPage(this.page);
-        this.musicMyPage = new MusicMyPage(this.page);
-        this.musicPage = new MusicPage(this.page);
-        this.imagePage = new ImagePage(this.page);
-        this.imageMyPage = new ImageMyPage(this.page);
-        this.signInPage = new SignInPage(this.page);
-        this.route = new Route(this.page);
-        this.contactRoute = new ContactRoute(this.page);
-    }
-    //Actions
-    async waitForUrlContains(Url) {
-        await test.step(`Wait for url ${Url}`, async () => {
-            await this.page.waitForURL(Url);
-        })
-    }
+  constructor(page) {
+    super(page);
+    this.api = new Api(this.page.request);
+    this.home = new Home(this.page);
+    this.emailPage = new EmailPage(this.page);
+    this.vpnPage = new VpnPage(this.page);
+    this.aboutPage = new AboutPage(this.page);
+    this.imprintPage = new ImprintPage(this.page);
+    this.contactPage = new ContactPage(this.page);
+    this.donationPage = new DonationPage(this.page);
+    this.mediaEducationPage = new MediaEducationPage(this.page);
+    this.datacenterPage = new DatacenterPage(this.page);
+    this.charityPage = new CharityPage(this.page);
+    this.defaultSearchPage = new DefaultSearchPage(this.page);
+    this.shoppingPage = new ShoppingPage(this.page);
+    this.newsPage = new NewsPage(this.page);
+    this.webPage = new WebPage(this.page);
+    this.videoPage = new VideoPage(this.page);
+    this.musicPlaylistPage = new MusicPlaylistPage(this.page);
+    this.musicMyPage = new MusicMyPage(this.page);
+    this.musicPage = new MusicPage(this.page);
+    this.imagePage = new ImagePage(this.page);
+    this.imageMyPage = new ImageMyPage(this.page);
+    this.route = new Route(this.page);
+    this.contactRoute = new ContactRoute(this.page);
+  }
+  //Actions
+  async waitForUrlContains(Url) {
+    await test.step(`Wait for url ${Url}`, async () => {
+      await this.page.waitForURL(Url);
+    });
+  }
+  
+  //Verify
+  async expectNewPageToHaveTitle(context, expectedTitle) {
+    await test.step('Expect  page in new tab "to have" title', async () => {
+      await expect(context.pages()[1]).toHaveTitle(expectedTitle);
+    });
+  }
 
-    //Verify
-    async expectNewPageToHaveTitle(context, expectedTitle){
-        await expect(await context.pages()[1]).toHaveTitle(expectedTitle)
-    }
-    async expectHaveTitle(newPage, title) {
-        await test.step('Expect a title "to have" a substring', async () => {
-            await expect(newPage).toHaveTitle(title);
-        });
-    }
-    async expectHaveUrl(newPage, url) {
-        await test.step('Expect a URL "to have" a string', async () => {
-          await expect(newPage).toHaveURL(url);
-        });
-    }
-    async expectNotToHaveUrl(newPage, url) {
-        await test.step('Expect a URL "not to have" a string', async () => {
-          await expect(newPage).not.toHaveURL(url)
-        });
-    }  
+  async expectHaveTitle(newPage, title) {
+    await test.step('Expect page "to have" title', async () => {
+      await expect(newPage).toHaveTitle(title);
+    });
+  }
+
+  async expectPageToHaveUrl(newPage, url) {
+    await test.step('Expect page  "to have"  URL', async () => {
+      await expect(newPage).toHaveURL(url);
+    });
+  }
+
+  async expectPageNotToHaveUrl(newPage, url) {
+    await test.step('Expect page  "not to have"  URL', async () => {
+      await expect(newPage).not.toHaveURL(url);
+    });
+  }
+
+  async expectPageNotToHaveTitle(newPage, title) {
+    await test.step('Expect page "not  to have" title', async () => {
+      await expect(newPage).not.toHaveTitle(title);
+    });
+  }
 }

@@ -2,56 +2,69 @@ import BaseComponent from "../../../base/BaseComponent.js";
 export default class Track extends BaseComponent {
   constructor(page) {
     super(page);
-  
-    const root = "article.item--audio";
-   //Locators
-   this.tracksName = this.page.locator(`${root} h2`)
-   this.track = (index) => this.page.locator(`${root}`).nth(index - 1)
-   this.lastTrack = (id) => this.page.locator(`${root}`).nth(`${id}`)
-   this.favoriteButton = (index) => this.page.locator("article button.favorite").nth(index - 1)
-   this.allFavoriteButtons = this.page.locator(".button.favorite:nth-child(-n+20)")
-   this.valueProgressBar = (index) => this.page.locator(`${root} div.progress-bar div.progress`).nth(index - 1)
-   this.timeLine = (index) => this.page.locator(`${root} div.timeline`).nth(index - 1)
-   this.playButton = (index) => this.page.locator(`${root} button.play-pause use`).nth(index - 1)
-   this.allPlayButtons = this.page.locator(`${root} button.play-pause use`)
-   this.allImages = this.page.locator(`${root} img`)
-   
+
+    //Locators
+    this.root = this.page.locator("article.item.audio-object");
+    this.lastTrack = this.page.locator("article.item.audio-object:last-child");
+    this.title = this.root.locator(`.title`);
+    this.favoriteButtons = this.page.locator('button[name ="like"]');
+    this.allFavoriteButtons = this.page.locator(
+      'button[name ="like"]:nth-child(-n+20)'
+    );
+    this.progress = this.root.locator(`.progress`);
+    this.timeLine = this.root.locator(`.timeline`);
+    this.playButtons = this.page.locator(`button[name ="play"]`);
+    this.images = this.root.locator(`img`);
   }
   //Action
-  async clickPlayButtonNumberTrack (index){
-    await this.clickElement( this.playButton(index),
-      `play button of track with index${index}`
+  async clickPlayButtonAt(track = { number: index }) {
+    await this.clickElement(
+      this.playButtons.nth(track.number - 1),
+      `play button of track with index${track.number - 1}`
     );
-  };
-  async clickTimeLineNumberTrack(index){
-    await this.clickElement( this.timeLine(index),
-      `Time Line of track with index${index}`
+  }
+
+  async clickTimeLineAt(track = { number: index }) {
+    await this.clickElement(
+      this.timeLine.nth(track.number - 1),
+      `Time Line of track with index${track.number - 1}`
     );
-  };
-  async clickPauseButtonNumberTrack(index){
-    await this.clickElement(this.playButton(index),
-      `pause button of track with index${index}`
+  }
+
+  async clickPauseButtonAt(track = { number: index }) {
+    await this.clickElement(
+      this.playButtons.nth(track.number - 1),
+      `pause button of track with index${track.number - 1}`
     );
-  };
-  async clickFavoriteButtonNumberTrack (index) {
-    await this.clickElement(this.favoriteButton(index),
-      `favorite button of track with index${index}`
+  }
+
+  async clickFavoriteButtonAt(track = { number: index }) {
+    await this.clickElement(
+      this.favoriteButtons.nth(track.number - 1),
+      `favorite button of track with index${track.number - 1}`
     );
-  };
-  async clickFavoriteButtonNumberTrackAndGetResponse(index){
+  }
+
+  async clickFavoriteButtonAtAndGetResponse(track = { number: index }) {
     let response;
-    const responsePromise = this.page.waitForResponse(`${ process.env.API_URL}/music/tracks/my`)
-    await this.clickElement(this.favoriteButton(index),
-      `favorite button of track with index${index}`
+    const responsePromise = this.page.waitForResponse(
+      `${process.env.API_URL}/music/tracks/my`
+    );
+    await this.clickElement(
+      this.favoriteButtons.nth(track.number - 1),
+      `favorite button of track with index${track.number - 1}`
     );
     response = await responsePromise;
     const responseBody = await response.json();
     return responseBody.id;
-  };
-  async clickAllFavoriteButtonsOfTracksAndGetResponses(){
+  }
+
+  async clickAllFavoriteButtonsOfTracksAndGetResponses() {
     let responseIDs = [];
     for (const favoriteButton of await this.allFavoriteButtons.all()) {
-      const responsePromise = this.page.waitForResponse(`${process.env.API_URL}/music/tracks/my`);
+      const responsePromise = this.page.waitForResponse(
+        `${process.env.API_URL}/music/tracks/my`
+      );
       await this.clickElement(favoriteButton, `favorite button of track`);
       const response = await responsePromise;
       const responseBody = await response.json();
@@ -59,58 +72,99 @@ export default class Track extends BaseComponent {
     }
     return responseIDs;
   }
-  async scrollByVisibleTrackNumber(number){
-    for(let i = 0;i < number ; i++){
-    await this.scrollByVisibleElement(this.lastTrack(i), "last track");
+
+  async scrollByVisibleLastTrack() {
+    let count = 20
+    while (count <= 100) {
+      await this.scrollByVisibleElement(this.root.nth(count - 1));
+      count += 20
     }
   }
-  
+
   //Verify
-  async expectTracksCount(value){
-    await this.expectListToHaveCount(this.tracksName, value)
-  };
-  async expectMusicTracksToBeVisible(){
-    await this.page.waitForSelector("article.item--audio h2",{ state: 'visible' })
-    await this.expectAreElementsInListDisplayed(this.tracksName)
-  };
-  async expectFirstTrackFavoriteButtonIsActive (){
-    await this.expectAttributeClassOfElement(this.favoriteButton(1), /active/)
-  };
-  async expectFirstTrackFavoriteButtonIsNotActive (){
-    await this.expectAttributeClassOfElement(this.favoriteButton(1), "button favorite")
-  };
+  async expectTracksCount(value) {
+    await this.expectListToHaveCount(this.title, value);
+  }
 
-  async expectFirstTrackButtonIsPause (){
-    await this.expectAttributeToHaveValue(this.playButton(1),"xlink:href", /pause/)
-  };
-  async expectFirstTrackButtonIsPlay(){
-    await this.expectAttributeToHaveValue(this.playButton(1),"xlink:href", /play/)
-  };
+  async expectMusicTracksToBeVisible() {
+    await this.expectAreElementsInListDisplayed(this.title);
+  }
+  async expectImageTracksToBeVisible() {
+    await this.expectAreElementsInListDisplayed(this.images);
+  }
 
-  async expectFirstTrackIsNotPlaying (){
-    await this.expectAttributeClassOfElement(this.track(1), "item item--audio active")
-  };
-  async expectFirstTrackIsNotActive (){
-    await this.expectAttributeClassOfElement(this.track(1), "item item--audio")
-  };
-  async expectFirstTrackIsPlaying (){
-    await this.expectAttributeClassOfElement(this.track(1),  /active playing/)
-  };
-  async expectSecondTrackIsNotActive (){
-    await this.expectAttributeClassOfElement(this.track(2), "item item--audio")
-  };
-  async expectSecondTrackIsPlaying (){
-    await this.expectAttributeClassOfElement(this.track(2),  /active playing/)
-  };
+  async expectToBeActiveFavoriteButtonAt(track = { number: index }) {
+    await this.expectAttributeClassOfElement(
+      this.favoriteButtons.nth(track.number - 1),
+      /active/
+    );
+  }
 
-  async expectProgressBarOfFirstTrackToHaveTimeValue (value){
-    await this.expectAttributeToHaveValue(this.valueProgressBar(1), "style", value) 
-  };
-  async expectTracksNameToContainText(value){
-    await this.expectTextsToContainSearchCriteria(this.tracksName, value)
-  };
+  async expectNotToBeActiveFavoriteButtonAt(track = { number: index }) {
+    await this.expectAttributeClassOfElement(
+      this.favoriteButtons.nth(track.number - 1),
+      "button"
+    );
+  }
 
-  async expectImageToHaveWight (property, value){
-    await this.expectElementsToHaveJSProperty(this.allImages , property, value);
+  async expectNotToBePlayingTrackAt(track = { number: index }) {
+    await this.expectAttributeClassOfElement(
+      this.root.nth(track.number - 1),
+      "item audio-object active"
+    );
+  }
+
+  async expectToBePlayingTrackAt(track = { number: index }) {
+    await this.expectAttributeClassOfElement(
+      this.root.nth(track.number - 1),
+      /active playing/
+    );
+  }
+
+  async expectNotToBeActiveTrackAt(track = { number: index }) {
+    await this.expectAttributeClassOfElement(
+      this.root.nth(track.number - 1),
+      "item audio-object"
+    );
+  }
+
+  async expectProgressToHave(
+    expected = {
+      trackNumber: index,
+      value: string,
+    }
+  ) {
+    await this.expectAttributeToHaveValue(
+      this.progress.nth(expected.trackNumber - 1),
+      "style",
+      new RegExp("width: " + expected.value)
+    );
+  }
+
+  async expectTracksNameToContainText(value) {
+    await this.expectTextsToContainSearchCriteria(this.title, value);
+  }
+
+  async expectImageToHavePropetry(
+    expectedProperty = { width: value, height: value }
+  ) {
+    await this.expectElementsToHaveJSProperty(
+      this.images,
+      "width",
+      expectedProperty.width
+    );
+    await this.expectElementsToHaveJSProperty(
+      this.images,
+      "height",
+      expectedProperty.height
+    );
+  }
+
+  takeSnapshot = async (testInfo, track = { number: value}) => {
+    await this.expectPageElementToHaveScreenshot(
+      this.playButtons.nth(track.number - 1),
+      this.root,
+      testInfo
+    );
   };
 }

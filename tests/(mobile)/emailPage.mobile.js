@@ -14,8 +14,7 @@ test.skip("Check design dark theme of the  Email page ", async ({
   //Actions
   await app.emailPage.open();
   await app.emailPage.header.clickHamburgerMenuButton();
-  await app.emailPage.header.hamburgerMenu.clickThemeDropdown();
-  await app.emailPage.header.hamburgerMenu.clickDarkTheme();
+  await app.emailPage.header.hamburgerMenu.selectTheme("Dark");
 
   //Assert
   await app.emailPage.expectScreenEmailPage(testInfo);

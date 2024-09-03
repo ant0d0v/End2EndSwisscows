@@ -6,8 +6,8 @@ export default class VideoPlayer extends BaseComponent {
     super(page);
     //Locators
     this.videoPlayer = this.page.locator("video");
-    this.playButtonYouTubeFrame = this.page.frameLocator('iframe').getByLabel('Play', { exact: true })
-    this.currentTimeYouTubeFrame = this.page.frameLocator('iframe').locator("span.ytp-time-current")
+    this.playButton = this.page.frameLocator('iframe').getByLabel('Play').first()
+    this.currentTime = this.page.frameLocator('iframe').locator("span.ytp-time-current")
   }
 
   async expectVideoToPlay() {
@@ -24,8 +24,7 @@ export default class VideoPlayer extends BaseComponent {
   }
 
   async expectYouTubeVideoToPlay() {
-    await this.clickElement(this.playButtonYouTubeFrame);
-    await this.expectTextsToContains(this.currentTimeYouTubeFrame, "0:01");
+    await this.clickElement(this.playButton);
+    await this.expectTextsToContains(this.currentTime, /^0:0[2-9]$/);
   }
-  
 }

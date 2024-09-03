@@ -1,19 +1,23 @@
 import BasePage from "../../../../base/BasePage.js";
 import { expect } from "@playwright/test";
-import ItemDetails from "../ItemDetails.js";
-import Item from "../Item.js";
+import Details from "../ImageObjectDetails.js";
+import Item from "../ImageObject.js";
 import Header from "../../Header.js";
+import Error from "../../Error.js";
 
 export default class ImageMyPage extends BasePage {
   constructor(page) {
     super(page);
     this.item = new Item(page);
-    this.itemDetails = new ItemDetails(page);
-    this.header  = new Header(page);
+    this.details = new Details(page);
+    this.header = new Header(page);
+    this.error = new Error(page);
   }
   //Verify
-  expectPageUrlToHaveParameter = async (query) => {
-    const expectedUrlPattern = new RegExp(`${process.env.BASE_URL}/en/images/my\\${query}`);
-    await expect(this.page).toHaveURL(expectedUrlPattern);
+  waitUrlToBeChanged = async () => {
+    const expectedUrlPattern = new RegExp(
+      `${process.env.BASE_URL}/en/images\\?query=*`
+    );
+    await expect(this.page).not.toHaveURL(expectedUrlPattern);
   };
 }

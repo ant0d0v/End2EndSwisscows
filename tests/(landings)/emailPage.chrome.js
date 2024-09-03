@@ -1,6 +1,6 @@
 import { test } from "../../utils/fixtures.js";
-import testData from "../../data/lendings/email/testData.json"
-import constantsData from "../../data/project-constants/testData.json"
+import testData from "../../data/lendings/email/testData.json";
+import constantsData from "../../data/project-constants/testData.json";
 
 test.skip("Check design of the Email page ", async ({ app }, testInfo) => {
   //Actions
@@ -16,8 +16,7 @@ test.skip("Check design dark theme of the  Email page ", async ({
   //Actions
   await app.emailPage.open();
   await app.emailPage.header.clickHamburgerMenuButton();
-  await app.emailPage.header.hamburgerMenu.clickThemeDropdown();
-  await app.emailPage.header.hamburgerMenu.clickDarkTheme();
+  await app.emailPage.header.hamburgerMenu.selectTheme("Dark");
 
   //Assert
   await app.emailPage.expectScreenEmailPage(testInfo);
@@ -53,21 +52,21 @@ for (const {
   buttonName,
   expectedTitle,
 } of testData.subscriptionLinks) {
-test.skip(`${testID} Check navigation to corresponding pages for ${buttonName} link`, async ({
-  app,
-  context,
-}) => {
-  //Actions
-  await app.emailPage.open();
+  test.skip(`${testID} Check navigation to corresponding pages for ${buttonName} link`, async ({
+    app,
+    context,
+  }) => {
+    //Actions
+    await app.emailPage.open();
 
-  //Assert
-  await app.emailPage.expectToBeOpenedNewPageAfterClick(
-    app.emailPage.subscriptionLinks(locatorId, buttonName),
-    expectedUrl
-  );
+    //Assert
+    await app.emailPage.expectToBeOpenedNewPageAfterClick(
+      app.emailPage.subscriptionLinks(locatorId, buttonName),
+      expectedUrl
+    );
 
-  await app.expectNewPageToHaveTitle(context, expectedTitle);
-});
+    await app.expectNewPageToHaveTitle(context, expectedTitle);
+  });
 }
 
 test.skip("Check that buttons have hover effect on email page", async ({
@@ -83,4 +82,3 @@ test.skip("Check that buttons have hover effect on email page", async ({
     "rgb(191, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box"
   );
 });
-

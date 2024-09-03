@@ -3,6 +3,7 @@ import Player from "../Player.js";
 import Track from "../Track.js";
 import Header from "../../Header.js";
 import Error from "../../Error.js";
+import Preloader from "../../../../components/Preloader.js";
 import { expect } from "@playwright/test";
 
 export default class MusicMyPage extends BasePage {
@@ -10,7 +11,8 @@ export default class MusicMyPage extends BasePage {
     super(page);
     this.player = new Player(page);
     this.track = new Track(page);
-    this.header  = new Header(page);
+    this.header = new Header(page);
+    this.preloader = new Preloader(page);
     this.error = new Error(page)
     
     //Locators 

@@ -3,25 +3,23 @@ export default class Icon extends BaseComponent {
   constructor(page) {
     super(page);
     //Locators
-
-    this.paymentMethods = this.page.locator(".item--product .payment-methods .icon")
-    this.paymentMethodsInProductDetails = this.page.locator(".section.payment-methods .icon")
-    this.offerIconInProductDetails = this.page.locator(".item--offer img")
+  
   }
   //Actions
+  
 
   // Verify
-  async expectPaymentIconToHaveWidthAndHeight(value) {
-    await this.expectElementsToHaveJSProperty(this.paymentMethods, "clientWidth", value)
-    await this.expectElementsToHaveJSProperty(this.paymentMethods, "clientHeight", value)
+ 
+  async expectIconsToHaveProperty(element, width, height) {
+    await this.expectElementsToHaveJSProperty(element, "clientWidth", width);
+    await this.expectElementsToHaveJSProperty(element, "clientHeight", height);
   }
-  async expectPaymentIconDetailsToBeVisible() {
-    await this.expectAreElementsInListDisplayed(this.paymentMethodsInProductDetails)
-  }
-  async expectOfferIconsDetailsToBeVisible() {
-    for (const icon of await this.offerIconInProductDetails.all()) {
-      await icon.scrollIntoViewIfNeeded();
-      await this.expectElementToBeVisible(icon)
-    }
+
+  takeSnapshotIconAt = async (testInfo, element, index ) => {
+    await this.expectPageElementToHaveScreenshot(
+      element.nth(index - 1),
+      element,
+      testInfo
+    );
   }
 }

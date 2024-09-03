@@ -7,6 +7,7 @@ import Error from "../Error.js";
 
 import BasePage from "../../../base/BasePage.js";
 import Header from "../Header.js";
+import Skeleton from "./Skeleton.js";
 
 export default class ShoppingPage extends BasePage {
   constructor(page) {
@@ -17,7 +18,8 @@ export default class ShoppingPage extends BasePage {
     this.details = new Details(page);
     this.item = new Item(page);
     this.header  = new Header(page);
-    this.error  = new Error(page);
+    this.error = new Error(page);
+    this.skeleton = new Skeleton(page);
   }
   //Actions
   

@@ -62,38 +62,5 @@
             "locatorId" : "Українська",
             "expectedTitle" :"Swisscows - Ваша приватна та анонімна пошукова система"
         }
-    ],
-
-    "donationPdfLinks": [
-        {
-            "testID": "1",
-            "pdfLink": "https://dev.swisscows.com/docs/Swisscows_Donation_CHF_t.pdf",
-            "locatorId" : "CHF:Download payment slip"
-        },
-        {
-            "testID": "2",
-            "pdfLink": "https://dev.swisscows.com/docs/Swisscows_Donation_EUR_t.pdf",
-            "locatorId" : "EURO:Download payment slip"
-        }
-    ],
-    "donationLinks": [
-        {
-            "testID": "1",
-            "expectedLink": "https://dev.swisscows.com/en/anonymous-vpn",
-            "locatorId" : "Swisscows VPN",
-            "expectedTitle": "Surf anonymously with VPN - Secure web surfing with Swisscows"
-        },
-        {
-            "testID": "2",
-            "expectedLink": "https://teleguard.com/en",
-            "locatorId" : "TeleGuard",
-            "expectedTitle": "TeleGuard - secure messenger from Switzerland"
-        },
-        {
-            "testID": "3",
-            "expectedLink": "https://dev.swisscows.com/en/social-projects",
-            "locatorId" : "here",
-            "expectedTitle": "Social projects - We support social projects"
-        }
     ]
 }

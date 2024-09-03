@@ -5,27 +5,56 @@ import Icon from "../../../components/Icon.js";
 export default class Offer extends BaseComponent {
   constructor(page) {
     super(page);
-    this.icon = new Icon(page)
+    this.icon = new Icon(page);
     //Locators
-    this.root = this.page.locator(".item--offer")
-    this.price = this.root.locator(".price-info .price b")
-    this.name = this.root.locator(".name")
-    this.priceShipping = this.root.locator(".price-info .price.shipping")
+    this.root = this.page.locator(".offer");
+    this.price = this.root.locator(".pricing .price b");
+    this.siteName = this.root.locator(".site");
+    this.priceShipping = this.root.locator(".shipping .price");
+    this.buyButton = this.page.getByRole("link", { name: "Buy" });
+    this.trustedIcon = this.root.locator(".trusted svg");
+    this.availability = this.root.locator(".availability");
+  }
+  //Actions
+  async clickBuyButtonAt(buttons = { number: index }) {
+    await this.clickElement(
+      this.buyButton.nth(buttons.number - 1),
+      "buy button"
+    );
   }
 
   //Verify
-  async expectOfferInfoToContain(expectedName, expectedPriceShipping) {
-    await this.expectTextsToContains(this.price, expectedName);
-    await this.expectTextsToContains(this.priceShipping, expectedPriceShipping);
+  async expectOfferInfoToContain(
+    expected = { siteName: value, pricing: value, priceShipping: value, availability: value }
+  ) {
+    await this.expectTextsToContains(this.siteName, expected.siteName);
+    await this.expectTextsToContains(this.price, expected.pricing);
+    await this.expectTextsToContains(this.priceShipping, expected.priceShipping);
+    await this.expectTextsToContains(this.availability, expected.availability);
   }
-  expectPriceNotToBeEmpty = async () => {
-    await this.expectListElementsNotToBeEmpty(this.price)
-  };
-  expectNameNotToBeEmpty = async () => {
-    await this.expectListElementsNotToBeEmpty(this.name)
-  };
 
-  async expectNewPageNotToHaveUrlAfterClickByOffer(index, expectedUrl){
-    await this.expectNewPageNotToHaveUrlAfterClick(this.name.nth(index - 1), expectedUrl)
+  async expectTrustedIconsToBeVisible() {
+    await this.expectAreElementsInListDisplayed(this.trustedIcon);
   }
+
+  async expectTrustedIconsToHaveProperty(
+    expected = {
+      width: value,
+      height: value,
+    }
+  ) {
+    await this.icon.expectIconsToHaveProperty(
+      this.trustedIcon,
+      expected.width,
+      expected.height
+    );
+  }
+
+  takeSnapshot = async (testInfo, expected = { buttonNumber: value }) => {
+    await this.expectPageElementToHaveScreenshot(
+      this.buyButton.nth(expected.buttonNumber - 1),
+      this.buyButton,
+      testInfo
+    );
+  };
 }

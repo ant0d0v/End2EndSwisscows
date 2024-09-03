@@ -1,70 +1,112 @@
 import BaseComponent from "../../../base/BaseComponent.js";
 import Icon from "../../../components/Icon.js";
 
-
 export default class Item extends BaseComponent {
   constructor(page) {
     super(page);
-    this.icon = new Icon(page)
+    this.icon = new Icon(page);
+    
     //Locators
-   this.root = this.page.locator(".item--product");
-   this.itemName = this.root.locator(".title")
-   this.itemDescription = this.root.locator(".description")
-   this.itemPricing = this.root.locator(".price b")
-   this.itemLink = this.root.locator(".link")
-   this.itemBrand = this.root.locator(".brand")
-   this.itemImage = this.root.locator(".media img")
-   this.itemMedia = this.root.locator(".media")
+    this.root = this.page.locator(".item.product");
+    this.name = this.root.locator(".title");
+    this.description = this.root.locator(".description");
+    this.pricing = this.root.locator(".price b");
+    this.link = this.root.locator(".link");
+    this.brand = this.root.locator(".brand");
+    this.images = this.root.locator(".thumbnail img");
+    this.thumbnails = this.root.locator(".thumbnail");
+    this.paymentMethodsIcons = this.page.locator(".payment-methods .icon");
+  }
 
-  }
-  getPriceAllItems  = async () => {
-    const priceItems = []
-    for(const item of await this.itemPricing.all()){
-      const text = await item.innerText()
-      const amount = parseFloat(text.slice(1))
-      priceItems.push(amount)
+  getPriceAllItems = async () => {
+    const priceItems = [];
+    for (const item of await this.pricing.all()) {
+      const text = await item.innerText();
+      const amount = parseFloat(text.slice(1));
+      priceItems.push(amount);
     }
-    return priceItems
-  }
+    return priceItems;
+  };
   getTextContentProductItems = async () => {
     const texts = [];
-    const elements = await this.itemName.all();
+    const elements = await this.name.all();
     for (const element of elements) {
-        texts.push(await element.textContent());
+      texts.push(await element.textContent());
     }
     return texts;
+  };
+  async selectProductAt(products = { number: value }) {
+    const items = await this.name.all();
+    await items[products.number - 1].click();
   }
-  async openProductDetailsByItem(index) {
-    const items = await this.itemName.all();
-    await items[index - 1].click(); 
-   }
   async expectItemsListToHaveCount(value) {
-    await this.expectListToHaveCount(this.root, value)
-   }
+    await this.expectListToHaveCount(this.root, value);
+  }
   //Verify
-  async expectInfoProductToContain(expectedName, expectedPricing, expectedLink, expectedBrand) {
-      await this.expectTextsToContains(this.itemName, expectedName);
-      await this.expectTextsToContains(this.itemPricing, expectedPricing);
-      await this.expectTextsToContains(this.itemLink, expectedLink)
-      await this.expectTextsToContains(this.itemBrand, expectedBrand)
+  async expectPaymentIconToBeVisible() {
+    await this.icon.expectAreElementsInListDisplayed(this.paymentMethodsIcons);
+  }
+  async expectPaymentIconsToBeGreaterThan(value) {
+    await this.icon.expectListToBeGreaterThanOrEqual(
+      this.paymentMethodsIcons,
+      value
+    );
+  }
+
+  async expectInfoProductToContain(
+    expectedInfo = {
+      name: value,
+      pricing: value,
+      link: value,
+      brand: value,
+    }
+  ) {
+    await this.expectTextsToContains(this.name, expectedInfo.name);
+    await this.expectTextsToContains(this.pricing, expectedInfo.pricing);
+    await this.expectTextsToContains(this.link, expectedInfo.link);
+    await this.expectTextsToContains(this.brand, expectedInfo.brand);
   }
   expectShoppingItemsToBeVisible = async () => {
-    await this.page.waitForSelector("article.item--product h2",{ state: 'visible' })
-    await this.expectAreElementsInListDisplayed(this.itemName)
+    await this.expectAreElementsInListDisplayed(this.name);
   };
   expectDescriptionItemsNotToBeEmpty = async () => {
-    await this.expectListElementsNotToBeEmpty(this.itemDescription)
+    await this.expectListElementsNotToBeEmpty(this.description);
   };
   async expectBrandProductToContain(expectedBrand) {
-    await this.expectTextsToContains(this.itemBrand, expectedBrand);
+    await this.expectTextsToContains(this.brand, expectedBrand);
   }
   async expectProductImagesToBeVisible() {
-    await this.expectAreElementsInListDisplayed(this.itemImage);
+    await this.expectAreElementsInListDisplayed(this.images);
   }
-  async expectProductMediaToHaveWidth(value) {
-    await this.expectElementsToHaveJSProperty(this.itemMedia, "offsetWidth", value);
+
+  async expectPaymentIconToHaveProperty(
+    expected = {
+      width: value,
+      height: value,
+    }
+  ) {
+    await this.icon.expectIconsToHaveProperty(
+      this.paymentMethodsIcons,
+      expected.width,
+      expected.height
+    );
   }
-  async expectProductMediaToHaveHeight(value) {
-    await this.expectElementsToHaveJSProperty(this.itemMedia, " offsetHeight", value);
+
+  async expectProductMediaToHaveProperty(
+    expected = {
+      width: value,
+      height: value,
+    }
+  ) {
+    await this.expectElementsToHaveJSProperty(
+      this.thumbnails,
+      "offsetWidth",
+      expected.width
+    );
+    await this.expectElementsToHaveJSProperty(
+      this.thumbnails,
+      "offsetHeight",
+      expected.height
+    );
   }
 }

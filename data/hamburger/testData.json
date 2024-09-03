@@ -296,7 +296,7 @@
             "testID": "1",
             "expectedLink": "https://dev.swisscows.com/en/set-as-startpage",
             "locatorId" : "Set as Startpage",
-            "expectedTitle" : "Set Swisscows as start page"
+            "expectedTitle" : "Set Swisscows as your homepage - Set now"
         },
         {
             "testID": "2",
@@ -344,7 +344,7 @@
             "testID": "9",
             "expectedLink": "https://dev.swisscows.com/en/donation",
             "locatorId" : "Donation",
-            "expectedTitle" :"Search engine without tracking - Donations"
+            "expectedTitle" :"Support the search engine Swisscows with your donation"
         }
     ],
     "expectedTextsHamburgerLinks": [

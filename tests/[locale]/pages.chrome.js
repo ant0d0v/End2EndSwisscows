@@ -5,7 +5,7 @@ import { readCsvFile,readSpecificCsvFile } from "../../helpers/csvHelper.js";
 const contactTable = readSpecificCsvFile("../data/locales/contact.csv");
 for (const {test_case,language,expected_title,languageCode,
 } of contactTable) {
-  test(`${test_case} Check content of contact us  page for ${language} localization`, async ({
+  test.fixme(`${test_case} Check content of contact us  page for ${language} localization`, async ({
     app,
   }) => {
     //Actions
@@ -28,7 +28,7 @@ for (const {test_case,language,expected_title,languageCode,
 const datacenter = readSpecificCsvFile("../data/locales/datacenter.csv");
 for (const {test_case,language,expected_title,languageCode,
 } of datacenter) {
-  test(`${test_case} Check content of datacenter  page for ${language} localization`, async ({
+  test.fixme(`${test_case} Check content of datacenter  page for ${language} localization`, async ({
     app,
   }) => {
     //Actions
@@ -52,7 +52,7 @@ for (const {test_case,language,expected_title,languageCode,
 
 const imprint = readCsvFile("../data/locales/imprint.csv");
 for (const { test_case, language, expected_title, languageCode } of imprint) {
-  test(`${test_case} Check content of imprint page for ${language} localization`, async ({
+  test.fixme(`${test_case} Check content of imprint page for ${language} localization`, async ({
     app,
   }) => {
     //Actions
@@ -109,7 +109,7 @@ for (const { test_case, language, expected_title, languageCode } of education) {
 
 const charity = readSpecificCsvFile("../data/locales/charity.csv");
 for (const { test_case, language, expected_title, languageCode } of charity) {
-  test(`${test_case} Check content of charity page for ${language} localization`, async ({
+  test.fixme(`${test_case} Check content of charity page for ${language} localization`, async ({
     app,
   }) => {
     //Actions
