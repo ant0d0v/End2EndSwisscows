@@ -5,7 +5,7 @@ test("Check next and prev buttons in the video widget", async ({ app }) => {
   await app.home.open();
   await app.home.header.clickHamburgerMenuButton();
   await app.home.header.hamburgerMenu.selectRegion("Germany");
-  await app.home.header.searchForm.inputSearchCriteria("iphone");
+  await app.home.header.searchForm.inputSearchCriteria("parfums");
   await app.home.header.searchForm.clickEnterSearchField();
   await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
   await app.webPage.videoCollection.waitUntilWidgetToBeVisible();

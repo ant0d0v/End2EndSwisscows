@@ -13,7 +13,7 @@ test("Check design header of product ads", async ({ app }, testInfo) => {
   await app.webPage.advertiserProductCollection.takeSnapshot(testInfo);
 });
 
-test("Check price and shipping of product ads", async ({ app }) => {
+test("Check price and shipping of product ads in widget", async ({ app }) => {
   //Actions
   await app.home.open();
   await app.home.header.clickHamburgerMenuButton();
@@ -62,7 +62,7 @@ test("Check open advertising ", async ({ app }) => {
   await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
   await app.webPage.advertiserProductCollection.waitUntilProductAdsToBeVisible();
   const oldUrl = await app.page.url();
-  await app.webPage.advertiserProductCollection.clickProductAt(1);
+  await app.webPage.advertiserProductCollection.clickProductAt({ number: 1 });
 
   //Assert
   await app.expectPageNotToHaveUrl(app.page, oldUrl);
@@ -101,4 +101,41 @@ test("Check open new page when clicking ads link", async ({ app }) => {
   await app.webPage.advertiserProductCollection.expectToBeOpenedNewPageAfterClickAdsLink(
     { expectedUrl: /privacy.microsoft.com/ }
   );
+});
+
+
+test("Check {title, site, callout, ad} of product ads item", async ({ app }) => {
+  //Actions
+  await app.home.open();
+  await app.home.header.clickHamburgerMenuButton();
+  await app.home.header.hamburgerMenu.selectRegion("Germany");
+  await app.home.header.searchForm.inputSearchCriteria("lacoste parfum");
+  await app.home.header.searchForm.clickEnterSearchField();
+  await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
+  await app.webPage.advertiser.waitUntilAdvertiserToBeVisible();
+
+  //Assert
+  await app.webPage.advertiser.expectAdvertiserDescriptionNotToBeEmpty()
+  await app.webPage.advertiser.expectInfoAdvertiserToContain({
+    title: /\w+/,
+    site: /\w+/,
+    callout: /\w+/,
+    ad: /Ad/,
+  });
+});
+
+test("Check open adverster web page item", async ({ app }) => {
+  //Actions
+  await app.home.open();
+  await app.home.header.clickHamburgerMenuButton();
+  await app.home.header.hamburgerMenu.selectRegion("Germany");
+  await app.home.header.searchForm.inputSearchCriteria("lacoste parfum");
+  await app.home.header.searchForm.clickEnterSearchField();
+  await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
+  await app.webPage.advertiser.waitUntilAdvertiserToBeVisible();
+  const oldUrl = await app.page.url();
+  await app.webPage.advertiser.clickAdsTitleAt({ number: 1 });
+
+  //Assert
+  await app.expectPageNotToHaveUrl(app.page, oldUrl);
 });

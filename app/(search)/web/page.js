@@ -13,6 +13,7 @@ import BasePage from "../../../base/BasePage.js";
 import Footer from "../../../app/(search)/Footer.js";
 import AdvertiserProductCollection from "./AdvertiserProductCollection.js";
 import AdvertiserProduct from "./AdvertiserProduct.js";
+import Advertiser from "./AdvertiserWebPage.js";
 import VideoObject from "./VideoObject.js"
 import Article from "./Article.js";
 import Product from "./Product.js";
@@ -27,7 +28,8 @@ export default class WebPage extends BasePage {
     this.filters = new Filters(page);
     this.webPageItem = new WebPageItem(page);
     this.alternateSearch = new AlternateSearch(page);
-    this.avertiserProduct = new AdvertiserProduct(page);
+    this.advertiserProduct = new AdvertiserProduct(page);
+    this.advertiser = new Advertiser(page);
     this.advertiserProductCollection = new AdvertiserProductCollection(page);
     this.relatedSearches = new RelatedSearches(page);
     this.videoCollection = new VideoCollection(page);
