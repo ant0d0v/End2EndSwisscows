@@ -54,13 +54,13 @@
         {
             "testID": "1",
             "url": "/accounts.swisscows.com/products/vpn\\?locale=en",
-            "expectedTitle": "Swisscows Accounts",
+            "expectedTitle": "Configure Swisscows Proxy - Swisscows VPN service",
             "name" : "VPN"
         },
         {
             "testID": "2",
             "url": "/accounts.swisscows.com/products/email\\?locale=en",
-            "expectedTitle": "Swisscows Accounts",
+            "expectedTitle": "Swisscows.email - The secure and private email for you",
             "name" : "Swisscows.email"
         },
         {
@@ -96,7 +96,7 @@
         {
             "testID": "8",
             "url": "https://blog.swisscows.com/",
-            "expectedTitle": "Blog - Swisscows AG",
+            "expectedTitle": "Blog - Erfahren Sie mehr über sichere Internetnutzung",
             "name" : "Swisscows Blog"
         },
         {

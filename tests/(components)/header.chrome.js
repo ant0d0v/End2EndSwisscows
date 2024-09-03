@@ -50,7 +50,7 @@ test("Check query counter value when searching for video ", async ({ app }) => {
 test("Check query counter value when searching for music", async ({ app }) => {
   //Actions
   await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria(faker.word.sample());
+  await app.home.header.searchForm.inputSearchCriteria(faker.music.songName());
   await app.home.header.searchForm.clickEnterSearchField();
   await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
   await app.musicPage.header.navigation.clickMusicTab();
@@ -64,17 +64,16 @@ test("Check query counter value when searching for music", async ({ app }) => {
 test("Check query counter value when searching for news", async ({ app }) => {
   //Actions
   await app.home.open();
+  await app.home.header.clickHamburgerMenuButton();
+  await app.home.header.hamburgerMenu.selectRegion("Germany");
   await app.home.header.searchForm.inputSearchCriteria("news");
   await app.home.header.searchForm.clickEnterSearchField();
-  await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
-  await app.webPage.header.clickHamburgerMenuButton();
-  await app.webPage.header.hamburgerMenu.selectRegion("Germany");
   await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
   await app.newsPage.header.navigation.clickNewsTab();
 
   //Assert
   await app.newsPage.header.badgeCounter.expectCharityBadgeCounterToHaveValue(
-    "3"
+    "2"
   );
 });
 
