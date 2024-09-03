@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test:ui": "QASE_REPORT=1 QASE_RUN_NAME=UI xvfb-run npx playwright test --project chromium firefox edge mobile --update-snapshots",
+    "test:ui": "QASE_REPORT=1 QASE_RUN_NAME=UI xvfb-run npx playwright test --project chromium firefox edge mobile",
     "test:api": "QASE_REPORT=2 QASE_RUN_NAME=API npx playwright test api"
   },
   "keywords": [],
