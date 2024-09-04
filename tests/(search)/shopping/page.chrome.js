@@ -1,7 +1,7 @@
 import { test } from "../../../utils/fixtures.js";
 import { faker } from "@faker-js/faker";
 
-test("Check 204 No Results Found error page ", async ({ app }, testInfo) => {
+test("Check 204 No Results Found error shopping page", async ({ app }, testInfo) => {
   //Actions
   await app.home.open();
   await app.home.header.clickHamburgerMenuButton();

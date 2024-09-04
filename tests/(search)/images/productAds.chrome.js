@@ -40,7 +40,7 @@ test("Check open advertising ", async ({ app }) => {
   await app.home.open();
   await app.home.header.clickHamburgerMenuButton();
   await app.home.header.hamburgerMenu.selectRegion("Germany");
-  await app.home.header.searchForm.inputSearchCriteria("whisky price");
+  await app.home.header.searchForm.inputSearchCriteria("tablet");
   await app.home.header.searchForm.clickEnterSearchField();
   await app.imagePage.header.navigation.clickImageTab();
   await app.imagePage.item.expectImageItemsToBeVisible();
@@ -97,7 +97,7 @@ test("Check open new page when clicking ads link", async ({ app }) => {
   await app.home.open();
   await app.home.header.clickHamburgerMenuButton();
   await app.home.header.hamburgerMenu.selectRegion("Germany");
-  await app.home.header.searchForm.inputSearchCriteria("whisky price");
+  await app.home.header.searchForm.inputSearchCriteria("tablet");
   await app.home.header.searchForm.clickEnterSearchField();
   await app.imagePage.header.navigation.clickImageTab();
   await app.imagePage.item.expectImageItemsToBeVisible();

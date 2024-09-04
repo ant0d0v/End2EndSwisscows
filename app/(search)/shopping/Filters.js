@@ -98,6 +98,9 @@ export default class Filters extends BaseComponent {
   expectMarkenFilterToHaveCountItems = async (value) => {
     await this.expectListToHaveCount(this.markenFilterItems, value);
   };
+  expectMarkenFilterNotToHaveCountItems = async (value) => {
+    await this.expectListNotToHaveCount(this.markenFilterItems, value);
+  };
 
   takeSnapshot = async (testInfo) => {
     await this.expectPageElementToHaveScreenshot(

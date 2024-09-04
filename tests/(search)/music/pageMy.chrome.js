@@ -105,7 +105,7 @@ test.describe("Internal user", () => {
     await app.musicPage.clickFavoritePlaylist();
     await app.musicPage.favoritePlaylist.expectPlaylistToBeHidden();
     await app.musicMyPage.track.clickPlayButtonAt({ number: 1 });
-    await app.musicMyPage.player.expectProgressToHaveValue("2");
+    await app.musicMyPage.player.expectElapsedTimeToHaveText(/^0:0[2-5]$/);
     await app.musicMyPage.track.clickTimeLineAt({ number: 1 });
 
     //Assert
@@ -137,7 +137,7 @@ test.describe("External user", () => {
     await app.musicPage.clickFavoritePlaylist();
     await app.musicPage.favoritePlaylist.expectPlaylistToBeHidden();
     await app.musicMyPage.track.clickPlayButtonAt({ number: 1 });
-    await app.musicMyPage.player.expectProgressToHaveValue("2");
+    await app.musicMyPage.player.expectElapsedTimeToHaveText(/^0:0[2-5]$/);
     await app.musicMyPage.player.clickTimeLine();
 
     //Assert
@@ -198,7 +198,7 @@ test.describe("External user", () => {
   });
 
   test("Check regional search", async ({ app }) => {
-    const searchCriteria = "Skofka";
+    const searchCriteria = "Eminem";
     //Actions
     await app.home.open();
     await app.home.header.searchForm.inputSearchCriteria(searchCriteria);

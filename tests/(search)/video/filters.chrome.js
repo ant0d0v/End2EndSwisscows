@@ -28,7 +28,9 @@ for (const {
     //Assert
     await app.expectPageToHaveUrl(
       app.page,
-      `${process.env.BASE_URL}/en/video?query=${randomQuery + publisherPart}`
+      `${process.env.BASE_URL}/en/video?query=${
+        randomQuery + publisherPart
+      }`
     );
     await app.videoPage.item.expectItemsResponsePublisherToEqual(
       response,
@@ -44,6 +46,8 @@ for (const { testID, freshnessPart, fiterName, filter } of filterData.byDate) {
     const randomQuery = faker.word.sample();
     //Actions
     await app.home.open();
+    await app.home.header.clickHamburgerMenuButton();
+    await app.home.header.hamburgerMenu.selectRegion("Germany");
     await app.home.header.searchForm.inputSearchCriteria(randomQuery);
     await app.home.header.searchForm.clickEnterSearchField();
     await app.videoPage.header.navigation.clickVideoTab();
@@ -58,14 +62,16 @@ for (const { testID, freshnessPart, fiterName, filter } of filterData.byDate) {
     //Assert
     await app.expectPageToHaveUrl(
       app.page,
-      `${process.env.BASE_URL}/en/video?query=${randomQuery + freshnessPart}`
+      `${process.env.BASE_URL}/en/video?query=${
+        randomQuery + "&region=de-DE" + freshnessPart
+      }`
     );
     await app.api.search.response.expectBodyToEqual(response, {
       request: {
         query: randomQuery,
         itemsCount: 10,
         offset: 0,
-        region: "en-CA",
+        region: "de-DE",
         freshness: filter,
       },
     });

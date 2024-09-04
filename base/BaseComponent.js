@@ -158,6 +158,11 @@ export default class BaseComponent extends PageHolder {
       await expect(elements).toHaveCount(number);
     });
   }
+  async expectListNotToHaveCount(elements, number) {
+    await test.step('Expect the elements in the array not to "have" a count', async () => {
+      await expect(elements).not.toHaveCount(number);
+    });
+  }
 
   async expectElementNotToBeAttached(element) {
     await test.step("Expect the element not to be Attached on the page", async () => {

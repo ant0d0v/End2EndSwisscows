@@ -12,10 +12,10 @@ test("Check 202 No Results Found error page ", async ({ app }, testInfo) => {
   await app.videoPage.error.takeSnapshot(testInfo, 202);
 });
 
-test("Check request is blocked 450 error page ", async ({ app }, testInfo) => {
+test("Check design request is blocked 450 error video page", async ({ app }, testInfo) => {
   //Actions
   await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria("porno");
+  await app.home.header.searchForm.inputSearchCriteria("porn");
   await app.home.header.searchForm.clickEnterSearchField();
   await app.videoPage.header.navigation.clickVideoTab();
 
