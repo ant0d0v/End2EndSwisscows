@@ -16,6 +16,7 @@ const qaseConfig = {
  * https://github.com/motdotla/dotenv
  */
 dotenv.config();
+
 /**
  * @see https://playwright.dev/docs/test-configuration
  */
