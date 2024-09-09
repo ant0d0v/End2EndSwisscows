@@ -1,6 +1,5 @@
 import { test } from "../../../utils/fixtures.js";
 
-test.use({ headless: false });
 test("Check play video in player", async ({ app }) => {
   //Actions
   await app.home.open();

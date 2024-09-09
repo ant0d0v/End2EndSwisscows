@@ -20,7 +20,7 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Install chrome browser
-        run: npx playwright install chrome
+        run: npx playwright install --with-deps chromium
       - name: Run UI tests
         run: npm run test:ui
         env:
