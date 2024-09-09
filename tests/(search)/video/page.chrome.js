@@ -1,6 +1,6 @@
 import { test } from "../../../utils/fixtures.js";
 import { faker } from "@faker-js/faker";
-test.use({ headless: false });
+
 test("Check 202 No Results Found error page ", async ({ app }, testInfo) => {
   //Actions
   await app.home.open();
@@ -175,19 +175,38 @@ test("Check the info video object { site, description, data, views } when openin
     date: /^[A-Za-z]{3} \d{1,2}, \d{4}$/,
   });
 });
+test.describe("headless = false", () => {
+  test.describe.configure({ headless: false });
+  test("Check play video in player", async ({ app }) => {
+    //Actions
+    await app.home.open();
+    await app.home.header.searchForm.inputSearchCriteria("Skofka");
+    await app.home.header.searchForm.clickEnterSearchField();
+    await app.videoPage.header.navigation.clickVideoTab();
+    await app.videoPage.item.expectVideoItemsToBeVisible();
+    await app.videoPage.item.clickVideoImageAt({ number: 1 });
+    await app.videoPage.player.clickOkButton();
 
-test("Check play video in player", async ({ app }) => {
-  //Actions
-  await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria("Skofka");
-  await app.home.header.searchForm.clickEnterSearchField();
-  await app.videoPage.header.navigation.clickVideoTab();
-  await app.videoPage.item.expectVideoItemsToBeVisible();
-  await app.videoPage.item.clickVideoImageAt({ number: 1 });
-  await app.videoPage.player.clickOkButton();
+    //Assert
+    await app.videoPage.player.expectTimeToHaveText(/^0:0[2-4]$/);
+  });
 
-  //Assert
-  await app.videoPage.player.expectTimeToHaveText(/^0:0[2-4]$/);
+  test("Check checkbox `Don't remind me again`", async ({ app }) => {
+    //Actions
+    await app.home.open();
+    await app.home.header.searchForm.inputSearchCriteria("Skofka");
+    await app.home.header.searchForm.clickEnterSearchField();
+    await app.videoPage.header.navigation.clickVideoTab();
+    await app.videoPage.item.expectVideoItemsToBeVisible();
+    await app.videoPage.item.clickVideoImageAt({ number: 1 });
+    await app.videoPage.player.selectCheckbox();
+    await app.videoPage.player.clickOkButton();
+    await app.videoPage.reloadPage();
+    await app.videoPage.item.clickVideoImageAt({ number: 1 });
+
+    //Assert
+    await app.videoPage.player.expectTimeToHaveText(/^0:0[2-4]$/);
+  });
 });
 
 test("Check open video of vimeo owner", async ({ app }) => {
@@ -316,22 +335,6 @@ test("Check cancel button of Privacy Warning ", async ({ app }) => {
   );
 });
 
-test("Check checkbox `Don't remind me again`", async ({ app }) => {
-  //Actions
-  await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria("Skofka");
-  await app.home.header.searchForm.clickEnterSearchField();
-  await app.videoPage.header.navigation.clickVideoTab();
-  await app.videoPage.item.expectVideoItemsToBeVisible();
-  await app.videoPage.item.clickVideoImageAt({ number: 1 });
-  await app.videoPage.player.selectCheckbox();
-  await app.videoPage.player.clickOkButton();
-  await app.videoPage.reloadPage();
-  await app.videoPage.item.clickVideoImageAt({ number: 1 });
-
-  //Assert
-  await app.videoPage.player.expectTimeToHaveText(/^0:0[2-4]$/);
-});
 
 test("Check video play if don't select checkbox `Don't remind me again ` ", async ({
   app,
