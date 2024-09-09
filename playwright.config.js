@@ -77,7 +77,7 @@ export default defineConfig({
       testMatch: /.*\.chrome\.js/,
       use: {
         ...devices["Desktop Chrome"],
-        // channel: "chrome",
+        channel: "chrome",
         storageState: "./data/auth/internalUser.json",
         viewport: { width: 1440, height: 900 },
         screenshot: "only-on-failure",
@@ -109,7 +109,7 @@ export default defineConfig({
       testMatch: /.*\.mobile\.js/,
       use: {
         ...devices["Pixel 7"],
-        // channel: "chrome",
+        channel: "chrome",
         screenshot: "only-on-failure",
         video: "retain-on-failure",
       },
