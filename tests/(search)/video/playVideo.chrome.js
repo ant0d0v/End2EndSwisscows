@@ -1,6 +1,6 @@
 import { test } from "../../../utils/fixtures.js";
 
-test("Check play video in player", async ({ app }) => {
+test("Check play video in player", async ({ app, page }) => {
   //Actions
   await app.home.open();
   await app.home.header.searchForm.inputSearchCriteria("Skofka");
