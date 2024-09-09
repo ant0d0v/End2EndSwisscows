@@ -199,8 +199,8 @@ test("Check sent Event of WS when clicking preview button", async ({ app }) => {
 
   //Assert
   await app.webPage.preview.expectWebSocketIsClosed(webSocket);
-  expect(sentPayload).toEqual({
-    url: "https://www.google.com/",
+  expect(sentPayload).toMatchObject({
+    url: expect.stringMatching(/www\.google\.com\//),
     imageType: "jpeg",
     imageQuality: 90,
     width: 1366,

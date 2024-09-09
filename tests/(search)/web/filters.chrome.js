@@ -10,6 +10,8 @@ for (const { testID, freshnessPart, fiterName } of filterData.byDate) {
     const randomQuery = faker.word.sample();
     //Actions
     await app.home.open();
+    await app.home.header.clickHamburgerMenuButton();
+    await app.home.header.hamburgerMenu.selectRegion("Germany");
     await app.home.header.searchForm.inputSearchCriteria(randomQuery);
     await app.home.header.searchForm.clickEnterSearchField();
     await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
@@ -23,7 +25,9 @@ for (const { testID, freshnessPart, fiterName } of filterData.byDate) {
     //Assert
     await app.expectPageToHaveUrl(
       app.page,
-      `${process.env.BASE_URL}/en/web?query=${randomQuery + freshnessPart}`
+      `${process.env.BASE_URL}/en/web?query=${
+        randomQuery + "&region=de-DE" + freshnessPart
+      }`
     );
     await app.api.search.response.expectBodyToEqual(response, {
       context: {
@@ -31,7 +35,7 @@ for (const { testID, freshnessPart, fiterName } of filterData.byDate) {
         effectiveQuery: randomQuery,
         offset: 0,
         itemsCount: 10,
-        locale: "en-CA",
+        locale: "de-DE",
         spellcheck: true,
       },
     });

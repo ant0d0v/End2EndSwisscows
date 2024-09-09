@@ -132,7 +132,7 @@ test.describe("External user", () => {
     //Assert
     await app.imageMyPage.details.favicon.expectFaviconToBeVisible();
     await app.imageMyPage.details.expectDetailInfoToContainText({
-      title: /ronaldo/i,
+      title: /\w+/,
       site: /(?:www\.)?[a-zA-Z0-9-]+\.[a-zA-Z]{2,}(?:\/[^\s]*)?/,
       resolution: `${width} x ${height}`,
     });

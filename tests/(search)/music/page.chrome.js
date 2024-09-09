@@ -12,10 +12,10 @@ test("Check 204 No Results Found error page ", async ({ app }, testInfo) => {
   await app.musicPage.error.takeSnapshot(testInfo, 204);
 });
 
-test("Check request is blocked 450 error page ", async ({ app }, testInfo) => {
+test("Check request is blocked 450 error music page", async ({ app }, testInfo) => {
   //Actions
   await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria("porno");
+  await app.home.header.searchForm.inputSearchCriteria("porn");
   await app.home.header.searchForm.clickEnterSearchField();
   await app.musicPage.header.navigation.clickMusicTab();
 
@@ -79,7 +79,7 @@ test.describe("favorite function", () => {
     await app.musicPage.track.expectMusicTracksToBeVisible();
     await app.musicPage.track.clickFavoriteButtonAt({ number: 1 });
     await app.musicPage.track.clickPlayButtonAt({ number: 1 });
-    await app.musicPage.player.expectProgressToHaveValue("2");
+    await app.musicPage.player.expectElapsedTimeToHaveText(/^0:0[4-9]$/);
     await app.musicPage.track.clickFavoriteButtonAt({ number: 1 });
 
     //Assert
@@ -99,7 +99,7 @@ test.describe("favorite function", () => {
     await app.musicPage.header.navigation.clickMusicTab();
     await app.musicPage.track.expectMusicTracksToBeVisible();
     await app.musicPage.track.clickPlayButtonAt({ number: 1 });
-    await app.musicPage.player.expectProgressToHaveValue("2");
+    await app.musicPage.player.expectElapsedTimeToHaveText(/^0:0[4-9]$/);
     const favoriteID =
       await app.musicPage.player.clickFavoriteButtonAndGetResponse();
     deletionIds.myTracks.internalUser.push(favoriteID);
@@ -120,7 +120,7 @@ test.describe("favorite function", () => {
     await app.musicPage.track.expectMusicTracksToBeVisible();
     await app.musicPage.track.clickFavoriteButtonAt({ number: 1 });
     await app.musicPage.track.clickPlayButtonAt({ number: 1 });
-    await app.musicPage.player.expectProgressToHaveValue("2");
+    await app.musicPage.player.expectElapsedTimeToHaveText(/^0:0[4-9]$/);
     await app.musicPage.player.clickFavoriteButton();
 
     //Assert
@@ -154,7 +154,7 @@ test("Check pause track on music page", async ({ app }) => {
   await app.musicPage.header.navigation.clickMusicTab();
   await app.musicPage.track.expectMusicTracksToBeVisible();
   await app.musicPage.track.clickPlayButtonAt({ number: 1 });
-  await app.musicPage.player.expectProgressToHaveValue("2");
+  await app.musicPage.player.expectElapsedTimeToHaveText(/^0:0[4-9]$/);
   await app.musicPage.track.clickPauseButtonAt({ number: 1 });
 
   //Assert
@@ -186,10 +186,10 @@ test("Check previous button of track on the main page", async ({ app }) => {
   await app.musicPage.header.navigation.clickMusicTab();
   await app.musicPage.track.expectMusicTracksToBeVisible();
   await app.musicPage.track.clickPlayButtonAt({ number: 1 });
-  await app.musicPage.player.expectProgressToHaveValue("2");
+  await app.musicPage.player.expectElapsedTimeToHaveText(/^0:0[4-9]$/);
   await app.musicPage.player.clickNextButton();
   await app.musicPage.player.clickPrevButton();
-  await app.musicPage.player.expectProgressToHaveValue("2");
+  await app.musicPage.player.expectElapsedTimeToHaveText(/^0:0[4-9]$/);
 
   //Assert
   await app.musicPage.player.expectTimelineToBeGreaterThan(0.5);
@@ -205,7 +205,7 @@ test("Check set time in track", async ({ app }) => {
   await app.musicPage.header.navigation.clickMusicTab();
   await app.musicPage.track.expectMusicTracksToBeVisible();
   await app.musicPage.track.clickPlayButtonAt({ number: 1 });
-  await app.musicPage.player.expectProgressToHaveValue("2");
+  await app.musicPage.player.expectElapsedTimeToHaveText(/^0:0[4-9]$/);
   await app.musicPage.track.clickTimeLineAt({ number: 1 });
 
   //Assert
@@ -224,7 +224,7 @@ test("Check set time in the player", async ({ app }) => {
   await app.musicPage.header.navigation.clickMusicTab();
   await app.musicPage.track.expectMusicTracksToBeVisible();
   await app.musicPage.track.clickPlayButtonAt({ number: 1 });
-  await app.musicPage.player.expectProgressToHaveValue("2");
+  await app.musicPage.player.expectElapsedTimeToHaveText(/^0:0[4-9]$/);
   await app.musicPage.player.clickTimeLine();
 
   //Assert
@@ -243,7 +243,7 @@ test("Check pause track in player on music page", async ({ app }) => {
   await app.musicPage.header.navigation.clickMusicTab();
   await app.musicPage.track.expectMusicTracksToBeVisible();
   await app.musicPage.track.clickPlayButtonAt({ number: 1 });
-  await app.musicPage.player.expectProgressToHaveValue("2");
+  await app.musicPage.player.expectElapsedTimeToHaveText(/^0:0[4-9]$/);
   await app.musicPage.player.clickPauseButton();
 
   //Assert
@@ -258,7 +258,7 @@ test("Check play track in player on music page", async ({ app }) => {
   await app.musicPage.header.navigation.clickMusicTab();
   await app.musicPage.track.expectMusicTracksToBeVisible();
   await app.musicPage.track.clickPlayButtonAt({ number: 1 });
-  await app.musicPage.player.expectProgressToHaveValue("2");
+  await app.musicPage.player.expectElapsedTimeToHaveText(/^0:0[4-9]$/);
   await app.musicPage.player.clickPauseButton();
   await app.musicPage.player.clickPlayButton();
 
@@ -274,7 +274,7 @@ test("Check shuffle function in the player", async ({ app }) => {
   await app.musicPage.header.navigation.clickMusicTab();
   await app.musicPage.track.expectMusicTracksToBeVisible();
   await app.musicPage.track.clickPlayButtonAt({ number: 1 });
-  await app.musicPage.player.expectProgressToHaveValue("2");
+  await app.musicPage.player.expectElapsedTimeToHaveText(/^0:0[4-9]$/);
   await app.musicPage.player.clickShuffleButton();
   await app.musicPage.player.clickNextButton();
 

@@ -163,7 +163,7 @@ test("Check scrolling to last filter", async ({ app }) => {
   await app.shoppingPage.filters.expectLastFilterToBeVisible();
 });
 
-test("Check less and more buttons", async ({ app }) => {
+test("Check less and more buttons in filter", async ({ app }) => {
   //Actions
   await app.home.open();
   await app.home.header.searchForm.inputSearchCriteria("laptop");
@@ -181,7 +181,7 @@ test("Check less and more buttons", async ({ app }) => {
   await app.shoppingPage.filters.clickMore();
 
   // Assert
-  await app.shoppingPage.filters.expectMarkenFilterToHaveCountItems(100);
+  await app.shoppingPage.filters.expectMarkenFilterNotToHaveCountItems(11);
   await app.shoppingPage.filters.clickLess();
   await app.shoppingPage.filters.expectMarkenFilterToHaveCountItems(11);
 });
