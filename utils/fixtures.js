@@ -48,6 +48,12 @@ export const test = base.extend({
         );
       }
     }
+    
+    // Clear the arrays after processing
+    deletionIds.myTracks.internalUser = [];
+    deletionIds.myTracks.externalUser = [];
+    deletionIds.myImages.internalUser = [];
+    deletionIds.myImages.externalUser = [];
   },
   accounts: async ({ page, context, browser }, use) => {
     const app = new AccountsApplication(page);
