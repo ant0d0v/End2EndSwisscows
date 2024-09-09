@@ -8,6 +8,7 @@ test("Check play video in player", async ({ app, page }) => {
   await app.videoPage.header.navigation.clickVideoTab();
   await app.videoPage.item.expectVideoItemsToBeVisible();
   await app.videoPage.item.clickVideoImageAt({ number: 1 });
+  await app.page.waitForTimeout(2000);
   await app.videoPage.player.clickOkButton();
 
   //Assert
@@ -23,6 +24,7 @@ test("Check checkbox `Don't remind me again`", async ({ app }) => {
   await app.videoPage.item.expectVideoItemsToBeVisible();
   await app.videoPage.item.clickVideoImageAt({ number: 1 });
   await app.videoPage.player.selectCheckbox();
+  await app.page.waitForTimeout(2000);
   await app.videoPage.player.clickOkButton();
   await app.videoPage.reloadPage();
   await app.videoPage.item.clickVideoImageAt({ number: 1 });
