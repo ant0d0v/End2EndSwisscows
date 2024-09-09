@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test:ui": "QASE_REPORT=1 QASE_RUN_NAME=UI xvfb-run npx playwright test -g /video/playVideo.chrome.js"
+    "test:ui": "QASE_REPORT=1 QASE_RUN_NAME=UI xvfb-run npx playwright test -g /video/playVideo.ff.js"
   },
   "keywords": [],
   "author": "Anton",
