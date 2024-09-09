@@ -1,6 +1,6 @@
 import { test } from "../../../utils/fixtures.js";
 import { faker } from "@faker-js/faker";
-
+test.use({ headless: false });
 test("Check 202 No Results Found error page ", async ({ app }, testInfo) => {
   //Actions
   await app.home.open();
@@ -316,7 +316,7 @@ test("Check cancel button of Privacy Warning ", async ({ app }) => {
   );
 });
 
-test("Check checkbox `Don't remind me again ` ", async ({ app }) => {
+test("Check checkbox `Don't remind me again`", async ({ app }) => {
   //Actions
   await app.home.open();
   await app.home.header.searchForm.inputSearchCriteria("Skofka");

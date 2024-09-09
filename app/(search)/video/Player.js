@@ -10,9 +10,7 @@ export default class Player extends BaseComponent {
     this.checkbox = this.page.getByLabel("Don't remind me again");
     this.description = this.page.getByText("Video provider prevents");
     this.title = this.page.getByRole("heading", { name: "Privacy Warning" });
-    this.duration = this.page
-      .frameLocator(`iframe[title*="Skofka" i]`)
-      .getByText(":02");
+    this.duration = this.page.frameLocator('iframe').locator(".ytp-time-current")
     this.videoPlayer = this.page
       .frameLocator(`iframe[title*="Skofka" i]`)
       .locator("video");

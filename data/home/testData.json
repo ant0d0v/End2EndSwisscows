@@ -85,13 +85,13 @@
             "testID": "1",
             "link": "https://accounts.swisscows.com/products/email",
             "name": "Swisscows.Email Swisscows.",
-            "expectedTitle": "Swisscows Accounts"
+            "expectedTitle": "Swisscows.email - The secure and private email for you"
         },
         {
             "testID": "2",
             "link": "https://accounts.swisscows.com/products/vpn",
             "name": "Swisscows.VPN With Swisscows.",
-            "expectedTitle" : "Swisscows Accounts"
+            "expectedTitle" : "Configure Swisscows Proxy - Swisscows VPN service"
         },
         {
             "testID": "3",

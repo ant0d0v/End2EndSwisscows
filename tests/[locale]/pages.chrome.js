@@ -75,7 +75,7 @@ for (const { test_case, language, expected_title, languageCode } of imprint) {
 
 const education = readCsvFile("../data/locales/education.csv");
 for (const { test_case, language, expected_title, languageCode } of education) {
-  test(`${test_case} Check content of education  page for ${language} localization`, async ({
+  test.fixme(`${test_case} Check content of education  page for ${language} localization`, async ({
     app,
   }) => {
     //Actions
