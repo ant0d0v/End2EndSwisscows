@@ -18,7 +18,7 @@ test("Check play video in player", async ({ app }) => {
 test("Check checkbox `Don't remind me again`", async ({ app }) => {
   //Actions
   await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria("Skofka");
+  await app.home.header.searchForm.inputSearchCriteria("football");
   await app.home.header.searchForm.clickEnterSearchField();
   await app.videoPage.header.navigation.clickVideoTab();
   await app.videoPage.item.expectVideoItemsToBeVisible();
