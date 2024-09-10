@@ -83,7 +83,6 @@ export default defineConfig({
         storageState: "./data/auth/internalUser.json",
         viewport: { width: 1440, height: 900 },
         screenshot: "only-on-failure",
-        args: ["--disable-blink-features=AutomationControlled"],
       },
       dependencies: ["setup"],
     },
