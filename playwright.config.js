@@ -46,9 +46,6 @@ export default defineConfig({
   ],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
-    extraHTTPHeaders: {
-      "user-agent": "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36",
-    },
     baseURL: "https://dev.swisscows.com/",
     actionTimeout: 25 * 1000,
     updateSnapshots: "none",
