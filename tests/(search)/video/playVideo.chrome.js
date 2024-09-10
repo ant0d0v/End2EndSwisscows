@@ -8,7 +8,9 @@ test("Check play video in player", async ({ app, page }) => {
   await app.home.header.searchForm.clickEnterSearchField();
   await app.videoPage.header.navigation.clickVideoTab();
   await app.videoPage.item.expectVideoItemsToBeVisible();
+  await app.page.waitForTimout(5000)
   await app.videoPage.item.clickVideoImageAt({ number: 1 });
+  await app.page.waitForTimout(5000);
   await app.videoPage.player.clickOkButton();
 
   //Assert
