@@ -1,5 +1,9 @@
-import { test, deletionIds } from "../../../utils/fixtures.js";
+import { test, deletionIds, expect } from "../../../utils/fixtures.js";
 import { faker } from "@faker-js/faker";
+import {
+  saveStorageState,
+  readStorageState,
+} from "../../../helpers/authHelper.js";
 
 test("Check 204 No Results Found error page ", async ({ app }, testInfo) => {
   //Actions
@@ -281,6 +285,24 @@ test("Check shuffle function in the player", async ({ app }) => {
   //Assert
   await app.musicPage.track.expectNotToBeActiveTrackAt({ number: 2 });
   await app.musicPage.player.expectShuffleButtonIsActive();
+});
+
+test("Check shuffle function in local storage", async ({ app }) => {
+  //Actions
+  await app.home.open();
+  await app.home.header.searchForm.inputSearchCriteria(faker.music.songName());
+  await app.home.header.searchForm.clickEnterSearchField();
+  await app.musicPage.header.navigation.clickMusicTab();
+  await app.musicPage.track.expectMusicTracksToBeVisible();
+  await app.musicPage.track.clickPlayButtonAt({ number: 1 });
+  await app.musicPage.player.expectElapsedTimeToHaveText(/^0:0[4-9]$/);
+  await app.musicPage.player.clickShuffleButton();
+  await saveStorageState(app.page);
+  const savedLocalStorage = await readStorageState();
+  const value = savedLocalStorage["player.shuffle"];
+
+  //Assert
+  expect(value).toEqual('true');
 });
 
 test("Check infinity scroll to next page", async ({ app }) => {
