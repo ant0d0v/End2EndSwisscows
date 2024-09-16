@@ -48,7 +48,7 @@ export default class Item extends BaseComponent {
   };
  
   async expectItemNameToContainText(criteria) {
-    for (const image of await this.images.all()) {
+    for (const image of await this.tenImages.all()) {
       await expect(image).toHaveAttribute("alt", criteria);
     }
   }

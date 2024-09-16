@@ -1,4 +1,5 @@
-import { test } from "../../../utils/fixtures.js";
+import { test, expect } from "../../../utils/fixtures.js";
+import { saveStorageState, readStorageState} from "../../../helpers/authHelper.js";
 import { faker } from "@faker-js/faker";
 
 test("Check 202 No Results Found error page ", async ({ app }, testInfo) => {
@@ -356,18 +357,17 @@ test("Check regional search", async ({ app }) => {
   );
 });
 
-test("Check play video in player", async ({ app }) => {
+test("Check video to have href external service", async ({ app }) => {
   //Actions
   await app.home.open();
   await app.home.header.searchForm.inputSearchCriteria("Skofka");
   await app.home.header.searchForm.clickEnterSearchField();
   await app.videoPage.header.navigation.clickVideoTab();
   await app.videoPage.item.expectVideoItemsToBeVisible();
-  await app.videoPage.item.clickVideoImageAt({ number: 1 });
-  await app.videoPage.player.clickOkButton();
 
   //Assert
-  await app.videoPage.player.expectTimeToHaveText(/^0:0[2-4]$/);
+  await app.videoPage.item.expectVideoToHaveAttributeHrefBy({ number: 1, value: /www.youtube.com/ })
+  await app.videoPage.item.expectVideoToHaveAttributeHrefBy({ number: 5, value: /www.youtube.com/ })
 });
 
 test("Check checkbox `Don't remind me again`", async ({ app }) => {
@@ -382,8 +382,10 @@ test("Check checkbox `Don't remind me again`", async ({ app }) => {
   await app.videoPage.player.clickOkButton();
   await app.videoPage.reloadPage();
   await app.videoPage.item.clickVideoImageAt({ number: 1 });
-
+  await saveStorageState(app.page);
+  const savedLocalStorage = await readStorageState(); 
+  const value = savedLocalStorage["video.mode"];
+  
   //Assert
-  await app.videoPage.player.expectTimeToHaveText(/^0:0[2-4]$/);
+  expect(value).toEqual('"embedded"')
 });
-

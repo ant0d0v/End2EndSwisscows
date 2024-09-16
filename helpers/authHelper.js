@@ -1,4 +1,5 @@
 import fs from "fs";
+import { promises as fsp } from "fs";
 import authDataInternal from "../data/auth/internalUser.json";
 import authDataExternal from "../data/auth/externalUser.json";
 
@@ -17,7 +18,18 @@ export function getBearerTokenOfExternalUser() {
     .localStorage.find((cookie) => cookie.name === "oidc.access_token").value;
   return accessToken;
 }
+export async function saveStorageState(object) {
+  const localStorage = await object.evaluate(() =>
+    JSON.stringify(localStorage)
+  );
+  fs.writeFileSync("./data/auth/localStorage.json", localStorage, "utf-8");
+}
 
+export async function readStorageState() {
+  const fileContent = await fsp.readFile("data/auth/localStorage.json", "utf-8");
+  const savedLocalStorage = JSON.parse(fileContent);
+  return savedLocalStorage 
+}
 export function removeRefreshToken(authFilePath) {
   const authFileContent = fs.readFileSync(authFilePath, "utf-8");
   let authData = JSON.parse(authFileContent);

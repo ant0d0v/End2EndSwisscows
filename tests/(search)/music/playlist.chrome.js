@@ -79,7 +79,7 @@ test("Check shuffle function in the player", async ({ app }) => {
 });
 
 test("Check change region", async ({ app }) => {
-  const value = "Eminem";
+  const value = "Best";
   const expectedUrl = new RegExp(
     `${process.env.WEB_URL}en/music/playlist\\?query=${value}&id=\\d+&region=de-DE`
   );
