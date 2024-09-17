@@ -1,13 +1,15 @@
 import BaseComponent from "../../base/BaseComponent.js";
-import ExtensionPopup from "./ExtensionPopup.js";
+import Translations from "../../locales/n18next.js";
 export default class SearchForm extends BaseComponent {
   constructor(page) {
     super(page);
-  
+    this.translations = Translations;
+
     //Locators
     this.suggestionItems = this.page.locator("ul.suggestions li");
     this.suggest = this.page.locator("ul.suggestions");
     this.inputSearch = this.page.getByRole("searchbox");
+    this.search = this.page.locator(".searchbar input");
     this.placeholderHome = this.page.getByPlaceholder(
       "Your search. Your business."
     );
@@ -39,4 +41,16 @@ export default class SearchForm extends BaseComponent {
   expectSuggestIsDisplayed = async () => {
     await this.expectElementToBeVisible(this.suggest);
   };
+
+  //Locale
+  async expectTranslationsForPlaceholder( expected = {
+    translationKey_1: value,
+      locale: value,
+    }) {
+    const expectedTextPlaceholder = this.translations.t(expected.translationKey_1, {
+      lng: expected.locale
+    });
+    await this.expectAttributeToHaveValue(this.search, "placeholder", expectedTextPlaceholder);
+  }
+
 }

@@ -1,5 +1,9 @@
-import { test } from "../../utils/fixtures.js";
+import { test, expect } from "../../utils/fixtures.js";
 import testData from "../../data/hamburger/testData.json";
+import {
+  saveStorageState,
+  readStorageState,
+} from "../../helpers/authHelper.js";
 import { faker } from "@faker-js/faker";
 
 test("Check display of nickname and avatar in hamburger menu", async ({
@@ -43,6 +47,33 @@ test("Check redirect to profile when clicking on avatar", async ({ app }) => {
   await app.expectPageToHaveUrl(app.page, /accounts.dev.swisscows.com/);
   await app.expectHaveTitle(app.page, /Dashboard - Swisscows Accounts/);
 });
+
+test("Check local storage when select dark theme", async ({ app }) => {
+  //Actions
+  await app.home.open();
+  await app.home.header.clickHamburgerMenuButton();
+  await app.home.header.hamburgerMenu.selectTheme("Dark");
+  await saveStorageState(app.page);
+  const savedLocalStorage = await readStorageState();
+  const value = savedLocalStorage["theme"];
+
+  //Assert
+  expect(value).toEqual("dark");
+});
+
+test("Check local storage when select light theme", async ({ app }) => {
+  //Actions
+  await app.home.open();
+  await app.home.header.clickHamburgerMenuButton();
+  await app.home.header.hamburgerMenu.selectTheme("Light");
+  await saveStorageState(app.page);
+  const savedLocalStorage = await readStorageState();
+  const value = savedLocalStorage["theme"];
+
+  //Assert
+  expect(value).toEqual("light");
+});
+
 
 test("Check availability and options of localization dropdown menu in hamburger Menu", async ({
   app,
