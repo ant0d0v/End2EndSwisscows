@@ -21,7 +21,7 @@
   "Web": "Tīmeklis",
   "Web_For": "{query} meklēt tīmeklī",
   "Web_Freshness": "Filtrēt pēc datuma",
-  "Web_Freshness_All": "Viss",
+  "Web_Freshness_All": "Jebkurā laikā",
   "Web_Freshness_Day": "Pēdējās dienas laikā",
   "Web_Freshness_Month": "Pēdējā mēneša laikā",
   "Web_Freshness_Week": "Pēdējās nedēļas laikā",
@@ -113,7 +113,7 @@
   "Video_VideoLength_Medium": "Vidējs",
   "Video_VideoLength_Short": "Īss",
   "Video_Publisher": "Publisher",
-  "Video_Publisher_All": "Visi",
+  "Video_Publisher_All": "Visi redaktori",
   "Video_Open": "Atvērt {publisher}",
   "Video_PrivacyWarning": "Brīdinājums par konfidencialitāti",
   "Video_PrivacyWarning_Content": "Video pakalpojumu sniedzējs neļauj skatīties videoklipus anonīmi. Šī videoklipa skatīšanos var izsekot video pakalpojumu sniedzējs.",
@@ -237,7 +237,7 @@
   "Datacenter_BlockDescription_6": "Turklāt elektroenerģijas ražošanu nodrošina arī iekšējā fotoelementu iekārta. Plašā fotoelementu sistēma gadā saražo 230 000 kWh elektroenerģijas datu centra vajadzībām.",
 
   "Imprint": "Izlaides ziņas",
-  "Imprint_Menu": "Izlaides ziņas",
+  "Imprint_Menu": "Nospiedums",
   "Imprint_Title": "Company information",
   "Imprint_BlockDescription_1": "Legal Form Stock Corporation",
   "Imprint_BlockDescription_2": "Executive Board Andreas Wiebe (CEO) Chairman of the Board",
@@ -246,7 +246,7 @@
   "Imprint_BlockDescription_5": "Commercial Register CHE-220.068.700",
   
   "Default_Search_Home_Menu": "Noklusējuma meklētājprogramma",
-  "Support_Search_Home_Menu": "Support",
+  "Support_Search_Home_Menu": "Atbalsts",
 
   "Dont_RemindMe_Again": "Neatgādiniet man vēlreiz",
   "Follow_Title": "Seko mums:",

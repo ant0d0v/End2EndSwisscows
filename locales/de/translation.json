@@ -21,7 +21,7 @@
   "Web": "Web",
   "Web_For": "{query} in Web suchen",
   "Web_Freshness": "Nach Datum filtern",
-  "Web_Freshness_All": "Alle",
+  "Web_Freshness_All": "Jederzeit",
   "Web_Freshness_Day": "Letzte 24 Stunden",
   "Web_Freshness_Month": "Letzter Monat",
   "Web_Freshness_Week": "Letzte Woche",
@@ -113,7 +113,7 @@
   "Video_VideoLength_Medium": "Mittel",
   "Video_VideoLength_Short": "Kurz",
   "Video_Publisher": "Publisher",
-  "Video_Publisher_All": "Alle",
+  "Video_Publisher_All": "Alle Herausgeber",
   
   "Video_Open": "{publisher} öffnen",
   "Video_PrivacyWarning": "Datenschutzwarnung",
@@ -248,10 +248,11 @@
 
   "Default_Search_Home_Menu": "Standardsuche verwenden",
   "Support_Search_Home_Menu": "Support",
+  "Speakers_Search_Home_Menu": "Referenten einladen",
 
   "Dont_RemindMe_Again": "Nicht mehr erinnern.",
   "Follow_Title": "Folge uns auf:",
-  "Footer_About": "Mehr über Swisscows",
+  "Footer_About": "Über Swisscows",
   "Footer_LearnSwisscows": "Lerne mehr über<br /> Swisscows AG",
   "Footer_LearnSwisscows_Mobile": "Lerne mehr über Swisscows&nbsp;AG",
   "Menu_About": "Über Swisscows",

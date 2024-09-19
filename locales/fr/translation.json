@@ -21,7 +21,7 @@
   "Web": "Web",
   "Web_For": "{query} dans la recherche Web",
   "Web_Freshness": "Filtrer par date",
-  "Web_Freshness_All": "Tous",
+  "Web_Freshness_All": "À tout moment",
   "Web_Freshness_Day": "Hier",
   "Web_Freshness_Month": "Le mois dernier",
   "Web_Freshness_Week": "La semaine dernière",
@@ -113,7 +113,7 @@
   "Video_VideoLength_Medium": "Moyenne",
   "Video_VideoLength_Short": "Courte",
   "Video_Publisher": "Publisher",
-  "Video_Publisher_All": "Toutes",
+  "Video_Publisher_All": "Tous les éditeurs",
   "Video_Open": "Ouvert {publisher}",
   "Video_PrivacyWarning": "Avertissement de confidentialité",
   "Video_PrivacyWarning_Content": "Le fournisseur de vidéos empêche que les vidéos soient regardées de manière anonyme. Le visionnage de cette vidéo peut être suivi par le fournisseur de la vidéo.",
@@ -246,7 +246,7 @@
   "Imprint_BlockDescription_5": "Registre du commerce CHE-220.068.700",
 
   "Default_Search_Home_Menu": "Utilisation de recherche standard",
-  "Support_Search_Home_Menu": "Support",
+  "Support_Search_Home_Menu": "Supporté",
 
   "Dont_RemindMe_Again": "Ne me le rappelle plus",
   "Follow_Title": "Suivez-nous sur :",

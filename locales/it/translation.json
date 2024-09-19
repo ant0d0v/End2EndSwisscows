@@ -21,7 +21,7 @@
   "Web": "Web",
   "Web_For": "Cerca {query} in Web",
   "Web_Freshness": "Filtra per data",
-  "Web_Freshness_All": "Tutti",
+  "Web_Freshness_All": "In qualsiasi momento",
   "Web_Freshness_Day": "Ultimo giorno",
   "Web_Freshness_Month": "Ultimo mese",
   "Web_Freshness_Week": "Ultima settimana",
@@ -113,7 +113,7 @@
   "Video_VideoLength_Medium": "Medio",
   "Video_VideoLength_Short": "Breve",
   "Video_Publisher": "Publisher",
-  "Video_Publisher_All": "Cerca tutti",
+  "Video_Publisher_All": "Tutti gli editori",
   "Video_Open": "Apri {publisher}",
   "Video_PrivacyWarning": "Avviso sulla privacy",
   "Video_PrivacyWarning_Content": "Il fornitore di video impedisce che i video vengano guardati in modo anonimo. La visione di questo video può essere tracciata dal fornitore del video.",
@@ -246,7 +246,7 @@
   "Imprint_BlockDescription_5": "Registro delle imprese CHE-220.068.700",
 
   "Default_Search_Home_Menu": "Utilizza ricerca standard",
-  "Support_Search_Home_Menu": "Support",
+  "Support_Search_Home_Menu": "Supporto",
 
   "Dont_RemindMe_Again": "Non ricordarmelo più",
   "Follow_Title": "Seguici:",

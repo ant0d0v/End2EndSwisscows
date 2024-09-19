@@ -21,7 +21,7 @@
   "Web": "Web",
   "Web_For": "{query} procurar na Web",
   "Web_Freshness": "Filtrar por data",
-  "Web_Freshness_All": "Todos",
+  "Web_Freshness_All": "A qualquer altura",
   "Web_Freshness_Day": "Últimas 24 horas",
   "Web_Freshness_Month": "Último mês",
   "Web_Freshness_Week": "Última semana",
@@ -113,7 +113,7 @@
   "Video_VideoLength_Medium": "Médio",
   "Video_VideoLength_Short": "Curto",
   "Video_Publisher": "Publisher",
-  "Video_Publisher_All": "Todos",
+  "Video_Publisher_All": "Todos os editores",
   "Video_Open": "Abra o {publisher}",
   "Video_PrivacyWarning": "Aviso de proteção de dados",
   "Video_PrivacyWarning_Content": "O fornecedor de vídeo impede que os vídeos sejam visualizados anonimamente. A visualização deste vídeo pode ser rastreada pelo fornecedor do vídeo.",
@@ -247,7 +247,7 @@
   "Imprint_BlockDescription_5": "Commercial Register CHE-220.068.700",
 
   "Default_Search_Home_Menu": "Usar a pesquisa padrão",
-  "Support_Search_Home_Menu": "Support",
+  "Support_Search_Home_Menu": "Apoiar",
 
   "Dont_RemindMe_Again": "Não lembrar mais.",
   "Follow_Title": "Siga-nos em:",
