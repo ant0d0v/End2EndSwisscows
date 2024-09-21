@@ -1,16 +1,18 @@
 import BaseComponent from "../../../base/BaseComponent.js";
+import Translations from "../../../locales/n18next.js";
 export default class Form extends BaseComponent {
   constructor(page) {
     super(page);
+    this.translations = Translations;
     //Locators
-    this.sendButton = this.page.getByRole("button", { name: "Send" });
-    this.allContent = this.page.locator("main.contact");
-    this.checkbox = page.getByLabel("I agree that my data will be");
+    this.root = this.page.locator(".contact-form");
+    this.agreement = this.root.locator(".agreement");
+    this.sendButton = this.root.locator(".button");
     this.yourNameField = this.page.getByPlaceholder("Your name");
     this.emailField = this.page.getByPlaceholder("Email");
     this.yourMessageField = this.page.getByPlaceholder("Your Message");
     this.privacyLink = this.page.getByRole("link", { name: "privacy policy" });
-    this.agreeCheckbox = this.page.getByLabel("I agree that my data will be");
+    this.checkbox = this.page.getByLabel("I agree that my data will be");
   }
   //Actions
   async clickSendButton() {
@@ -23,9 +25,9 @@ export default class Form extends BaseComponent {
     );
   }
   async checkAgreeCheckbox() {
-    await this.checkElement(this.checkbox, `Agree checkbox`);
+    await this.checkElement(this.agreement, `Agree checkbox`);
   }
-  
+
   async fillContactForm(
     fields = {
       nameField: string,
@@ -36,7 +38,11 @@ export default class Form extends BaseComponent {
     await this.page.waitForLoadState("networkidle");
     await this.input(this.yourNameField, fields.nameField, `Your name field`);
     await this.input(this.emailField, fields.emailField, `Email field`);
-    await this.input(this.yourMessageField, fields.messageField, `Message field`);
+    await this.input(
+      this.yourMessageField,
+      fields.messageField,
+      `Message field`
+    );
   }
   // Verify
 
@@ -72,9 +78,34 @@ export default class Form extends BaseComponent {
 
   expectAgreeCheckboxToHaveProperty = async (value) => {
     await this.expectElementToHaveJSProperty(
-      this.agreeCheckbox,
+      this.checkbox,
       "validationMessage",
       value
     );
   };
+
+  //Locales
+  async expectTranslationsForButton(
+    expected = {
+      translationKey_1: value,
+      locale: value,
+    }
+  ) {
+    const expectedText = this.translations.t(expected.translationKey_1, {
+      lng: expected.locale,
+    });
+    await this.expectElementToHaveText(this.sendButton, expectedText);
+  }
+
+  async expectTranslationsForAgreement(
+    expected = {
+      translationKey_1: value,
+      locale: value,
+    }
+  ) {
+    const expectedText = this.translations.t(expected.translationKey_1, {
+      lng: expected.locale,
+    });
+    await this.expectElementToHaveText(this.agreement, expectedText);
+  }
 }

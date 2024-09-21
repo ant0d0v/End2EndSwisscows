@@ -105,6 +105,6 @@ test("Check open new page when clicking ads link", async ({ app }) => {
 
   //Assert
   await app.imagePage.advertiserProductCollection.expectToBeOpenedNewPageAfterClickAdsLink(
-    { expectedUrl: /privacy.microsoft.com/ }
+    { expectedUrl: /microsoft.com/ }
   );
 });

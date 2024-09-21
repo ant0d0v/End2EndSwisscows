@@ -8,9 +8,11 @@ import SearchBar from "../../components/SearchBar.js";
 import ExtensionPopup from "./ExtensionPopup.js";
 import Logo from "./Logo.js";
 import SearchForm from "./SearchForm.js";
+import Translations from "../../locales/n18next.js";
 export default class Header extends BaseComponent {
   constructor(page) {
     super(page);
+    this.translations = Translations;
     this.extensionPopup = new ExtensionPopup(page);
     this.hamburgerMenu = new HamburgerMenu(page);
     this.badgeCounter = new BadgeCounter(page);
@@ -23,10 +25,11 @@ export default class Header extends BaseComponent {
 
     //Locators
     this.searchCounter = this.page.locator(".search-counter");
-    this.allContent = this.page.locator("header.header-home");
     this.hamburgerMenuButton = this.page.locator(
       "header button.hamburger-menu"
     );
+    this.taglineList = this.page.locator(".tagline-list");
+    this.tagline = this.page.locator(".tagline");
   }
 
   //Actions
@@ -49,4 +52,22 @@ export default class Header extends BaseComponent {
       `Swisscows Logo in the header`
     );
   };
+
+  //Locale
+  async expectTranslationsForTaglineList( expected = {
+    translationKey_1: value,
+    translationKey_2: value,
+      locale: value,
+    }) {
+    const expectedTextTaglineList = this.translations.t(expected.translationKey_1, {
+      lng: expected.locale
+    });
+    const expectedTextTagline = this.translations.t(expected.translationKey_2, {
+      lng: expected.locale
+    });
+    await this.expectElementToHaveText(this.taglineList, expectedTextTaglineList);
+    await this.expectElementToHaveText(this.tagline, expectedTextTagline);
+  }
+
+
 }

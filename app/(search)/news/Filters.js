@@ -1,9 +1,11 @@
 import BaseComponent from "../../../base/BaseComponent.js";
 import SelectMenu from "../../../components/Select.js";
+import Translations from "../../../locales/n18next.js";
 
 export default class Filters extends BaseComponent {
   constructor(page) {
     super(page);
+    this.translations = Translations;
     this.selectMenu = new SelectMenu(page);
 
     //Locators
@@ -23,4 +25,17 @@ export default class Filters extends BaseComponent {
       value
     );
   };
+
+  //Locales
+  async expectTranslationsForFilter(
+    expected = {
+      translationKey: value,
+      locale: value,
+    }
+  ) {
+    const expectedText = this.translations.t(expected.translationKey, {
+      lng: expected.locale,
+    });
+    await this.expectElementToHaveText(this.filterByDate, expectedText);
+  }
 }

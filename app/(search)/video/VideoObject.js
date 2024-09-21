@@ -23,6 +23,7 @@ export default class Item extends BaseComponent {
     this.views = this.root.locator(".views");
     this.viewsIcon = this.views.locator(".icon");
     this.date = this.root.locator(".date");
+    this.link = this.root.locator("a");
   }
   //Actions
   clickVideoImageAt = async (
@@ -57,6 +58,15 @@ export default class Item extends BaseComponent {
   //Verify
   expectAllImagesToHaveAttribute = async (value) => {
     await this.proxyImage.expectAttributeSrcAllImagesToHave(this.images, value);
+  };
+
+  expectVideoToHaveAttributeHrefBy = async (
+    video = {
+      number: value,
+      value: string
+    }
+  ) => {
+    await this.expectAttributeToHaveValue(this.link.nth(video.number - 1), "href", video.value);
   };
 
   expectVideoItemsToBeVisible = async () => {
@@ -99,7 +109,7 @@ export default class Item extends BaseComponent {
     await this.expectTextsToContains(this.views, expectedInfo.views);
     await this.expectTextsToContains(this.date, expectedInfo.date);
   }
-  
+
   expectVideoDescriptionNotToBeEmpty = async () => {
     await this.expectListElementsNotToBeEmpty(this.description);
   };
@@ -139,5 +149,4 @@ export default class Item extends BaseComponent {
       expected.number
     );
   };
-
 }

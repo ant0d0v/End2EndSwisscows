@@ -1,80 +1,53 @@
-import { expect } from "@playwright/test";
-const i18next = require("i18next");
+import i18next from "i18next";
+import enTranslation from "./en/translation.json";
+import deTranslation from "./de/translation.json";
+import esTranslation from "./es/translation.json";
+import frTranslation from "./fr/translation.json";
+import huTranslation from "./hu/translation.json";
+import itTranslation from "./it/translation.json";
+import lvTranslation from "./lv/translation.json";
+import nlTranslation from "./nl/translation.json";
+import ptTranslation from "./pt/translation.json";
+import ruTranslation from "./ru/translation.json";
+import ukTranslation from "./uk/translation.json";
 
 i18next.init({
   fallbackLng: "en",
   resources: {
     en: {
-      translation: require("./en/translation.json"),
+      translation: enTranslation,
     },
     de: {
-      translation: require("./de/translation.json"),
+      translation: deTranslation,
     },
     es: {
-      translation: require("./es/translation.json"),
+      translation: esTranslation,
     },
     fr: {
-      translation: require("./fr/translation.json"),
+      translation: frTranslation,
     },
     hu: {
-      translation: require("./hu/translation.json"),
+      translation: huTranslation,
     },
     it: {
-      translation: require("./it/translation.json"),
+      translation: itTranslation,
     },
     lv: {
-      translation: require("./lv/translation.json"),
+      translation: lvTranslation,
     },
     nl: {
-      translation: require("./nl/translation.json"),
+      translation: nlTranslation,
     },
     pt: {
-      translation: require("./pt/translation.json"),
+      translation: ptTranslation,
     },
     ru: {
-      translation: require("./ru/translation.json"),
+      translation: ruTranslation,
     },
     uk: {
-      translation: require("./uk/translation.json"),
+      translation: ukTranslation,
     },
   },
 });
 
-async function validateText(page, translationKey, languageCode) {
-  const expectedText = i18next.t(translationKey, { lng: languageCode });
-  const locator = expectedText.slice(0, 60);
-  const elementText = await page.getByText(locator).first();
-  const elementByRoleHeader = await page.getByRole("heading", {
-    name: locator,
-    exact: true,
-  });
-  await expect(elementByRoleHeader.or(elementText)).toHaveText(expectedText);
-}
-async function validateTextHamburgerComponent(page, translationKey, languageCode) {
-  const expectedText = i18next.t(translationKey, { lng: languageCode });
-  const locator = expectedText.slice(0, 60);
-  const elementRoleButton = await page.getByRole("button", { name: locator});
-  const elementByRoleBanner = await page.getByRole('banner').locator('li').filter({ hasText: locator , exact: true })
-  await expect(elementRoleButton.or(elementByRoleBanner)).toHaveText(expectedText);
-}
-async function validateTextFooterComponent(page, translationKey, languageCode) {
-  const expectedText = i18next.t(translationKey, { lng: languageCode });
-  const locator = expectedText.slice(0, 60);
-  const element = await page.getByRole("link", { name: locator, exact: true });
-  const elementText = await page.getByText(locator, { exact: true });
-  await expect(element.or(elementText)).toHaveText(expectedText);
-}
-async function validateTextHeaderComponent(page, translationKey, languageCode) {
-  const expectedText = i18next.t(translationKey, { lng: languageCode });
-  const locator = expectedText.slice(0, 60);
-  const element = await page.getByRole("link", { name: locator });
-  const elementButton = await page.getByRole("button", { name: locator });
-  await expect(element.or(elementButton)).toHaveText(expectedText);
-}
-
-module.exports = {
-  validateText,
-  validateTextHamburgerComponent,
-  validateTextFooterComponent,
-  validateTextHeaderComponent,
-};
+export default i18next;

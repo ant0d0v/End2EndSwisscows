@@ -1,16 +1,21 @@
 import BaseComponent from "../base/BaseComponent.js";
 import Avatar from "../components/Avatar.js";
+import Translations from "../locales/n18next.js";
 import { expect } from '@playwright/test';
 
 export default class HamburgerMenu extends BaseComponent {
   constructor(page) {
     super(page);
     this.avatar = new Avatar(this.page);
-
+    this.translations = Translations;
     //Locators
     this.root = this.page.locator(".menu.popup");
+    this.title = this.root.locator(".title");
+    this.menuDropdownButton = this.root.locator(".menu-dropdown-button");
+    this.linkList = this.root.locator("ul a");
     this.dropdownRegion = this.page.getByText(/Region/);
-    this.regionInDropdown = (region) => this.page.locator("li").filter({ hasText: `${region}` });
+    this.regionInDropdown = (region) =>
+      this.page.locator("li").filter({ hasText: `${region}` });
     this.loginButton = this.page.getByRole("button", { name: "Login" });
     this.logoutButton = this.page.getByRole("button", { name: "Logout" });
     this.languagesDropdown = this.page.getByText("Language");
@@ -135,4 +140,76 @@ export default class HamburgerMenu extends BaseComponent {
       testInfo
     );
   };
+
+  //Locale
+  async expectTranslationsForTitle(
+    expected = {
+      translationKey_1: value,
+      translationKey_2: value,
+      locale: value,
+    }
+  ) {
+    const expectedTitle_1 = this.translations.t(expected.translationKey_1, {
+      lng: expected.locale,
+    });
+    const expectedTitle_2 = this.translations.t(expected.translationKey_2, {
+      lng: expected.locale,
+    });
+    await this.expectElementToHaveText(this.title, [
+      expectedTitle_1,
+      expectedTitle_2,
+    ]);
+  }
+  async expectTranslationsForMenuButton(
+    expected = {
+      translationKey_1: value,
+      translationKey_2: value,
+      translationKey_3: value,
+      locale: value,
+    }
+  ) {
+    const expectedMenuButton_1 = this.translations.t(expected.translationKey_1, {
+      lng: expected.locale
+    });
+    const expectedMenuButton_2 = this.translations.t(expected.translationKey_2, {
+      lng: expected.locale
+    });
+    const expectedMenuButton_3 = this.translations.t(expected.translationKey_3, {
+      lng: expected.locale
+    });
+    await this.expectElementToHaveText(this.menuDropdownButton, [
+      new RegExp(expectedMenuButton_1),
+      new RegExp(expectedMenuButton_2),
+      new RegExp(expectedMenuButton_3),
+    ]);
+  }
+
+  async expectTranslationsForLink(
+    expected = {
+      translationKey_1: value,
+      translationKey_2: value,
+      translationKey_3: value,
+      translationKey_4: value,
+      translationKey_5: value,
+      translationKey_6: value,
+      translationKey_7: value,
+      translationKey_8: value,
+      translationKey_9: value,
+      translationKey_10: value,
+      translationKey_11: value,
+      locale: value,
+    }
+  ) {
+    const links = [];
+    for (let i = 1; i <= 11; i++) {
+      const key = `translationKey_${i}`;
+      const translation = this.translations.t(expected[key], {
+        lng: expected.locale,
+      });
+      if (translation) {
+        links.push(translation);
+      }
+    }
+    await this.expectElementToHaveText(this.linkList, links);
+  }
 }

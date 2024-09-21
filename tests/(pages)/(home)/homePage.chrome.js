@@ -83,7 +83,7 @@ test('Check that popup "google install" redirect to the corresponding page', asy
   await app.expectNewPageToHaveTitle(context, /Swisscows/);
 });
 
-test("Check the texts of questions on the home page.", async ({ app }) => {
+test("Check the texts of answers on the home page.", async ({ app }) => {
   //Actions
   await app.home.open();
 
