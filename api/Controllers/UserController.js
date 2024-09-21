@@ -23,6 +23,6 @@ export default class UserController extends RequestHolder {
       'Accept': 'application/json, text/plain, */*',
       'Authorization': `Bearer ${token}`,
     },
-   });
+    });
   }
 }
