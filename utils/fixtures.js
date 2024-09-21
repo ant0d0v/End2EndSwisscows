@@ -54,6 +54,8 @@ export const test = base.extend({
     deletionIds.myTracks.externalUser = [];
     deletionIds.myImages.internalUser = [];
     deletionIds.myImages.externalUser = [];
+
+    await context.close()
   },
   accounts: async ({ page, context, browser }, use) => {
     const app = new AccountsApplication(page);

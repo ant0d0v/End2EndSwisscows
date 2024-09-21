@@ -5,10 +5,10 @@ export default class FAQ extends BaseComponent {
     super(page);
     this.translations = Translations
     //Locators
-
-    this.allAttributeOfQuestions = this.page.locator(".faq");
+    this.root = this.page.locator(".faq-wrap");
+    this.faq = this.page.locator(".faq");
     this.answers = this.page.locator("p.answer");
-    this.questions = this.page.locator("h3.question");
+    this.questions = this.root.locator("h3.question");
     this.linkInTheFourQuestion = this.page.getByRole("link", {
       name: "instructions",
     });
@@ -36,7 +36,7 @@ export default class FAQ extends BaseComponent {
   };
 
   expectQuestionsAreOpened = async () => {
-    await this.expectElementToHaveClass(this.allAttributeOfQuestions, [
+    await this.expectElementToHaveClass(this.faq, [
       "faq open",
       "faq open",
       "faq open",
@@ -46,7 +46,7 @@ export default class FAQ extends BaseComponent {
     ]);
   };
   expectQuestionsAreClosed = async () => {
-    await this.expectElementToHaveClass(this.allAttributeOfQuestions, [
+    await this.expectElementToHaveClass(this.faq, [
       "faq",
       "faq",
       "faq",
@@ -56,7 +56,7 @@ export default class FAQ extends BaseComponent {
     ]);
   };
   expectAnswersToHaveText = async (expectedText) => {
-    await this.expectElementToHaveText(this.answersToQuestions, expectedText);
+    await this.expectElementToHaveText(this.answers, expectedText);
   };
   expectListSizeAnswerToQuestions = async (number) => {
     await this.expectListToHaveCount(this.answers, number);
