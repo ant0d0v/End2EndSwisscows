@@ -2,6 +2,13 @@ import { test as base } from "@playwright/test";
 import Application from "../app/index.js";
 import AdminApplication from "../admin/app/index.js";
 import AccountsApplication from "../accounts/app/index.js";
+import {
+  getBearerTokenOfInternalUser,
+  getBearerTokenOfExternalUser,
+} from "../helpers/authHelper.js";
+const tokenInternalUser = getBearerTokenOfInternalUser()
+const tokenExternalUser = getBearerTokenOfExternalUser();
+
 export let deletionIds = {
   myTracks: {
     internalUser: [],
@@ -18,34 +25,22 @@ export const test = base.extend({
     await use(app, page, context, browser);
     if (deletionIds.myTracks.internalUser.length > 0) {
       for (const id of deletionIds.myTracks.internalUser) {
-        await app.api.user.sendDeleteTrackFromFavorite(
-          id,
-          process.env.TOKEN_INTERNAL_USER
-        );
+        await app.api.user.sendDeleteTrackFromFavorite(id, tokenInternalUser);
       }
     }
     if (deletionIds.myTracks.externalUser.length > 0) {
       for (const id of deletionIds.myTracks.externalUser) {
-        await app.api.user.sendDeleteTrackFromFavorite(
-          id,
-          process.env.TOKEN_EXTERNAL_USER
-        );
+        await app.api.user.sendDeleteTrackFromFavorite(id, tokenExternalUser);
       }
     }
     if (deletionIds.myImages.internalUser.length > 0) {
       for (const id of deletionIds.myImages.internalUser) {
-        await app.api.user.sendDeleteImageFromFavorite(
-          id,
-          process.env.TOKEN_INTERNAL_USER
-        );
+        await app.api.user.sendDeleteImageFromFavorite(id, tokenInternalUser);
       }
     }
     if (deletionIds.myImages.externalUser.length > 0) {
       for (const id of deletionIds.myImages.externalUser) {
-        await app.api.user.sendDeleteImageFromFavorite(
-          id,
-          process.env.TOKEN_EXTERNAL_USER
-        );
+        await app.api.user.sendDeleteImageFromFavorite(id, tokenExternalUser);
       }
     }
     

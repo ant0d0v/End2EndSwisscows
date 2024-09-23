@@ -8,7 +8,7 @@ import {
 const authFilePathForInternalUser = "./data/auth/internalUser.json";
 const authFilePathForExternalUser = "./data/auth/externalUser.json";
 
-setup("Login to site as swisscows user", async ({accounts, app }) => {
+setup("Login to site as swisscows user", async ({ accounts, app, page}) => {
   //Action
   await app.home.open();
   await app.home.header.clickHamburgerMenuButton();
@@ -25,10 +25,9 @@ setup("Login to site as swisscows user", async ({accounts, app }) => {
   // Run the function to remove the specified element from the origins array
   await app.page.context().storageState({ path: authFilePathForInternalUser });
   removeRefreshToken(authFilePathForInternalUser);
-  process.env.TOKEN_INTERNAL_USER = getBearerTokenOfInternalUser();
 });
 
-setup("Login to site as external user", async ({ accounts, app }) => {
+setup("Login to site as external user", async ({ accounts, app, page }) => {
   //Actions
   await app.home.open();
   await app.home.header.clickHamburgerMenuButton();
@@ -46,5 +45,4 @@ setup("Login to site as external user", async ({ accounts, app }) => {
   // Run the function to remove the specified element from the origins array
   await app.page.context().storageState({ path: authFilePathForExternalUser });
   removeRefreshToken(authFilePathForExternalUser);
-  process.env.TOKEN_EXTERNAL_USER = getBearerTokenOfExternalUser();
 });
