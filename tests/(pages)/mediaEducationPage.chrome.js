@@ -7,7 +7,9 @@ test("Check that the video is playing", async ({ app }) => {
   await app.mediaEducationPage.open();
 
   //Assert
-  await app.mediaEducationPage.videoPlayer.expectYouTubeVideoToPlay();
+  await app.mediaEducationPage.videoPlayer.expectYouTubeVideoToHaveAttribute({
+    attribute: /playing-mode/,
+  });
 });
 
 for (const { testID, link, name } of testData.pdfLinks) {

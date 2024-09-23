@@ -37,7 +37,7 @@ export default class AdvertiserProductCollection extends BaseComponent {
   };
 
   waitUntilProductAdsToBeVisible = async () => {
-    await this.waitUntilElementToBeVisible(this.widgetTitle);
+    await this.waitUntilElementToBeVisible(this.root);
   };
 
   //Verify
