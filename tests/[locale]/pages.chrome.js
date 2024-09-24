@@ -164,8 +164,7 @@ for (const { test_case, language, expected_title, languageCode } of education) {
 
 const charity = readSpecificCsvFile("../data/locales/charity.csv");
 for (const { test_case, language, expected_title, languageCode } of charity) {
-  test.fixme(
-    `${test_case} Check content of charity page for ${language} localization`,
+  test(`${test_case} Check content of charity page for ${language} localization`,
     async ({ app }) => {
       //Actions
       await app.charityPage.open();
@@ -174,8 +173,34 @@ for (const { test_case, language, expected_title, languageCode } of charity) {
       await app.charityPage.header.hamburgerMenu.clickLanguageLinkInDropdown(
         language
       );
-
+      
       //Assert
+      await app.charityPage.expectTranslationsForDescriptions({
+        translationKey_1: "Charity_BlockDescription_1",
+        translationKey_2: "Charity_BlockDescription_2",
+        translationKey_3: "Charity_BlockDescription_3",
+        translationKey_4: "Charity_BlockDescription_4",
+        translationKey_5: "Charity_BlockDescription_5",
+        translationKey_6: "Charity_BlockDescription_6",
+        translationKey_7: "Charity_BlockDescription_7",
+        translationKey_8: "Charity_BlockDescription_8",
+        translationKey_9: "Charity_BlockDescription_9",
+        translationKey_10: "Charity_BlockDescription_10",
+        translationKey_11: "Charity_BlockDescription_11",
+        translationKey_12: "Charity_BlockDescription_12",
+        translationKey_13:
+          language === "Deutsch" || language === "Português"
+            ? "Charity_BlockDescription_13"
+            : "",
+        locale: languageCode,
+      });
+      await app.charityPage.expectTranslationsForBlockTitle({
+        translationKey_1: "Charity_Title",
+        translationKey_2: "Charity_BlockTitle_1",
+        translationKey_3: "Charity_BlockTitle_2",
+        translationKey_4: "Charity_BlockTitle_3",
+        locale: languageCode,
+      });
       await app.expectHaveTitle(app.charityPage.page, expected_title);
     }
   );
