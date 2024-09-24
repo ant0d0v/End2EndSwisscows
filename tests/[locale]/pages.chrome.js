@@ -45,8 +45,7 @@ for (const {
   expected_title,
   languageCode,
 } of datacenter) {
-  test.fixme(
-    `${test_case} Check content of datacenter  page for ${language} localization`,
+  test(`${test_case} Check content of datacenter  page for ${language} localization`,
     async ({ app }) => {
       //Actions
       await app.datacenterPage.open();
@@ -57,42 +56,24 @@ for (const {
       );
 
       //Assert
-      await validateText(app.datacenterPage.page, "Datacenter", languageCode);
-      await validateText(
-        app.datacenterPage.page,
-        "Datacenter_BlockTitle_1",
-        languageCode
-      );
-      await validateText(
-        app.datacenterPage.page,
-        "Datacenter_BlockDescription_1",
-        languageCode
-      );
-      await validateText(
-        app.datacenterPage.page,
-        "Datacenter_BlockDescription_2",
-        languageCode
-      );
-      await validateText(
-        app.datacenterPage.page,
-        "Datacenter_BlockDescription_3",
-        languageCode
-      );
-      await validateText(
-        app.datacenterPage.page,
-        "Datacenter_BlockDescription_4",
-        languageCode
-      );
-      await validateText(
-        app.datacenterPage.page,
-        "Datacenter_BlockDescription_5",
-        languageCode
-      );
-      await validateText(
-        app.datacenterPage.page,
-        "Datacenter_BlockDescription_6",
-        languageCode
-      );
+      await app.datacenterPage.expectTranslationsForDescriptions({
+        translationKey_1: "Datacenter_BlockDescription_1",
+        translationKey_2: "Datacenter_BlockDescription_2",
+        translationKey_3: "Datacenter_BlockDescription_3",
+        translationKey_4: "Datacenter_CertificatDescription",
+        translationKey_5: "Datacenter_BlockDescription_4",
+        translationKey_6: "Datacenter_BlockDescription_5",
+        translationKey_7:
+          language === "Русский" || language === "Українська"
+            ? ""
+            : "Datacenter_BlockDescription_6",
+        locale: languageCode,
+      });
+      await app.datacenterPage.expectTranslationsForTitle({
+        translationKey_1: "Datacenter_Title",
+        translationKey_2: "Datacenter_BlockTitle",
+        locale: languageCode,
+      });
       await app.expectHaveTitle(app.datacenterPage.page, expected_title);
     }
   );

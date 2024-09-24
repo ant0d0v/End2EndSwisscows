@@ -227,7 +227,8 @@
   
   "Datacenter": "Az adatbiztos keresőmotor",
   "Datacenter_Home_Menu": "Adatközpontok",
-  "Datacenter_BlockTitle_1": "Adatbiztos keresőmotor: A Swisscows a legbiztonságosabb adatközpontban található.",
+  "Datacenter_Title": "Az adatbiztos keresőmotor",
+  "Datacenter_BlockTitle": "Adatbiztos keresőmotor: A Swisscows a legbiztonságosabb adatközpontban található.",
   "Datacenter_CertificatDescription": "Az adatközpont a TIER IV szintű tanúsításnak köszönhetően a legmagasabb, 99,998%-os rendelkezésre állási szinten működik.",
   "Datacenter_BlockDescription_1": "A Swisscows egy adatbiztonságos keresőmotor, és optimális internetes tartalmat nyújt. Adattárolás nélküli keresőmotort üzemeltetünk, így tiszteletben tartjuk a privát szféráját! Hogyan érhetjük ezt el? Azáltal, hogy nem gyűjtünk, tárolunk vagy követünk semmilyen adatot - a Swisscows.com 100%-ban anonim! Családbarát keresőmotor vagyunk, nincs adattárolás! Media Education, vagyis médiaoktatás, nálunk prioritás.",
   "Datacenter_BlockDescription_2": "Az Ön privát szférája fontos számunkra. Ezért saját szervereink vannak, és nem dolgozunk felhővel vagy akár harmadik fél szolgáltatóival. Biztonságos adatközpontunk a svájci Alpokban található, és földrajzilag az EU-n és az USA-n kívül helyezkedik el.",

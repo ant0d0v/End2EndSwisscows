@@ -228,7 +228,7 @@
 
   "Datacenter": "Unser Datacenter",
   "Datacenter_Home_Menu": "Unser Datacenter",
-  "Datacenter_BlockTitle_1": "Datensichere Suchmaschine: Swisscows ist im sichersten Rechenzentrum aufbewahrt",
+  "Datacenter_Title": "Datensichere Suchmaschine",
   "Datacenter_CertificatDescription": "Das Rechenzentrum erreicht dank Zertifizierung auf TIER IV-Level den höchsten Verfügbarkeitsstandard von 99,998 %.",
   "Datacenter_BlockDescription_1": "Swisscows ist die datensichere Suchmaschine und sorgt für optimale Internetinhalte. Wir betreiben eine Suchmaschine ohne Datenspeicherung und respektieren somit deine Privatsphäre! Wie wir das erreichen? Indem wir keine Daten sammeln, speichern oder verfolgen - du bist bei Swisscows.com zu 100% anonym! Wir sind eine familienfreundliche Suchmaschine, keine Datenspeicherung! Media Education, also die Medienerziehung, wird bei uns gross geschrieben.",
   "Datacenter_BlockDescription_2": "Deine Privatsphäre ist uns wichtig. Aus diesem Grund haben wir eigene Server und arbeiten nicht mit einer Cloud oder gar Drittanbietern. Unser sicheres Datacenter liegt in den Schweizer Alpen und ist geographisch ausserhalb von EU und der USA positioniert.",
@@ -236,7 +236,8 @@
   "Datacenter_BlockDescription_4": "Mehrstufige Schutzmassnahmen im Bereich Netzwerk und IT reduzieren jedes erdenkliche Risiko auf das absolute Minimum. Alle Standorte verfügen über konstante Video- und Brandüberwachung. Zwei Anlagen sind durch eine dedizierte Glasfaserverbindung miteinander verbunden.",
   "Datacenter_BlockDescription_5": "Die Stromversorgung erfolgt grundsätzlich mit Naturstrom, direkt ab Unterwerk Gais über zwei Mittelspannungsleitungen. Jedes Rack wird über zwei getrennte Stromkreise von den eigenen Trafoanlagen versorgt. Somit ist jederzeit eine vollumfängliche Energieversorgung gesichert – selbst dann, wenn wichtige Anlagenteile in einem der beiden Strompfade versagen sollten. USV- und Netzersatzanlagen überbrücken mögliche Stromausfälle.",
   "Datacenter_BlockDescription_6": "Zusätzlich trägt die hauseigene Photovoltaikanlage zur Stromerzeugung bei. Über eine flächendeckende Photovoltaik-Anlage wird in Eigenregie jährlich 230'000 kWh Strom für die Nutzung im Rechenzentrum erzeugt.",
-
+  "Datacenter_BlockTitle": "Datensichere Suchmaschine: Swisscows ist im sichersten Rechenzentrum aufbewahrt",
+ 
   "Imprint": "Impressum",
   "Imprint_Menu": "Impressum",
   "Imprint_Title": "Unternehmensangaben",
