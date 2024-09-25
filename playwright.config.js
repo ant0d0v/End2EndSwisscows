@@ -82,7 +82,7 @@ export default defineConfig({
         viewport: { width: 1440, height: 900 },
         screenshot: "only-on-failure",
       },
-      // dependencies: ["setup"],
+      dependencies: ["setup"],
     },
     {
       name: "firefox",
