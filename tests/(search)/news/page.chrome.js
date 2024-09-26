@@ -177,7 +177,7 @@ test("Check that image of proxy cdn server", async ({ app }) => {
   await app.newsPage.item.expectNewsItemsToBeVisible();
 
   //Assert
-  await app.newsPage.item.expectAllImagesToHaveAttribute(/cdn.swisscows.com/);
+  await app.newsPage.item.expectAllImagesToHaveAttribute(/cdn.dev.swisscows.com/);
 });
 
 test("Check design pagination component", async ({ app }, testInfo) => {

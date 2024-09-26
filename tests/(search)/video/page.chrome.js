@@ -333,7 +333,7 @@ test("Check that image of proxy cdn server", async ({ app }) => {
 
   //Assert
   await app.videoPage.item.expectVideoResultToHaveCount(10);
-  await app.videoPage.item.expectAllImagesToHaveAttribute(/cdn.swisscows.com/);
+  await app.videoPage.item.expectAllImagesToHaveAttribute(/cdn.dev.swisscows.com/);
 });
 
 test("Check regional search", async ({ app }) => {

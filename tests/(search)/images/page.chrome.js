@@ -255,7 +255,7 @@ test("Check that image of proxy cdn server", async ({ app }) => {
   await app.imagePage.item.expectImageItemsToBeVisible();
 
   //Assert
-  await app.imagePage.item.expectAllImagesToHaveAttribute(/cdn.swisscows.com/);
+  await app.imagePage.item.expectAllImagesToHaveAttribute(/cdn.dev.swisscows.com/);
 });
 
 test("Check image item is active  when clicking on image", async ({ app }) => {
