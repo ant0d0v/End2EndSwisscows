@@ -13,13 +13,13 @@ export default class HamburgerMenu extends BaseComponent {
     this.title = this.root.locator(".title");
     this.menuDropdownButton = this.root.locator(".menu-dropdown-button");
     this.linkList = this.root.locator("ul a");
-    this.dropdownRegion = this.page.getByText(/Region/);
+    this.dropdownRegion = this.root.locator(".menu-dropdown-button").nth(1);
     this.regionInDropdown = (region) =>
       this.page.locator("li").filter({ hasText: `${region}` });
     this.loginButton = this.page.getByRole("button", { name: "Login" });
     this.logoutButton = this.page.getByRole("button", { name: "Logout" });
     this.languagesDropdown = this.page.getByText("Language");
-    this.regionDropdown = this.page.getByText("Region");
+    this.regionDropdown = this.root.locator(".menu-dropdown-button").nth(1);
     this.themeDropdown = this.page.getByText("Theme Default");
     this.nameTheme = (name) => this.page.getByText(name);
     this.lightTheme = this.page.getByText("Light");

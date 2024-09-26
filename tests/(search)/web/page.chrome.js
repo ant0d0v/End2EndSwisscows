@@ -91,12 +91,12 @@ test("Check Did you mean message in the search field ", async ({ app }) => {
 test("Check that web results equals search criteria ", async ({ app }) => {
   //Actions
   await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria("Ukraine");
+  await app.home.header.searchForm.inputSearchCriteria("wikipedia");
   await app.home.header.searchForm.clickEnterSearchField();
   await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
 
   //Assert
-  await app.webPage.expectItemsToContains("ukraine");
+  await app.webPage.expectItemsToContains("wiki");
   await app.webPage.expectResultsToHaveCountItems(10);
 });
 test.describe("Web-page items", () => {
