@@ -366,8 +366,8 @@ test("Check video to have href external service", async ({ app }) => {
   await app.videoPage.item.expectVideoItemsToBeVisible();
 
   //Assert
-  await app.videoPage.item.expectVideoToHaveAttributeHrefBy({ number: 1, value: /www.youtube.com/ })
-  await app.videoPage.item.expectVideoToHaveAttributeHrefBy({ number: 5, value: /www.youtube.com/ })
+  await app.videoPage.item.expectVideoToHaveAttributeHrefBy({ number: 1, value: /youtube.com/ })
+  await app.videoPage.item.expectVideoToHaveAttributeHrefBy({ number: 5, value: /youtube.com/ })
 });
 
 test("Check checkbox `Don't remind me again`", async ({ app }) => {
