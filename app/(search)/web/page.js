@@ -48,7 +48,7 @@ export default class WebPage extends BasePage {
 
     //Locators
     this.items = this.page.locator(".web-results .item");
-    this.titles = this.page.locator(".web-results .item .title");
+    this.titles = this.page.locator(".web-results .web-page .title");
   }
   //Actions
   async openNotFound(path) {
