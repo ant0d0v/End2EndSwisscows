@@ -11,9 +11,15 @@ test("Check next and prev buttons in the video widget", async ({ app }) => {
   await app.webPage.videoCollection.waitUntilWidgetToBeVisible();
   await app.webPage.videoCollection.clickNextButton();
   //Assert
-  await app.webPage.videoCollection.expectToHaveAttributeSlideAt({ number: 2, attribute:/active/ });
+  await app.webPage.videoCollection.expectToHaveAttributeSlideAt({
+    number: 2,
+    attribute: /active/,
+  });
   await app.webPage.videoCollection.clickPrevButton();
-  await app.webPage.videoCollection.expectToHaveAttributeSlideAt({ number: 1, attribute:/active/ });
+  await app.webPage.videoCollection.expectToHaveAttributeSlideAt({
+    number: 1,
+    attribute: /active/,
+  });
 });
 
 test("Check the width and visibility of images in the video widget", async ({
@@ -26,13 +32,13 @@ test("Check the width and visibility of images in the video widget", async ({
   await app.home.header.searchForm.inputSearchCriteria("iphone");
   await app.home.header.searchForm.clickEnterSearchField();
   await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
-  await app.webPage.videoCollection.waitUntilWidgetToBeVisible()
+  await app.webPage.videoCollection.waitUntilWidgetToBeVisible();
 
   //Assert
-  await app.webPage.videoCollection.expectAllImagesToBeVisible()
+  await app.webPage.videoCollection.expectAllImagesToBeVisible();
   await app.webPage.videoCollection.expectImagesToHaveProperty({
     width: 240,
-    height: 135
+    height: 135,
   });
 });
 
@@ -68,7 +74,7 @@ test("Check that open video in the video widget", async ({ app }) => {
   //Assert
   await app.webPage.videoCollection.expectToBeOpenedNewPageAfterClickImageAt({
     number: 1,
-    expectedUrl: /www.youtube.com/
+    expectedUrl: /www.youtube.com/,
   });
 });
 
@@ -99,12 +105,12 @@ test("Check the design error icon of video object", async ({
   await app.webPage.videoCollection.waitUntilWidgetToBeVisible();
 
   //Assert
-  await app.webPage.videoCollection.takeSnapshotErrorIconAt(testInfo, { number: 1 });
+  await app.webPage.videoCollection.takeSnapshotErrorIconAt(testInfo, {
+    number: 1,
+  });
 });
 
-test("Check that video  item {site, title}", async ({
-  app,
-}) => {
+test("Check that video  item {site, title}", async ({ app }) => {
   //Actions
   await app.home.open();
   await app.home.header.clickHamburgerMenuButton();
@@ -132,12 +138,20 @@ test("Check next and prev buttons in the news widget", async ({ app }) => {
   await app.webPage.newsCollection.waitUntilWidgetToBeVisible();
   await app.webPage.newsCollection.clickNextButton();
   //Assert
-  await app.webPage.newsCollection.expectToHaveAttributeSlideAt({ number: 2, attribute: /active/ });
+  await app.webPage.newsCollection.expectToHaveAttributeSlideAt({
+    number: 2,
+    attribute: /active/,
+  });
   await app.webPage.newsCollection.clickPrevButton();
-  await app.webPage.newsCollection.expectToHaveAttributeSlideAt({ number: 1, attribute: /active/ });
+  await app.webPage.newsCollection.expectToHaveAttributeSlideAt({
+    number: 1,
+    attribute: /active/,
+  });
 });
 
-test("Check that open new page when clicking title in news widget", async ({ app }) => {
+test("Check that open new page when clicking title in news widget", async ({
+  app,
+}) => {
   //Actions
   await app.home.open();
   await app.home.header.clickHamburgerMenuButton();
@@ -225,7 +239,7 @@ test("Check design chevron-up icon", async ({ app }, testInfo) => {
   await app.home.header.searchForm.clickEnterSearchField();
   await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
   await app.webPage.faq.waitUntilWidgetToBeVisible();
-  await app.webPage.faq.clickAllQuestions()
+  await app.webPage.faq.clickAllQuestions();
 
   //Assert
   await app.webPage.faq.takeSnapshotChevronIconAt(testInfo, { number: 1 });
@@ -267,9 +281,7 @@ test("Check that question and answer can be opened and closed in the widget faq"
   await app.webPage.faq.expectQuestionsToHaveAttribute({ attribute: "qa" });
 });
 
-test("Check info {qustions and answers} in widget faq", async ({
-  app,
-}) => {
+test("Check info {qustions and answers} in widget faq", async ({ app }) => {
   //Actions
   await app.home.open();
   await app.home.header.clickHamburgerMenuButton();
@@ -285,4 +297,111 @@ test("Check info {qustions and answers} in widget faq", async ({
     question: /\w+/,
     answer: /\w+/,
   });
+});
+
+test("Check design header of infobox widget", async ({ app }, testInfo) => {
+  //Actions
+  await app.home.open();
+  await app.home.header.clickHamburgerMenuButton();
+  await app.home.header.hamburgerMenu.selectRegion("Germany");
+  await app.home.header.searchForm.inputSearchCriteria("Cristiano Ronaldo");
+  await app.home.header.searchForm.clickEnterSearchField();
+  await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
+
+  //Assert
+  await app.webPage.infobox.expectImageToBeVisible();
+  await app.webPage.infobox.takeSnapshot(testInfo);
+});
+
+test("Check design footer of infobox widget", async ({ app }, testInfo) => {
+  //Actions
+  await app.home.open();
+  await app.home.header.clickHamburgerMenuButton();
+  await app.home.header.hamburgerMenu.selectRegion("Germany");
+  await app.home.header.searchForm.inputSearchCriteria("Cristiano Ronaldo");
+  await app.home.header.searchForm.clickEnterSearchField();
+  await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
+
+  //Assert
+  await app.webPage.infobox.takeSnapshotFooter(testInfo);
+});
+
+test("Check design more button of infobox widget", async ({
+  app,
+}, testInfo) => {
+  //Actions
+  await app.home.open();
+  await app.home.header.clickHamburgerMenuButton();
+  await app.home.header.hamburgerMenu.selectRegion("Germany");
+  await app.home.header.searchForm.inputSearchCriteria("Cristiano Ronaldo");
+  await app.home.header.searchForm.clickEnterSearchField();
+  await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
+
+  //Assert
+  await app.webPage.infobox.takeSnapshotMoreButton(testInfo);
+});
+
+test("Check open page wiki when clicking more button in infobox widget", async ({
+  app,
+}) => {
+  //Actions
+  await app.home.open();
+  await app.home.header.clickHamburgerMenuButton();
+  await app.home.header.hamburgerMenu.selectRegion("Germany");
+  await app.home.header.searchForm.inputSearchCriteria("Cristiano Ronaldo");
+  await app.home.header.searchForm.clickEnterSearchField();
+  await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
+  const currentUrl = await app.page.url();
+  await app.webPage.infobox.clickMoreButton();
+
+  //Assert
+  await app.expectPageNotToHaveUrl(app.page, currentUrl);
+});
+
+test("Check info {description and site} in infobox widget", async ({ app }) => {
+  //Actions
+  await app.home.open();
+  await app.home.header.clickHamburgerMenuButton();
+  await app.home.header.hamburgerMenu.selectRegion("Germany");
+  await app.home.header.searchForm.inputSearchCriteria("Cristiano Ronaldo");
+  await app.home.header.searchForm.clickEnterSearchField();
+  await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
+
+  //Assert
+  await app.webPage.infobox.expectInfoboxToContain({
+    description: /\w+/,
+    site: "www.cristianoronaldo.com",
+  });
+});
+
+test("Open page when clicking  on  profile in infobox widget", async ({
+  app,
+}) => {
+  //Actions
+  await app.home.open();
+  await app.home.header.clickHamburgerMenuButton();
+  await app.home.header.hamburgerMenu.selectRegion("Germany");
+  await app.home.header.searchForm.inputSearchCriteria("Cristiano Ronaldo");
+  await app.home.header.searchForm.clickEnterSearchField();
+  await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
+  await app.webPage.infobox.selectProfileBy({ name: "www.youtube.com" });
+
+  //Assert
+  await app.expectPageToHaveUrl(app.page, "https://www.youtube.com/@cristiano");
+});
+
+test("Open page when clicking  on site in infobox widget", async ({
+  app,
+}) => {
+  //Actions
+  await app.home.open();
+  await app.home.header.clickHamburgerMenuButton();
+  await app.home.header.hamburgerMenu.selectRegion("Germany");
+  await app.home.header.searchForm.inputSearchCriteria("Cristiano Ronaldo");
+  await app.home.header.searchForm.clickEnterSearchField();
+  await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
+  await app.webPage.infobox.clickSiteLink()
+
+  //Assert
+  await app.expectPageToHaveUrl(app.page, "https://www.cristianoronaldo.com/#cr7");
 });

@@ -7,7 +7,7 @@ import SearchBar from "../../components/SearchBar.js";
 import BaseComponent from "../../base/BaseComponent.js";
 import Logo from "./Logo.js";
 import Navigation from "./Navigation.js";
-import Translations from "../../locales/n18next.js";
+import Translations from "../../i18n/index.js";
 
 export default class Header extends BaseComponent {
   constructor(page) {

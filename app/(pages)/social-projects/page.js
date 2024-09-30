@@ -2,7 +2,7 @@ import BasePage from "../../../base/BasePage.js";
 import ImagesGallery from "../../../components/ImagesGallery.js";
 import VideoPlayer from "../../../components/VideoPlayer.js";
 import Header from "../../(pages)/Header.js";
-import Translations from "../../../locales/n18next.js";
+import Translations from "../../../i18n/index.js";
 export default class CharityPage extends BasePage {
   constructor(page) {
     super(page);

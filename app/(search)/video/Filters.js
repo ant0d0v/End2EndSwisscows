@@ -1,6 +1,6 @@
 import BaseComponent from "../../../base/BaseComponent.js";
 import SelectMenu from "../../../components/Select.js";
-import Translations from "../../../locales/n18next.js";
+import Translations from "../../../i18n/index.js";
 export default class Filters extends BaseComponent {
   constructor(page) {
     super(page);
@@ -23,10 +23,7 @@ export default class Filters extends BaseComponent {
   };
 
   clickFilterByDate = async () => {
-    await this.clickElement(
-      this.filters.nth(1),
-      `filter by Date in dropdown`
-    );
+    await this.clickElement(this.filters.nth(1), `filter by Date in dropdown`);
   };
 
   clickOnPage = async () => {

@@ -1,15 +1,15 @@
 import i18next from "i18next";
-import enTranslation from "./en/translation.json";
-import deTranslation from "./de/translation.json";
-import esTranslation from "./es/translation.json";
-import frTranslation from "./fr/translation.json";
-import huTranslation from "./hu/translation.json";
-import itTranslation from "./it/translation.json";
-import lvTranslation from "./lv/translation.json";
-import nlTranslation from "./nl/translation.json";
-import ptTranslation from "./pt/translation.json";
-import ruTranslation from "./ru/translation.json";
-import ukTranslation from "./uk/translation.json";
+import enTranslation from "../locales/en/translation.json";
+import deTranslation from "../locales/de/translation.json";
+import esTranslation from "../locales/es/translation.json";
+import frTranslation from "../locales/fr/translation.json";
+import huTranslation from "../locales/hu/translation.json";
+import itTranslation from "../locales/it/translation.json";
+import lvTranslation from "../locales/lv/translation.json";
+import nlTranslation from "../locales/nl/translation.json";
+import ptTranslation from "../locales/pt/translation.json";
+import ruTranslation from "../locales/ru/translation.json";
+import ukTranslation from "../locales/uk/translation.json";
 
 i18next.init({
   fallbackLng: "en",

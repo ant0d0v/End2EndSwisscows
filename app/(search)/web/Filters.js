@@ -1,6 +1,6 @@
 import BaseComponent from "../../../base/BaseComponent.js";
 import SelectMenu from "../../../components/Select.js";
-import Translations from "../../../locales/n18next.js";
+import Translations from "../../../i18n/index.js";
 
 export default class Filters extends BaseComponent {
   constructor(page) {
@@ -26,7 +26,8 @@ export default class Filters extends BaseComponent {
   };
 
   //Locales
-  async expectTranslationsForFilter( expected = {
+  async expectTranslationsForFilter(
+    expected = {
       translationKey: value,
       locale: value,
     }

@@ -19,6 +19,7 @@ import Article from "./Article.js";
 import Product from "./Product.js";
 import Skeleton from "./Skeleton.js";
 import FAQ from "./FAQPage.js";
+import Infobox from "./Infobox.js";
 
 
 export default class WebPage extends BasePage {
@@ -45,6 +46,7 @@ export default class WebPage extends BasePage {
     this.product = new Product(page);
     this.skeleton = new Skeleton(page);
     this.faq = new FAQ(page)
+    this.infobox = new Infobox(page);
 
     //Locators
     this.items = this.page.locator(".web-results .item");

@@ -19,4 +19,10 @@ export default class Favicon extends BaseComponent {
       await this.expectElementToBeVisible(icon);
     }
   }
+  async expectFaviconsToBeVisible(elements) {
+    for (const icon of await elements.all()) {
+      await icon.scrollIntoViewIfNeeded();
+      await this.expectElementToBeVisible(icon);
+    }
+  }
 }

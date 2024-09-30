@@ -1,9 +1,9 @@
 import BaseComponent from "../base/BaseComponent.js";
-import Translations from "../locales/n18next.js";
+import Translations from "../i18n/index.js";
 export default class FAQ extends BaseComponent {
   constructor(page) {
     super(page);
-    this.translations = Translations
+    this.translations = Translations;
     //Locators
     this.root = this.page.locator(".faq-wrap");
     this.faq = this.page.locator(".faq");
@@ -116,7 +116,7 @@ export default class FAQ extends BaseComponent {
       expectedTextFAQ_Question_3,
       expectedTextFAQ_Question_4,
       expectedTextFAQ_Question_5,
-      expectedTextFAQ_Question_6
+      expectedTextFAQ_Question_6,
     ]);
   }
 

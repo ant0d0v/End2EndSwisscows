@@ -1,8 +1,8 @@
 import BasePage from "../../../base/BasePage.js";
 import videoPlayer from "../../../components/VideoPlayer.js";
 import Header from "../../(pages)/Header.js";
-import Translations from "../../../locales/n18next.js";
-import  { expect, test } from"@playwright/test";
+import Translations from "../../../i18n/index.js";
+import { expect, test } from "@playwright/test";
 
 export default class MediaEducationPage extends BasePage {
   constructor(page) {

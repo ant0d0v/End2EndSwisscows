@@ -6,7 +6,7 @@ import FAQ from "../../components/FAQ.js";
 import Banner from "./Banner.js";
 import BasePage from "../../base/BasePage.js";
 import Benefits from "./Benefits.js";
-import Translations from "../../locales/n18next.js";
+import Translations from "../../i18n/index.js";
 
 export default class Home extends BasePage {
   constructor(page) {
@@ -66,24 +66,33 @@ export default class Home extends BasePage {
     );
   };
 
-
-
   //Locales
-  async expectTranslationsForConteinerTitle( expected = {
+  async expectTranslationsForConteinerTitle(
+    expected = {
       translationKey_1: value,
       translationKey_2: value,
       translationKey_3: value,
       locale: value,
-    }) {
-    const expectedTextFAQ_Title = this.translations.t(expected.translationKey_1, {
-      lng: expected.locale
-    });
-    const expectedTextProductsServices = this.translations.t(expected.translationKey_2, {
-      lng: expected.locale
-    });
-    const expectedTextTagline_Title =  this.translations.t(expected.translationKey_3, {
-      lng: expected.locale
-    });
+    }
+  ) {
+    const expectedTextFAQ_Title = this.translations.t(
+      expected.translationKey_1,
+      {
+        lng: expected.locale,
+      }
+    );
+    const expectedTextProductsServices = this.translations.t(
+      expected.translationKey_2,
+      {
+        lng: expected.locale,
+      }
+    );
+    const expectedTextTagline_Title = this.translations.t(
+      expected.translationKey_3,
+      {
+        lng: expected.locale,
+      }
+    );
     await this.expectElementToHaveText(this.conteinerTitle, [
       expectedTextFAQ_Title,
       expectedTextProductsServices,
@@ -195,33 +204,60 @@ export default class Home extends BasePage {
       locale: value,
     }
   ) {
-    const expectedTextEmailDescription = this.translations.t(expected.translationKey_1, {
-      lng: expected.locale,
-    });
-    const expectedTextVPNDescription = this.translations.t(expected.translationKey_2, {
-      lng: expected.locale,
-    });
-    const expectedTeleguardDescription = this.translations.t(expected.translationKey_3, {
-      lng: expected.locale,
-    });
-    const expectedTextHulbeeDescription = this.translations.t(expected.translationKey_4, {
-      lng: expected.locale,
-    });
-    const expectedTextTgBusinessDescription = this.translations.t(expected.translationKey_5, {
-      lng: expected.locale,
-    });
-    const expectedTextGetDigestDescription = this.translations.t(expected.translationKey_6, {
-      lng: expected.locale,
-    });
-    const expectedTextFanShopDescription = this.translations.t(expected.translationKey_7, {
-      lng: expected.locale,
-    });
-    const expectedTextFaradayBagDescription = this.translations.t(expected.translationKey_8, {
-      lng: expected.locale,
-    });
-    const expectedTextBlogDescription = this.translations.t(expected.translationKey_9, {
-      lng: expected.locale,
-    });
+    const expectedTextEmailDescription = this.translations.t(
+      expected.translationKey_1,
+      {
+        lng: expected.locale,
+      }
+    );
+    const expectedTextVPNDescription = this.translations.t(
+      expected.translationKey_2,
+      {
+        lng: expected.locale,
+      }
+    );
+    const expectedTeleguardDescription = this.translations.t(
+      expected.translationKey_3,
+      {
+        lng: expected.locale,
+      }
+    );
+    const expectedTextHulbeeDescription = this.translations.t(
+      expected.translationKey_4,
+      {
+        lng: expected.locale,
+      }
+    );
+    const expectedTextTgBusinessDescription = this.translations.t(
+      expected.translationKey_5,
+      {
+        lng: expected.locale,
+      }
+    );
+    const expectedTextGetDigestDescription = this.translations.t(
+      expected.translationKey_6,
+      {
+        lng: expected.locale,
+      }
+    );
+    const expectedTextFanShopDescription = this.translations.t(
+      expected.translationKey_7,
+      {
+        lng: expected.locale,
+      }
+    );
+    const expectedTextFaradayBagDescription = this.translations.t(
+      expected.translationKey_8,
+      {
+        lng: expected.locale,
+      }
+    );
+    const expectedTextBlogDescription = this.translations.t(
+      expected.translationKey_9,
+      {
+        lng: expected.locale,
+      }
+    );
     await this.expectElementToHaveText(this.descriptions, [
       expectedTextEmailDescription,
       expectedTextVPNDescription,

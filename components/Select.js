@@ -1,5 +1,5 @@
 import BaseComponent from "../base/BaseComponent.js";
-import Translations from "../locales/n18next.js";
+import Translations from "../i18n/index.js";
 export default class SelectMenu extends BaseComponent {
   constructor(page) {
     super(page);
@@ -36,7 +36,7 @@ export default class SelectMenu extends BaseComponent {
       testInfo
     );
   };
-  
+
   //Locales
   async expectTranslationsForFilterListByDate(
     expected = {
@@ -48,21 +48,36 @@ export default class SelectMenu extends BaseComponent {
       locale: value,
     }
   ) {
-    const expectedTextFilter_1 = this.translations.t(expected.translationKey_1, {
-      lng: expected.locale,
-    });
-    const expectedTextFilter_2 = this.translations.t(expected.translationKey_2, {
-      lng: expected.locale,
-    });
-    const expectedTextFilter_3 = this.translations.t(expected.translationKey_3, {
-      lng: expected.locale,
-    });
-    const expectedTextFilter_4 = this.translations.t(expected.translationKey_4, {
-      lng: expected.locale,
-    });
-    const expectedTextFilter_5 = this.translations.t(expected.translationKey_5, {
-      lng: expected.locale,
-    });
+    const expectedTextFilter_1 = this.translations.t(
+      expected.translationKey_1,
+      {
+        lng: expected.locale,
+      }
+    );
+    const expectedTextFilter_2 = this.translations.t(
+      expected.translationKey_2,
+      {
+        lng: expected.locale,
+      }
+    );
+    const expectedTextFilter_3 = this.translations.t(
+      expected.translationKey_3,
+      {
+        lng: expected.locale,
+      }
+    );
+    const expectedTextFilter_4 = this.translations.t(
+      expected.translationKey_4,
+      {
+        lng: expected.locale,
+      }
+    );
+    const expectedTextFilter_5 = this.translations.t(
+      expected.translationKey_5,
+      {
+        lng: expected.locale,
+      }
+    );
     await this.expectElementToHaveText(this.listDate, [
       expectedTextFilter_1,
       expectedTextFilter_2,
