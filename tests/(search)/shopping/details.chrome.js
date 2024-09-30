@@ -1,4 +1,5 @@
 import { test } from "../../../utils/fixtures.js";
+import{ randomProduct } from "../../../helpers/random.js"
 import { faker } from "@faker-js/faker";
 
 test("Check open product details pane", async ({ app }) => {
@@ -42,7 +43,7 @@ test("Check close product details pane", async ({ app }) => {
 test("Check image in details pane ", async ({ app }) => {
   //Actions
   await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria("adidas");
+  await app.home.header.searchForm.inputSearchCriteria(randomProduct());
   await app.home.header.searchForm.clickEnterSearchField();
   await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
   await app.webPage.header.clickHamburgerMenuButton();
@@ -105,7 +106,7 @@ test("Check less button in detail", async ({ app }) => {
 test("Check offer info in detail", async ({ app }) => {
   //Actions
   await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria("adidas");
+  await app.home.header.searchForm.inputSearchCriteria(randomProduct());
   await app.home.header.searchForm.clickEnterSearchField();
   await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
   await app.webPage.header.clickHamburgerMenuButton();
@@ -127,7 +128,7 @@ test("Check offer info in detail", async ({ app }) => {
 test("Check count of payments options", async ({ app }) => {
   //Actions
   await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria("adidas");
+  await app.home.header.searchForm.inputSearchCriteria(randomProduct());
   await app.home.header.searchForm.clickEnterSearchField();
   await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
   await app.webPage.header.clickHamburgerMenuButton();
@@ -144,7 +145,7 @@ test("Check count of payments options", async ({ app }) => {
 test("Check count of Shipping options", async ({ app }) => {
   //Actions
   await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria("adidas");
+  await app.home.header.searchForm.inputSearchCriteria(randomProduct());
   await app.home.header.searchForm.clickEnterSearchField();
   await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
   await app.webPage.header.clickHamburgerMenuButton();
@@ -217,7 +218,7 @@ test("Check  offer icons to be visible", async ({ app }) => {
 test("Check  brand image to be visible and have property", async ({ app }) => {
   //Actions
   await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria("adidas");
+  await app.home.header.searchForm.inputSearchCriteria("nike");
   await app.home.header.searchForm.clickEnterSearchField();
   await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
   await app.webPage.header.clickHamburgerMenuButton();
@@ -229,7 +230,7 @@ test("Check  brand image to be visible and have property", async ({ app }) => {
   //Assert
   await app.shoppingPage.details.expectBrandImageToBeVisible();
   await app.shoppingPage.details.expectBrandImageToHaveProperty({
-    width: 30,
+    width: 57,
     height: 20,
   });
 });

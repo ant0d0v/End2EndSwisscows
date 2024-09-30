@@ -28,6 +28,15 @@ export function randomString(length) {
 
   return text;
 }
+export function randomProduct() {
+  const word = faker.helpers.arrayElement([
+    "nike",
+    "puma",
+    "laptop iphone",
+    "computer"
+  ]);
+  return word;
+}
 
 export function randomQueryWithVideoItemSearch() {
   const word = faker.helpers.arrayElement([

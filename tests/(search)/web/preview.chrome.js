@@ -141,7 +141,7 @@ test("Check prev button to be hidden  when clicking next button ", async ({
 test("Check description is full when clicking more ", async ({ app }) => {
   //Actions
   await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria("wiki ronaldo");
+  await app.home.header.searchForm.inputSearchCriteria("wiki iphone");
   await app.home.header.searchForm.clickEnterSearchField();
   await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
   await app.webPage.webPageItem.clickPreviewButtonAt({ number: 1 });

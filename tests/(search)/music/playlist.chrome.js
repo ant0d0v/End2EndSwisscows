@@ -4,7 +4,7 @@ import { faker } from "@faker-js/faker";
 test("Check pause track on music page", async ({ app }) => {
   //Actions
   await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria(faker.music.songName());
+  await app.home.header.searchForm.inputSearchCriteria("best");
   await app.home.header.searchForm.clickEnterSearchField();
   await app.musicPage.header.navigation.clickMusicTab();
   await app.musicPage.track.expectMusicTracksToBeVisible();
@@ -22,7 +22,7 @@ test("Check pause track on music page", async ({ app }) => {
 test("Check next button of track on the main page", async ({ app }) => {
   //Actions
   await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria(faker.music.songName());
+  await app.home.header.searchForm.inputSearchCriteria("best");
   await app.home.header.searchForm.clickEnterSearchField();
   await app.musicPage.header.navigation.clickMusicTab();
   await app.musicPage.track.expectMusicTracksToBeVisible();
@@ -41,7 +41,7 @@ test("Check next button of track on the main page", async ({ app }) => {
 test("Check previous button of track on the main page", async ({ app }) => {
   //Actions
   await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria(faker.music.songName());
+  await app.home.header.searchForm.inputSearchCriteria("best");
   await app.home.header.searchForm.clickEnterSearchField();
   await app.musicPage.header.navigation.clickMusicTab();
   await app.musicPage.track.expectMusicTracksToBeVisible();
@@ -49,7 +49,7 @@ test("Check previous button of track on the main page", async ({ app }) => {
   await app.musicPage.playlist.expectToBeHiddenPlaylistAt({ number: 1 });
   await app.musicPlaylistPage.track.expectMusicTracksToBeVisible();
   await app.musicPlaylistPage.track.clickPlayButtonAt({ number: 1 });
-  await app.musicPlaylistPage.player.expectProgressToHaveValue("2");
+  await app.musicPlaylistPage.player.expectElapsedTimeToHaveText(/^0:0[4-9]$/);
   await app.musicPlaylistPage.player.clickNextButton();
   await app.musicPlaylistPage.player.clickPrevButton();
 
