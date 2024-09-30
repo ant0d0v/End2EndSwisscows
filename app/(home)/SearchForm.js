@@ -1,5 +1,5 @@
 import BaseComponent from "../../base/BaseComponent.js";
-import Translations from "../../locales/n18next.js";
+import Translations from "../../i18n/index.js";
 export default class SearchForm extends BaseComponent {
   constructor(page) {
     super(page);
@@ -43,14 +43,22 @@ export default class SearchForm extends BaseComponent {
   };
 
   //Locale
-  async expectTranslationsForPlaceholder( expected = {
-    translationKey_1: value,
+  async expectTranslationsForPlaceholder(
+    expected = {
+      translationKey_1: value,
       locale: value,
-    }) {
-    const expectedTextPlaceholder = this.translations.t(expected.translationKey_1, {
-      lng: expected.locale
-    });
-    await this.expectAttributeToHaveValue(this.search, "placeholder", expectedTextPlaceholder);
+    }
+  ) {
+    const expectedTextPlaceholder = this.translations.t(
+      expected.translationKey_1,
+      {
+        lng: expected.locale,
+      }
+    );
+    await this.expectAttributeToHaveValue(
+      this.search,
+      "placeholder",
+      expectedTextPlaceholder
+    );
   }
-
 }

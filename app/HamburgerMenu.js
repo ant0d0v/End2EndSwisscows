@@ -1,7 +1,6 @@
 import BaseComponent from "../base/BaseComponent.js";
 import Avatar from "../components/Avatar.js";
-import Translations from "../locales/n18next.js";
-import { expect } from '@playwright/test';
+import Translations from "../i18n/index.js";
 
 export default class HamburgerMenu extends BaseComponent {
   constructor(page) {
@@ -168,15 +167,24 @@ export default class HamburgerMenu extends BaseComponent {
       locale: value,
     }
   ) {
-    const expectedMenuButton_1 = this.translations.t(expected.translationKey_1, {
-      lng: expected.locale
-    });
-    const expectedMenuButton_2 = this.translations.t(expected.translationKey_2, {
-      lng: expected.locale
-    });
-    const expectedMenuButton_3 = this.translations.t(expected.translationKey_3, {
-      lng: expected.locale
-    });
+    const expectedMenuButton_1 = this.translations.t(
+      expected.translationKey_1,
+      {
+        lng: expected.locale,
+      }
+    );
+    const expectedMenuButton_2 = this.translations.t(
+      expected.translationKey_2,
+      {
+        lng: expected.locale,
+      }
+    );
+    const expectedMenuButton_3 = this.translations.t(
+      expected.translationKey_3,
+      {
+        lng: expected.locale,
+      }
+    );
     await this.expectElementToHaveText(this.menuDropdownButton, [
       new RegExp(expectedMenuButton_1),
       new RegExp(expectedMenuButton_2),

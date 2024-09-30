@@ -1,7 +1,7 @@
 import BasePage from "../../../base/BasePage.js";
 import Header from "../../(pages)/Header.js";
-import Form from "./Form.js"
-import Translations from "../../../locales/n18next.js";
+import Form from "./Form.js";
+import Translations from "../../../i18n/index.js";
 
 export default class ContactPage extends BasePage {
   constructor(page) {

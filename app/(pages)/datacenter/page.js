@@ -2,7 +2,7 @@ import BasePage from "../../../base/BasePage.js";
 import imagesGallery from "../../../components/ImagesGallery.js";
 import videoPlayer from "../../../components/VideoPlayer.js";
 import Header from "../../(pages)/Header.js";
-import Translations from "../../../locales/n18next.js";
+import Translations from "../../../i18n/index.js";
 
 export default class DatacenterPage extends BasePage {
   constructor(page) {
@@ -68,22 +68,6 @@ export default class DatacenterPage extends BasePage {
     }
     await this.expectElementToHaveText(this.descriptions, list);
   }
-   async expectTranslationsForTitle(
-    expected = {
-      translationKey_1: value,
-      translationKey_2: value,
-      locale: value,
-    }
-  ) {
-    const expectedTitle = this.translations.t(expected.translationKey_1, {
-      lng: expected.locale,
-    });
-    const expectedBlockTitle = this.translations.t(expected.translationKey_2, {
-      lng: expected.locale,
-    });
-     await this.expectElementToHaveText(this.title, expectedTitle);
-     await this.expectElementToHaveText(this.blockTitle, expectedBlockTitle);
-   }
   async expectTranslationsForTitle(
     expected = {
       translationKey_1: value,
@@ -97,7 +81,23 @@ export default class DatacenterPage extends BasePage {
     const expectedBlockTitle = this.translations.t(expected.translationKey_2, {
       lng: expected.locale,
     });
-     await this.expectElementToHaveText(this.title, expectedTitle);
-     await this.expectElementToHaveText(this.blockTitle, expectedBlockTitle);
+    await this.expectElementToHaveText(this.title, expectedTitle);
+    await this.expectElementToHaveText(this.blockTitle, expectedBlockTitle);
+  }
+  async expectTranslationsForTitle(
+    expected = {
+      translationKey_1: value,
+      translationKey_2: value,
+      locale: value,
+    }
+  ) {
+    const expectedTitle = this.translations.t(expected.translationKey_1, {
+      lng: expected.locale,
+    });
+    const expectedBlockTitle = this.translations.t(expected.translationKey_2, {
+      lng: expected.locale,
+    });
+    await this.expectElementToHaveText(this.title, expectedTitle);
+    await this.expectElementToHaveText(this.blockTitle, expectedBlockTitle);
   }
 }

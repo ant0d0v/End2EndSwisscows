@@ -1,6 +1,6 @@
 import BasePage from "../../../base/BasePage.js";
 import Header from "../../(pages)/Header.js";
-import Translations from "../../../locales/n18next.js";
+import Translations from "../../../i18n/index.js";
 export default class ImprintPage extends BasePage {
   constructor(page) {
     super(page);
@@ -43,21 +43,36 @@ export default class ImprintPage extends BasePage {
     const expectedTitle = this.translations.t(expected.translationKey_1, {
       lng: expected.locale,
     });
-    const expectedDescription_1 = this.translations.t(expected.translationKey_2, {
-      lng: expected.locale,
-    });
-    const expectedDescription_2 = this.translations.t(expected.translationKey_3, {
-      lng: expected.locale,
-    });
-    const expectedDescription_3 = this.translations.t(expected.translationKey_4, {
-      lng: expected.locale,
-    });
-    const expectedDescription_4 = this.translations.t(expected.translationKey_5, {
-      lng: expected.locale,
-    });
-    const expectedDescription_5 = this.translations.t(expected.translationKey_6, {
-      lng: expected.locale,
-    });
+    const expectedDescription_1 = this.translations.t(
+      expected.translationKey_2,
+      {
+        lng: expected.locale,
+      }
+    );
+    const expectedDescription_2 = this.translations.t(
+      expected.translationKey_3,
+      {
+        lng: expected.locale,
+      }
+    );
+    const expectedDescription_3 = this.translations.t(
+      expected.translationKey_4,
+      {
+        lng: expected.locale,
+      }
+    );
+    const expectedDescription_4 = this.translations.t(
+      expected.translationKey_5,
+      {
+        lng: expected.locale,
+      }
+    );
+    const expectedDescription_5 = this.translations.t(
+      expected.translationKey_6,
+      {
+        lng: expected.locale,
+      }
+    );
     await this.expectElementToHaveText(this.publishingInfo, [
       expectedTitle,
       expectedDescription_1,
@@ -67,13 +82,17 @@ export default class ImprintPage extends BasePage {
       expectedDescription_5,
     ]);
   }
-  async expectTranslationsForLocation (expected = { translationKey: value, locale: value }) {
+  async expectTranslationsForLocation(
+    expected = { translationKey: value, locale: value }
+  ) {
     const expectedLocation = this.translations.t(expected.translationKey, {
       lng: expected.locale,
     });
     await this.expectElementToHaveText(this.locationInfo, expectedLocation);
   }
-  async expectTranslationsForTitle (expected = { translationKey: value, locale: value }) {
+  async expectTranslationsForTitle(
+    expected = { translationKey: value, locale: value }
+  ) {
     const expectedTitle = this.translations.t(expected.translationKey, {
       lng: expected.locale,
     });

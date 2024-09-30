@@ -8,7 +8,7 @@ import SearchBar from "../../components/SearchBar.js";
 import ExtensionPopup from "./ExtensionPopup.js";
 import Logo from "./Logo.js";
 import SearchForm from "./SearchForm.js";
-import Translations from "../../locales/n18next.js";
+import Translations from "../../i18n/index.js";
 export default class Header extends BaseComponent {
   constructor(page) {
     super(page);
@@ -20,7 +20,7 @@ export default class Header extends BaseComponent {
     this.badgeTeleguard = new BadgeTeleguard(page);
     this.badgeVPN = new BadgeVPN(page);
     this.searchBar = new SearchBar(page);
-    this.searchForm = new SearchForm(page)
+    this.searchForm = new SearchForm(page);
     this.logo = new Logo(page);
 
     //Locators
@@ -54,20 +54,26 @@ export default class Header extends BaseComponent {
   };
 
   //Locale
-  async expectTranslationsForTaglineList( expected = {
-    translationKey_1: value,
-    translationKey_2: value,
+  async expectTranslationsForTaglineList(
+    expected = {
+      translationKey_1: value,
+      translationKey_2: value,
       locale: value,
-    }) {
-    const expectedTextTaglineList = this.translations.t(expected.translationKey_1, {
-      lng: expected.locale
-    });
+    }
+  ) {
+    const expectedTextTaglineList = this.translations.t(
+      expected.translationKey_1,
+      {
+        lng: expected.locale,
+      }
+    );
     const expectedTextTagline = this.translations.t(expected.translationKey_2, {
-      lng: expected.locale
+      lng: expected.locale,
     });
-    await this.expectElementToHaveText(this.taglineList, expectedTextTaglineList);
+    await this.expectElementToHaveText(
+      this.taglineList,
+      expectedTextTaglineList
+    );
     await this.expectElementToHaveText(this.tagline, expectedTextTagline);
   }
-
-
 }
