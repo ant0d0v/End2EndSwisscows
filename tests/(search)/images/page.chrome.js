@@ -193,13 +193,13 @@ test("Check infinity scroll to next page when item details is opened", async ({
 test("Check that images results equals search criteria", async ({ app }) => {
   //Actions
   await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria("trump");
+  await app.home.header.searchForm.inputSearchCriteria("red");
   await app.home.header.searchForm.clickEnterSearchField();
   await app.webPage.header.navigation.clickImageTab();
   await app.imagePage.item.expectImageItemsToBeVisible();
 
   //Assert
-  await app.imagePage.item.expectItemNameToContainText(/trump/i);
+  await app.imagePage.item.expectItemNameToContainText(/red/i);
   await app.imagePage.item.expectResultToHaveItemsCount(50);
 });
 

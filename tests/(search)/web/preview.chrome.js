@@ -79,7 +79,7 @@ test("Check navigation in Preview ", async ({ app }, testInfo) => {
 test("Check next button in  Preview ", async ({ app }) => {
   //Actions
   await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria("wiki");
+  await app.home.header.searchForm.inputSearchCriteria("wiki iphone");
   await app.home.header.searchForm.clickEnterSearchField();
   await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
   await app.webPage.webPageItem.clickPreviewButtonAt({ number: 1 });
