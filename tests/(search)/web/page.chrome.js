@@ -99,6 +99,7 @@ test("Check that web results equals search criteria ", async ({ app }) => {
   await app.webPage.expectItemsToContains("wiki");
   await app.webPage.expectResultsToHaveCountItems(10);
 });
+
 test.describe("Web-page items", () => {
   test("Check  web items {date, site, title, description}", async ({ app }) => {
     //Actions
