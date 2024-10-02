@@ -11,36 +11,44 @@ export default class Infobox extends BaseComponent {
     this.title = this.root.locator(".title");
     this.header = this.root.locator("header");
     this.image = this.header.locator("img");
-    this.more = this.root.locator(".more");
+    this.readMore = this.root.locator(".more");
     this.description = this.root.locator(".description");
     this.site = this.root.locator(".site a");
     this.profiles = this.root.locator(".profiles");
     this.footer = this.root.locator("footer");
     this.footerImage = this.footer.locator("img");
+    this.expandButton = this.root.locator(".expand button");
+    this.properties = this.root.locator(".properties");
+    this.propertyName = this.properties.locator(".property-name");
+    this.propertyValue = this.properties.locator(".property-value");
     this.profile = (name) => this.page.getByTitle(name);
   }
 
   //Actions
-  clickMoreButton = async () => {
-    await this.clickElement(this.more, `more button`);
+  clickExpandButton = async () => {
+    await this.clickElement(this.expandButton, `expend button`);
+  };
+
+  clickReadMoreButton = async () => {
+    await this.clickElement(this.readMore, `more button`);
   };
   clickSiteLink = async () => {
     await this.clickElement(this.site, `site link`);
   };
-  selectProfileBy = async (profiles = { name: value }) => {
-    await this.clickElement(
-      this.profile(profiles.name),
-      `select ${profiles.name} profile `
+  expectToBeOpenedPageAfterSelectProfileBy = async (expected = { name: value, url: value}) => {
+    await this.expectToBeOpenedNewPageAfterClick(
+      this.profile(expected.name), expected.url
     );
   };
 
   // Verify
-  expectInfoboxToHaveCountProfiles = async (value) => {
-    await this.expectListToHaveCount(this.profiles, value);
+  expectPropertiesToHave = async (property = { hidden: value }) => {
+    await this.expectElementToHaveJSProperty(this.properties, "hidden", property.hidden);
   };
 
-  expectItemsDescriptionNotToBeEmpty = async () => {
-    await this.expectListElementsNotToBeEmpty(this.descriptions);
+  expectPropertiesNameAndValueNotToBeEmpty = async () => {
+    await this.expectListElementsNotToBeEmpty(this.propertyName);
+    await this.expectListElementsNotToBeEmpty(this.propertyValue);
   };
 
   async expectInfoboxToContain(
@@ -69,10 +77,17 @@ export default class Infobox extends BaseComponent {
       testInfo
     );
   };
-  takeSnapshotMoreButton = async (testInfo) => {
+  takeSnapshotReadMoreButton = async (testInfo) => {
     await this.expectPageElementToHaveScreenshot(
-      this.more,
-      this.more,
+      this.readMore,
+      this.readMore,
+      testInfo
+    );
+  };
+  takeSnapshotExpandButton = async (testInfo) => {
+    await this.expectPageElementToHaveScreenshot(
+      this.expandButton,
+      this.expandButton,
       testInfo
     );
   };

@@ -326,7 +326,7 @@ test("Check design footer of infobox widget", async ({ app }, testInfo) => {
   await app.webPage.infobox.takeSnapshotFooter(testInfo);
 });
 
-test("Check design more button of infobox widget", async ({
+test("Check design read more button of infobox widget", async ({
   app,
 }, testInfo) => {
   //Actions
@@ -338,10 +338,41 @@ test("Check design more button of infobox widget", async ({
   await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
 
   //Assert
-  await app.webPage.infobox.takeSnapshotMoreButton(testInfo);
+  await app.webPage.infobox.takeSnapshotReadMoreButton(testInfo);
 });
 
-test("Check open page wiki when clicking more button in infobox widget", async ({
+test("Check design expend button of infobox widget when button isn't active", async ({
+  app,
+}, testInfo) => {
+  //Actions
+  await app.home.open();
+  await app.home.header.clickHamburgerMenuButton();
+  await app.home.header.hamburgerMenu.selectRegion("Germany");
+  await app.home.header.searchForm.inputSearchCriteria("Cristiano Ronaldo");
+  await app.home.header.searchForm.clickEnterSearchField();
+  await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
+
+  //Assert
+  await app.webPage.infobox.takeSnapshotExpandButton(testInfo);
+});
+
+test("Check design expend button of infobox widget when button is active", async ({
+  app,
+}, testInfo) => {
+  //Actions
+  await app.home.open();
+  await app.home.header.clickHamburgerMenuButton();
+  await app.home.header.hamburgerMenu.selectRegion("Germany");
+  await app.home.header.searchForm.inputSearchCriteria("Cristiano Ronaldo");
+  await app.home.header.searchForm.clickEnterSearchField();
+  await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
+  await app.webPage.infobox.clickExpandButton();
+
+  //Assert
+  await app.webPage.infobox.takeSnapshotExpandButton(testInfo);
+});
+
+test("Check open page wiki when clicking read more button in infobox widget", async ({
   app,
 }) => {
   //Actions
@@ -352,7 +383,7 @@ test("Check open page wiki when clicking more button in infobox widget", async (
   await app.home.header.searchForm.clickEnterSearchField();
   await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
   const currentUrl = await app.page.url();
-  await app.webPage.infobox.clickMoreButton();
+  await app.webPage.infobox.clickReadMoreButton();
 
   //Assert
   await app.expectPageNotToHaveUrl(app.page, currentUrl);
@@ -374,6 +405,22 @@ test("Check info {description and site} in infobox widget", async ({ app }) => {
   });
 });
 
+test("Check info properties { property-value and property-name } in infobox widget", async ({
+  app,
+}) => {
+  //Actions
+  await app.home.open();
+  await app.home.header.clickHamburgerMenuButton();
+  await app.home.header.hamburgerMenu.selectRegion("Germany");
+  await app.home.header.searchForm.inputSearchCriteria("Cristiano Ronaldo");
+  await app.home.header.searchForm.clickEnterSearchField();
+  await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
+  await app.webPage.infobox.clickExpandButton();
+
+  //Assert
+  await app.webPage.infobox.expectPropertiesNameAndValueNotToBeEmpty();
+});
+
 test("Open page when clicking  on  profile in infobox widget", async ({
   app,
 }) => {
@@ -384,15 +431,15 @@ test("Open page when clicking  on  profile in infobox widget", async ({
   await app.home.header.searchForm.inputSearchCriteria("Cristiano Ronaldo");
   await app.home.header.searchForm.clickEnterSearchField();
   await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
-  await app.webPage.infobox.selectProfileBy({ name: "www.youtube.com" });
 
   //Assert
-  await app.expectPageToHaveUrl(app.page, "https://www.youtube.com/@cristiano");
+  await app.webPage.infobox.expectToBeOpenedPageAfterSelectProfileBy({
+    name: "www.youtube.com",
+    url: "https://www.youtube.com/@cristiano",
+  });
 });
 
-test("Open page when clicking  on site in infobox widget", async ({
-  app,
-}) => {
+test("Open page when clicking  on site in infobox widget", async ({ app }) => {
   //Actions
   await app.home.open();
   await app.home.header.clickHamburgerMenuButton();
@@ -400,8 +447,59 @@ test("Open page when clicking  on site in infobox widget", async ({
   await app.home.header.searchForm.inputSearchCriteria("Cristiano Ronaldo");
   await app.home.header.searchForm.clickEnterSearchField();
   await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
-  await app.webPage.infobox.clickSiteLink()
+  await app.webPage.infobox.clickSiteLink();
 
   //Assert
-  await app.expectPageToHaveUrl(app.page, "https://www.cristianoronaldo.com/#cr7");
+  await app.expectPageToHaveUrl(
+    app.page,
+    "https://www.cristianoronaldo.com/#cr7"
+  );
+});
+
+test("Check open and close properties in infobox widget", async ({ app }) => {
+  //Actions
+  await app.home.open();
+  await app.home.header.clickHamburgerMenuButton();
+  await app.home.header.hamburgerMenu.selectRegion("Germany");
+  await app.home.header.searchForm.inputSearchCriteria("Cristiano Ronaldo");
+  await app.home.header.searchForm.clickEnterSearchField();
+  await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
+  await app.webPage.infobox.expectPropertiesToHave({ hidden: true });
+  await app.webPage.infobox.clickExpandButton();
+
+  //Assert
+  await app.webPage.infobox.expectPropertiesToHave({ hidden: false });
+});
+
+test.describe("components in dark theme", () => {
+  test.use({ colorScheme: "dark" });
+  test("Check design footer of infobox widget dark theme", async ({
+    app,
+  }, testInfo) => {
+    //Actions
+    await app.home.open();
+    await app.home.header.clickHamburgerMenuButton();
+    await app.home.header.hamburgerMenu.selectRegion("Germany");
+    await app.home.header.searchForm.inputSearchCriteria("Cristiano Ronaldo");
+    await app.home.header.searchForm.clickEnterSearchField();
+    await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
+
+    //Assert
+    await app.webPage.infobox.takeSnapshotFooter(testInfo);
+  });
+
+  test("Check design header of infobox widget dark theme", async ({
+    app,
+  }, testInfo) => {
+    //Actions
+    await app.home.open();
+    await app.home.header.clickHamburgerMenuButton();
+    await app.home.header.hamburgerMenu.selectRegion("Germany");
+    await app.home.header.searchForm.inputSearchCriteria("Cristiano Ronaldo");
+    await app.home.header.searchForm.clickEnterSearchField();
+    await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
+
+    //Assert
+    await app.webPage.infobox.takeSnapshot(testInfo);
+  });
 });
