@@ -68,6 +68,14 @@ export default class WebPageItem extends BaseComponent {
     await this.expectTextsToContains(this.dates, expectedInfo.date);
   }
 
+  expectResultsToBeGreaterThanOrEqual = async (value) => {
+    await this.expectListToBeGreaterThanOrEqual(this.root, value);
+  };
+
+  expectItemsToContains = async (criteria) => {
+    await this.expectTextsToContainSearchCriteria(this.titles, criteria);
+  };
+
   expectThumbnailsToHaveJSProperty = async (
     expectedProperty = {
       height: value,

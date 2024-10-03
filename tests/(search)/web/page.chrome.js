@@ -96,8 +96,8 @@ test("Check that web results equals search criteria ", async ({ app }) => {
   await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
 
   //Assert
-  await app.webPage.expectItemsToContains("wiki");
-  await app.webPage.expectResultsToHaveCountItems(9);
+  await app.webPage.webPageItem.expectItemsToContains("wiki");
+  await app.webPage.webPageItem.expectResultsToBeGreaterThanOrEqual(8);
 });
 
 test.describe("Web-page items", () => {

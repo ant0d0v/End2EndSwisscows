@@ -48,20 +48,9 @@ export default class WebPage extends BasePage {
     this.faq = new FAQ(page)
     this.infobox = new Infobox(page);
 
-    //Locators
-    this.items = this.page.locator(".web-results .item");
-    this.titles = this.page.locator(".web-results .web-page .title");
   }
   //Actions
   async openNotFound(path) {
     await this.openPage(path);
   }
-
-  // Verify
-  expectResultsToHaveCountItems = async (value) => {
-    await this.expectListToHaveCount(this.items, value);
-  };
-  expectItemsToContains = async (criteria) => {
-    await this.expectTextsToContainSearchCriteria(this.titles, criteria);
-  };
 }
