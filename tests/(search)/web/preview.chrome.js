@@ -99,7 +99,7 @@ test("Check next button in  Preview ", async ({ app }) => {
 test("Check prev button in  Preview ", async ({ app }) => {
   //Actions
   await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria("wiki");
+  await app.home.header.searchForm.inputSearchCriteria("wiki iphone");
   await app.home.header.searchForm.clickEnterSearchField();
   await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
   await app.webPage.webPageItem.clickPreviewButtonAt({ number: 1 });
@@ -126,7 +126,7 @@ test("Check prev button to be hidden  when clicking next button ", async ({
 }) => {
   //Actions
   await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria("wiki");
+  await app.home.header.searchForm.inputSearchCriteria("wiki iphone");
   await app.home.header.searchForm.clickEnterSearchField();
   await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
   await app.webPage.webPageItem.clickPreviewButtonAt({ number: 1 });

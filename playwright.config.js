@@ -1,16 +1,6 @@
 import { defineConfig, devices } from "@playwright/test";
 import dotenv from "dotenv";
 
-const qaseConfig = {
-  apiToken: "2b46839b9d9e02b42ad387107322a116667b40a193f780dd1cfdad80bf40dc8d",
-  projectCode: "SWISSCOWS",
-  runComplete: true,
-  basePath: "https://api.qase.io/v1",
-  logging: true,
-  uploadAttachments: true,
-  environmentId: 1,
-  rootSuiteTitle: "End2End",
-};
 /**
  * Read environment variables from file.
  * https://github.com/motdotla/dotenv
@@ -40,10 +30,29 @@ export default defineConfig({
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   // ["playwright-qase-reporter", qaseConfig]
   reporter: [
+    ["./reporter/SlowStepReporter.js"],
     ["html"],
     ["list"],
-    ["playwright-qase-reporter", qaseConfig],
-    ["./reporter/SlowStepReporter.js"],
+    [
+      "playwright-qase-reporter",
+      {
+        debug: false,
+        testops: {
+          api: {
+            token:
+              "2b46839b9d9e02b42ad387107322a116667b40a193f780dd1cfdad80bf40dc8d",
+          },
+          project: "SWISSCOWS",
+          logging: false,
+          uploadAttachments: true,
+          environmentId: 1,
+          rootSuiteTitle: "End2End",
+          run: {
+            complete: true,
+          },
+        },
+      },
+    ],
   ],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {

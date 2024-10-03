@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test:ui": "QASE_REPORT=1 QASE_RUN_NAME=UI xvfb-run npx playwright test --project chromium firefox edge mobile",
-    "test:api": "QASE_REPORT=2 QASE_RUN_NAME=API npx playwright test api"
+    "test:ui": "QASE_MODE=testops QASE_TESTOPS_RUN_TITLE=UI xvfb-run npx playwright test --project chromium firefox edge mobile",
+    "test:api": "QASE_MODE=testops QASE_TESTOPS_RUN_TITLE=API npx playwright test api"
   },
   "keywords": [],
   "author": "Anton",
@@ -13,13 +13,13 @@
   "devDependencies": {
     "@faker-js/faker": "^8.4.1",
     "@playwright/test": "^1.47.0",
-    "@types/node": "^20.8.10"
+    "@types/node": "^20.8.10",
+    "playwright-qase-reporter": "^2.0.15"
   },
   "dependencies": {
     "csv-parse": "^5.5.3",
     "dotenv": "^16.4.5",
     "i18next": "^23.11.5",
-    "playwright-qase-reporter": "^1.2.2",
     "rimraf": "^5.0.5"
   }
 }
