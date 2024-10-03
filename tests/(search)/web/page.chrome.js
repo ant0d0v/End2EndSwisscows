@@ -88,7 +88,7 @@ test("Check Did you mean message in the search field ", async ({ app }) => {
   );
 });
 
-test("Check that web results equals search criteria ", async ({ app }) => {
+test("Check that web results equals search criteria", async ({ app }) => {
   //Actions
   await app.home.open();
   await app.home.header.searchForm.inputSearchCriteria("wikipedia");
@@ -101,7 +101,7 @@ test("Check that web results equals search criteria ", async ({ app }) => {
 });
 
 test.describe("Web-page items", () => {
-  test("Check  web items {date, site, title, description}", async ({ app }) => {
+  test("Check  web items { date, site, title, description }", async ({ app }) => {
     //Actions
     await app.home.open();
     await app.home.header.searchForm.inputSearchCriteria(faker.word.sample());
