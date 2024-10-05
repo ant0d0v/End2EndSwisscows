@@ -1,7 +1,7 @@
 import { test, expect, deletionIds } from "../../../utils/fixtures.js";
 import { faker } from "@faker-js/faker";
 
-test("Check No Results Found error page ", async ({ app }, testInfo) => {
+test("Check No Results Found error image page", async ({ app }, testInfo) => {
   //Actions
   await app.home.open();
   await app.home.header.searchForm.inputSearchCriteria("..");

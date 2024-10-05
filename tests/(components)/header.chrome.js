@@ -192,12 +192,10 @@ test("Check design of popup badge counter", async ({ app }, testInfo) => {
 });
 
 test("Check suggest on the web search", async ({ app }) => {
-  let randomQuery = faker.word.sample();
+ 
   //Actions
   await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria(
-    randomQuery.toLocaleLowerCase()
-  );
+  await app.home.header.searchForm.inputSearchCriteria("ivanka");
   await app.home.header.searchForm.clickEnterSearchField();
   await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
   await app.webPage.header.searchBar.clickSearchField();
@@ -205,18 +203,13 @@ test("Check suggest on the web search", async ({ app }) => {
   //Assert
   await app.webPage.header.searchBar.expectSuggestIsDisplayed();
   await app.webPage.header.searchBar.expectSuggestToHaveCount(5);
-  await app.webPage.header.searchBar.expectSuggestToContains(
-    randomQuery.toLocaleLowerCase()
-  );
+  await app.webPage.header.searchBar.expectSuggestToContains("ivan");
 });
 
 test("Check suggest on the image search", async ({ app }) => {
-  let randomQuery = faker.word.sample();
   //Actions
   await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria(
-    randomQuery.toLocaleLowerCase()
-  );
+  await app.home.header.searchForm.inputSearchCriteria("ivanka");
   await app.home.header.searchForm.clickEnterSearchField();
   await app.webPage.header.navigation.clickImageTab();
   await app.imagePage.item.expectImageItemsToBeVisible();
@@ -225,18 +218,13 @@ test("Check suggest on the image search", async ({ app }) => {
   //Assert
   await app.imagePage.header.searchBar.expectSuggestIsDisplayed();
   await app.imagePage.header.searchBar.expectSuggestToHaveCount(5);
-  await app.imagePage.header.searchBar.expectSuggestToContains(
-    randomQuery.toLocaleLowerCase()
-  );
+  await app.imagePage.header.searchBar.expectSuggestToContains("ivan");
 });
 
 test("Check suggest on the video search", async ({ app }) => {
-  let randomQuery = faker.word.sample();
   //Actions
   await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria(
-    randomQuery.toLocaleLowerCase()
-  );
+  await app.home.header.searchForm.inputSearchCriteria("ivanka");
   await app.home.header.searchForm.clickEnterSearchField();
   await app.webPage.header.navigation.clickVideoTab();
   await app.videoPage.item.expectVideoItemsToBeVisible();
@@ -245,9 +233,7 @@ test("Check suggest on the video search", async ({ app }) => {
   //Assert
   await app.videoPage.header.searchBar.expectSuggestIsDisplayed();
   await app.videoPage.header.searchBar.expectSuggestToHaveCount(5);
-  await app.videoPage.header.searchBar.expectSuggestToContains(
-    randomQuery.toLocaleLowerCase()
-  );
+  await app.videoPage.header.searchBar.expectSuggestToContains("ivan");
 });
 
 test("Check suggest on the news search", async ({ app }) => {
@@ -268,12 +254,9 @@ test("Check suggest on the news search", async ({ app }) => {
 });
 
 test("Check suggest on the shopping search", async ({ app }) => {
-  let randomQuery = faker.commerce.product();
   //Actions
   await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria(
-    randomQuery.toLocaleLowerCase()
-  );
+  await app.home.header.searchForm.inputSearchCriteria("ivanka");
   await app.home.header.searchForm.clickEnterSearchField();
   await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
   await app.webPage.header.clickHamburgerMenuButton();
@@ -285,18 +268,13 @@ test("Check suggest on the shopping search", async ({ app }) => {
   //Assert
   await app.shoppingPage.header.searchBar.expectSuggestIsDisplayed();
   await app.shoppingPage.header.searchBar.expectSuggestToHaveCount(5);
-  await app.shoppingPage.header.searchBar.expectSuggestToContains(
-    randomQuery.toLocaleLowerCase()
-  );
+  await app.shoppingPage.header.searchBar.expectSuggestToContains("ivan");
 });
 
 test("Check suggest on the music search", async ({ app }) => {
-  let randomQuery = faker.music.songName();
   //Actions
   await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria(
-    randomQuery.toLocaleLowerCase()
-  );
+  await app.home.header.searchForm.inputSearchCriteria("ivanka");
   await app.home.header.searchForm.clickEnterSearchField();
   await app.webPage.header.navigation.clickMusicTab();
   await app.musicPage.track.expectMusicTracksToBeVisible();
@@ -305,9 +283,7 @@ test("Check suggest on the music search", async ({ app }) => {
   //Assert
   await app.musicPage.header.searchBar.expectSuggestIsDisplayed();
   await app.musicPage.header.searchBar.expectSuggestToHaveCount(5);
-  await app.musicPage.header.searchBar.expectSuggestToContains(
-    randomQuery.toLocaleLowerCase()
-  );
+  await app.musicPage.header.searchBar.expectSuggestToContains("ivan");
 });
 
 test("Check design of header component the search pages", async ({

@@ -1,6 +1,6 @@
 import { test } from "../../../utils/fixtures.js";
 
-test("Check  No Results Found error page ", async ({ app }, testInfo) => {
+test("Check  No Results Found error news page", async ({ app }, testInfo) => {
   //Actions
   await app.home.open();
   await app.home.header.clickHamburgerMenuButton();

@@ -4,7 +4,7 @@ import { faker } from "@faker-js/faker";
 
 test.describe("Error pages in dark theme", () => {
   test.use({ colorScheme: "dark" });
-  test("Check No results error page", async ({ app }, testInfo) => {
+  test("Check No results error web page", async ({ app }, testInfo) => {
     //Actions
     await app.home.open();
     await app.home.header.searchForm.inputSearchCriteria("././././");

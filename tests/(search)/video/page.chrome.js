@@ -2,7 +2,7 @@ import { test, expect } from "../../../utils/fixtures.js";
 import { saveStorageState, readStorageState} from "../../../helpers/authHelper.js";
 import { faker } from "@faker-js/faker";
 
-test("Check No Results Found error page ", async ({ app }, testInfo) => {
+test("Check No Results Found error video page", async ({ app }, testInfo) => {
   //Actions
   await app.home.open();
   await app.home.header.searchForm.inputSearchCriteria("@#@$%^$^dasdsad1231");
@@ -32,7 +32,7 @@ test("Check design request is blocked 450 error video page", async ({
   });
 });
 
-test("Check 501 unknown Error Page  ", async ({ app }, testInfo) => {
+test("Check 500 unknown Error Page video page", async ({ app }, testInfo) => {
   //Actions
   await app.home.open();
   await app.route.mockResponseStatusCode("/v2/videos", 500);
@@ -42,7 +42,7 @@ test("Check 501 unknown Error Page  ", async ({ app }, testInfo) => {
 
   //Assert
   await app.videoPage.error.takeSnapshot(testInfo, {
-    error: 501,
+    error: 500,
     name: "video"
   });
 });
