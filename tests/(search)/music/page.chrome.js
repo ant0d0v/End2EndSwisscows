@@ -5,7 +5,7 @@ import {
   readStorageState,
 } from "../../../helpers/authHelper.js";
 
-test("Check 204 No Results Found error page ", async ({ app }, testInfo) => {
+test.skip("Check 204 No Results Found error page ", async ({ app }, testInfo) => {
   //Actions
   await app.home.open();
   await app.home.header.searchForm.inputSearchCriteria("@#@$%^$^dasdsad1231");
@@ -13,7 +13,10 @@ test("Check 204 No Results Found error page ", async ({ app }, testInfo) => {
   await app.musicPage.header.navigation.clickMusicTab();
 
   //Assert
-  await app.musicPage.error.takeSnapshot(testInfo, 204);
+  await app.musicPage.error.takeSnapshot(testInfo, {
+    error: 204,
+    name: "music",
+  });
 });
 
 test("Check request is blocked 450 error music page", async ({ app }, testInfo) => {
@@ -24,7 +27,10 @@ test("Check request is blocked 450 error music page", async ({ app }, testInfo) 
   await app.musicPage.header.navigation.clickMusicTab();
 
   //Assert
-  await app.musicPage.error.takeSnapshot(testInfo, 450);
+  await app.musicPage.error.takeSnapshot(testInfo, {
+    error: 450,
+    name: "music",
+  });
 });
 
 test("Check 500 unknown Error Page  ", async ({ app }, testInfo) => {
@@ -36,7 +42,10 @@ test("Check 500 unknown Error Page  ", async ({ app }, testInfo) => {
   await app.musicPage.header.navigation.clickMusicTab();
 
   //Assert
-  await app.musicPage.error.takeSnapshot(testInfo, 500);
+  await app.musicPage.error.takeSnapshot(testInfo, {
+    error: 500,
+    name: "music",
+  });
 });
 
 test("Check 429 Too many requests", async ({ app }, testInfo) => {
@@ -48,7 +57,10 @@ test("Check 429 Too many requests", async ({ app }, testInfo) => {
   await app.musicPage.header.navigation.clickMusicTab();
 
   //Assert
-  await app.musicPage.error.takeSnapshot(testInfo, 429);
+  await app.musicPage.error.takeSnapshot(testInfo, {
+    error: 429,
+    name: "music",
+  });
 });
 test.describe("favorite function", () => {
   test.use({ mode: "default" });

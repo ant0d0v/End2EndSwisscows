@@ -1,7 +1,7 @@
 import { test, expect, deletionIds } from "../../../utils/fixtures.js";
 import { faker } from "@faker-js/faker";
 
-test("Check 202 No Results Found error page ", async ({ app }, testInfo) => {
+test("Check No Results Found error page ", async ({ app }, testInfo) => {
   //Actions
   await app.home.open();
   await app.home.header.searchForm.inputSearchCriteria("..");
@@ -9,7 +9,10 @@ test("Check 202 No Results Found error page ", async ({ app }, testInfo) => {
   await app.imagePage.header.navigation.clickImageTab();
 
   //Assert
-  await app.imagePage.error.takeSnapshot(testInfo, 202);
+  await app.imagePage.error.takeSnapshot(testInfo, {
+    error: 204,
+    name: "images",
+  });
 });
 
 test("Check request is blocked 450 error page ", async ({ app }, testInfo) => {
@@ -20,7 +23,10 @@ test("Check request is blocked 450 error page ", async ({ app }, testInfo) => {
   await app.imagePage.header.navigation.clickImageTab();
 
   //Assert
-  await app.imagePage.error.takeSnapshot(testInfo, 450);
+  await app.imagePage.error.takeSnapshot(testInfo, {
+    error: 450,
+    name: "images",
+  });
 });
 
 test("Check 500 unknown Error Page  ", async ({ app }, testInfo) => {
@@ -32,7 +38,10 @@ test("Check 500 unknown Error Page  ", async ({ app }, testInfo) => {
   await app.imagePage.header.navigation.clickImageTab();
 
   //Assert
-  await app.imagePage.error.takeSnapshot(testInfo, 500);
+  await app.imagePage.error.takeSnapshot(testInfo, {
+    error: 500,
+    name: "images",
+  });
 });
 
 test("Check 501 unknown Error Page  ", async ({ app }, testInfo) => {
@@ -44,7 +53,10 @@ test("Check 501 unknown Error Page  ", async ({ app }, testInfo) => {
   await app.imagePage.header.navigation.clickImageTab();
 
   //Assert
-  await app.imagePage.error.takeSnapshot(testInfo, 501);
+  await app.imagePage.error.takeSnapshot(testInfo, {
+    error: 501,
+    name: "images",
+  });
 });
 
 test("Check 429 Too many requests", async ({ app }, testInfo) => {
@@ -56,7 +68,10 @@ test("Check 429 Too many requests", async ({ app }, testInfo) => {
   await app.imagePage.header.navigation.clickImageTab();
 
   //Assert
-  await app.imagePage.error.takeSnapshot(testInfo, 429);
+  await app.imagePage.error.takeSnapshot(testInfo, {
+    error: 429,
+    name: "images",
+  });
 });
 
 test("Check Saved button when adding image to bookmark", async ({

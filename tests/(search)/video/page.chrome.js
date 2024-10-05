@@ -2,7 +2,7 @@ import { test, expect } from "../../../utils/fixtures.js";
 import { saveStorageState, readStorageState} from "../../../helpers/authHelper.js";
 import { faker } from "@faker-js/faker";
 
-test("Check 202 No Results Found error page ", async ({ app }, testInfo) => {
+test("Check No Results Found error page ", async ({ app }, testInfo) => {
   //Actions
   await app.home.open();
   await app.home.header.searchForm.inputSearchCriteria("@#@$%^$^dasdsad1231");
@@ -10,7 +10,10 @@ test("Check 202 No Results Found error page ", async ({ app }, testInfo) => {
   await app.videoPage.header.navigation.clickVideoTab();
 
   //Assert
-  await app.videoPage.error.takeSnapshot(testInfo, 202);
+  await app.videoPage.error.takeSnapshot(testInfo, {
+    error: 204,
+    name: "video",
+  });
 });
 
 test("Check design request is blocked 450 error video page", async ({
@@ -23,7 +26,10 @@ test("Check design request is blocked 450 error video page", async ({
   await app.videoPage.header.navigation.clickVideoTab();
 
   //Assert
-  await app.videoPage.error.takeSnapshot(testInfo, 450);
+  await app.videoPage.error.takeSnapshot(testInfo, {
+    error: 450,
+    name: "video"
+  });
 });
 
 test("Check 501 unknown Error Page  ", async ({ app }, testInfo) => {
@@ -35,7 +41,10 @@ test("Check 501 unknown Error Page  ", async ({ app }, testInfo) => {
   await app.videoPage.header.navigation.clickVideoTab();
 
   //Assert
-  await app.videoPage.error.takeSnapshot(testInfo, 501);
+  await app.videoPage.error.takeSnapshot(testInfo, {
+    error: 501,
+    name: "video"
+  });
 });
 
 test("Check 429 Too many requests", async ({ app }, testInfo) => {
@@ -47,7 +56,10 @@ test("Check 429 Too many requests", async ({ app }, testInfo) => {
   await app.videoPage.header.navigation.clickVideoTab();
 
   //Assert
-  await app.videoPage.error.takeSnapshot(testInfo, 429);
+  await app.videoPage.error.takeSnapshot(testInfo, {
+    error: 429,
+    name: "video"
+  });
 });
 
 test("Check that video results equals search criteria", async ({ app }) => {
