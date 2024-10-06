@@ -1,6 +1,6 @@
 import { test } from "../../../utils/fixtures.js";
 
-test("Check 202 No Results Found error page ", async ({ app }, testInfo) => {
+test("Check  No Results Found error news page", async ({ app }, testInfo) => {
   //Actions
   await app.home.open();
   await app.home.header.clickHamburgerMenuButton();
@@ -10,7 +10,10 @@ test("Check 202 No Results Found error page ", async ({ app }, testInfo) => {
   await app.newsPage.header.navigation.clickNewsTab();
 
   //Assert
-  await app.newsPage.error.takeSnapshot(testInfo, 202);
+  await app.newsPage.error.takeSnapshot(testInfo, {
+    error: 204,
+    name: "news",
+  });
 });
 
 test("Check request is blocked 450 error page ", async ({ app },testInfo) => {
@@ -23,7 +26,10 @@ test("Check request is blocked 450 error page ", async ({ app },testInfo) => {
   await app.newsPage.header.navigation.clickNewsTab();
 
   //Assert
-  await app.newsPage.error.takeSnapshot(testInfo, 450);
+  await app.newsPage.error.takeSnapshot(testInfo, {
+    error: 450,
+    name: "news",
+  });
 });
 
 test("Check 500 unknown Error Page  ", async ({ app }, testInfo) => {
@@ -37,7 +43,10 @@ test("Check 500 unknown Error Page  ", async ({ app }, testInfo) => {
   await app.newsPage.header.navigation.clickNewsTab();
 
   //Assert
-  await app.newsPage.error.takeSnapshot(testInfo, 500);
+  await app.newsPage.error.takeSnapshot(testInfo, {
+    error: 500,
+    name: "news",
+  });
 });
 
 test("Check 429 Too many requests", async ({ app }, testInfo ) => {
@@ -51,7 +60,10 @@ test("Check 429 Too many requests", async ({ app }, testInfo ) => {
   await app.newsPage.header.navigation.clickNewsTab();
 
   //Assert
-  await app.newsPage.error.takeSnapshot(testInfo, 429);
+  await app.newsPage.error.takeSnapshot(testInfo, {
+    error: 429,
+    name: "news",
+  });
 });
 
 test("Check error region is unsupported", async ({ app }, testInfo ) => {
@@ -67,7 +79,10 @@ test("Check error region is unsupported", async ({ app }, testInfo ) => {
   await app.newsPage.header.hamburgerMenu.selectRegion("Ukraine");
 
   //Assert
-  await app.newsPage.error.takeSnapshot(testInfo, 501);
+  await app.newsPage.error.takeSnapshot(testInfo, {
+    error: 501,
+    name: "news",
+  });
 });
 
 test("Check search results in news page ", async ({ app }) => {

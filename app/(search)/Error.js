@@ -4,30 +4,28 @@ export default class Error extends BaseComponent {
     super(page);
 
     //Locators
-    this.contentErrorNoResults = this.page.locator('div').filter({ hasText: 'No results found for' }).nth(1)
-    this.contentErrorPage = this.page.locator("div.error div.content")
-    this.errorImage = (error) => this.page.getByRole("heading", { name: error });
-    this.errorImageNoResult = this.page.getByRole('main').getByRole('img').first()
-    this.root = this.page.getByRole("main")
+    this.root = (name) => this.page.locator(`.main.${name}`)
+    this.rootPage = this.page.locator(`.main`)
+    this.image = (error) => this.page.getByRole("heading", { name: error });
+    this.notFoundimage = this.page.getByRole('img', { name: '404' })
   }
   
   //Verify
-  expectContentToHaveText = async ( expectedText) => {
-    await this.expectElementToHaveText(this.contentErrorPage, expectedText)
-  }
-  expectImageToHaveWight = async (value) => {
-    await this.expectElementToHaveJSProperty(this.errorImage , "width", value);
-  };
-  expectNotResultErrorToHaveText = async ( expectedText) => {
-    await this.expectElementToHaveText(this.contentErrorNoResults, expectedText)
-  }
-  expectErrorImageToBeVisible = async () => {
-    await this.expectElementToBeVisible(this.errorImage)
-  }
-  takeSnapshot = async (testInfo,error) => {
+  takeSnapshot = async ( testInfo, expected = { 
+    error: number,
+    name: value
+  }) => {
+    await this.expectElementToBeVisible(this.image(expected.error))
     await this.expectPageElementToHaveScreenshot(
-      this.root,
-      this.errorImage(error),
+      this.root(expected.name),
+      this.image(expected.error),
+      testInfo
+    );
+  };
+  takeSnapshotNotFoundImage = async (testInfo) => {
+    await this.expectPageElementToHaveScreenshot(
+      this.rootPage,
+      this.notFoundimage,
       testInfo
     );
   };

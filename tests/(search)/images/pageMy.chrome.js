@@ -39,7 +39,10 @@ test.describe("Internal user", () => {
     await app.imageMyPage.details.clickGhostButtonBy({ name: "Remove from bookmarks" });
 
     //Assert
-    await app.imageMyPage.error.takeSnapshot(testInfo, 204);
+    await app.imageMyPage.error.takeSnapshot(testInfo, {
+      error: 204,
+      name: "images",
+    });
   });
 
   test("Check adding multiple favorites to a my images ", async ({ app }) => {

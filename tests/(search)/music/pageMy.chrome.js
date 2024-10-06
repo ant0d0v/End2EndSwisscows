@@ -18,7 +18,10 @@ test.describe("Internal user", () => {
     await app.musicMyPage.track.clickFavoriteButtonAt({ number: 1 });
 
     //Assert
-    await app.musicMyPage.error.takeSnapshot(testInfo, 204);
+    await app.musicMyPage.error.takeSnapshot(testInfo, {
+      error: 204,
+      name: "music"
+    });
   });
 
   test("Check delete track from favorite using player on my music page ", async ({
@@ -39,7 +42,10 @@ test.describe("Internal user", () => {
     await app.musicMyPage.player.clickFavoriteButton();
 
     //Assert
-    await app.musicMyPage.error.takeSnapshot(testInfo, 204);
+    await app.musicMyPage.error.takeSnapshot(testInfo, {
+      error: 204,
+      name: "music",
+    });
   });
 
   test("Check play track on music my page", async ({ app }) => {

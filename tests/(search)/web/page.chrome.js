@@ -4,14 +4,17 @@ import { faker } from "@faker-js/faker";
 
 test.describe("Error pages in dark theme", () => {
   test.use({ colorScheme: "dark" });
-  test("Check 202 no results error page", async ({ app }, testInfo) => {
+  test("Check No results error web page", async ({ app }, testInfo) => {
     //Actions
     await app.home.open();
     await app.home.header.searchForm.inputSearchCriteria("././././");
     await app.home.header.searchForm.clickEnterSearchField();
 
     //Assert
-    await app.webPage.error.takeSnapshot(testInfo, 202);
+    await app.webPage.error.takeSnapshot(testInfo, {
+      error: 204,
+      name: "web"
+    });
   });
 
   test("Check request is blocked 450 error page ", async ({
@@ -23,7 +26,10 @@ test.describe("Error pages in dark theme", () => {
     await app.home.header.searchForm.clickEnterSearchField();
 
     //Assert
-    await app.webPage.error.takeSnapshot(testInfo, 450);
+    await app.webPage.error.takeSnapshot(testInfo, {
+      error: 450,
+      name: "web"
+    });
   });
 
   test("Check 429 Too many requests", async ({ app }, testInfo) => {
@@ -34,7 +40,10 @@ test.describe("Error pages in dark theme", () => {
     await app.home.header.searchForm.clickEnterSearchField();
 
     //Assert
-    await app.webPage.error.takeSnapshot(testInfo, 429);
+    await app.webPage.error.takeSnapshot(testInfo, {
+      error: 429,
+      name: "web"
+    });
   });
 
   test("Check 500 unknown Error Page", async ({ app }, testInfo) => {
@@ -45,7 +54,10 @@ test.describe("Error pages in dark theme", () => {
     await app.home.header.searchForm.clickEnterSearchField();
 
     //Assert
-    await app.webPage.error.takeSnapshot(testInfo, 500);
+    await app.webPage.error.takeSnapshot(testInfo, {
+      error: 500,
+      name: "web"
+    });
   });
 
   test("Check 501 unsupported region", async ({ app }, testInfo) => {
@@ -56,7 +68,10 @@ test.describe("Error pages in dark theme", () => {
     await app.home.header.searchForm.clickEnterSearchField();
 
     //Assert
-    await app.webPage.error.takeSnapshot(testInfo, 501);
+    await app.webPage.error.takeSnapshot(testInfo, {
+      error: 501,
+      name: "web"
+    });
   });
 
   test("Check 404 Page Not Found ", async ({ app }, testInfo) => {
@@ -64,7 +79,7 @@ test.describe("Error pages in dark theme", () => {
     await app.webPage.openNotFound("/web/123");
 
     //Assert
-    await app.webPage.error.takeSnapshot(testInfo);
+    await app.webPage.error.takeSnapshotNotFoundImage(testInfo);
   });
 });
 
