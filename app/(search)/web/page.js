@@ -48,9 +48,16 @@ export default class WebPage extends BasePage {
     this.faq = new FAQ(page)
     this.infobox = new Infobox(page);
 
+    //Locators
+    this.images = this.page.locator(`img`)
   }
-  //Actions
-  async openNotFound(path) {
-    await this.openPage(path);
-  }
+
+  //Verify
+  takeSnapshot = async (testInfo) => {
+    await this.expectPageToHaveScreenshotWithoutMask(
+      testInfo,
+      this.images,
+    );
+  };
+  
 }

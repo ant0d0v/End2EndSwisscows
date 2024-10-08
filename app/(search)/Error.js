@@ -5,7 +5,6 @@ export default class Error extends BaseComponent {
 
     //Locators
     this.root = (name) => this.page.locator(`.main.${name}`)
-    this.rootPage = this.page.locator(`.main`)
     this.image = (error) => this.page.getByRole("heading", { name: error });
     this.notFoundimage = this.page.getByRole('img', { name: '404' })
   }

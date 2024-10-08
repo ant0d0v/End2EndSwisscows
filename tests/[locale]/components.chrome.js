@@ -2,15 +2,14 @@ import { test } from "../../utils/fixtures.js";
 import { readCsvFile } from "../../helpers/csvHelper.js";
 
 const hamburgerTable = readCsvFile("../data/locales/hamburgerMenu.csv");
-for (const { test_case, language, languageCode } of hamburgerTable) {
+for (const { test_case, language, languageCode, isoCode } of hamburgerTable) {
+  test.describe('use config locale', () => {
+  test.use({ locale: isoCode});
   test(`${test_case} Check content of hamburger menu for  ${language} localization`, async ({
     app,
   }) => {
     //Actions
     await app.home.open();
-    await app.home.header.clickHamburgerMenuButton();
-    await app.home.header.hamburgerMenu.clickLanguagesDropdown();
-    await app.home.header.hamburgerMenu.clickLanguageLinkInDropdown(language);
     await app.home.header.clickHamburgerMenuButton();
 
     //Assert
@@ -42,6 +41,7 @@ for (const { test_case, language, languageCode } of hamburgerTable) {
       locale: languageCode,
     });
   });
+});
 }
 
 const footerTable = readCsvFile("../data/locales/footerMenu.csv");
