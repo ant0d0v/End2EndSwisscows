@@ -4,7 +4,7 @@ export default class Footer extends BaseComponent {
     super(page);
     //Locators
     this.socialNetworksLinks = (index) =>
-      this.page.locator(`.social-networks > a:nth-child(${index})`);
+      this.page.locator(`.social-networks .icon`).nth(index - 1);
     this.swisscowsAppLinks = (locator) =>
       this.page.getByRole("link", { name: locator });
     this.swisscowsAppImages = this.page.locator(".app .app-link img");

@@ -74,12 +74,12 @@ test.describe("Error pages in dark theme", () => {
     });
   });
 
-  test("Check 404 Page Not Found ", async ({ app }, testInfo) => {
+  test("Check 404 Page Not Found", async ({ app }, testInfo) => {
     //Actions
-    await app.webPage.openNotFound("/web/123");
+    await app.openNotFoundPage("/web/123");
 
     //Assert
-    await app.webPage.error.takeSnapshotNotFoundImage(testInfo);
+    await app.webPage.takeSnapshot(testInfo);
   });
 });
 

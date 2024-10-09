@@ -63,8 +63,13 @@ export default class Application extends PageHolder {
     this.imageMyPage = new ImageMyPage(this.page);
     this.route = new Route(this.page);
     this.contactRoute = new ContactRoute(this.page);
+    
   }
   //Actions
+  async openNotFoundPage(path) {
+    await this.page.goto(process.env.BASE_URL + path);
+  }
+
   async waitForUrlContains(Url) {
     await test.step(`Wait for url ${Url}`, async () => {
       await this.page.waitForURL(Url);
@@ -72,6 +77,7 @@ export default class Application extends PageHolder {
   }
   
   //Verify
+
   async expectNewPageToHaveTitle(context, expectedTitle) {
     await test.step('Expect  page in new tab "to have" title', async () => {
       await expect(context.pages()[1]).toHaveTitle(expectedTitle);
@@ -101,4 +107,6 @@ export default class Application extends PageHolder {
       await expect(newPage).not.toHaveTitle(title);
     });
   }
+
+
 }
