@@ -1,9 +1,5 @@
 import { test as setup } from "../utils/fixtures.js";
-import {
-  getBearerTokenOfInternalUser,
-  getBearerTokenOfExternalUser,
-  removeRefreshToken,
-} from "../helpers/authHelper.js";
+import { removeRefreshToken } from "../helpers/authHelper.js";
 
 const authFilePathForInternalUser = "./data/auth/internalUser.json";
 const authFilePathForExternalUser = "./data/auth/externalUser.json";
