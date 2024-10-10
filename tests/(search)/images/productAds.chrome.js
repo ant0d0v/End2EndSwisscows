@@ -4,7 +4,7 @@ test("Check design header of product ads", async ({ app }, testInfo) => {
   await app.home.open();
   await app.home.header.clickHamburgerMenuButton();
   await app.home.header.hamburgerMenu.selectRegion("Germany");
-  await app.home.header.searchForm.inputSearchCriteria("parfum");
+  await app.home.header.searchForm.inputSearchCriteria("Parfüm");
   await app.home.header.searchForm.clickEnterSearchField();
   await app.imagePage.header.navigation.clickImageTab();
   await app.imagePage.item.expectImageItemsToBeVisible();
@@ -21,7 +21,7 @@ test("Check the thumbnail width and Height of products ads items", async ({
   await app.home.open();
   await app.home.header.clickHamburgerMenuButton();
   await app.home.header.hamburgerMenu.selectRegion("Germany");
-  await app.home.header.searchForm.inputSearchCriteria("parfum");
+  await app.home.header.searchForm.inputSearchCriteria("Parfüm");
   await app.home.header.searchForm.clickEnterSearchField();
   await app.imagePage.header.navigation.clickImageTab();
   await app.imagePage.item.expectImageItemsToBeVisible();
@@ -40,7 +40,7 @@ test("Check open advertising ", async ({ app }) => {
   await app.home.open();
   await app.home.header.clickHamburgerMenuButton();
   await app.home.header.hamburgerMenu.selectRegion("Germany");
-  await app.home.header.searchForm.inputSearchCriteria("parfum");
+  await app.home.header.searchForm.inputSearchCriteria("Parfüm");
   await app.home.header.searchForm.clickEnterSearchField();
   await app.imagePage.header.navigation.clickImageTab();
   await app.imagePage.item.expectImageItemsToBeVisible();
@@ -57,7 +57,7 @@ test("Check price,shipping,title and site of product ads", async ({ app }) => {
   await app.home.open();
   await app.home.header.clickHamburgerMenuButton();
   await app.home.header.hamburgerMenu.selectRegion("Germany");
-  await app.home.header.searchForm.inputSearchCriteria("parfum");
+  await app.home.header.searchForm.inputSearchCriteria("Parfüm");
   await app.home.header.searchForm.clickEnterSearchField();
   await app.imagePage.header.navigation.clickImageTab();
   await app.imagePage.item.expectImageItemsToBeVisible();
@@ -79,7 +79,7 @@ test("Check next button and prev button in the product advertising ", async ({
   await app.home.open();
   await app.home.header.clickHamburgerMenuButton();
   await app.home.header.hamburgerMenu.selectRegion("Germany");
-  await app.home.header.searchForm.inputSearchCriteria("parfum");
+  await app.home.header.searchForm.inputSearchCriteria("Parfüm für Frauen");
   await app.home.header.searchForm.clickEnterSearchField();
   await app.imagePage.header.navigation.clickImageTab();
   await app.imagePage.item.expectImageItemsToBeVisible();
@@ -97,7 +97,7 @@ test("Check open new page when clicking ads link", async ({ app }) => {
   await app.home.open();
   await app.home.header.clickHamburgerMenuButton();
   await app.home.header.hamburgerMenu.selectRegion("Germany");
-  await app.home.header.searchForm.inputSearchCriteria("parfum");
+  await app.home.header.searchForm.inputSearchCriteria("Parfüm");
   await app.home.header.searchForm.clickEnterSearchField();
   await app.imagePage.header.navigation.clickImageTab();
   await app.imagePage.item.expectImageItemsToBeVisible();
