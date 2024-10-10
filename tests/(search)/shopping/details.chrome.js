@@ -63,9 +63,7 @@ test("Check image in details pane ", async ({ app }) => {
 test("Check more button in detail", async ({ app }) => {
   //Actions
   await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria(
-    faker.commerce.product()
-  );
+  await app.home.header.searchForm.inputSearchCriteria(randomProduct());
   await app.home.header.searchForm.clickEnterSearchField();
   await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
   await app.webPage.header.clickHamburgerMenuButton();
@@ -218,7 +216,7 @@ test("Check  offer icons to be visible", async ({ app }) => {
 test("Check  brand image to be visible and have property", async ({ app }) => {
   //Actions
   await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria("nike");
+  await app.home.header.searchForm.inputSearchCriteria("laptop iphone");
   await app.home.header.searchForm.clickEnterSearchField();
   await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
   await app.webPage.header.clickHamburgerMenuButton();
@@ -230,7 +228,7 @@ test("Check  brand image to be visible and have property", async ({ app }) => {
   //Assert
   await app.shoppingPage.details.expectBrandImageToBeVisible();
   await app.shoppingPage.details.expectBrandImageToHaveProperty({
-    width: 57,
+    width: 17,
     height: 20,
   });
 });

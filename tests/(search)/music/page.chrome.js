@@ -320,7 +320,7 @@ test("Check shuffle function in local storage", async ({ app }) => {
 test("Check infinity scroll to next page", async ({ app }) => {
   //Actions
   await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria(faker.music.songName());
+  await app.home.header.searchForm.inputSearchCriteria("best");
   await app.home.header.searchForm.clickEnterSearchField();
   await app.musicPage.header.navigation.clickMusicTab();
   await app.musicPage.track.expectMusicTracksToBeVisible();

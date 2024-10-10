@@ -15,6 +15,7 @@ export default defineConfig({
   // globalSetup: 'utils/globalSetup.js',
   testDir: "tests",
   timeout: 5 * 60 * 1000,
+  actionTimeout: 35 * 1000,
   // Limit the number of failures on CI to save resources
   maxFailures: process.env.CI ? 30 : undefined,
   /* Run tests in files in parallel */

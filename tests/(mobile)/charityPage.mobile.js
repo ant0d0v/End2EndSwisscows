@@ -1,5 +1,4 @@
 import { test } from "../../utils/fixtures.js";
-import testData from "../../data/pages/social-projects/testData.json";
 
 test("Check that border is red and 2px when clicking on the Charity Haiti slider images", async ({
   app,
