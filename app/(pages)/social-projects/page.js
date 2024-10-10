@@ -35,10 +35,9 @@ export default class CharityPage extends BasePage {
   //Assert
 
   takeSnapshot = async (testInfo) => {
-    await this.expectPageToHaveScreenshot(
+    await this.expectPageToHaveScreenshotWithoutMask(
       testInfo,
-      this.mapsImage,
-      this.videoPlayer.videoPlayer
+      this.mapsImage
     );
   };
   expectMapsToBeVisible = async () => {
