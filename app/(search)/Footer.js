@@ -10,6 +10,11 @@ export default class Footer extends BaseComponent {
     this.swisscowsAppImages = this.page.locator(".app .app-link img");
     this.root = this.page.getByRole("contentinfo");
   }
+  //Actions
+  scrollToFooter = async ()  => {
+    await this.scrollByVisibleElement(this.root, "search footer")
+  };
+
   //Verify
   expectToBeOpenedNewPageAfterClickSocialNetworksLinks = async (
     data = {

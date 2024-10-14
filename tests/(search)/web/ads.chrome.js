@@ -1,10 +1,11 @@
 import { test } from "../../../utils/fixtures.js";
+import { randomAdsQuery } from "../../../helpers/random.js"
 test("Check design header of product ads", async ({ app }, testInfo) => {
   //Actions
   await app.home.open();
   await app.home.header.clickHamburgerMenuButton();
   await app.home.header.hamburgerMenu.selectRegion("Germany");
-  await app.home.header.searchForm.inputSearchCriteria("parfum");
+  await app.home.header.searchForm.inputSearchCriteria(randomAdsQuery());
   await app.home.header.searchForm.clickEnterSearchField();
   await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
   await app.webPage.advertiserProductCollection.waitUntilProductAdsToBeVisible();
@@ -18,7 +19,7 @@ test("Check price and shipping of product ads in widget", async ({ app }) => {
   await app.home.open();
   await app.home.header.clickHamburgerMenuButton();
   await app.home.header.hamburgerMenu.selectRegion("Germany");
-  await app.home.header.searchForm.inputSearchCriteria("parfum");
+  await app.home.header.searchForm.inputSearchCriteria(randomAdsQuery());
   await app.home.header.searchForm.clickEnterSearchField();
   await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
   await app.webPage.advertiserProductCollection.waitUntilProductAdsToBeVisible();
@@ -40,7 +41,7 @@ test("Check the thumbnail width and Height of products ads items", async ({
   await app.home.open();
   await app.home.header.clickHamburgerMenuButton();
   await app.home.header.hamburgerMenu.selectRegion("Germany");
-  await app.home.header.searchForm.inputSearchCriteria("parfum");
+  await app.home.header.searchForm.inputSearchCriteria(randomAdsQuery());
   await app.home.header.searchForm.clickEnterSearchField();
   await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
   await app.webPage.advertiserProductCollection.waitUntilProductAdsToBeVisible();
@@ -57,7 +58,7 @@ test("Check open advertising ", async ({ app }) => {
   await app.home.open();
   await app.home.header.clickHamburgerMenuButton();
   await app.home.header.hamburgerMenu.selectRegion("Germany");
-  await app.home.header.searchForm.inputSearchCriteria("parfum");
+  await app.home.header.searchForm.inputSearchCriteria(randomAdsQuery());
   await app.home.header.searchForm.clickEnterSearchField();
   await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
   await app.webPage.advertiserProductCollection.waitUntilProductAdsToBeVisible();
@@ -75,7 +76,7 @@ test("Check next button and prev button in the product advertising ", async ({
   await app.home.open();
   await app.home.header.clickHamburgerMenuButton();
   await app.home.header.hamburgerMenu.selectRegion("Germany");
-  await app.home.header.searchForm.inputSearchCriteria("parfum");
+  await app.home.header.searchForm.inputSearchCriteria(randomAdsQuery());
   await app.home.header.searchForm.clickEnterSearchField();
   await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
   await app.webPage.advertiserProductCollection.waitUntilProductAdsToBeVisible();
@@ -92,7 +93,7 @@ test("Check open new page when clicking ads link", async ({ app }) => {
   await app.home.open();
   await app.home.header.clickHamburgerMenuButton();
   await app.home.header.hamburgerMenu.selectRegion("Germany");
-  await app.home.header.searchForm.inputSearchCriteria("parfum");
+  await app.home.header.searchForm.inputSearchCriteria(randomAdsQuery());
   await app.home.header.searchForm.clickEnterSearchField();
   await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
   await app.webPage.advertiserProductCollection.waitUntilProductAdsToBeVisible();
@@ -109,7 +110,7 @@ test("Check {title, site, callout, ad} of product ads item", async ({ app }) => 
   await app.home.open();
   await app.home.header.clickHamburgerMenuButton();
   await app.home.header.hamburgerMenu.selectRegion("Germany");
-  await app.home.header.searchForm.inputSearchCriteria("tablet kaufen");
+  await app.home.header.searchForm.inputSearchCriteria(randomAdsQuery());
   await app.home.header.searchForm.clickEnterSearchField();
   await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
   await app.webPage.advertiser.waitUntilAdvertiserToBeVisible();
@@ -129,7 +130,7 @@ test("Check open adverster web page item", async ({ app }) => {
   await app.home.open();
   await app.home.header.clickHamburgerMenuButton();
   await app.home.header.hamburgerMenu.selectRegion("Germany");
-  await app.home.header.searchForm.inputSearchCriteria("parfum");
+  await app.home.header.searchForm.inputSearchCriteria(randomAdsQuery());
   await app.home.header.searchForm.clickEnterSearchField();
   await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
   await app.webPage.advertiser.waitUntilAdvertiserToBeVisible();
