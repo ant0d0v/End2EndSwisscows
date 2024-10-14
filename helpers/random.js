@@ -38,6 +38,15 @@ export function randomProduct() {
   return word;
 }
 
+export function randomAdsQuery() {
+  const word = faker.helpers.arrayElement([
+    "Parfüm für Frauen",
+    "parfum fuerteventura",
+    "parfuemerie douglas"
+  ]);
+  return word;
+}
+
 export function randomQueryWithVideoItemSearch() {
   const word = faker.helpers.arrayElement([
     "iphone youtube",

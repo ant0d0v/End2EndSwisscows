@@ -112,7 +112,7 @@ test("Check that web results equals search criteria", async ({ app }) => {
 
   //Assert
   await app.webPage.webPageItem.expectItemsToContains("wiki");
-  await app.webPage.webPageItem.expectResultsToBeGreaterThanOrEqual(8);
+  await app.webPage.expectResultsToBeGreaterThanOrEqual(8)
 });
 
 test.describe("Web-page items", () => {
@@ -298,6 +298,154 @@ test.describe("Video object items", () => {
   });
 });
 
+test.describe("Book items", () => {
+  test("Check that book item thumbnails to have height = 60 and width = 60", async ({
+    app,
+  }) => {
+    //Actions
+    await app.home.open();
+    await app.home.header.clickHamburgerMenuButton();
+    await app.home.header.hamburgerMenu.selectRegion("Germany");
+    await app.home.header.searchForm.inputSearchCriteria("Harry Potter and the Sorcerer’s Stone | Goodreads");
+    await app.home.header.searchForm.clickEnterSearchField();
+    await app.webPage.book.expectBookItemsToBeVisible();
+
+    //Assert
+    await app.webPage.book.expectThumbnailsToBeVisible();
+    await app.webPage.book.expectThumbnailsToHaveJSProperty({
+      height: 60,
+      width: 60,
+    });
+  });
+  test("Check that place item { title, author, description, rate, site }", async ({
+    app,
+  }) => {
+    //Actions
+    await app.home.open();
+    await app.home.header.clickHamburgerMenuButton();
+    await app.home.header.hamburgerMenu.selectRegion("Germany");
+    await app.home.header.searchForm.inputSearchCriteria("Harry Potter and the Sorcerer’s Stone | Goodreads");
+    await app.home.header.searchForm.clickEnterSearchField();
+    await app.webPage.book.expectBookItemsToBeVisible();
+
+    //Assert
+    await app.webPage.book.expectItemInfoToContain({
+      title: /\w+/,
+      author: /\w+/,
+      description: /\w+/,
+      rate: /4./,
+      site: /(?:www\.)?[a-zA-Z0-9-]+\.[a-zA-Z]{2,}(?:\/[^\s]*)?/,
+    });
+  });
+  test("Check open new page when clicking image of book item", async ({ app }) => {
+    //Actions
+    await app.home.open();
+    await app.home.header.clickHamburgerMenuButton();
+    await app.home.header.hamburgerMenu.selectRegion("Germany");
+    await app.home.header.searchForm.inputSearchCriteria("Harry Potter and the Sorcerer’s Stone | Goodreads");
+    await app.home.header.searchForm.clickEnterSearchField();
+    await app.webPage.book.expectBookItemsToBeVisible();
+    const currentUrl = await app.page.url();
+    await app.webPage.book.clickImageAt({ number: 1 });
+
+    //Assert
+    await app.expectPageNotToHaveUrl(app.page, currentUrl);
+  });
+
+  test("Check design stars icon of book item", async ({ app }, testInfo) => {
+    //Actions
+    await app.home.open();
+    await app.home.header.clickHamburgerMenuButton();
+    await app.home.header.hamburgerMenu.selectRegion("Germany");
+    await app.home.header.searchForm.inputSearchCriteria("Harry Potter and the Sorcerer’s Stone | Goodreads");
+    await app.home.header.searchForm.clickEnterSearchField();
+    await app.webPage.book.expectBookItemsToBeVisible();
+
+    //Assert
+    await app.webPage.book.takeSnapshotStarsIcons(testInfo);
+  });
+});
+
+test.describe("Place items", () => {
+  test("Check that place item thumbnails to have height = 60 and width = 60", async ({
+    app,
+  }) => {
+    //Actions
+    await app.home.open();
+    await app.home.header.clickHamburgerMenuButton();
+    await app.home.header.hamburgerMenu.selectRegion("Germany");
+    await app.home.header.searchForm.inputSearchCriteria("Hotel Malte Astotel");
+    await app.home.header.searchForm.clickEnterSearchField();
+    await app.webPage.place.expectPlaceItemsToBeVisible();
+
+    //Assert
+    await app.webPage.place.expectThumbnailsToBeVisible();
+    await app.webPage.place.expectThumbnailsToHaveJSProperty({
+      height: 60,
+      width: 60,
+    });
+  });
+  test("Check that place item { title, address, description, site }", async ({
+    app,
+  }) => {
+    //Actions
+    await app.home.open();
+    await app.home.header.clickHamburgerMenuButton();
+    await app.home.header.hamburgerMenu.selectRegion("Germany");
+    await app.home.header.searchForm.inputSearchCriteria("Hotel Malte Astotel");
+    await app.home.header.searchForm.clickEnterSearchField();
+    await app.webPage.place.expectPlaceItemsToBeVisible();
+
+    //Assert
+    await app.webPage.place.expectItemInfoToContain({
+      title: /\w+/,
+      address: /Paris|rue de Richelieu/i,
+      description: /\w+/,
+      site: /(?:www\.)?[a-zA-Z0-9-]+\.[a-zA-Z]{2,}(?:\/[^\s]*)?/,
+    });
+  });
+  test("Check open new page when clicking image of place item", async ({ app }) => {
+    //Actions
+    await app.home.open();
+    await app.home.header.clickHamburgerMenuButton();
+    await app.home.header.hamburgerMenu.selectRegion("Germany");
+    await app.home.header.searchForm.inputSearchCriteria("Hotel Malte Astotel");
+    await app.home.header.searchForm.clickEnterSearchField();
+    await app.webPage.place.expectPlaceItemsToBeVisible();
+    const currentUrl = await app.page.url();
+    await app.webPage.place.clickImageAt({ number: 1 });
+
+    //Assert
+    await app.expectPageNotToHaveUrl(app.page, currentUrl);
+  });
+
+  test("Check design pin marker icon of place item", async ({ app }, testInfo) => {
+    //Actions
+    await app.home.open();
+    await app.home.header.clickHamburgerMenuButton();
+    await app.home.header.hamburgerMenu.selectRegion("Germany");
+    await app.home.header.searchForm.inputSearchCriteria("Hotel Malte Astotel");
+    await app.home.header.searchForm.clickEnterSearchField();
+    await app.webPage.place.expectPlaceItemsToBeVisible();
+
+    //Assert
+    await app.webPage.place.takeSnapshotPinMarkerIcon(testInfo);
+  });
+
+  test("Check design preview icon of place item", async ({ app }, testInfo) => {
+    //Actions
+    await app.home.open();
+    await app.home.header.clickHamburgerMenuButton();
+    await app.home.header.hamburgerMenu.selectRegion("Germany");
+    await app.home.header.searchForm.inputSearchCriteria("Hotel Malte Astotel");
+    await app.home.header.searchForm.clickEnterSearchField();
+    await app.webPage.place.expectPlaceItemsToBeVisible();
+
+    //Assert
+    await app.webPage.place.takeSnapshotPreviewIcon(testInfo);
+  });
+});
+
 test("Check that loader skeleton", async ({ app }, testInfo) => {
   //Actions
   await app.home.open();
@@ -311,45 +459,92 @@ test("Check that loader skeleton", async ({ app }, testInfo) => {
 test("Check next button in the paging", async ({ app }) => {
   //Actions
   await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria(
-    faker.word.words({ count: { min: 2, max: 5 } })
-  );
+  await app.home.header.searchForm.inputSearchCriteria("news");
   await app.home.header.searchForm.clickEnterSearchField();
   await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
-  const oldResult = await app.webPage.webPageItem.getTextContentWebItems();
+  await app.webPage.webPageItem.scrollToLastItem()
+  await app.webPage.expectContentToBeVisible();
   await app.webPage.pagination.clickNextButton();
-  await app.webPage.header.badgeCounter.expectCharityBadgeCounterToHaveValue(
-    "2"
-  );
-  const newResult = await app.webPage.webPageItem.getTextContentWebItems();
+  await app.webPage.header.badgeCounter.expectCharityBadgeCounterToHaveValue("3");
+  const response = await app.webPage.scrollToLastItemAndGetResponse({ endpoint: "/v4/web" })
+  await app.webPage.expectContentToBeVisible();
 
   //Assert
-  await app.webPage.webPageItem.expectOldArrayNotToEqualNewArray(
-    oldResult,
-    newResult
-  );
+  await app.api.search.response.expectBodyToEqual(response, {
+    context: {
+      query: "news",
+      effectiveQuery: "news",
+      offset: 30,
+      itemsCount: 10,
+      locale: expect.any(String),
+      spellcheck: true,
+    },
+    entities: [],
+    items: expect.anything()
+  });
+  await app.webPage.expectResultsToBeGreaterThanOrEqual(15)
   await app.webPage.pagination.expectPreviousButtonIsEnabled();
 });
 
 test("Check prev button in the paging", async ({ app }) => {
+  const randomQuery = faker.word.sample();
   //Actions
   await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria("ivanka");
+  await app.home.header.searchForm.inputSearchCriteria(randomQuery);
   await app.home.header.searchForm.clickEnterSearchField();
   await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
+  await app.webPage.webPageItem.scrollToLastItem()
+  await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
   await app.webPage.pagination.clickNextButton();
-  await app.webPage.header.badgeCounter.expectCharityBadgeCounterToHaveValue(
-    "2"
-  );
+  await app.webPage.header.badgeCounter.expectCharityBadgeCounterToHaveValue("3");
+  await app.webPage.webPageItem.scrollToLastItem()
+  await app.expectPageToHaveUrl(app.page, process.env.BASE_URL + `/en/web?query=${randomQuery}&offset=20`);
   await app.webPage.pagination.clickPrevButton();
-  await app.webPage.header.badgeCounter.expectCharityBadgeCounterToHaveValue(
-    "3"
-  );
+  await app.webPage.header.badgeCounter.expectCharityBadgeCounterToHaveValue("5");
+  const response = await app.webPage.scrollToLastItemAndGetResponse({ endpoint: "/v4/web" })
+  await app.webPage.expectContentToBeVisible();
 
   //Assert
-  await app.expectPageToHaveUrl(
-    app.page,
-    process.env.BASE_URL + "/en/web?query=ivanka&offset=0"
-  );
+  await app.api.search.response.expectBodyToEqual(response, {
+    context: {
+      query: randomQuery,
+      effectiveQuery: randomQuery,
+      offset: 10,
+      itemsCount: 10,
+      locale: expect.any(String),
+      spellcheck: true,
+    },
+    entities: [],
+    items: expect.anything()
+  });
+  await app.expectPageToHaveUrl(app.page, process.env.BASE_URL + `/en/web?query=${randomQuery}&offset=0`);
   await app.webPage.pagination.expectPreviousButtonIsDisabled();
+});
+
+test("Check request when scrolling to last element on page", async ({ app }) => {
+  const randomQuery = faker.word.sample();
+
+  //Actions
+  await app.home.open();
+  await app.home.header.searchForm.inputSearchCriteria(randomQuery);
+  await app.home.header.searchForm.clickEnterSearchField();
+  await app.webPage.expectContentToBeVisible();
+  const response = await app.webPage.scrollToLastItemAndGetResponse({ endpoint: "/v4/web" })
+  await app.webPage.expectContentToBeVisible();
+ 
+
+  //Assert
+  await app.api.search.response.expectBodyToEqual(response, {
+    context: {
+      query: randomQuery,
+      effectiveQuery: randomQuery,
+      offset: 10,
+      itemsCount: 10,
+      locale: expect.any(String),
+      spellcheck: true,
+    },
+    entities: [],
+    items: expect.anything()
+  });
+  await app.webPage.expectResultsToBeGreaterThanOrEqual(15)
 });

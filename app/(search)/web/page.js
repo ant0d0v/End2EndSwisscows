@@ -17,6 +17,8 @@ import Advertiser from "./AdvertiserWebPage.js";
 import VideoObject from "./VideoObject.js"
 import Article from "./Article.js";
 import Product from "./Product.js";
+import Place from "./Place.js";
+import Book from "./Book.js";
 import Skeleton from "./Skeleton.js";
 import FAQ from "./FAQPage.js";
 import Infobox from "./Infobox.js";
@@ -42,6 +44,8 @@ export default class WebPage extends BasePage {
     this.footer = new Footer(page);
     this.preview = new Preview(page);
     this.videoObject = new VideoObject(page);
+    this.place = new Place(page);
+    this.book = new Book(page);
     this.article = new Article(page);
     this.product = new Product(page);
     this.skeleton = new Skeleton(page);
@@ -49,10 +53,33 @@ export default class WebPage extends BasePage {
     this.infobox = new Infobox(page);
 
     //Locators
+    this.root = this.page.locator(`.web-results`)
+    this.items = this.root.locator("article.item, .web-results .widget")
     this.images = this.page.locator(`img`)
   }
+  //Actions
+  scrollToLastItemAndGetResponse = async (
+    expected = { endpoint: part }
+  ) => {
+    const responsePromise = this.page.waitForResponse(
+      `${process.env.API_URL}${expected.endpoint}/search?query*`
+    );
+    await this.scrollByVisibleElement(this.items.last(), "last item")
+    const response = await responsePromise;
+    return response;
+  };
 
   //Verify
+
+  expectContentToBeVisible = async () => {
+    await this.expectAreElementsInListDisplayed(this.items);
+  };
+
+
+  expectResultsToBeGreaterThanOrEqual = async (value) => {
+    await this.expectListToBeGreaterThanOrEqual(this.items, value);
+  };
+
   takeSnapshot = async (testInfo) => {
     await this.expectPageToHaveScreenshotWithoutMask(
       testInfo,

@@ -22,6 +22,9 @@ export default class WebPageItem extends BaseComponent {
     }
     return texts;
   };
+  scrollToLastItem = async ()  => {
+    await this.scrollByVisibleElement(this.root.last(), "search footer")
+  };
 
   clickTitleAt = async (titles = { number: index }) => {
     await this.clickElement(
