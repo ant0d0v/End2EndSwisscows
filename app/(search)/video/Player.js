@@ -14,6 +14,7 @@ export default class Player extends BaseComponent {
       .frameLocator(`iframe[title*="Skofka" i]`)
       .locator("video");
     this.player = this.page.locator(".video-player");
+    this.currentStatus = this.page.frameLocator('iframe').locator(".html5-video-player")
   }
   //Actions
   clickOkButton = async () => {
@@ -45,5 +46,11 @@ export default class Player extends BaseComponent {
       testInfo
     );
   };
+
+  async expectYouTubeVideoToHaveAttribute(expected = {
+    attribute: value
+  }) {
+    await this.expectAttributeClassOfElement(this.currentStatus, expected.attribute);
+  }
 }
 

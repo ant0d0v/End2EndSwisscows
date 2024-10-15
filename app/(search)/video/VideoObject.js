@@ -32,7 +32,7 @@ export default class Item extends BaseComponent {
     }
   ) => {
     await this.clickElement(
-      this.thumbnail.nth(video.number - 1),
+      this.playIcon.nth(video.number - 1),
       `video item with index${video.number - 1}`
     );
   };
@@ -123,10 +123,8 @@ export default class Item extends BaseComponent {
   };
 
   takeSnapshotPlayIconAt = async (testInfo, expected = { number: value }) => {
-    const elementHandle = await this.root.locator("figure").first();
-    await elementHandle.evaluate((element) =>
-      element.setAttribute("class", "thumbnail")
-    );
+    const elementHandle = await this.images.first();
+    await elementHandle.evaluate((element) => element.setAttribute("src", ""));
     await this.icon.takeSnapshotIconAt(
       testInfo,
       this.playIcon,
