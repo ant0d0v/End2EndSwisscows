@@ -5,7 +5,7 @@ test("Check Cheapest first filter ", async ({ app }) => {
   const randomQuery = faker.commerce.product();
   //Actions
   await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria("iphone");
+  await app.home.header.searchForm.inputSearchCriteria(randomQuery);
   await app.home.header.searchForm.clickEnterSearchField();
   await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
   await app.webPage.header.clickHamburgerMenuButton();
@@ -39,7 +39,7 @@ test("Check Most expensive filter", async ({ app }) => {
   const randomQuery = faker.commerce.product();
   //Actions
   await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria("iphone");
+  await app.home.header.searchForm.inputSearchCriteria(randomQuery);
   await app.home.header.searchForm.clickEnterSearchField();
   await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
   await app.webPage.header.clickHamburgerMenuButton();
@@ -100,7 +100,7 @@ test(`Check select multiple filters specifics "brand" and "Most expensive"`, asy
 }) => {
   //Actions
   await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria("iphone");
+  await app.home.header.searchForm.inputSearchCriteria("laptop");
   await app.home.header.searchForm.clickEnterSearchField();
   await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
   await app.webPage.header.clickHamburgerMenuButton();

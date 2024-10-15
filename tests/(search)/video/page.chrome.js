@@ -395,10 +395,10 @@ test("Check that youtube video is playing", async ({ app }) => {
   });
 });
 
-test.fixme("Check that vimeo video is playing", async ({ app }) => {
+test("Check that vimeo video is playing", async ({ app }) => {
   //Actions
   await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria("Skofka");
+  await app.home.header.searchForm.inputSearchCriteria("site:dailymotion.com TD Jakes- Don't Say a Word");
   await app.home.header.searchForm.clickEnterSearchField();
   await app.videoPage.header.navigation.clickVideoTab();
   await app.videoPage.item.expectVideoItemsToBeVisible();
@@ -406,8 +406,8 @@ test.fixme("Check that vimeo video is playing", async ({ app }) => {
   await app.videoPage.player.clickOkButton();
 
   //Assert
-  await app.videoPage.player.expectYouTubeVideoToHaveAttribute({
-    attribute: /playing-mode/,
+  await app.videoPage.player.expectDailyMotionVideoToHave({
+    text: "Video playing",
   });
 });
 
