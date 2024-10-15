@@ -110,7 +110,7 @@ test("Check {title, site, callout, ad} of product ads item", async ({ app }) => 
   await app.home.open();
   await app.home.header.clickHamburgerMenuButton();
   await app.home.header.hamburgerMenu.selectRegion("Germany");
-  await app.home.header.searchForm.inputSearchCriteria(randomAdsQuery());
+  await app.home.header.searchForm.inputSearchCriteria("tablet kaufen");
   await app.home.header.searchForm.clickEnterSearchField();
   await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
   await app.webPage.advertiser.waitUntilAdvertiserToBeVisible();
