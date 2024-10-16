@@ -82,9 +82,7 @@ test("Check more button in detail", async ({ app }) => {
 test("Check less button in detail", async ({ app }) => {
   //Actions
   await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria(
-    faker.commerce.product()
-  );
+  await app.home.header.searchForm.inputSearchCriteria(randomProduct());
   await app.home.header.searchForm.clickEnterSearchField();
   await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
   await app.webPage.header.clickHamburgerMenuButton();
