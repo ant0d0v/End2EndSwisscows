@@ -46,6 +46,15 @@ export function randomAdsQuery() {
   ]);
   return word;
 }
+export function randomVideoQuery() {
+  const word = faker.helpers.arrayElement([
+    "Exploring the Mountains",
+    "Cooking Italian Pasta",
+    "Yoga for Beginners",
+    "Tech Innovations of 2024"
+  ]);
+  return word;
+}
 
 export function randomQueryWithVideoItemSearch() {
   const word = faker.helpers.arrayElement([

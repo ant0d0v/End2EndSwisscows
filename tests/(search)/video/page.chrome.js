@@ -1,6 +1,7 @@
 import { test, expect } from "../../../utils/fixtures.js";
 import { saveStorageState, readStorageState} from "../../../helpers/authHelper.js";
 import { faker } from "@faker-js/faker";
+import { randomVideoQuery } from "../../../helpers/random.js";
 
 test("Check No Results Found error video page", async ({ app }, testInfo) => {
   //Actions
@@ -79,7 +80,7 @@ test("Check that video results equals search criteria", async ({ app }) => {
 test("Check infinity scroll in video results", async ({ app }) => {
   //Actions
   await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria(faker.music.songName());
+  await app.home.header.searchForm.inputSearchCriteria(randomVideoQuery());
   await app.home.header.searchForm.clickEnterSearchField();
   await app.videoPage.header.navigation.clickVideoTab();
   await app.videoPage.item.expectVideoItemsToBeVisible();
@@ -194,7 +195,7 @@ test("Check the info video object { site, description, data, views } when openin
 test("Check open video of vimeo owner", async ({ app }) => {
   //Actions
   await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria("R O M A on Vimeo");
+  await app.home.header.searchForm.inputSearchCriteria("site:vimeo.com");
   await app.home.header.searchForm.clickEnterSearchField();
   await app.videoPage.header.navigation.clickVideoTab();
   await app.videoPage.item.expectVideoItemsToBeVisible();
@@ -210,9 +211,7 @@ test("Check open video of vimeo owner", async ({ app }) => {
 test("Check open video of dailymotion owner", async ({ app }) => {
   //Actions
   await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria(
-    "https://www.dailymotion.com/video/x7zxchl"
-  );
+  await app.home.header.searchForm.inputSearchCriteria("site:dailymotion.com");
   await app.home.header.searchForm.clickEnterSearchField();
   await app.videoPage.header.navigation.clickVideoTab();
   await app.videoPage.item.expectVideoItemsToBeVisible();
@@ -243,7 +242,7 @@ test("Check open video when clicking title of video object", async ({
 test("Check design of video Privacy Warning", async ({ app }, testInfo) => {
   //Actions
   await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria("NFS");
+  await app.home.header.searchForm.inputSearchCriteria(randomVideoQuery());
   await app.home.header.searchForm.clickEnterSearchField();
   await app.videoPage.header.navigation.clickVideoTab();
   await app.videoPage.item.expectVideoItemsToBeVisible();
@@ -258,7 +257,7 @@ test(`Check design of Video unavailable vimeo owner`, async ({
 }, testInfo) => {
   //Actions
   await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria("R O M A on Vimeo");
+  await app.home.header.searchForm.inputSearchCriteria("site:vimeo.com");
   await app.home.header.searchForm.clickEnterSearchField();
   await app.videoPage.header.navigation.clickVideoTab();
   await app.videoPage.item.expectVideoItemsToBeVisible();
@@ -273,9 +272,7 @@ test(`Check design of Video unavailable dailymotion owner`, async ({
 }, testInfo) => {
   //Actions
   await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria(
-    "https://www.dailymotion.com/video/x7zxchl"
-  );
+  await app.home.header.searchForm.inputSearchCriteria("site:dailymotion.com");
   await app.home.header.searchForm.clickEnterSearchField();
   await app.videoPage.header.navigation.clickVideoTab();
   await app.videoPage.item.expectVideoItemsToBeVisible();
@@ -288,7 +285,7 @@ test(`Check design of Video unavailable dailymotion owner`, async ({
 test("Check cancel button of Video unavailable warning ", async ({ app }) => {
   //Actions
   await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria("R O M A on Vimeo");
+  await app.home.header.searchForm.inputSearchCriteria("site:vimeo.com");
   await app.home.header.searchForm.clickEnterSearchField();
   await app.videoPage.header.navigation.clickVideoTab();
   await app.videoPage.item.expectVideoItemsToBeVisible();
@@ -317,12 +314,12 @@ test("Check cancel button of Privacy Warning ", async ({ app }) => {
   );
 });
 
-test("Check video play if don't select checkbox `Don't remind me again ` ", async ({
+test("Check video play if don't select checkbox Don't remind me again", async ({
   app,
 }, testInfo) => {
   //Actions
   await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria("NFS");
+  await app.home.header.searchForm.inputSearchCriteria(randomVideoQuery());
   await app.home.header.searchForm.clickEnterSearchField();
   await app.videoPage.header.navigation.clickVideoTab();
   await app.videoPage.item.expectVideoItemsToBeVisible();
@@ -382,10 +379,43 @@ test("Check video to have href external service", async ({ app }) => {
   await app.videoPage.item.expectVideoToHaveAttributeHrefBy({ number: 5, value: /youtube.com/ })
 });
 
+test("Check that youtube video is playing", async ({ app }) => {
+  //Actions
+  await app.home.open();
+  await app.home.header.searchForm.inputSearchCriteria(randomVideoQuery());
+  await app.home.header.searchForm.clickEnterSearchField();
+  await app.videoPage.header.navigation.clickVideoTab();
+  await app.videoPage.item.expectVideoItemsToBeVisible();
+  await app.videoPage.item.clickVideoImageAt({ number: 1 });
+  await app.videoPage.player.clickOkButton();
+
+  //Assert
+  await app.videoPage.player.expectYouTubeVideoToHaveAttribute({
+    attribute: /playing-mode/,
+  });
+});
+
+test("Check that vimeo video is playing", async ({ app }) => {
+  //Actions
+  await app.home.open();
+  await app.home.header.searchForm.inputSearchCriteria("site:dailymotion.com TD Jakes- Don't Say a Word");
+  await app.home.header.searchForm.clickEnterSearchField();
+  await app.videoPage.header.navigation.clickVideoTab();
+  await app.videoPage.item.expectVideoItemsToBeVisible();
+  await app.videoPage.item.clickVideoImageAt({ number: 1 });
+  await app.videoPage.player.clickOkButton();
+
+  //Assert
+  await app.videoPage.player.expectDailyMotionVideoToHave({
+    text: "Video playing",
+  });
+});
+
+
 test("Check checkbox `Don't remind me again`", async ({ app }) => {
   //Actions
   await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria("NFS");
+  await app.home.header.searchForm.inputSearchCriteria(randomVideoQuery());
   await app.home.header.searchForm.clickEnterSearchField();
   await app.videoPage.header.navigation.clickVideoTab();
   await app.videoPage.item.expectVideoItemsToBeVisible();
