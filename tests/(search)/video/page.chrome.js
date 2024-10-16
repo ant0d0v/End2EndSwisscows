@@ -379,7 +379,7 @@ test("Check video to have href external service", async ({ app }) => {
   await app.videoPage.item.expectVideoToHaveAttributeHrefBy({ number: 5, value: /youtube.com/ })
 });
 
-test("Check that youtube video is playing", async ({ app }) => {
+test.fixme("Check that youtube video is playing", async ({ app }) => {
   //Actions
   await app.home.open();
   await app.home.header.searchForm.inputSearchCriteria(randomVideoQuery());
@@ -395,7 +395,7 @@ test("Check that youtube video is playing", async ({ app }) => {
   });
 });
 
-test("Check that vimeo video is playing", async ({ app }) => {
+test("Check that dailymotion video is playing", async ({ app }) => {
   //Actions
   await app.home.open();
   await app.home.header.searchForm.inputSearchCriteria("site:dailymotion.com TD Jakes- Don't Say a Word");

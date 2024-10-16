@@ -30,14 +30,14 @@ test("Check that the video is playing", async ({ app }) => {
   await app.datacenterPage.videoPlayer.expectVideoToPlay();
 });
 
-test("Check design of the Datacenter page ", async ({ app }, testInfo) => {
+test("Check design of the Datacenter page", async ({ app }, testInfo) => {
   //Actions
   await app.datacenterPage.open();
   //Assert
   await app.datacenterPage.takeSnapshot(testInfo);
 });
 
-test("Check design dark theme of the Datacenter page ", async ({
+test("Check design dark theme of the Datacenter page", async ({
   app,
 }, testInfo) => {
   //Actions

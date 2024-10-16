@@ -95,7 +95,9 @@ for (const { test_case, language, languageCode } of footerTable) {
 }
 
 const header = readCsvFile("../data/locales/header.csv");
-for (const { test_case, language, languageCode } of header) {
+for (const { test_case, language, languageCode, isoCode } of header) {
+  test.describe('use config locale', () => {
+  test.use({ locale: isoCode});
   test(`${test_case} Check search header for  ${language} localization`,
     async ({ app }) => {
       //Actions
@@ -105,12 +107,7 @@ for (const { test_case, language, languageCode } of header) {
       await app.home.header.searchForm.inputSearchCriteria("test");
       await app.home.header.searchForm.clickEnterSearchField();
       await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
-      await app.webPage.header.clickHamburgerMenuButton();
-      await app.webPage.header.hamburgerMenu.clickLanguagesDropdown();
-      await app.webPage.header.hamburgerMenu.clickLanguageLinkInDropdown(
-        language
-      );
-
+     
       //Assert
       await app.webPage.header.expectTranslationsForNavTabs({
         translationKey_1: "Web",
@@ -121,10 +118,12 @@ for (const { test_case, language, languageCode } of header) {
         translationKey_6: "Music",
         locale: languageCode,
       });
-    }
-  );
+    });
+  });
 }
-for (const { test_case, language, languageCode } of header) {
+for (const { test_case, language, languageCode, isoCode } of header) {
+  test.describe('use config locale', () => {
+  test.use({ locale: isoCode});
   test(`${test_case} Check web filters for  ${language} localization`,
     async ({ app }) => {
       //Actions
@@ -134,27 +133,20 @@ for (const { test_case, language, languageCode } of header) {
       await app.home.header.searchForm.inputSearchCriteria("test");
       await app.home.header.searchForm.clickEnterSearchField();
       await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
-      await app.webPage.header.clickHamburgerMenuButton();
-      await app.webPage.header.hamburgerMenu.clickLanguagesDropdown();
-      await app.webPage.header.hamburgerMenu.clickLanguageLinkInDropdown(
-        language
-      );
 
       //Assert
       await app.webPage.filters.expectTranslationsForFilter({ translationKey: "Web_Freshness_All", locale: languageCode });
       await app.webPage.filters.clickFilterByDate();
-      await app.webPage.filters.selectMenu.expectTranslationsForFilterListByDate(
-        {
+      await app.webPage.filters.selectMenu.expectTranslationsForFilterListByDate({
           translationKey_1: "Web_Freshness_All",
           translationKey_2: "Web_Freshness_Day",
           translationKey_3: "Web_Freshness_Week",
           translationKey_4: "Web_Freshness_Month",
           translationKey_5: "Web_Freshness_Year",
           locale: languageCode,
-        }
-      );
-    }
-  );
+       });
+    });
+  });
 }
 
 for (const { test_case, language, languageCode } of header) {
