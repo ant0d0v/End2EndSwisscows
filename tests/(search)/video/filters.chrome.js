@@ -11,10 +11,10 @@ for (const {
   test(`${testID} Check search results by filter ${fiterName} navigates to the corresponding URL and matches response results`, async ({
     app,
   }) => {
-    const randomQuery = faker.word.sample();
+    const query = "ronaldo";
     //Actions
     await app.home.open();
-    await app.home.header.searchForm.inputSearchCriteria(randomQuery);
+    await app.home.header.searchForm.inputSearchCriteria(query);
     await app.home.header.searchForm.clickEnterSearchField();
     await app.videoPage.header.navigation.clickVideoTab();
     await app.videoPage.item.expectVideoItemsToBeVisible();
@@ -24,12 +24,13 @@ for (const {
         endpoint: "/v2/videos",
         locator: fiterName,
       });
+    await app.videoPage.item.expectVideoItemsToBeVisible();  
 
     //Assert
     await app.expectPageToHaveUrl(
       app.page,
       `${process.env.BASE_URL}/en/video?query=${
-        randomQuery + publisherPart
+        query + publisherPart
       }`
     );
     await app.videoPage.item.expectItemsResponsePublisherToEqual(

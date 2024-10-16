@@ -7,12 +7,12 @@ for (const { testID, freshnessPart, fiterName } of filterData.byDate) {
   test(`${testID} Check search results by filter ${fiterName} navigates to the corresponding URL and matches response results`, async ({
     app,
   }) => {
-    const randomQuery = faker.word.sample();
+    const query = "news"
     //Actions
     await app.home.open();
     await app.home.header.clickHamburgerMenuButton();
     await app.home.header.hamburgerMenu.selectRegion("Germany");
-    await app.home.header.searchForm.inputSearchCriteria(randomQuery);
+    await app.home.header.searchForm.inputSearchCriteria(query);
     await app.home.header.searchForm.clickEnterSearchField();
     await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
     await app.webPage.filters.clickFilterByDate();
@@ -21,18 +21,19 @@ for (const { testID, freshnessPart, fiterName } of filterData.byDate) {
         endpoint: "/v4/web",
         locator: fiterName,
       });
+    await app.webPage.webPageItem.expectWebPageItemsToBeVisible();  
 
     //Assert
     await app.expectPageToHaveUrl(
       app.page,
       `${process.env.BASE_URL}/en/web?query=${
-        randomQuery + "&region=de-DE" + freshnessPart
+        query + "&region=de-DE" + freshnessPart
       }`
     );
     await app.api.search.response.expectBodyToEqual(response, {
       context: {
-        query: randomQuery,
-        effectiveQuery: randomQuery,
+        query: query,
+        effectiveQuery: query,
         offset: 0,
         itemsCount: 10,
         locale: "de-DE",
