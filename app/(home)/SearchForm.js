@@ -19,13 +19,13 @@ export default class SearchForm extends BaseComponent {
     await this.waitElementToBeVisible(this.suggest, `suggest`);
   };
   clickEnterSearchField = async () => {
-    await this.clickEnter(this.placeholderHome, `search field`);
+    await this.clickEnter(this.search, `search field`);
   };
   clickSearchField = async () => {
     await this.clickElement(this.inputSearch, `search field `);
   };
   inputSearchCriteria = async (text) => {
-    await this.input(this.placeholderHome, text, `search field`);
+    await this.input(this.search, text, `search field`);
   };
 
   // Verify
