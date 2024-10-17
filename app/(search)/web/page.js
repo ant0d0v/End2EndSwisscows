@@ -55,7 +55,7 @@ export default class WebPage extends BasePage {
     //Locators
     this.root = this.page.locator(`.web-results`)
     this.items = this.root.locator("article.item, .web-results .widget")
-    this.images = this.page.locator(`img`)
+    this.images = this.page.locator(`.item img`)
   }
   //Actions
   scrollToLastItemAndGetResponse = async (

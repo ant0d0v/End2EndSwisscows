@@ -1,4 +1,4 @@
-import  Pagination  from "../../../components/Pagination.js";
+import Pagination from "../../../components/Pagination.js";
 import Filters from "./Filters.js";
 import Offer from "./Offer.js";
 import Details from "./Details.js";
@@ -17,10 +17,14 @@ export default class ShoppingPage extends BasePage {
     this.offer = new Offer(page);
     this.details = new Details(page);
     this.item = new Item(page);
-    this.header  = new Header(page);
+    this.header = new Header(page);
     this.error = new Error(page);
     this.skeleton = new Skeleton(page);
+    //Locators
+    this.root = this.page.locator(`.shopping-results`);
+    this.images = this.page.locator(`.product img`);
   }
-  //Actions
-  
+  takeSnapshot = async (testInfo) => {
+    await this.expectPageToHaveScreenshotWithoutMask(testInfo, this.images);
+  };
 }

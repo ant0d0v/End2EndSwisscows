@@ -1,0 +1,120 @@
+{
+    "context": {
+        "query": "best",
+        "effectiveQuery": "best",
+        "offset": 0,
+        "itemsCount": 50,
+        "locale": "de-DE",
+        "spellcheck": true
+    },
+    "items": [
+        {
+            "type": "ImageObject",
+            "thumbnail": {
+                "url": "https://imgs.search.brave.com/KrocpDaRKfU6YfWUg31sKchvwQq_bB7fy0cboKEV1Oo/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly93d3cu/YnctYmVzdC5kZS9m/aWxlYWRtaW4vdGVt/cGxhdGVzL21lZGlh/L2Jlc3QvbG9nby1z/dHVkaWVuaW5mby1i/ZXN0LnBuZw"
+            },
+            "contentUrl": "https://www.bw-best.de/fileadmin/templates/media/best/logo-studieninfo-best.png",
+            "name": "BEST",
+            "url": "https://www.bw-best.de/"
+        },
+        {
+            "type": "ImageObject",
+            "thumbnail": {
+                "url": "https://imgs.search.brave.com/p0HXea7bNwAGJ7XReZPJdiv_GHlcW4Kb5hvBSDrXZks/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly91bmkt/Zm91bmRhdGlvbi5l/dS93cC1jb250ZW50/L3VwbG9hZHMvMjAx/OS8wNS9iZXN0X2Nh/cmRfbG9nby5wbmc"
+            },
+            "contentUrl": "https://uni-foundation.eu/wp-content/uploads/2019/05/best_card_logo.png",
+            "name": "BEST+",
+            "url": "https://uni-foundation.eu/project/best/"
+        },
+        {
+            "type": "ImageObject",
+            "thumbnail": {
+                "url": "https://imgs.search.brave.com/5MI_kFk-ZjYjPT0-brDsCrcwz5Vs1GTQ5bs9XjvXn3k/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9zaG93/cm9vb29tLXRzLmF1/dG9oYXVzLWRpZ2l0/YWwuZGUvbWVkaWEv/MjA0OC9iZXN0LWdy/b3VwLXZvcnRlaWxz/a2FydGUtcHVua3Rl/bi1qcGc.jpeg"
+            },
+            "contentUrl": "https://showroooom-ts.autohaus-digital.de/media/2048/best-group-vorteilskarte-punkten-jpg",
+            "name": "best-group-vorteilskarte-punkten.jpg",
+            "url": "https://autohaus-best.de/"
+        },
+        {
+            "type": "ImageObject",
+            "thumbnail": {
+                "url": "https://imgs.search.brave.com/mRQYYyBcf2-jrITUMO99E4NPupKpA40XS_HdYNoD0R4/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS1jbGRucnkucy1u/YmNuZXdzLmNvbS9p/bWFnZS91cGxvYWQv/dF9maXQtNzYwdyxm/X2F1dG8scV9hdXRv/OmJlc3QvbmV3c2Nt/cy8yMDE5XzAzLzE0/MDMxODYvc2hhcGUt/b2Ytd2F0ZXItdG9k/YXktc3F1YXJlLTE5/MDExOC5qcGc"
+            },
+            "contentUrl": "https://media-cldnry.s-nbcnews.com/image/upload/t_fit-760w,f_auto,q_auto:best/newscms/2019_03/1403186/shape-of-water-today-square-190118.jpg",
+            "name": "The Shape of Water Oscar Best Picture 2018",
+            "url": "https://www.today.com/popculture/complete-list-every-best-picture-oscar-winner-ever-t107617"
+        },
+        {
+            "type": "ImageObject",
+            "thumbnail": {
+                "url": "https://imgs.search.brave.com/_ty_M2kjbPSrWpHT5hjS3adVIxmaR1MHTQ2E6WPWQNQ/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NjF1QnYxQ1cxWUwu/anBn"
+            },
+            "contentUrl": "https://m.media-amazon.com/images/I/61uBv1CW1YL.jpg",
+            "name": "Best Picture Academy Award Winners",
+            "url": "https://www.amazon.de/Best-Picture-Academy-Award-Winners/dp/B00664ALOY"
+        },
+        {
+            "type": "ImageObject",
+            "thumbnail": {
+                "url": "https://imgs.search.brave.com/buWUXO60cITgTPMn6Gu-cBYmvKW_ZKVwbitqGJvHAVM/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9saXJw/LmNkbi13ZWJzaXRl/LmNvbS83ZDU1ZjRl/ZS9kbXMzcmVwL211/bHRpL29wdC9CZXN0/X29mX0luZHVzdHJ5/K2ZpbmFsZXMrTG9n/by0xMTZoLnBuZw"
+            },
+            "contentUrl": "https://lirp.cdn-website.com/7d55f4ee/dms3rep/multi/opt/Best_of_Industry+finales+Logo-116h.png",
+            "name": "Best of Industry Award",
+            "url": "https://www.bestofindustry.de/"
+        },
+        {
+            "type": "ImageObject",
+            "thumbnail": {
+                "url": "https://imgs.search.brave.com/Slfw7ROC6HRKt16I35kLHRSE2FyBGlQqLwyFsh2om_o/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/c2hvcGlmeS5jb20v/cy9maWxlcy8xLzA3/NDQvMDIwMy9maWxl/cy8yLldlYXIuV0Jf/V2Vic2l0ZV9NYWlu/UGFnZV9DYXRlZ29y/eUFyZWFfMjAyNDA5/MTJfbG1fNjAweC5q/cGc_dj0xNzI2MjEz/NTQ1"
+            },
+            "contentUrl": "https://cdn.shopify.com/s/files/1/0744/0203/files/2.Wear.WB_Website_MainPage_CategoryArea_20240912_lm_600x.jpg?v=1726213545",
+            "name": "Bestseller",
+            "url": "https://de.womensbest.com/"
+        },
+        {
+            "type": "ImageObject",
+            "thumbnail": {
+                "url": "https://imgs.search.brave.com/AuqJYO3oXhA5Ff3Tm0YAKWrSGzN_zgkirUCMWM-R1DA/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS52YW5pdHlmYWly/LmNvbS9waG90b3Mv/NjU3YjY3MmQ5ZWQ5/ODJjMmQ1YmU0Mjc3/L21hc3Rlci93XzE2/MDAsY19saW1pdC9h/d2FyZHMtZnJvbnQt/cnVubmVycy5qcGc"
+            },
+            "contentUrl": "https://media.vanityfair.com/photos/657b672d9ed982c2d5be4277/master/w_1600,c_limit/awards-front-runners.jpg",
+            "name": "Every Academy Award for Best Actor A Complete History of the Winners",
+            "url": "https://www.vanityfair.com/hollywood/story/hollywood/academy-award-best-actor"
+        },
+        {
+            "type": "ImageObject",
+            "thumbnail": {
+                "url": "https://imgs.search.brave.com/SQNAjal4ejUGfw4yxVGsZTUvi_sUERDfiWqluOf_aYE/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly93d3cu/YWxqYXplZXJhLmNv/bS93cC1jb250ZW50/L3VwbG9hZHMvMjAy/My8wMy9BUDIzMDU4/NTYwNTQ4NzY0Lmpw/Zz9yZXNpemU9Nzcw/LDUxMyZxdWFsaXR5/PTgw"
+            },
+            "contentUrl": "https://www.aljazeera.com/wp-content/uploads/2023/03/AP23058560548764.jpg?resize=770,513&quality=80",
+            "name": "A collage of the 10 best picture nominees at the 95th Oscars",
+            "url": "https://www.aljazeera.com/news/2023/3/11/best-picture-spotlight-which-film-will-win-big-at-2023s-oscars"
+        },
+        {
+            "type": "ImageObject",
+            "thumbnail": {
+                "url": "https://imgs.search.brave.com/ZjV2CKaUd9OkX9fSmBa6kpsSdBkQJ2twoKSiBiLd3sg/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/c2hvcGlmeS5jb20v/cy9maWxlcy8xLzA3/NDQvMDIwMy9maWxl/cy8wMl9XQl9Mb2dv/X1YxX1dJTkdTX3do/aXRlXzIwMTcwMzE2/XzA1MWFkMmExLTE3/ZjMtNGU4YS1hNWNi/LTQwNTk2NTFhYjZi/My5wbmc_dj0xNjM2/OTcwODU1"
+            },
+            "contentUrl": "https://cdn.shopify.com/s/files/1/0744/0203/files/02_WB_Logo_V1_WINGS_white_20170316_051ad2a1-17f3-4e8a-a5cb-4059651ab6b3.png?v=1636970855",
+            "name": "Women's Best - DACH Logo",
+            "url": "https://de.womensbest.com/"
+        },
+        {
+            "type": "ImageObject",
+            "thumbnail": {
+                "url": "https://imgs.search.brave.com/wj5gecVTo1bIKoLOyjh5GWU5m1pdmxecqE-aaESxPjM/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/c2hvcGlmeS5jb20v/cy9maWxlcy8xLzA3/NDQvMDIwMy9maWxl/cy9XQl9Mb2dvXzUx/Y2E5OGUxLTYxMGQt/NDc5MC1iYmM2LTgy/ZGQ0N2YxNGUxYi5w/bmc_dj0xNjU5MzUy/MDQw"
+            },
+            "contentUrl": "https://cdn.shopify.com/s/files/1/0744/0203/files/WB_Logo_51ca98e1-610d-4790-bbc6-82dd47f14e1b.png?v=1659352040",
+            "name": "Women's Best - ROW Logo",
+            "url": "https://de.womensbest.com/"
+        },
+        {
+            "type": "ImageObject",
+            "thumbnail": {
+                "url": "https://imgs.search.brave.com/4TMs-r4GazHT-OtsuerWh3V_R9ykC08P5BclqlgueIM/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NjEwaDhFWndqU0wu/anBn"
+            },
+            "contentUrl": "https://m.media-amazon.com/images/I/610h8EZwjSL.jpg",
+            "name": "best+ 2009-2015",
+            "url": "https://www.amazon.de/-/en/dp/B015TKWZ5S"
+        }
+    ]
+}

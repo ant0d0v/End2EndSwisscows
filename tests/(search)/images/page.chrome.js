@@ -74,6 +74,19 @@ test("Check 429 Too many requests", async ({ app }, testInfo) => {
   });
 });
 
+test("Check design images page", async ({ app },testInfo) => {
+  //Actions
+  await app.home.open();
+  await app.route.mockResponseBody("/v4/images", 'data/mock/images/testData.json');
+  await app.home.header.searchForm.inputSearchCriteria("ronaldo");
+  await app.home.header.searchForm.clickEnterSearchField();
+  await app.webPage.header.navigation.clickImageTab();
+  await app.imagePage.item.expectImageItemsToBeVisible();
+
+  //Assert
+  await app.imagePage.takeSnapshot(testInfo);
+});
+
 test("Check Saved button when adding image to bookmark", async ({
   app,
 }, testInfo) => {

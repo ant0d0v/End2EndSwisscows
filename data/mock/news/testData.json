@@ -1,0 +1,137 @@
+{
+    "request": {
+        "query": "news",
+        "itemsCount": 10,
+        "region": "de-DE",
+        "offset": 0,
+        "sortBy": "Created",
+        "sortOrder": "Desc",
+        "type": null,
+        "collection": null,
+        "language": "de",
+        "freshness": 0
+    },
+    "items": [
+        {
+            "uri": "https://www.bluewin.ch/de/sport/weitere/in-kopenhagen-geht-es-auch-um-los-angeles-2407769.html",
+            "title": "Rad: In Kopenhagen geht es auch um Los Angeles | blue <em>News</em>",
+            "excerpt": "Von Mittwoch bis Sonntag finden in Ballerup bei Kopenhagen die Weltmeisterschaften im Bahnradsport statt. Swiss Cycling hat sechs Athletinnen und acht Athleten nominiert.",
+            "description": "Von Mittwoch bis Sonntag finden in Ballerup bei Kopenhagen die Weltmeisterschaften im Bahnradsport statt. Swiss Cycling hat sechs Athletinnen und acht Athleten nominiert.",
+            "collection": "Sport",
+            "author": "Bluewin",
+            "og:title": "In Kopenhagen geht es auch um Los Angeles",
+            "og:image": "https://production-livingdocs-bluewin-ch.imgix.net/2024/10/16/2ca4e3c8-e7a9-4b2a-8228-0f95785a9911.jpeg?w=1200&h=630&fit=crop&crop=faces",
+            "created": "2024-10-16T02:00:00+00:00",
+            "$Source": "dc59070e65e848c28ca03f7c0a614440"
+        },
+        {
+            "uri": "https://www.bluewin.ch/de/news/international/biden-spottet-ueber-trump-was-stimmt-mit-dem-typen-nicht-2407746.html",
+            "title": "USA: Biden spottet über Trump: «Was stimmt mit dem Typen nicht?» | blue <em>News</em>",
+            "excerpt": "US-Präsident Joe Biden hat sich nach einem skurrilen Auftritt von Donald Trump über den republikanischen Präsidentschaftskandidaten lustig gemacht. «Er stand 30 Minuten lang auf der Bühne und tanzte», sagte Biden bei einer Veranstaltung in Philadelphia. «Ich meine es ernst. Was stimmt mit dem Typen nicht?» Biden nannte Trump ausserdem einen «Verlierer» und legte sofort nach: «Er ist ein Verlierer bei allem, was er tut.»",
+            "description": "US-Präsident Joe Biden hat sich nach einem skurrilen Auftritt von Donald Trump über den republikanischen Präsidentschaftskandidaten lustig gemacht. «Er stand 30 Minuten lang auf der Bühne und tanzte», sagte Biden bei einer Veranstaltung in Philadelphia. «Ich meine es ernst. Was stimmt mit dem Typen nicht?» Biden nannte Trump ausserdem einen «Verlierer» und legte sofort nach: «Er ist ein Verlierer bei allem, was er tut.»",
+            "collection": "Welt",
+            "author": "Bluewin",
+            "og:title": "Biden spottet über Trump: «Was stimmt mit dem Typen nicht?»",
+            "og:image": "https://production-livingdocs-bluewin-ch.imgix.net/2024/10/16/2ce82776-ef73-478d-86fe-a7cea5f27169.jpeg?w=1200&h=630&fit=crop&crop=faces",
+            "created": "2024-10-16T01:03:00+00:00",
+            "$Source": "dc59070e65e848c28ca03f7c0a614440"
+        },
+        {
+            "uri": "https://www.bluewin.ch/de/news/wissen-technik/erstmals-wird-von-roboter-gemaltes-bild-versteigert-2407718.html",
+            "title": "Technik: Erstmals wird von Roboter gemaltes Bild versteigert | blue <em>News</em>",
+            "excerpt": "Erstmals versteigert ein bekanntes Auktionshaus ein Bild, das ein Roboter gemalt hat. Das Porträt des britischen Wissenschaftlers Alan Turing wurde von Ai-Da erstellt, einer 2019 an der Universität Oxford entwickelten «ultrarealistischen humanoiden Roboterkünstlerin».",
+            "description": "Erstmals versteigert ein bekanntes Auktionshaus ein Bild, das ein Roboter gemalt hat. Das Porträt des britischen Wissenschaftlers Alan Turing wurde von Ai-Da erstellt, einer 2019 an der Universität Oxford entwickelten «ultrarealistischen humanoiden Roboterkünstlerin».",
+            "collection": null,
+            "author": "Bluewin",
+            "og:title": "Erstmals wird von Roboter gemaltes Bild versteigert",
+            "og:image": "https://production-livingdocs-bluewin-ch.imgix.net/2024/10/15/25b4cef2-3508-40b7-87d6-c76a136218e0.jpeg?w=1200&h=630&fit=crop&crop=faces",
+            "created": "2024-10-15T23:33:00+00:00",
+            "$Source": "dc59070e65e848c28ca03f7c0a614440"
+        },
+        {
+            "uri": "https://www.bluewin.ch/de/news/international/mehrere-tote-bei-schiffbruch-von-migrantenboot-vor-griechenland-2407711.html",
+            "title": "Migration: Mehrere Tote bei Schiffbruch von Migrantenboot vor Griechenland | blue <em>News</em>",
+            "excerpt": "Zwei Säuglinge und zwei Frauen sind nach Angaben der griechischen Küstenwache beim Schiffbruch eines Migrantenboots vor der Insel Kos in der Ägäis zu Tode gekommen. 27 weitere Menschen seien gerettet worden, erklärte ein Sprecher der Küstenwache am Dienstagabend.",
+            "description": "Zwei Säuglinge und zwei Frauen sind nach Angaben der griechischen Küstenwache beim Schiffbruch eines Migrantenboots vor der Insel Kos in der Ägäis zu Tode gekommen. 27 weitere Menschen seien gerettet worden, erklärte ein Sprecher der Küstenwache am Dienstagabend.",
+            "collection": "Welt",
+            "author": "Bluewin",
+            "og:title": "Mehrere Tote bei Schiffbruch von Migrantenboot vor Griechenland",
+            "og:image": "https://production-livingdocs-bluewin-ch.imgix.net/2024/10/15/650ba910-00b6-4e7f-9b8e-46012a982163.jpeg?w=1200&h=630&fit=crop&crop=faces",
+            "created": "2024-10-15T23:17:00+00:00",
+            "$Source": "dc59070e65e848c28ca03f7c0a614440"
+        },
+        {
+            "uri": "https://www.bluewin.ch/de/sport/fussball/ein-punkt-fuers-gemuet-und-eine-kampfansage-2407695.html",
+            "title": "Schweiz – Dänemark 2:2: Ein Punkt fürs Gemüt und eine Kampfansage | blue <em>News</em>",
+            "excerpt": "Wieder kein Sieg, aber immerhin der erste Punkt. Für Nationaltrainer Murat Yakin reicht das 2:2 gegen Dänemark, um dem Abstiegskampf im November positiv entgegenzusehen.",
+            "description": "Wieder kein Sieg, aber immerhin der erste Punkt. Für Nationaltrainer Murat Yakin reicht das 2:2 gegen Dänemark, um dem Abstiegskampf im November positiv entgegenzusehen.",
+            "collection": "Sport",
+            "author": "Bluewin",
+            "og:title": "Ein Punkt fürs Gemüt und eine Kampfansage",
+            "og:image": "https://production-livingdocs-bluewin-ch.imgix.net/2024/10/15/887d2c13-f886-4406-86f7-562eda42972e.jpeg?w=1200&h=630&fit=crop&crop=faces",
+            "created": "2024-10-15T22:58:00+00:00",
+            "$Source": "dc59070e65e848c28ca03f7c0a614440"
+        },
+        {
+            "uri": "https://www.bluewin.ch/de/news/wissen-technik/nasa-prognostiziert-noch-ein-jahr-maximale-sonnenaktivitaet-2407673.html",
+            "title": "Raumfahrt: Nasa prognostiziert noch ein Jahr maximale Sonnenaktivität | blue <em>News</em>",
+            "excerpt": "Die derzeitige Phase maximaler Sonnenaktivität könnte laut der US-Raumfahrtbehörde Nasa noch etwa ein Jahr dauern. Diese Phase halte normalerweise etwa drei bis vier Jahre, sagten Wissenschafter und Wissenschafterinnen der Nasa bei einer Pressekonferenz.",
+            "description": "Die derzeitige Phase maximaler Sonnenaktivität könnte laut der US-Raumfahrtbehörde Nasa noch etwa ein Jahr dauern. Diese Phase halte normalerweise etwa drei bis vier Jahre, sagten Wissenschafter und Wissenschafterinnen der Nasa bei einer Pressekonferenz.",
+            "collection": null,
+            "author": "Bluewin",
+            "og:title": "Nasa prognostiziert noch ein Jahr maximale Sonnenaktivität",
+            "og:image": "https://production-livingdocs-bluewin-ch.imgix.net/2024/10/15/4b574a68-9cec-403c-89b5-2609b6ad349c.jpeg?w=1200&h=630&fit=crop&crop=faces",
+            "created": "2024-10-15T22:15:00+00:00",
+            "$Source": "dc59070e65e848c28ca03f7c0a614440"
+        },
+        {
+            "uri": "https://www.bluewin.ch/de/news/international/nahost-ticker-2325392.html",
+            "title": "UN beklagen katastrophale Situation in Gaza +++ Israels Oppositionschef befürwortet Angriff auf Irans Ölfelder | blue <em>News</em>",
+            "excerpt": " der TV-Sender Channel 13 <em>News</em>.  Die Teilnehmer des Protests forderten Netanjahu...  Isaac Herzog gab am Sonntag Sky <em>News</em> ein Interview und beantwortete Fragen zum aktuellen Stand... . \r\nRachel Corrie, a peace activist, was crushed by…  pic.twitter.com/Up2QY1B3WY   \r\n— Quds <em>News</em>...",
+            "description": "Am 7. Oktober 2023 überfielen Terrorkommandos der islamistischen Hamas Israel, verübten Massaker an der Zivilbevölkerung und entführten mehr als 240 Menschen. Israel reagierte mit einem Militäreinsatz in dem von der Hamas kontrollierten Gazastreifen. Die Entwicklungen im Ticker.",
+            "collection": "Welt",
+            "author": "Bluewin",
+            "og:title": "UN beklagen katastrophale Situation in Gaza +++ Israels Oppositionschef befürwortet Angriff auf Irans Ölfelder",
+            "og:image": "https://production-livingdocs-bluewin-ch.imgix.net/2024/10/14/f4d720da-0c32-4a24-a1cd-5bf91dcbc724.jpeg?w=1200&h=630&fit=crop&crop=faces",
+            "created": "2024-10-15T22:00:00+00:00",
+            "$Source": "dc59070e65e848c28ca03f7c0a614440"
+        },
+        {
+            "uri": "https://www.bluewin.ch/de/news/international/taliban-medien-zeigen-in-teilen-afghanistans-keine-lebewesen-mehr-2406819.html",
+            "title": "Medien zeigen in Teilen Afghanistans keine Lebewesen | blue <em>News</em>",
+            "excerpt": " werden keine Bilder von Lebewesen mehr gezeigt.   Keine Zeit? blue <em>News</em> fasst für dich zusammen...",
+            "description": "Ein Gesetz der Taliban sorgt jetzt in den Medien für eine gravierende Einschränkung: In einigen afghanischen Provinzen werden keine Bilder von Lebewesen mehr gezeigt.",
+            "collection": "Welt",
+            "author": "Bluewin",
+            "og:title": "Medien zeigen in Teilen Afghanistans keine Lebewesen",
+            "og:image": "https://production-livingdocs-bluewin-ch.imgix.net/2024/10/15/c79527ad-b84c-409c-9a75-e01836a5505a.jpeg?w=1200&h=630&fit=crop&crop=faces",
+            "created": "2024-10-15T22:00:00+00:00",
+            "$Source": "dc59070e65e848c28ca03f7c0a614440"
+        },
+        {
+            "uri": "https://www.bluewin.ch/de/news/international/us-wahlen-2024-2110927.html",
+            "title": "US-Wahlen 2024 Ticker: Alle aktuellen Entwicklungen auf einen Blick | blue <em>News</em>",
+            "excerpt": " informiert dich über alle wichtigen Entwicklungen.   Keine Zeit? blue <em>News</em> fasst für dich zusammen... » des konservativen Senders Fox <em>News</em> seien das jüngste Beispiel einer gefährlichen Rhetorik...  Sender Fox <em>News</em> erstmals Interview    Die demokratische Präsidentschaftskandidatin Kamala Harris...",
+            "description": "Am 5. November 2024 werden in den USA der Präsident und der Kongress neu gewählt. Der Ticker informiert dich über alle wichtigen Entwicklungen.",
+            "collection": "Welt",
+            "author": "Bluewin",
+            "og:title": "Vorzeitige Stimmabgabe in Georgia bricht Rekorde +++ Biden über Trump: «Was stimmt mit dem Typen nicht?»",
+            "og:image": "https://production-livingdocs-bluewin-ch.imgix.net/2024/10/16/efb51b69-5f92-4e93-b075-b780e7cc9234.jpeg?w=1200&h=630&fit=crop&crop=faces",
+            "created": "2024-10-15T22:00:00+00:00",
+            "$Source": "dc59070e65e848c28ca03f7c0a614440"
+        },
+        {
+            "uri": "https://www.bluewin.ch/de/news/international/ukraine-ticker-2297283.html",
+            "title": "Ukraine-Ticker: Putin ändert Gesetz, um alten Kumpel im Amt zu halten +++ Paris liefert Kiew bald Kamikaze-Drohnen | blue <em>News</em>",
+            "excerpt": "Am 24. Februar 2022 begann Russland seinen grossflächigen, völkerrechtswidrigen Angriffskrieg gegen die gesamte Ukraine. Die Frontlinie ist seit Herbst 2022 nahezu unverändert. Fast 18 Prozent der Ukraine sind von russischen Truppen besetzt. Ein Ende des Krieges ist nicht absehbar. Die Entwicklungen im Ticker.",
+            "description": "Am 24. Februar 2022 begann Russland seinen grossflächigen, völkerrechtswidrigen Angriffskrieg gegen die gesamte Ukraine. Die Frontlinie ist seit Herbst 2022 nahezu unverändert. Fast 18 Prozent der Ukraine sind von russischen Truppen besetzt. Ein Ende des Krieges ist nicht absehbar. Die Entwicklungen im Ticker.",
+            "collection": "Welt",
+            "author": "Bluewin",
+            "og:title": "Schweiz verbietet Kreml-Spenden +++ Moskau sieht Selenskyjs Plan als Diktat der USA",
+            "og:image": "https://production-livingdocs-bluewin-ch.imgix.net/2024/10/16/01a16ad8-10ca-4035-8137-d580e148feb9.jpeg?w=1200&h=630&fit=crop&crop=faces",
+            "created": "2024-10-15T22:00:00+00:00",
+            "$Source": "dc59070e65e848c28ca03f7c0a614440"
+        }
+    ],
+    "totalCount": 23038
+}

@@ -10,8 +10,14 @@ export default class VideoPage extends BasePage {
     super(page);
     this.filters = new Filters(page);
     this.item = new Item(page);
-    this.error  = new Error(page);
+    this.error = new Error(page);
     this.player = new Player(page);
-    this.header  = new Header(page);
+    this.header = new Header(page);
+    //Locators
+    this.root = this.page.locator(`.video-results`);
+    this.images = this.page.locator(`.video-object img`);
   }
+  takeSnapshot = async (testInfo) => {
+    await this.expectPageToHaveScreenshotWithoutMask(testInfo, this.images);
+  };
 }

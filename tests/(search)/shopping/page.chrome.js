@@ -90,6 +90,21 @@ test("Check error region is unsupported", async ({ app }, testInfo) => {
   });
 });
 
+test("Check design shopping page", async ({ app },testInfo) => {
+  //Actions
+  await app.home.open();
+  await app.home.header.clickHamburgerMenuButton();
+  await app.home.header.hamburgerMenu.selectRegion("Germany");
+  await app.route.mockResponseBody("/shopping", 'data/mock/shopping/testData.json');
+  await app.home.header.searchForm.inputSearchCriteria("ronaldo");
+  await app.home.header.searchForm.clickEnterSearchField();
+  await app.webPage.header.navigation.clickShoppingTab();
+  await app.shoppingPage.item.expectShoppingItemsToBeVisible();
+
+  //Assert
+  await app.shoppingPage.takeSnapshot(testInfo);
+});
+
 test("Check info items { name, symbol price, link, brand}  ", async ({
   app,
 }) => {

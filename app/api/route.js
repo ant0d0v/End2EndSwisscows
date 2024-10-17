@@ -13,7 +13,13 @@ export default class Route extends PageHolder {
     });
   }
   mockResponseBody = async (endpoint, body) => {
-    await this.page.route(process.env.API_URL + `${endpoint}/*`, route => 
+    await this.page.route(process.env.API_URL + `${endpoint}/**`, route => 
+    route.fulfill({
+      contentType: 'application/json',
+      path: body}));
+  }
+  mockResponseMusicBody = async (endpoint, body) => {
+    await this.page.route(process.env.API_URL + `${endpoint}**`, route => 
     route.fulfill({
       contentType: 'application/json',
       path: body}));

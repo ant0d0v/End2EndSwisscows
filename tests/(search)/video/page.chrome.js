@@ -63,6 +63,19 @@ test("Check 429 Too many requests", async ({ app }, testInfo) => {
   });
 });
 
+test("Check design video page", async ({ app },testInfo) => {
+  //Actions
+  await app.home.open();
+  await app.route.mockResponseBody("/v2/videos", 'data/mock/video/testData.json');
+  await app.home.header.searchForm.inputSearchCriteria("ronaldo");
+  await app.home.header.searchForm.clickEnterSearchField();
+  await app.videoPage.header.navigation.clickVideoTab();
+  await app.videoPage.item.expectVideoItemsToBeVisible();
+
+  //Assert
+  await app.videoPage.takeSnapshot(testInfo);
+});
+
 test("Check that video results equals search criteria", async ({ app }) => {
   //Actions
   await app.home.open();
