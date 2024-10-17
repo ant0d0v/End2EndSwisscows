@@ -15,5 +15,15 @@ export default class NewsPage extends BasePage {
     this.error = new Error(page)
     this.proxyImage = new ProxyImage(page)
     this.header  = new Header(page);
-  }
+    
+   //Locators
+   this.root = this.page.locator(`.news-results`)
+   this.images = this.page.locator(`.item img`)
+ }
+ takeSnapshot = async (testInfo) => {
+   await this.expectPageToHaveScreenshotWithoutMask(
+     testInfo,
+     this.images,
+   );
+ };
 }

@@ -1,0 +1,4282 @@
+{
+    "request": {
+        "query": "best",
+        "itemsCount": 24,
+        "offset": 0,
+        "filters": {},
+        "region": "de-DE",
+        "sort": "Popularity"
+    },
+    "querySuggestions": [],
+    "items": [
+        {
+            "id": 60586840,
+            "name": "Primo Klapptisch Ø 100 x 70 cm braun",
+            "brand": {
+                "id": 18932,
+                "name": "BEST",
+                "logoUrl": "https://cdn.solutenetwork.com/dynimg/brands_800/18932.png"
+            },
+            "category": {
+                "id": 103335,
+                "parentId": 3271,
+                "description": "Gartentische",
+                "relevance": 218,
+                "imageUrl": "https://cdn.solutenetwork.com/dynimg/KqSeQeaC2vsof0p75-xL_SZaCtSZ0rWSVt1_Cbd3R6KHFoqB03GsZJ_FlIg-TPxsdHTsbWgTG0r5Hxe6JKxJg16NFdrJ2B7KeLa3e3IjN1j/103335.jpg",
+                "isLeaf": true,
+                "documentTypes": [
+                    "product"
+                ],
+                "path": [
+                    {
+                        "id": 100199,
+                        "parentId": null,
+                        "description": "Heimwerken & Garten",
+                        "relevance": 67103,
+                        "imageUrl": "https://cdn.solutenetwork.com/dynimg/tp3sCd0vbCqof0p75-xL_Qz8a1Hu55uNVt1_Cbd3R6KHFoqB03GsZJ_FlIg-TPxsR7FATBvw3HTIsdfftTgvzgqyn6zEsr09tjdPDkph63N/100199.jpg",
+                        "isLeaf": false,
+                        "documentTypes": [
+                            "product"
+                        ]
+                    },
+                    {
+                        "id": 100200,
+                        "parentId": 100199,
+                        "description": "Garten & Balkon",
+                        "relevance": 15924,
+                        "imageUrl": "https://cdn.solutenetwork.com/dynimg/JiJ1YbVgm3Bof0p75-xL_SvB8TDg5vdvVt1_Cbd3R6KHFoqB03GsZJ_FlIg-TPxsQBu0vLWPnTrWqEPsv3MoKiZ1-D5rlmWNbeZmFsjwxEM/100200.jpg",
+                        "isLeaf": false,
+                        "documentTypes": [
+                            "product"
+                        ]
+                    },
+                    {
+                        "id": 3271,
+                        "parentId": 100200,
+                        "description": "Gartenmöbel",
+                        "relevance": 2779,
+                        "imageUrl": "https://cdn.solutenetwork.com/dynimg/3L0OaXJGuBMof0p75-xL_R7gz94l3UIgVt1_Cbd3R6KHFoqB03GsZJ_FlIg-TPxseK5hcDG74aLprffAw_vHqJvfjeJFv4W5hMkjS-dS05d/3271.jpg",
+                        "isLeaf": false,
+                        "documentTypes": [
+                            "product"
+                        ]
+                    },
+                    {
+                        "id": 103335,
+                        "parentId": 3271,
+                        "description": "Gartentische",
+                        "relevance": 218,
+                        "imageUrl": "https://cdn.solutenetwork.com/dynimg/KqSeQeaC2vsof0p75-xL_SZaCtSZ0rWSVt1_Cbd3R6KHFoqB03GsZJ_FlIg-TPxsdHTsbWgTG0r5Hxe6JKxJg16NFdrJ2B7KeLa3e3IjN1j/103335.jpg",
+                        "isLeaf": true,
+                        "documentTypes": [
+                            "product"
+                        ]
+                    }
+                ]
+            },
+            "baseproductId": 32449,
+            "deal": null,
+            "description": "Der Scherenklapptisch Primo besteht aus einem robusten Stahlrohrgestell mit einem praktischen Scheren-Klappmechanismus. Die wetterfeste und U.V. beständige Tischplatte ist belastbar, kratzfest und hitzebeständig. Mit zusätzlich farblich auf das Gestell angepasstem Schutz-/Kunststoffumleimer an der Tischplatte. Der Tisch ist mit wenigen Handgriffen zusammenklappbar und lässt sich platzsparend verstauen. Maße: rund 100 cm Ø / Tischhöhe: 70 cm",
+            "estimatedTotalOffersCount": 4,
+            "externalProductIds": {
+                "asin": [
+                    "B00C863HJK"
+                ],
+                "gtin": [
+                    "4043153002282"
+                ],
+                "mpn": [
+                    "26521010"
+                ],
+                "pzn": []
+            },
+            "images": [
+                {
+                    "purpose": "main",
+                    "url": "https://cdn.solutenetwork.com/dynimg/Qmh-rlkoywqVDG54QToVF8EmE4CwT8u4JTs4Xe0RfH3YUVmZMC0Pj8n055T0-3Kbg4527PVLQlpQSqWeIZFIzhRB4Cd2i0FzVwyqg80P4vCtclX08i9PkRmd5ixaqlXIA/60586840_main.webp"
+                }
+            ],
+            "legalFields": [],
+            "paymentMethods": [
+                {
+                    "id": 1,
+                    "description": "Visa"
+                },
+                {
+                    "id": 2,
+                    "description": "American Express"
+                },
+                {
+                    "id": 3,
+                    "description": "Eurocard/Mastercard"
+                },
+                {
+                    "id": 7,
+                    "description": "Vorkasse"
+                },
+                {
+                    "id": 8,
+                    "description": "Rechnung"
+                },
+                {
+                    "id": 10,
+                    "description": "Finanzkauf"
+                },
+                {
+                    "id": 11,
+                    "description": "Lastschrift"
+                },
+                {
+                    "id": 12,
+                    "description": "Andere"
+                },
+                {
+                    "id": 13,
+                    "description": "PayPal"
+                },
+                {
+                    "id": 14,
+                    "description": "Giropay"
+                },
+                {
+                    "id": 15,
+                    "description": "Sofortüberweisung"
+                },
+                {
+                    "id": 25,
+                    "description": "paydirekt"
+                }
+            ],
+            "price": {
+                "max": {
+                    "amount": 209.0,
+                    "currency": "EUR"
+                },
+                "min": {
+                    "amount": 149.0,
+                    "currency": "EUR"
+                }
+            },
+            "properties": [],
+            "relevance": 3.84,
+            "shippingMethods": [
+                {
+                    "description": "Post/DHL"
+                },
+                {
+                    "description": "GLS"
+                },
+                {
+                    "description": "DPD"
+                },
+                {
+                    "description": "Hermes"
+                },
+                {
+                    "description": "Spedition"
+                },
+                {
+                    "description": "Andere"
+                }
+            ],
+            "shortName": null,
+            "type": "product",
+            "url": null,
+            "userReviewSummary": {
+                "count": 0,
+                "rating": null,
+                "feedbackUrl": null
+            },
+            "userReviews": []
+        },
+        {
+            "id": 208432298,
+            "name": "Campingtisch Chiemsee blau (36506820)",
+            "brand": {
+                "id": 18932,
+                "name": "BEST",
+                "logoUrl": "https://cdn.solutenetwork.com/dynimg/brands_800/18932.png"
+            },
+            "category": {
+                "id": 3689,
+                "parentId": 7861,
+                "description": "Campingmöbel",
+                "relevance": 198,
+                "imageUrl": "https://cdn.solutenetwork.com/dynimg/sS9kRFkEWgDof0p75-xL_RbmMC8aVbe0Vt1_Cbd3R6KHFoqB03GsZJ_FlIg-TPxsfXEGdsPtgPNKyc4ZaSWcPbsWou05V-ZWQPC1sHYxUk4/3689.jpg",
+                "isLeaf": true,
+                "documentTypes": [
+                    "product"
+                ],
+                "path": [
+                    {
+                        "id": 100061,
+                        "parentId": null,
+                        "description": "Sport & Outdoor",
+                        "relevance": 24170,
+                        "imageUrl": "https://cdn.solutenetwork.com/dynimg/nRLrdxcw2Omof0p75-xL_Ri0StY4S3lglt1_Cbd3R6KHFoqB03GsZJ_FlIg-TPxsT_5Ow7HCmHJnvTMNg8bV3Gho-PRN5y9ocVVmMcli12A/100061.jpg",
+                        "isLeaf": false,
+                        "documentTypes": [
+                            "product"
+                        ]
+                    },
+                    {
+                        "id": 100089,
+                        "parentId": 100061,
+                        "description": "Camping & Outdoor",
+                        "relevance": 7023,
+                        "imageUrl": "https://cdn.solutenetwork.com/dynimg/ovWov0K3_Nfof0p75-xL_S9pVBYs3ZQ2lt1_Cbd3R6KHFoqB03GsZJ_FlIg-TPxsSJLQ2xDJsOIRcwWivgjYJDWX551RIYPl1R46osXe9Yg/100089.jpg",
+                        "isLeaf": false,
+                        "documentTypes": [
+                            "product"
+                        ]
+                    },
+                    {
+                        "id": 7861,
+                        "parentId": 100089,
+                        "description": "Camping",
+                        "relevance": 1609,
+                        "imageUrl": "https://cdn.solutenetwork.com/dynimg/wmRI-2uYm7rof0p75-xL_RRicOAt0Bgl1t1_Cbd3R6KHFoqB03GsZJ_FlIg-TPxsfxz1dnnGqK5LqFwIPOf2h8M7LAfvhRHyD2ns6Expu6w/7861.jpg",
+                        "isLeaf": false,
+                        "documentTypes": [
+                            "product"
+                        ]
+                    },
+                    {
+                        "id": 3689,
+                        "parentId": 7861,
+                        "description": "Campingmöbel",
+                        "relevance": 198,
+                        "imageUrl": "https://cdn.solutenetwork.com/dynimg/sS9kRFkEWgDof0p75-xL_RbmMC8aVbe0Vt1_Cbd3R6KHFoqB03GsZJ_FlIg-TPxsfXEGdsPtgPNKyc4ZaSWcPbsWou05V-ZWQPC1sHYxUk4/3689.jpg",
+                        "isLeaf": true,
+                        "documentTypes": [
+                            "product"
+                        ]
+                    }
+                ]
+            },
+            "baseproductId": 0,
+            "deal": null,
+            "description": "36506820 Farbe: Blau Features: -Bügelgestell aus Stahlrohr. -Klappbar. -Mit wetterfester Platte. -Für Reise und Camping geeignet. Produktart: -Esstische. Sitzplätze: -4. Form: -Rechteckig. Material: -Metall. Farbe: -Blau. Farbe: -Weiß. Generic Specifications: -Maße (Platte): 80cm W x 60cm T. Dimensions: Gesamtbreite - von links nach rechts: -80. Gesamttiefe - von vorne nach hinten: -60.",
+            "estimatedTotalOffersCount": 2,
+            "externalProductIds": {
+                "asin": [
+                    "B000RPEP9A"
+                ],
+                "gtin": [
+                    "4043153010379"
+                ],
+                "mpn": [
+                    "611/256-1",
+                    "36506820"
+                ],
+                "pzn": []
+            },
+            "images": [
+                {
+                    "purpose": "front",
+                    "url": "https://cdn.solutenetwork.com/dynimg/tFvIf1wY8LY642_mGph0AqEPVU2j8_x9w_hMn5zos5T_olRSBeQCSEAXhzSr2EMdYZCmCK40LUar8tch3KCL5T5fefZm5ZAAM0X1bBY4s2DVEMey4aiE_A/208432298_front.jpg"
+                }
+            ],
+            "legalFields": [],
+            "paymentMethods": [
+                {
+                    "id": 1,
+                    "description": "Visa"
+                },
+                {
+                    "id": 3,
+                    "description": "Eurocard/Mastercard"
+                },
+                {
+                    "id": 6,
+                    "description": "Barnachnahme"
+                },
+                {
+                    "id": 7,
+                    "description": "Vorkasse"
+                },
+                {
+                    "id": 8,
+                    "description": "Rechnung"
+                },
+                {
+                    "id": 13,
+                    "description": "PayPal"
+                },
+                {
+                    "id": 14,
+                    "description": "Giropay"
+                },
+                {
+                    "id": 15,
+                    "description": "Sofortüberweisung"
+                },
+                {
+                    "id": 25,
+                    "description": "paydirekt"
+                }
+            ],
+            "price": {
+                "max": {
+                    "amount": 44.99,
+                    "currency": "EUR"
+                },
+                "min": {
+                    "amount": 37.98,
+                    "currency": "EUR"
+                }
+            },
+            "properties": [],
+            "relevance": 0.02,
+            "shippingMethods": [
+                {
+                    "description": "Post/DHL"
+                },
+                {
+                    "description": "Spedition"
+                },
+                {
+                    "description": "GLS"
+                },
+                {
+                    "description": "DPD"
+                }
+            ],
+            "shortName": null,
+            "type": "product",
+            "url": null,
+            "userReviewSummary": {
+                "count": 2,
+                "rating": 4.0,
+                "feedbackUrl": null
+            },
+            "userReviews": []
+        },
+        {
+            "id": 4642442113,
+            "name": "Lichtspot",
+            "brand": {
+                "id": 18932,
+                "name": "BEST",
+                "logoUrl": "https://cdn.solutenetwork.com/dynimg/brands_800/18932.png"
+            },
+            "category": {
+                "id": 108772,
+                "parentId": 3421,
+                "description": "Sonstige Leuchtmittel",
+                "relevance": 50,
+                "imageUrl": "https://cdn.solutenetwork.com/dynimg/y69Qi7aMROAof0p75-xL_QYiAPSkj2pTlt1_Cbd3R6KHFoqB03GsZJ_FlIg-TPxsT8ouWQeetuXceOlPZicSNdyPSpOm5ihaZFR4Rh9bEB8/108772.jpg",
+                "isLeaf": true,
+                "documentTypes": [
+                    "product"
+                ],
+                "path": [
+                    {
+                        "id": 100176,
+                        "parentId": null,
+                        "description": "Wohnen & Lifestyle",
+                        "relevance": 55146,
+                        "imageUrl": "https://cdn.solutenetwork.com/dynimg/k47XA5K43tMof0p75-xL_RLoWV2kEkjJVt1_Cbd3R6KHFoqB03GsZJ_FlIg-TPxsTVQv-ku3yYnPUBBjrgKeVjbYLyFiSPGwSzFrwF6dy8e/100176.jpg",
+                        "isLeaf": false,
+                        "documentTypes": [
+                            "product"
+                        ]
+                    },
+                    {
+                        "id": 106432,
+                        "parentId": 100176,
+                        "description": "Beleuchtung",
+                        "relevance": 2438,
+                        "imageUrl": "https://cdn.solutenetwork.com/dynimg/dVMXFsVN2Gxof0p75-xL_Sna8atnY9taVt1_Cbd3R6KHFoqB03GsZJ_FlIg-TPxscNRfD10dZPDpS9NqAyHuAnaDckSGLOgyNpBIuqVgu2y/106432.jpg",
+                        "isLeaf": false,
+                        "documentTypes": [
+                            "product"
+                        ]
+                    },
+                    {
+                        "id": 3421,
+                        "parentId": 106432,
+                        "description": "Leuchtmittel",
+                        "relevance": 505,
+                        "imageUrl": "https://cdn.solutenetwork.com/dynimg/cY4V2mC5FBrof0p75-xL_QqXWdI93uBzFt1_Cbd3R6KHFoqB03GsZJ_FlIg-TPxsa_IaZ5x-_i-NSsTtwd5pH76LkdkKgOltxuC4HZXwqS7/3421.jpg",
+                        "isLeaf": false,
+                        "documentTypes": [
+                            "product"
+                        ]
+                    },
+                    {
+                        "id": 108772,
+                        "parentId": 3421,
+                        "description": "Sonstige Leuchtmittel",
+                        "relevance": 50,
+                        "imageUrl": "https://cdn.solutenetwork.com/dynimg/y69Qi7aMROAof0p75-xL_QYiAPSkj2pTlt1_Cbd3R6KHFoqB03GsZJ_FlIg-TPxsT8ouWQeetuXceOlPZicSNdyPSpOm5ihaZFR4Rh9bEB8/108772.jpg",
+                        "isLeaf": true,
+                        "documentTypes": [
+                            "product"
+                        ]
+                    }
+                ]
+            },
+            "baseproductId": 0,
+            "deal": null,
+            "description": "E10 2,4W 12V Ersatzlampen in Kerzenform 3er Pack für Weihnachtsbeleuchtung. Lampenwelt bietet eine vielfältige Auswahl von über 50.000 Lampen und Leuchten online. Mit unserem breiten Sortiment decken wir alle Stilrichtungen für Haus und Garten ab, von führenden deutschen und internationalen Designbrands. Als Europas führender Online-Spezialist haben wir über 5 Millionen zufriedene Kunden und wurden durch verschiedene Auszeichnungen für unsere Kundenzufriedenheit geehrt. Unser Angebot umfasst auch angesagte Lampentrends, Designklassiker, smarte Lampen sowie stilvolle Außenleuchten. Wir bieten kostenlose professionelle Fachberatung, flexible Zahlungsoptionen und einen komfortablen Einkaufsprozess. Entdecken Sie exklusive und inspirierende Lampen, und lassen Sie sich von unseren über 1 Million positiven Kundenbewertungen überzeugen!",
+            "estimatedTotalOffersCount": 1,
+            "externalProductIds": {
+                "asin": [],
+                "gtin": [
+                    "7391482311559"
+                ],
+                "mpn": [],
+                "pzn": []
+            },
+            "images": [
+                {
+                    "purpose": "main",
+                    "url": "https://cdn.solutenetwork.com/dynimg/kY1HPPQIKSciLc37BQetQcEqpgj6cIxf2FFZmTAtD4_J9OeU9Ptym4OOduz1S0JaaZOB1wYiiHaP96lzDOSNuQ-c7tyjwytAntymsprcD1JHxAvkjfBNe0/4642442113_main.jpg"
+                }
+            ],
+            "legalFields": [],
+            "paymentMethods": [
+                {
+                    "id": 7,
+                    "description": "Vorkasse"
+                },
+                {
+                    "id": 8,
+                    "description": "Rechnung"
+                },
+                {
+                    "id": 11,
+                    "description": "Lastschrift"
+                },
+                {
+                    "id": 12,
+                    "description": "Andere"
+                },
+                {
+                    "id": 13,
+                    "description": "PayPal"
+                }
+            ],
+            "price": {
+                "max": {
+                    "amount": 4.99,
+                    "currency": "EUR"
+                },
+                "min": {
+                    "amount": 4.99,
+                    "currency": "EUR"
+                }
+            },
+            "properties": [],
+            "relevance": 0,
+            "shippingMethods": [
+                {
+                    "description": "Post/DHL"
+                },
+                {
+                    "description": "Hermes"
+                }
+            ],
+            "shortName": null,
+            "type": "product",
+            "url": null,
+            "userReviewSummary": {
+                "count": 0,
+                "rating": null,
+                "feedbackUrl": null
+            },
+            "userReviews": []
+        },
+        {
+            "id": 3701254938,
+            "name": "Bankauflage 52x112x9cm 1-tlg. D.1330",
+            "brand": {
+                "id": 18932,
+                "name": "BEST",
+                "logoUrl": "https://cdn.solutenetwork.com/dynimg/brands_800/18932.png"
+            },
+            "category": {
+                "id": 103349,
+                "parentId": 103325,
+                "description": "Auflagen & Polster",
+                "relevance": 58,
+                "imageUrl": "https://cdn.solutenetwork.com/dynimg/1w46rL84sM5of0p75-xL_QDVz9ZB0JyPVt1_Cbd3R6KHFoqB03GsZJ_FlIg-TPxsbDfE40_mt2BqpRpQKvj4UnDzMV3WcpGAtDwRGQ8ifw5/103349.jpg",
+                "isLeaf": true,
+                "documentTypes": [
+                    "product"
+                ],
+                "path": [
+                    {
+                        "id": 100199,
+                        "parentId": null,
+                        "description": "Heimwerken & Garten",
+                        "relevance": 67103,
+                        "imageUrl": "https://cdn.solutenetwork.com/dynimg/tp3sCd0vbCqof0p75-xL_Qz8a1Hu55uNVt1_Cbd3R6KHFoqB03GsZJ_FlIg-TPxsR7FATBvw3HTIsdfftTgvzgqyn6zEsr09tjdPDkph63N/100199.jpg",
+                        "isLeaf": false,
+                        "documentTypes": [
+                            "product"
+                        ]
+                    },
+                    {
+                        "id": 100200,
+                        "parentId": 100199,
+                        "description": "Garten & Balkon",
+                        "relevance": 15924,
+                        "imageUrl": "https://cdn.solutenetwork.com/dynimg/JiJ1YbVgm3Bof0p75-xL_SvB8TDg5vdvVt1_Cbd3R6KHFoqB03GsZJ_FlIg-TPxsQBu0vLWPnTrWqEPsv3MoKiZ1-D5rlmWNbeZmFsjwxEM/100200.jpg",
+                        "isLeaf": false,
+                        "documentTypes": [
+                            "product"
+                        ]
+                    },
+                    {
+                        "id": 3271,
+                        "parentId": 100200,
+                        "description": "Gartenmöbel",
+                        "relevance": 2779,
+                        "imageUrl": "https://cdn.solutenetwork.com/dynimg/3L0OaXJGuBMof0p75-xL_R7gz94l3UIgVt1_Cbd3R6KHFoqB03GsZJ_FlIg-TPxseK5hcDG74aLprffAw_vHqJvfjeJFv4W5hMkjS-dS05d/3271.jpg",
+                        "isLeaf": false,
+                        "documentTypes": [
+                            "product"
+                        ]
+                    },
+                    {
+                        "id": 103325,
+                        "parentId": 3271,
+                        "description": "Zubehör für Gartenmöbel",
+                        "relevance": 360,
+                        "imageUrl": "https://cdn.solutenetwork.com/dynimg/0zwqG6KvIY9of0p75-xL_RjPw1T8g5GmVt1_Cbd3R6KHFoqB03GsZJ_FlIg-TPxseRCBljhn3SLz-m97bT8ruC4OfTTEOCWo8UsgRVOzI6t/103325.jpg",
+                        "isLeaf": false,
+                        "documentTypes": [
+                            "product",
+                            "offer"
+                        ]
+                    },
+                    {
+                        "id": 103349,
+                        "parentId": 103325,
+                        "description": "Auflagen & Polster",
+                        "relevance": 58,
+                        "imageUrl": "https://cdn.solutenetwork.com/dynimg/1w46rL84sM5of0p75-xL_QDVz9ZB0JyPVt1_Cbd3R6KHFoqB03GsZJ_FlIg-TPxsbDfE40_mt2BqpRpQKvj4UnDzMV3WcpGAtDwRGQ8ifw5/103349.jpg",
+                        "isLeaf": true,
+                        "documentTypes": [
+                            "product"
+                        ]
+                    }
+                ]
+            },
+            "baseproductId": 0,
+            "deal": null,
+            "description": "Best 05181230, Sitz & Rückenkissen, Stuhl, Beige, Rechteck, Monochromatisch, 520 mm\nBest 05181230. Produkttyp: Sitz & Rückenkissen, Geeignet für: Stuhl, Produktfarbe: Beige. Breite: 520 mm, Tiefe: 1120 mm, Höhe: 90 mm",
+            "estimatedTotalOffersCount": 2,
+            "externalProductIds": {
+                "asin": [
+                    "B00BAA0KI6"
+                ],
+                "gtin": [
+                    "4043153079482"
+                ],
+                "mpn": [
+                    "05181230"
+                ],
+                "pzn": []
+            },
+            "images": [
+                {
+                    "purpose": "default",
+                    "url": "https://cdn.solutenetwork.com/dynimg/luqD-HuMn8r6kG-x0hvPvJistpkq7TSug_hMn5zos5T_olRSBeQCSEAXhzSr2EMdYGY1aV-KXSZESpTW-N17bepttx1M2OQxf78fZ-ApWImTowNU5xjL4M/3701254938_default.png"
+                },
+                {
+                    "purpose": "default",
+                    "url": "https://cdn.solutenetwork.com/dynimg/nvkv19nTZ0DoekHwg8rVsbXclyTPDuBn2FFZmTAtD4_J9OeU9Ptym4OOduz1S0JaaYjBkEtTbN8Sp7bzTQHhB2XYcDPtUm_eIgm-Qw-BsM8SBLSmF2qyNQ/3701254938_default.jpg"
+                }
+            ],
+            "legalFields": [],
+            "paymentMethods": [
+                {
+                    "id": 3,
+                    "description": "Eurocard/Mastercard"
+                },
+                {
+                    "id": 7,
+                    "description": "Vorkasse"
+                },
+                {
+                    "id": 8,
+                    "description": "Rechnung"
+                },
+                {
+                    "id": 10,
+                    "description": "Finanzkauf"
+                },
+                {
+                    "id": 12,
+                    "description": "Andere"
+                },
+                {
+                    "id": 13,
+                    "description": "PayPal"
+                }
+            ],
+            "price": {
+                "max": {
+                    "amount": 38.0,
+                    "currency": "EUR"
+                },
+                "min": {
+                    "amount": 38.0,
+                    "currency": "EUR"
+                }
+            },
+            "properties": [],
+            "relevance": 0,
+            "shippingMethods": [
+                {
+                    "description": "Post/DHL"
+                },
+                {
+                    "description": "Spedition"
+                }
+            ],
+            "shortName": null,
+            "type": "product",
+            "url": null,
+            "userReviewSummary": {
+                "count": 0,
+                "rating": null,
+                "feedbackUrl": null
+            },
+            "userReviews": []
+        },
+        {
+            "id": 1798994879,
+            "name": "Star Trading, Lichterkette, System 24 Net Extra (2 m",
+            "brand": {
+                "id": 18932,
+                "name": "BEST",
+                "logoUrl": "https://cdn.solutenetwork.com/dynimg/brands_800/18932.png"
+            },
+            "category": {
+                "id": 114600,
+                "parentId": 106365,
+                "description": "Lichterketten",
+                "relevance": 120,
+                "imageUrl": "https://cdn.solutenetwork.com/dynimg/lu_0odRlroEof0p75-xL_QOelloF4X2E1t1_Cbd3R6KHFoqB03GsZJ_FlIg-TPxsbaZL5jqHra9v4Xy3FbbM0vv60JX7DAR9RSfkk0ftbk8/114600.jpg",
+                "isLeaf": true,
+                "documentTypes": [
+                    "product"
+                ],
+                "path": [
+                    {
+                        "id": 100176,
+                        "parentId": null,
+                        "description": "Wohnen & Lifestyle",
+                        "relevance": 55146,
+                        "imageUrl": "https://cdn.solutenetwork.com/dynimg/k47XA5K43tMof0p75-xL_RLoWV2kEkjJVt1_Cbd3R6KHFoqB03GsZJ_FlIg-TPxsTVQv-ku3yYnPUBBjrgKeVjbYLyFiSPGwSzFrwF6dy8e/100176.jpg",
+                        "isLeaf": false,
+                        "documentTypes": [
+                            "product"
+                        ]
+                    },
+                    {
+                        "id": 100177,
+                        "parentId": 100176,
+                        "description": "Wohnaccessoires",
+                        "relevance": 13202,
+                        "imageUrl": "https://cdn.solutenetwork.com/dynimg/7fgAVbgnPhwof0p75-xL_TEowslPkmgdlt1_Cbd3R6KHFoqB03GsZJ_FlIg-TPxsVFaUsQF5ezV9F6evLXhPeWYfGzZ23fWAePgFOSLagYI/100177.jpg",
+                        "isLeaf": false,
+                        "documentTypes": [
+                            "product"
+                        ]
+                    },
+                    {
+                        "id": 3426,
+                        "parentId": 100177,
+                        "description": "Dekoartikel",
+                        "relevance": 11795,
+                        "imageUrl": "https://cdn.solutenetwork.com/dynimg/jFzUkkfKOOsof0p75-xL_S6wt2bCEPykVt1_Cbd3R6KHFoqB03GsZJ_FlIg-TPxsQkFIXn1qP6svkl-RZMNDDnMaSzPVsNsxCUqpE6p_HSV/3426.jpg",
+                        "isLeaf": false,
+                        "documentTypes": [
+                            "product",
+                            "offer"
+                        ]
+                    },
+                    {
+                        "id": 106365,
+                        "parentId": 3426,
+                        "description": "Weihnachtsdeko",
+                        "relevance": 579,
+                        "imageUrl": "https://cdn.solutenetwork.com/dynimg/751b2m5xIEqof0p75-xL_TExvN6eSuNqVt1_Cbd3R6KHFoqB03GsZJ_FlIg-TPxsVUr3BcnlyK23GOubRs4JGtIultNd31_0SEM629SPMuP/106365.jpg",
+                        "isLeaf": false,
+                        "documentTypes": [
+                            "product",
+                            "offer"
+                        ]
+                    },
+                    {
+                        "id": 114600,
+                        "parentId": 106365,
+                        "description": "Lichterketten",
+                        "relevance": 120,
+                        "imageUrl": "https://cdn.solutenetwork.com/dynimg/lu_0odRlroEof0p75-xL_QOelloF4X2E1t1_Cbd3R6KHFoqB03GsZJ_FlIg-TPxsbaZL5jqHra9v4Xy3FbbM0vv60JX7DAR9RSfkk0ftbk8/114600.jpg",
+                        "isLeaf": true,
+                        "documentTypes": [
+                            "product"
+                        ]
+                    }
+                ]
+            },
+            "baseproductId": 0,
+            "deal": null,
+            "description": "- Länge ca. 10 Meter.<br>- 140 LED - Leuchtmittel, warmweiß.<br>- 24 Volt, IP 44, 2,9 Watt.<br>- für den Aussenbereich.\nBest 491-32, Schwarz, Weiß, IP44, 140 Glühbirne(n), LED, 2,9 W, Warmweiß\nBest 491-32. Produktfarbe: Schwarz, Weiß, Internationale Schutzart (IP-Code): IP44. Anzahl an Lampen: 140 Glühbirne(n), Leuchtmitteltyp: LED, Lampenleistung: 2,9 W. Eingangsspannung: 24 V. Länge (mm): 10000 mm\nSystem 24 - LED - Lichtschlauch, ca. 10 Meter, warmweiß",
+            "estimatedTotalOffersCount": 4,
+            "externalProductIds": {
+                "asin": [
+                    "B00G7NNMXG"
+                ],
+                "gtin": [
+                    "7391482002846"
+                ],
+                "mpn": [
+                    "491-21-80"
+                ],
+                "pzn": []
+            },
+            "images": [
+                {
+                    "purpose": "main",
+                    "url": "https://cdn.solutenetwork.com/dynimg/yCIEcg-A3agdEz-KwEpXLaPsYM9E28h-WFFZmTAtD4_J9OeU9Ptym4OOduz1S0JaSnWhefoyyJzbk-TBWacKemJsAogcQjjtocrNoQwf99OlztXOE9UicM/1798994879_main.jpg"
+                },
+                {
+                    "purpose": "default",
+                    "url": "https://cdn.solutenetwork.com/dynimg/qxQ-jExqZBPHuy01u9M6jldYo6WdA4k4Q_hMn5zos5T_olRSBeQCSEAXhzSr2EMdfeIl8HHv8e9TXACEakQrkZEhTiYPF7YVsIyyvhtEFPrqXyffG7LohA/1798994879_default.webp"
+                },
+                {
+                    "purpose": "default",
+                    "url": "https://cdn.solutenetwork.com/dynimg/TFOu_5jrQaGHuy01u9M6jmWk69I6B3SmmFFZmTAtD4_J9OeU9Ptym4OOduz1S0JafzbLQihqLD9P49eRC-hI3UZvLhgWQc3WX7qO-0AulB0dpY7g1nbn4M/1798994879_default.webp"
+                },
+                {
+                    "purpose": "default",
+                    "url": "https://cdn.solutenetwork.com/dynimg/kprqSvi5p1lHuy01u9M6jnfnKoMtjOAPWFFZmTAtD4_J9OeU9Ptym4OOduz1S0JaWg8X1DW8_GoqIkJuzkMsFo70-acmoJg4NCBnnOf60WXZksVVPzFQ_I/1798994879_default.webp"
+                }
+            ],
+            "legalFields": [],
+            "paymentMethods": [
+                {
+                    "id": 1,
+                    "description": "Visa"
+                },
+                {
+                    "id": 2,
+                    "description": "American Express"
+                },
+                {
+                    "id": 3,
+                    "description": "Eurocard/Mastercard"
+                },
+                {
+                    "id": 7,
+                    "description": "Vorkasse"
+                },
+                {
+                    "id": 8,
+                    "description": "Rechnung"
+                },
+                {
+                    "id": 10,
+                    "description": "Finanzkauf"
+                },
+                {
+                    "id": 11,
+                    "description": "Lastschrift"
+                },
+                {
+                    "id": 12,
+                    "description": "Andere"
+                },
+                {
+                    "id": 13,
+                    "description": "PayPal"
+                },
+                {
+                    "id": 15,
+                    "description": "Sofortüberweisung"
+                },
+                {
+                    "id": 23,
+                    "description": "Barzahlen"
+                },
+                {
+                    "id": 26,
+                    "description": "Google Pay"
+                },
+                {
+                    "id": 28,
+                    "description": "Klarna"
+                }
+            ],
+            "price": {
+                "max": {
+                    "amount": 53.9,
+                    "currency": "EUR"
+                },
+                "min": {
+                    "amount": 41.9,
+                    "currency": "EUR"
+                }
+            },
+            "properties": [],
+            "relevance": 0,
+            "shippingMethods": [
+                {
+                    "description": "International"
+                },
+                {
+                    "description": "Post/DHL"
+                },
+                {
+                    "description": "DPD"
+                },
+                {
+                    "description": "Hermes"
+                },
+                {
+                    "description": "Spedition"
+                },
+                {
+                    "description": "Andere"
+                },
+                {
+                    "description": "Versand nach CH"
+                },
+                {
+                    "description": "Versand nach A"
+                }
+            ],
+            "shortName": null,
+            "type": "product",
+            "url": null,
+            "userReviewSummary": {
+                "count": 0,
+                "rating": null,
+                "feedbackUrl": null
+            },
+            "userReviews": []
+        },
+        {
+            "id": 99034605428,
+            "name": "Paulmann LED-Leuchtmittel 6x 282.01 Paulmann E27 Fassung LED Premium AGL 11W E27 6500K, 6x 282.01 Paulmann E27 Fassung LED Premium AGL 11W E27 6500K",
+            "brand": {
+                "id": 18932,
+                "name": "BEST",
+                "logoUrl": "https://cdn.solutenetwork.com/dynimg/brands_800/18932.png"
+            },
+            "category": {
+                "id": 11405,
+                "parentId": 3421,
+                "description": "LED-Lampen",
+                "relevance": 389,
+                "imageUrl": "https://cdn.solutenetwork.com/dynimg/m5uiJAYjJp1of0p75-xL_TdXhcORbJPUlt1_Cbd3R6KHFoqB03GsZJ_FlIg-TPxsUesF8WvFAH6azDLQbDL0il0IITQSo2pz_vYutgglNrn/11405.jpg",
+                "isLeaf": true,
+                "documentTypes": [
+                    "product"
+                ],
+                "path": [
+                    {
+                        "id": 100176,
+                        "parentId": null,
+                        "description": "Wohnen & Lifestyle",
+                        "relevance": 55146,
+                        "imageUrl": "https://cdn.solutenetwork.com/dynimg/k47XA5K43tMof0p75-xL_RLoWV2kEkjJVt1_Cbd3R6KHFoqB03GsZJ_FlIg-TPxsTVQv-ku3yYnPUBBjrgKeVjbYLyFiSPGwSzFrwF6dy8e/100176.jpg",
+                        "isLeaf": false,
+                        "documentTypes": [
+                            "product"
+                        ]
+                    },
+                    {
+                        "id": 106432,
+                        "parentId": 100176,
+                        "description": "Beleuchtung",
+                        "relevance": 2438,
+                        "imageUrl": "https://cdn.solutenetwork.com/dynimg/dVMXFsVN2Gxof0p75-xL_Sna8atnY9taVt1_Cbd3R6KHFoqB03GsZJ_FlIg-TPxscNRfD10dZPDpS9NqAyHuAnaDckSGLOgyNpBIuqVgu2y/106432.jpg",
+                        "isLeaf": false,
+                        "documentTypes": [
+                            "product"
+                        ]
+                    },
+                    {
+                        "id": 3421,
+                        "parentId": 106432,
+                        "description": "Leuchtmittel",
+                        "relevance": 505,
+                        "imageUrl": "https://cdn.solutenetwork.com/dynimg/cY4V2mC5FBrof0p75-xL_QqXWdI93uBzFt1_Cbd3R6KHFoqB03GsZJ_FlIg-TPxsa_IaZ5x-_i-NSsTtwd5pH76LkdkKgOltxuC4HZXwqS7/3421.jpg",
+                        "isLeaf": false,
+                        "documentTypes": [
+                            "product"
+                        ]
+                    },
+                    {
+                        "id": 11405,
+                        "parentId": 3421,
+                        "description": "LED-Lampen",
+                        "relevance": 389,
+                        "imageUrl": "https://cdn.solutenetwork.com/dynimg/m5uiJAYjJp1of0p75-xL_TdXhcORbJPUlt1_Cbd3R6KHFoqB03GsZJ_FlIg-TPxsUesF8WvFAH6azDLQbDL0il0IITQSo2pz_vYutgglNrn/11405.jpg",
+                        "isLeaf": true,
+                        "documentTypes": [
+                            "product"
+                        ]
+                    }
+                ]
+            },
+            "clickoutUrl": "https://www.billiger.de/common/modules/api/cmodul?mc=kB9JcFHm8Z9l&p=kjPIa7Svp3Hgvrhhe5GGHeTlXF3U7vE7hGxKJH5PnOwqEE_OF_O11SKeXlCLyZ1KMB6rhUkTC2tKNm_bg7nNHTo6xk9f1SBTIWq7u-pdCjMbiXlzPjbm_eX3v4MmZSMD63igB2PRp9x&mid=99034605428&id=99034605428&ts=20241016",
+            "description": "Produktdetails Modellbezeichnung , 717892253, Technische Daten WEEE-Reg.-Nr. DE , 39236390,",
+            "externalProductIds": {
+                "asin": [],
+                "gtin": [
+                    "4061257003073"
+                ],
+                "mpn": [],
+                "pzn": []
+            },
+            "images": [
+                {
+                    "purpose": "main",
+                    "url": "https://cdn.solutenetwork.com/dynimg/oHZM45sxDmxof0p75-xL_T-DuHxMKsvrahE8nUhH7Pc88MgR1b3VHcWvS03VxtgwIMt5I7BYrlZLo-J08gbWz8gne74GZ43NLWEYeGoz5Hs/99034605428_main.webp"
+                },
+                {
+                    "purpose": "small",
+                    "url": "https://cdn.solutenetwork.com/dynimg/Ms_H5-92zJ7-_G4Ha-XDqXJbK6MdmmFTQ_hMn5zos5T_olRSBeQCSEAXhzSr2EMdbocnGoupGWF_YYqUuQxGX4QOJgWwGY08uULy5Ly5p83vxUvRw3lHz4/99034605428_small.webp"
+                },
+                {
+                    "purpose": "large",
+                    "url": "https://cdn.solutenetwork.com/dynimg/9y6ASUKw0e4hIdeqkU68YCXpJ53MH5lvA_hMn5zos5T_olRSBeQCSEAXhzSr2EMdbocnGoupGWF_YYqUuQxGX4QOJgWwGY08uULy5Ly5p83ZCovFn6J_Hg/99034605428_large.webp"
+                }
+            ],
+            "legalFields": [],
+            "locationCountries": [
+                "DE"
+            ],
+            "mainImage": "https://cdn.solutenetwork.com/dynimg/oHZM45sxDmxof0p75-xL_T-DuHxMKsvrahE8nUhH7Pc88MgR1b3VHcWvS03VxtgwIMt5I7BYrlZLo-J08gbWz8gne74GZ43NLWEYeGoz5Hs/99034605428_main.webp",
+            "marketplace": {
+                "sellerName": "Lichtquelle Mili",
+                "userReviewSummary": null
+            },
+            "price": {
+                "amount": 1799,
+                "currency": "EUR",
+                "shipping": 390,
+                "total": 2189
+            },
+            "priceInfo": {
+                "oldPrice": {
+                    "amount": null,
+                    "currency": null
+                },
+                "price": {
+                    "amount": 17.99,
+                    "currency": "EUR"
+                },
+                "total": {
+                    "amount": 21.89,
+                    "currency": "EUR"
+                },
+                "unitPricing": {
+                    "baseMeasureUnit": null,
+                    "baseMeasureValue": null,
+                    "measureUnit": null,
+                    "measureValue": null,
+                    "text": null
+                },
+                "voucherPrice": {
+                    "amount": null,
+                    "currency": null
+                }
+            },
+            "productId": null,
+            "promoText": null,
+            "relevance": 0,
+            "shipping": {
+                "code": "green",
+                "price": {
+                    "amount": 3.9,
+                    "currency": "EUR"
+                },
+                "text": "lieferbar - in 2-3 Werktagen bei dir"
+            },
+            "shop": {
+                "id": 3667,
+                "certificates": [],
+                "company": null,
+                "cpc": {
+                    "amount": 0.175,
+                    "currency": "EUR"
+                },
+                "logoUrl": "https://cdn.solutenetwork.com/dynimg/shops/x/3667.png",
+                "name": "OTTO",
+                "paymentMethods": [
+                    {
+                        "id": 7,
+                        "description": "Vorkasse"
+                    },
+                    {
+                        "id": 8,
+                        "description": "Rechnung"
+                    },
+                    {
+                        "id": 11,
+                        "description": "Lastschrift"
+                    },
+                    {
+                        "id": 12,
+                        "description": "Andere"
+                    },
+                    {
+                        "id": 13,
+                        "description": "PayPal"
+                    }
+                ],
+                "shippingMethods": [
+                    {
+                        "description": "Post/DHL"
+                    },
+                    {
+                        "description": "Hermes"
+                    }
+                ],
+                "url": "https://www.otto.de/",
+                "userReviewSummary": {
+                    "count": 2675,
+                    "rating": 4.5,
+                    "feedbackUrl": "https://www.billiger.de/shops/3667"
+                },
+                "userReviews": []
+            },
+            "type": "offer",
+            "voucher": {
+                "text": null
+            }
+        },
+        {
+            "id": 383258222982,
+            "name": "Best Kohlefilter DKF99557",
+            "brand": {
+                "id": 18932,
+                "name": "BEST",
+                "logoUrl": "https://cdn.solutenetwork.com/dynimg/brands_800/18932.png"
+            },
+            "category": {
+                "id": 105066,
+                "parentId": 100166,
+                "description": "Dunstabzugshauben-Zubehör",
+                "relevance": 122,
+                "imageUrl": "https://cdn.solutenetwork.com/dynimg/PDqkykLk7X_of0p75-xL_TwMJOKzK9ZrVt1_Cbd3R6KHFoqB03GsZJ_FlIg-TPxsYhKD5u9aSgX78gJ5KTN3jt728e7vEo7pItJspJQ3YBs/105066.jpg",
+                "isLeaf": true,
+                "documentTypes": [
+                    "product"
+                ],
+                "path": [
+                    {
+                        "id": 100162,
+                        "parentId": null,
+                        "description": "Haushalt",
+                        "relevance": 46621,
+                        "imageUrl": "https://cdn.solutenetwork.com/dynimg/57tEk9wkNRJof0p75-xL_RcWrshMj_a-Ft1_Cbd3R6KHFoqB03GsZJ_FlIg-TPxsT67WZVOvAq3G9O6BhvMjGc8p0EYvdaCAYeVnyjN8RYQ/100162.jpg",
+                        "isLeaf": false,
+                        "documentTypes": [
+                            "product"
+                        ]
+                    },
+                    {
+                        "id": 100166,
+                        "parentId": 100162,
+                        "description": "Kochen & Spülen",
+                        "relevance": 6142,
+                        "imageUrl": "https://cdn.solutenetwork.com/dynimg/2hy_jq7oq8sof0p75-xL_RqDF96NUZ_CVt1_Cbd3R6KHFoqB03GsZJ_FlIg-TPxsYQXCJ7ccpBwP0Po-tI7tlcX0KM-AR78qSkX4Q6elO35/100166.jpg",
+                        "isLeaf": false,
+                        "documentTypes": [
+                            "product"
+                        ]
+                    },
+                    {
+                        "id": 105066,
+                        "parentId": 100166,
+                        "description": "Dunstabzugshauben-Zubehör",
+                        "relevance": 122,
+                        "imageUrl": "https://cdn.solutenetwork.com/dynimg/PDqkykLk7X_of0p75-xL_TwMJOKzK9ZrVt1_Cbd3R6KHFoqB03GsZJ_FlIg-TPxsYhKD5u9aSgX78gJ5KTN3jt728e7vEo7pItJspJQ3YBs/105066.jpg",
+                        "isLeaf": true,
+                        "documentTypes": [
+                            "product"
+                        ]
+                    }
+                ]
+            },
+            "clickoutUrl": "https://www.billiger.de/common/modules/api/cmodul?mc=kB9JcFHm8Z9l&p=wDw0KCspdpDtiDOfdN0LnJe3tbSWKwr5RUqKQZfczlR1g7_hVoNHUlAelQFz86dBokZKpwcYI7d2KO8Is3f35H0RJdkabCX469f-hGVSKKKNy_CvDJtjq7vYpiJ2vyKrQ&mid=383258222982&id=383258222982&ts=20241016",
+            "description": "Best Kohlefilter DKF99557 Abmessungen: Durchmesser cm Inhalt: 2 Stück (Preis gilt für 2 Stück) Lebensdauer: Es wird empfohlen, die Filter alle 3-4 Monate zu ersetzen. Dieser Kohlefilter ist u.a. für folgende Dunstabzugshaubenmodelle geeignet: (Dies ist nur eine kleine Liste, wenn Sie nicht sicher sind, ob der Filter zu Ihrer Dunstabzugshaube passt, wenden Sie sich bitte immer an den Kundendienst). Alicudi IS 503 XS Ersatz für die folgenden Originalnummern: DKF99557 | 8026493024721 | Pässend fur models: ALICUDI IS 503 XS, ALICUDI IS 503 XS",
+            "externalProductIds": {
+                "asin": [
+                    "B008B6SUES"
+                ],
+                "gtin": [
+                    "8026493024721"
+                ],
+                "mpn": [
+                    "D1-0"
+                ],
+                "pzn": []
+            },
+            "images": [
+                {
+                    "purpose": "main",
+                    "url": "https://cdn.solutenetwork.com/dynimg/LlcvC3hiu18of0p75-xL_TodDWVmqrGOqhE8nUhH7Pc88MgR1b3VHcWvS03VxtgwNCFN9G3my9H9gdaX_vxIRavedaBtLzACeoDnNi75Z05/383258222982_main.webp"
+                },
+                {
+                    "purpose": "default",
+                    "url": "https://cdn.solutenetwork.com/dynimg/RrpWzCaMmMRof0p75-xL_QfqB5iTOyNLahE8nUhH7Pc88MgR1b3VHcWvS03VxtgwLiBvKMfb0AWD7Xv6sfHlTqYSKRvFVJxBCjquhaR9IAn/383258222982_default.webp"
+                },
+                {
+                    "purpose": "small",
+                    "url": "https://cdn.solutenetwork.com/dynimg/sq1VDymUCmboXkEis490yPJbK6MdmmFTQ_hMn5zos5T_olRSBeQCSEAXhzSr2EMdfTgNJL28X2vtk9hxSWd50x7kN23CL71TDbdcgMTd2UK9fnh2tTo8Ks/383258222982_small.webp"
+                },
+                {
+                    "purpose": "large",
+                    "url": "https://cdn.solutenetwork.com/dynimg/xB_yyBY3VYoy1YOSatfKcyXpJ53MH5lvA_hMn5zos5T_olRSBeQCSEAXhzSr2EMdfTgNJL28X2vtk9hxSWd50x7kN23CL71TDbdcgMTd2UK1a5NlyUOZWw/383258222982_large.webp"
+                }
+            ],
+            "legalFields": [],
+            "locationCountries": [
+                "DE"
+            ],
+            "mainImage": "https://cdn.solutenetwork.com/dynimg/LlcvC3hiu18of0p75-xL_TodDWVmqrGOqhE8nUhH7Pc88MgR1b3VHcWvS03VxtgwNCFN9G3my9H9gdaX_vxIRavedaBtLzACeoDnNi75Z05/383258222982_main.webp",
+            "marketplace": {
+                "sellerName": null,
+                "userReviewSummary": null
+            },
+            "price": {
+                "amount": 4020,
+                "currency": "EUR",
+                "shipping": 595,
+                "total": 4615
+            },
+            "priceInfo": {
+                "oldPrice": {
+                    "amount": null,
+                    "currency": null
+                },
+                "price": {
+                    "amount": 40.2,
+                    "currency": "EUR"
+                },
+                "total": {
+                    "amount": 46.15,
+                    "currency": "EUR"
+                },
+                "unitPricing": {
+                    "baseMeasureUnit": null,
+                    "baseMeasureValue": null,
+                    "measureUnit": null,
+                    "measureValue": null,
+                    "text": null
+                },
+                "voucherPrice": {
+                    "amount": null,
+                    "currency": null
+                }
+            },
+            "productId": null,
+            "promoText": "Jetzt bestellen! Ratenkauf und 0% Finanzierung möglich.",
+            "relevance": 0,
+            "shipping": {
+                "code": "green",
+                "price": {
+                    "amount": 5.95,
+                    "currency": "EUR"
+                },
+                "text": "1-3 Werktage"
+            },
+            "shop": {
+                "id": 4787,
+                "certificates": [],
+                "company": null,
+                "cpc": {
+                    "amount": 0.175,
+                    "currency": "EUR"
+                },
+                "logoUrl": "https://cdn.solutenetwork.com/dynimg/shops/x/4787.png",
+                "name": "Kaufland.de",
+                "paymentMethods": [
+                    {
+                        "id": 1,
+                        "description": "Visa"
+                    },
+                    {
+                        "id": 2,
+                        "description": "American Express"
+                    },
+                    {
+                        "id": 3,
+                        "description": "Eurocard/Mastercard"
+                    },
+                    {
+                        "id": 7,
+                        "description": "Vorkasse"
+                    },
+                    {
+                        "id": 8,
+                        "description": "Rechnung"
+                    },
+                    {
+                        "id": 10,
+                        "description": "Finanzkauf"
+                    },
+                    {
+                        "id": 11,
+                        "description": "Lastschrift"
+                    },
+                    {
+                        "id": 12,
+                        "description": "Andere"
+                    },
+                    {
+                        "id": 13,
+                        "description": "PayPal"
+                    },
+                    {
+                        "id": 15,
+                        "description": "Sofortüberweisung"
+                    },
+                    {
+                        "id": 23,
+                        "description": "Barzahlen"
+                    }
+                ],
+                "shippingMethods": [
+                    {
+                        "description": "International"
+                    },
+                    {
+                        "description": "Post/DHL"
+                    },
+                    {
+                        "description": "DPD"
+                    },
+                    {
+                        "description": "Spedition"
+                    },
+                    {
+                        "description": "Andere"
+                    },
+                    {
+                        "description": "Versand nach CH"
+                    },
+                    {
+                        "description": "Versand nach A"
+                    }
+                ],
+                "url": "http://www.kaufland.de/",
+                "userReviewSummary": {
+                    "count": 21830,
+                    "rating": 4.5,
+                    "feedbackUrl": "https://www.billiger.de/shops/4787"
+                },
+                "userReviews": []
+            },
+            "type": "offer",
+            "voucher": {
+                "text": null
+            }
+        },
+        {
+            "id": 334605926553,
+            "name": "Best - Volleyball (Größe: 5) 10141 Grün/Weiß",
+            "brand": {
+                "id": 18932,
+                "name": "BEST",
+                "logoUrl": "https://cdn.solutenetwork.com/dynimg/brands_800/18932.png"
+            },
+            "category": {
+                "id": 9637,
+                "parentId": 100069,
+                "description": "Fußbälle",
+                "relevance": 74,
+                "imageUrl": "https://cdn.solutenetwork.com/dynimg/Sk2jMoHuXxjof0p75-xL_TnSfZLnuNSX1t1_Cbd3R6KHFoqB03GsZJ_FlIg-TPxsdiYE6RSuFd8ZVVDfYTEk5Dz5bl--t9ACp-diYfz337s/9637.jpg",
+                "isLeaf": true,
+                "documentTypes": [
+                    "product"
+                ],
+                "path": [
+                    {
+                        "id": 100061,
+                        "parentId": null,
+                        "description": "Sport & Outdoor",
+                        "relevance": 24170,
+                        "imageUrl": "https://cdn.solutenetwork.com/dynimg/nRLrdxcw2Omof0p75-xL_Ri0StY4S3lglt1_Cbd3R6KHFoqB03GsZJ_FlIg-TPxsT_5Ow7HCmHJnvTMNg8bV3Gho-PRN5y9ocVVmMcli12A/100061.jpg",
+                        "isLeaf": false,
+                        "documentTypes": [
+                            "product"
+                        ]
+                    },
+                    {
+                        "id": 100062,
+                        "parentId": 100061,
+                        "description": "Sport",
+                        "relevance": 9362,
+                        "imageUrl": "https://cdn.solutenetwork.com/dynimg/x-s3bU11-Emof0p75-xL_S3S7rvM27NVFt1_Cbd3R6KHFoqB03GsZJ_FlIg-TPxsRLAez92cJShUrCL2cwWayk2706wPDckMAsNEUewrTY_/100062.jpg",
+                        "isLeaf": false,
+                        "documentTypes": [
+                            "product"
+                        ]
+                    },
+                    {
+                        "id": 100069,
+                        "parentId": 100062,
+                        "description": "Fußball",
+                        "relevance": 1007,
+                        "imageUrl": "https://cdn.solutenetwork.com/dynimg/u1Ea65v99S7of0p75-xL_TXLpc26YQ09Ft1_Cbd3R6KHFoqB03GsZJ_FlIg-TPxscT4TqKT35-SjZXBriL-qfswf1ro7xITXZHJlUvUbDSS/100069.jpg",
+                        "isLeaf": false,
+                        "documentTypes": [
+                            "product"
+                        ]
+                    },
+                    {
+                        "id": 9637,
+                        "parentId": 100069,
+                        "description": "Fußbälle",
+                        "relevance": 74,
+                        "imageUrl": "https://cdn.solutenetwork.com/dynimg/Sk2jMoHuXxjof0p75-xL_TnSfZLnuNSX1t1_Cbd3R6KHFoqB03GsZJ_FlIg-TPxsdiYE6RSuFd8ZVVDfYTEk5Dz5bl--t9ACp-diYfz337s/9637.jpg",
+                        "isLeaf": true,
+                        "documentTypes": [
+                            "product"
+                        ]
+                    }
+                ]
+            },
+            "clickoutUrl": "https://www.billiger.de/common/modules/api/cmodul?mc=kB9JcFHm8Z9l&p=qEkxqV9GIsWgFdiMIpCMzOa3iQQuRm3HtITBfsYWPc5PmwCr1LduzCxZLM67wwXxQz9TldFUL5uy7B7c4oyItZzN3q2z2A-4DwMADW_Pm0WKJO9P8Eo8dw7QLR7AlBx-l_CWPfbDCMSsVDSdAnoaHY&mid=334605926553&id=334605926553&ts=20241016",
+            "description": "aus EVA-Material, (Aufschrift Beachline), Gummiblase, handgenäht, Oberfläche in Carbonoptik, supersoft, formbeständig mit guten Flugeigenschaften",
+            "externalProductIds": {
+                "asin": [],
+                "gtin": [
+                    "4009197101411"
+                ],
+                "mpn": [
+                    "10141"
+                ],
+                "pzn": []
+            },
+            "images": [
+                {
+                    "purpose": "main",
+                    "url": "https://cdn.solutenetwork.com/dynimg/NhZFDe1jyKoof0p75-xL_RPFOWvoxYBqqhE8nUhH7Pc88MgR1b3VHcWvS03VxtgwAphqEZAgQOrG7pTBf92NxlYU1fjhap_yI4KitfQxKAl/334605926553_main.webp"
+                },
+                {
+                    "purpose": "small",
+                    "url": "https://cdn.solutenetwork.com/dynimg/0bbL-SPo02SQDAEUn6dgtDJbK6MdmmFTQ_hMn5zos5T_olRSBeQCSEAXhzSr2EMdcbRtBlO2JaBSZYbODcvfXMlV_Qm0FmXdhQdHLU6TVYdjxB8qQ4zhFY/334605926553_small.webp"
+                },
+                {
+                    "purpose": "large",
+                    "url": "https://cdn.solutenetwork.com/dynimg/uYQ5YvV92anx9puxwG7hMuXpJ53MH5lvA_hMn5zos5T_olRSBeQCSEAXhzSr2EMdcbRtBlO2JaBSZYbODcvfXMlV_Qm0FmXdhQdHLU6TVYdiZb3kv5y8kk/334605926553_large.webp"
+                }
+            ],
+            "legalFields": [],
+            "locationCountries": [
+                "DE"
+            ],
+            "mainImage": "https://cdn.solutenetwork.com/dynimg/NhZFDe1jyKoof0p75-xL_RPFOWvoxYBqqhE8nUhH7Pc88MgR1b3VHcWvS03VxtgwAphqEZAgQOrG7pTBf92NxlYU1fjhap_yI4KitfQxKAl/334605926553_main.webp",
+            "marketplace": {
+                "sellerName": null,
+                "userReviewSummary": null
+            },
+            "price": {
+                "amount": 1119,
+                "currency": "EUR",
+                "shipping": 395,
+                "total": 1514
+            },
+            "priceInfo": {
+                "oldPrice": {
+                    "amount": null,
+                    "currency": null
+                },
+                "price": {
+                    "amount": 11.19,
+                    "currency": "EUR"
+                },
+                "total": {
+                    "amount": 15.14,
+                    "currency": "EUR"
+                },
+                "unitPricing": {
+                    "baseMeasureUnit": null,
+                    "baseMeasureValue": null,
+                    "measureUnit": null,
+                    "measureValue": null,
+                    "text": null
+                },
+                "voucherPrice": {
+                    "amount": null,
+                    "currency": null
+                }
+            },
+            "productId": null,
+            "promoText": null,
+            "relevance": 0,
+            "shipping": {
+                "code": "green",
+                "price": {
+                    "amount": 3.95,
+                    "currency": "EUR"
+                },
+                "text": "in 2-3 Werktagen"
+            },
+            "shop": {
+                "id": 28948,
+                "certificates": [],
+                "company": null,
+                "cpc": {
+                    "amount": 0.295,
+                    "currency": "EUR"
+                },
+                "logoUrl": "https://cdn.solutenetwork.com/dynimg/shops/x/28948.png",
+                "name": "mueller.de",
+                "paymentMethods": [
+                    {
+                        "id": 13,
+                        "description": "PayPal"
+                    },
+                    {
+                        "id": 15,
+                        "description": "Sofortüberweisung"
+                    },
+                    {
+                        "id": 28,
+                        "description": "Klarna"
+                    }
+                ],
+                "shippingMethods": [
+                    {
+                        "description": "Post/DHL"
+                    }
+                ],
+                "url": "https://www.mueller.de/",
+                "userReviewSummary": {
+                    "count": 0,
+                    "rating": null,
+                    "feedbackUrl": "https://www.billiger.de/shops/28948"
+                },
+                "userReviews": []
+            },
+            "type": "offer",
+            "voucher": {
+                "text": null
+            }
+        },
+        {
+            "id": 2055267524,
+            "name": "4 BEST Sitzkissen rot 45,0 x 84,0 cm",
+            "brand": {
+                "id": 18932,
+                "name": "BEST",
+                "logoUrl": "https://cdn.solutenetwork.com/dynimg/brands_800/18932.png"
+            },
+            "category": {
+                "id": 103349,
+                "parentId": 103325,
+                "description": "Auflagen & Polster",
+                "relevance": 58,
+                "imageUrl": "https://cdn.solutenetwork.com/dynimg/1w46rL84sM5of0p75-xL_QDVz9ZB0JyPVt1_Cbd3R6KHFoqB03GsZJ_FlIg-TPxsbDfE40_mt2BqpRpQKvj4UnDzMV3WcpGAtDwRGQ8ifw5/103349.jpg",
+                "isLeaf": true,
+                "documentTypes": [
+                    "product"
+                ],
+                "path": [
+                    {
+                        "id": 100199,
+                        "parentId": null,
+                        "description": "Heimwerken & Garten",
+                        "relevance": 67103,
+                        "imageUrl": "https://cdn.solutenetwork.com/dynimg/tp3sCd0vbCqof0p75-xL_Qz8a1Hu55uNVt1_Cbd3R6KHFoqB03GsZJ_FlIg-TPxsR7FATBvw3HTIsdfftTgvzgqyn6zEsr09tjdPDkph63N/100199.jpg",
+                        "isLeaf": false,
+                        "documentTypes": [
+                            "product"
+                        ]
+                    },
+                    {
+                        "id": 100200,
+                        "parentId": 100199,
+                        "description": "Garten & Balkon",
+                        "relevance": 15924,
+                        "imageUrl": "https://cdn.solutenetwork.com/dynimg/JiJ1YbVgm3Bof0p75-xL_SvB8TDg5vdvVt1_Cbd3R6KHFoqB03GsZJ_FlIg-TPxsQBu0vLWPnTrWqEPsv3MoKiZ1-D5rlmWNbeZmFsjwxEM/100200.jpg",
+                        "isLeaf": false,
+                        "documentTypes": [
+                            "product"
+                        ]
+                    },
+                    {
+                        "id": 3271,
+                        "parentId": 100200,
+                        "description": "Gartenmöbel",
+                        "relevance": 2779,
+                        "imageUrl": "https://cdn.solutenetwork.com/dynimg/3L0OaXJGuBMof0p75-xL_R7gz94l3UIgVt1_Cbd3R6KHFoqB03GsZJ_FlIg-TPxseK5hcDG74aLprffAw_vHqJvfjeJFv4W5hMkjS-dS05d/3271.jpg",
+                        "isLeaf": false,
+                        "documentTypes": [
+                            "product"
+                        ]
+                    },
+                    {
+                        "id": 103325,
+                        "parentId": 3271,
+                        "description": "Zubehör für Gartenmöbel",
+                        "relevance": 360,
+                        "imageUrl": "https://cdn.solutenetwork.com/dynimg/0zwqG6KvIY9of0p75-xL_RjPw1T8g5GmVt1_Cbd3R6KHFoqB03GsZJ_FlIg-TPxseRCBljhn3SLz-m97bT8ruC4OfTTEOCWo8UsgRVOzI6t/103325.jpg",
+                        "isLeaf": false,
+                        "documentTypes": [
+                            "product",
+                            "offer"
+                        ]
+                    },
+                    {
+                        "id": 103349,
+                        "parentId": 103325,
+                        "description": "Auflagen & Polster",
+                        "relevance": 58,
+                        "imageUrl": "https://cdn.solutenetwork.com/dynimg/1w46rL84sM5of0p75-xL_QDVz9ZB0JyPVt1_Cbd3R6KHFoqB03GsZJ_FlIg-TPxsbDfE40_mt2BqpRpQKvj4UnDzMV3WcpGAtDwRGQ8ifw5/103349.jpg",
+                        "isLeaf": true,
+                        "documentTypes": [
+                            "product"
+                        ]
+                    }
+                ]
+            },
+            "clickoutUrl": "https://www.billiger.de/common/modules/api/cmodul?mc=kB9JcFHm8Z9l&p=1_p3z-IIRZvgFdiMIpCMzPeOgSpkGdy7XknxL1RFR0XSF9FoxkIXJ26BZ-N7lfpxZpa5IXEbt5L9z7cbARJu8KQBRAgB8T1Wg1FGpDAWVRBJSZgoaw1ppoDK9KMZe9YWQ&mid=2055267524&id=2055267524&ts=20241016",
+            "description": " Legen Sie noch einen drauf Statten Sie Ihre Gartenstühle mit den bequemen BEST Sitzkissen aus: So werden sie bequemer und schöner! Schaffen Sie den richtigen Rahmen für ein schickes und gemütliches Beisammensein. Ein Plus für Ihre Stühle Hervorragend passen die Kissen beispielsweise zu allen Kunststoffstühlen mit niederer Rückenlehne. Bestehend aus 60 % Polyester und 40 % Baumwolle lassen sich die Sitzkissen bei 30°C von Hand waschen. Die Kordeleinfassung schützt die Bändel dabei vor Beanspruchung. Bestellen Sie den Sitzkissen-Pack mit 4 St. bequem hier im Online-Shop. Wir liefern die BEST Kissen zuverlässig und schnell zu Ihnen.",
+            "externalProductIds": {
+                "asin": [],
+                "gtin": [
+                    "4043153105976"
+                ],
+                "mpn": [],
+                "pzn": []
+            },
+            "images": [
+                {
+                    "purpose": "main",
+                    "url": "https://cdn.solutenetwork.com/dynimg/TOiWzFPCKbHof0p75-xL_TH-CzaNIk2O6hE8nUhH7Pc88MgR1b3VHcWvS03VxtgwF0YnjgvZ60oZxJBN5gevsweHuNcSpiUYQBNsAiO9uv-/2055267524_main.jpg"
+                },
+                {
+                    "purpose": "small",
+                    "url": "https://cdn.solutenetwork.com/dynimg/v_nKAWC38NmygkrutNLGX_JbK6MdmmFTQ_hMn5zos5T_olRSBeQCSEAXhzSr2EMdZQ9CHC2bdK-QKE9TNjv2Q3OZJzBQGIN83gT8l6TRN8Y3EiqXlyW3KQ/2055267524_small.jpg"
+                },
+                {
+                    "purpose": "large",
+                    "url": "https://cdn.solutenetwork.com/dynimg/eApdL3TrcByM8RlFuBge9mXpJ53MH5lvA_hMn5zos5T_olRSBeQCSEAXhzSr2EMdZQ9CHC2bdK-QKE9TNjv2Q3OZJzBQGIN83gT8l6TRN8YpEagh9_nc1I/2055267524_large.jpg"
+                }
+            ],
+            "legalFields": [],
+            "locationCountries": [
+                "DE"
+            ],
+            "mainImage": "https://cdn.solutenetwork.com/dynimg/TOiWzFPCKbHof0p75-xL_TH-CzaNIk2O6hE8nUhH7Pc88MgR1b3VHcWvS03VxtgwF0YnjgvZ60oZxJBN5gevsweHuNcSpiUYQBNsAiO9uv-/2055267524_main.jpg",
+            "marketplace": {
+                "sellerName": null,
+                "userReviewSummary": null
+            },
+            "price": {
+                "amount": 8626,
+                "currency": "EUR",
+                "shipping": 499,
+                "total": 9125
+            },
+            "priceInfo": {
+                "oldPrice": {
+                    "amount": null,
+                    "currency": null
+                },
+                "price": {
+                    "amount": 86.26,
+                    "currency": "EUR"
+                },
+                "total": {
+                    "amount": 91.25,
+                    "currency": "EUR"
+                },
+                "unitPricing": {
+                    "baseMeasureUnit": null,
+                    "baseMeasureValue": null,
+                    "measureUnit": null,
+                    "measureValue": null,
+                    "text": null
+                },
+                "voucherPrice": {
+                    "amount": null,
+                    "currency": null
+                }
+            },
+            "productId": null,
+            "promoText": "24-Std.-Service. 100.000 Artikel. 30 Tage Rückgabefrist. Gratis-Geschenke. CO2-neutraler Versand.",
+            "relevance": 0,
+            "shipping": {
+                "code": "yellow",
+                "price": {
+                    "amount": 4.99,
+                    "currency": "EUR"
+                },
+                "text": "Verfügbar - Lieferung in ca. 4 - 7 Tagen bis Erdgeschoss"
+            },
+            "shop": {
+                "id": 3958,
+                "certificates": [],
+                "company": null,
+                "cpc": {
+                    "amount": 0.215,
+                    "currency": "EUR"
+                },
+                "logoUrl": "https://cdn.solutenetwork.com/dynimg/shops/x/3958.png",
+                "name": "büroshop24",
+                "paymentMethods": [
+                    {
+                        "id": 1,
+                        "description": "Visa"
+                    },
+                    {
+                        "id": 3,
+                        "description": "Eurocard/Mastercard"
+                    },
+                    {
+                        "id": 6,
+                        "description": "Barnachnahme"
+                    },
+                    {
+                        "id": 7,
+                        "description": "Vorkasse"
+                    },
+                    {
+                        "id": 8,
+                        "description": "Rechnung"
+                    },
+                    {
+                        "id": 13,
+                        "description": "PayPal"
+                    },
+                    {
+                        "id": 15,
+                        "description": "Sofortüberweisung"
+                    }
+                ],
+                "shippingMethods": [
+                    {
+                        "description": "Post/DHL"
+                    },
+                    {
+                        "description": "Spedition"
+                    }
+                ],
+                "url": "https://www.bueroshop24.de/",
+                "userReviewSummary": {
+                    "count": 1486,
+                    "rating": 4.8,
+                    "feedbackUrl": "https://www.billiger.de/shops/3958"
+                },
+                "userReviews": []
+            },
+            "type": "offer",
+            "voucher": {
+                "text": null
+            }
+        },
+        {
+            "id": 4876302198,
+            "name": "STAR LED-Lichterkette 476-12 LED Halloween Lichterkette Geist 8er",
+            "brand": {
+                "id": 18932,
+                "name": "BEST",
+                "logoUrl": "https://cdn.solutenetwork.com/dynimg/brands_800/18932.png"
+            },
+            "category": {
+                "id": 114600,
+                "parentId": 106365,
+                "description": "Lichterketten",
+                "relevance": 120,
+                "imageUrl": "https://cdn.solutenetwork.com/dynimg/lu_0odRlroEof0p75-xL_QOelloF4X2E1t1_Cbd3R6KHFoqB03GsZJ_FlIg-TPxsbaZL5jqHra9v4Xy3FbbM0vv60JX7DAR9RSfkk0ftbk8/114600.jpg",
+                "isLeaf": true,
+                "documentTypes": [
+                    "product"
+                ],
+                "path": [
+                    {
+                        "id": 100176,
+                        "parentId": null,
+                        "description": "Wohnen & Lifestyle",
+                        "relevance": 55146,
+                        "imageUrl": "https://cdn.solutenetwork.com/dynimg/k47XA5K43tMof0p75-xL_RLoWV2kEkjJVt1_Cbd3R6KHFoqB03GsZJ_FlIg-TPxsTVQv-ku3yYnPUBBjrgKeVjbYLyFiSPGwSzFrwF6dy8e/100176.jpg",
+                        "isLeaf": false,
+                        "documentTypes": [
+                            "product"
+                        ]
+                    },
+                    {
+                        "id": 100177,
+                        "parentId": 100176,
+                        "description": "Wohnaccessoires",
+                        "relevance": 13202,
+                        "imageUrl": "https://cdn.solutenetwork.com/dynimg/7fgAVbgnPhwof0p75-xL_TEowslPkmgdlt1_Cbd3R6KHFoqB03GsZJ_FlIg-TPxsVFaUsQF5ezV9F6evLXhPeWYfGzZ23fWAePgFOSLagYI/100177.jpg",
+                        "isLeaf": false,
+                        "documentTypes": [
+                            "product"
+                        ]
+                    },
+                    {
+                        "id": 3426,
+                        "parentId": 100177,
+                        "description": "Dekoartikel",
+                        "relevance": 11795,
+                        "imageUrl": "https://cdn.solutenetwork.com/dynimg/jFzUkkfKOOsof0p75-xL_S6wt2bCEPykVt1_Cbd3R6KHFoqB03GsZJ_FlIg-TPxsQkFIXn1qP6svkl-RZMNDDnMaSzPVsNsxCUqpE6p_HSV/3426.jpg",
+                        "isLeaf": false,
+                        "documentTypes": [
+                            "product",
+                            "offer"
+                        ]
+                    },
+                    {
+                        "id": 106365,
+                        "parentId": 3426,
+                        "description": "Weihnachtsdeko",
+                        "relevance": 579,
+                        "imageUrl": "https://cdn.solutenetwork.com/dynimg/751b2m5xIEqof0p75-xL_TExvN6eSuNqVt1_Cbd3R6KHFoqB03GsZJ_FlIg-TPxsVUr3BcnlyK23GOubRs4JGtIultNd31_0SEM629SPMuP/106365.jpg",
+                        "isLeaf": false,
+                        "documentTypes": [
+                            "product",
+                            "offer"
+                        ]
+                    },
+                    {
+                        "id": 114600,
+                        "parentId": 106365,
+                        "description": "Lichterketten",
+                        "relevance": 120,
+                        "imageUrl": "https://cdn.solutenetwork.com/dynimg/lu_0odRlroEof0p75-xL_QOelloF4X2E1t1_Cbd3R6KHFoqB03GsZJ_FlIg-TPxsbaZL5jqHra9v4Xy3FbbM0vv60JX7DAR9RSfkk0ftbk8/114600.jpg",
+                        "isLeaf": true,
+                        "documentTypes": [
+                            "product"
+                        ]
+                    }
+                ]
+            },
+            "clickoutUrl": "https://www.billiger.de/common/modules/api/cmodul?mc=kB9JcFHm8Z9l&p=9WocZOZbAk_vsU1Wdh-mdc5Hd99OQeF7YOqIpSemVv-6RmIsvl8L8U_S_UGpvMD9qI4j3j7iWFlJv0L8xpANupQzRIC7mO84cuty0RvNVxd8Flux6JSwTfEtIKs9C75EFfLlxVKskVA&mid=4876302198&id=4876302198&ts=20241016",
+            "description": "Technische Daten WEEE-Reg.-Nr. DE , 80753169,",
+            "externalProductIds": {
+                "asin": [],
+                "gtin": [
+                    "7391482476128"
+                ],
+                "mpn": [
+                    "476-12"
+                ],
+                "pzn": []
+            },
+            "images": [
+                {
+                    "purpose": "main",
+                    "url": "https://cdn.solutenetwork.com/dynimg/W33ndAtA3XRof0p75-xL_RCjavRXbezf6hE8nUhH7Pc88MgR1b3VHcWvS03VxtgwBoFnSrIsVmJqLObsJQZW6wRG4ppTZ91e32fMNwbrUHh/4876302198_main.jpg"
+                },
+                {
+                    "purpose": "small",
+                    "url": "https://cdn.solutenetwork.com/dynimg/nZ1fxrXbUmCtnpNPwAXQsXJbK6MdmmFTQ_hMn5zos5T_olRSBeQCSEAXhzSr2EMdUTLAVcHeehLDO4mSLRaxCADw2BsD9EPjnzOruu5I7P2_QSMVl3Dd9c/4876302198_small.jpg"
+                },
+                {
+                    "purpose": "large",
+                    "url": "https://cdn.solutenetwork.com/dynimg/YGxXJcaCxVf3jkW1d0ZxKyXpJ53MH5lvA_hMn5zos5T_olRSBeQCSEAXhzSr2EMdUTLAVcHeehLDO4mSLRaxCADw2BsD9EPjnzOruu5I7P232qn6K7UQzI/4876302198_large.jpg"
+                }
+            ],
+            "legalFields": [],
+            "locationCountries": [
+                "DE"
+            ],
+            "mainImage": "https://cdn.solutenetwork.com/dynimg/W33ndAtA3XRof0p75-xL_RCjavRXbezf6hE8nUhH7Pc88MgR1b3VHcWvS03VxtgwBoFnSrIsVmJqLObsJQZW6wRG4ppTZ91e32fMNwbrUHh/4876302198_main.jpg",
+            "marketplace": {
+                "sellerName": "Wedis-Homeshop",
+                "userReviewSummary": null
+            },
+            "price": {
+                "amount": 2090,
+                "currency": "EUR",
+                "shipping": 0,
+                "total": 2090
+            },
+            "priceInfo": {
+                "oldPrice": {
+                    "amount": null,
+                    "currency": null
+                },
+                "price": {
+                    "amount": 20.9,
+                    "currency": "EUR"
+                },
+                "total": {
+                    "amount": 20.9,
+                    "currency": "EUR"
+                },
+                "unitPricing": {
+                    "baseMeasureUnit": "ct",
+                    "baseMeasureValue": 1,
+                    "measureUnit": "ct",
+                    "measureValue": 1,
+                    "text": "20.90€/1Stk"
+                },
+                "voucherPrice": {
+                    "amount": null,
+                    "currency": null
+                }
+            },
+            "productId": null,
+            "promoText": "(5% Extra auf ausgewählte Artikel) Nach Aktivierung des Rabatts wird dir die Ersparnis auf der Artikeldetailseite und im Warenkorb angezeigt. Pro Artikel ist nur ein Rabatt einlösbar.",
+            "relevance": 0,
+            "shipping": {
+                "code": "yellow",
+                "price": {
+                    "amount": 0.0,
+                    "currency": "EUR"
+                },
+                "text": "lieferbar - in 4-5 Werktagen bei dir"
+            },
+            "shop": {
+                "id": 3667,
+                "certificates": [],
+                "company": null,
+                "cpc": {
+                    "amount": 0.175,
+                    "currency": "EUR"
+                },
+                "logoUrl": "https://cdn.solutenetwork.com/dynimg/shops/x/3667.png",
+                "name": "OTTO",
+                "paymentMethods": [
+                    {
+                        "id": 7,
+                        "description": "Vorkasse"
+                    },
+                    {
+                        "id": 8,
+                        "description": "Rechnung"
+                    },
+                    {
+                        "id": 11,
+                        "description": "Lastschrift"
+                    },
+                    {
+                        "id": 12,
+                        "description": "Andere"
+                    },
+                    {
+                        "id": 13,
+                        "description": "PayPal"
+                    }
+                ],
+                "shippingMethods": [
+                    {
+                        "description": "Post/DHL"
+                    },
+                    {
+                        "description": "Hermes"
+                    }
+                ],
+                "url": "https://www.otto.de/",
+                "userReviewSummary": {
+                    "count": 2675,
+                    "rating": 4.5,
+                    "feedbackUrl": "https://www.billiger.de/shops/3667"
+                },
+                "userReviews": []
+            },
+            "type": "offer",
+            "voucher": {
+                "text": "5% Extra auf ausgewählte Artikel (Nach Aktivierung des Rabatts wird dir die Ersparnis auf der Artikeldetailseite und im Warenkorb angezeigt. Pro Artikel ist nur ein Rabatt einlösbar.)"
+            }
+        },
+        {
+            "id": 2282066022,
+            "name": "Best Season LED-Perlenlichterkette mit Trafo, 80teilig grüne, gelbe und rote Birnchen, 472-70 - Schwarz/Grün/Rot/Gelb",
+            "brand": {
+                "id": 18932,
+                "name": "BEST",
+                "logoUrl": "https://cdn.solutenetwork.com/dynimg/brands_800/18932.png"
+            },
+            "category": {
+                "id": 114600,
+                "parentId": 106365,
+                "description": "Lichterketten",
+                "relevance": 120,
+                "imageUrl": "https://cdn.solutenetwork.com/dynimg/lu_0odRlroEof0p75-xL_QOelloF4X2E1t1_Cbd3R6KHFoqB03GsZJ_FlIg-TPxsbaZL5jqHra9v4Xy3FbbM0vv60JX7DAR9RSfkk0ftbk8/114600.jpg",
+                "isLeaf": true,
+                "documentTypes": [
+                    "product"
+                ],
+                "path": [
+                    {
+                        "id": 100176,
+                        "parentId": null,
+                        "description": "Wohnen & Lifestyle",
+                        "relevance": 55146,
+                        "imageUrl": "https://cdn.solutenetwork.com/dynimg/k47XA5K43tMof0p75-xL_RLoWV2kEkjJVt1_Cbd3R6KHFoqB03GsZJ_FlIg-TPxsTVQv-ku3yYnPUBBjrgKeVjbYLyFiSPGwSzFrwF6dy8e/100176.jpg",
+                        "isLeaf": false,
+                        "documentTypes": [
+                            "product"
+                        ]
+                    },
+                    {
+                        "id": 100177,
+                        "parentId": 100176,
+                        "description": "Wohnaccessoires",
+                        "relevance": 13202,
+                        "imageUrl": "https://cdn.solutenetwork.com/dynimg/7fgAVbgnPhwof0p75-xL_TEowslPkmgdlt1_Cbd3R6KHFoqB03GsZJ_FlIg-TPxsVFaUsQF5ezV9F6evLXhPeWYfGzZ23fWAePgFOSLagYI/100177.jpg",
+                        "isLeaf": false,
+                        "documentTypes": [
+                            "product"
+                        ]
+                    },
+                    {
+                        "id": 3426,
+                        "parentId": 100177,
+                        "description": "Dekoartikel",
+                        "relevance": 11795,
+                        "imageUrl": "https://cdn.solutenetwork.com/dynimg/jFzUkkfKOOsof0p75-xL_S6wt2bCEPykVt1_Cbd3R6KHFoqB03GsZJ_FlIg-TPxsQkFIXn1qP6svkl-RZMNDDnMaSzPVsNsxCUqpE6p_HSV/3426.jpg",
+                        "isLeaf": false,
+                        "documentTypes": [
+                            "product",
+                            "offer"
+                        ]
+                    },
+                    {
+                        "id": 106365,
+                        "parentId": 3426,
+                        "description": "Weihnachtsdeko",
+                        "relevance": 579,
+                        "imageUrl": "https://cdn.solutenetwork.com/dynimg/751b2m5xIEqof0p75-xL_TExvN6eSuNqVt1_Cbd3R6KHFoqB03GsZJ_FlIg-TPxsVUr3BcnlyK23GOubRs4JGtIultNd31_0SEM629SPMuP/106365.jpg",
+                        "isLeaf": false,
+                        "documentTypes": [
+                            "product",
+                            "offer"
+                        ]
+                    },
+                    {
+                        "id": 114600,
+                        "parentId": 106365,
+                        "description": "Lichterketten",
+                        "relevance": 120,
+                        "imageUrl": "https://cdn.solutenetwork.com/dynimg/lu_0odRlroEof0p75-xL_QOelloF4X2E1t1_Cbd3R6KHFoqB03GsZJ_FlIg-TPxsbaZL5jqHra9v4Xy3FbbM0vv60JX7DAR9RSfkk0ftbk8/114600.jpg",
+                        "isLeaf": true,
+                        "documentTypes": [
+                            "product"
+                        ]
+                    }
+                ]
+            },
+            "clickoutUrl": "https://www.billiger.de/common/modules/api/cmodul?mc=kB9JcFHm8Z9l&p=UUlARbJggZOVf28VzW0Dp4eF8ZBoGX1q57tBG5xhxFA5p11Pk4U7aUhMnpdShtrb1Kfpa4qJRMy1pskSgYeRmk7XxDu07d8a9lc59l6lygzUhv-kktSlsouEViPhJcCL7IAP89k4wwIuUwOx6Gem50&mid=2282066022&id=2282066022&ts=20241016",
+            "description": "LED-Perlenlichterkette, 80-teilig Farben grün, gelb und rot mit Trafo, outdoor Sichtverpackung Partylichterkette für Ihren Hobbyraum oder Terasse. Auch für Gartendekoration oder Gartenbeleuchtung zu verwenden.Durch modernste LED Technik sparen Sie zudem noch Energie und Geld.80 LED-Lichter Länge Zuleitung: 10 m Länge Lichterkette: 8 m Incl. Travo für 24 Volt Für den Innen- und Außenbereich geeignet Schutzklasse IP44 LED Party-Perlen-Lichterkette 80er grün, gelb, rot Best Season 472-70Länge: 8m Farbe Dioden: grün, gelb, rot Perlen Dioden: 80 Stück Durchmesser 9 mm, 2,0V 0,04W, nicht wechselbar Diodenabstand: 10cm Schutzart: IP44 Trafo: Input 230V50Hz, Output 24V 7,2VA Zuleitung: 10m Kabelfarbe: schwarz nicht verlängerbar für innen und aussen - Länge ca. 18 Meter, davon Anschlusskabel ca. 10 Meter, schwarz. - 80 LED - Leuchtmittel, jeweils ca. 10 cm Abstand, Farbe: Artikel wird sortiert geliefert. Eine Vorauswahl von Farbe/Muster/Modell ist bei der Bestellung nicht möglich. grün, gelb, rot. - Trafo 24 Volt, 6 Watt, IP44. - für den Aussenbereich. Anzahl Lampen:80Lampentyp:LEDLichtfarbe:Grün, Rot, GelbBirne(n) enthalten:JaEingangsspannung:24 VKorrekter Gebrauch:OutdoorInternationaler Schutzklassencode:IP44Länge:18000 mmProduktfarbe:Schwarz, Grün, Rot, Gelb",
+            "externalProductIds": {
+                "asin": [],
+                "gtin": [
+                    "7391482472700"
+                ],
+                "mpn": [
+                    "472-70"
+                ],
+                "pzn": []
+            },
+            "images": [
+                {
+                    "purpose": "main",
+                    "url": "https://cdn.solutenetwork.com/dynimg/LCm7Uv4JJoNof0p75-xL_S0B0NkTMB-ZahE8nUhH7Pc88MgR1b3VHcWvS03VxtgwMyJ88fahdRcXCxbvfp0pkyTPE6N1BIJzbrmjOv5AmNv/2282066022_main.jpg"
+                },
+                {
+                    "purpose": "default",
+                    "url": "https://cdn.solutenetwork.com/dynimg/G60EHW5X8bOof0p75-xL_TOsu_v4Pi9oqhE8nUhH7Pc88MgR1b3VHcWvS03VxtgwI3aHybEcc-yOpyEHUVSustbaQp1z9tNb62xerad_nnR/2282066022_default.jpg"
+                },
+                {
+                    "purpose": "default",
+                    "url": "https://cdn.solutenetwork.com/dynimg/sEmt8R6toGgof0p75-xL_TOsu_v4Pi9oqhE8nUhH7Pc88MgR1b3VHcWvS03VxtgwAI-xR0PFQp8e-Z_QianSNXj3z0O2wvTdEBUEnuYCHOn/2282066022_default.jpg"
+                },
+                {
+                    "purpose": "default",
+                    "url": "https://cdn.solutenetwork.com/dynimg/lHTOV4tRPPMof0p75-xL_TOsu_v4Pi9oqhE8nUhH7Pc88MgR1b3VHcWvS03VxtgwKhs3aczG57X2m7k5QsDW_X3fd7kCNYWmmyUpoO8Juc5/2282066022_default.jpg"
+                },
+                {
+                    "purpose": "default",
+                    "url": "https://cdn.solutenetwork.com/dynimg/BklYjTM-5Lmof0p75-xL_TOsu_v4Pi9oqhE8nUhH7Pc88MgR1b3VHcWvS03VxtgwItEEYWZ1JfzRDRFPWqL_aKFm6DQlpfC4fW-SDjv_8k5/2282066022_default.jpg"
+                },
+                {
+                    "purpose": "default",
+                    "url": "https://cdn.solutenetwork.com/dynimg/4EPgPvDRGACof0p75-xL_TOsu_v4Pi9oqhE8nUhH7Pc88MgR1b3VHcWvS03VxtgwMFJN_QS4VdXku34OGYRDLUoPXQEZOQuPFg1g5TdEfeO/2282066022_default.jpg"
+                },
+                {
+                    "purpose": "default",
+                    "url": "https://cdn.solutenetwork.com/dynimg/L9-IhjOXJFdof0p75-xL_TOsu_v4Pi9oqhE8nUhH7Pc88MgR1b3VHcWvS03VxtgwCdQ6e72OgWdxf-H6cy8FcNLFMqkiBZ2Z2Ys9WxKjiUZ/2282066022_default.jpg"
+                },
+                {
+                    "purpose": "small",
+                    "url": "https://cdn.solutenetwork.com/dynimg/GmkHivQmqhTb7kN4l9UgoDJbK6MdmmFTQ_hMn5zos5T_olRSBeQCSEAXhzSr2EMdTUPPhL3q_dXsop9r873PnyHwTTPWT9bXJpaSn6m2k4t4msk7KB7ZfY/2282066022_small.jpg"
+                },
+                {
+                    "purpose": "large",
+                    "url": "https://cdn.solutenetwork.com/dynimg/VZIIkUNud40FXTBAa6WerOXpJ53MH5lvA_hMn5zos5T_olRSBeQCSEAXhzSr2EMdTUPPhL3q_dXsop9r873PnyHwTTPWT9bXJpaSn6m2k4t4Y2w7H9s41A/2282066022_large.jpg"
+                }
+            ],
+            "legalFields": [],
+            "locationCountries": [
+                "DE"
+            ],
+            "mainImage": "https://cdn.solutenetwork.com/dynimg/LCm7Uv4JJoNof0p75-xL_S0B0NkTMB-ZahE8nUhH7Pc88MgR1b3VHcWvS03VxtgwMyJ88fahdRcXCxbvfp0pkyTPE6N1BIJzbrmjOv5AmNv/2282066022_main.jpg",
+            "marketplace": {
+                "sellerName": null,
+                "userReviewSummary": null
+            },
+            "price": {
+                "amount": 2989,
+                "currency": "EUR",
+                "shipping": 0,
+                "total": 2989
+            },
+            "priceInfo": {
+                "oldPrice": {
+                    "amount": null,
+                    "currency": null
+                },
+                "price": {
+                    "amount": 29.89,
+                    "currency": "EUR"
+                },
+                "total": {
+                    "amount": 29.89,
+                    "currency": "EUR"
+                },
+                "unitPricing": {
+                    "baseMeasureUnit": null,
+                    "baseMeasureValue": null,
+                    "measureUnit": null,
+                    "measureValue": null,
+                    "text": null
+                },
+                "voucherPrice": {
+                    "amount": null,
+                    "currency": null
+                }
+            },
+            "productId": null,
+            "promoText": "Jetzt bestellen! Ratenkauf und 0% Finanzierung möglich.",
+            "relevance": 0,
+            "shipping": {
+                "code": "green",
+                "price": {
+                    "amount": 0.0,
+                    "currency": "EUR"
+                },
+                "text": "3-4 Werktage"
+            },
+            "shop": {
+                "id": 4787,
+                "certificates": [],
+                "company": null,
+                "cpc": {
+                    "amount": 0.175,
+                    "currency": "EUR"
+                },
+                "logoUrl": "https://cdn.solutenetwork.com/dynimg/shops/x/4787.png",
+                "name": "Kaufland.de",
+                "paymentMethods": [
+                    {
+                        "id": 1,
+                        "description": "Visa"
+                    },
+                    {
+                        "id": 2,
+                        "description": "American Express"
+                    },
+                    {
+                        "id": 3,
+                        "description": "Eurocard/Mastercard"
+                    },
+                    {
+                        "id": 7,
+                        "description": "Vorkasse"
+                    },
+                    {
+                        "id": 8,
+                        "description": "Rechnung"
+                    },
+                    {
+                        "id": 10,
+                        "description": "Finanzkauf"
+                    },
+                    {
+                        "id": 11,
+                        "description": "Lastschrift"
+                    },
+                    {
+                        "id": 12,
+                        "description": "Andere"
+                    },
+                    {
+                        "id": 13,
+                        "description": "PayPal"
+                    },
+                    {
+                        "id": 15,
+                        "description": "Sofortüberweisung"
+                    },
+                    {
+                        "id": 23,
+                        "description": "Barzahlen"
+                    }
+                ],
+                "shippingMethods": [
+                    {
+                        "description": "International"
+                    },
+                    {
+                        "description": "Post/DHL"
+                    },
+                    {
+                        "description": "DPD"
+                    },
+                    {
+                        "description": "Spedition"
+                    },
+                    {
+                        "description": "Andere"
+                    },
+                    {
+                        "description": "Versand nach CH"
+                    },
+                    {
+                        "description": "Versand nach A"
+                    }
+                ],
+                "url": "http://www.kaufland.de/",
+                "userReviewSummary": {
+                    "count": 21830,
+                    "rating": 4.5,
+                    "feedbackUrl": "https://www.billiger.de/shops/4787"
+                },
+                "userReviews": []
+            },
+            "type": "offer",
+            "voucher": {
+                "text": null
+            }
+        },
+        {
+            "id": 4853085401,
+            "name": "STAR TRADING LED-Lichterkette 001-31 Snow Motion LED Start Lichterkette 5 Tubes",
+            "brand": {
+                "id": 18932,
+                "name": "BEST",
+                "logoUrl": "https://cdn.solutenetwork.com/dynimg/brands_800/18932.png"
+            },
+            "category": {
+                "id": 114600,
+                "parentId": 106365,
+                "description": "Lichterketten",
+                "relevance": 120,
+                "imageUrl": "https://cdn.solutenetwork.com/dynimg/lu_0odRlroEof0p75-xL_QOelloF4X2E1t1_Cbd3R6KHFoqB03GsZJ_FlIg-TPxsbaZL5jqHra9v4Xy3FbbM0vv60JX7DAR9RSfkk0ftbk8/114600.jpg",
+                "isLeaf": true,
+                "documentTypes": [
+                    "product"
+                ],
+                "path": [
+                    {
+                        "id": 100176,
+                        "parentId": null,
+                        "description": "Wohnen & Lifestyle",
+                        "relevance": 55146,
+                        "imageUrl": "https://cdn.solutenetwork.com/dynimg/k47XA5K43tMof0p75-xL_RLoWV2kEkjJVt1_Cbd3R6KHFoqB03GsZJ_FlIg-TPxsTVQv-ku3yYnPUBBjrgKeVjbYLyFiSPGwSzFrwF6dy8e/100176.jpg",
+                        "isLeaf": false,
+                        "documentTypes": [
+                            "product"
+                        ]
+                    },
+                    {
+                        "id": 100177,
+                        "parentId": 100176,
+                        "description": "Wohnaccessoires",
+                        "relevance": 13202,
+                        "imageUrl": "https://cdn.solutenetwork.com/dynimg/7fgAVbgnPhwof0p75-xL_TEowslPkmgdlt1_Cbd3R6KHFoqB03GsZJ_FlIg-TPxsVFaUsQF5ezV9F6evLXhPeWYfGzZ23fWAePgFOSLagYI/100177.jpg",
+                        "isLeaf": false,
+                        "documentTypes": [
+                            "product"
+                        ]
+                    },
+                    {
+                        "id": 3426,
+                        "parentId": 100177,
+                        "description": "Dekoartikel",
+                        "relevance": 11795,
+                        "imageUrl": "https://cdn.solutenetwork.com/dynimg/jFzUkkfKOOsof0p75-xL_S6wt2bCEPykVt1_Cbd3R6KHFoqB03GsZJ_FlIg-TPxsQkFIXn1qP6svkl-RZMNDDnMaSzPVsNsxCUqpE6p_HSV/3426.jpg",
+                        "isLeaf": false,
+                        "documentTypes": [
+                            "product",
+                            "offer"
+                        ]
+                    },
+                    {
+                        "id": 106365,
+                        "parentId": 3426,
+                        "description": "Weihnachtsdeko",
+                        "relevance": 579,
+                        "imageUrl": "https://cdn.solutenetwork.com/dynimg/751b2m5xIEqof0p75-xL_TExvN6eSuNqVt1_Cbd3R6KHFoqB03GsZJ_FlIg-TPxsVUr3BcnlyK23GOubRs4JGtIultNd31_0SEM629SPMuP/106365.jpg",
+                        "isLeaf": false,
+                        "documentTypes": [
+                            "product",
+                            "offer"
+                        ]
+                    },
+                    {
+                        "id": 114600,
+                        "parentId": 106365,
+                        "description": "Lichterketten",
+                        "relevance": 120,
+                        "imageUrl": "https://cdn.solutenetwork.com/dynimg/lu_0odRlroEof0p75-xL_QOelloF4X2E1t1_Cbd3R6KHFoqB03GsZJ_FlIg-TPxsbaZL5jqHra9v4Xy3FbbM0vv60JX7DAR9RSfkk0ftbk8/114600.jpg",
+                        "isLeaf": true,
+                        "documentTypes": [
+                            "product"
+                        ]
+                    }
+                ]
+            },
+            "clickoutUrl": "https://www.billiger.de/common/modules/api/cmodul?mc=kB9JcFHm8Z9l&p=dT_waRDjxiDf7aDQSDOyE6tq2dUMqU5_6pAHkXWzHeXxAqlEW0_ko_9HAJSy8ZVhQz9TldFUL5uEPe5TP0WyfIu3E7E16Q2uhlH-L4qKxQ3iuyZE3aPWSyyAD_PZOMMCAe4-B0mFwpY&mid=4853085401&id=4853085401&ts=20241016",
+            "description": "Technische Daten WEEE-Reg.-Nr. DE , 80753169,",
+            "externalProductIds": {
+                "asin": [],
+                "gtin": [
+                    "7391482001313"
+                ],
+                "mpn": [
+                    "001-31"
+                ],
+                "pzn": []
+            },
+            "images": [
+                {
+                    "purpose": "main",
+                    "url": "https://cdn.solutenetwork.com/dynimg/HecjijiSFDaof0p75-xL_RjCPqJCoFYW6hE8nUhH7Pc88MgR1b3VHcWvS03VxtgwEgkygumkP1MZvnqHg4mx_E7JuvJvcAAv98cPWZmcHvi/4853085401_main.jpg"
+                },
+                {
+                    "purpose": "small",
+                    "url": "https://cdn.solutenetwork.com/dynimg/KDW24hs3Rps_9ogxIpRZ5DJbK6MdmmFTQ_hMn5zos5T_olRSBeQCSEAXhzSr2EMdaOHsvO8Xivzq2-xNZhbRMgbR6mspbAA3amAG5_gFSCr5yda9Rqik_o/4853085401_small.jpg"
+                },
+                {
+                    "purpose": "large",
+                    "url": "https://cdn.solutenetwork.com/dynimg/oiNpmcct08CjVEekLB_rXmXpJ53MH5lvA_hMn5zos5T_olRSBeQCSEAXhzSr2EMdaOHsvO8Xivzq2-xNZhbRMgbR6mspbAA3amAG5_gFSCrO73i6_ufHd8/4853085401_large.jpg"
+                }
+            ],
+            "legalFields": [],
+            "locationCountries": [
+                "DE"
+            ],
+            "mainImage": "https://cdn.solutenetwork.com/dynimg/HecjijiSFDaof0p75-xL_RjCPqJCoFYW6hE8nUhH7Pc88MgR1b3VHcWvS03VxtgwEgkygumkP1MZvnqHg4mx_E7JuvJvcAAv98cPWZmcHvi/4853085401_main.jpg",
+            "marketplace": {
+                "sellerName": "Wedis-Homeshop",
+                "userReviewSummary": null
+            },
+            "price": {
+                "amount": 6990,
+                "currency": "EUR",
+                "shipping": 0,
+                "total": 6990
+            },
+            "priceInfo": {
+                "oldPrice": {
+                    "amount": null,
+                    "currency": null
+                },
+                "price": {
+                    "amount": 69.9,
+                    "currency": "EUR"
+                },
+                "total": {
+                    "amount": 69.9,
+                    "currency": "EUR"
+                },
+                "unitPricing": {
+                    "baseMeasureUnit": "ct",
+                    "baseMeasureValue": 1,
+                    "measureUnit": "ct",
+                    "measureValue": 1,
+                    "text": "69.90€/1Stk"
+                },
+                "voucherPrice": {
+                    "amount": null,
+                    "currency": null
+                }
+            },
+            "productId": null,
+            "promoText": "(5% Extra auf ausgewählte Artikel) Nach Aktivierung des Rabatts wird dir die Ersparnis auf der Artikeldetailseite und im Warenkorb angezeigt. Pro Artikel ist nur ein Rabatt einlösbar.",
+            "relevance": 0,
+            "shipping": {
+                "code": "yellow",
+                "price": {
+                    "amount": 0.0,
+                    "currency": "EUR"
+                },
+                "text": "lieferbar - in 4-5 Werktagen bei dir"
+            },
+            "shop": {
+                "id": 3667,
+                "certificates": [],
+                "company": null,
+                "cpc": {
+                    "amount": 0.175,
+                    "currency": "EUR"
+                },
+                "logoUrl": "https://cdn.solutenetwork.com/dynimg/shops/x/3667.png",
+                "name": "OTTO",
+                "paymentMethods": [
+                    {
+                        "id": 7,
+                        "description": "Vorkasse"
+                    },
+                    {
+                        "id": 8,
+                        "description": "Rechnung"
+                    },
+                    {
+                        "id": 11,
+                        "description": "Lastschrift"
+                    },
+                    {
+                        "id": 12,
+                        "description": "Andere"
+                    },
+                    {
+                        "id": 13,
+                        "description": "PayPal"
+                    }
+                ],
+                "shippingMethods": [
+                    {
+                        "description": "Post/DHL"
+                    },
+                    {
+                        "description": "Hermes"
+                    }
+                ],
+                "url": "https://www.otto.de/",
+                "userReviewSummary": {
+                    "count": 2675,
+                    "rating": 4.5,
+                    "feedbackUrl": "https://www.billiger.de/shops/3667"
+                },
+                "userReviews": []
+            },
+            "type": "offer",
+            "voucher": {
+                "text": "5% Extra auf ausgewählte Artikel (Nach Aktivierung des Rabatts wird dir die Ersparnis auf der Artikeldetailseite und im Warenkorb angezeigt. Pro Artikel ist nur ein Rabatt einlösbar.)"
+            }
+        },
+        {
+            "id": 2278569492,
+            "name": "Best Season LED-Lichterkette \"Felt Elk\" 30teilig Kabel: rot, LED c/w, Timer, 1,75 m, Batterie, 726-27",
+            "brand": {
+                "id": 18932,
+                "name": "BEST",
+                "logoUrl": "https://cdn.solutenetwork.com/dynimg/brands_800/18932.png"
+            },
+            "category": {
+                "id": 114600,
+                "parentId": 106365,
+                "description": "Lichterketten",
+                "relevance": 120,
+                "imageUrl": "https://cdn.solutenetwork.com/dynimg/lu_0odRlroEof0p75-xL_QOelloF4X2E1t1_Cbd3R6KHFoqB03GsZJ_FlIg-TPxsbaZL5jqHra9v4Xy3FbbM0vv60JX7DAR9RSfkk0ftbk8/114600.jpg",
+                "isLeaf": true,
+                "documentTypes": [
+                    "product"
+                ],
+                "path": [
+                    {
+                        "id": 100176,
+                        "parentId": null,
+                        "description": "Wohnen & Lifestyle",
+                        "relevance": 55146,
+                        "imageUrl": "https://cdn.solutenetwork.com/dynimg/k47XA5K43tMof0p75-xL_RLoWV2kEkjJVt1_Cbd3R6KHFoqB03GsZJ_FlIg-TPxsTVQv-ku3yYnPUBBjrgKeVjbYLyFiSPGwSzFrwF6dy8e/100176.jpg",
+                        "isLeaf": false,
+                        "documentTypes": [
+                            "product"
+                        ]
+                    },
+                    {
+                        "id": 100177,
+                        "parentId": 100176,
+                        "description": "Wohnaccessoires",
+                        "relevance": 13202,
+                        "imageUrl": "https://cdn.solutenetwork.com/dynimg/7fgAVbgnPhwof0p75-xL_TEowslPkmgdlt1_Cbd3R6KHFoqB03GsZJ_FlIg-TPxsVFaUsQF5ezV9F6evLXhPeWYfGzZ23fWAePgFOSLagYI/100177.jpg",
+                        "isLeaf": false,
+                        "documentTypes": [
+                            "product"
+                        ]
+                    },
+                    {
+                        "id": 3426,
+                        "parentId": 100177,
+                        "description": "Dekoartikel",
+                        "relevance": 11795,
+                        "imageUrl": "https://cdn.solutenetwork.com/dynimg/jFzUkkfKOOsof0p75-xL_S6wt2bCEPykVt1_Cbd3R6KHFoqB03GsZJ_FlIg-TPxsQkFIXn1qP6svkl-RZMNDDnMaSzPVsNsxCUqpE6p_HSV/3426.jpg",
+                        "isLeaf": false,
+                        "documentTypes": [
+                            "product",
+                            "offer"
+                        ]
+                    },
+                    {
+                        "id": 106365,
+                        "parentId": 3426,
+                        "description": "Weihnachtsdeko",
+                        "relevance": 579,
+                        "imageUrl": "https://cdn.solutenetwork.com/dynimg/751b2m5xIEqof0p75-xL_TExvN6eSuNqVt1_Cbd3R6KHFoqB03GsZJ_FlIg-TPxsVUr3BcnlyK23GOubRs4JGtIultNd31_0SEM629SPMuP/106365.jpg",
+                        "isLeaf": false,
+                        "documentTypes": [
+                            "product",
+                            "offer"
+                        ]
+                    },
+                    {
+                        "id": 114600,
+                        "parentId": 106365,
+                        "description": "Lichterketten",
+                        "relevance": 120,
+                        "imageUrl": "https://cdn.solutenetwork.com/dynimg/lu_0odRlroEof0p75-xL_QOelloF4X2E1t1_Cbd3R6KHFoqB03GsZJ_FlIg-TPxsbaZL5jqHra9v4Xy3FbbM0vv60JX7DAR9RSfkk0ftbk8/114600.jpg",
+                        "isLeaf": true,
+                        "documentTypes": [
+                            "product"
+                        ]
+                    }
+                ]
+            },
+            "clickoutUrl": "https://www.billiger.de/common/modules/api/cmodul?mc=kB9JcFHm8Z9l&p=VFa65a_WAhggvrhhe5GGHeLPloCxCqh0RGxKJH5PnOw3z7LWeDZks2KeXlCLyZ1KMB6rhUkTC2tz3Fxz0tcx8Ej5CrC_UJpyAzuKoDJfLyX8SdJkvMZRcNt3-pUf6s_wXSyzRDZWQ2c&mid=2278569492&id=2278569492&ts=20241016",
+            "description": "LED-Lichterkette \"Felt Elk\" 30teilig Kabel: rot, Filzelche, 30 cool white LED Länge 1,75 m, batteriebetrieben Sichtkarton innen, mit 30 beleuchteten Elch-Filzmotiven 4,8cm, roten Perlen, Batteriefach rot und Schalter Aus/Ein/Timerbetrieb 8 Stunden Ein/16 Stunden Aus, hohe Lebensdauer und geringer Stromverbrauch von 0,03W/LED, Batteriebetrieb 3 Mignon, Leitung und Fassung rot, Zuleitung 0,5m, Abstand der Lichter 6cm, beleuchtete Länge 1,4m, Gesamtlänge 2,25m weißer Filz und rote Perlentransparentes Kabel/roter Drahtfür 3 Mignon-Batterien",
+            "externalProductIds": {
+                "asin": [
+                    "B00F1TF3O8"
+                ],
+                "gtin": [
+                    "7391482726278"
+                ],
+                "mpn": [
+                    "726-27"
+                ],
+                "pzn": []
+            },
+            "images": [
+                {
+                    "purpose": "main",
+                    "url": "https://cdn.solutenetwork.com/dynimg/VXXuujA9Grkof0p75-xL_RDNF_osyJaoKhE8nUhH7Pc88MgR1b3VHcWvS03VxtgwPqNVffau2rwYUynj9UYKQd6-gVWBjsxOe2Sl-1gGayW/2278569492_main.webp"
+                },
+                {
+                    "purpose": "default",
+                    "url": "https://cdn.solutenetwork.com/dynimg/1AnC_aVxm0Uof0p75-xL_RPgEGR-93PsqhE8nUhH7Pc88MgR1b3VHcWvS03VxtgwK8e5hCdAMuy3teNQqkhK32PDqB1fYZO_9mXjkeZM0Y_/2278569492_default.webp"
+                },
+                {
+                    "purpose": "small",
+                    "url": "https://cdn.solutenetwork.com/dynimg/fL9xJeRmw0mU-cqTxwZaVLJbK6MdmmFTQ_hMn5zos5T_olRSBeQCSEAXhzSr2EMdXF2N_SPDnq54AxyjG5P0mYU34wknkhYNBNUOdjU14EERt0LRL7q4c4/2278569492_small.webp"
+                },
+                {
+                    "purpose": "large",
+                    "url": "https://cdn.solutenetwork.com/dynimg/KFkcq3l2eO1XZtM4a6mtzSXpJ53MH5lvA_hMn5zos5T_olRSBeQCSEAXhzSr2EMdXF2N_SPDnq54AxyjG5P0mYU34wknkhYNBNUOdjU14EEuvwz_y9nh98/2278569492_large.webp"
+                }
+            ],
+            "legalFields": [],
+            "locationCountries": [
+                "DE"
+            ],
+            "mainImage": "https://cdn.solutenetwork.com/dynimg/VXXuujA9Grkof0p75-xL_RDNF_osyJaoKhE8nUhH7Pc88MgR1b3VHcWvS03VxtgwPqNVffau2rwYUynj9UYKQd6-gVWBjsxOe2Sl-1gGayW/2278569492_main.webp",
+            "marketplace": {
+                "sellerName": null,
+                "userReviewSummary": null
+            },
+            "price": {
+                "amount": 2217,
+                "currency": "EUR",
+                "shipping": 0,
+                "total": 2217
+            },
+            "priceInfo": {
+                "oldPrice": {
+                    "amount": null,
+                    "currency": null
+                },
+                "price": {
+                    "amount": 22.17,
+                    "currency": "EUR"
+                },
+                "total": {
+                    "amount": 22.17,
+                    "currency": "EUR"
+                },
+                "unitPricing": {
+                    "baseMeasureUnit": null,
+                    "baseMeasureValue": null,
+                    "measureUnit": null,
+                    "measureValue": null,
+                    "text": null
+                },
+                "voucherPrice": {
+                    "amount": null,
+                    "currency": null
+                }
+            },
+            "productId": null,
+            "promoText": "Jetzt bestellen! Ratenkauf und 0% Finanzierung möglich.",
+            "relevance": 0,
+            "shipping": {
+                "code": "green",
+                "price": {
+                    "amount": 0.0,
+                    "currency": "EUR"
+                },
+                "text": "1-2 Werktage"
+            },
+            "shop": {
+                "id": 4787,
+                "certificates": [],
+                "company": null,
+                "cpc": {
+                    "amount": 0.175,
+                    "currency": "EUR"
+                },
+                "logoUrl": "https://cdn.solutenetwork.com/dynimg/shops/x/4787.png",
+                "name": "Kaufland.de",
+                "paymentMethods": [
+                    {
+                        "id": 1,
+                        "description": "Visa"
+                    },
+                    {
+                        "id": 2,
+                        "description": "American Express"
+                    },
+                    {
+                        "id": 3,
+                        "description": "Eurocard/Mastercard"
+                    },
+                    {
+                        "id": 7,
+                        "description": "Vorkasse"
+                    },
+                    {
+                        "id": 8,
+                        "description": "Rechnung"
+                    },
+                    {
+                        "id": 10,
+                        "description": "Finanzkauf"
+                    },
+                    {
+                        "id": 11,
+                        "description": "Lastschrift"
+                    },
+                    {
+                        "id": 12,
+                        "description": "Andere"
+                    },
+                    {
+                        "id": 13,
+                        "description": "PayPal"
+                    },
+                    {
+                        "id": 15,
+                        "description": "Sofortüberweisung"
+                    },
+                    {
+                        "id": 23,
+                        "description": "Barzahlen"
+                    }
+                ],
+                "shippingMethods": [
+                    {
+                        "description": "International"
+                    },
+                    {
+                        "description": "Post/DHL"
+                    },
+                    {
+                        "description": "DPD"
+                    },
+                    {
+                        "description": "Spedition"
+                    },
+                    {
+                        "description": "Andere"
+                    },
+                    {
+                        "description": "Versand nach CH"
+                    },
+                    {
+                        "description": "Versand nach A"
+                    }
+                ],
+                "url": "http://www.kaufland.de/",
+                "userReviewSummary": {
+                    "count": 21830,
+                    "rating": 4.5,
+                    "feedbackUrl": "https://www.billiger.de/shops/4787"
+                },
+                "userReviews": []
+            },
+            "type": "offer",
+            "voucher": {
+                "text": null
+            }
+        },
+        {
+            "id": 4674729773,
+            "name": "Best Season LED Lichtleiste Best Season LED-Solarlichterkette Balls weiß 20-teilig 2.7 m outdoor",
+            "brand": {
+                "id": 18932,
+                "name": "BEST",
+                "logoUrl": "https://cdn.solutenetwork.com/dynimg/brands_800/18932.png"
+            },
+            "category": {
+                "id": 114600,
+                "parentId": 106365,
+                "description": "Lichterketten",
+                "relevance": 120,
+                "imageUrl": "https://cdn.solutenetwork.com/dynimg/lu_0odRlroEof0p75-xL_QOelloF4X2E1t1_Cbd3R6KHFoqB03GsZJ_FlIg-TPxsbaZL5jqHra9v4Xy3FbbM0vv60JX7DAR9RSfkk0ftbk8/114600.jpg",
+                "isLeaf": true,
+                "documentTypes": [
+                    "product"
+                ],
+                "path": [
+                    {
+                        "id": 100176,
+                        "parentId": null,
+                        "description": "Wohnen & Lifestyle",
+                        "relevance": 55146,
+                        "imageUrl": "https://cdn.solutenetwork.com/dynimg/k47XA5K43tMof0p75-xL_RLoWV2kEkjJVt1_Cbd3R6KHFoqB03GsZJ_FlIg-TPxsTVQv-ku3yYnPUBBjrgKeVjbYLyFiSPGwSzFrwF6dy8e/100176.jpg",
+                        "isLeaf": false,
+                        "documentTypes": [
+                            "product"
+                        ]
+                    },
+                    {
+                        "id": 100177,
+                        "parentId": 100176,
+                        "description": "Wohnaccessoires",
+                        "relevance": 13202,
+                        "imageUrl": "https://cdn.solutenetwork.com/dynimg/7fgAVbgnPhwof0p75-xL_TEowslPkmgdlt1_Cbd3R6KHFoqB03GsZJ_FlIg-TPxsVFaUsQF5ezV9F6evLXhPeWYfGzZ23fWAePgFOSLagYI/100177.jpg",
+                        "isLeaf": false,
+                        "documentTypes": [
+                            "product"
+                        ]
+                    },
+                    {
+                        "id": 3426,
+                        "parentId": 100177,
+                        "description": "Dekoartikel",
+                        "relevance": 11795,
+                        "imageUrl": "https://cdn.solutenetwork.com/dynimg/jFzUkkfKOOsof0p75-xL_S6wt2bCEPykVt1_Cbd3R6KHFoqB03GsZJ_FlIg-TPxsQkFIXn1qP6svkl-RZMNDDnMaSzPVsNsxCUqpE6p_HSV/3426.jpg",
+                        "isLeaf": false,
+                        "documentTypes": [
+                            "product",
+                            "offer"
+                        ]
+                    },
+                    {
+                        "id": 106365,
+                        "parentId": 3426,
+                        "description": "Weihnachtsdeko",
+                        "relevance": 579,
+                        "imageUrl": "https://cdn.solutenetwork.com/dynimg/751b2m5xIEqof0p75-xL_TExvN6eSuNqVt1_Cbd3R6KHFoqB03GsZJ_FlIg-TPxsVUr3BcnlyK23GOubRs4JGtIultNd31_0SEM629SPMuP/106365.jpg",
+                        "isLeaf": false,
+                        "documentTypes": [
+                            "product",
+                            "offer"
+                        ]
+                    },
+                    {
+                        "id": 114600,
+                        "parentId": 106365,
+                        "description": "Lichterketten",
+                        "relevance": 120,
+                        "imageUrl": "https://cdn.solutenetwork.com/dynimg/lu_0odRlroEof0p75-xL_QOelloF4X2E1t1_Cbd3R6KHFoqB03GsZJ_FlIg-TPxsbaZL5jqHra9v4Xy3FbbM0vv60JX7DAR9RSfkk0ftbk8/114600.jpg",
+                        "isLeaf": true,
+                        "documentTypes": [
+                            "product"
+                        ]
+                    }
+                ]
+            },
+            "clickoutUrl": "https://www.billiger.de/common/modules/api/cmodul?mc=kB9JcFHm8Z9l&p=rkrgqyqn04eXVSmyu4TSBM21GiGtW1fN0GsMAtH55YnMdozeyQB1s3_NYWZJZdx_CwtUpvZzyLZBdxOP-QSAuZqB2F3f-zYsrYQqliOJ5T2iuyZE3aPWSxYYvoE_SbI-DtHPy5sIUEW&mid=4674729773&id=4674729773&ts=20241016",
+            "description": "Technische Daten WEEE-Reg.-Nr. DE , 80753169,",
+            "externalProductIds": {
+                "asin": [],
+                "gtin": [
+                    "7391482477590"
+                ],
+                "mpn": [],
+                "pzn": []
+            },
+            "images": [
+                {
+                    "purpose": "main",
+                    "url": "https://cdn.solutenetwork.com/dynimg/hrBRKkIx1xAof0p75-xL_Sch36FSoXaeKhE8nUhH7Pc88MgR1b3VHcWvS03VxtgwBIwZn9a5uK70ghtbWIs-AFISvbeFUL1p7I4lEeqiP2H/4674729773_main.jpg"
+                },
+                {
+                    "purpose": "small",
+                    "url": "https://cdn.solutenetwork.com/dynimg/SDt4AEUIroeXx7HPJXsAOjJbK6MdmmFTQ_hMn5zos5T_olRSBeQCSEAXhzSr2EMdYAo7dZOGGLgHSghomtkkNlwfkXbHTw1g4Az3IVCbFmUxvw4fmGY28I/4674729773_small.jpg"
+                },
+                {
+                    "purpose": "large",
+                    "url": "https://cdn.solutenetwork.com/dynimg/gYrG0hW4IBYUxXk_qrlttWXpJ53MH5lvA_hMn5zos5T_olRSBeQCSEAXhzSr2EMdYAo7dZOGGLgHSghomtkkNlwfkXbHTw1g4Az3IVCbFmUhmbMdubp2jc/4674729773_large.jpg"
+                }
+            ],
+            "legalFields": [],
+            "locationCountries": [
+                "DE"
+            ],
+            "mainImage": "https://cdn.solutenetwork.com/dynimg/hrBRKkIx1xAof0p75-xL_Sch36FSoXaeKhE8nUhH7Pc88MgR1b3VHcWvS03VxtgwBIwZn9a5uK70ghtbWIs-AFISvbeFUL1p7I4lEeqiP2H/4674729773_main.jpg",
+            "marketplace": {
+                "sellerName": "buvtec",
+                "userReviewSummary": null
+            },
+            "price": {
+                "amount": 1429,
+                "currency": "EUR",
+                "shipping": 575,
+                "total": 2004
+            },
+            "priceInfo": {
+                "oldPrice": {
+                    "amount": null,
+                    "currency": null
+                },
+                "price": {
+                    "amount": 14.29,
+                    "currency": "EUR"
+                },
+                "total": {
+                    "amount": 20.04,
+                    "currency": "EUR"
+                },
+                "unitPricing": {
+                    "baseMeasureUnit": null,
+                    "baseMeasureValue": null,
+                    "measureUnit": null,
+                    "measureValue": null,
+                    "text": null
+                },
+                "voucherPrice": {
+                    "amount": null,
+                    "currency": null
+                }
+            },
+            "productId": null,
+            "promoText": null,
+            "relevance": 0,
+            "shipping": {
+                "code": "green",
+                "price": {
+                    "amount": 5.75,
+                    "currency": "EUR"
+                },
+                "text": "lieferbar - in 2-3 Werktagen bei dir"
+            },
+            "shop": {
+                "id": 3667,
+                "certificates": [],
+                "company": null,
+                "cpc": {
+                    "amount": 0.175,
+                    "currency": "EUR"
+                },
+                "logoUrl": "https://cdn.solutenetwork.com/dynimg/shops/x/3667.png",
+                "name": "OTTO",
+                "paymentMethods": [
+                    {
+                        "id": 7,
+                        "description": "Vorkasse"
+                    },
+                    {
+                        "id": 8,
+                        "description": "Rechnung"
+                    },
+                    {
+                        "id": 11,
+                        "description": "Lastschrift"
+                    },
+                    {
+                        "id": 12,
+                        "description": "Andere"
+                    },
+                    {
+                        "id": 13,
+                        "description": "PayPal"
+                    }
+                ],
+                "shippingMethods": [
+                    {
+                        "description": "Post/DHL"
+                    },
+                    {
+                        "description": "Hermes"
+                    }
+                ],
+                "url": "https://www.otto.de/",
+                "userReviewSummary": {
+                    "count": 2675,
+                    "rating": 4.5,
+                    "feedbackUrl": "https://www.billiger.de/shops/3667"
+                },
+                "userReviews": []
+            },
+            "type": "offer",
+            "voucher": {
+                "text": null
+            }
+        },
+        {
+            "id": 2265753309,
+            "name": "Best Season System 24 \"LED-Lichterkette 5 m, 49-L - Extra\" Birnchen warmwhite, für den Außenbereich, 491-00 - Schwarz/Weiß",
+            "brand": {
+                "id": 18932,
+                "name": "BEST",
+                "logoUrl": "https://cdn.solutenetwork.com/dynimg/brands_800/18932.png"
+            },
+            "category": {
+                "id": 114600,
+                "parentId": 106365,
+                "description": "Lichterketten",
+                "relevance": 120,
+                "imageUrl": "https://cdn.solutenetwork.com/dynimg/lu_0odRlroEof0p75-xL_QOelloF4X2E1t1_Cbd3R6KHFoqB03GsZJ_FlIg-TPxsbaZL5jqHra9v4Xy3FbbM0vv60JX7DAR9RSfkk0ftbk8/114600.jpg",
+                "isLeaf": true,
+                "documentTypes": [
+                    "product"
+                ],
+                "path": [
+                    {
+                        "id": 100176,
+                        "parentId": null,
+                        "description": "Wohnen & Lifestyle",
+                        "relevance": 55146,
+                        "imageUrl": "https://cdn.solutenetwork.com/dynimg/k47XA5K43tMof0p75-xL_RLoWV2kEkjJVt1_Cbd3R6KHFoqB03GsZJ_FlIg-TPxsTVQv-ku3yYnPUBBjrgKeVjbYLyFiSPGwSzFrwF6dy8e/100176.jpg",
+                        "isLeaf": false,
+                        "documentTypes": [
+                            "product"
+                        ]
+                    },
+                    {
+                        "id": 100177,
+                        "parentId": 100176,
+                        "description": "Wohnaccessoires",
+                        "relevance": 13202,
+                        "imageUrl": "https://cdn.solutenetwork.com/dynimg/7fgAVbgnPhwof0p75-xL_TEowslPkmgdlt1_Cbd3R6KHFoqB03GsZJ_FlIg-TPxsVFaUsQF5ezV9F6evLXhPeWYfGzZ23fWAePgFOSLagYI/100177.jpg",
+                        "isLeaf": false,
+                        "documentTypes": [
+                            "product"
+                        ]
+                    },
+                    {
+                        "id": 3426,
+                        "parentId": 100177,
+                        "description": "Dekoartikel",
+                        "relevance": 11795,
+                        "imageUrl": "https://cdn.solutenetwork.com/dynimg/jFzUkkfKOOsof0p75-xL_S6wt2bCEPykVt1_Cbd3R6KHFoqB03GsZJ_FlIg-TPxsQkFIXn1qP6svkl-RZMNDDnMaSzPVsNsxCUqpE6p_HSV/3426.jpg",
+                        "isLeaf": false,
+                        "documentTypes": [
+                            "product",
+                            "offer"
+                        ]
+                    },
+                    {
+                        "id": 106365,
+                        "parentId": 3426,
+                        "description": "Weihnachtsdeko",
+                        "relevance": 579,
+                        "imageUrl": "https://cdn.solutenetwork.com/dynimg/751b2m5xIEqof0p75-xL_TExvN6eSuNqVt1_Cbd3R6KHFoqB03GsZJ_FlIg-TPxsVUr3BcnlyK23GOubRs4JGtIultNd31_0SEM629SPMuP/106365.jpg",
+                        "isLeaf": false,
+                        "documentTypes": [
+                            "product",
+                            "offer"
+                        ]
+                    },
+                    {
+                        "id": 114600,
+                        "parentId": 106365,
+                        "description": "Lichterketten",
+                        "relevance": 120,
+                        "imageUrl": "https://cdn.solutenetwork.com/dynimg/lu_0odRlroEof0p75-xL_QOelloF4X2E1t1_Cbd3R6KHFoqB03GsZJ_FlIg-TPxsbaZL5jqHra9v4Xy3FbbM0vv60JX7DAR9RSfkk0ftbk8/114600.jpg",
+                        "isLeaf": true,
+                        "documentTypes": [
+                            "product"
+                        ]
+                    }
+                ]
+            },
+            "clickoutUrl": "https://www.billiger.de/common/modules/api/cmodul?mc=kB9JcFHm8Z9l&p=0_g5A3-L58Ngvrhhe5GGHcPoyf8WQzbLxGxKJH5PnOw3z7LWeDZks2KeXlCLyZ1KMB6rhUkTC2tz3Fxz0tcx8Ej5CrC_UJpyICyh9EoIRrYsSkfuE6TOW4YXQNmT_N5gg&mid=2265753309&id=2265753309&ts=20241016",
+            "description": "LED System24 Lichterkette49 LEDs warmweiß, Abstand der Lichter 10cm, beleuchtete Länge 5m, Leistung 1Winnen und außen, IP44, Leitung und Fassung schwarz mit schraubbarem Verbindungsstecker und -kupplung, passende System-Trafos Art.Nr. 862750 / 862755Best Season 491-00Best Season System24 Lichterkette 491-00 mit IP4449 LED-Kerzen warten darauf, ein neues Zuhause auszuleuchten. Im Abstand von je 10cm, reihen sich die LEDs zu einer Kette von ca. 5m aneinander. Ideal zur Dekoration des Weihnachtsbaums oder im Eingangsbereich des Hauses bzw. der Wohnung. Durch die IP44-Schutzklasse ist sogar ein Einsatz im Freien möglich. Trotzdem sollte die Lichterkette vor zu großer Feuchtigkeit geschützt bleiben.Was macht System-Lichterketten so besonders? Sie leben ihren Namen, denn die einzelnen Produkte sind frei miteinander kombinierbar. Mit dem richtigen Netzteil, kann das System auf bis zu 1.500 LEDs erweitert werden. Die Marke Best Season ermöglicht somit, ganze Zimmer perfekt auszuleuchten. Zeitgleich erweisen sie sich solche LED-Systeme als sehr energieeffizient.Das strahlende Warmweiß passt perfekt zur weihnachtlichen Stimmung. Während es draußen dunkel ist, schafft die Lichterkette ein angenehmes Ambiente. Nicht nur der Weihnachtsbaum erhält damit die ideale Dekoration. Ebenso können Türrahmen, Hauseingänge, Fenster, Geländer, Bäume und Büsche in angenehmem Licht aufgehen.System24 Lichterkette 491-00Diese LED Lichterkette 491-00 des Herstellers Best Season ist ein echter Hingucker. Sie ist mit 49 hochwertigen LEDs bestückt und misst eine beleuchtete Länge von ca. 5 m. Die Lichterkette lässt sich dank IP44-Schutz sowohl drinnen als auch draußen einsetzen und eignet sich bestens für die Dekoration von Möbeln, Pflanzen oder Weihnachtsbäumen.Als SYSTEM-Lichterketten versteht man eine Familie von Produkten, die untereinander zu einem Ganzen kombinierbar sind. Dafür verwenden die Artikel dieselben Anschlüsse und Kopplungsstücke. Mit dem SYSTEM24 Lichterketten von Best Season lassen sich ganze Deko-Welten erzeugen, die zusammen gesteuert werden können.System24 Lichterkette 491-00 - kombinierbar & erweiterbarSYSTEM24 LED Lichterketten ist eines der flexibelstes und energiesparendstes Systeme für dekorative Außenbeleuchtung. Alle Produkte eines Systems sind universell miteinander kombinierbar. Die LED System24 491-00 Lichterkette von Best Season leuchtet in der Lichtfarbe warmweiß und bietet Ihnen jegliche Freiheit um nach Herzenslust innen wie außen zu dekorieren. Mit den schwarzen Kabel und Lampen-Fassungen, geeignet für den Innen- und Außenbereich. Der Abstand zwischen den Lichtern beträgt 10 cm. Kombinieren Sie die System24 Lichterkette mit weiteren Komponenten aus dem Best Season System24 zu Ihrer Weihnachtsdekoration. Das Best Season System lässt sich erweitern je nach Trafo auf 700 bzw. 1500 LEDs. Dank der schraubbaren Verbindungen mit IP44 gelingt das einfach und schnell. Diese System24 491-00 Lichterkette vereint viele Vorteile in sich. Zum einen ist die Lichterkette mit LEDs ausgestattet. Dazu eignet sie sich für den Einsatz im Außenbereich und dazu kann die gewünschte Spannungsversorgung nach ihren Bedürfnissen gewählt werden.Mit der Best Season System24 Microlichterkette 491-00 lassen sich Türen, Fenster, Geländer, Büsche, Bäume oder auch Gefäße oder ganze Hausfassaden dekorieren. Das Licht mit der Lichtfarbe warmweiß der 49 LEDs, die in einem Abstand von 100mm gleichmäßig verteilt sind, lässt Ihre Deko in eine stimmungsvolle Atmosphäre tauchen. Egal ob als festliche Beleuchtung in der Vorweihnachtszeit oder als Beleuchtung bei der Sommerparty - die Lichterkette verbreitet immer ein angenehmes und magisches Licht. Sie können die System Microlichterkette im Wohnbereich oder auch im Außenbereich einsetzten, da sie die Schutzklasse IP44 besitzt. System 24 \"LED-Lichterkette 5 m, 49-L - Extra\" Birnchen warm white outdoor Vierfarb-Karton System 24 / 49er Lichterkette extra warmweiß 491-00 verlängerbar Länge komplett: 5m (inkl. Anschl",
+            "externalProductIds": {
+                "asin": [
+                    "B002N19O9M"
+                ],
+                "gtin": [
+                    "7391482491008"
+                ],
+                "mpn": [
+                    "491-00"
+                ],
+                "pzn": []
+            },
+            "images": [
+                {
+                    "purpose": "main",
+                    "url": "https://cdn.solutenetwork.com/dynimg/2ahKIb0NpUkof0p75-xL_S0ZgMCFBwP1ahE8nUhH7Pc88MgR1b3VHcWvS03VxtgwPg3AcBe46cM9JbmLymdFq-zzwq4ESbap5F1AnGvpKtH/2265753309_main.webp"
+                },
+                {
+                    "purpose": "default",
+                    "url": "https://cdn.solutenetwork.com/dynimg/U7y9WbmO7tBof0p75-xL_RfiwvH9domOahE8nUhH7Pc88MgR1b3VHcWvS03VxtgwNEgigwoA4unirlRSDmnv010IbTQKxXU4ykbWjr6BqXB/2265753309_default.webp"
+                },
+                {
+                    "purpose": "default",
+                    "url": "https://cdn.solutenetwork.com/dynimg/asRBnYB_EAdof0p75-xL_RfiwvH9domOahE8nUhH7Pc88MgR1b3VHcWvS03VxtgwE6FjU0ErAkViYe2pSThbhwwlUIDmN_FyYpt51ZCLMom/2265753309_default.webp"
+                },
+                {
+                    "purpose": "default",
+                    "url": "https://cdn.solutenetwork.com/dynimg/ArVLmo0uyFVof0p75-xL_RfiwvH9domOahE8nUhH7Pc88MgR1b3VHcWvS03VxtgwGrDDvVHNhYI_PurihkweWOxZCkdSy_RZgT1PJrm3PhN/2265753309_default.webp"
+                },
+                {
+                    "purpose": "default",
+                    "url": "https://cdn.solutenetwork.com/dynimg/b1pIn3UaN2Vof0p75-xL_RfiwvH9domOahE8nUhH7Pc88MgR1b3VHcWvS03VxtgwI4zfQptb2oxwSH5nUqKOCda_TBUM10fWADezAohxkJ8/2265753309_default.webp"
+                },
+                {
+                    "purpose": "default",
+                    "url": "https://cdn.solutenetwork.com/dynimg/M5a-IO6jYjCof0p75-xL_RfiwvH9domOahE8nUhH7Pc88MgR1b3VHcWvS03VxtgwPBfYXD5_YEnMux1VAc2SRwmpuZtpFNahN1IfpPb47nI/2265753309_default.webp"
+                },
+                {
+                    "purpose": "default",
+                    "url": "https://cdn.solutenetwork.com/dynimg/azYzRTZQ5XYof0p75-xL_RfiwvH9domOahE8nUhH7Pc88MgR1b3VHcWvS03VxtgwPqvH5lnGlRPP3fxhzR2HEhJdW2-kThCIPgI8OwXyLZ2/2265753309_default.webp"
+                },
+                {
+                    "purpose": "default",
+                    "url": "https://cdn.solutenetwork.com/dynimg/VODRP5X1Jfpof0p75-xL_RfiwvH9domOahE8nUhH7Pc88MgR1b3VHcWvS03VxtgwHk39ltFSMS2oNjPNTdcxhm3VaAzYCsmVVUWA9YeI4tJ/2265753309_default.webp"
+                },
+                {
+                    "purpose": "default",
+                    "url": "https://cdn.solutenetwork.com/dynimg/OKDSBQPle5Vof0p75-xL_RfiwvH9domOahE8nUhH7Pc88MgR1b3VHcWvS03VxtgwLE0sw2VocscjjXGzEunmD07d-r956cTNqj3C69v6OIW/2265753309_default.webp"
+                },
+                {
+                    "purpose": "default",
+                    "url": "https://cdn.solutenetwork.com/dynimg/ZqvOMahedQRof0p75-xL_RfiwvH9domOahE8nUhH7Pc88MgR1b3VHcWvS03VxtgwLOlxRt4TohHBG9YXpTQZOw6s-fPSogTZCakueiUNpQY/2265753309_default.webp"
+                },
+                {
+                    "purpose": "default",
+                    "url": "https://cdn.solutenetwork.com/dynimg/uGvLGoJY1duof0p75-xL_RfiwvH9domOahE8nUhH7Pc88MgR1b3VHcWvS03VxtgwM9ZdTDthOGoXJ5BVbgLEazIvKOub2u2zd5jASLJqHjW/2265753309_default.webp"
+                },
+                {
+                    "purpose": "default",
+                    "url": "https://cdn.solutenetwork.com/dynimg/7EhicFdvx6nof0p75-xL_RwUJZHVksV6ahE8nUhH7Pc88MgR1b3VHcWvS03VxtgwLxOlwg65FrmDm0QNPD1gtTAsIiz4BLo8nyVeOiwZuc6/2265753309_default.jpg"
+                },
+                {
+                    "purpose": "default",
+                    "url": "https://cdn.solutenetwork.com/dynimg/Qo0-FXvlO9tof0p75-xL_RfiwvH9domOahE8nUhH7Pc88MgR1b3VHcWvS03VxtgwLbS_97Fcw_v9ITfHqvFIUUi4VWyIwo904vh458lccqf/2265753309_default.webp"
+                },
+                {
+                    "purpose": "default",
+                    "url": "https://cdn.solutenetwork.com/dynimg/M0oZUv14XpNof0p75-xL_RfiwvH9domOahE8nUhH7Pc88MgR1b3VHcWvS03VxtgwGnsVebZEZTd4ZKynQUdbrYHOZulmoX5PJ8zkuq5eDSq/2265753309_default.webp"
+                },
+                {
+                    "purpose": "default",
+                    "url": "https://cdn.solutenetwork.com/dynimg/LAVw0pMubmZof0p75-xL_RfiwvH9domOahE8nUhH7Pc88MgR1b3VHcWvS03VxtgwK-KNAk9RZgg70hBSf5Ks2KEipGQYUELnruaWZibTq7y/2265753309_default.webp"
+                },
+                {
+                    "purpose": "default",
+                    "url": "https://cdn.solutenetwork.com/dynimg/f-6se4aaeMTof0p75-xL_RfiwvH9domOahE8nUhH7Pc88MgR1b3VHcWvS03VxtgwEyj77vmEB-Ct1YMwaq4YDZkQnILMmrtdACKu54EUvPK/2265753309_default.webp"
+                },
+                {
+                    "purpose": "default",
+                    "url": "https://cdn.solutenetwork.com/dynimg/IOqdwF8p4Zgof0p75-xL_RwUJZHVksV6ahE8nUhH7Pc88MgR1b3VHcWvS03VxtgwGMuqVxzOB6BcxR2nVM7w8Ifc5l3-GE5wlqWGfL_c-Fh/2265753309_default.jpg"
+                },
+                {
+                    "purpose": "default",
+                    "url": "https://cdn.solutenetwork.com/dynimg/d8vEsMSOLKSof0p75-xL_RwUJZHVksV6ahE8nUhH7Pc88MgR1b3VHcWvS03VxtgwKCrTrQUmgjJXJi6dgWDu2vrZpI47QeUx2ZID7_l-qjN/2265753309_default.jpg"
+                },
+                {
+                    "purpose": "default",
+                    "url": "https://cdn.solutenetwork.com/dynimg/I-1axCcTRwlof0p75-xL_RwUJZHVksV6ahE8nUhH7Pc88MgR1b3VHcWvS03VxtgwHO14G_P7VvaI90JDLxdyVJnQSZ2siDZhCcEz1uzt_-T/2265753309_default.jpg"
+                },
+                {
+                    "purpose": "default",
+                    "url": "https://cdn.solutenetwork.com/dynimg/Q-urO2-zDg6of0p75-xL_RfiwvH9domOahE8nUhH7Pc88MgR1b3VHcWvS03VxtgwEbbYymaJKL_hE59zucOM4bcQRGQGJ2rrYjeipoOpCib/2265753309_default.webp"
+                },
+                {
+                    "purpose": "default",
+                    "url": "https://cdn.solutenetwork.com/dynimg/Dmo5FKKozb2of0p75-xL_RfiwvH9domOahE8nUhH7Pc88MgR1b3VHcWvS03VxtgwNn_nwImsVTx1OiQrlqFrXFsk4DIyK-K6GD_-vUyrdAX/2265753309_default.webp"
+                },
+                {
+                    "purpose": "default",
+                    "url": "https://cdn.solutenetwork.com/dynimg/iVGqFfiXjMoof0p75-xL_RfiwvH9domOahE8nUhH7Pc88MgR1b3VHcWvS03VxtgwGV43cJWkjiDWLHyau043hLSxnGHGxcRA2FXAc9EW1ea/2265753309_default.webp"
+                },
+                {
+                    "purpose": "default",
+                    "url": "https://cdn.solutenetwork.com/dynimg/3NJyLMfiP_Xof0p75-xL_RfiwvH9domOahE8nUhH7Pc88MgR1b3VHcWvS03VxtgwGN-8qniRFYzvqKDUmviMmFg1jvQgasCaAB8oCi9ER4U/2265753309_default.webp"
+                },
+                {
+                    "purpose": "default",
+                    "url": "https://cdn.solutenetwork.com/dynimg/HaXujG-hdb7of0p75-xL_RfiwvH9domOahE8nUhH7Pc88MgR1b3VHcWvS03VxtgwH5TmREwN5omDULN1j-nHO5ObFrZaZKxAZ9JjcWX17eA/2265753309_default.webp"
+                },
+                {
+                    "purpose": "default",
+                    "url": "https://cdn.solutenetwork.com/dynimg/5y77YP5ezDHof0p75-xL_RfiwvH9domOahE8nUhH7Pc88MgR1b3VHcWvS03VxtgwMyDIj6iFFtYRJkcXITii8p0uim8NM3NQnyZYYfdRz_M/2265753309_default.webp"
+                },
+                {
+                    "purpose": "small",
+                    "url": "https://cdn.solutenetwork.com/dynimg/kSLKfmA-3H18s0K5D6zbc7JbK6MdmmFTQ_hMn5zos5T_olRSBeQCSEAXhzSr2EMdSvdR2Jep8tqkOx-x0Y_Vck8Vvwjz5q0m2kSoGqivyTZK8CjgWtGWpw/2265753309_small.webp"
+                },
+                {
+                    "purpose": "large",
+                    "url": "https://cdn.solutenetwork.com/dynimg/IgapCShez8oUf0_WQWQ_8iXpJ53MH5lvA_hMn5zos5T_olRSBeQCSEAXhzSr2EMdSvdR2Jep8tqkOx-x0Y_Vck8Vvwjz5q0m2kSoGqivyTZpiRObr9xrv0/2265753309_large.webp"
+                }
+            ],
+            "legalFields": [],
+            "locationCountries": [
+                "DE"
+            ],
+            "mainImage": "https://cdn.solutenetwork.com/dynimg/2ahKIb0NpUkof0p75-xL_S0ZgMCFBwP1ahE8nUhH7Pc88MgR1b3VHcWvS03VxtgwPg3AcBe46cM9JbmLymdFq-zzwq4ESbap5F1AnGvpKtH/2265753309_main.webp",
+            "marketplace": {
+                "sellerName": null,
+                "userReviewSummary": null
+            },
+            "price": {
+                "amount": 2250,
+                "currency": "EUR",
+                "shipping": 499,
+                "total": 2749
+            },
+            "priceInfo": {
+                "oldPrice": {
+                    "amount": null,
+                    "currency": null
+                },
+                "price": {
+                    "amount": 22.5,
+                    "currency": "EUR"
+                },
+                "total": {
+                    "amount": 27.49,
+                    "currency": "EUR"
+                },
+                "unitPricing": {
+                    "baseMeasureUnit": null,
+                    "baseMeasureValue": null,
+                    "measureUnit": null,
+                    "measureValue": null,
+                    "text": null
+                },
+                "voucherPrice": {
+                    "amount": null,
+                    "currency": null
+                }
+            },
+            "productId": null,
+            "promoText": "Jetzt bestellen! Ratenkauf und 0% Finanzierung möglich.",
+            "relevance": 0,
+            "shipping": {
+                "code": "green",
+                "price": {
+                    "amount": 4.99,
+                    "currency": "EUR"
+                },
+                "text": "2-4 Werktage"
+            },
+            "shop": {
+                "id": 4787,
+                "certificates": [],
+                "company": null,
+                "cpc": {
+                    "amount": 0.175,
+                    "currency": "EUR"
+                },
+                "logoUrl": "https://cdn.solutenetwork.com/dynimg/shops/x/4787.png",
+                "name": "Kaufland.de",
+                "paymentMethods": [
+                    {
+                        "id": 1,
+                        "description": "Visa"
+                    },
+                    {
+                        "id": 2,
+                        "description": "American Express"
+                    },
+                    {
+                        "id": 3,
+                        "description": "Eurocard/Mastercard"
+                    },
+                    {
+                        "id": 7,
+                        "description": "Vorkasse"
+                    },
+                    {
+                        "id": 8,
+                        "description": "Rechnung"
+                    },
+                    {
+                        "id": 10,
+                        "description": "Finanzkauf"
+                    },
+                    {
+                        "id": 11,
+                        "description": "Lastschrift"
+                    },
+                    {
+                        "id": 12,
+                        "description": "Andere"
+                    },
+                    {
+                        "id": 13,
+                        "description": "PayPal"
+                    },
+                    {
+                        "id": 15,
+                        "description": "Sofortüberweisung"
+                    },
+                    {
+                        "id": 23,
+                        "description": "Barzahlen"
+                    }
+                ],
+                "shippingMethods": [
+                    {
+                        "description": "International"
+                    },
+                    {
+                        "description": "Post/DHL"
+                    },
+                    {
+                        "description": "DPD"
+                    },
+                    {
+                        "description": "Spedition"
+                    },
+                    {
+                        "description": "Andere"
+                    },
+                    {
+                        "description": "Versand nach CH"
+                    },
+                    {
+                        "description": "Versand nach A"
+                    }
+                ],
+                "url": "http://www.kaufland.de/",
+                "userReviewSummary": {
+                    "count": 21830,
+                    "rating": 4.5,
+                    "feedbackUrl": "https://www.billiger.de/shops/4787"
+                },
+                "userReviews": []
+            },
+            "type": "offer",
+            "voucher": {
+                "text": null
+            }
+        },
+        {
+            "id": 38445426450,
+            "name": "Best Sitzauflage beige",
+            "brand": {
+                "id": 18932,
+                "name": "BEST",
+                "logoUrl": "https://cdn.solutenetwork.com/dynimg/brands_800/18932.png"
+            },
+            "category": {
+                "id": 103349,
+                "parentId": 103325,
+                "description": "Auflagen & Polster",
+                "relevance": 58,
+                "imageUrl": "https://cdn.solutenetwork.com/dynimg/1w46rL84sM5of0p75-xL_QDVz9ZB0JyPVt1_Cbd3R6KHFoqB03GsZJ_FlIg-TPxsbDfE40_mt2BqpRpQKvj4UnDzMV3WcpGAtDwRGQ8ifw5/103349.jpg",
+                "isLeaf": true,
+                "documentTypes": [
+                    "product"
+                ],
+                "path": [
+                    {
+                        "id": 100199,
+                        "parentId": null,
+                        "description": "Heimwerken & Garten",
+                        "relevance": 67103,
+                        "imageUrl": "https://cdn.solutenetwork.com/dynimg/tp3sCd0vbCqof0p75-xL_Qz8a1Hu55uNVt1_Cbd3R6KHFoqB03GsZJ_FlIg-TPxsR7FATBvw3HTIsdfftTgvzgqyn6zEsr09tjdPDkph63N/100199.jpg",
+                        "isLeaf": false,
+                        "documentTypes": [
+                            "product"
+                        ]
+                    },
+                    {
+                        "id": 100200,
+                        "parentId": 100199,
+                        "description": "Garten & Balkon",
+                        "relevance": 15924,
+                        "imageUrl": "https://cdn.solutenetwork.com/dynimg/JiJ1YbVgm3Bof0p75-xL_SvB8TDg5vdvVt1_Cbd3R6KHFoqB03GsZJ_FlIg-TPxsQBu0vLWPnTrWqEPsv3MoKiZ1-D5rlmWNbeZmFsjwxEM/100200.jpg",
+                        "isLeaf": false,
+                        "documentTypes": [
+                            "product"
+                        ]
+                    },
+                    {
+                        "id": 3271,
+                        "parentId": 100200,
+                        "description": "Gartenmöbel",
+                        "relevance": 2779,
+                        "imageUrl": "https://cdn.solutenetwork.com/dynimg/3L0OaXJGuBMof0p75-xL_R7gz94l3UIgVt1_Cbd3R6KHFoqB03GsZJ_FlIg-TPxseK5hcDG74aLprffAw_vHqJvfjeJFv4W5hMkjS-dS05d/3271.jpg",
+                        "isLeaf": false,
+                        "documentTypes": [
+                            "product"
+                        ]
+                    },
+                    {
+                        "id": 103325,
+                        "parentId": 3271,
+                        "description": "Zubehör für Gartenmöbel",
+                        "relevance": 360,
+                        "imageUrl": "https://cdn.solutenetwork.com/dynimg/0zwqG6KvIY9of0p75-xL_RjPw1T8g5GmVt1_Cbd3R6KHFoqB03GsZJ_FlIg-TPxseRCBljhn3SLz-m97bT8ruC4OfTTEOCWo8UsgRVOzI6t/103325.jpg",
+                        "isLeaf": false,
+                        "documentTypes": [
+                            "product",
+                            "offer"
+                        ]
+                    },
+                    {
+                        "id": 103349,
+                        "parentId": 103325,
+                        "description": "Auflagen & Polster",
+                        "relevance": 58,
+                        "imageUrl": "https://cdn.solutenetwork.com/dynimg/1w46rL84sM5of0p75-xL_QDVz9ZB0JyPVt1_Cbd3R6KHFoqB03GsZJ_FlIg-TPxsbDfE40_mt2BqpRpQKvj4UnDzMV3WcpGAtDwRGQ8ifw5/103349.jpg",
+                        "isLeaf": true,
+                        "documentTypes": [
+                            "product"
+                        ]
+                    }
+                ]
+            },
+            "clickoutUrl": "https://www.billiger.de/common/modules/api/cmodul?mc=kB9JcFHm8Z9l&p=3FPd2n_0YLDgFdiMIpCMzNdTGkdiYePhyjEnkroML-pk_4BwBhYN2q6BZ-N7lfpxZpa5IXEbt5LN7RS-iZd3WDrta9-Nh_xmQRDiOq5nL6vFODpMjNha1M&mid=38445426450&id=38445426450&ts=20241016",
+            "description": "Art Polsterung , Schaumstoff, Höhe , 5 cm, Breite , 43 cm, Tiefe , 43 cm, Gewicht , 200 g, Stärke Auflagen , 50 mm, Bezug , Baumwolle, Materialzusammensetzung , Obermaterial: 100% Baumwolle, Materialeigenschaften , UV-beständig, wetterfest, Farbe , natur, Pflegehinweise , Handwäsche, pflegeleicht, Herstellungsland , Made in Germany,",
+            "externalProductIds": {
+                "asin": [],
+                "gtin": [
+                    "4043153045173"
+                ],
+                "mpn": [],
+                "pzn": []
+            },
+            "images": [
+                {
+                    "purpose": "main",
+                    "url": "https://cdn.solutenetwork.com/dynimg/QEOuWqGIBa3of0p75-xL_Q5svSQWBLOZqhE8nUhH7Pc88MgR1b3VHcWvS03VxtgwAiXL991O8BfY3yZrpV1rwuLJHqC9KXnVc9_gCK_ctIO/38445426450_main.jpg"
+                },
+                {
+                    "purpose": "small",
+                    "url": "https://cdn.solutenetwork.com/dynimg/GiYLZOPX7WJkyanMwtV5b_JbK6MdmmFTQ_hMn5zos5T_olRSBeQCSEAXhzSr2EMdVQ-ybuy_g27q-QZLGp2nanh3k3RTvj1P79bEOe_f9TBtkYt08gnJPY/38445426450_small.jpg"
+                },
+                {
+                    "purpose": "large",
+                    "url": "https://cdn.solutenetwork.com/dynimg/vNOTS-DK8xQMrHMTA3I8MCXpJ53MH5lvA_hMn5zos5T_olRSBeQCSEAXhzSr2EMdVQ-ybuy_g27q-QZLGp2nanh3k3RTvj1P79bEOe_f9TBC9PhE-C2HAY/38445426450_large.jpg"
+                }
+            ],
+            "legalFields": [],
+            "locationCountries": [
+                "DE"
+            ],
+            "mainImage": "https://cdn.solutenetwork.com/dynimg/QEOuWqGIBa3of0p75-xL_Q5svSQWBLOZqhE8nUhH7Pc88MgR1b3VHcWvS03VxtgwAiXL991O8BfY3yZrpV1rwuLJHqC9KXnVc9_gCK_ctIO/38445426450_main.jpg",
+            "marketplace": {
+                "sellerName": "OTTO",
+                "userReviewSummary": null
+            },
+            "price": {
+                "amount": 1578,
+                "currency": "EUR",
+                "shipping": 495,
+                "total": 2073
+            },
+            "priceInfo": {
+                "oldPrice": {
+                    "amount": null,
+                    "currency": null
+                },
+                "price": {
+                    "amount": 15.78,
+                    "currency": "EUR"
+                },
+                "total": {
+                    "amount": 20.73,
+                    "currency": "EUR"
+                },
+                "unitPricing": {
+                    "baseMeasureUnit": null,
+                    "baseMeasureValue": null,
+                    "measureUnit": null,
+                    "measureValue": null,
+                    "text": null
+                },
+                "voucherPrice": {
+                    "amount": null,
+                    "currency": null
+                }
+            },
+            "productId": null,
+            "promoText": null,
+            "relevance": 0,
+            "shipping": {
+                "code": "yellow",
+                "price": {
+                    "amount": 4.95,
+                    "currency": "EUR"
+                },
+                "text": "lieferbar - in 4-5 Werktagen bei dir"
+            },
+            "shop": {
+                "id": 3667,
+                "certificates": [],
+                "company": null,
+                "cpc": {
+                    "amount": 0.175,
+                    "currency": "EUR"
+                },
+                "logoUrl": "https://cdn.solutenetwork.com/dynimg/shops/x/3667.png",
+                "name": "OTTO",
+                "paymentMethods": [
+                    {
+                        "id": 7,
+                        "description": "Vorkasse"
+                    },
+                    {
+                        "id": 8,
+                        "description": "Rechnung"
+                    },
+                    {
+                        "id": 11,
+                        "description": "Lastschrift"
+                    },
+                    {
+                        "id": 12,
+                        "description": "Andere"
+                    },
+                    {
+                        "id": 13,
+                        "description": "PayPal"
+                    }
+                ],
+                "shippingMethods": [
+                    {
+                        "description": "Post/DHL"
+                    },
+                    {
+                        "description": "Hermes"
+                    }
+                ],
+                "url": "https://www.otto.de/",
+                "userReviewSummary": {
+                    "count": 2675,
+                    "rating": 4.5,
+                    "feedbackUrl": "https://www.billiger.de/shops/3667"
+                },
+                "userReviews": []
+            },
+            "type": "offer",
+            "voucher": {
+                "text": null
+            }
+        },
+        {
+            "id": 2265379447,
+            "name": "Best Season LED-Partylichterkette \"Ghost\" 8tlg. weisse Geister,coolwhite LED, m. Trafo, outdoor, 476-12 - Transparent/Weiß",
+            "brand": {
+                "id": 18932,
+                "name": "BEST",
+                "logoUrl": "https://cdn.solutenetwork.com/dynimg/brands_800/18932.png"
+            },
+            "category": {
+                "id": 114600,
+                "parentId": 106365,
+                "description": "Lichterketten",
+                "relevance": 120,
+                "imageUrl": "https://cdn.solutenetwork.com/dynimg/lu_0odRlroEof0p75-xL_QOelloF4X2E1t1_Cbd3R6KHFoqB03GsZJ_FlIg-TPxsbaZL5jqHra9v4Xy3FbbM0vv60JX7DAR9RSfkk0ftbk8/114600.jpg",
+                "isLeaf": true,
+                "documentTypes": [
+                    "product"
+                ],
+                "path": [
+                    {
+                        "id": 100176,
+                        "parentId": null,
+                        "description": "Wohnen & Lifestyle",
+                        "relevance": 55146,
+                        "imageUrl": "https://cdn.solutenetwork.com/dynimg/k47XA5K43tMof0p75-xL_RLoWV2kEkjJVt1_Cbd3R6KHFoqB03GsZJ_FlIg-TPxsTVQv-ku3yYnPUBBjrgKeVjbYLyFiSPGwSzFrwF6dy8e/100176.jpg",
+                        "isLeaf": false,
+                        "documentTypes": [
+                            "product"
+                        ]
+                    },
+                    {
+                        "id": 100177,
+                        "parentId": 100176,
+                        "description": "Wohnaccessoires",
+                        "relevance": 13202,
+                        "imageUrl": "https://cdn.solutenetwork.com/dynimg/7fgAVbgnPhwof0p75-xL_TEowslPkmgdlt1_Cbd3R6KHFoqB03GsZJ_FlIg-TPxsVFaUsQF5ezV9F6evLXhPeWYfGzZ23fWAePgFOSLagYI/100177.jpg",
+                        "isLeaf": false,
+                        "documentTypes": [
+                            "product"
+                        ]
+                    },
+                    {
+                        "id": 3426,
+                        "parentId": 100177,
+                        "description": "Dekoartikel",
+                        "relevance": 11795,
+                        "imageUrl": "https://cdn.solutenetwork.com/dynimg/jFzUkkfKOOsof0p75-xL_S6wt2bCEPykVt1_Cbd3R6KHFoqB03GsZJ_FlIg-TPxsQkFIXn1qP6svkl-RZMNDDnMaSzPVsNsxCUqpE6p_HSV/3426.jpg",
+                        "isLeaf": false,
+                        "documentTypes": [
+                            "product",
+                            "offer"
+                        ]
+                    },
+                    {
+                        "id": 106365,
+                        "parentId": 3426,
+                        "description": "Weihnachtsdeko",
+                        "relevance": 579,
+                        "imageUrl": "https://cdn.solutenetwork.com/dynimg/751b2m5xIEqof0p75-xL_TExvN6eSuNqVt1_Cbd3R6KHFoqB03GsZJ_FlIg-TPxsVUr3BcnlyK23GOubRs4JGtIultNd31_0SEM629SPMuP/106365.jpg",
+                        "isLeaf": false,
+                        "documentTypes": [
+                            "product",
+                            "offer"
+                        ]
+                    },
+                    {
+                        "id": 114600,
+                        "parentId": 106365,
+                        "description": "Lichterketten",
+                        "relevance": 120,
+                        "imageUrl": "https://cdn.solutenetwork.com/dynimg/lu_0odRlroEof0p75-xL_QOelloF4X2E1t1_Cbd3R6KHFoqB03GsZJ_FlIg-TPxsbaZL5jqHra9v4Xy3FbbM0vv60JX7DAR9RSfkk0ftbk8/114600.jpg",
+                        "isLeaf": true,
+                        "documentTypes": [
+                            "product"
+                        ]
+                    }
+                ]
+            },
+            "clickoutUrl": "https://www.billiger.de/common/modules/api/cmodul?mc=kB9JcFHm8Z9l&p=Gm1V-_AD7rjgvrhhe5GGHdGy7ICmje9CBGxKJH5PnOw3z7LWeDZks2KeXlCLyZ1KMB6rhUkTC2tz3Fxz0tcx8Ej5CrC_UJpyAzuKoDJfLyXjNb57nkzuCQ0RCzOdql2iJdseniB5SxFhscD4x6PxK0&mid=2265379447&id=2265379447&ts=20241016",
+            "description": "LED-Partylichterkette \"Ghost\" 8-teilig weisse Geistercool white LED outdoor, transp. Kabel mit Trafo Vierfarb-Karton LED Halloween Party-Lichterkette 8er Geist / Ghost 476-12 für innen und aussen Gesamtlänge: 10m davon Zuleitung 6,5m Abstand der Geister: ca. 50cm Material: Kunststoff Maße Geist: 90x65mm Trafo: input 230V50Hz output 24V 1VA Dioden: 3V 0,03W Leistung Total: 0,24W Schutzklasse: IP44 - Länge ca. 13,50 Meter, davon Anschlusskabel ca. 10 Meter, transparent. - 8 LED Leuchtmittel, kaltweiß, im Abstand von je 50 cm. - 24 Volt, 1 VA, IP 44. - inklusive Transformator. - für den Aussenbereich. LED-Partylichterkette \"Ghost\", 8-teilig weisse Geister cool white LED outdoor transparentes Kabel mit Trafo 24 V 3 VA Anzahl Lampen:8Lampentyp:LEDLichtfarbe:Cool whiteBirne(n) enthalten:JaEingangsspannung:24 VKorrekter Gebrauch:OutdoorInternationaler Schutzklassencode:IP44Länge:13500 mmProduktfarbe:Transparent, Weiß",
+            "externalProductIds": {
+                "asin": [],
+                "gtin": [
+                    "7391482476128"
+                ],
+                "mpn": [
+                    "476-12"
+                ],
+                "pzn": []
+            },
+            "images": [
+                {
+                    "purpose": "main",
+                    "url": "https://cdn.solutenetwork.com/dynimg/SGWe0cTiSp2of0p75-xL_Su2v2elIiXQ6hE8nUhH7Pc88MgR1b3VHcWvS03VxtgwNanUFdDvU-8ob-eNJQkMKBMP3HLER8jHXuuCAnD4Rvx/2265379447_main.jpg"
+                },
+                {
+                    "purpose": "default",
+                    "url": "https://cdn.solutenetwork.com/dynimg/NRf5ya8qjZSof0p75-xL_TzlM42Ez1BtKhE8nUhH7Pc88MgR1b3VHcWvS03VxtgwMnhBs1Q6cEwiiMY-S2gT1_D_4opo2Nb-jIKNw6SlSLw/2265379447_default.jpg"
+                },
+                {
+                    "purpose": "default",
+                    "url": "https://cdn.solutenetwork.com/dynimg/cGWicbqMzraof0p75-xL_TzlM42Ez1BtKhE8nUhH7Pc88MgR1b3VHcWvS03VxtgwAmIErIeSYf9Dj_Xe8WBJNz49QL6TalZlJ-XrNRDSo5o/2265379447_default.jpg"
+                },
+                {
+                    "purpose": "default",
+                    "url": "https://cdn.solutenetwork.com/dynimg/3lD2wRaJ34kof0p75-xL_TzlM42Ez1BtKhE8nUhH7Pc88MgR1b3VHcWvS03VxtgwEPTAYTV8plc_iTFyo-e9pVNUF5HB23Ga6SbLiVRU5So/2265379447_default.jpg"
+                },
+                {
+                    "purpose": "default",
+                    "url": "https://cdn.solutenetwork.com/dynimg/kMv_2tq9sp2of0p75-xL_TzlM42Ez1BtKhE8nUhH7Pc88MgR1b3VHcWvS03VxtgwOlY-hwYewbBVqIWOm-C3i_LFNzryx1hInxCOSD-iuFZ/2265379447_default.jpg"
+                },
+                {
+                    "purpose": "default",
+                    "url": "https://cdn.solutenetwork.com/dynimg/OXji-CdLHxKof0p75-xL_TzlM42Ez1BtKhE8nUhH7Pc88MgR1b3VHcWvS03VxtgwOH0g_V9sEqJQi0xo7KJv0iuou69QaWqFp_3LNsHnbDl/2265379447_default.jpg"
+                },
+                {
+                    "purpose": "default",
+                    "url": "https://cdn.solutenetwork.com/dynimg/gTOMx0quZ-9of0p75-xL_TzlM42Ez1BtKhE8nUhH7Pc88MgR1b3VHcWvS03VxtgwHgi6vfmduA-o7SoVy1W7XDPdluQD9efzMwpPcL1g0DO/2265379447_default.jpg"
+                },
+                {
+                    "purpose": "small",
+                    "url": "https://cdn.solutenetwork.com/dynimg/0oD8xo_8cxCWv5VB-We8MLJbK6MdmmFTQ_hMn5zos5T_olRSBeQCSEAXhzSr2EMdX4eyGfCW810rJSV-jFCZyeu7UoSjqPMXo0Np_gzKuiTmLVVbQH0sjY/2265379447_small.jpg"
+                },
+                {
+                    "purpose": "large",
+                    "url": "https://cdn.solutenetwork.com/dynimg/ngK17z4OloVjKm3SspJ3FiXpJ53MH5lvA_hMn5zos5T_olRSBeQCSEAXhzSr2EMdX4eyGfCW810rJSV-jFCZyeu7UoSjqPMXo0Np_gzKuiT9fiq0Zuyi6s/2265379447_large.jpg"
+                }
+            ],
+            "legalFields": [],
+            "locationCountries": [
+                "DE"
+            ],
+            "mainImage": "https://cdn.solutenetwork.com/dynimg/SGWe0cTiSp2of0p75-xL_Su2v2elIiXQ6hE8nUhH7Pc88MgR1b3VHcWvS03VxtgwNanUFdDvU-8ob-eNJQkMKBMP3HLER8jHXuuCAnD4Rvx/2265379447_main.jpg",
+            "marketplace": {
+                "sellerName": null,
+                "userReviewSummary": null
+            },
+            "price": {
+                "amount": 2090,
+                "currency": "EUR",
+                "shipping": 0,
+                "total": 2090
+            },
+            "priceInfo": {
+                "oldPrice": {
+                    "amount": null,
+                    "currency": null
+                },
+                "price": {
+                    "amount": 20.9,
+                    "currency": "EUR"
+                },
+                "total": {
+                    "amount": 20.9,
+                    "currency": "EUR"
+                },
+                "unitPricing": {
+                    "baseMeasureUnit": null,
+                    "baseMeasureValue": null,
+                    "measureUnit": null,
+                    "measureValue": null,
+                    "text": null
+                },
+                "voucherPrice": {
+                    "amount": null,
+                    "currency": null
+                }
+            },
+            "productId": null,
+            "promoText": "Jetzt bestellen! Ratenkauf und 0% Finanzierung möglich.",
+            "relevance": 0,
+            "shipping": {
+                "code": "green",
+                "price": {
+                    "amount": 0.0,
+                    "currency": "EUR"
+                },
+                "text": "2-3 Werktage"
+            },
+            "shop": {
+                "id": 4787,
+                "certificates": [],
+                "company": null,
+                "cpc": {
+                    "amount": 0.175,
+                    "currency": "EUR"
+                },
+                "logoUrl": "https://cdn.solutenetwork.com/dynimg/shops/x/4787.png",
+                "name": "Kaufland.de",
+                "paymentMethods": [
+                    {
+                        "id": 1,
+                        "description": "Visa"
+                    },
+                    {
+                        "id": 2,
+                        "description": "American Express"
+                    },
+                    {
+                        "id": 3,
+                        "description": "Eurocard/Mastercard"
+                    },
+                    {
+                        "id": 7,
+                        "description": "Vorkasse"
+                    },
+                    {
+                        "id": 8,
+                        "description": "Rechnung"
+                    },
+                    {
+                        "id": 10,
+                        "description": "Finanzkauf"
+                    },
+                    {
+                        "id": 11,
+                        "description": "Lastschrift"
+                    },
+                    {
+                        "id": 12,
+                        "description": "Andere"
+                    },
+                    {
+                        "id": 13,
+                        "description": "PayPal"
+                    },
+                    {
+                        "id": 15,
+                        "description": "Sofortüberweisung"
+                    },
+                    {
+                        "id": 23,
+                        "description": "Barzahlen"
+                    }
+                ],
+                "shippingMethods": [
+                    {
+                        "description": "International"
+                    },
+                    {
+                        "description": "Post/DHL"
+                    },
+                    {
+                        "description": "DPD"
+                    },
+                    {
+                        "description": "Spedition"
+                    },
+                    {
+                        "description": "Andere"
+                    },
+                    {
+                        "description": "Versand nach CH"
+                    },
+                    {
+                        "description": "Versand nach A"
+                    }
+                ],
+                "url": "http://www.kaufland.de/",
+                "userReviewSummary": {
+                    "count": 21830,
+                    "rating": 4.5,
+                    "feedbackUrl": "https://www.billiger.de/shops/4787"
+                },
+                "userReviews": []
+            },
+            "type": "offer",
+            "voucher": {
+                "text": null
+            }
+        },
+        {
+            "id": 376041263986,
+            "name": "Best Sporting Beachballschläger Best Sporting 64003 - Beach Game Set Holz, Best Sporting 64003 - Beachball-Set Holz Strandspiel Outdoor Freizeit blau",
+            "brand": {
+                "id": 18932,
+                "name": "BEST",
+                "logoUrl": "https://cdn.solutenetwork.com/dynimg/brands_800/18932.png"
+            },
+            "category": {
+                "id": 11310,
+                "parentId": 104556,
+                "description": "Outdoor-Spielzeug",
+                "relevance": 87,
+                "imageUrl": "https://cdn.solutenetwork.com/dynimg/LRm9WG0gHw4of0p75-xL_Tatw778nvo51t1_Cbd3R6KHFoqB03GsZJ_FlIg-TPxsYPzCXSdbI_76CUjrMG6cQjTh01Tr1KyXBAfMGWn5Q2x/11310.jpg",
+                "isLeaf": true,
+                "documentTypes": [
+                    "product"
+                ],
+                "path": [
+                    {
+                        "id": 100127,
+                        "parentId": null,
+                        "description": "Baby & Spielwaren",
+                        "relevance": 10115,
+                        "imageUrl": "https://cdn.solutenetwork.com/dynimg/O2lbE9rYwVjof0p75-xL_QDn20GsxitJlt1_Cbd3R6KHFoqB03GsZJ_FlIg-TPxsePFcGw04gxoNHcc25ek0Z5FjyFhYppS87P5ZyepCK4r/100127.jpg",
+                        "isLeaf": false,
+                        "documentTypes": [
+                            "product"
+                        ]
+                    },
+                    {
+                        "id": 100097,
+                        "parentId": 100127,
+                        "description": "Spiel & Spielwaren",
+                        "relevance": 7575,
+                        "imageUrl": "https://cdn.solutenetwork.com/dynimg/FPqg2N-lHRhof0p75-xL_T-msfXbecvKVt1_Cbd3R6KHFoqB03GsZJ_FlIg-TPxsaYsius1-2fkEvrip1vuYCh6Q69xDGdfH01g2RU4Ji71/100097.jpg",
+                        "isLeaf": false,
+                        "documentTypes": [
+                            "product"
+                        ]
+                    },
+                    {
+                        "id": 104556,
+                        "parentId": 100097,
+                        "description": "Draußen spielen",
+                        "relevance": 340,
+                        "imageUrl": "https://cdn.solutenetwork.com/dynimg/Q2uHozgVOiXof0p75-xL_Q6eBcHegpH5Ft1_Cbd3R6KHFoqB03GsZJ_FlIg-TPxsUfs_Lk9E39ekLF1Vrb6gqZ-pAV5QlAHXksalhezjvdk/104556.jpg",
+                        "isLeaf": false,
+                        "documentTypes": [
+                            "product"
+                        ]
+                    },
+                    {
+                        "id": 11310,
+                        "parentId": 104556,
+                        "description": "Outdoor-Spielzeug",
+                        "relevance": 87,
+                        "imageUrl": "https://cdn.solutenetwork.com/dynimg/LRm9WG0gHw4of0p75-xL_Tatw778nvo51t1_Cbd3R6KHFoqB03GsZJ_FlIg-TPxsYPzCXSdbI_76CUjrMG6cQjTh01Tr1KyXBAfMGWn5Q2x/11310.jpg",
+                        "isLeaf": true,
+                        "documentTypes": [
+                            "product"
+                        ]
+                    }
+                ]
+            },
+            "clickoutUrl": "https://www.billiger.de/common/modules/api/cmodul?mc=kB9JcFHm8Z9l&p=cBjXCXnYmCvgFdiMIpCMzO00ZzyEloT5tITBfsYWPc5k_4BwBhYN2q6BZ-N7lfpxZpa5IXEbt5LN7RS-iZd3WC8VfpzwG0elDfmDUteX2OuBYPj2OdQRgd_HuaRwe1kNrjpwrWOfJWx2wULkCN7en_tvPj5SkNn2A&mid=376041263986&id=376041263986&ts=20241016",
+            "description": "Farbe & Material Farbe , blau, Produktdetails Besondere Merkmale , Best Sporting 64003 - Beachball-Set Holz Strandspiel Outdoor Freizeit,",
+            "externalProductIds": {
+                "asin": [],
+                "gtin": [
+                    "4009197640033"
+                ],
+                "mpn": [],
+                "pzn": []
+            },
+            "images": [
+                {
+                    "purpose": "main",
+                    "url": "https://cdn.solutenetwork.com/dynimg/vvpiqkDzqxgof0p75-xL_RWSaBTzIIxVKhE8nUhH7Pc88MgR1b3VHcWvS03VxtgwLqdneC12PNcdhm0gXzDBZJV1U8eJZ3Ruoi75_av_Dfv/376041263986_main.webp"
+                },
+                {
+                    "purpose": "small",
+                    "url": "https://cdn.solutenetwork.com/dynimg/58rlece29A2VjhhS5YEX-PJbK6MdmmFTQ_hMn5zos5T_olRSBeQCSEAXhzSr2EMdYxSEvUwh4nKFJQpcRmsWTC77-9tQDp3TNRrtRSoF54j0Pit3kJ4AcE/376041263986_small.webp"
+                },
+                {
+                    "purpose": "large",
+                    "url": "https://cdn.solutenetwork.com/dynimg/LQKDqB5yUrEiP8jvz0B22CXpJ53MH5lvA_hMn5zos5T_olRSBeQCSEAXhzSr2EMdYxSEvUwh4nKFJQpcRmsWTC77-9tQDp3TNRrtRSoF54jzCg4ZCNxSXk/376041263986_large.webp"
+                }
+            ],
+            "legalFields": [],
+            "locationCountries": [
+                "DE"
+            ],
+            "mainImage": "https://cdn.solutenetwork.com/dynimg/vvpiqkDzqxgof0p75-xL_RWSaBTzIIxVKhE8nUhH7Pc88MgR1b3VHcWvS03VxtgwLqdneC12PNcdhm0gXzDBZJV1U8eJZ3Ruoi75_av_Dfv/376041263986_main.webp",
+            "marketplace": {
+                "sellerName": "okluge",
+                "userReviewSummary": null
+            },
+            "price": {
+                "amount": 1259,
+                "currency": "EUR",
+                "shipping": 0,
+                "total": 1259
+            },
+            "priceInfo": {
+                "oldPrice": {
+                    "amount": null,
+                    "currency": null
+                },
+                "price": {
+                    "amount": 12.59,
+                    "currency": "EUR"
+                },
+                "total": {
+                    "amount": 12.59,
+                    "currency": "EUR"
+                },
+                "unitPricing": {
+                    "baseMeasureUnit": null,
+                    "baseMeasureValue": null,
+                    "measureUnit": null,
+                    "measureValue": null,
+                    "text": null
+                },
+                "voucherPrice": {
+                    "amount": null,
+                    "currency": null
+                }
+            },
+            "productId": null,
+            "promoText": null,
+            "relevance": 0,
+            "shipping": {
+                "code": "green",
+                "price": {
+                    "amount": 0.0,
+                    "currency": "EUR"
+                },
+                "text": "lieferbar - in 2-3 Werktagen bei dir"
+            },
+            "shop": {
+                "id": 3667,
+                "certificates": [],
+                "company": null,
+                "cpc": {
+                    "amount": 0.175,
+                    "currency": "EUR"
+                },
+                "logoUrl": "https://cdn.solutenetwork.com/dynimg/shops/x/3667.png",
+                "name": "OTTO",
+                "paymentMethods": [
+                    {
+                        "id": 7,
+                        "description": "Vorkasse"
+                    },
+                    {
+                        "id": 8,
+                        "description": "Rechnung"
+                    },
+                    {
+                        "id": 11,
+                        "description": "Lastschrift"
+                    },
+                    {
+                        "id": 12,
+                        "description": "Andere"
+                    },
+                    {
+                        "id": 13,
+                        "description": "PayPal"
+                    }
+                ],
+                "shippingMethods": [
+                    {
+                        "description": "Post/DHL"
+                    },
+                    {
+                        "description": "Hermes"
+                    }
+                ],
+                "url": "https://www.otto.de/",
+                "userReviewSummary": {
+                    "count": 2675,
+                    "rating": 4.5,
+                    "feedbackUrl": "https://www.billiger.de/shops/3667"
+                },
+                "userReviews": []
+            },
+            "type": "offer",
+            "voucher": {
+                "text": null
+            }
+        },
+        {
+            "id": 347836692237,
+            "name": "STAR TRADING Spezialleuchtmittel 360-16 LED Glühbirne E14 2600K 60lm 230V warmweiß Leuchtmittel",
+            "brand": {
+                "id": 18932,
+                "name": "BEST",
+                "logoUrl": "https://cdn.solutenetwork.com/dynimg/brands_800/18932.png"
+            },
+            "category": {
+                "id": 11405,
+                "parentId": 3421,
+                "description": "LED-Lampen",
+                "relevance": 389,
+                "imageUrl": "https://cdn.solutenetwork.com/dynimg/m5uiJAYjJp1of0p75-xL_TdXhcORbJPUlt1_Cbd3R6KHFoqB03GsZJ_FlIg-TPxsUesF8WvFAH6azDLQbDL0il0IITQSo2pz_vYutgglNrn/11405.jpg",
+                "isLeaf": true,
+                "documentTypes": [
+                    "product"
+                ],
+                "path": [
+                    {
+                        "id": 100176,
+                        "parentId": null,
+                        "description": "Wohnen & Lifestyle",
+                        "relevance": 55146,
+                        "imageUrl": "https://cdn.solutenetwork.com/dynimg/k47XA5K43tMof0p75-xL_RLoWV2kEkjJVt1_Cbd3R6KHFoqB03GsZJ_FlIg-TPxsTVQv-ku3yYnPUBBjrgKeVjbYLyFiSPGwSzFrwF6dy8e/100176.jpg",
+                        "isLeaf": false,
+                        "documentTypes": [
+                            "product"
+                        ]
+                    },
+                    {
+                        "id": 106432,
+                        "parentId": 100176,
+                        "description": "Beleuchtung",
+                        "relevance": 2438,
+                        "imageUrl": "https://cdn.solutenetwork.com/dynimg/dVMXFsVN2Gxof0p75-xL_Sna8atnY9taVt1_Cbd3R6KHFoqB03GsZJ_FlIg-TPxscNRfD10dZPDpS9NqAyHuAnaDckSGLOgyNpBIuqVgu2y/106432.jpg",
+                        "isLeaf": false,
+                        "documentTypes": [
+                            "product"
+                        ]
+                    },
+                    {
+                        "id": 3421,
+                        "parentId": 106432,
+                        "description": "Leuchtmittel",
+                        "relevance": 505,
+                        "imageUrl": "https://cdn.solutenetwork.com/dynimg/cY4V2mC5FBrof0p75-xL_QqXWdI93uBzFt1_Cbd3R6KHFoqB03GsZJ_FlIg-TPxsa_IaZ5x-_i-NSsTtwd5pH76LkdkKgOltxuC4HZXwqS7/3421.jpg",
+                        "isLeaf": false,
+                        "documentTypes": [
+                            "product"
+                        ]
+                    },
+                    {
+                        "id": 11405,
+                        "parentId": 3421,
+                        "description": "LED-Lampen",
+                        "relevance": 389,
+                        "imageUrl": "https://cdn.solutenetwork.com/dynimg/m5uiJAYjJp1of0p75-xL_TdXhcORbJPUlt1_Cbd3R6KHFoqB03GsZJ_FlIg-TPxsUesF8WvFAH6azDLQbDL0il0IITQSo2pz_vYutgglNrn/11405.jpg",
+                        "isLeaf": true,
+                        "documentTypes": [
+                            "product"
+                        ]
+                    }
+                ]
+            },
+            "clickoutUrl": "https://www.billiger.de/common/modules/api/cmodul?mc=kB9JcFHm8Z9l&p=g66DF-iJ7KIRDMrEUYsO-lVt6WZAp33cSs9D9A_OMrlDftWI6HGQteiX-dvICJsBwmrT0frEmshcN3R1YbVITFwQsaFVMJI6ZGsq3t5Zm4hzWxVhdhVmOoWzdaX-Wfjy62MzmA5ck8QZXXW0CavOzU&mid=347836692237&id=347836692237&ts=20241016",
+            "description": "Technische Daten WEEE-Reg.-Nr. DE , 80753169,",
+            "externalProductIds": {
+                "asin": [
+                    "B004SM2UHM"
+                ],
+                "gtin": [
+                    "7391482360168"
+                ],
+                "mpn": [],
+                "pzn": []
+            },
+            "images": [
+                {
+                    "purpose": "main",
+                    "url": "https://cdn.solutenetwork.com/dynimg/RoBBTNNbBT0of0p75-xL_SkLG-oDj6Rk6hE8nUhH7Pc88MgR1b3VHcWvS03VxtgwKUEzPX-GGMW0r81GNeCiQZaEwdEfSGSn29JsxE26aPv/347836692237_main.webp"
+                },
+                {
+                    "purpose": "small",
+                    "url": "https://cdn.solutenetwork.com/dynimg/xGZ5qTTD-ab5dYhnd-FEO3JbK6MdmmFTQ_hMn5zos5T_olRSBeQCSEAXhzSr2EMdfJCaqgIjrTH1FNwsSbJzrof4H0O5mTGL9bxvwuvQosuUqcMvGyb0-4/347836692237_small.webp"
+                },
+                {
+                    "purpose": "large",
+                    "url": "https://cdn.solutenetwork.com/dynimg/3d_olyPNH3lmumJEfRY6e-XpJ53MH5lvA_hMn5zos5T_olRSBeQCSEAXhzSr2EMdfJCaqgIjrTH1FNwsSbJzrof4H0O5mTGL9bxvwuvQosuMazZM16k8AE/347836692237_large.webp"
+                }
+            ],
+            "legalFields": [
+                {
+                    "id": "798",
+                    "description": "Energieeffizienzklasse",
+                    "numericSortOrder": null,
+                    "values": [
+                        {
+                            "id": "11880",
+                            "description": "A",
+                            "numericSortKey": null
+                        }
+                    ]
+                }
+            ],
+            "locationCountries": [
+                "DE"
+            ],
+            "mainImage": "https://cdn.solutenetwork.com/dynimg/RoBBTNNbBT0of0p75-xL_SkLG-oDj6Rk6hE8nUhH7Pc88MgR1b3VHcWvS03VxtgwKUEzPX-GGMW0r81GNeCiQZaEwdEfSGSn29JsxE26aPv/347836692237_main.webp",
+            "marketplace": {
+                "sellerName": "Wedis-Homeshop",
+                "userReviewSummary": null
+            },
+            "price": {
+                "amount": 1299,
+                "currency": "EUR",
+                "shipping": 0,
+                "total": 1299
+            },
+            "priceInfo": {
+                "oldPrice": {
+                    "amount": null,
+                    "currency": null
+                },
+                "price": {
+                    "amount": 12.99,
+                    "currency": "EUR"
+                },
+                "total": {
+                    "amount": 12.99,
+                    "currency": "EUR"
+                },
+                "unitPricing": {
+                    "baseMeasureUnit": "ct",
+                    "baseMeasureValue": 1,
+                    "measureUnit": "ct",
+                    "measureValue": 1,
+                    "text": "12.99€/1Stk"
+                },
+                "voucherPrice": {
+                    "amount": null,
+                    "currency": null
+                }
+            },
+            "productId": null,
+            "promoText": "(5% Extra auf ausgewählte Artikel) Nach Aktivierung des Rabatts wird dir die Ersparnis auf der Artikeldetailseite und im Warenkorb angezeigt. Pro Artikel ist nur ein Rabatt einlösbar.",
+            "relevance": 0,
+            "shipping": {
+                "code": "green",
+                "price": {
+                    "amount": 0.0,
+                    "currency": "EUR"
+                },
+                "text": "lieferbar - in 3-4 Werktagen bei dir"
+            },
+            "shop": {
+                "id": 3667,
+                "certificates": [],
+                "company": null,
+                "cpc": {
+                    "amount": 0.175,
+                    "currency": "EUR"
+                },
+                "logoUrl": "https://cdn.solutenetwork.com/dynimg/shops/x/3667.png",
+                "name": "OTTO",
+                "paymentMethods": [
+                    {
+                        "id": 7,
+                        "description": "Vorkasse"
+                    },
+                    {
+                        "id": 8,
+                        "description": "Rechnung"
+                    },
+                    {
+                        "id": 11,
+                        "description": "Lastschrift"
+                    },
+                    {
+                        "id": 12,
+                        "description": "Andere"
+                    },
+                    {
+                        "id": 13,
+                        "description": "PayPal"
+                    }
+                ],
+                "shippingMethods": [
+                    {
+                        "description": "Post/DHL"
+                    },
+                    {
+                        "description": "Hermes"
+                    }
+                ],
+                "url": "https://www.otto.de/",
+                "userReviewSummary": {
+                    "count": 2675,
+                    "rating": 4.5,
+                    "feedbackUrl": "https://www.billiger.de/shops/3667"
+                },
+                "userReviews": []
+            },
+            "type": "offer",
+            "voucher": {
+                "text": "5% Extra auf ausgewählte Artikel (Nach Aktivierung des Rabatts wird dir die Ersparnis auf der Artikeldetailseite und im Warenkorb angezeigt. Pro Artikel ist nur ein Rabatt einlösbar.)"
+            }
+        }
+    ],
+    "filters": [
+        {
+            "id": "brand",
+            "description": "Marken",
+            "filterParameter": "brands",
+            "isRangeSelectable": false,
+            "numericSortOrder": null,
+            "selected": false,
+            "values": [
+                {
+                    "id": "18932",
+                    "count": 19,
+                    "description": "BEST",
+                    "numericSortKey": null,
+                    "selected": false,
+                    "valueParameter": "18932"
+                }
+            ]
+        },
+        {
+            "id": "shop",
+            "description": "Anbieter",
+            "filterParameter": "shops",
+            "isRangeSelectable": false,
+            "numericSortOrder": null,
+            "selected": false,
+            "values": [
+                {
+                    "id": "3667",
+                    "count": 10,
+                    "description": "OTTO",
+                    "numericSortKey": null,
+                    "selected": false,
+                    "valueParameter": "3667"
+                },
+                {
+                    "id": "4787",
+                    "count": 6,
+                    "description": "Kaufland.de",
+                    "numericSortKey": null,
+                    "selected": false,
+                    "valueParameter": "4787"
+                },
+                {
+                    "id": "25107",
+                    "count": 2,
+                    "description": "Norma24",
+                    "numericSortKey": null,
+                    "selected": false,
+                    "valueParameter": "25107"
+                },
+                {
+                    "id": "3958",
+                    "count": 2,
+                    "description": "büroshop24",
+                    "numericSortKey": null,
+                    "selected": false,
+                    "valueParameter": "3958"
+                },
+                {
+                    "id": "1435",
+                    "count": 1,
+                    "description": "hagebau.de",
+                    "numericSortKey": null,
+                    "selected": false,
+                    "valueParameter": "1435"
+                },
+                {
+                    "id": "21754",
+                    "count": 1,
+                    "description": "Galaxus.de",
+                    "numericSortKey": null,
+                    "selected": false,
+                    "valueParameter": "21754"
+                },
+                {
+                    "id": "24339",
+                    "count": 1,
+                    "description": "Strandkorb King",
+                    "numericSortKey": null,
+                    "selected": false,
+                    "valueParameter": "24339"
+                },
+                {
+                    "id": "28948",
+                    "count": 1,
+                    "description": "mueller.de",
+                    "numericSortKey": null,
+                    "selected": false,
+                    "valueParameter": "28948"
+                },
+                {
+                    "id": "934",
+                    "count": 1,
+                    "description": "baur.de",
+                    "numericSortKey": null,
+                    "selected": false,
+                    "valueParameter": "934"
+                }
+            ]
+        },
+        {
+            "id": "category",
+            "description": "Kategorien",
+            "filterParameter": "categories",
+            "isRangeSelectable": false,
+            "numericSortOrder": null,
+            "selected": false,
+            "values": [
+                {
+                    "id": "103335",
+                    "count": 1,
+                    "description": "Gartentische",
+                    "numericSortKey": null,
+                    "selected": false,
+                    "valueParameter": "103335"
+                },
+                {
+                    "id": "3689",
+                    "count": 1,
+                    "description": "Campingmöbel",
+                    "numericSortKey": null,
+                    "selected": false,
+                    "valueParameter": "3689"
+                },
+                {
+                    "id": "108772",
+                    "count": 1,
+                    "description": "Sonstige Leuchtmittel",
+                    "numericSortKey": null,
+                    "selected": false,
+                    "valueParameter": "108772"
+                },
+                {
+                    "id": "103349",
+                    "count": 3,
+                    "description": "Auflagen & Polster",
+                    "numericSortKey": null,
+                    "selected": false,
+                    "valueParameter": "103349"
+                },
+                {
+                    "id": "114600",
+                    "count": 8,
+                    "description": "Lichterketten",
+                    "numericSortKey": null,
+                    "selected": false,
+                    "valueParameter": "114600"
+                },
+                {
+                    "id": "11405",
+                    "count": 2,
+                    "description": "LED-Lampen",
+                    "numericSortKey": null,
+                    "selected": false,
+                    "valueParameter": "11405"
+                },
+                {
+                    "id": "105066",
+                    "count": 1,
+                    "description": "Dunstabzugshauben-Zubehör",
+                    "numericSortKey": null,
+                    "selected": false,
+                    "valueParameter": "105066"
+                },
+                {
+                    "id": "11310",
+                    "count": 1,
+                    "description": "Outdoor-Spielzeug",
+                    "numericSortKey": null,
+                    "selected": false,
+                    "valueParameter": "11310"
+                },
+                {
+                    "id": "9637",
+                    "count": 1,
+                    "description": "Fußbälle",
+                    "numericSortKey": null,
+                    "selected": false,
+                    "valueParameter": "9637"
+                }
+            ]
+        },
+        {
+            "id": "price",
+            "description": "Preis",
+            "filterParameter": "price",
+            "isRangeSelectable": true,
+            "numericSortOrder": null,
+            "selected": false,
+            "values": [
+                {
+                    "id": "min_available",
+                    "count": 1,
+                    "description": "minimaler verfügbarer Preis",
+                    "numericSortKey": 1.9,
+                    "selected": false,
+                    "valueParameter": "1.90"
+                },
+                {
+                    "id": "min_selected",
+                    "count": 1,
+                    "description": "minimaler gewählter Preis",
+                    "numericSortKey": 1.9,
+                    "selected": false,
+                    "valueParameter": "1.90"
+                },
+                {
+                    "id": "max_available",
+                    "count": 1,
+                    "description": "maximaler verfügbarer Preis",
+                    "numericSortKey": 149,
+                    "selected": false,
+                    "valueParameter": "149.00"
+                },
+                {
+                    "id": "max_selected",
+                    "count": 1,
+                    "description": "maximaler gewählter Preis",
+                    "numericSortKey": 149,
+                    "selected": false,
+                    "valueParameter": "149.00"
+                }
+            ]
+        }
+    ],
+    "totalCount": 19,
+    "nextOffset": null
+}

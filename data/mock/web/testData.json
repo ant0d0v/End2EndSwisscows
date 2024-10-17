@@ -1,0 +1,315 @@
+{
+    "context": {
+        "query": "news",
+        "effectiveQuery": "news",
+        "offset": 0,
+        "itemsCount": 10,
+        "locale": "en-US",
+        "spellcheck": true
+    },
+    "entities": [],
+    "items": [
+        {
+            "type": "WebPage",
+            "inLanguage": "en",
+            "name": "Brave News | Brave",
+            "description": "Brave News - customized news feeds, from leading sources, delivered right to your browser. All private. Available on desktop, Android, and iOS.",
+            "url": "https://brave.com/brave-news"
+        },
+        {
+            "type": "WebPage",
+            "thumbnail": {
+                "url": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw"
+            },
+            "inLanguage": "en",
+            "lastReviewed": "2024-10-16T14:38:04+00:00",
+            "name": "Google News",
+            "description": "Search the world&#x27;s information, including webpages, images, videos and more. Google has many special features to help you find exactly what you&#x27;re looking for.",
+            "url": "https://news.google.com/"
+        },
+        {
+            "type": "NewsCollection",
+            "hasPart": [
+                {
+                    "author": [],
+                    "publisher": {
+                        "name": "reuters.com",
+                        "url": "https://www.reuters.com/"
+                    },
+                    "thumbnail": {
+                        "url": "https://www.reuters.com/resizer/v2/OU2VWGADJNOKLOD3TQOQN5XLRA.jpg?auth=1b128e49aac25ae363399578cdcc5e58848bf11e826feeef1f3ea18efa8ea126&amp;height=1005&amp;width=1920&amp;quality=80&amp;smart=true"
+                    },
+                    "datePublished": "2024-10-16T16:54:07+00:00",
+                    "name": "Israeli strike hits municipal building in south Lebanon, mayor and five others killed | Reuters",
+                    "description": "The strike came despite U.S. concerns about rising death tolls and fears of all-out war in the region.",
+                    "url": "https://www.reuters.com/world/middle-east/israeli-strike-rocks-beirut-suburbs-after-us-says-it-opposes-scope-air-assault-2024-10-16/"
+                },
+                {
+                    "author": [],
+                    "publisher": {
+                        "name": "cnn.com",
+                        "url": "https://www.cnn.com/"
+                    },
+                    "thumbnail": {
+                        "url": "https://media.cnn.com/api/v1/images/stellar/prod/2024-10-06t003240z-1187677147-rc2neaa1nnp3-rtrmadp-3-usa-election-trump.jpg?c=16x9&q=w_800,c_fill"
+                    },
+                    "datePublished": "2024-10-16T08:00:05+00:00",
+                    "name": "Elon Musk and other billionaires invest staggering sums into electing Trump, plus other takeaways from third-quarter filings | CNN Politics",
+                    "description": "Some of the world’s wealthiest figures – led by conservative donor Miriam Adelson and tech billionaire Elon Musk – have funneled tens of millions of dollars into political groups in recent months to boost Donald Trump’s White House bid, new reports filed Tuesday with federal regulators show.",
+                    "url": "https://www.cnn.com/2024/10/16/politics/fundraising-takeaways-elon-musk-billionaires-trump/index.html"
+                },
+                {
+                    "author": [],
+                    "publisher": {
+                        "name": "bbc.com",
+                        "url": "https://www.bbc.com/"
+                    },
+                    "thumbnail": {
+                        "url": "https://ichef.bbci.co.uk/news/1024/branded_news/1f74/live/2e318870-8b99-11ef-8936-1185f9e7d044.jpg"
+                    },
+                    "datePublished": "2024-10-16T13:15:03+00:00",
+                    "name": "Georgia judge blocks ballot hand counting order",
+                    "description": "The hand count mandate was passed by the pro-Donald Trump majority on the Georgia election board last month.",
+                    "url": "https://www.bbc.com/news/articles/cx2kv219d2go"
+                },
+                {
+                    "author": [],
+                    "publisher": {
+                        "name": "nypost.com",
+                        "url": "https://nypost.com/"
+                    },
+                    "thumbnail": {
+                        "url": "https://imgs.search.brave.com/0A3cqpRCu_eKlX4vy6lwlLPwxjU7v2HYK12ZJjwGA4o/rs:fit:200:200:1:0/g:ce/aHR0cHM6Ly9ueXBv/c3QuY29tL3dwLWNv/bnRlbnQvdXBsb2Fk/cy9zaXRlcy8yLzIw/MjQvMTAvVW50aXRs/ZWQtMS01MC5qcGc_/cXVhbGl0eT03NSYj/MDM4O3N0cmlwPWFs/bCYjMDM4O3c9MTAy/NA"
+                    },
+                    "datePublished": "2024-10-16T07:05:05+00:00",
+                    "name": "Robert Roberson execution for murder of 2-year-old daughter could be first in US over shaken baby syndrome after judge's ruling",
+                    "description": "“Let me just say, Robert is an innocent man,” Wharton said, according to ABC <strong>News</strong>. “But more than that, he is a kind man. He is a gentle man.",
+                    "url": "https://nypost.com/2024/10/16/us-news/robert-roberson-execution-for-murder-of-2-year-old-daughter-could-be-first-in-us-over-shaken-baby-syndrome-after-judges-ruling/"
+                },
+                {
+                    "author": [],
+                    "publisher": {
+                        "name": "npr.org",
+                        "url": "https://www.npr.org/"
+                    },
+                    "thumbnail": {
+                        "url": "https://npr.brightspotcdn.com/dims3/default/strip/false/crop/4000x2250+0+206/resize/1400/quality/100/format/jpeg/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2Fec%2F55%2Faa102aef430e9454a00b3b6766a4%2Fgettyimages-2178603508.jpg"
+                    },
+                    "datePublished": "2024-10-16T01:40:06+00:00",
+                    "name": "Harris is pressed on the concerns of Black voters in Charlamagne tha God town hall",
+                    "description": "Harris’ town hall with the influential radio host came at a crucial moment in the campaign, as polls show her struggling to cement the level of support she may need from Black men to win the White House.",
+                    "url": "https://www.npr.org/2024/10/15/nx-s1-5154119/kamala-harris-charlamagne-tha-god-black-voters"
+                },
+                {
+                    "author": [],
+                    "publisher": {
+                        "name": "npr.org",
+                        "url": "https://www.npr.org/"
+                    },
+                    "thumbnail": {
+                        "url": "https://npr.brightspotcdn.com/dims3/default/strip/false/crop/4480x2520+0+1811/resize/1400/quality/100/format/jpeg/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2F6f%2F70%2Fea91e1064f4885a7b917436ead89%2Fexu-petra-select-7.jpg"
+                    },
+                    "datePublished": "2024-10-16T09:35:05+00:00",
+                    "name": "Archaeologists discover buried tomb at Petra site shown in 'Indiana Jones' : NPR",
+                    "description": "The Treasury in Petra, Jordan, is a famous tourist site and features in an Indiana Jones movie. Now archaeologists say they&#x27;ve found a remarkable 12 complete skeletons in a hidden tomb beneath it.",
+                    "url": "https://www.npr.org/2024/10/15/nx-s1-5153719/petra-jordan-tomb-discovery-treasury"
+                },
+                {
+                    "author": [],
+                    "publisher": {
+                        "name": "reuters.com",
+                        "url": "https://www.reuters.com/"
+                    },
+                    "thumbnail": {
+                        "url": "https://www.reuters.com/resizer/v2/5QMI7TXBC5NZZLYRP2FRYQXRFQ.jpg?auth=9bfe467f624632a032d5a90f31251735db6e93882c4d1aa11231a348ef83f8f3&amp;height=1005&amp;width=1920&amp;quality=80&amp;smart=true"
+                    },
+                    "datePublished": "2024-10-16T15:27:41+00:00",
+                    "name": "Musk gave $75 million to pro-Trump group, becoming a Republican mega donor | Reuters",
+                    "description": "United StatescategoryHarris to court Republican voters in Philadelphia, Fox <strong>News</strong> events9:03 AM UTC",
+                    "url": "https://www.reuters.com/world/us/musk-gave-75-million-pro-trump-group-becoming-republican-mega-donor-2024-10-16/"
+                },
+                {
+                    "author": [],
+                    "publisher": {
+                        "name": "apnews.com",
+                        "url": "https://apnews.com/"
+                    },
+                    "thumbnail": {
+                        "url": "https://dims.apnews.com/dims4/default/aef3439/2147483647/strip/true/crop/3000x1688+0+156/resize/1440x810!/quality/90/?url=https%3A%2F%2Fassets.apnews.com%2F4d%2F5f%2F597a74facecab2a7d9d59347e88d%2F2a79e2e83f454393aec9261d5e53d6d3"
+                    },
+                    "datePublished": "2024-10-16T15:40:03+00:00",
+                    "name": "Russia-Ukraine war: Zelenskyy set to unveil 'victory plan' in Kyiv | AP News",
+                    "description": "Our flagship newsletter breaks down the biggest headlines of the day.",
+                    "url": "https://apnews.com/article/ukraine-victory-plan-unveiled-zelenskyy-parliament-f3525550f6986f590777193a7385c0c5"
+                },
+                {
+                    "author": [],
+                    "publisher": {
+                        "name": "cnn.com",
+                        "url": "https://www.cnn.com/"
+                    },
+                    "thumbnail": {
+                        "url": "https://media.cnn.com/api/v1/images/stellar/prod/gettyimages-2166670921.jpg?c=16x9&q=w_800,c_fill"
+                    },
+                    "datePublished": "2024-10-16T13:10:06+00:00",
+                    "name": "Fox anchor tasked with interviewing Harris has a history of appeasing network’s pro-Trump audience | CNN Business",
+                    "description": "Fox <strong>News</strong> anchor Bret Baier is all too keenly aware that Fox’s viewers want him to affirm what they already feel.",
+                    "url": "https://www.cnn.com/2024/10/16/media/fox-bret-baier-kamala-harris-interview/index.html"
+                },
+                {
+                    "author": [],
+                    "publisher": {
+                        "name": "apnews.com",
+                        "url": "https://apnews.com/"
+                    },
+                    "thumbnail": {
+                        "url": "https://dims.apnews.com/dims4/default/a4c3e3c/2147483647/strip/true/crop/5472x3078+0+285/resize/1440x810!/quality/90/?url=https%3A%2F%2Fassets.apnews.com%2Fd7%2F6d%2Fabdef1cf943a0b61998a429e3a5b%2Ffd1111c0fbe24864b237a28fb8149a26"
+                    },
+                    "datePublished": "2024-10-16T16:05:05+00:00",
+                    "name": "Lebanon official says Nabatiyeh province's mayor killed in Israeli strike | AP News",
+                    "description": "Our flagship newsletter breaks down the biggest headlines of the day.",
+                    "url": "https://apnews.com/article/israel-palestinians-hamas-war-lebanon-hezbollah-news-10-16-2024-f18b2e0f5e05eb11a3c2ee29c16ed867"
+                }
+            ]
+        },
+        {
+            "type": "WebPage",
+            "thumbnail": {
+                "url": "https://www.reuters.com/pf/resources/images/reuters/reuters-default.webp?d=221"
+            },
+            "inLanguage": "en",
+            "name": "Reuters Reuters | Breaking International News & Views",
+            "description": "Find latest <strong>news</strong> from every corner of the globe at Reuters.com, your online source for breaking international <strong>news</strong> coverage.",
+            "url": "https://www.reuters.com/"
+        },
+        {
+            "type": "VideoCollection",
+            "hasPart": [
+                {
+                    "publisher": {
+                        "name": "CNN",
+                        "url": "https://www.cnn.com/"
+                    },
+                    "duration": "00:02:11",
+                    "interactionStatistic": {},
+                    "datePublished": "2024-10-16T04:10:49+00:00",
+                    "thumbnail": {
+                        "url": "https://media.cnn.com/api/v1/images/stellar/prod/beto.jpg?c=16x9&q=w_800,c_fill"
+                    },
+                    "name": "Video: Beto O’Rourke reacts to Ted Cruz’s Fox News appearance ...",
+                    "description": "Former Democratic congressman Beto O’Rourke reacts to Sen. Ted Cruz (R-TX) repeatedly requesting campaign donations on Fox News amidst a tight race with Democratic challenger Colin Allred.",
+                    "url": "https://www.cnn.com/2024/10/16/politics/video/ted-cruz-beto-orourke-texas-lcl-digvid"
+                },
+                {
+                    "publisher": {
+                        "name": "www.youtube.com",
+                        "url": "https://www.youtube.com/"
+                    },
+                    "interactionStatistic": {},
+                    "thumbnail": {
+                        "url": "https://i.ytimg.com/vi/afijjj5SXx0/hqdefault.jpg"
+                    },
+                    "name": "LIVE: NBC News NOW - Oct. 16",
+                    "description": "Enjoy the videos and music you love, upload original content, and share it all with friends, family, and the world on YouTube.",
+                    "url": "https://www.youtube.com/watch?v=afijjj5SXx0"
+                },
+                {
+                    "publisher": {
+                        "name": "www.youtube.com",
+                        "url": "https://www.youtube.com/"
+                    },
+                    "interactionStatistic": {},
+                    "thumbnail": {
+                        "url": "https://i.ytimg.com/vi/xdMsTtYEeas/hqdefault.jpg"
+                    },
+                    "name": "Nightly News Full Broadcast - Oct. 15",
+                    "description": "Enjoy the videos and music you love, upload original content, and share it all with friends, family, and the world on YouTube.",
+                    "url": "https://www.youtube.com/watch?v=xdMsTtYEeas"
+                },
+                {
+                    "publisher": {
+                        "name": "www.youtube.com",
+                        "url": "https://www.youtube.com/"
+                    },
+                    "interactionStatistic": {},
+                    "thumbnail": {
+                        "url": "https://i.ytimg.com/vi/E-e7J3hE6UE/hqdefault.jpg"
+                    },
+                    "name": "This Morning’s Top Headlines – Oct. 16 | Morning News NOW",
+                    "description": "Enjoy the videos and music you love, upload original content, and share it all with friends, family, and the world on YouTube.",
+                    "url": "https://www.youtube.com/watch?v=E-e7J3hE6UE"
+                },
+                {
+                    "publisher": {
+                        "name": "www.youtube.com",
+                        "url": "https://www.youtube.com/"
+                    },
+                    "interactionStatistic": {},
+                    "datePublished": "2024-10-16T02:30:11+00:00",
+                    "thumbnail": {
+                        "url": "https://i.ytimg.com/vi/KC-ffD2-4E4/maxresdefault.jpg"
+                    },
+                    "name": "ABC World News Tonight with David Muir Full Broadcast - Oct. 15, ...",
+                    "description": "With Election Day just three weeks away, Rachel Scott has details on early in-person voting kicking off in battleground Georgia with a record number of voter...",
+                    "url": "https://www.youtube.com/watch?v=KC-ffD2-4E4"
+                },
+                {
+                    "publisher": {
+                        "name": "www.youtube.com",
+                        "url": "https://www.youtube.com/"
+                    },
+                    "interactionStatistic": {},
+                    "thumbnail": {
+                        "url": "https://i.ytimg.com/vi/Vr34SgDzDlg/hqdefault.jpg"
+                    },
+                    "name": "Trump, Harris to make appearances on FOX News",
+                    "description": "Enjoy the videos and music you love, upload original content, and share it all with friends, family, and the world on YouTube.",
+                    "url": "https://www.youtube.com/watch?v=Vr34SgDzDlg"
+                }
+            ]
+        },
+        {
+            "type": "WebPage",
+            "inLanguage": "en",
+            "name": "Breaking News, Latest News and Videos | CNN",
+            "description": "View the latest <strong>news</strong> and breaking <strong>news</strong> today for U.S., world, weather, entertainment, politics and health at CNN.com.",
+            "url": "https://www.cnn.com/"
+        },
+        {
+            "type": "VideoObject",
+            "author": [],
+            "publisher": {
+                "name": "www.foxnews.com",
+                "url": "https://www.foxnews.com/"
+            },
+            "interactionStatistic": {},
+            "thumbnail": {
+                "url": "https://cf-images.us-east-1.prod.boltdns.net/v1/static/694940094001/912ba634-eb8d-42ec-a7f7-29824e4bcfed/02209fbd-24b7-4db5-b67b-accc5b9bcc64/1280x720/match/image.jpg"
+            },
+            "name": "Fox News - Breaking News Updates | Latest News Headlines | Photos & News Videos",
+            "description": "Breaking <strong>News</strong>, Latest <strong>News</strong> and Current <strong>News</strong> from FOXNews.com. Breaking <strong>news</strong> and video. Latest Current <strong>News</strong>: U.S., World, Entertainment, Health, Business, Technology, Politics, Sports",
+            "url": "https://www.foxnews.com/"
+        },
+        {
+            "type": "WebPage",
+            "thumbnail": {
+                "url": "https://nypost.com/wp-content/themes/gtf/static/images/default/nypost.png"
+            },
+            "inLanguage": "en",
+            "name": "New York Post – Breaking News, Top Headlines, Photos & Videos",
+            "description": "Your source for breaking <strong>news</strong>, <strong>news</strong> about New York, sports, business, entertainment, opinion, real estate, culture, fashion, and more.",
+            "url": "https://nypost.com/"
+        },
+        {
+            "type": "WebPage",
+            "thumbnail": {
+                "url": "https://s.yimg.com/cv/apiv2/social/images/yahoo_default_logo.png"
+            },
+            "inLanguage": "en",
+            "name": "Yahoo News: Latest and Breaking News, Headlines, Live Updates, and More",
+            "description": "The latest <strong>news</strong> and headlines from Yahoo <strong>News</strong>. Get breaking <strong>news</strong> stories and in-depth coverage with videos and photos.",
+            "url": "https://news.yahoo.com/"
+        }
+    ],
+    "nextHref": "https://api.dev.swisscows.com/v4/web/search?query=news&itemsCount=10&offset=10&locale=en-US&freshness=All&spellcheck=true"
+}

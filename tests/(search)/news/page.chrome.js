@@ -85,6 +85,22 @@ test("Check error region is unsupported", async ({ app }, testInfo ) => {
   });
 });
 
+test("Check design news page", async ({ app },testInfo) => {
+  //Actions
+  await app.home.open();
+  await app.home.header.clickHamburgerMenuButton();
+  await app.home.header.hamburgerMenu.selectRegion("Germany");
+  await app.route.mockResponseBody("/news", 'data/mock/news/testData.json');
+  await app.home.header.searchForm.inputSearchCriteria("ronaldo");
+  await app.home.header.searchForm.clickEnterSearchField();
+  await app.newsPage.header.navigation.clickNewsTab();
+  await app.newsPage.item.expectNewsItemsToBeVisible();
+
+  //Assert
+  await app.newsPage.takeSnapshot(testInfo);
+});
+
+
 test("Check search results in news page ", async ({ app }) => {
   //Actions
   await app.home.open();

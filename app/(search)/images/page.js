@@ -9,7 +9,7 @@ import Error from "../Error.js";
 export default class ImagePage extends BasePage {
   constructor(page) {
     super(page);
-  
+
     this.relatedQueries = new RelatedQueries(page);
     this.details = new Details(page);
     this.item = new Item(page);
@@ -18,7 +18,10 @@ export default class ImagePage extends BasePage {
     this.error = new Error(page);
 
     //Locators
-
+    this.root = this.page.locator(`.images-results`);
+    this.images = this.page.locator(`.image-object img`);
   }
-  //Actions
+  takeSnapshot = async (testInfo) => {
+    await this.expectPageToHaveScreenshotWithoutMask(testInfo, this.images);
+  };
 }

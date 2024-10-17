@@ -62,6 +62,21 @@ test("Check 429 Too many requests", async ({ app }, testInfo) => {
     name: "music",
   });
 });
+
+test("Check design music page", async ({ app },testInfo) => {
+  //Actions
+  await app.home.open();
+  await app.route.mockResponseMusicBody("/audio/search/playlists", 'data/mock/music/testDataPlaylist.json');
+  await app.route.mockResponseMusicBody("/audio/search/tracks", 'data/mock/music/testDataTrack.json');
+  await app.home.header.searchForm.inputSearchCriteria("ronaldo");
+  await app.home.header.searchForm.clickEnterSearchField();
+  await app.musicPage.header.navigation.clickMusicTab();
+  await app.musicPage.track.expectMusicTracksToBeVisible();
+
+  //Assert
+  await app.musicPage.takeSnapshot(testInfo);
+});
+
 test.describe("favorite function", () => {
   test.use({ mode: "default" });
   test("Check add track in the favorite", async ({ app }) => {

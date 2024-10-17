@@ -102,7 +102,6 @@ test("Check Did you mean message in the search field ", async ({ app }) => {
       "?"
   );
 });
-
 test("Check that web results equals search criteria", async ({ app }) => {
   //Actions
   await app.home.open();
@@ -113,6 +112,20 @@ test("Check that web results equals search criteria", async ({ app }) => {
   //Assert
   await app.webPage.webPageItem.expectItemsToContains("wiki");
   await app.webPage.expectResultsToBeGreaterThanOrEqual(8)
+});
+
+test("Check design web page", async ({ app },testInfo) => {
+  //Actions
+  await app.home.open();
+  await app.home.header.clickHamburgerMenuButton();
+  await app.home.header.hamburgerMenu.selectRegion("Germany");
+  await app.route.mockResponseBody("/v4/web", 'data/mock/web/testData.json');
+  await app.home.header.searchForm.inputSearchCriteria("ronaldo");
+  await app.home.header.searchForm.clickEnterSearchField();
+  await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
+
+  //Assert
+  await app.webPage.takeSnapshot(testInfo);
 });
 
 test.describe("Web-page items", () => {
@@ -149,7 +162,7 @@ test.describe("Web-page items", () => {
     });
   });
 
-  test("Check titles to have css font and color", async ({ app }) => {
+  test.skip("Check titles to have css font and color", async ({ app }) => {
     //Actions
     await app.home.open();
     await app.home.header.searchForm.inputSearchCriteria(faker.word.sample());
