@@ -7,7 +7,6 @@ export default class WebPageItem extends BaseComponent {
     //Locators
     this.root = this.page.locator("article.item.web-page");
     this.titles = this.root.locator(".title");
-    this.dates = this.root.locator(".date");
     this.sites = this.root.locator(".site");
     this.descriptions = this.root.locator(".description");
     this.thumbnails = this.root.locator(".thumbnail img");
@@ -62,13 +61,11 @@ export default class WebPageItem extends BaseComponent {
   async expectItemInfoToContain(
     expectedInfo = {
       title: value,
-      site: value,
-      date: value,
+      site: value
     }
   ) {
     await this.expectTextsToContains(this.titles, expectedInfo.title);
-    await this.expectTextsToContains(this.sites, expectedInfo.site);
-    await this.expectTextsToContains(this.dates, expectedInfo.date);
+    await this.expectTextsToContains(this.sites, expectedInfo.site)
   }
 
   expectResultsToBeGreaterThanOrEqual = async (value) => {

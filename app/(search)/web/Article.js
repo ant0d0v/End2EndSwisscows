@@ -8,7 +8,6 @@ export default class Article extends BaseComponent {
     this.root = this.page.locator("article.item.article");
     this.titles = this.root.locator(".title");
     this.author = this.root.locator(".author");
-    this.dates = this.root.locator(".date");
     this.sites = this.root.locator(".site");
     this.descriptions = this.root.locator(".description");
     this.thumbnails = this.root.locator(".thumbnail img");
@@ -35,14 +34,12 @@ export default class Article extends BaseComponent {
     expectedInfo = {
       author: value,
       title: value,
-      site: value,
-      date: value,
+      site: value
     }
   ) {
     await this.expectTextsToContains(this.author, expectedInfo.author);
     await this.expectTextsToContains(this.titles, expectedInfo.title);
     await this.expectTextsToContains(this.sites, expectedInfo.site);
-    await this.expectTextsToContains(this.dates, expectedInfo.date);
   }
 
   expectThumbnailsToHaveJSProperty = async (

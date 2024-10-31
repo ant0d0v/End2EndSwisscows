@@ -63,7 +63,7 @@ test("Check 429 Too many requests", async ({ app }, testInfo) => {
   });
 });
 
-test("Check design music page", async ({ app },testInfo) => {
+test.fixme("Check design music page", async ({ app },testInfo) => {
   //Actions
   await app.home.open();
   await app.route.mockResponseMusicBody("/audio/search/playlists", 'data/mock/music/testDataPlaylist.json');

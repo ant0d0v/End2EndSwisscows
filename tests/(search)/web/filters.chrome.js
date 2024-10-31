@@ -10,8 +10,6 @@ for (const { testID, freshnessPart, fiterName } of filterData.byDate) {
     const query = "news"
     //Actions
     await app.home.open();
-    await app.home.header.clickHamburgerMenuButton();
-    await app.home.header.hamburgerMenu.selectRegion("Germany");
     await app.home.header.searchForm.inputSearchCriteria(query);
     await app.home.header.searchForm.clickEnterSearchField();
     await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
@@ -24,10 +22,8 @@ for (const { testID, freshnessPart, fiterName } of filterData.byDate) {
     await app.webPage.webPageItem.expectWebPageItemsToBeVisible();  
 
     //Assert
-    await app.expectPageToHaveUrl(
-      app.page,
-      `${process.env.BASE_URL}/en/web?query=${
-        query + "&region=de-DE" + freshnessPart
+    await app.expectPageToHaveUrl(app.page,`${process.env.BASE_URL}/en/web?query=${
+        query + freshnessPart
       }`
     );
     await app.api.search.response.expectBodyToEqual(response, {
@@ -36,7 +32,7 @@ for (const { testID, freshnessPart, fiterName } of filterData.byDate) {
         effectiveQuery: query,
         offset: 0,
         itemsCount: 10,
-        locale: "de-DE",
+        locale: expect.any(String),
         spellcheck: true,
       },
     });

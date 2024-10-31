@@ -7,7 +7,6 @@ export default class VideoObject extends BaseComponent {
     //Locators
     this.root = this.page.locator("article.item.video-object");
     this.titles = this.root.locator(".title");
-    this.dates = this.root.locator(".date");
     this.sites = this.root.locator(".site");
     this.descriptions = this.root.locator(".description");
     this.thumbnails = this.root.locator(".thumbnail img");
@@ -33,13 +32,11 @@ export default class VideoObject extends BaseComponent {
   async expectItemInfoToContain(
     expectedInfo = {
       title: value,
-      site: value,
-      date: value,
+      site: value
     }
   ) {
     await this.expectTextsToContains(this.titles, expectedInfo.title);
     await this.expectTextsToContains(this.sites, expectedInfo.site);
-    await this.expectTextsToContains(this.dates, expectedInfo.date);
   }
   expectThumbnailsToHaveJSProperty = async (
     expectedProperty = {

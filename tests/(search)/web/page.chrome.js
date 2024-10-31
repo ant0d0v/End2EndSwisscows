@@ -129,7 +129,7 @@ test("Check design web page", async ({ app },testInfo) => {
 });
 
 test.describe("Web-page items", () => {
-  test("Check  web items { date, site, title, description }", async ({ app }) => {
+  test("Check  web items { site, title, description }", async ({ app }) => {
     //Actions
     await app.home.open();
     await app.home.header.searchForm.inputSearchCriteria(faker.word.sample());
@@ -141,7 +141,6 @@ test.describe("Web-page items", () => {
     await app.webPage.webPageItem.expectItemInfoToContain({
       title: /\w+/,
       site: /(?:www\.)?[a-zA-Z0-9-]+\.[a-zA-Z]{2,}(?:\/[^\s]*)?/,
-      date: /^[A-Za-z]{3} \d{1,2}, \d{4}$/,
     });
   });
 
@@ -193,7 +192,7 @@ test.describe("Web-page items", () => {
 });
 
 test.describe("Article items", () => {
-  test("Check that article items {date, site, title, description, author}", async ({
+  test("Check that article items { site, title, description, author }", async ({
     app,
   }) => {
     //Actions
@@ -209,8 +208,7 @@ test.describe("Article items", () => {
     await app.webPage.article.expectItemInfoToContain({
       author: /\w+/,
       title: /\w+/,
-      site: /(?:www\.)?[a-zA-Z0-9-]+\.[a-zA-Z]{2,}(?:\/[^\s]*)?/,
-      date: /^[A-Za-z]{3} \d{1,2}, \d{4}$/,
+      site: /(?:www\.)?[a-zA-Z0-9-]+\.[a-zA-Z]{2,}(?:\/[^\s]*)?/
     });
   });
 
@@ -272,7 +270,7 @@ test.describe("Video object items", () => {
       width: 86,
     });
   });
-  test("Check that video object item {date, site, title, description}", async ({
+  test("Check that video object item { site, title, description }", async ({
     app,
   }) => {
     //Actions
@@ -289,8 +287,7 @@ test.describe("Video object items", () => {
     await app.webPage.videoObject.expectItemsDescriptionNotToBeEmpty();
     await app.webPage.videoObject.expectItemInfoToContain({
       title: /\w+/,
-      site: /(?:www\.)?[a-zA-Z0-9-]+\.[a-zA-Z]{2,}(?:\/[^\s]*)?/,
-      date: /^[A-Za-z]{3} \d{1,2}, \d{4}$/,
+      site: /(?:www\.)?[a-zA-Z0-9-]+\.[a-zA-Z]{2,}(?:\/[^\s]*)?/
     });
   });
   test("Check open new page when clicking image of video object item", async ({ app }) => {

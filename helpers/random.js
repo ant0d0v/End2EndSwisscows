@@ -40,9 +40,11 @@ export function randomProduct() {
 
 export function randomAdsQuery() {
   const word = faker.helpers.arrayElement([
-    "Parfüm für Frauen",
+    "parfüm für frauen",
     "parfum fuerteventura",
-    "parfuemerie douglas"
+    "parfüm victoria secret sephora",
+    "parfum victoria beckham",
+    "parfum lacoste"
   ]);
   return word;
 }
@@ -59,7 +61,9 @@ export function randomVideoQuery() {
 export function randomQueryWithVideoItemSearch() {
   const word = faker.helpers.arrayElement([
     "iphone youtube",
-    "video + ronaldo"
+    "video + ronaldo",
+    "arctic monkeys",
+    "Arctic Monkeys - Do I Wanna Know? (Official Video) - YouTube"
   ]);
   return word;
 }
