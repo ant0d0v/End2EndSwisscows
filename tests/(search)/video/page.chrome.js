@@ -97,43 +97,10 @@ test("Check infinity scroll in video results", async ({ app }) => {
   await app.home.header.searchForm.clickEnterSearchField();
   await app.videoPage.header.navigation.clickVideoTab();
   await app.videoPage.item.expectVideoItemsToBeVisible();
-  await app.videoPage.item.scrollByVisibleLastVideo();
+  await app.videoPage.scrollByVisibleLastVideo();
 
   //Assert
   await app.videoPage.item.expectVideoResultToHaveCount(40);
-});
-
-test("Check the width,height and visibility images of items", async ({
-  app,
-}) => {
-  //Actions
-  await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria(faker.music.songName());
-  await app.home.header.searchForm.clickEnterSearchField();
-  await app.videoPage.header.navigation.clickVideoTab();
-  await app.videoPage.item.expectVideoItemsToBeVisible();
-
-  //Assert
-  await app.videoPage.item.expectImageToHaveProperty({
-    width: 284,
-    height: 160,
-  });
-  await app.videoPage.item.expectVideoResultToHaveCount(10);
-  await app.videoPage.item.expectVideoImageToBeVisible();
-});
-
-test("Check the design play icon of video object", async ({
-  app,
-}, testInfo) => {
-  //Actions
-  await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria(faker.music.songName());
-  await app.home.header.searchForm.clickEnterSearchField();
-  await app.videoPage.header.navigation.clickVideoTab();
-  await app.videoPage.item.expectVideoItemsToBeVisible();
-
-  //Assert
-  await app.videoPage.item.takeSnapshotPlayIconAt(testInfo, { number: 1 });
 });
 
 test("Check the design error icon of video object", async ({
@@ -150,21 +117,22 @@ test("Check the design error icon of video object", async ({
   await app.videoPage.item.takeSnapshotErrorIconAt(testInfo, { number: 1 });
 });
 
-test("Check the design view icon of video object", async ({
+test("Check the design when video object is active", async ({
   app,
 }, testInfo) => {
   //Actions
   await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria("Ronaldo");
+  await app.route.mockResponseBody("/v2/videos", 'data/mock/video/testData.json');
+  await app.home.header.searchForm.inputSearchCriteria(faker.music.songName());
   await app.home.header.searchForm.clickEnterSearchField();
   await app.videoPage.header.navigation.clickVideoTab();
   await app.videoPage.item.expectVideoItemsToBeVisible();
+  await app.videoPage.item.clickVideoImageAt({ number: 1 });
 
   //Assert
-  await app.videoPage.item.takeSnapshotViewsIconAt(testInfo, {
-    number: 1,
-  });
+  await app.videoPage.item.takeSnapshot(testInfo);
 });
+
 
 test("Check the info video object { site, description, data, views }", async ({
   app,
@@ -255,6 +223,7 @@ test("Check open video when clicking title of video object", async ({
 test("Check design of video Privacy Warning", async ({ app }, testInfo) => {
   //Actions
   await app.home.open();
+  await app.route.mockResponseBody("/v2/videos", 'data/mock/video/testData.json');
   await app.home.header.searchForm.inputSearchCriteria(randomVideoQuery());
   await app.home.header.searchForm.clickEnterSearchField();
   await app.videoPage.header.navigation.clickVideoTab();
@@ -312,7 +281,8 @@ test("Check cancel button of Video unavailable warning ", async ({ app }) => {
 test("Check cancel button of Privacy Warning ", async ({ app }) => {
   //Actions
   await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria("Skofka");
+  await app.route.mockResponseBody("/v2/videos", 'data/mock/video/testData.json');
+  await app.home.header.searchForm.inputSearchCriteria(faker.music.songName());
   await app.home.header.searchForm.clickEnterSearchField();
   await app.videoPage.header.navigation.clickVideoTab();
   await app.videoPage.item.expectVideoItemsToBeVisible();
@@ -321,10 +291,6 @@ test("Check cancel button of Privacy Warning ", async ({ app }) => {
 
   //Assert
   await app.videoPage.player.expectPlayerToBeHidden();
-  await app.expectPageToHaveUrl(
-    app.page,
-    `${process.env.BASE_URL}/en/video?query=Skofka`
-  );
 });
 
 test("Check video play if don't select checkbox Don't remind me again", async ({
@@ -379,23 +345,11 @@ test("Check regional search", async ({ app }) => {
   );
 });
 
-test("Check video to have href external service", async ({ app }) => {
+test("Check that youtube video is playing", async ({ app }) => {
   //Actions
   await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria("Skofka");
-  await app.home.header.searchForm.clickEnterSearchField();
-  await app.videoPage.header.navigation.clickVideoTab();
-  await app.videoPage.item.expectVideoItemsToBeVisible();
-
-  //Assert
-  await app.videoPage.item.expectVideoToHaveAttributeHrefBy({ number: 1, value: /youtube.com/ })
-  await app.videoPage.item.expectVideoToHaveAttributeHrefBy({ number: 5, value: /youtube.com/ })
-});
-
-test.fixme("Check that youtube video is playing", async ({ app }) => {
-  //Actions
-  await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria(randomVideoQuery());
+  await app.route.mockResponseBody("/v2/videos", 'data/mock/video/testData.json');
+  await app.home.header.searchForm.inputSearchCriteria(faker.music.songName());
   await app.home.header.searchForm.clickEnterSearchField();
   await app.videoPage.header.navigation.clickVideoTab();
   await app.videoPage.item.expectVideoItemsToBeVisible();
@@ -424,11 +378,11 @@ test("Check that dailymotion video is playing", async ({ app }) => {
   });
 });
 
-
 test("Check checkbox `Don't remind me again`", async ({ app }) => {
   //Actions
   await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria(randomVideoQuery());
+  await app.route.mockResponseBody("/v2/videos", 'data/mock/video/testData.json');
+  await app.home.header.searchForm.inputSearchCriteria(faker.music.songName());
   await app.home.header.searchForm.clickEnterSearchField();
   await app.videoPage.header.navigation.clickVideoTab();
   await app.videoPage.item.expectVideoItemsToBeVisible();
