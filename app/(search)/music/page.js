@@ -19,7 +19,7 @@ export default class MusicPage extends BasePage {
 
     //Locators
     this.root = this.page.locator(`.music-results`);
-    this.images = this.page.locator(`.audio-object .thumbnail.loaded img`);
+    this.images = this.page.locator(`.thumbnail.loaded img`);
     this.myFavoritePlaylist = this.page.getByRole("link", {
       name: /My favorite tracks/,
     });

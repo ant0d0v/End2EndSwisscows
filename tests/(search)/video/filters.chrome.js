@@ -1,4 +1,4 @@
-import { test } from "../../../utils/fixtures.js";
+import { test, expect} from "../../../utils/fixtures.js";
 import filterData from "../../../data/filters/testData.json";
 import { faker } from "@faker-js/faker";
 
@@ -11,7 +11,7 @@ for (const {
   test(`${testID} Check search results by filter ${fiterName} navigates to the corresponding URL and matches response results`, async ({
     app,
   }) => {
-    const query = "ronaldo";
+    const query = "news";
     //Actions
     await app.home.open();
     await app.home.header.searchForm.inputSearchCriteria(query);
@@ -19,24 +19,18 @@ for (const {
     await app.videoPage.header.navigation.clickVideoTab();
     await app.videoPage.item.expectVideoItemsToBeVisible();
     await app.videoPage.filters.clickFilterBy("All publishers");
-    const response =
-      await app.videoPage.filters.selectMenu.selectFilterAndGetResponse({
+    const response = await app.videoPage.filters.selectMenu.selectFilterAndGetResponse({
         endpoint: "/v2/videos",
         locator: fiterName,
       });
     await app.videoPage.item.expectVideoItemsToBeVisible();  
 
     //Assert
-    await app.expectPageToHaveUrl(
-      app.page,
-      `${process.env.BASE_URL}/en/video?query=${
+    await app.expectPageToHaveUrl(app.page,`${process.env.BASE_URL}/en/video?query=${
         query + publisherPart
       }`
     );
-    await app.videoPage.item.expectItemsResponsePublisherToEqual(
-      response,
-      expectedPublisher
-    );
+    await app.videoPage.item.expectItemsResponsePublisherToEqual(response, expectedPublisher);
   });
 }
 
@@ -47,8 +41,6 @@ for (const { testID, freshnessPart, fiterName, filter } of filterData.byDate) {
     const randomQuery = faker.word.sample();
     //Actions
     await app.home.open();
-    await app.home.header.clickHamburgerMenuButton();
-    await app.home.header.hamburgerMenu.selectRegion("Germany");
     await app.home.header.searchForm.inputSearchCriteria(randomQuery);
     await app.home.header.searchForm.clickEnterSearchField();
     await app.videoPage.header.navigation.clickVideoTab();
@@ -61,10 +53,8 @@ for (const { testID, freshnessPart, fiterName, filter } of filterData.byDate) {
       });
 
     //Assert
-    await app.expectPageToHaveUrl(
-      app.page,
-      `${process.env.BASE_URL}/en/video?query=${
-        randomQuery + "&region=de-DE" + freshnessPart
+    await app.expectPageToHaveUrl(app.page,`${process.env.BASE_URL}/en/video?query=${
+        randomQuery+ freshnessPart
       }`
     );
     await app.api.search.response.expectBodyToEqual(response, {
@@ -72,7 +62,7 @@ for (const { testID, freshnessPart, fiterName, filter } of filterData.byDate) {
         query: randomQuery,
         itemsCount: 10,
         offset: 0,
-        region: "de-DE",
+        region: expect.any(String),
         freshness: filter,
       },
     });

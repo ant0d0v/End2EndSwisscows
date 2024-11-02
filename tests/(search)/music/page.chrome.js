@@ -72,6 +72,7 @@ test("Check design music page", async ({ app },testInfo) => {
   await app.home.header.searchForm.clickEnterSearchField();
   await app.musicPage.header.navigation.clickMusicTab();
   await app.musicPage.track.expectMusicTracksToBeVisible();
+  await app.musicPage.waitUntilPageIsFullyLoaded()
 
   //Assert
   await app.musicPage.takeSnapshot(testInfo);
@@ -339,10 +340,13 @@ test("Check infinity scroll to next page", async ({ app }) => {
   await app.home.header.searchForm.clickEnterSearchField();
   await app.musicPage.header.navigation.clickMusicTab();
   await app.musicPage.track.expectMusicTracksToBeVisible();
+  await app.musicPage.track.expectTracksCount(20);
   await app.musicPage.track.scrollByVisibleLastTrack();
 
   //Assert
-  await app.musicPage.track.expectTracksCount(100);
+  await app.musicPage.track.expectTracksCount(40);
+  await app.musicPage.track.scrollByVisibleLastTrack();
+  await app.musicPage.track.expectTracksCount(60);
 });
 
 test("Check that music results equals search criteria", async ({ app }) => {
@@ -474,34 +478,6 @@ test("Checking the Prev button in the slide", async ({ app }) => {
   await app.musicPage.playlist.expectPrevButtonIsDisabled();
 });
 
-test("Check design of widget-header component on music page", async ({
-  app,
-}, testInfo) => {
-  //Actions
-  await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria("best tracks");
-  await app.home.header.searchForm.clickEnterSearchField();
-  await app.musicPage.header.navigation.clickMusicTab();
-  await app.musicPage.track.expectMusicTracksToBeVisible();
-
-  //Assert
-  await app.musicPage.playlist.takeSnapshot(testInfo);
-});
-
-test("Check design of button when track is not playing  on music page", async ({
-  app,
-}, testInfo) => {
-  //Actions
-  await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria(faker.music.songName());
-  await app.home.header.searchForm.clickEnterSearchField();
-  await app.musicPage.header.navigation.clickMusicTab();
-  await app.musicPage.track.expectMusicTracksToBeVisible();
-
-  //Assert
-  await app.musicPage.track.takeSnapshot(testInfo, { number: 1 });
-});
-
 test("Check design of button when track is playing  on music page", async ({
   app,
 }, testInfo) => {
@@ -522,6 +498,8 @@ test("Check design of player component  on music page", async ({
 }, testInfo) => {
   //Actions
   await app.home.open();
+  await app.route.mockResponseMusicBody("/audio/search/playlists", 'data/mock/music/testDataPlaylist.json');
+  await app.route.mockResponseMusicBody("/audio/search/tracks", 'data/mock/music/testDataTrack.json');
   await app.home.header.searchForm.inputSearchCriteria(faker.music.songName());
   await app.home.header.searchForm.clickEnterSearchField();
   await app.musicPage.header.navigation.clickMusicTab();

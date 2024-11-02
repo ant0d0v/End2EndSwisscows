@@ -3,6 +3,7 @@ import Filters from "./Filters.js";
 import Item from "./VideoObject.js";
 import Player from "./Player.js";
 import Header from "../Header.js";
+import Footer from "../Footer.js";
 import Error from "../Error.js";
 
 export default class VideoPage extends BasePage {
@@ -13,10 +14,12 @@ export default class VideoPage extends BasePage {
     this.error = new Error(page);
     this.player = new Player(page);
     this.header = new Header(page);
+    this.footer = new Footer(page);
     //Locators
     this.root = this.page.locator(`.video-results`);
     this.images = this.page.locator(`.video-object img`);
   }
+  
   takeSnapshot = async (testInfo) => {
     await this.expectPageToHaveScreenshotWithoutMask(testInfo, this.images);
   };

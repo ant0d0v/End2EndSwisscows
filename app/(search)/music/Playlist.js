@@ -6,7 +6,6 @@ export default class Playlist extends BaseComponent {
     //Locators
     this.widget = this.page.locator(".widget");
     this.playlist = this.widget.locator(".audio-playlist");
-    this.header = this.widget.locator(".widget-header");
     this.trackCount = (index) =>
       this.page.locator(`a[href*="/en/music/playlist?query="] .duration span:first-child`).nth(index - 1);
     this.images = this.widget.locator("img");
@@ -67,13 +66,4 @@ export default class Playlist extends BaseComponent {
   async expectToBeHiddenPlaylistAt(playlist = { number: index }) {
     await this.expectElementToBeHidden(this.playlist.nth(playlist.number - 1));
   }
-
-  takeSnapshot = async (testInfo) => {
-    await this.expectPageElementToHaveScreenshotWithMask(
-      this.header,
-      this.images,
-      this.playlist,
-      testInfo
-    );
-  };
 }

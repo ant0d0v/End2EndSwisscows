@@ -10,9 +10,6 @@ export default class Player extends BaseComponent {
     this.checkbox = this.page.getByLabel("Don't remind me again");
     this.description = this.page.getByText("Video provider prevents");
     this.title = this.page.getByRole("heading", { name: "Privacy Warning" });
-    this.videoPlayer = this.page
-      .frameLocator(`iframe[title*="Skofka" i]`)
-      .locator("video");
     this.player = this.page.locator(".video-player");
     this.currentStatusYouTube = this.page.frameLocator('iframe').locator(".html5-video-player")
     this.currentStatusMotion = this.page.frameLocator('iframe').locator(".player .visuallyhidden")
@@ -53,6 +50,7 @@ export default class Player extends BaseComponent {
   }) {
     await this.expectAttributeClassOfElement(this.currentStatusYouTube, expected.attribute);
   }
+
   async expectDailyMotionVideoToHave(expected = {
     text: value
   }) {

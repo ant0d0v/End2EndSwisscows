@@ -18,9 +18,6 @@ export default class Preview extends BaseComponent {
     this.slide = this.root.locator(".swiper-slide");
     this.nextButton = this.root.locator(".next");
     this.prevButton = this.root.locator(".prev");
-    this.more = this.root.locator(".more");
-    this.less = this.page.getByText('Less...').first()
-    this.description = this.root.locator(".description");
   }
 
   //Actions
@@ -50,12 +47,7 @@ export default class Preview extends BaseComponent {
   clickPrevButton = async () => {
     await this.clickElement(this.prevButton, `prev button in preview `);
   };
-  clickMore = async () => {
-    await this.clickElement(this.more, `more link in preview `);
-  };
-  clickLess = async () => {
-    await this.clickElement(this.less, `less link in preview `);
-  };
+
   expectToBeOpenedNewPageAfterClickOpenSiteButton = async (expectedUrl) => {
     await this.expectToBeOpenedNewPageAfterClick(
       this.openSiteButton,
@@ -125,10 +117,6 @@ export default class Preview extends BaseComponent {
       slider.attribute
     );
   };
-  expectDescriptionIs = async (value) => {
-    await this.expectAttributeClassOfElement(this.description, value);
-  };
-
   expectWebSocketIsClosed = async (webSocket) => {
     expect(webSocket.isClosed()).toBeTruthy();
   };

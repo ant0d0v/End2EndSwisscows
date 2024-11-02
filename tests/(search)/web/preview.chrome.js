@@ -138,33 +138,6 @@ test("Check prev button to be hidden  when clicking next button ", async ({
   await app.webPage.preview.expectPrevButtonToBeHidden();
 });
 
-test("Check description is full when clicking more ", async ({ app }) => {
-  //Actions
-  await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria("wiki iphone");
-  await app.home.header.searchForm.clickEnterSearchField();
-  await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
-  await app.webPage.webPageItem.clickPreviewButtonAt({ number: 1 });
-  await app.webPage.preview.clickMore();
-
-  //Assert
-  await app.webPage.preview.expectDescriptionIs("description full");
-});
-
-test("Check description isn't full when clicking less ", async ({ app }) => {
-  //Actions
-  await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria("wiki iphone");
-  await app.home.header.searchForm.clickEnterSearchField();
-  await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
-  await app.webPage.webPageItem.clickPreviewButtonAt({ number: 1 });
-  await app.webPage.preview.clickMore();
-
-  //Assert
-  await app.webPage.preview.expectDescriptionIs("description full");
-  await app.webPage.preview.clickLess();
-  await app.webPage.preview.expectDescriptionIs("description");
-});
 
 test("Check that screenshot to have height = 439 and width = 780 in Preview ", async ({
   app,

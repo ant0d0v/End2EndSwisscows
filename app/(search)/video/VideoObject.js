@@ -12,18 +12,16 @@ export default class Item extends BaseComponent {
     this.icon = new Icon(page);
 
     //Locators
-    this.root = this.page.locator("article.video-object");
+    this.root = this.page.locator(".video-results article.video-object");
     this.thumbnail = this.root.locator(".thumbnail");
     this.playIcon = this.thumbnail.locator(".play.icon");
-    this.errorIcon = this.thumbnail.locator(".error.icon");
+    this.errorIcon = this.thumbnail.locator(".error.icon path");
     this.images = this.root.locator(".thumbnail img");
     this.title = this.root.locator(".title");
     this.description = this.root.locator(".description");
     this.site = this.root.locator(".site");
     this.views = this.root.locator(".views");
-    this.viewsIcon = this.views.locator(".icon");
     this.date = this.root.locator(".date");
-    this.link = this.root.locator("a");
   }
   //Actions
   clickVideoImageAt = async (
@@ -48,11 +46,8 @@ export default class Item extends BaseComponent {
   };
 
   async scrollByVisibleLastVideo() {
-    let count = 10;
-    while (count <= 40) {
-      await this.scrollByVisibleElement(this.root.nth(count - 1));
-      count += 10;
-    }
+    await this.scrollByVisibleElement(this.root.last())
+    
   }
 
   //Verify
@@ -60,35 +55,8 @@ export default class Item extends BaseComponent {
     await this.proxyImage.expectAttributeSrcAllImagesToHave(this.images, value);
   };
 
-  expectVideoToHaveAttributeHrefBy = async (
-    video = {
-      number: value,
-      value: string
-    }
-  ) => {
-    await this.expectAttributeToHaveValue(this.link.nth(video.number - 1), "href", video.value);
-  };
-
   expectVideoItemsToBeVisible = async () => {
     await this.expectAreElementsInListDisplayed(this.root);
-  };
-
-  expectImageToHaveProperty = async (
-    expectedProperty = {
-      width: value,
-      height: value,
-    }
-  ) => {
-    await this.expectElementsToHaveJSProperty(
-      this.images,
-      "width",
-      expectedProperty.width
-    );
-    await this.expectElementsToHaveJSProperty(
-      this.images,
-      "height",
-      expectedProperty.height
-    );
   };
 
   expectItemsResponsePublisherToEqual = async (response, expectedPublisher) => {
@@ -122,29 +90,11 @@ export default class Item extends BaseComponent {
     await this.expectAreElementsInListDisplayed(this.images);
   };
 
-  takeSnapshotPlayIconAt = async (testInfo, expected = { number: value }) => {
-    const elementHandle = await this.images.first();
-    await elementHandle.evaluate((element) => element.setAttribute("src", ""));
-    await this.icon.takeSnapshotIconAt(
-      testInfo,
-      this.playIcon,
-      expected.number
-    );
+  takeSnapshot = async (testInfo) => {
+    await this.expectPageElementToHaveScreenshot(this.root.first(), this.images, testInfo);
   };
-  takeSnapshotErrorIconAt = async (testInfo, expected = { number: value }) => {
-    const elementHandle = await this.images.first();
-    await elementHandle.evaluate((element) => element.setAttribute("src", ""));
-    await this.icon.takeSnapshotIconAt(
-      testInfo,
-      this.errorIcon,
-      expected.number
-    );
-  };
-  takeSnapshotViewsIconAt = async (testInfo, expected = { number: value }) => {
-    await this.icon.takeSnapshotIconAt(
-      testInfo,
-      this.viewsIcon,
-      expected.number
-    );
+
+  takeSnapshotErrorIcon = async (testInfo) => {
+    await this.expectPageElementToHaveScreenshot(this.root.nth(1), this.errorIcon  , testInfo)
   };
 }

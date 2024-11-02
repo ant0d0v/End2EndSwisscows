@@ -1,5 +1,4 @@
 import { test } from "../../../utils/fixtures.js";
-import { faker } from "@faker-js/faker";
 
 test("Check pause track on music page", async ({ app }) => {
   //Actions
