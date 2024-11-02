@@ -100,12 +100,8 @@ export default class MusicPlayer extends BaseComponent {
   async expectShuffleButtonIsActive() {
     await this.expectAttributeClassOfElement(this.shuffleButton, /active/);
   }
-  async takeSnapshot(testInfo) {
-    await this.expectPageElementToHaveScreenshotWithMask(
-      this.root,
-      this.image,
-      this.track,
-      testInfo
-    );
-  }
+
+  takeSnapshot = async (testInfo) => {
+    await this.expectPageElementToHaveScreenshot(this.root, this.image, testInfo);
+  };
 }

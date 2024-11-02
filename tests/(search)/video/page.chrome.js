@@ -93,14 +93,17 @@ test("Check that video results equals search criteria", async ({ app }) => {
 test("Check infinity scroll in video results", async ({ app }) => {
   //Actions
   await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria(randomVideoQuery());
+  await app.home.header.searchForm.inputSearchCriteria(faker.music.songName());
   await app.home.header.searchForm.clickEnterSearchField();
   await app.videoPage.header.navigation.clickVideoTab();
   await app.videoPage.item.expectVideoItemsToBeVisible();
-  await app.videoPage.scrollByVisibleLastVideo();
+  await app.videoPage.item.expectVideoResultToHaveCount(10);
+  await app.videoPage.item.scrollByVisibleLastVideo();
 
   //Assert
-  await app.videoPage.item.expectVideoResultToHaveCount(40);
+  await app.videoPage.item.expectVideoResultToHaveCount(20);
+  await app.videoPage.item.scrollByVisibleLastVideo();
+  await app.videoPage.item.expectVideoResultToHaveCount(30);
 });
 
 test("Check the design error icon of video object", async ({
@@ -108,13 +111,15 @@ test("Check the design error icon of video object", async ({
 }, testInfo) => {
   //Actions
   await app.home.open();
+  await app.route.mockResponseBody("/v2/videos", 'data/mock/video/errorIcon.json');
   await app.home.header.searchForm.inputSearchCriteria(faker.music.songName());
   await app.home.header.searchForm.clickEnterSearchField();
   await app.videoPage.header.navigation.clickVideoTab();
   await app.videoPage.item.expectVideoItemsToBeVisible();
+  await app.videoPage.waitUntilPageIsFullyLoaded()
 
   //Assert
-  await app.videoPage.item.takeSnapshotErrorIconAt(testInfo, { number: 1 });
+  await app.videoPage.item.takeSnapshotErrorIcon(testInfo);
 });
 
 test("Check the design when video object is active", async ({

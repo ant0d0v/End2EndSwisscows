@@ -19,14 +19,8 @@ export default class VideoPage extends BasePage {
     this.root = this.page.locator(`.video-results`);
     this.images = this.page.locator(`.video-object img`);
   }
+  
   takeSnapshot = async (testInfo) => {
     await this.expectPageToHaveScreenshotWithoutMask(testInfo, this.images);
   };
-
-  async scrollByVisibleLastVideo() {
-    for(let i = 0; i < 7; i++){
-    await this.scrollByVisibleElement(this.images.last())
-    await this.footer.scrollToFooter()
-    }
-  }
 }

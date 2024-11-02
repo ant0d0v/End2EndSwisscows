@@ -15,7 +15,7 @@ export default class Item extends BaseComponent {
     this.root = this.page.locator(".video-results article.video-object");
     this.thumbnail = this.root.locator(".thumbnail");
     this.playIcon = this.thumbnail.locator(".play.icon");
-    this.errorIcon = this.thumbnail.locator(".error.icon");
+    this.errorIcon = this.thumbnail.locator(".error.icon path");
     this.images = this.root.locator(".thumbnail img");
     this.title = this.root.locator(".title");
     this.description = this.root.locator(".description");
@@ -44,6 +44,11 @@ export default class Item extends BaseComponent {
       `video item with index${title.number - 1}`
     );
   };
+
+  async scrollByVisibleLastVideo() {
+    await this.scrollByVisibleElement(this.root.last())
+    
+  }
 
   //Verify
   expectAllImagesToHaveAttribute = async (value) => {
@@ -89,13 +94,7 @@ export default class Item extends BaseComponent {
     await this.expectPageElementToHaveScreenshot(this.root.first(), this.images, testInfo);
   };
 
-  takeSnapshotErrorIconAt = async (testInfo, expected = { number: value }) => {
-    const elementHandle = await this.images.first();
-    await elementHandle.evaluate((element) => element.setAttribute("src", ""));
-    await this.icon.takeSnapshotIconAt(
-      testInfo,
-      this.errorIcon,
-      expected.number
-    );
+  takeSnapshotErrorIcon = async (testInfo) => {
+    await this.expectPageElementToHaveScreenshot(this.root.nth(1), this.errorIcon  , testInfo)
   };
 }

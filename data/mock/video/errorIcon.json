@@ -1,0 +1,73 @@
+{
+    "request": {
+        "query": "fdsfdfdsf",
+        "itemsCount": 10,
+        "offset": 0,
+        "region": "en-US",
+        "freshness": "All"
+    },
+    "items": [
+        {
+            "type": "video",
+            "id": "youtube/2VXbZX0JRDc",
+            "title": "CF <b>fdsfdfdsf</b> - YouTube",
+            "description": "Apr 26, 2012 <b>...</b> Your browser can&#39;t play this video. Learn more &middot; Open App. CF <b>fdsfdfdsf</b>. 10 views · 12 years ago ...more. ffttwCF. Subscribe. 0.",
+            "url": "https://www.youtube.com/watch?v=2VXbZX0JRDc",
+            "displayUrl": "www.youtube.com",
+            "sourceUrl": "https://www.youtube.com/watch?v=2VXbZX0JRDc",
+            "thumbnailUrl": "https://i.ytimg.com/vi/2VXbZX0JRDc/hqdefault.jpg",
+            "motionThumbnailUrl": null,
+            "embedUrl": "https://www.youtube-nocookie.com/embed/2VXbZX0JRDc",
+            "duration": "00:00:39",
+            "datePublished": "2012-04-26T09:07:42+00:00",
+            "viewCount": 10,
+            "creator": "ffttwCF",
+            "publisher": "YouTube",
+            "encodingFormat": null,
+            "width": null,
+            "height": null
+        },
+        {
+            "type": "video",
+            "id": "youtube/VoVcu_PSWnA",
+            "title": "<b>fdsfdfdsf</b> - YouTube",
+            "description": "Dec 9, 2014 <b>...</b> <b>fdsfdfdsf</b> &middot; Levan Thanh &middot; If You HEAR THIS, That&#39;s A Narcissist Trying To TRAP You! &middot; ADD/ADHD | What Is Attention Deficit Hyperactivity Disorder?",
+            "url": "https://m.youtube.com/watch?v=VoVcu_PSWnA",
+            "displayUrl": "m.youtube.com",
+            "sourceUrl": "https://m.youtube.com/watch?v=VoVcu_PSWnA",
+            "thumbnailUrl": "https://i.ytimg.com/vi/VoVcu_PSWnA/hqdefault.jpg",
+            "motionThumbnailUrl": null,
+            "embedUrl": null,
+            "duration": null,
+            "datePublished": null,
+            "viewCount": 0,
+            "creator": null,
+            "publisher": "YouTube",
+            "encodingFormat": null,
+            "width": null,
+            "height": null
+        },
+        {
+            "type": "video",
+            "id": "youtube/QlOma3DCZxw",
+            "title": "blabla - YouTube",
+            "description": "Feb 23, 2024 <b>...</b> Waiting for Jinuś KW LEGEND. February 23, 2024 at 9:00 PM GMT+1. <b>fdsfdfdsf</b>. blabla. 1 waiting ...more. Jinuś KW LEGEND.",
+            "url": "https://m.youtube.com/watch?v=QlOma3DCZxw",
+            "displayUrl": "m.youtube.com",
+            "sourceUrl": "https://m.youtube.com/watch?v=QlOma3DCZxw",
+            "thumbnailUrl": "https://i.ytimg.com/vi/QlOma3DCZxw/hqdefault.jpg",
+            "motionThumbnailUrl": null,
+            "embedUrl": null,
+            "duration": null,
+            "datePublished": null,
+            "viewCount": 0,
+            "creator": null,
+            "publisher": "YouTube",
+            "encodingFormat": null,
+            "width": null,
+            "height": null
+        }
+    ],
+    "totalCount": 3,
+    "nextOffset": null
+}

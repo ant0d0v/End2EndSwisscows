@@ -74,11 +74,7 @@ export default class Track extends BaseComponent {
   }
 
   async scrollByVisibleLastTrack() {
-    let count = 20
-    while (count <= 100) {
-      await this.scrollByVisibleElement(this.root.nth(count - 1));
-      count += 20
-    }
+    await this.scrollByVisibleElement(this.root.last());
   }
 
   //Verify
