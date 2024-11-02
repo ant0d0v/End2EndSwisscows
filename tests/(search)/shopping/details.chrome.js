@@ -70,6 +70,7 @@ test("Check more button in detail", async ({ app }) => {
   await app.webPage.header.hamburgerMenu.selectRegion("Germany");
   await app.webPage.header.navigation.clickShoppingTab();
   await app.shoppingPage.item.expectShoppingItemsToBeVisible();
+  await app.route.mockResponseBody("/shopping/products/", 'data/mock/shopping/details.json');
   await app.shoppingPage.item.selectProductAt({ number: 1 });
   await app.shoppingPage.details.clickMore();
 
@@ -89,6 +90,7 @@ test("Check less button in detail", async ({ app }) => {
   await app.webPage.header.hamburgerMenu.selectRegion("Germany");
   await app.webPage.header.navigation.clickShoppingTab();
   await app.shoppingPage.item.expectShoppingItemsToBeVisible();
+  await app.route.mockResponseBody("/shopping/products", 'data/mock/shopping/details.json');
   await app.shoppingPage.item.selectProductAt({ number: 1 });
   await app.shoppingPage.details.clickMore();
   await app.shoppingPage.details.clickLess();
@@ -172,22 +174,22 @@ test(`Check that the "Buy" button redirect to new page`, async ({ app }) => {
   await app.expectPageNotToHaveUrl(app.page, currentUrl);
 });
 
-test(`Check design "Buy" button`, async ({ app }, testInfo) => {
+test(`Check design product details`, async ({ app }, testInfo) => {
   //Actions
   await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria("iphone");
+  await app.home.header.searchForm.inputSearchCriteria(randomProduct());
   await app.home.header.searchForm.clickEnterSearchField();
   await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
   await app.webPage.header.clickHamburgerMenuButton();
   await app.webPage.header.hamburgerMenu.selectRegion("Germany");
   await app.webPage.header.navigation.clickShoppingTab();
   await app.shoppingPage.item.expectShoppingItemsToBeVisible();
+  await app.route.mockResponseBody("/shopping/products", 'data/mock/shopping/details.json');
   await app.shoppingPage.item.selectProductAt({ number: 1 });
+  await app.shoppingPage.details.expectDetailsImageToBeVisible();
 
   //Assert
-  await app.shoppingPage.details.offer.takeSnapshot(testInfo, {
-    buttonNumber: 1,
-  });
+  await app.shoppingPage.details.takeSnapshot(testInfo);
 });
 
 test("Check  offer icons to be visible", async ({ app }) => {

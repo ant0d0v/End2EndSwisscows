@@ -144,7 +144,7 @@ test("Check the info video object { site, description, data, views }", async ({
 }) => {
   //Actions
   await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria("NFS");
+  await app.home.header.searchForm.inputSearchCriteria("Arctic Monkeys - Do I Wanna Know? (Official Video) - YouTube");
   await app.home.header.searchForm.clickEnterSearchField();
   await app.videoPage.header.navigation.clickVideoTab();
   await app.videoPage.item.expectVideoItemsToBeVisible();
@@ -153,7 +153,7 @@ test("Check the info video object { site, description, data, views }", async ({
   await app.videoPage.item.expectVideoDescriptionNotToBeEmpty();
   await app.videoPage.item.expectVideoInfoToContain({
     site: /^(DailyMotion|Vimeo|YouTube)$/,
-    views: /^\d+(\.\d+)?[MK]?\sviews$/,
+    views: /^\d+(\.\d+)?[MKB]?\sviews$/,
     date: /^[A-Za-z]{3} \d{1,2}, \d{4}$/,
   });
 });
@@ -173,7 +173,7 @@ test("Check the info video object { site, description, data, views } when openin
   await app.videoPage.item.expectVideoDescriptionNotToBeEmpty();
   await app.videoPage.item.expectVideoInfoToContain({
     site: /^(DailyMotion|Vimeo|YouTube)$/,
-    views: /^\d+(\.\d+)?[MK]?\sviews$/,
+    views: /^\d+(\.\d+)?[MKB]?\sviews$/,
     date: /^[A-Za-z]{3} \d{1,2}, \d{4}$/,
   });
 });
@@ -353,8 +353,7 @@ test("Check regional search", async ({ app }) => {
 test("Check that youtube video is playing", async ({ app }) => {
   //Actions
   await app.home.open();
-  await app.route.mockResponseBody("/v2/videos", 'data/mock/video/testData.json');
-  await app.home.header.searchForm.inputSearchCriteria(faker.music.songName());
+  await app.home.header.searchForm.inputSearchCriteria(randomVideoQuery());
   await app.home.header.searchForm.clickEnterSearchField();
   await app.videoPage.header.navigation.clickVideoTab();
   await app.videoPage.item.expectVideoItemsToBeVisible();

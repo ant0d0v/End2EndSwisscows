@@ -60,8 +60,6 @@ export function randomVideoQuery() {
 
 export function randomQueryWithVideoItemSearch() {
   const word = faker.helpers.arrayElement([
-    "iphone youtube",
-    "video + ronaldo",
     "arctic monkeys",
     "Arctic Monkeys - Do I Wanna Know? (Official Video) - YouTube"
   ]);

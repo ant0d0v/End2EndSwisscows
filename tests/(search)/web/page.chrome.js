@@ -83,7 +83,7 @@ test.describe("Error pages in dark theme", () => {
   });
 });
 
-test("Check Did you mean message in the search field ", async ({ app }) => {
+test("Check design alternate search", async ({ app }, testInfo) => {
   const query = "smasung";
 
   //Actions
@@ -95,13 +95,9 @@ test("Check Did you mean message in the search field ", async ({ app }) => {
   await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
 
   //Assert
-  await app.webPage.alternateSearch.expectDidYouMeanMessageToHaveText(
-    'Including results for "samsung"' +
-      "Do you want results only for " +
-      query +
-      "?"
-  );
+  await app.webPage.alternateSearch.takeSnapshot(testInfo)
 });
+
 test("Check that web results equals search criteria", async ({ app }) => {
   //Actions
   await app.home.open();
@@ -161,21 +157,20 @@ test.describe("Web-page items", () => {
     });
   });
 
-  test.skip("Check titles to have css font and color", async ({ app }) => {
+  test("Check open link in  the web result when clicking title", async ({ app }) => {
     //Actions
     await app.home.open();
     await app.home.header.searchForm.inputSearchCriteria(faker.word.sample());
     await app.home.header.searchForm.clickEnterSearchField();
     await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
+    const currentUrl = await app.page.url();
+    await app.webPage.webPageItem.clickTitleAt({ number: 1 });
 
     //Assert
-    await app.webPage.webPageItem.expectTitlesToHaveCSS({
-      size: "18px",
-      color: "rgb(52, 64, 84)",
-    });
+    await app.expectPageNotToHaveUrl(app.page, currentUrl);
   });
 
-  test("Check open link in  the web result", async ({ app }) => {
+  test("Check open link in  the web result when clicking image", async ({ app }) => {
     //Actions
     await app.home.open();
     await app.home.header.searchForm.inputSearchCriteria(
@@ -184,7 +179,7 @@ test.describe("Web-page items", () => {
     await app.home.header.searchForm.clickEnterSearchField();
     await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
     const currentUrl = await app.page.url();
-    await app.webPage.webPageItem.clickTitleAt({ number: 1 });
+    await app.webPage.webPageItem.clickImageAt({ number: 1 });
 
     //Assert
     await app.expectPageNotToHaveUrl(app.page, currentUrl);
@@ -199,7 +194,7 @@ test.describe("Article items", () => {
     await app.home.open();
     await app.home.header.clickHamburgerMenuButton();
     await app.home.header.hamburgerMenu.selectRegion("Germany");
-    await app.home.header.searchForm.inputSearchCriteria("article ukraine war");
+    await app.home.header.searchForm.inputSearchCriteria("Arctic Monkeys’ “AM” [Review]");
     await app.home.header.searchForm.clickEnterSearchField();
     await app.webPage.article.expectArticleItemsToBeVisible();
 
@@ -219,7 +214,7 @@ test.describe("Article items", () => {
     await app.home.open();
     await app.home.header.clickHamburgerMenuButton();
     await app.home.header.hamburgerMenu.selectRegion("Germany");
-    await app.home.header.searchForm.inputSearchCriteria("article ukraine war");
+    await app.home.header.searchForm.inputSearchCriteria("Arctic Monkeys’ “AM” [Review]");
     await app.home.header.searchForm.clickEnterSearchField();
     await app.webPage.article.expectArticleItemsToBeVisible();
 
@@ -238,7 +233,7 @@ test.describe("Article items", () => {
     await app.home.open();
     await app.home.header.clickHamburgerMenuButton();
     await app.home.header.hamburgerMenu.selectRegion("Germany");
-    await app.home.header.searchForm.inputSearchCriteria("article ukraine war");
+    await app.home.header.searchForm.inputSearchCriteria("Arctic Monkeys’ “AM” [Review]");
     await app.home.header.searchForm.clickEnterSearchField();
     await app.webPage.article.expectArticleItemsToBeVisible();
     const currentUrl = await app.page.url();
@@ -287,9 +282,11 @@ test.describe("Video object items", () => {
     await app.webPage.videoObject.expectItemsDescriptionNotToBeEmpty();
     await app.webPage.videoObject.expectItemInfoToContain({
       title: /\w+/,
+      views: /^\d+(\.\d+)?[MKB]?\sviews$/,
       site: /(?:www\.)?[a-zA-Z0-9-]+\.[a-zA-Z]{2,}(?:\/[^\s]*)?/
     });
   });
+
   test("Check open new page when clicking image of video object item", async ({ app }) => {
     //Actions
     await app.home.open();
@@ -347,6 +344,7 @@ test.describe("Book items", () => {
       site: /(?:www\.)?[a-zA-Z0-9-]+\.[a-zA-Z]{2,}(?:\/[^\s]*)?/,
     });
   });
+
   test("Check open new page when clicking image of book item", async ({ app }) => {
     //Actions
     await app.home.open();
@@ -362,17 +360,18 @@ test.describe("Book items", () => {
     await app.expectPageNotToHaveUrl(app.page, currentUrl);
   });
 
-  test("Check design stars icon of book item", async ({ app }, testInfo) => {
+  test("Check design of book item", async ({ app }, testInfo) => {
     //Actions
     await app.home.open();
     await app.home.header.clickHamburgerMenuButton();
     await app.home.header.hamburgerMenu.selectRegion("Germany");
+    await app.route.mockResponseBody("/v4/web", 'data/mock/web/bookItemData.json');
     await app.home.header.searchForm.inputSearchCriteria("Harry Potter and the Sorcerer’s Stone | Goodreads");
     await app.home.header.searchForm.clickEnterSearchField();
     await app.webPage.book.expectBookItemsToBeVisible();
 
     //Assert
-    await app.webPage.book.takeSnapshotStarsIcons(testInfo);
+    await app.webPage.book.takeSnapshot(testInfo);
   });
 });
 
@@ -429,30 +428,18 @@ test.describe("Place items", () => {
     await app.expectPageNotToHaveUrl(app.page, currentUrl);
   });
 
-  test("Check design pin marker icon of place item", async ({ app }, testInfo) => {
+  test("Check design of place item", async ({ app }, testInfo) => {
     //Actions
     await app.home.open();
     await app.home.header.clickHamburgerMenuButton();
     await app.home.header.hamburgerMenu.selectRegion("Germany");
+    await app.route.mockResponseBody("/v4/web", 'data/mock/web/placeItemData.json');
     await app.home.header.searchForm.inputSearchCriteria("Hotel Malte Astotel");
     await app.home.header.searchForm.clickEnterSearchField();
     await app.webPage.place.expectPlaceItemsToBeVisible();
 
     //Assert
-    await app.webPage.place.takeSnapshotPinMarkerIcon(testInfo);
-  });
-
-  test("Check design preview icon of place item", async ({ app }, testInfo) => {
-    //Actions
-    await app.home.open();
-    await app.home.header.clickHamburgerMenuButton();
-    await app.home.header.hamburgerMenu.selectRegion("Germany");
-    await app.home.header.searchForm.inputSearchCriteria("Hotel Malte Astotel");
-    await app.home.header.searchForm.clickEnterSearchField();
-    await app.webPage.place.expectPlaceItemsToBeVisible();
-
-    //Assert
-    await app.webPage.place.takeSnapshotPreviewIcon(testInfo);
+    await app.webPage.place.takeSnapshot(testInfo);
   });
 });
 

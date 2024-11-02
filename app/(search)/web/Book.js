@@ -71,10 +71,10 @@ export default class Book  extends BaseComponent {
     await this.expectAreElementsInListDisplayed(this.thumbnails);
   };
 
-  takeSnapshotStarsIcons = async (testInfo) => {
+  takeSnapshot = async (testInfo) => {
     await this.expectPageElementToHaveScreenshot(
-      this.starsIcons.first(),
-      this.starsIcons,
+      this.root.first(),
+      this.thumbnails,
       testInfo
     );
   };

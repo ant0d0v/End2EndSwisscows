@@ -49,12 +49,4 @@ export default class Offer extends BaseComponent {
       expected.height
     );
   }
-
-  takeSnapshot = async (testInfo, expected = { buttonNumber: value }) => {
-    await this.expectPageElementToHaveScreenshot(
-      this.buyButton.nth(expected.buttonNumber - 1),
-      this.buyButton,
-      testInfo
-    );
-  };
 }
