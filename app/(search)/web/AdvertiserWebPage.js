@@ -28,8 +28,8 @@ export default class Advertiser extends BaseComponent {
 
   takeSnapshot = async (testInfo) => {
     await this.expectPageElementToHaveScreenshot(
-      this.rate.first(),
-      this.widgetHeader,
+      this.root.first(),
+      this.image,
       testInfo
     );
   };

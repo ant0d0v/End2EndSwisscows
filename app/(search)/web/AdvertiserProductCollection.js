@@ -51,8 +51,8 @@ export default class AdvertiserProductCollection extends BaseComponent {
 
   takeSnapshot = async (testInfo) => {
     await this.expectPageElementToHaveScreenshot(
-      this.widgetHeader,
-      this.widgetHeader,
+      this.root,
+      this.image,
       testInfo
     );
   };

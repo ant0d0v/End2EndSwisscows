@@ -1,10 +1,9 @@
 import { test } from "../../../utils/fixtures.js";
 import { randomAdsQuery } from "../../../helpers/random.js"
-test("Check design header of product ads", async ({ app }, testInfo) => {
+test("Check design of product ads", async ({ app }, testInfo) => {
   //Actions
   await app.home.open();
-  await app.home.header.clickHamburgerMenuButton();
-  await app.home.header.hamburgerMenu.selectRegion("Germany");
+  await app.route.mockResponseBody("/v4/web", 'data/mock/web/productAds.json');
   await app.home.header.searchForm.inputSearchCriteria(randomAdsQuery());
   await app.home.header.searchForm.clickEnterSearchField();
   await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
@@ -74,8 +73,7 @@ test("Check next button and prev button in the product advertising ", async ({
 }) => {
   //Actions
   await app.home.open();
-  await app.home.header.clickHamburgerMenuButton();
-  await app.home.header.hamburgerMenu.selectRegion("Germany");
+  await app.route.mockResponseBody("/v4/web", 'data/mock/web/productAds.json');
   await app.home.header.searchForm.inputSearchCriteria(randomAdsQuery());
   await app.home.header.searchForm.clickEnterSearchField();
   await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
@@ -105,7 +103,7 @@ test("Check open new page when clicking ads link", async ({ app }) => {
 });
 
 
-test("Check {title, site, callout, ad} of product ads item", async ({ app }) => {
+test("Check { title, site, callout, ad } of web page ads item", async ({ app }) => {
   //Actions
   await app.home.open();
   await app.home.header.clickHamburgerMenuButton();
@@ -123,6 +121,19 @@ test("Check {title, site, callout, ad} of product ads item", async ({ app }) => 
     callout: /\w+/,
     ad: /Ad/,
   });
+});
+
+test("Check design of web page ads", async ({ app }, testInfo) => {
+  //Actions
+  await app.home.open();
+  await app.route.mockResponseBody("/v4/web", 'data/mock/web/webPageAds.json');
+  await app.home.header.searchForm.inputSearchCriteria(randomAdsQuery());
+  await app.home.header.searchForm.clickEnterSearchField();
+  await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
+  await app.webPage.advertiser.waitUntilAdvertiserToBeVisible();
+
+  //Assert
+  await app.webPage.advertiser.takeSnapshot(testInfo);
 });
 
 test("Check open adverster web page item", async ({ app }) => {

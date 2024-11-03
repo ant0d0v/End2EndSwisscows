@@ -102,6 +102,6 @@ export default class MusicPlayer extends BaseComponent {
   }
 
   takeSnapshot = async (testInfo) => {
-    await this.expectPageElementToHaveScreenshot(this.root, this.image, testInfo);
+    await this.expectPageElementToHaveScreenshotWithMask(this.root, this.image, this.image, testInfo);
   };
 }
