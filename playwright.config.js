@@ -86,6 +86,9 @@ export default defineConfig({
       testMatch: /.*\.chrome\.js/,
       use: {
         ...devices["Desktop Chrome"],
+        launchOptions: {
+          args: ['--disable-web-security']
+        },
         channel: "chrome",
         storageState: "./data/auth/internalUser.json",
         viewport: { width: 1440, height: 900 },

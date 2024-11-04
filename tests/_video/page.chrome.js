@@ -369,7 +369,7 @@ test("Check that youtube video is playing", async ({ app }) => {
 test("Check that dailymotion video is playing", async ({ app }) => {
   //Actions
   await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria("site:dailymotion.com Arctic Monkeys - Do I Wanna Know? (Official Video) - YouTube");
+  await app.home.header.searchForm.inputSearchCriteria("site:dailymotion.com Arctic Monkeys - Do I Wanna Know ?");
   await app.home.header.searchForm.clickEnterSearchField();
   await app.videoPage.header.navigation.clickVideoTab();
   await app.videoPage.item.expectVideoItemsToBeVisible();
