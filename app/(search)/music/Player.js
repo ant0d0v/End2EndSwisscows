@@ -76,7 +76,7 @@ export default class MusicPlayer extends BaseComponent {
   }
 
   async expectImageToHavePropetry(
-    expectedProperty = { width: value, height: value }
+    expectedProperty = { width: value, height: value, complete: value }
   ) {
     await this.expectElementToHaveJSProperty(
       this.image,
@@ -87,6 +87,11 @@ export default class MusicPlayer extends BaseComponent {
       this.image,
       "height",
       expectedProperty.height
+    );
+    await this.expectElementsToHaveJSProperty(
+      this.image,
+      "complete",
+      expectedProperty.complete
     );
   }
   async expectProgressToHaveValue(value) {
@@ -102,6 +107,6 @@ export default class MusicPlayer extends BaseComponent {
   }
 
   takeSnapshot = async (testInfo) => {
-    await this.expectPageElementToHaveScreenshotWithMask(this.root, this.image, this.image, testInfo);
+    await this.expectPageElementToHaveScreenshot(this.root, this.image, testInfo);
   };
 }

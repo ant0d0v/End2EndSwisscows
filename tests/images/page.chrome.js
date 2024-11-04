@@ -388,7 +388,7 @@ test("Check that details to be in viewport", async ({ app }) => {
 test("Check preloader on page when Status.LOADING", async ({ app }) => {
   //Actions
   await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria(faker.word.sample());
+  await app.home.header.searchForm.inputSearchCriteria(faker.commerce.product());
   await app.home.header.searchForm.clickEnterSearchField();
   await app.webPage.header.navigation.clickImageTab();
   await app.imagePage.item.expectImageItemsToBeVisible();
