@@ -1,6 +1,9 @@
 import { test, expect} from "../../utils/fixtures.js";
 import filterData from "../../data/filters/testData.json";
 import { faker } from "@faker-js/faker";
+import { randomUserAgent } from "../../helpers/random.js"
+
+test.use({ userAgent: randomUserAgent() });
 
 for (const {
   testID,

@@ -1,5 +1,8 @@
 import { test } from "../../utils/fixtures.js";
 import { faker } from "@faker-js/faker";
+import { randomUserAgent } from "../../helpers/random.js"
+
+test.use({ userAgent: randomUserAgent() });
 
 test(`Check succses message when sending form with all required fields`, async ({
   app,

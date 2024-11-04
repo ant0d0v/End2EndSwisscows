@@ -1,4 +1,7 @@
 import { test } from "../../utils/fixtures.js";
+import { randomUserAgent } from "../../helpers/random.js"
+
+test.use({ userAgent: randomUserAgent() });
 
 test("Check that border is red and 2px when clicking on the images Datacenter slider", async ({
   app,

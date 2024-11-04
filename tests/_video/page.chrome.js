@@ -2,6 +2,9 @@ import { test, expect } from "../../utils/fixtures.js";
 import { saveStorageState, readStorageState} from "../../helpers/authHelper.js";
 import { faker } from "@faker-js/faker";
 import { randomVideoQuery } from "../../helpers/random.js";
+import { randomUserAgent } from "../../helpers/random.js"
+
+test.use({ userAgent: randomUserAgent() });
 
 test("Check No Results Found error video page", async ({ app }, testInfo) => {
   //Actions

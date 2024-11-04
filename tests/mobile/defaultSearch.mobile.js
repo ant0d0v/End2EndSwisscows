@@ -1,4 +1,7 @@
 import { test } from "../../utils/fixtures.js";
+import { randomUserAgent } from "../../helpers/random.js"
+
+test.use({ userAgent: randomUserAgent() });
 
 test("Check design of the default search page ", async ({ app }, testInfo) => {
   //Actions

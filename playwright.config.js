@@ -1,6 +1,5 @@
 import { defineConfig, devices } from "@playwright/test";
 import dotenv from "dotenv";
-
 /**
  * Read environment variables from file.
  * https://github.com/motdotla/dotenv
@@ -86,9 +85,6 @@ export default defineConfig({
       testMatch: /.*\.chrome\.js/,
       use: {
         ...devices["Desktop Chrome"],
-        launchOptions: {
-          args: ['--disable-web-security']
-        },
         channel: "chrome",
         storageState: "./data/auth/internalUser.json",
         viewport: { width: 1440, height: 900 },
