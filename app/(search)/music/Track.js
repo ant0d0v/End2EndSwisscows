@@ -142,7 +142,7 @@ export default class Track extends BaseComponent {
   }
 
   async expectImageToHavePropetry(
-    expectedProperty = { width: value, height: value }
+    expectedProperty = { width: value, height: value, complete: value }
   ) {
     await this.expectElementsToHaveJSProperty(
       this.images,
@@ -153,6 +153,11 @@ export default class Track extends BaseComponent {
       this.images,
       "height",
       expectedProperty.height
+    );
+    await this.expectElementsToHaveJSProperty(
+      this.images,
+      "complete",
+      expectedProperty.complete
     );
   }
 

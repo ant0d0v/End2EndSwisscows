@@ -72,9 +72,13 @@ test("Check design music page", async ({ app },testInfo) => {
   await app.home.header.searchForm.clickEnterSearchField();
   await app.musicPage.header.navigation.clickMusicTab();
   await app.musicPage.track.expectMusicTracksToBeVisible();
-  await app.musicPage.waitUntilPageIsFullyLoaded()
 
   //Assert
+  await app.musicPage.track.expectImageToHavePropetry({
+    width: 64,
+    height: 64,
+    complete: true
+  });
   await app.musicPage.takeSnapshot(testInfo);
 });
 
@@ -412,6 +416,7 @@ test("Check the width and visibility images of tracks", async ({ app }) => {
   await app.musicPage.track.expectImageToHavePropetry({
     width: 64,
     height: 64,
+    complete: true
   });
   await app.musicPage.track.expectTracksCount(20);
   await app.musicPage.track.expectImageTracksToBeVisible();
@@ -430,6 +435,7 @@ test("Check width and visibility image in player", async ({ app }) => {
   await app.musicPage.player.expectImageToHavePropetry({
     width: 64,
     height: 64,
+    complete: true
   });
   await app.musicPage.player.expectPlayerImageToBeVisible();
 });
@@ -507,5 +513,10 @@ test("Check design of player component  on music page", async ({
   await app.musicPage.track.clickPlayButtonAt({ number: 1 });
 
   //Assert
+  await app.musicPage.player.expectImageToHavePropetry({
+    width: 64,
+    height: 64,
+    complete: true
+  });
   await app.musicPage.player.takeSnapshot(testInfo);
 });

@@ -1,7 +1,6 @@
 import { test } from "../../utils/fixtures.js";
 import testData from "../../data/pages/media-education/testData.json";
 
-test.use({ headless: false });
 test("Check that the video is playing", async ({ app }) => {
   //Actions
   await app.mediaEducationPage.open();
@@ -12,6 +11,7 @@ test("Check that the video is playing", async ({ app }) => {
   });
 });
 
+test.use({ headless: false });
 for (const { testID, link, name } of testData.pdfLinks) {
   test(`${testID} Check navigation to corresponding page for  ${name} pdf link and validate pdf`, async ({
     app,
