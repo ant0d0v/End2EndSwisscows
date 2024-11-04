@@ -1,0 +1,608 @@
+{
+    "context": {
+        "query": "parfüm victoria secret sephora",
+        "effectiveQuery": "parfum victoria secret sephora",
+        "offset": 0,
+        "itemsCount": 10,
+        "locale": "de-DE",
+        "spellcheck": true
+    },
+    "entities": [],
+    "items": [
+        {
+            "type": "AdvertiserProductCollection",
+            "hasPart": [
+                {
+                    "potentialActions": [
+                        {
+                            "type": "DisplayAction",
+                            "object": {
+                                "position": "Mainline",
+                                "impressionToken": "1"
+                            },
+                            "target": "https://api.dev.swisscows.com/feedback/display?rguid=670a4f46bc5c44e18db5b2bff21a2366"
+                        },
+                        {
+                            "type": "ViewAction",
+                            "target": "https://api.dev.swisscows.com:443/feedback/view?type=mv&reqver=1.0&rg=670a4f46bc5c44e18db5b2bff21a2366&tids=1"
+                        }
+                    ],
+                    "offers": [
+                        {
+                            "seller": {
+                                "name": "easycosmetic"
+                            },
+                            "price": 15.99,
+                            "priceCurrency": "EUR",
+                            "deliveryPrice": {
+                                "price": 3.99,
+                                "priceCurrency": "EUR",
+                                "description": "+3,99 € Versand"
+                            },
+                            "url": "https://www.bing.com/aclick?ld=e8QAxkREHhcScHXV8GZXu3AzVUCUxmJS8-MlFTJUqGarngOzBAVaxqBLjj-g7MaPysXqs0_0w4Nd_ag80WziLN_-JV_Urfy_9Y5mqeeCcjdFTMvZh_RrwTvyPcHlVrJykOvLNXg3x-E2qCqmdVOqZU7G-cWMCOL42NC59wqNeUQjPdKClK&u=aHR0cHMlM2ElMmYlMmZ3d3cuZWFzeWNvc21ldGljLmRlJTJmdmljdG9yaWFzLXNlY3JldCUyZmJhcmUtdmFuaWxsYSUyZnZpY3Rvcmlhcy1zZWNyZXQtYmFyZS12YW5pbGxhLWZyYWdyYW5jZS1taXN0LTI1MG1sLmFzcHglM2Z1dG1fc291cmNlJTNkYmluZyUyNnV0bV9tZWRpdW0lM2RkYXRhZmVlZCUyNnV0bV9jYW1wYWlnbiUzZGNwYyUyNnV0bV90ZXJtJTNkVmljdG9yaWElMjUyN3MlMmJTZWNyZXQlMmJCYXJlJTJiVmFuaWxsYSUyNnV0bV9jb250ZW50JTNkcHJvZHVjdGFkcyUyNmV0Y2NfbWVkJTNkU0VBJTI2ZXRjY19wYXIlM2RCaW5nJTI2ZXRjY19jbXAlM2RCSU5HLVNIT1BQSU5HLURFJTI2ZXRjY19ncnAlM2RBbGxlJTI1MjBQcm9kdWt0ZSUyNmV0Y2NfYmt5JTNkZGVmYXVsdCUyNmV0Y2NfbXR5JTNkZSUyNmV0Y2NfYmRlJTNkYyUyNmV0Y2NfY3R2JTNkMTI1NjY3NzExNDclMjZldGNjX2tleSUzZHBhcmZ1bSUyNTIwdmljdG9yaWElMjUyMHNlY3JldCUyNTIwc2VwaG9yYSUyNmV0X2NtcF9zZWc1JTNkcyUyNmV0Y2NfdmFyJTNkNmE3N2M2YjBiOGY1MWFjYWRkOTdhMTk3NzQzZGYyNDMlMjZtc2Nsa2lkJTNkNmE3N2M2YjBiOGY1MWFjYWRkOTdhMTk3NzQzZGYyNDM&rlid=6a77c6b0b8f51acadd97a197743df243"
+                        }
+                    ],
+                    "thumbnail": {
+                        "height": 415,
+                        "width": 112,
+                        "url": "https://www.bing.com/th?id=OPEC.pc%2f%2f5PThDbpf%2fg474C474&o=5&pid=21.1"
+                    },
+                    "name": "Victoria&#39;s Secret Bare Vanilla Fragrance Mist (250 Ml)",
+                    "description": "Victoria&#39;s Secret Bare Vanilla Fragrance Mist 250 ml. Vanille und Apfelblüte bilden den Gesamtakkord im Duftkonzert, das sich Bare Vanilla nennt. Auf den typischen Duftverlauf verzichtet man hier tatsächlich. Doch wer hat dieses Elixier in die Welt gebracht? Das bleibt ein Geheimnis! Mit Bare Vanilla von Victoria&#39;s Secret bekommen Sie ein echtes Schmuckstück, das Ihr Leben verschönern wird. Besonders, wenn es kälter wird, entfaltet sich der warme gourmandige Hauch von Victoria&#39;s Secret Bare Vanilla wohltuend auf der Haut. Der Duft basiert auf einer Kombination von Vanille und Apfelblüte , die alles kompensiert, was sonst eine dreistufige Duftpyramide leistet. So schwingt neben verführerischer Vanille und zarter Apfelblüte eine leichte rauchige Note mit. Pudrig, süß und lecker wie ein Vanillekipferl oder cremig, sahnig und gourmandig wie ein Vanille-Apfel-Milchshake mit fluffigem Schlagobers - so lässt sich der Gourmandduft am besten ins Kulinarische übersetzen. Auf jeden Fall gehört &quot;reine Vanille&quot; zu den süßen Köstlichkeiten und ist daher für lebenslustige Frauen unwiderstehlich! Victoria&#39;s Secret Bare Vanilla ist jüngeren und älteren Damen zu empfehlen sowie allen, die es süß, vanillig und sexy mögen. Auch in der Konzentration als leichtes Bodyspray verkörpert der Duft das Credo der Marke: Das Schöne und Einzigartige der Trägerin zu wecken und aufzuschließen. Dazu braucht es im Alltag kein intensives Parfüm, sondern nur ein angenehm leichtes Körperspray. Der cremige Duft hat eine moderate Haltbarkeit und Sillage, er passt zu allen möglichen Anlässen in Arbeit und Freizeit. Frauen tragen ihn gern zu allen Jahreszeiten, besonders im Herbst und Winter. Duftnoten: süß, gourmandig. Basisnoten: Vanille, Apfelblüte. 250 ml Fragrance Mist von Victoria&#39;s Secret aus der Serie Bare Vanilla ist 0% reduziert im Kosmetik- und Parfum-Shop von easycosmetic.de erhältlich.",
+                    "url": "https://www.bing.com/aclick?ld=e8QAxkREHhcScHXV8GZXu3AzVUCUxmJS8-MlFTJUqGarngOzBAVaxqBLjj-g7MaPysXqs0_0w4Nd_ag80WziLN_-JV_Urfy_9Y5mqeeCcjdFTMvZh_RrwTvyPcHlVrJykOvLNXg3x-E2qCqmdVOqZU7G-cWMCOL42NC59wqNeUQjPdKClK&u=aHR0cHMlM2ElMmYlMmZ3d3cuZWFzeWNvc21ldGljLmRlJTJmdmljdG9yaWFzLXNlY3JldCUyZmJhcmUtdmFuaWxsYSUyZnZpY3Rvcmlhcy1zZWNyZXQtYmFyZS12YW5pbGxhLWZyYWdyYW5jZS1taXN0LTI1MG1sLmFzcHglM2Z1dG1fc291cmNlJTNkYmluZyUyNnV0bV9tZWRpdW0lM2RkYXRhZmVlZCUyNnV0bV9jYW1wYWlnbiUzZGNwYyUyNnV0bV90ZXJtJTNkVmljdG9yaWElMjUyN3MlMmJTZWNyZXQlMmJCYXJlJTJiVmFuaWxsYSUyNnV0bV9jb250ZW50JTNkcHJvZHVjdGFkcyUyNmV0Y2NfbWVkJTNkU0VBJTI2ZXRjY19wYXIlM2RCaW5nJTI2ZXRjY19jbXAlM2RCSU5HLVNIT1BQSU5HLURFJTI2ZXRjY19ncnAlM2RBbGxlJTI1MjBQcm9kdWt0ZSUyNmV0Y2NfYmt5JTNkZGVmYXVsdCUyNmV0Y2NfbXR5JTNkZSUyNmV0Y2NfYmRlJTNkYyUyNmV0Y2NfY3R2JTNkMTI1NjY3NzExNDclMjZldGNjX2tleSUzZHBhcmZ1bSUyNTIwdmljdG9yaWElMjUyMHNlY3JldCUyNTIwc2VwaG9yYSUyNmV0X2NtcF9zZWc1JTNkcyUyNmV0Y2NfdmFyJTNkNmE3N2M2YjBiOGY1MWFjYWRkOTdhMTk3NzQzZGYyNDMlMjZtc2Nsa2lkJTNkNmE3N2M2YjBiOGY1MWFjYWRkOTdhMTk3NzQzZGYyNDM&rlid=6a77c6b0b8f51acadd97a197743df243"
+                },
+                {
+                    "potentialActions": [
+                        {
+                            "type": "DisplayAction",
+                            "object": {
+                                "position": "Mainline",
+                                "impressionToken": "5"
+                            },
+                            "target": "https://api.dev.swisscows.com/feedback/display?rguid=670a4f46bc5c44e18db5b2bff21a2366"
+                        },
+                        {
+                            "type": "ViewAction",
+                            "target": "https://api.dev.swisscows.com:443/feedback/view?type=mv&reqver=1.0&rg=670a4f46bc5c44e18db5b2bff21a2366&tids=5"
+                        }
+                    ],
+                    "offers": [
+                        {
+                            "seller": {
+                                "name": "easycosmetic"
+                            },
+                            "price": 15.99,
+                            "priceCurrency": "EUR",
+                            "deliveryPrice": {
+                                "price": 3.99,
+                                "priceCurrency": "EUR",
+                                "description": "+3,99 € Versand"
+                            },
+                            "url": "https://www.bing.com/aclick?ld=e8Cvo09KQ2oD4F309MjpWCUTVUCUzoGXgKCrsFdArrIRWEJj8uVB2OGXnQQLqpQrycFcHqFkWCdY8688MS_hEheOwDHgMqJvwZfIrEXi9ES5-oK-OrypGVIwqa77kBOyRs7Egvgyb-NwprjpCquRn2sFSTGAVkTr09oEJmIHo2UpP50BB1&u=aHR0cHMlM2ElMmYlMmZ3d3cuZWFzeWNvc21ldGljLmRlJTJmdmljdG9yaWFzLXNlY3JldCUyZmFtYmVyLXJvbWFuY2UlMmZ2aWN0b3JpYXMtc2VjcmV0LWFtYmVyLXJvbWFuY2UtZnJhZ2FuY2UtbWlzdC0yNTBtbC5hc3B4JTNmdXRtX3NvdXJjZSUzZGJpbmclMjZ1dG1fbWVkaXVtJTNkZGF0YWZlZWQlMjZ1dG1fY2FtcGFpZ24lM2RjcGMlMjZ1dG1fdGVybSUzZFZpY3RvcmlhJTI1MjdzJTJiU2VjcmV0JTJiQW1iZXIlMmJSb21hbmNlJTI2dXRtX2NvbnRlbnQlM2Rwcm9kdWN0YWRzJTI2ZXRjY19tZWQlM2RTRUElMjZldGNjX3BhciUzZEJpbmclMjZldGNjX2NtcCUzZEJJTkctU0hPUFBJTkctREUlMjZldGNjX2dycCUzZEFsbGUlMjUyMFByb2R1a3RlJTI2ZXRjY19ia3klM2RkZWZhdWx0JTI2ZXRjY19tdHklM2RlJTI2ZXRjY19iZGUlM2RjJTI2ZXRjY19jdHYlM2QxMjU2Njc3MTE0NyUyNmV0Y2Nfa2V5JTNkcGFyZnVtJTI1MjB2aWN0b3JpYSUyNTIwc2VjcmV0JTI1MjBzZXBob3JhJTI2ZXRfY21wX3NlZzUlM2RzJTI2ZXRjY192YXIlM2Q4YWZmOGNmMTk1YTcxM2JhMmY2ZmViZDY1OTZmZmFmNSUyNm1zY2xraWQlM2Q4YWZmOGNmMTk1YTcxM2JhMmY2ZmViZDY1OTZmZmFmNQ&rlid=8aff8cf195a713ba2f6febd6596ffaf5"
+                        }
+                    ],
+                    "thumbnail": {
+                        "height": 425,
+                        "width": 115,
+                        "url": "https://www.bing.com/th?id=OPEC.buOkkjwg6WBlzA474C474&o=5&pid=21.1"
+                    },
+                    "name": "Victoria&#39;s Secret Amber Romance Fragance Mist (250 Ml)",
+                    "description": "Victoria&#39;s Secret Amber Romance Fragance Mist 250 ml. Durch den Auftakt dieses Parfums wird man ganz alleine von Schwarzkirsche geführt. In der Herznote folgt sodann Vanillecreme - und steht hier für sich. Einen abgerundeten Ausklang beschert dem Parfum schließlich das Aroma von Sandelholz. Die Nase hinter diesem edlen Duft ist nicht bekannt. Wer nicht einfach ein Parfum kaufen, sondern sich selbst ein kleines Stückchen Luxus gönnen will, liegt mit Victoria&#39;s Secret Amber Romance richtig. Victoria&#39;s Secret Amber Romance ist pure, sinnlich-süße Verführung . Der langanhaltende Duft legt sich sanft auf die Haut und umhüllt seine Trägerin mit seiner cremig-gourmandigen Wärme. Die leichte, romantische Komposition öffnet mit der aromatischen Frische von saftigen Schwarzkirschen . Ihre intensiven Frucht-Nuancen werden in der Herznote von einer süßen, gourmandigen Vanillecreme abgelöst, die dem Duft seinen verführerischen, kuscheligen Wohlfühlcharakter verleiht. Eine Basisnote aus edlem Sandelholz vollendet Victoria&#39;s Secret Amber Romance. Diese süßlich-balsamische Holznote rundet die sinnliche Komposition harmonisch ab und gibt ihr eine angenehme Tiefe . Der unbeschwerte , cremig-süße Duft ist der perfekte Begleiter für den Alltag, überzeugt mit seiner verlockenden Sinnlichkeit aber auch beim romantischen Dinner oder beim gemütlichen Abend zu zweit. Mit seiner sinnlichen Wärme und verführerischen Süße begeistert Victoria&#39;s Secret Amber Romance. Und auch optisch macht der köstliche Duft eine ausgezeichnete Figur. Die hohe, schlanke Flasche, die mit dem Bild eines Sonnenuntergangs in warmen Braun-, Gold und Kupfertöne verziert ist, ist ein echter Blickfang. Auf der Vorderseite der runden Flasche findet sich das Label, ebenfalls in einem edlen Kupferton und mit feiner weißer Schrift. Die goldene Verschlusskappe, die durch eine schwarze Banderole am Flaschenhals leicht abgesetzt ist, bildet einen eleganten Abschluss für den schicken Flakon. Victoria&#39;s Secret, die Marke hinter dem betörenden Victoria&#39;s Secret Amber Romance, ist fast jedem ein Begriff. Die amerikanische Modemarke, die vor allem auf Unterwäsche spezialisiert ist, versteht es, sich und ihre Produkte gekonnt in den Fokus zu rücken. Spätestens seit die Modenschauen des Unternehmens live im Fernsehen ausgestrahlt werden, ist klar, dass Victoria&#39;s Secret zu den wichtigsten Größen der Modebranche gehört. Diesen bemerkenswerten Erfolg verdankt das US-Label seinen innovativen und aufsehenerregenden Marketing-Ideen . Gegründet 1977, sollte das Unternehmen vor allem Männer ansprechen, denen es bisher unangenehm war, Dessous für ihre Partnerinnen zu kaufen. Neben den klassischen Filialen machte deshalb der Bestellkatalog-Service einen Großteil des Umsatzes aus. So wurde die Marke schnell bekannt und es entwickelte sich in den 1990er Jahren ein regelrechter Hype um das Dessous-Label . Die seit 1995 jährlich stattfindende Fashion Show ging sogar in die Geschichte ein, da sie als erste Modenschau gleichzeitig am Times Square und im Internet ausgestrahlt wurde. Das war 1998; 2001 folgte dann die Live-Übertragung im amerikanischen Fernsehen. Heute ist die Victoria&#39;s Secret Fashion Show eines der größten Mode-Spektakel des Jahres. Weltweit wird die Modenschau im Fernsehen übertragen, zahlreiche prominente Musiker treten live auf dem Catwalk auf und performen ihre Lieder inmitten der leichtbekleideten Supermodels, die als Engel über den Laufsteg schweben. Wer kennt sie nicht, die weltberühmten Victoria&#39;s Secret-Engel ? Schon seit den 1990er Jahren engagiert das US-Modehaus einige der schönsten Models als Markenbotschafter. Bei Fotoshootings und Promo-Events, aber natürlich auch in den Werbespots und bei der jährlich stattfindenden Fashion Show repräsentieren diese Models das Unternehmen und zeigen die aufwändig gestalteten Dessous und die verführerischen Düfte - wie das sinnlich-süße Victoria&#39;s Secret Amber Romance. Zu den wohl bekanntesten Gesichtern des Modelabels gehören: Tyra Banks, Gisele Bündchen, Miranda Kerr, Chanel Iman, Karlie Kloss und Alessandra Ambrosio, um nur einige von ihnen zu nennen. Duftnoten: süß. Basisnoten: Schwarzkirsche, Vanille, Sandelholz. 250 ml Fragance Mist von Victoria&#39;s Secret aus der Serie Amber Romance ist 0% reduziert im Kosmetik- und Parfum-Shop von easycosmetic.de erhältlich.",
+                    "url": "https://www.bing.com/aclick?ld=e8Cvo09KQ2oD4F309MjpWCUTVUCUzoGXgKCrsFdArrIRWEJj8uVB2OGXnQQLqpQrycFcHqFkWCdY8688MS_hEheOwDHgMqJvwZfIrEXi9ES5-oK-OrypGVIwqa77kBOyRs7Egvgyb-NwprjpCquRn2sFSTGAVkTr09oEJmIHo2UpP50BB1&u=aHR0cHMlM2ElMmYlMmZ3d3cuZWFzeWNvc21ldGljLmRlJTJmdmljdG9yaWFzLXNlY3JldCUyZmFtYmVyLXJvbWFuY2UlMmZ2aWN0b3JpYXMtc2VjcmV0LWFtYmVyLXJvbWFuY2UtZnJhZ2FuY2UtbWlzdC0yNTBtbC5hc3B4JTNmdXRtX3NvdXJjZSUzZGJpbmclMjZ1dG1fbWVkaXVtJTNkZGF0YWZlZWQlMjZ1dG1fY2FtcGFpZ24lM2RjcGMlMjZ1dG1fdGVybSUzZFZpY3RvcmlhJTI1MjdzJTJiU2VjcmV0JTJiQW1iZXIlMmJSb21hbmNlJTI2dXRtX2NvbnRlbnQlM2Rwcm9kdWN0YWRzJTI2ZXRjY19tZWQlM2RTRUElMjZldGNjX3BhciUzZEJpbmclMjZldGNjX2NtcCUzZEJJTkctU0hPUFBJTkctREUlMjZldGNjX2dycCUzZEFsbGUlMjUyMFByb2R1a3RlJTI2ZXRjY19ia3klM2RkZWZhdWx0JTI2ZXRjY19tdHklM2RlJTI2ZXRjY19iZGUlM2RjJTI2ZXRjY19jdHYlM2QxMjU2Njc3MTE0NyUyNmV0Y2Nfa2V5JTNkcGFyZnVtJTI1MjB2aWN0b3JpYSUyNTIwc2VjcmV0JTI1MjBzZXBob3JhJTI2ZXRfY21wX3NlZzUlM2RzJTI2ZXRjY192YXIlM2Q4YWZmOGNmMTk1YTcxM2JhMmY2ZmViZDY1OTZmZmFmNSUyNm1zY2xraWQlM2Q4YWZmOGNmMTk1YTcxM2JhMmY2ZmViZDY1OTZmZmFmNQ&rlid=8aff8cf195a713ba2f6febd6596ffaf5"
+                },
+                {
+                    "potentialActions": [
+                        {
+                            "type": "DisplayAction",
+                            "object": {
+                                "position": "Mainline",
+                                "impressionToken": "9"
+                            },
+                            "target": "https://api.dev.swisscows.com/feedback/display?rguid=670a4f46bc5c44e18db5b2bff21a2366"
+                        },
+                        {
+                            "type": "ViewAction",
+                            "target": "https://api.dev.swisscows.com:443/feedback/view?type=mv&reqver=1.0&rg=670a4f46bc5c44e18db5b2bff21a2366&tids=9"
+                        }
+                    ],
+                    "offers": [
+                        {
+                            "seller": {
+                                "name": "easycosmetic"
+                            },
+                            "price": 15.99,
+                            "priceCurrency": "EUR",
+                            "deliveryPrice": {
+                                "price": 3.99,
+                                "priceCurrency": "EUR",
+                                "description": "+3,99 € Versand"
+                            },
+                            "url": "https://www.bing.com/aclick?ld=e83ZnYuO56FMYg1xmwHu77-zVUCUyd4nlUxdSiuZdP5Sm42oTnuassXwEoPEUMZZYRVCWAdhZOVGZN2qOdA0Ya09yyLRUvdCG5ut_JXsRiRWjgBXPwEsFpLazuCwWLVk7P8WPkpz2rdG5ZzslKVmFp3CRe9M-Hu6ULl9PcIxd7fCvcvV15&u=aHR0cHMlM2ElMmYlMmZ3d3cuZWFzeWNvc21ldGljLmRlJTJmdmljdG9yaWFzLXNlY3JldCUyZmFxdWEta2lzcyUyZnZpY3Rvcmlhcy1zZWNyZXQtYXF1YS1raXNzLWZyYWdyYW5jZS1taXN0LTI1MG1sLmFzcHglM2Z1dG1fc291cmNlJTNkYmluZyUyNnV0bV9tZWRpdW0lM2RkYXRhZmVlZCUyNnV0bV9jYW1wYWlnbiUzZGNwYyUyNnV0bV90ZXJtJTNkVmljdG9yaWElMjUyN3MlMmJTZWNyZXQlMmJBcXVhJTJiS2lzcyUyNnV0bV9jb250ZW50JTNkcHJvZHVjdGFkcyUyNmV0Y2NfbWVkJTNkU0VBJTI2ZXRjY19wYXIlM2RCaW5nJTI2ZXRjY19jbXAlM2RCSU5HLVNIT1BQSU5HLURFJTI2ZXRjY19ncnAlM2RBbGxlJTI1MjBQcm9kdWt0ZSUyNmV0Y2NfYmt5JTNkZGVmYXVsdCUyNmV0Y2NfbXR5JTNkZSUyNmV0Y2NfYmRlJTNkYyUyNmV0Y2NfY3R2JTNkMTI1NjY3NzExNDclMjZldGNjX2tleSUzZHBhcmZ1bSUyNTIwdmljdG9yaWElMjUyMHNlY3JldCUyNTIwc2VwaG9yYSUyNmV0X2NtcF9zZWc1JTNkcyUyNmV0Y2NfdmFyJTNkZWRkMzVlNDBlZWVkMTEwNTU5NWIzOTY3MjIyNWVmYWUlMjZtc2Nsa2lkJTNkZWRkMzVlNDBlZWVkMTEwNTU5NWIzOTY3MjIyNWVmYWU&rlid=edd35e40eeed1105595b39672225efae"
+                        }
+                    ],
+                    "thumbnail": {
+                        "height": 425,
+                        "width": 113,
+                        "url": "https://www.bing.com/th?id=OPEC.h%2bcMTP7RixNlpw474C474&o=5&pid=21.1"
+                    },
+                    "name": "Victoria&#39;s Secret Aqua Kiss Fragrance Mist (250 Ml)",
+                    "description": "Victoria&#39;s Secret Aqua Kiss Fragrance Mist 250 ml. Das Splash Spray Victoria&#39;s Secret Aqua Kiss Fragrance Mist erfrischt mit feinen Nuancen der Freesie und des Gänseblümchens. Seine regengeküsste Formulierung enthält kühlende Aloe vera, Gurkenaromen, beruhigende Kamille und leicht süße Noten for einen sauberen, angenehmen Duft. Das erfrischende Timbre des Splash Sprays hält bis zu vier Stunden an. Victoria&#39;s Secret Aqua Kiss wurde 2012 passend zur Victoria&#39;s Secret Navy and Blue-Kollektion lanciert. In seinem lichtblauen Flakon mit zarten Blumenmotiven eignet sich der aquatische Splash-Duft auch gut als Geschenk. Aquatisch-frisch und regengeküsst wie die Luft an einem lauen Frühlingstag ist das zarte Body-Splash-Duft Victoria&#39;s Secret Aqua Kiss von 2012. Wer das Gefühl der Morgenfrische liebt, kann es sich durch wenige Spritzer des Victoria&#39;s Secret Aqua Kiss einfach herbeizaubern - und damit im Nu Vitalität und gute Laune! Das delikate Bouquet des Splash-Duftes eröffnet mit feinen Nuancen des Gänseblümchens , umspielt von fruchtig-süßen Beiklängen. Das Gänseblümchen besticht durch seinen milden, zartherben, leicht nussigen Duft. Besonders an ihm ist, dass es heliotrop ist, also immer der Sonne zugewandt. So öffnen sich seine Moleküle auch auf der Haut und entwickeln ihre frischherben Nuancen im Beisein der Sonne. Als leichter Zwei-Noten-Duft verfügt das Victoria&#39;s Secret Aqua Kiss über augenblickliche Strahlkraft. Seine erfrischenden Nuancen gehen direkt über in seinen saftigen, besänftigenden Fond zarter, nuancenreicher Freesie , die in Weiß, Rosé, Grün und Lila erstrahlt, jede Sorte auf ihre Weise: Weiß, um Körper und Sinne wie eine sanfte Meeresbrise zu umwehen, roséfarben für seine zarte, blumige Nuance, grün und lilafarben, um das Timbre des Gänseblümchens aufzunehmen und eine leichte, verführerische Duftspur zu hinterlassen. So ist das Victoria&#39;s Secret Aqua Kiss Body Splash Spray wie geschaffen für die kostbaren Momente morgendlicher Frische und entführt in einen optimistisch begleiteten Tag! Duftnoten: aquatisch, frisch. Basisnoten: Freesie, Gänseblümchen. 250 ml Fragrance Mist von Victoria&#39;s Secret aus der Serie Aqua Kiss ist 0% reduziert im Kosmetik- und Parfum-Shop von easycosmetic.de erhältlich.",
+                    "url": "https://www.bing.com/aclick?ld=e83ZnYuO56FMYg1xmwHu77-zVUCUyd4nlUxdSiuZdP5Sm42oTnuassXwEoPEUMZZYRVCWAdhZOVGZN2qOdA0Ya09yyLRUvdCG5ut_JXsRiRWjgBXPwEsFpLazuCwWLVk7P8WPkpz2rdG5ZzslKVmFp3CRe9M-Hu6ULl9PcIxd7fCvcvV15&u=aHR0cHMlM2ElMmYlMmZ3d3cuZWFzeWNvc21ldGljLmRlJTJmdmljdG9yaWFzLXNlY3JldCUyZmFxdWEta2lzcyUyZnZpY3Rvcmlhcy1zZWNyZXQtYXF1YS1raXNzLWZyYWdyYW5jZS1taXN0LTI1MG1sLmFzcHglM2Z1dG1fc291cmNlJTNkYmluZyUyNnV0bV9tZWRpdW0lM2RkYXRhZmVlZCUyNnV0bV9jYW1wYWlnbiUzZGNwYyUyNnV0bV90ZXJtJTNkVmljdG9yaWElMjUyN3MlMmJTZWNyZXQlMmJBcXVhJTJiS2lzcyUyNnV0bV9jb250ZW50JTNkcHJvZHVjdGFkcyUyNmV0Y2NfbWVkJTNkU0VBJTI2ZXRjY19wYXIlM2RCaW5nJTI2ZXRjY19jbXAlM2RCSU5HLVNIT1BQSU5HLURFJTI2ZXRjY19ncnAlM2RBbGxlJTI1MjBQcm9kdWt0ZSUyNmV0Y2NfYmt5JTNkZGVmYXVsdCUyNmV0Y2NfbXR5JTNkZSUyNmV0Y2NfYmRlJTNkYyUyNmV0Y2NfY3R2JTNkMTI1NjY3NzExNDclMjZldGNjX2tleSUzZHBhcmZ1bSUyNTIwdmljdG9yaWElMjUyMHNlY3JldCUyNTIwc2VwaG9yYSUyNmV0X2NtcF9zZWc1JTNkcyUyNmV0Y2NfdmFyJTNkZWRkMzVlNDBlZWVkMTEwNTU5NWIzOTY3MjIyNWVmYWUlMjZtc2Nsa2lkJTNkZWRkMzVlNDBlZWVkMTEwNTU5NWIzOTY3MjIyNWVmYWU&rlid=edd35e40eeed1105595b39672225efae"
+                },
+                {
+                    "potentialActions": [
+                        {
+                            "type": "DisplayAction",
+                            "object": {
+                                "position": "Mainline",
+                                "impressionToken": "13"
+                            },
+                            "target": "https://api.dev.swisscows.com/feedback/display?rguid=670a4f46bc5c44e18db5b2bff21a2366"
+                        },
+                        {
+                            "type": "ViewAction",
+                            "target": "https://api.dev.swisscows.com:443/feedback/view?type=mv&reqver=1.0&rg=670a4f46bc5c44e18db5b2bff21a2366&tids=13"
+                        }
+                    ],
+                    "offers": [
+                        {
+                            "seller": {
+                                "name": "easycosmetic"
+                            },
+                            "price": 20.99,
+                            "priceCurrency": "EUR",
+                            "deliveryPrice": {
+                                "price": 3.99,
+                                "priceCurrency": "EUR",
+                                "description": "+3,99 € Versand"
+                            },
+                            "url": "https://www.bing.com/aclick?ld=e8PQjqYZkz7DR86Vdv0ighvTVUCUy5mcWSS2mDCsqvqn72Hu4MD6hJSdwZw6U-OLPRtaiE7Ds_IGn80UcawZCoi2fa9d6NGjcidh4ZDO8cmJ_FrbOY5Z4rOVQ3HBXzQvvXWkha2lNIc6z3189HueVQuQc4CHDzZnIkJN7UHBQBzLJBIz1G&u=aHR0cHMlM2ElMmYlMmZ3d3cuZWFzeWNvc21ldGljLmRlJTJmdmljdG9yaWFzLXNlY3JldCUyZmZyb3N0bWVsdCUyZnZpY3Rvcmlhcy1zZWNyZXQtZnJvc3RtZWx0LWZyYWdyYW5jZS1taXN0LTI1MG1sLmFzcHglM2Z1dG1fc291cmNlJTNkYmluZyUyNnV0bV9tZWRpdW0lM2RkYXRhZmVlZCUyNnV0bV9jYW1wYWlnbiUzZGNwYyUyNnV0bV90ZXJtJTNkVmljdG9yaWElMjUyN3MlMmJTZWNyZXQlMmJGcm9zdG1lbHQlMjZ1dG1fY29udGVudCUzZHByb2R1Y3RhZHMlMjZldGNjX21lZCUzZFNFQSUyNmV0Y2NfcGFyJTNkQmluZyUyNmV0Y2NfY21wJTNkQklORy1TSE9QUElORy1ERSUyNmV0Y2NfZ3JwJTNkQWxsZSUyNTIwUHJvZHVrdGUlMjZldGNjX2JreSUzZGRlZmF1bHQlMjZldGNjX210eSUzZGUlMjZldGNjX2JkZSUzZGMlMjZldGNjX2N0diUzZDEyNTY2NzcxMTQ3JTI2ZXRjY19rZXklM2RwYXJmdW0lMjUyMHZpY3RvcmlhJTI1MjBzZWNyZXQlMjUyMHNlcGhvcmElMjZldF9jbXBfc2VnNSUzZHMlMjZldGNjX3ZhciUzZDk3Yzg2OTEzNGY5MzEwZWUyMzg3MGUzNDgzNWJjMzVkJTI2bXNjbGtpZCUzZDk3Yzg2OTEzNGY5MzEwZWUyMzg3MGUzNDgzNWJjMzVk&rlid=97c869134f9310ee23870e34835bc35d"
+                        }
+                    ],
+                    "thumbnail": {
+                        "height": 361,
+                        "width": 109,
+                        "url": "https://www.bing.com/th?id=OPEC.4vbs3b0w1FeQ%2fQ474C474&o=5&pid=21.1"
+                    },
+                    "name": "Victoria&#39;s Secret Frostmelt Fragrance Mist (250 Ml)",
+                    "description": "Victoria&#39;s Secret Frostmelt Fragrance Mist 250 ml. Es kann mehrere Stunden dauern, bis ein Duft sich gänzlich entwickelt hat. Nicht so beim Victoria&#39;s Secret Frostmelt Fragrance Mist, wo auf die Verwendung der traditionellen Duftpyramide verzichtet wurde. So können die olfaktorischen Sinne die Aromen von Minze, Kakao und Tonkabohne simultan genießen. Wem wir diesen herrlichen Duft zu verdanken haben, bleibt ein Geheimnis. Mit Frost Melt von Victoria&#39;s Secret bekommen Sie ein echtes Schmuckstück, das Ihr Leben verschönern wird. Die zartschmelzende Liaison aus frischer Minze, verführerischer Schokolade und warmwürziger Tonkabohne besänftigt die Sinne an heißen Tagen ebenso wie an kühlen Abenden und in der Winterzeit, wenn die wohltuenden Aromen Körper und Seele entspannen. Victoria&#39;s Secret Frostmelt ist Teil der Victoria&#39;s Secret Après Snow Holiday Collection , die 2023 lanciert wird. Die winterlichen Duftkreationen Snowdrift (Frozen Berries und Jasmin), Sunslope (Kokosnuss, Amber und Vanille) und Nightsip (Champagner, Veilchen und pudrige Aldehyde auf Holz) machen Gourmetgenuss zu jeder Jahreszeit und für jeden erschwinglich: Denn die komplexen Bodysprays bringen die eisigen Aromen namhafter Duftdesigner wie L&#39;Artisan Parfumeur (18 Glacialis Terra, 2016) in die beliebte Splash-Spray-Kollektion, um jeder Frau eine unwiderstehliche Aura zu verleihen. Victoria&#39;s Secret, die 1977 von Ray Raymond gegründete Kultmarke aus Kalifornien , hat sich seit dem Luxusduft Winter Bombshell (2015) den herzerwärmenden Snowflake-Kreationen verschrieben. Seitdem sind sie aus der beliebten Duftkollektion nicht mehr wegzudenken und erfinden sich immer wieder neu : Ob in der Winter Dazzle Collection 2019 mit den Düften Diamond Petals, Gold Struck, Platinum Ice und Emerald Crush, die frische Früchte mit Frosted Crush und edlen Edelsteinen kombinieren, in der Frosted Fragrances Edition (2019) mit den eisigen Duftnebeln Pure Seduction Frosted, Bare Vanilla Frosted, Love Spell Frosted und Velvet Petals Frosted oder der romantisch inszenierten Winter Bliss Edition (2020) mit den Düften Fresh Snowfall, Winter Sky, Moonlight Frost und Wonderland Woods. Eiskalt und doch herzerwärmend entfesseln sie mit kontrastreichen Nuancen wie Pflaume, Kokosnuss und arktischer Luft die Sinnlichkeit - und sind unverzichtbare Accessoires in jeder Duftkollektion. Victoria&#39;s Secret Frostmelt ist wie geschaffen, um die Sinne mit einer Liaison aus Schokolade, frischer Minze und warmer Tonkabohne zu beruhigen. Sein süßlich-geschmackvoller Duft umhüllt den Körper gleichzeitig, ohne die klassische Duftpyramide. Die verführerischen Akkorde des Duftes, der in Zusammenarbeit mit renommierten Parfümeuren wie Annie Buzantian, Quentin Bisch und Steve DeMercado entwickelt wurde, lassen in eine Welt sinnlich-schmelzender Aromen eintauchen, die durch das grün-goldene Design von Victoria&#39;s Secret Frostmelt unterstützt wird. Und der trendige Chocolate Touch mit seinen Aromen von heißer Schokolade entführt in eine magische Winterlandschaft , in der der intensive Duft von frischer Minze, verführerischen Kakaonoten und sinnlicher Tonkabohne zu einem unvergleichlichen sinnlichen Erlebnis einlädt. 250 ml Fragrance Mist von Victoria&#39;s Secret aus der Serie Frostmelt ist 0% reduziert im Kosmetik- und Parfum-Shop von easycosmetic.de erhältlich.",
+                    "url": "https://www.bing.com/aclick?ld=e8PQjqYZkz7DR86Vdv0ighvTVUCUy5mcWSS2mDCsqvqn72Hu4MD6hJSdwZw6U-OLPRtaiE7Ds_IGn80UcawZCoi2fa9d6NGjcidh4ZDO8cmJ_FrbOY5Z4rOVQ3HBXzQvvXWkha2lNIc6z3189HueVQuQc4CHDzZnIkJN7UHBQBzLJBIz1G&u=aHR0cHMlM2ElMmYlMmZ3d3cuZWFzeWNvc21ldGljLmRlJTJmdmljdG9yaWFzLXNlY3JldCUyZmZyb3N0bWVsdCUyZnZpY3Rvcmlhcy1zZWNyZXQtZnJvc3RtZWx0LWZyYWdyYW5jZS1taXN0LTI1MG1sLmFzcHglM2Z1dG1fc291cmNlJTNkYmluZyUyNnV0bV9tZWRpdW0lM2RkYXRhZmVlZCUyNnV0bV9jYW1wYWlnbiUzZGNwYyUyNnV0bV90ZXJtJTNkVmljdG9yaWElMjUyN3MlMmJTZWNyZXQlMmJGcm9zdG1lbHQlMjZ1dG1fY29udGVudCUzZHByb2R1Y3RhZHMlMjZldGNjX21lZCUzZFNFQSUyNmV0Y2NfcGFyJTNkQmluZyUyNmV0Y2NfY21wJTNkQklORy1TSE9QUElORy1ERSUyNmV0Y2NfZ3JwJTNkQWxsZSUyNTIwUHJvZHVrdGUlMjZldGNjX2JreSUzZGRlZmF1bHQlMjZldGNjX210eSUzZGUlMjZldGNjX2JkZSUzZGMlMjZldGNjX2N0diUzZDEyNTY2NzcxMTQ3JTI2ZXRjY19rZXklM2RwYXJmdW0lMjUyMHZpY3RvcmlhJTI1MjBzZWNyZXQlMjUyMHNlcGhvcmElMjZldF9jbXBfc2VnNSUzZHMlMjZldGNjX3ZhciUzZDk3Yzg2OTEzNGY5MzEwZWUyMzg3MGUzNDgzNWJjMzVkJTI2bXNjbGtpZCUzZDk3Yzg2OTEzNGY5MzEwZWUyMzg3MGUzNDgzNWJjMzVk&rlid=97c869134f9310ee23870e34835bc35d"
+                },
+                {
+                    "potentialActions": [
+                        {
+                            "type": "DisplayAction",
+                            "object": {
+                                "position": "Mainline",
+                                "impressionToken": "17"
+                            },
+                            "target": "https://api.dev.swisscows.com/feedback/display?rguid=670a4f46bc5c44e18db5b2bff21a2366"
+                        },
+                        {
+                            "type": "ViewAction",
+                            "target": "https://api.dev.swisscows.com:443/feedback/view?type=mv&reqver=1.0&rg=670a4f46bc5c44e18db5b2bff21a2366&tids=17"
+                        }
+                    ],
+                    "offers": [
+                        {
+                            "seller": {
+                                "name": "easycosmetic"
+                            },
+                            "price": 15.99,
+                            "priceCurrency": "EUR",
+                            "deliveryPrice": {
+                                "price": 3.99,
+                                "priceCurrency": "EUR",
+                                "description": "+3,99 € Versand"
+                            },
+                            "url": "https://www.bing.com/aclick?ld=e8dUPHJNHizGRpHLWh9UBnPjVUCUxRovseYLNbayOkrWvSqResfwXd7DMTVdKwyvrgGjbtg_klh1WFWk6DpJsLk1K2UzQJC3sjzlQNaa18aaHEp__c68j8e5XpY_Ht-Gv-ORkV15C7rPtlqJseUeX6JrCjNIP985Zq7Aa5v_fYfycTDxWG&u=aHR0cHMlM2ElMmYlMmZ3d3cuZWFzeWNvc21ldGljLmRlJTJmdmljdG9yaWFzLXNlY3JldCUyZmNvY29udXQtcGFzc2lvbiUyZnZpY3Rvcmlhcy1zZWNyZXQtY29jb251dC1wYXNzaW9uLWZyYWdyYW5jZS1taXN0LTI1MG1sLmFzcHglM2Z1dG1fc291cmNlJTNkYmluZyUyNnV0bV9tZWRpdW0lM2RkYXRhZmVlZCUyNnV0bV9jYW1wYWlnbiUzZGNwYyUyNnV0bV90ZXJtJTNkVmljdG9yaWElMjUyN3MlMmJTZWNyZXQlMmJDb2NvbnV0JTJiUGFzc2lvbiUyNnV0bV9jb250ZW50JTNkcHJvZHVjdGFkcyUyNmV0Y2NfbWVkJTNkU0VBJTI2ZXRjY19wYXIlM2RCaW5nJTI2ZXRjY19jbXAlM2RCSU5HLVNIT1BQSU5HLURFJTI2ZXRjY19ncnAlM2RBbGxlJTI1MjBQcm9kdWt0ZSUyNmV0Y2NfYmt5JTNkZGVmYXVsdCUyNmV0Y2NfbXR5JTNkZSUyNmV0Y2NfYmRlJTNkYyUyNmV0Y2NfY3R2JTNkMTI1NjY3NzExNDclMjZldGNjX2tleSUzZHBhcmZ1bSUyNTIwdmljdG9yaWElMjUyMHNlY3JldCUyNTIwc2VwaG9yYSUyNmV0X2NtcF9zZWc1JTNkcyUyNmV0Y2NfdmFyJTNkMDdlMWZmZGRkZjE1MTQ0M2E4NzE5OGZhMTNkZDIxZTYlMjZtc2Nsa2lkJTNkMDdlMWZmZGRkZjE1MTQ0M2E4NzE5OGZhMTNkZDIxZTY&rlid=07e1ffdddf151443a87198fa13dd21e6"
+                        }
+                    ],
+                    "thumbnail": {
+                        "height": 425,
+                        "width": 113,
+                        "url": "https://www.bing.com/th?id=OPEC.XYjRd7CuZcMr3A474C474&o=5&pid=21.1"
+                    },
+                    "name": "Victoria&#39;s Secret Coconut Passion Fragrance Mist (250 Ml)",
+                    "description": "Victoria&#39;s Secret Coconut Passion Fragrance Mist 250 ml. Der Victoria&#39;s Secret Coconut Passion Fragrance Mist entführt mit seinen milchig-pudrigen, tropisch-süßen Aromen in eine tropische Welt des Wohlbefindens. Der beliebte Gourmand-Duft aus der Victoria&#39;s Secret Garden Duftkollektion, 2009 emittiert, erinnert an die luxuriöse Blumenpracht von Queen Victoria&#39;s Secret Garden auf der Isle of Wight. Zarte Kokosaromen eröffnen das sinnlich-erfrischende Body-Splash-Bouquet, umschmeichelt zu werden von sinnlich-süßen Vanilleklängen und zarten Maiglöckchen-Nuancen. Erfrischend-besänftigende Akkorde von frischer Aloe vera, veredelt durch Kamille-Absolue, runden den gourmandigen Splash-Duft ab. Im sinnlich-verschwenderischen Flakon der Secret Garden Collection. Er ist milchig-pudrig, tropisch , süß und unverkennbar: Der Duft der Kokosnuss, der wie kein anderer die Gourmand-Düfte prägt. Die beliebte Victoria&#39;s Secret Garden Duftkollektion legte den faszinierenden Duft der Kokosnuss, umschmeichelt von zarten Blüten- und Vanillenuancen, 2009 als eleganten Monotheme-Duft: in seinem köstlich-süßen Victoria&#39;s Secret Coconut Passion. Als Bodyspray konzipiert, umschmeicheln die fruchtig-blumigen Nuancen des Victoria&#39;s Secret Coconut Passion in die köstlich-vanillige Welt eines exotischen Paradieses mit seinen fulminanten Kokospalmen , seinen duftenden Vanillehainen und zarten Maiglöckchenaromen. Erfrischende Aloe-vera-Noten und besänftigende Beiklänge von Kamille runden das sinnliche Bouquet des Victoria&#39;s Secret Coconut Passion ab. Gemeinsam mit dem blumig-fruchtigen Duftspray Velvet Petals (2019), dem leichten Bare Vanilla (2018), dem Forbidden Rose aus nachtblühendem Jasmin-Rose-Absolue (2020) sowie Amber Romance und Pure Seduction (2002) zählt der Kokosnussduft zu den verlockenden Sprays der Victoria&#39;s Secret Garden-Kollektion, die erstmals 1994 aufgelegt wurde. Außer ihren benannten Düften sind weiterhin die Tropical-Düfte Temptation und Lost in Fantasy (2010) sowie das aquatisch-besänftigende Kiss von 2012 erhältlich. Viele weitere Nuancen werden aktuell wieder aufgelegt - passend zum Trend, ihre leichten, erfrischenden Duftnebe l im Layering zu kombinieren, um Körper und nach einem langen Tag aromatisch zu beduften und zu erfrischen. Duftnoten: süß, orientalisch. Basisnoten: Kokosnuss, Maiglöckchen, Vanille. 250 ml Fragrance Mist von Victoria&#39;s Secret aus der Serie Coconut Passion ist 0% reduziert im Kosmetik- und Parfum-Shop von easycosmetic.de erhältlich.",
+                    "url": "https://www.bing.com/aclick?ld=e8dUPHJNHizGRpHLWh9UBnPjVUCUxRovseYLNbayOkrWvSqResfwXd7DMTVdKwyvrgGjbtg_klh1WFWk6DpJsLk1K2UzQJC3sjzlQNaa18aaHEp__c68j8e5XpY_Ht-Gv-ORkV15C7rPtlqJseUeX6JrCjNIP985Zq7Aa5v_fYfycTDxWG&u=aHR0cHMlM2ElMmYlMmZ3d3cuZWFzeWNvc21ldGljLmRlJTJmdmljdG9yaWFzLXNlY3JldCUyZmNvY29udXQtcGFzc2lvbiUyZnZpY3Rvcmlhcy1zZWNyZXQtY29jb251dC1wYXNzaW9uLWZyYWdyYW5jZS1taXN0LTI1MG1sLmFzcHglM2Z1dG1fc291cmNlJTNkYmluZyUyNnV0bV9tZWRpdW0lM2RkYXRhZmVlZCUyNnV0bV9jYW1wYWlnbiUzZGNwYyUyNnV0bV90ZXJtJTNkVmljdG9yaWElMjUyN3MlMmJTZWNyZXQlMmJDb2NvbnV0JTJiUGFzc2lvbiUyNnV0bV9jb250ZW50JTNkcHJvZHVjdGFkcyUyNmV0Y2NfbWVkJTNkU0VBJTI2ZXRjY19wYXIlM2RCaW5nJTI2ZXRjY19jbXAlM2RCSU5HLVNIT1BQSU5HLURFJTI2ZXRjY19ncnAlM2RBbGxlJTI1MjBQcm9kdWt0ZSUyNmV0Y2NfYmt5JTNkZGVmYXVsdCUyNmV0Y2NfbXR5JTNkZSUyNmV0Y2NfYmRlJTNkYyUyNmV0Y2NfY3R2JTNkMTI1NjY3NzExNDclMjZldGNjX2tleSUzZHBhcmZ1bSUyNTIwdmljdG9yaWElMjUyMHNlY3JldCUyNTIwc2VwaG9yYSUyNmV0X2NtcF9zZWc1JTNkcyUyNmV0Y2NfdmFyJTNkMDdlMWZmZGRkZjE1MTQ0M2E4NzE5OGZhMTNkZDIxZTYlMjZtc2Nsa2lkJTNkMDdlMWZmZGRkZjE1MTQ0M2E4NzE5OGZhMTNkZDIxZTY&rlid=07e1ffdddf151443a87198fa13dd21e6"
+                }
+            ]
+        },
+        {
+            "type": "AdvertiserWebPage",
+            "headline": "Aktuelle Aktionsangebote · Expresszustellung · Nur Originalware",
+            "aggregateRating": {
+                "ratingCount": 13720,
+                "ratingValue": 4,
+                "bestRating": 5,
+                "url": "https://www.bing.com/merchant/reviews?mid=notino.de&FORM=MRANNO"
+            },
+            "potentialActions": [
+                {
+                    "type": "DisplayAction",
+                    "object": {
+                        "position": "Mainline",
+                        "impressionToken": "25",
+                        "extensions": [
+                            {
+                                "impressionToken": "82"
+                            },
+                            {
+                                "impressionToken": "83"
+                            },
+                            {
+                                "impressionToken": "84"
+                            },
+                            {
+                                "impressionToken": "85",
+                                "extensionItems": [
+                                    {
+                                        "impressionToken": "87[86]"
+                                    },
+                                    {
+                                        "impressionToken": "89[88]"
+                                    },
+                                    {
+                                        "impressionToken": "91[90]"
+                                    },
+                                    {
+                                        "impressionToken": "93[92]"
+                                    },
+                                    {
+                                        "impressionToken": "95[94]"
+                                    },
+                                    {
+                                        "impressionToken": "97[96]"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "target": "https://api.dev.swisscows.com/feedback/display?rguid=670a4f46bc5c44e18db5b2bff21a2366"
+                },
+                {
+                    "type": "ViewAction",
+                    "target": "https://api.dev.swisscows.com:443/feedback/view?type=mv&reqver=1.0&rg=670a4f46bc5c44e18db5b2bff21a2366&tids=25"
+                },
+                {
+                    "type": "InteractAction",
+                    "name": "Jetzt einkaufen",
+                    "target": "https://www.bing.com/aclick?ld=e8jXegc1_4636EakGqNUniczVUCUz_cGvC8Ig2KWclSAcbXDRS-XHLVAHl40ukLaUCsxXootQAHW6VyfthVDuvzB8Uswu8BFGAH8KCgZFBtnDxlNnqHNeNX0FUmgGZQ8GSxhHRqaO0sFQnXvVLMAmYgS4rBltWlrl3kbyLJrqTKwhvbrSl5xLqgomzqgKQsrI_ZPUZ3w&u=aHR0cHMlM2ElMmYlMmZ3d3cubm90aW5vLmRlJTNmbXNjbGtpZCUzZGE0ODRhYzE0NWYzZDFjMTkyMTRmY2IzMzkzZjU3NDhhJTI2dXRtX3NvdXJjZSUzZGJpbmclMjZ1dG1fbWVkaXVtJTNkY3BjJTI2dXRtX2NhbXBhaWduJTNkNCUyNTdDJTI1MjB6bmElYzQlOGRreSUyNTIwLSUyNTIwUGFyZiVjMyVhOW15JTI2dXRtX3Rlcm0lM2RwYXJmdW0lMjUyMGNoYW5lbCUyNnV0bV9jb250ZW50JTNkQ2hhbmVsJTI1MjAoYnJhbmRzLTUtNjUp&rlid=a484ac145f3d1c19214fcb3393f5748a"
+                }
+            ],
+            "significantLinks": [
+                {
+                    "name": "Sie suchen Bourjois?",
+                    "url": "https://www.bing.com/aclick?ld=e8YzqI79-Q7fm8ZaDK8LgAxTVUCUwnbGcuLjU3u59MaccrjOZkg3N618tfKKRqcb1_1Ai4zDr1v9aQx7QU-nfOfciSrqq806At8Qlfp4UBJ5N2uAjHiFZKTGTKClMsgULUx2IzpGrWYmMiu8Drv30uZuUgSt3JoDEunp5Ry2my0ivvptdG0a6du9iOHBZr09aLI_4A4w&u=aHR0cHMlM2ElMmYlMmZ3d3cubm90aW5vLmRlJTJmYm91cmpvaXMlMmYlM2ZmJTNkMS0xLTItMzY0NC02OTQ2LTM2ODktMjE5JTI2cHBjYmVlLWFkdGV4dC12YXJpYW50JTNkRVRBLTMlMjZtc2Nsa2lkJTNkZWY2ZDVmZDAyZTI2MTFkODVkYTIzOGY3ZTJlZTM3NDklMjZ1dG1fc291cmNlJTNkYmluZyUyNnV0bV9tZWRpdW0lM2RjcGMlMjZ1dG1fY2FtcGFpZ24lM2Q0JTI1N0MlMjUyMHpuYSVjNCU4ZGt5JTI1MjAtJTI1MjBQYXJmJWMzJWE5bXklMjZ1dG1fdGVybSUzZHBhcmZ1bSUyNTIwY2hhbmVsJTI2dXRtX2NvbnRlbnQlM2RDaGFuZWwlMjUyMChicmFuZHMtNS02NSk&rlid=ef6d5fd02e2611d85da238f7e2ee3749"
+                },
+                {
+                    "name": "Lattafa Mahasin Damen-Duftsets",
+                    "url": "https://www.bing.com/aclick?ld=e8sRbwmHFB0jU8C53OWt9JMTVUCUyZnAu7DsmoeyaVLL81rj8Jb0TQ1yWHThuBV08ZeNOg6TaFUdZpJJ9XuasjXDYQ6ay4HSyypdcBYHX1R05l5n4ITtu67gUBcrOOzz2YDh-PrzplQEf3OaA2WKTOX-z4zv34knuFNoIW72YAnoYdbImkdY9fzzw_CY3Tnlr3_ILOQg&u=aHR0cHMlM2ElMmYlMmZ3d3cubm90aW5vLmRlJTJmbGF0dGFmYSUyZm1haGFzaW4tY3J5c3RhbC1lYXUtZGUtcGFyZnVtLWZ1ZXItZGFtZW4lMmYlM2ZwcGNiZWUtYWR0ZXh0LXZhcmlhbnQlM2RSU0ElMmItJTJiT2JlY24lMjVDMyUyNUJEJTI2bXNjbGtpZCUzZGE0MmEwNjI4OGJhYjFmOTEwNTBlNjEwZjQ3NjNmMTI2JTI2dXRtX3NvdXJjZSUzZGJpbmclMjZ1dG1fbWVkaXVtJTNkY3BjJTI2dXRtX2NhbXBhaWduJTNkNCUyNTdDJTI1MjB6bmElYzQlOGRreSUyNTIwLSUyNTIwUGFyZiVjMyVhOW15JTI2dXRtX3Rlcm0lM2RwYXJmdW0lMjUyMGNoYW5lbCUyNnV0bV9jb250ZW50JTNkQ2hhbmVsJTI1MjAoYnJhbmRzLTUtNjUp&rlid=a42a06288bab1f91050e610f4763f126"
+                },
+                {
+                    "name": "Lippenstift auf Lager",
+                    "url": "https://www.bing.com/aclick?ld=e8VSyYP4PCRr-s_HrxMm8FQTVUCUziRcCkDFJ2Hvm2Ha0VWQ72tE_YplXiFqNpML4Rb-NkNNP3-6AWGnw72z59jLUyw91ZzGW9jScvB_RdUBqKaHDws8pAZhuF4Dz4mBA5rptefRyo3eOi-reCCJ_FqdLxSriKQZXDcKQcn6X_suUMToolAyi1bV1NO5xpQ8ewnzUzRQ&u=aHR0cHMlM2ElMmYlMmZ3d3cubm90aW5vLmRlJTJmYm91cmpvaXMlMmYlM2ZmJTNkMS0xLTItMzY0NC02OTQ2LTM2ODktMjE5JTI2cHBjYmVlLWFkdGV4dC12YXJpYW50JTNkRVRBLTMlMjZtc2Nsa2lkJTNkNzU5YzhjZWQzOTZjMTRhZmM3YWFlYmNhZjVhNGVkNWElMjZ1dG1fc291cmNlJTNkYmluZyUyNnV0bV9tZWRpdW0lM2RjcGMlMjZ1dG1fY2FtcGFpZ24lM2Q0JTI1N0MlMjUyMHpuYSVjNCU4ZGt5JTI1MjAtJTI1MjBQYXJmJWMzJWE5bXklMjZ1dG1fdGVybSUzZHBhcmZ1bSUyNTIwY2hhbmVsJTI2dXRtX2NvbnRlbnQlM2RDaGFuZWwlMjUyMChicmFuZHMtNS02NSk&rlid=759c8ced396c14afc7aaebcaf5a4ed5a"
+                },
+                {
+                    "name": "Loveshine mit gratis Versand",
+                    "url": "https://www.bing.com/aclick?ld=e8KZp7wtJ4Ch1669K4YEPWvzVUCUwDo5qC4dQVIJzaYa8XhlfZMYj1LZ4TNk5ZhatMywJ0tUCK4pYNfYQjbECYRWVGqrb5VP85fW17lBwXSZNDsHLMUo7AZptaGO_CmfehlswoiWwG0mg20bxrjHiUxuPqaDZBI2agxmH5E8Qpnp9RrKWTPRX-O-3TK7CXRzRKWBfX9Q&u=aHR0cHMlM2ElMmYlMmZ3d3cubm90aW5vLmRlJTJmeXZlcy1zYWludC1sYXVyZW50JTJmbG92ZXNoaW5lLWxpcC1vaWwtc3RpY2stZmV1Y2h0aWdrZWl0c3NwZW5kZW5kZXItbGlwZ2xvc3MlMmYlM2ZwcGNiZWUtYWR0ZXh0LXZhcmlhbnQlM2RSU0ElMmItJTJiRG9wcmF2YSUyYnpkYXJtYSUyNm1zY2xraWQlM2Q5MjRhOTIyNjFiMjYxY2ZkM2RlMmY1MDFkN2VlMWE5MCUyNnV0bV9zb3VyY2UlM2RiaW5nJTI2dXRtX21lZGl1bSUzZGNwYyUyNnV0bV9jYW1wYWlnbiUzZDQlMjU3QyUyNTIwem5hJWM0JThka3klMjUyMC0lMjUyMFBhcmYlYzMlYTlteSUyNnV0bV90ZXJtJTNkcGFyZnVtJTI1MjBjaGFuZWwlMjZ1dG1fY29udGVudCUzZENoYW5lbCUyNTIwKGJyYW5kcy01LTY1KQ&rlid=924a92261b261cfd3de2f501d7ee1a90"
+                },
+                {
+                    "name": "Blue mit gratis Versand",
+                    "url": "https://www.bing.com/aclick?ld=e8E-ah1eskhp6T0PZ40w1kOzVUCUxs6AKVBKntex1dPD1E4xvXeiwbHexC2YjMOWuESD8VhpjDRGYp8HTaHnuT8N7hDXxF7f2AiBVnN71VXf2mCHAKvk_KyHhJfSd8X1TuCBkrmyyzORt-UdEVv_C-LnUGnKuk6GZHf7mEMD5WzbGY5WO5nazNQN51UZ-0oq76ncvJdg&u=aHR0cHMlM2ElMmYlMmZ3d3cubm90aW5vLmRlJTJmYmlvdGhlcm0lMmZibHVlLXRoZXJhcHktY3JlYW0taW4tb2lsLXJldml0YWxpc2llcmVuZGVzLW9lbC1pbi1kZXItY3JlbWUlMmYlM2ZwcGNiZWUtYWR0ZXh0LXZhcmlhbnQlM2RSU0ElMmItJTJiRG9wcmF2YSUyYnpkYXJtYSUyNm1zY2xraWQlM2RjZDA0M2Y4ZmM3ZTMxNjM5NmY0ODU4YTgwYjJiMjZlMSUyNnV0bV9zb3VyY2UlM2RiaW5nJTI2dXRtX21lZGl1bSUzZGNwYyUyNnV0bV9jYW1wYWlnbiUzZDQlMjU3QyUyNTIwem5hJWM0JThka3klMjUyMC0lMjUyMFBhcmYlYzMlYTlteSUyNnV0bV90ZXJtJTNkcGFyZnVtJTI1MjBjaGFuZWwlMjZ1dG1fY29udGVudCUzZENoYW5lbCUyNTIwKGJyYW5kcy01LTY1KQ&rlid=cd043f8fc7e316396f4858a80b2b26e1"
+                },
+                {
+                    "name": "Marke Smashbox",
+                    "url": "https://www.bing.com/aclick?ld=e8RBl2hSDEMETTS_Onhs-nVjVUCUxQBc3_t4mhhIfzvazguSpFpEnrsGMi4FIMyswN7Xx4ZvI-aQRi-Ju3r2emyAH7ud4HmcrambK0Ydvf7vU1Yu2cHYt_5VbHqOtUw6u2Rqg1uAU8Izc4xWOXgWpd7_z2rwY1jXXrxMYlZtxSgFxnTwFvhBhReCEfSKcrCqC5aiz-Ww&u=aHR0cHMlM2ElMmYlMmZ3d3cubm90aW5vLmRlJTJmc21hc2hib3glMmYlM2ZmJTNkMS0zLTE3NDY2JTI2cHBjYmVlLWFkdGV4dC12YXJpYW50JTNkUlNBJTJiQWslMjVDNCUyNThEbiUyNUMzJTI1QUQlMjZtc2Nsa2lkJTNkN2Y4OTBkODFhMWRiMWQ0MmY1NjI2YWE2NmQxMzYxYzYlMjZ1dG1fc291cmNlJTNkYmluZyUyNnV0bV9tZWRpdW0lM2RjcGMlMjZ1dG1fY2FtcGFpZ24lM2Q0JTI1N0MlMjUyMHpuYSVjNCU4ZGt5JTI1MjAtJTI1MjBQYXJmJWMzJWE5bXklMjZ1dG1fdGVybSUzZHBhcmZ1bSUyNTIwY2hhbmVsJTI2dXRtX2NvbnRlbnQlM2RDaGFuZWwlMjUyMChicmFuZHMtNS02NSk&rlid=7f890d81a1db1d42f5626aa66d1361c6"
+                }
+            ],
+            "displayUrl": "www.notino.de/Produkte/Chanel-Dufte",
+            "name": "Parfüms im Sale | Chanel Düfte bei NOTINO®",
+            "description": "Holen Sie sich Ihr <b>Parfüm</b> online. Preise bereits ab 45,5 €. Jetzt kaufen! 1000 Marken, alles auf Lager, schneller Versand + Kosmetikartikel.",
+            "url": "https://www.bing.com/aclick?ld=e8PWcVqEny_TJ0Pas4rF9ShzVUCUxZbUpf0ib74Jgu0e49FxHHHwOPFHyoauSn30FzioTbcma0Ev01PZn5uOP6Qny3glSX-H6sNzlY2n7-2mfHJCfMqee3UVVI_Js1hOHZZhOf9gV1eDrPiAPeeYHlnvFCKu2DekkzpegCceLHu7bvuvdG&u=aHR0cHMlM2ElMmYlMmZ3d3cubm90aW5vLmRlJTJmY2hhbmVsJTJmJTNmZiUzZDEtMy02NSUyNnBwY2JlZS1hZHRleHQtdmFyaWFudCUzZFJTQSUyNm1zY2xraWQlM2RhOTk0YWZlM2EyNGQxZjQ0MWQzYWM4YzQ2ZTg1YTAyMCUyNnV0bV9zb3VyY2UlM2RiaW5nJTI2dXRtX21lZGl1bSUzZGNwYyUyNnV0bV9jYW1wYWlnbiUzZDQlMjU3QyUyNTIwem5hJWM0JThka3klMjUyMC0lMjUyMFBhcmYlYzMlYTlteSUyNnV0bV90ZXJtJTNkcGFyZnVtJTI1MjBjaGFuZWwlMjZ1dG1fY29udGVudCUzZENoYW5lbCUyNTIwKGJyYW5kcy01LTY1KQ&rlid=a994afe3a24d1f441d3ac8c46e85a020"
+        },
+        {
+            "type": "AdvertiserWebPage",
+            "headline": "Price Starting At $0.99 · Sports &amp; Outdoors · Ready for Attend?",
+            "potentialActions": [
+                {
+                    "type": "DisplayAction",
+                    "object": {
+                        "position": "Mainline",
+                        "impressionToken": "29",
+                        "extensions": [
+                            {
+                                "impressionToken": "98"
+                            },
+                            {
+                                "impressionToken": "99",
+                                "extensionItems": [
+                                    {
+                                        "impressionToken": "101[100]"
+                                    },
+                                    {
+                                        "impressionToken": "103[102]"
+                                    },
+                                    {
+                                        "impressionToken": "105[104]"
+                                    },
+                                    {
+                                        "impressionToken": "107[106]"
+                                    },
+                                    {
+                                        "impressionToken": "109[108]"
+                                    },
+                                    {
+                                        "impressionToken": "111[110]"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "target": "https://api.dev.swisscows.com/feedback/display?rguid=670a4f46bc5c44e18db5b2bff21a2366"
+                },
+                {
+                    "type": "ViewAction",
+                    "target": "https://api.dev.swisscows.com:443/feedback/view?type=mv&reqver=1.0&rg=670a4f46bc5c44e18db5b2bff21a2366&tids=29"
+                }
+            ],
+            "significantLinks": [
+                {
+                    "name": "Store Locator",
+                    "url": "https://www.bing.com/aclick?ld=e8tJP6YTs6Q4wEKpb92xyWHTVUCUzUTA5iNiymQdjZ8T0A-p6ppdWQZwLLvVL0HzqQfQDSwu_rFDFYPEIO5trV9sfRE339TOSy-hXQBvGdI_3IB_MjEc50cvk7-z3K2iCbjpEysYEvQtB313klYjPbcFQc4pfi0OCXQXn_3e4CawQ_I_wSA9p1EuSAqbr5yx3tEj2FPQ&u=aHR0cHMlM2ElMmYlMmZ3d3cudGVtdS5jb20lMmZ1bCUyZmt1aXBlciUyZnVuMi5odG1sJTNmX3BfcmZzJTNkMSUyNnN1YmolM2R1bi1zZWFyY2gtd2ViJTI2X3BfanVtcF9pZCUzZDk2MCUyNl94X3ZzdF9zY2VuZSUzZGFkZyUyNmxvY2FsZV9vdmVycmlkZSUzZDIwOCU3ZSU3ZVVTRCUyNnNlYXJjaF9rZXklM2RlYXUlMjUyMGRlLiUyNTIwcGFyZnVtJTI2X3BfcmZzJTNkMSUyNl94X2Fkc19jaGFubmVsJTNkYmluZyUyNl94X2Fkc19zdWJfY2hhbm5lbCUzZHNlYXJjaCUyNl94X2Fkc19hY2NvdW50JTNkMTc2NjQxNzE3JTI2X3hfYWRzX3NldCUzZDUyMTIzOTc0NSUyNl94X2Fkc19pZCUzZDEzMjgyMTI0NDA1NzAwNjIlMjZfeF9hZHNfY3JlYXRpdmVfaWQlM2Q4MzAxMzUwNjU2OTY1NSUyNl94X25zX3NvdXJjZSUzZHMlMjZfeF9uc19tc2Nsa2lkJTNkYWFiOTEzMjJiZDYyMTA5YzJjZGM3NDA1NzFhYTI2M2ElMjZfeF9uc19tYXRjaF90eXBlJTNkYiUyNl94X25zX2JpZF9tYXRjaF90eXBlJTNkYmIlMjZfeF9uc19xdWVyeSUzZHBhcmZ1bSUyNTIwdmljdG9yaWElMjUyMHNlY3JldCUyNTIwc2VwaG9yYSUyNl94X25zX2tleXdvcmQlM2RlYXUlMjUyMGRlLiUyNTIwcGFyZnVtJTI2X3hfbnNfZGV2aWNlJTNkYyUyNl94X25zX3RhcmdldGlkJTNka3dkLTgzMDE0NDEwNTczODc5JTNhbG9jLTIzNSUyNl94X25zX2V4dGVuc2lvbmlkJTNkOTk2NDM0MjcyODM1MiUyNm1zY2xraWQlM2RhYWI5MTMyMmJkNjIxMDljMmNkYzc0MDU3MWFhMjYzYQ&rlid=aab91322bd62109c2cdc740571aa263a"
+                },
+                {
+                    "name": "Women&#39;s Clothing",
+                    "url": "https://www.bing.com/aclick?ld=e8Y7ZeTOfPKOIpBULqPCxaojVUCUzybQxOXLDzXBKH8A9PFE7c5TQD1s_FwWKidFiHTCGLyAc3EritkRY-981Gi5axFVpym3iR13XSvGOq_jGlop0gVGUqS11jPG_RXuRZhpZXgQ3bBFaFXU7QEQd4pycqanPIG2lqpDh_liRxcUQqiffsMH5rk0uqhF81CbDbn1ikfw&u=aHR0cHMlM2ElMmYlMmZ3d3cudGVtdS5jb20lMmZ1bCUyZmt1aXBlciUyZnVuMi5odG1sJTNmX3BfcmZzJTNkMSUyNnN1YmolM2R1bi1zZWFyY2gtd2ViJTI2X3BfanVtcF9pZCUzZDk2MCUyNl94X3ZzdF9zY2VuZSUzZGFkZyUyNmxvY2FsZV9vdmVycmlkZSUzZDIwOCU3ZSU3ZVVTRCUyNnNlYXJjaF9rZXklM2RlYXUlMjUyMGRlLiUyNTIwcGFyZnVtJTI2X3BfcmZzJTNkMSUyNl94X2Fkc19jaGFubmVsJTNkYmluZyUyNl94X2Fkc19zdWJfY2hhbm5lbCUzZHNlYXJjaCUyNl94X2Fkc19hY2NvdW50JTNkMTc2NjQxNzE3JTI2X3hfYWRzX3NldCUzZDUyMTIzOTc0NSUyNl94X2Fkc19pZCUzZDEzMjgyMTI0NDA1NzAwNjIlMjZfeF9hZHNfY3JlYXRpdmVfaWQlM2Q4MzAxMzUwNjU2OTY1NSUyNl94X25zX3NvdXJjZSUzZHMlMjZfeF9uc19tc2Nsa2lkJTNkMWJkN2FjNzhkMzM0MTNlY2JkMGNjYjVmMWZmYzYxZGQlMjZfeF9uc19tYXRjaF90eXBlJTNkYiUyNl94X25zX2JpZF9tYXRjaF90eXBlJTNkYmIlMjZfeF9uc19xdWVyeSUzZHBhcmZ1bSUyNTIwdmljdG9yaWElMjUyMHNlY3JldCUyNTIwc2VwaG9yYSUyNl94X25zX2tleXdvcmQlM2RlYXUlMjUyMGRlLiUyNTIwcGFyZnVtJTI2X3hfbnNfZGV2aWNlJTNkYyUyNl94X25zX3RhcmdldGlkJTNka3dkLTgzMDE0NDEwNTczODc5JTNhbG9jLTIzNSUyNl94X25zX2V4dGVuc2lvbmlkJTNkOTk2NDM0MjcyODM1OSUyNm1zY2xraWQlM2QxYmQ3YWM3OGQzMzQxM2VjYmQwY2NiNWYxZmZjNjFkZA&rlid=1bd7ac78d33413ecbd0ccb5f1ffc61dd"
+                },
+                {
+                    "name": "Crazy, So Cheap？",
+                    "url": "https://www.bing.com/aclick?ld=e8Z_C3b7qbJdzQRIjtOYCfYDVUCUzodsHBBWLkAMF33PzbmL1WhLKhmek1QbXYM_FmgxSEsyL0hR4MXWxqom0t-6OdPUJ5-LwImkBJ7pwun_4aqWFg_zLh6J392lOHJim2D40ewPz0vEDKi9KBvLfbSd6y4-ajcDbn12Stm7WvUQaWx2GZ5KDrXHOcY2OANdk56F4bug&u=aHR0cHMlM2ElMmYlMmZ3d3cudGVtdS5jb20lMmZ1bCUyZmt1aXBlciUyZnVuMi5odG1sJTNmX3BfcmZzJTNkMSUyNnN1YmolM2R1bi1zZWFyY2gtd2ViJTI2X3BfanVtcF9pZCUzZDk2MCUyNl94X3ZzdF9zY2VuZSUzZGFkZyUyNmxvY2FsZV9vdmVycmlkZSUzZDIwOCU3ZSU3ZVVTRCUyNnNlYXJjaF9rZXklM2RlYXUlMjUyMGRlLiUyNTIwcGFyZnVtJTI2X3BfcmZzJTNkMSUyNl94X2Fkc19jaGFubmVsJTNkYmluZyUyNl94X2Fkc19zdWJfY2hhbm5lbCUzZHNlYXJjaCUyNl94X2Fkc19hY2NvdW50JTNkMTc2NjQxNzE3JTI2X3hfYWRzX3NldCUzZDUyMTIzOTc0NSUyNl94X2Fkc19pZCUzZDEzMjgyMTI0NDA1NzAwNjIlMjZfeF9hZHNfY3JlYXRpdmVfaWQlM2Q4MzAxMzUwNjU2OTY1NSUyNl94X25zX3NvdXJjZSUzZHMlMjZfeF9uc19tc2Nsa2lkJTNkYTVjZGE1ZjU4ODY2MWY3ZjMxZTRjMmQyNDRhZTY4OTElMjZfeF9uc19tYXRjaF90eXBlJTNkYiUyNl94X25zX2JpZF9tYXRjaF90eXBlJTNkYmIlMjZfeF9uc19xdWVyeSUzZHBhcmZ1bSUyNTIwdmljdG9yaWElMjUyMHNlY3JldCUyNTIwc2VwaG9yYSUyNl94X25zX2tleXdvcmQlM2RlYXUlMjUyMGRlLiUyNTIwcGFyZnVtJTI2X3hfbnNfZGV2aWNlJTNkYyUyNl94X25zX3RhcmdldGlkJTNka3dkLTgzMDE0NDEwNTczODc5JTNhbG9jLTIzNSUyNl94X25zX2V4dGVuc2lvbmlkJTNkOTk2NDM0MjcyODM0MyUyNm1zY2xraWQlM2RhNWNkYTVmNTg4NjYxZjdmMzFlNGMyZDI0NGFlNjg5MQ&rlid=a5cda5f588661f7f31e4c2d244ae6891"
+                },
+                {
+                    "name": "Biggest Sale Ever",
+                    "url": "https://www.bing.com/aclick?ld=e8I_xfoXn0OkmNj5l3TauoZjVUCUwQk_Vb6twX9ibWj4-k2hqlpuwPszRQkLOkqMNdkMmTcd7Vr_dghse40drknJBTPQHX347zTdj2dSPhcamITVfNe3jJSqdl6Q51ogE197bJfw4-BMXGf6UtEpbHxCNjx_SIZSg1icW7idDiiAiaxf-zbsP2xjZ7C0fdePL2nxEihw&u=aHR0cHMlM2ElMmYlMmZ3d3cudGVtdS5jb20lMmZ1bCUyZmt1aXBlciUyZnVuMi5odG1sJTNmX3BfcmZzJTNkMSUyNnN1YmolM2R1bi1zZWFyY2gtd2ViJTI2X3BfanVtcF9pZCUzZDk2MCUyNl94X3ZzdF9zY2VuZSUzZGFkZyUyNmxvY2FsZV9vdmVycmlkZSUzZDIwOCU3ZSU3ZVVTRCUyNnNlYXJjaF9rZXklM2RlYXUlMjUyMGRlLiUyNTIwcGFyZnVtJTI2X3BfcmZzJTNkMSUyNl94X2Fkc19jaGFubmVsJTNkYmluZyUyNl94X2Fkc19zdWJfY2hhbm5lbCUzZHNlYXJjaCUyNl94X2Fkc19hY2NvdW50JTNkMTc2NjQxNzE3JTI2X3hfYWRzX3NldCUzZDUyMTIzOTc0NSUyNl94X2Fkc19pZCUzZDEzMjgyMTI0NDA1NzAwNjIlMjZfeF9hZHNfY3JlYXRpdmVfaWQlM2Q4MzAxMzUwNjU2OTY1NSUyNl94X25zX3NvdXJjZSUzZHMlMjZfeF9uc19tc2Nsa2lkJTNkMWNiM2Y0MzczYmVkMTRlNmFiNWQ5MzEwZjcyNTdjYWQlMjZfeF9uc19tYXRjaF90eXBlJTNkYiUyNl94X25zX2JpZF9tYXRjaF90eXBlJTNkYmIlMjZfeF9uc19xdWVyeSUzZHBhcmZ1bSUyNTIwdmljdG9yaWElMjUyMHNlY3JldCUyNTIwc2VwaG9yYSUyNl94X25zX2tleXdvcmQlM2RlYXUlMjUyMGRlLiUyNTIwcGFyZnVtJTI2X3hfbnNfZGV2aWNlJTNkYyUyNl94X25zX3RhcmdldGlkJTNka3dkLTgzMDE0NDEwNTczODc5JTNhbG9jLTIzNSUyNl94X25zX2V4dGVuc2lvbmlkJTNkOTk2NDM0MjcyODM0MiUyNm1zY2xraWQlM2QxY2IzZjQzNzNiZWQxNGU2YWI1ZDkzMTBmNzI1N2NhZA&rlid=1cb3f4373bed14e6ab5d9310f7257cad"
+                },
+                {
+                    "name": "Most Repurchased",
+                    "url": "https://www.bing.com/aclick?ld=e8YnA6gTQ4zaX6haIn9O4CszVUCUwxFDEx96QO-TUtMEEjHNfk5pLBEQhyYrnXvQ0XsYTE1Tsz9-HWK-rCnQ-90gTBqFvK7f4Asp8nC8NtPI5YghPh2xeCNki5a5RO9v6nR_-3wN9IIWfFTEcu2DIUDN75J56FoI1iNZr2UojuywbqJCG8uBJoTwfxtldXKk3gCDzeCA&u=aHR0cHMlM2ElMmYlMmZ3d3cudGVtdS5jb20lMmZ1bCUyZmt1aXBlciUyZnVuMi5odG1sJTNmX3BfcmZzJTNkMSUyNnN1YmolM2R1bi1zZWFyY2gtd2ViJTI2X3BfanVtcF9pZCUzZDk2MCUyNl94X3ZzdF9zY2VuZSUzZGFkZyUyNmxvY2FsZV9vdmVycmlkZSUzZDIwOCU3ZSU3ZVVTRCUyNnNlYXJjaF9rZXklM2RlYXUlMjUyMGRlLiUyNTIwcGFyZnVtJTI2X3BfcmZzJTNkMSUyNl94X2Fkc19jaGFubmVsJTNkYmluZyUyNl94X2Fkc19zdWJfY2hhbm5lbCUzZHNlYXJjaCUyNl94X2Fkc19hY2NvdW50JTNkMTc2NjQxNzE3JTI2X3hfYWRzX3NldCUzZDUyMTIzOTc0NSUyNl94X2Fkc19pZCUzZDEzMjgyMTI0NDA1NzAwNjIlMjZfeF9hZHNfY3JlYXRpdmVfaWQlM2Q4MzAxMzUwNjU2OTY1NSUyNl94X25zX3NvdXJjZSUzZHMlMjZfeF9uc19tc2Nsa2lkJTNkYjQ3NzdmMWVlMzM4MWMxZjE3ZTUxODM5MmZmMGZjNGElMjZfeF9uc19tYXRjaF90eXBlJTNkYiUyNl94X25zX2JpZF9tYXRjaF90eXBlJTNkYmIlMjZfeF9uc19xdWVyeSUzZHBhcmZ1bSUyNTIwdmljdG9yaWElMjUyMHNlY3JldCUyNTIwc2VwaG9yYSUyNl94X25zX2tleXdvcmQlM2RlYXUlMjUyMGRlLiUyNTIwcGFyZnVtJTI2X3hfbnNfZGV2aWNlJTNkYyUyNl94X25zX3RhcmdldGlkJTNka3dkLTgzMDE0NDEwNTczODc5JTNhbG9jLTIzNSUyNl94X25zX2V4dGVuc2lvbmlkJTNkOTk2NDM0MjcyODM0NyUyNm1zY2xraWQlM2RiNDc3N2YxZWUzMzgxYzFmMTdlNTE4MzkyZmYwZmM0YQ&rlid=b4777f1ee3381c1f17e518392ff0fc4a"
+                },
+                {
+                    "name": "Special Sale",
+                    "url": "https://www.bing.com/aclick?ld=e85b2fovPV5NfCEy6aL3jQXzVUCUzXHplV7IaNhmhQ5k-ZE2HGcsbme1aP0jLuyJwCnLDwEzTnQbjz7CkIue6hmWjokySx-LLUsBMxX_nQYuZ9fMGNlcgyk1BvCWfUG5-ZtA8oBP3_y_737AFLOhVQq3X2SLOo-LPGvM0XY1B0kef8Rg5KzAutX3jWDh8dGxaKrOOi5w&u=aHR0cHMlM2ElMmYlMmZ3d3cudGVtdS5jb20lMmZ1bCUyZmt1aXBlciUyZnVuMi5odG1sJTNmX3BfcmZzJTNkMSUyNnN1YmolM2R1bi1zZWFyY2gtd2ViJTI2X3BfanVtcF9pZCUzZDk2MCUyNl94X3ZzdF9zY2VuZSUzZGFkZyUyNmxvY2FsZV9vdmVycmlkZSUzZDIwOCU3ZSU3ZVVTRCUyNnNlYXJjaF9rZXklM2RlYXUlMjUyMGRlLiUyNTIwcGFyZnVtJTI2X3BfcmZzJTNkMSUyNl94X2Fkc19jaGFubmVsJTNkYmluZyUyNl94X2Fkc19zdWJfY2hhbm5lbCUzZHNlYXJjaCUyNl94X2Fkc19hY2NvdW50JTNkMTc2NjQxNzE3JTI2X3hfYWRzX3NldCUzZDUyMTIzOTc0NSUyNl94X2Fkc19pZCUzZDEzMjgyMTI0NDA1NzAwNjIlMjZfeF9hZHNfY3JlYXRpdmVfaWQlM2Q4MzAxMzUwNjU2OTY1NSUyNl94X25zX3NvdXJjZSUzZHMlMjZfeF9uc19tc2Nsa2lkJTNkMjQwNDNmZWE5Y2UxMTUzZjk0N2E1OGNkNTAyOTRmZjMlMjZfeF9uc19tYXRjaF90eXBlJTNkYiUyNl94X25zX2JpZF9tYXRjaF90eXBlJTNkYmIlMjZfeF9uc19xdWVyeSUzZHBhcmZ1bSUyNTIwdmljdG9yaWElMjUyMHNlY3JldCUyNTIwc2VwaG9yYSUyNl94X25zX2tleXdvcmQlM2RlYXUlMjUyMGRlLiUyNTIwcGFyZnVtJTI2X3hfbnNfZGV2aWNlJTNkYyUyNl94X25zX3RhcmdldGlkJTNka3dkLTgzMDE0NDEwNTczODc5JTNhbG9jLTIzNSUyNl94X25zX2V4dGVuc2lvbmlkJTNkOTk2NDM0MjcyODM1MSUyNm1zY2xraWQlM2QyNDA0M2ZlYTljZTExNTNmOTQ3YTU4Y2Q1MDI5NGZmMw&rlid=24043fea9ce1153f947a58cd50294ff3"
+                }
+            ],
+            "displayUrl": "www.temu.com",
+            "name": "All Eau De. <b>Parfum</b> | Eau De. <b>Parfum</b> Up To 90% Off",
+            "description": "Only Today, Enjoy Eau De. <b>Parfum</b> Up To 90% Off Your Purchase. Hurry &amp; Shop Now. Come and check Eau De. <b>Parfum</b> at a low price, you&#39;d never want to miss it.",
+            "url": "https://www.bing.com/aclick?ld=e8JxBNRQ9oGf2ZcmjGfq48mDVUCUwJ3ROvCfnyMt7JR9mAOOhPw-8lCwUcmcZaMZ1j6e_AIqrWiSNcecIlnirFe39mZLpwapiCpi_ZC4zg9SwhFLVii_FxghASa2aklt26jobgas_CgH0TzDkD8KeqZZ-vFj1NMSJu8WabZDRSdWwwb41r&u=aHR0cHMlM2ElMmYlMmZ3d3cudGVtdS5jb20lMmZ1bCUyZmt1aXBlciUyZnVuMi5odG1sJTNmX3BfcmZzJTNkMSUyNnN1YmolM2R1bi1zZWFyY2gtd2ViJTI2X3BfanVtcF9pZCUzZDk2MCUyNl94X3ZzdF9zY2VuZSUzZGFkZyUyNmxvY2FsZV9vdmVycmlkZSUzZDIwOCU3ZWVuJTdlVVNEJTI2c2VhcmNoX2tleSUzZGVhdSUyNTIwZGUuJTI1MjBwYXJmdW0lMjZfcF9yZnMlM2QxJTI2X3hfYWRzX2NoYW5uZWwlM2RiaW5nJTI2X3hfYWRzX3N1Yl9jaGFubmVsJTNkc2VhcmNoJTI2X3hfYWRzX2FjY291bnQlM2QxNzY2NDE3MTclMjZfeF9hZHNfc2V0JTNkNTIxMjM5NzQ1JTI2X3hfYWRzX2lkJTNkMTMyODIxMjQ0MDU3MDA2MiUyNl94X2Fkc19jcmVhdGl2ZV9pZCUzZDgzMDEzNTA2NTY5NjU1JTI2X3hfbnNfc291cmNlJTNkcyUyNl94X25zX21zY2xraWQlM2Q5YTA2ZmVmZTA2ZWIxYWQxMzgzNTk5ZDljYTIzMTlhMyUyNl94X25zX21hdGNoX3R5cGUlM2RiJTI2X3hfbnNfYmlkX21hdGNoX3R5cGUlM2RiYiUyNl94X25zX3F1ZXJ5JTNkcGFyZnVtJTI1MjB2aWN0b3JpYSUyNTIwc2VjcmV0JTI1MjBzZXBob3JhJTI2X3hfbnNfa2V5d29yZCUzZGVhdSUyNTIwZGUuJTI1MjBwYXJmdW0lMjZfeF9uc19kZXZpY2UlM2RjJTI2X3hfbnNfdGFyZ2V0aWQlM2Rrd2QtODMwMTQ0MTA1NzM4NzklM2Fsb2MtMjM1JTI2X3hfbnNfZXh0ZW5zaW9uaWQlM2QlMjZtc2Nsa2lkJTNkOWEwNmZlZmUwNmViMWFkMTM4MzU5OWQ5Y2EyMzE5YTM&rlid=9a06fefe06eb1ad1383599d9ca2319a3"
+        },
+        {
+            "type": "WebPage",
+            "thumbnail": {
+                "url": "https://www.sephora.de/on/demandware.static/Sites-Sephora_DE-Site/-/default/dw078d352d/images/default-shop.jpg"
+            },
+            "inLanguage": "de-de",
+            "lastReviewed": "2023-02-10T00:00:00+00:00",
+            "name": "SEPHORA: Make-up, Pflege, Parfum, Haar & Beauty Produkte",
+            "description": "Entdecke die neuesten Beauty Produkte bei <strong>SEPHORA</strong> und erkunde eine einzigartige Auswahl an Make-up, Hautpflege, Haarpflege, <strong>Parfum</strong> und mehr!",
+            "url": "https://www.sephora.de/"
+        },
+        {
+            "type": "WebPage",
+            "thumbnail": {
+                "url": "https://www.sephora.fr/on/demandware.static/-/Sites-siteCatalog_Sephora_FR/default/dwdf1102ce/category_banners/Parfum/Parfum_femme/FRAGANCE_PARFUM_FEMME_Web.jpg"
+            },
+            "inLanguage": "en",
+            "name": "Parfum femme \uD834\uDF06 SEPHORA",
+            "description": "Découvrez la sélection de <strong>parfums</strong> pour femmes de <strong>Sephora</strong>. Achetez en ligne votre <strong>parfum</strong> signature ou explorez de nouvelles fragrances! Livraison Gratuite dès 60€",
+            "url": "https://www.sephora.fr/shop/parfum/parfum-femme-c309/"
+        },
+        {
+            "type": "WebPage",
+            "thumbnail": {
+                "url": "https://cdn.notinoimg.com/files/navigation-fragment-renderer/images/logo300x300.3c4876b592a2136a1b5e.png"
+            },
+            "inLanguage": "de-de",
+            "name": "Victoria's Secret Body Spray & Parfum | notino.de",
+            "description": "Entdecken Sie die sinnlichen Düfte der legendären Marke <strong>Victoria</strong>&#x27;<strong>s</strong> <strong>Secret</strong>! <strong>Parfum</strong> Online Shop notino.de bringt Ihnen die Bestseller zu Spitzenpreisen.",
+            "url": "https://www.notino.de/victorias-secret/"
+        },
+        {
+            "type": "WebPage",
+            "thumbnail": {
+                "url": "https://www.sephora.de/on/demandware.static/-/Sites-siteCatalog_Sephora_DE/default/dw389e4b48/category_banners/Corps&amp;Bain/Estore20_SousCat_Bath.jpg"
+            },
+            "inLanguage": "de-de",
+            "name": "Body Mist - Hautpflegesprays online bestellen ≡ SEPHORA",
+            "description": "Dein erfrischender und feuchtigkeitsspendender Begleiter für jeden Tag! Gönne Dir einen Wohlfühlmoment mit angenehmem Duft.",
+            "url": "https://www.sephora.de/shop/koerper/koerperpflege/body-mist-c432/"
+        },
+        {
+            "type": "WebPage",
+            "thumbnail": {
+                "url": "https://www.sephora.fr/on/demandware.static/-/Sites-siteCatalog_Sephora_FR/default/dwfbd86980/category_banners/Parfum/Estore20_SousCat_Fragrance.jpg"
+            },
+            "inLanguage": "en",
+            "name": "Eau de parfum ≡ SEPHORA",
+            "description": "Eau de <strong>parfum</strong>. Puissante et envoûtante, l’eau de <strong>parfum</strong> femme révèle votre vraie personnalité. Audacieuse, sensuelle ou mystérieuse, on la choisit en fonction de notre humeur et de notre look. Symbole de féminité, l’eau de <strong>parfum</strong> subjugue par son essence unique qui reste sur la peau, ...",
+            "url": "https://www.sephora.fr/shop/parfum/parfum-femme/eau-de-parfum-c297810/"
+        },
+        {
+            "type": "WebPage",
+            "thumbnail": {
+                "url": "https://www.victoriassecret.com/assets/m2689-VPdROZTShmTcMLD0bZnFQ/images/default-share.png"
+            },
+            "inLanguage": "de",
+            "name": "Parfüms für Damen: Luxuriöse, kultige und sexy Düfte",
+            "description": "Sie sind auf der Suche nach Ihrem Signature-Duft? Shoppen Sie unsere Parfüms und Eau de <strong>Parfums</strong> und finden Sie Ihren perfekten Duft. Shoppen Sie sexy Parfüms – von Parfüm-Geschenksets bis hin zu Roll-ons und Parfüms in Reisegröße!",
+            "url": "https://de.victoriassecret.com/de/vs/beauty/perfume"
+        },
+        {
+            "type": "WebPage",
+            "thumbnail": {
+                "url": "https://www.sephora.fr/on/demandware.static/-/Sites-siteCatalog_Sephora_FR/default/dwb5830841/category_banners/Parfum/Coffret/FRAGANCE_COFFRET_Web.jpg"
+            },
+            "inLanguage": "en",
+            "lastReviewed": "2019-05-21T00:00:00+00:00",
+            "name": "Coffret Parfum \uD834\uDF06 SEPHORA",
+            "description": "Découvrez la sélection de coffrets <strong>parfums</strong> de <strong>Sephora</strong>. Achetez en ligne votre coffret <strong>parfum</strong> signature ou explorez de nouvelles fragrances! Livraison Gratuite dès 60€",
+            "url": "https://www.sephora.fr/shop/parfum/coffret-parfum-c7601/"
+        },
+        {
+            "type": "Product",
+            "offers": [
+                {
+                    "price": 97.2,
+                    "priceCurrency": "EUR",
+                    "url": "https://www.notino.de/victorias-secret/bombshell-eau-de-parfum-fur-damen/p-426439/"
+                },
+                {
+                    "price": 87.7,
+                    "priceCurrency": "EUR",
+                    "url": "https://www.notino.de/victorias-secret/bombshell-eau-de-parfum-fur-damen/p-84839/"
+                }
+            ],
+            "thumbnail": {
+                "url": "https://cdn.notinoimg.com/order_2k/victorias-secret/0667524664424_01-o/victorias-secret-bombshell-eau-de-parfum-fur-damen___210810.jpg"
+            },
+            "name": "Bombshell von Victoria's Secret, Eau de Parfum für Damen 100 ml | notino.de",
+            "description": "Seien Sie bezaubernd wie ein Victoria&#x27;s Secret Engel. Victoria&#x27;s Secret Bombshell Eau de Parfum für Frauen ähnelt einem Cocktail aus saftigem Obst, romantischen Blüten und einer Prise wärmender Duftnoten. Der zarte rosa Flakon durchstrahlt Ihren Tag, und mit der verspielten Duftkomposition werden Sie sich immer unwiderstehlich feminin fühlen.          blumig-fruchtige Duftkomposition      für die energische Frau      für die Frühlings- und Sommermonate ideal geeignet        Duftkomposition · Saftige Ananas, Mandarinen, Maracuja und süße Erdbeeren bestimmen den Beginn der Duftkombination. Danac",
+            "url": "https://www.notino.de/victorias-secret/bombshell-eau-de-parfum-fur-damen/"
+        },
+        {
+            "type": "AdvertiserWebPage",
+            "potentialActions": [
+                {
+                    "type": "DisplayAction",
+                    "object": {
+                        "position": "Sidebar",
+                        "impressionToken": "33",
+                        "extensions": [
+                            {
+                                "impressionToken": "113",
+                                "extensionItems": [
+                                    {
+                                        "impressionToken": "115[114]"
+                                    },
+                                    {
+                                        "impressionToken": "117[116]"
+                                    },
+                                    {
+                                        "impressionToken": "119[118]"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "target": "https://api.dev.swisscows.com/feedback/display?rguid=670a4f46bc5c44e18db5b2bff21a2366"
+                },
+                {
+                    "type": "ViewAction",
+                    "target": "https://api.dev.swisscows.com:443/feedback/view?type=mv&reqver=1.0&rg=670a4f46bc5c44e18db5b2bff21a2366&tids=33"
+                }
+            ],
+            "significantLinks": [
+                {
+                    "name": "Stilvolle Accessoires",
+                    "description": "Setzen Sie moderne Akzente\nmit Accessoires von Breuninger",
+                    "url": "https://www.bing.com/aclick?ld=e8q4V5y-EA6LlFaqKQWar64DVUCUys8yIhW8AwWAwMdrntajT1-T0lHLeDjHpHtAdlh6fMguVI8zAceyTk-5yXX8wtK8-ORoCxhOBk7LEXO8AU-tkqSGWFIqmQ4KMDmJAqDVIEeL4xRA9K44CRwWqPFmeGAP_1UPpQhCKbnP5OwR8YlOABl1VcFf_RvtshL1qTkeuwMA&u=aHR0cHMlM2ElMmYlMmZ3d3cuYnJldW5pbmdlci5jb20lMmZkZSUyZmRhbWVuJTJmYWNjZXNzb2lyZXMlMmYlM2ZlbV9zcmMlM2RrdyUyNmVtX2NtcCUzZG1pY3Jvc29mdF9nZW5lcmlzY2glMmZTaXRlbGlua3MlMmZTdGlsdm9sbGVfQWNjZXNzb2lyZXNwYXJmdW0lMjZleHRQcm92SWQlM2Q1NiUyNmV4dFB1JTNkMzA2MzAtYmluZ2FkcyUyNmV4dExpJTNkMzk5NzA5MjE4JTI2ZXh0Q3IlM2QxMTU1NTg3ODUyNjA0MTkzLTcyMjI0NDY3NDQwMjY0JTI2a2V5d29yZCUzZHBhcmZ1bSUyNmJ0cF9jcGlkJTNkNDE5JTI2YnRwX2N0cnklM2RERSUyNmJ0cF9jcmVkJTNkTWljcm9zb2Z0JTI2YnRwX2FkdHAlM2RUZXh0JTI2YnRwX2FjJTNkMTM2MDAxOTQ3JTI2YnRwX2dvYWwlM2RDb252ZXJzaW9uJTI2YnRwX2NwJTNkMzk5NzA5MjE4JTI2YnRwX2dyJTNkMTE1NTU4Nzg1MjYwNDE5MyUyNmJ0cF9hZCUzZDcyMjI0NDY3NDQwMjY0JTI2YnRwX2t3JTNkcGFyZnVtJTI2bXNjbGtpZCUzZDE5NTUwNDE0YzU1NDFhZjI4YTFjNjMzMzA5OWMxMjQz&rlid=19550414c5541af28a1c6333099c1243"
+                },
+                {
+                    "name": "Exklusive Herrenmode",
+                    "description": "Sichern Sie sich jetzt die neuen\nLooks für ihn bei Breuninger",
+                    "url": "https://www.bing.com/aclick?ld=e8O4rZm_RuoPUfdX3a1Y0TpjVUCUzGx25FqKMNeIstSTYw4NsyPZ7baLI8m_8VLkVuX1-v-HcELZB6gxtDbfQX4HS_tr7h-0wa82GshU7OePEv16mD2EPkyILMlgpAvzOIvGFQJ7mUn8vwzAH_ekrCNAzAFyAJ0D3kHmOwg-wcUbKWrl0JvagbqPdXI9FLwiYp9DF3nQ&u=aHR0cHMlM2ElMmYlMmZ3d3cuYnJldW5pbmdlci5jb20lMmZkZSUyZmhlcnJlbiUyZmJla2xlaWR1bmclMmYlM2ZlbV9zcmMlM2RrdyUyNmVtX2NtcCUzZG1pY3Jvc29mdF9nZW5lcmlzY2glMmZTaXRlbGlua3MlMmZFeGtsdXNpdmVfSGVycmVubW9kZSUyZnBhcmZ1bSUyNmV4dFByb3ZJZCUzZDU2JTI2ZXh0UHUlM2QzMDYzMC1iaW5nYWRzJTI2ZXh0TGklM2QzOTk3MDkyMTglMjZleHRDciUzZDExNTU1ODc4NTI2MDQxOTMtNzIyMjQ0Njc0NDAyNjQlMjZrZXl3b3JkJTNkcGFyZnVtJTI2YnRwX2NwaWQlM2Q0MTklMjZidHBfY3RyeSUzZERFJTI2YnRwX2NyZWQlM2RNaWNyb3NvZnQlMjZidHBfYWR0cCUzZFRleHQlMjZidHBfYWMlM2QxMzYwMDE5NDclMjZidHBfZ29hbCUzZENvbnZlcnNpb24lMjZidHBfY3AlM2QzOTk3MDkyMTglMjZidHBfZ3IlM2QxMTU1NTg3ODUyNjA0MTkzJTI2YnRwX2FkJTNkNzIyMjQ0Njc0NDAyNjQlMjZidHBfa3clM2RwYXJmdW0lMjZtc2Nsa2lkJTNkNWNjNGU5MWMwNmFjMTYzYmNiMWQ4ZTNiY2E2NGNhYWQ&rlid=5cc4e91c06ac163bcb1d8e3bca64caad"
+                },
+                {
+                    "name": "Nachhaltige Mode",
+                    "description": "Entdecken Sie nachhaltige Marken\nim Breuninger Online-Shop.",
+                    "url": "https://www.bing.com/aclick?ld=e8KBq5ruDAfAJtQDimVTxNmjVUCUym3IXbIfKfT9WBU6NzsNLsoJipDw2CrfuZjcA-pqoFStBbaJfYosyi_IhYnkD7Vxg6xXX-f_pFmq0lA30w4kmkSJZ3tnR9cRzls_TaEFgVlsF3wFx4q0cBlj1XzO-dVAS1TEK8ogxkiUUwrB8UUcNCkGpdPkPnWBWoNHXcxaA3PQ&u=aHR0cHMlM2ElMmYlMmZ3d3cuYnJldW5pbmdlci5jb20lMmZkZSUyZnN1Y2hlJTJmJTNmcSUzZG5hY2hoYWx0aWclMjZlbV9zcmMlM2RrdyUyNmVtX2NtcCUzZG1pY3Jvc29mdF9nZW5lcmlzY2glMmZTaXRlbGlua3MlMmZOYWNoaGFsdGlna2VpdCUyZnBhcmZ1bSUyNmV4dFByb3ZJZCUzZDU2JTI2ZXh0UHUlM2QzMDYzMC1iaW5nYWRzJTI2ZXh0TGklM2QzOTk3MDkyMTglMjZleHRDciUzZDExNTU1ODc4NTI2MDQxOTMtNzIyMjQ0Njc0NDAyNjQlMjZrZXl3b3JkJTNkcGFyZnVtJTI2YnRwX2NwaWQlM2Q0MTklMjZidHBfY3RyeSUzZERFJTI2YnRwX2NyZWQlM2RNaWNyb3NvZnQlMjZidHBfYWR0cCUzZFRleHQlMjZidHBfYWMlM2QxMzYwMDE5NDclMjZidHBfZ29hbCUzZENvbnZlcnNpb24lMjZidHBfY3AlM2QzOTk3MDkyMTglMjZidHBfZ3IlM2QxMTU1NTg3ODUyNjA0MTkzJTI2YnRwX2FkJTNkNzIyMjQ0Njc0NDAyNjQlMjZidHBfa3clM2RwYXJmdW0lMjZtc2Nsa2lkJTNkZGRmNzA1OGQ1OWY0MTU4YjUzMDc2MmFhOTUzY2I0MWY&rlid=ddf7058d59f4158b530762aa953cb41f"
+                }
+            ],
+            "displayUrl": "www.breuninger.com/<b>Parfum</b>",
+            "name": "<b>Parfum</b> bei Breuninger | Breuninger.com",
+            "description": "<b>Parfum</b> von Top-Marken im Breuninger Online-Shop entdecken. Über 1.300 angesagte Premium- und Luxusmarken auf breuninger.com",
+            "url": "https://www.bing.com/aclick?ld=e8VMnCoXpqigSxOGQalZ9RGzVUCUx8sf4CKUft7SgMwa7sjJ76pNdT_azYLkvjlGgX2qPwH0GWD8LAwbi8DjX8MvIKeuKApD6X1VRvTzGTd58ketxE27vAHvBVVqGPnzDqChYGjGMg2nUrD3ip4IbUFZYGFsypNinKi44wYCTz6ompTjJV&u=aHR0cHMlM2ElMmYlMmZ3d3cuYnJldW5pbmdlci5jb20lMmZkZSUyZnN1Y2hlJTJmJTNmcSUzZFBhcmZ1bSUyNmVtX3NyYyUzZGt3JTI2ZW1fY21wJTNkbWljcm9zb2Z0X2dlbmVyaXNjaCUyZkJlYXV0eV9EJWMzJWJjZnRlJTJmQmVhdXR5X0QlYzMlYmNmdGVfUGFyZnVtJTJmcGFyZnVtJTI2ZXh0UHJvdklkJTNkNTYlMjZleHRQdSUzZDMwNjMwLWJpbmdhZHMlMjZleHRMaSUzZDM5OTcwOTIxOCUyNmV4dENyJTNkMTE1NTU4Nzg1MjYwNDE5My03MjIyNDQ2NzQ0MDI2NCUyNmtleXdvcmQlM2RwYXJmdW0lMjZidHBfY3BpZCUzZDQxOSUyNmJ0cF9jdHJ5JTNkREUlMjZidHBfY3JlZCUzZE1pY3Jvc29mdCUyNmJ0cF9hZHRwJTNkVGV4dCUyNmJ0cF9hYyUzZDEzNjAwMTk0NyUyNmJ0cF9nb2FsJTNkQ29udmVyc2lvbiUyNmJ0cF9jcCUzZDM5OTcwOTIxOCUyNmJ0cF9nciUzZDExNTU1ODc4NTI2MDQxOTMlMjZidHBfYWQlM2Q3MjIyNDQ2NzQ0MDI2NCUyNmJ0cF9rdyUzZHBhcmZ1bSUyNm1zY2xraWQlM2RmN2MyOWMwMGE1ZTgxMmI5NjNhZGZiMjc2OTIwOGVkNw&rlid=f7c29c00a5e812b963adfb2769208ed7"
+        },
+        {
+            "type": "AdvertiserWebPage",
+            "potentialActions": [
+                {
+                    "type": "DisplayAction",
+                    "object": {
+                        "position": "Sidebar",
+                        "impressionToken": "37",
+                        "extensions": [
+                            {
+                                "impressionToken": "120",
+                                "extensionItems": [
+                                    {
+                                        "impressionToken": "122[121]"
+                                    },
+                                    {
+                                        "impressionToken": "124[123]"
+                                    },
+                                    {
+                                        "impressionToken": "126[125]"
+                                    },
+                                    {
+                                        "impressionToken": "128[127]"
+                                    },
+                                    {
+                                        "impressionToken": "130[129]"
+                                    },
+                                    {
+                                        "impressionToken": "132[131]"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "target": "https://api.dev.swisscows.com/feedback/display?rguid=670a4f46bc5c44e18db5b2bff21a2366"
+                },
+                {
+                    "type": "ViewAction",
+                    "target": "https://api.dev.swisscows.com:443/feedback/view?type=mv&reqver=1.0&rg=670a4f46bc5c44e18db5b2bff21a2366&tids=37"
+                }
+            ],
+            "significantLinks": [
+                {
+                    "name": "Herrendüfte",
+                    "description": "Herrendüfte vieler Marken.\nOnline Preise vergleichen.",
+                    "url": "https://www.bing.com/aclick?ld=e8d5hYi_EDkl1n9uiceRmjOTVUCUzRZzzYcsuaXROXL0YzQO32tym81muKIX6mJBvn248v9HAJS1jZkq4ghK92FecCrJ-WuGQpaJ78pF_m40D2BEfl6z8A9oN5Zf8Pv_CCMjirHEgr1bG1w64mubqKALhzYup0eV0jPy3tnyuz4i1dAozMraoWrTFweZOYKDlsPe4elQ&u=aHR0cHMlM2ElMmYlMmZvbmxpbmUtcHJlaXN2ZXJnbGVpY2guZGUlMmZzZWFyY2glM2ZxJTNkSGVycmVuZCVjMyViY2Z0ZSUyNmVtX3NyYyUzZGt3JTI2ZW1fY21wJTNkbWljcm9zb2Z0JTJmR2VzdW5kaGVpdCUyNmFtcCUzYktvc21ldGlrJTI2bWMlM2RjR2lZYU1IYjBsT2QlMjZtc2NhbXBhaWduJTNkNDEwNDQ1MDk3JTI2bXNhZGdyb3VwJTNkMTE2MjE4NDQ5NDQ1OTcxOSUyNm1zZGV2aWNlJTNkYyUyNm1zdGFyZ2V0aWQlM2Rrd2QtNzI2MzcxNzgwODQwNDklM2Fsb2MtMjM1JTI2bXNtYXRjaHR5cGUlM2RwJTI2bXNuZXR3b3JrJTNkcyUyNm1zY2xpZCUzZDIxYzFiZDM4YTdhZjE3YjZiODY5ZGExZjZiNjdjNzliJTI2bXNjbGtpZCUzZDIxYzFiZDM4YTdhZjE3YjZiODY5ZGExZjZiNjdjNzli&rlid=21c1bd38a7af17b6b869da1f6b67c79b"
+                },
+                {
+                    "name": "Fußpflege",
+                    "description": "Artikel für die Fußpflege.\nNeue Produkte entdecken.",
+                    "url": "https://www.bing.com/aclick?ld=e8qb-AFkkoiHFJiBiA-7DaFTVUCUxxebHIHIjYcVB_K5bIHSYchdmypTCyC-w5E6TeMhSJiesIHhTBJ1R8q5DUvOikcEKmnXQQMHjokRWaUzeuy1UMmU2iRXNzZI8qIcx6kg14I__MoiqCIltR5oJPjGSxPRI3mfwEEq7rbKPMFegg7gjwl9jvoeYZMOZ8caEx8NW4uw&u=aHR0cHMlM2ElMmYlMmZvbmxpbmUtcHJlaXN2ZXJnbGVpY2guZGUlMmZzZWFyY2glM2ZxJTNkRnUlYzMlOWZwZmxlZ2UlMjZlbV9zcmMlM2RrdyUyNmVtX2NtcCUzZG1pY3Jvc29mdCUyZkdlc3VuZGhlaXQlMjZhbXAlM2JLb3NtZXRpayUyNm1jJTNkY0dpWWFNSGIwbE9kJTI2bXNjYW1wYWlnbiUzZDQxMDQ0NTA5NyUyNm1zYWRncm91cCUzZDExNjIxODQ0OTQ0NTk3MTklMjZtc2RldmljZSUzZGMlMjZtc3RhcmdldGlkJTNka3dkLTcyNjM3MTc4MDg0MDQ5JTNhbG9jLTIzNSUyNm1zbWF0Y2h0eXBlJTNkcCUyNm1zbmV0d29yayUzZHMlMjZtc2NsaWQlM2QxNTY0OWJiZjZkYzMxZTZjYmNmZGZjOThhMTBiYjJmMSUyNm1zY2xraWQlM2QxNTY0OWJiZjZkYzMxZTZjYmNmZGZjOThhMTBiYjJmMQ&rlid=15649bbf6dc31e6cbcfdfc98a10bb2f1"
+                },
+                {
+                    "name": "Rasurartikel",
+                    "description": "Entdecken &amp; Preise vergleichen.\nonline-preisvergleich.de",
+                    "url": "https://www.bing.com/aclick?ld=e8LHFsWUxpLUwemapBdLgfCTVUCUxJL9VRuBmW-2dlhrw8DPK6pGawxPwA7HusWCt8LHa5zDw9-_E8iKVyjpG5BAeVIo43AIbt5ut7jqbfh1HR16uuRjcxkRMbLFSpgek4i9HdD8AQLJTW7cG5Wj5dnvhRwLnuaqqeNxnpiJQNI_PomPYrS_IeaZrV52OFMXDTPSQyGw&u=aHR0cHMlM2ElMmYlMmZvbmxpbmUtcHJlaXN2ZXJnbGVpY2guZGUlMmZzZWFyY2glM2ZxJTNkUmFzdXJhcnRpa2VsJTI2ZW1fc3JjJTNka3clMjZlbV9jbXAlM2RtaWNyb3NvZnQlMmZHZXN1bmRoZWl0JTI2YW1wJTNiS29zbWV0aWslMjZtYyUzZGNHaVlhTUhiMGxPZCUyNm1zY2FtcGFpZ24lM2Q0MTA0NDUwOTclMjZtc2FkZ3JvdXAlM2QxMTYyMTg0NDk0NDU5NzE5JTI2bXNkZXZpY2UlM2RjJTI2bXN0YXJnZXRpZCUzZGt3ZC03MjYzNzE3ODA4NDA0OSUzYWxvYy0yMzUlMjZtc21hdGNodHlwZSUzZHAlMjZtc25ldHdvcmslM2RzJTI2bXNjbGlkJTNkMDRhODg5OGZkNTkzMWZiNTkyMzdlZWE4MTk1YjQ0MDclMjZtc2Nsa2lkJTNkMDRhODg5OGZkNTkzMWZiNTkyMzdlZWE4MTk1YjQ0MDc&rlid=04a8898fd5931fb59237eea8195b4407"
+                },
+                {
+                    "name": "Lockenstäbe",
+                    "description": "Lockenstäbe im Preisvergleich.\nOnline vergleichen &amp; sparen.",
+                    "url": "https://www.bing.com/aclick?ld=e8pk3kVYx0Sr89umZO27i6ezVUCUz334Svx6zyz0RNGoIjqP--Bd_IRCJUuwsZ9FueOkBtagM13N7lnZ37d3HkdwwrLbQw4BQQ_ER-BgpieLyfUMv9eO2G2w5KxZHf2ai4arwdXIqwyhusPnpxh5HNVDq8h0cy_uu_lYl5jzOzxujlPACiCObe-aYpFGgjg5xnmFufKg&u=aHR0cHMlM2ElMmYlMmZvbmxpbmUtcHJlaXN2ZXJnbGVpY2guZGUlMmZzZWFyY2glM2ZxJTNkTG9ja2Vuc3QlYzMlYTRiZSUyNmVtX3NyYyUzZGt3JTI2ZW1fY21wJTNkbWljcm9zb2Z0JTJmR2VzdW5kaGVpdCUyNmFtcCUzYktvc21ldGlrJTI2bWMlM2RjR2lZYU1IYjBsT2QlMjZtc2NhbXBhaWduJTNkNDEwNDQ1MDk3JTI2bXNhZGdyb3VwJTNkMTE2MjE4NDQ5NDQ1OTcxOSUyNm1zZGV2aWNlJTNkYyUyNm1zdGFyZ2V0aWQlM2Rrd2QtNzI2MzcxNzgwODQwNDklM2Fsb2MtMjM1JTI2bXNtYXRjaHR5cGUlM2RwJTI2bXNuZXR3b3JrJTNkcyUyNm1zY2xpZCUzZDFhNzU4N2U3NDhiNzE3MGJiZjczZTBjMDg0N2ZhNDk1JTI2bXNjbGtpZCUzZDFhNzU4N2U3NDhiNzE3MGJiZjczZTBjMDg0N2ZhNDk1&rlid=1a7587e748b7170bbf73e0c0847fa495"
+                },
+                {
+                    "name": "Parfum entdecken",
+                    "description": "Parfüms, Pflegeprodukte &amp; mehr.\nJetzt online vergleichen &amp; sparen!",
+                    "url": "https://www.bing.com/aclick?ld=e8ARYV7sDXR7BfVnQKvbgSvjVUCUxmgU01swq6AfaUIVXekq4uJqxG-nPztDuqa6QS1OtYUaqMZAdmVFvyUBLVdDpexiiiEdj48LW18H-2NHgLtCjnCkz0uWuvVCHQh372XjWDoIvxb-R4A7QA_5ttask73K5gu10Z7st4MvROTPD-e3MRYVPtWLgCDVJ3Iq3nH4_nKA&u=aHR0cHMlM2ElMmYlMmZvbmxpbmUtcHJlaXN2ZXJnbGVpY2guZGUlMmZzZWFyY2glM2ZxJTNkYWNxdWElMjUyMGRpJTI1MjBwYXJtYSUyNTIwY29sb25pYSUyNm1zY2xraWQlM2RlNmNiYjI3MjhjMDAxYzY2NjUzNmQ1NTU0MGM4ZmIwYSUyNmVtX3NyYyUzZGt3JTI2ZW1fY21wJTNkbWljcm9zb2Z0JTJmR2VzdW5kaGVpdCUyNmFtcCUzYktvc21ldGlrJTI2bWMlM2RjR2lZYU1IYjBsT2QlMjZtc2NhbXBhaWduJTNkNDEwNDQ1MDk3JTI2bXNhZGdyb3VwJTNkMTE2MjE4NDQ5NDQ1OTcxOSUyNm1zZGV2aWNlJTNkYyUyNm1zdGFyZ2V0aWQlM2Rrd2QtNzI2MzcxNzgwODQwNDklM2Fsb2MtMjM1JTI2bXNtYXRjaHR5cGUlM2RwJTI2bXNuZXR3b3JrJTNkcyUyNm1zY2xpZCUzZGU2Y2JiMjcyOGMwMDFjNjY2NTM2ZDU1NTQwYzhmYjBhJTI2bXNjbGtpZCUzZGU2Y2JiMjcyOGMwMDFjNjY2NTM2ZDU1NTQwYzhmYjBh&rlid=e6cbb2728c001c666536d55540c8fb0a"
+                },
+                {
+                    "name": "Ihre neue Naturkosmetik",
+                    "description": "Naturkosmetik im Preisvergleich. \nJetzt den besten Preis finden!",
+                    "url": "https://www.bing.com/aclick?ld=e8b2TP6LIXDM4ioRM1SGOaTzVUCUwZ0qjyRbroHjhtN0WWOrNvqaI87mFonqsSwadKFpSoqATRoqYmCgXR75ADRpe9JhPFBmFqoPfgAwoW1d3Akpn2nQOPh_ENggtCi07a5YQX8K1gfMKxlbLT88UA1PaWuxoFx7Kh6LQN3FwT4FjZ72Gmq4uun1dDeoFSSN91r7HxzA&u=aHR0cHMlM2ElMmYlMmZvbmxpbmUtcHJlaXN2ZXJnbGVpY2guZGUlMmZzZWFyY2glM2ZxJTNkTmF0dXJrb3NtZXRpayUyNm1zY2xraWQlM2QyYzI1YTY1NWEwNzYxZWM5OGZmYWMxNzI2Y2JlY2U3NCUyNmVtX3NyYyUzZGt3JTI2ZW1fY21wJTNkbWljcm9zb2Z0JTJmR2VzdW5kaGVpdCUyNmFtcCUzYktvc21ldGlrJTI2bWMlM2RjR2lZYU1IYjBsT2QlMjZtc2NhbXBhaWduJTNkNDEwNDQ1MDk3JTI2bXNhZGdyb3VwJTNkMTE2MjE4NDQ5NDQ1OTcxOSUyNm1zZGV2aWNlJTNkYyUyNm1zdGFyZ2V0aWQlM2Rrd2QtNzI2MzcxNzgwODQwNDklM2Fsb2MtMjM1JTI2bXNtYXRjaHR5cGUlM2RwJTI2bXNuZXR3b3JrJTNkcyUyNm1zY2xpZCUzZDJjMjVhNjU1YTA3NjFlYzk4ZmZhYzE3MjZjYmVjZTc0JTI2bXNjbGtpZCUzZDJjMjVhNjU1YTA3NjFlYzk4ZmZhYzE3MjZjYmVjZTc0&rlid=2c25a655a0761ec98ffac1726cbece74"
+                }
+            ],
+            "displayUrl": "online-preisvergleich.de/Gesundheit/<b>Parfum</b>",
+            "name": "Vergleich: <b>Parfum</b> | Ihr online-preisvergleich.de",
+            "description": "<b>Parfum</b> vieler Hersteller. Jetzt den optimalen Preis fnden. Schnelles, einfaches, bequemes und sicheres Shopping bei online-preisvergleich.de.",
+            "url": "https://www.bing.com/aclick?ld=e8qyBLIBf1ud05cCcsB6b17DVUCUz85YbGN3qFLMXfMdc0az6swFLTZvn5N_B3d4IzGro_OmRqmoPvLM9njt8ljsOYZML1b6NTpIPFOhI2AJTKCE-_FG27ey4uOJcINMnMCyp3wNMC1BfKca876AjQhzV9L4b4OvWowpvr2y_tCL1gBCey&u=aHR0cHMlM2ElMmYlMmZvbmxpbmUtcHJlaXN2ZXJnbGVpY2guZGUlMmZzZWFyY2glM2ZxJTNkUGFyZnVtJTI2ZW1fc3JjJTNka3clMjZlbV9jbXAlM2RtaWNyb3NvZnQlMmZHZXN1bmRoZWl0JTI2YW1wJTNiS29zbWV0aWslMjZtYyUzZGNHaVlhTUhiMGxPZCUyNm1zY2FtcGFpZ24lM2Q0MTA0NDUwOTclMjZtc2FkZ3JvdXAlM2QxMTYyMTg0NDk0NDU5NzE5JTI2bXNkZXZpY2UlM2RjJTI2bXN0YXJnZXRpZCUzZGt3ZC03MjYzNzE3ODA4NDA0OSUzYWxvYy0yMzUlMjZtc21hdGNodHlwZSUzZHAlMjZtc25ldHdvcmslM2RzJTI2bXNjbGlkJTNkNzc1MDcyZmRiNTkwMTM4NWQ4NGYxNWRhNzk1OGI3MjIlMjZtc2Nsa2lkJTNkNzc1MDcyZmRiNTkwMTM4NWQ4NGYxNWRhNzk1OGI3MjI&rlid=775072fdb5901385d84f15da7958b722"
+        }
+    ],
+    "nextHref": "https://api.dev.swisscows.com/v4/web/search?query=parf%C3%BCm%20victoria%20secret%20sephora&itemsCount=10&offset=10&locale=de-DE&freshness=All&spellcheck=true"
+}

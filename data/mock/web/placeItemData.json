@@ -1,0 +1,257 @@
+{
+    "context": {
+        "query": "Hotel Malte Astotel",
+        "effectiveQuery": "Hotel Malte Astotel",
+        "offset": 0,
+        "itemsCount": 10,
+        "locale": "de-DE",
+        "spellcheck": true
+    },
+    "entities": [
+        {
+            "type": "Place",
+            "image": {
+                "height": 440,
+                "width": 550,
+                "url": "https://media-cdn.tripadvisor.com/media/photo-s/0f/6d/cb/6e/stairs.jpg"
+            },
+            "aggregateRating": {
+                "ratingCount": 3111,
+                "ratingValue": 5,
+                "bestRating": 5
+            },
+            "address": "63 rue de Richelieu, 75002 Paris France",
+            "email": "hotel.malte@astotel.com",
+            "latitude": 48.867207,
+            "longitude": 2.337543,
+            "mapZoom": 7,
+            "website": "https://en.astotel.com/hotel/malte-opera-en/overview",
+            "name": "Hotel Malte Astotel",
+            "description": "",
+            "url": "https://www.tripadvisor.de/Hotel_Review-g187144-d228694-Reviews-Hotel_Malte_Astotel-Ile_de_France_Paris.html",
+            "additionalProperties": []
+        }
+    ],
+    "items": [
+        {
+            "type": "Place",
+            "image": {
+                "url": "https://www.astotel.com/wp-content/uploads/2022/10/Hotel-Malte-Astotel-Paris.jpg"
+            },
+            "address": "63 rue de Richelieu, 75002, Paris",
+            "telephone": "+33(0) 1 44 58 94 94",
+            "mapZoom": 7,
+            "name": "Hotel Malte * * * *",
+            "description": "Our apologies, the <strong>Hotel</strong> has no vacancies for this date · Other <strong>hotels</strong> have availability",
+            "url": "https://en.astotel.com/hotel/malte-opera-en/overview"
+        },
+        {
+            "type": "Place",
+            "image": {
+                "url": "https://cf.bstatic.com/xdata/images/hotel/max500/100267829.jpg?k=74bbb7d9b9f02f9c4ea76382abaae68f68578265849350e0088b315708bd8331&o=&hp=1"
+            },
+            "address": "63 rue de Richelieu, 02. Arrondissement - Bourse, 75002 Paris, Frankreich",
+            "latitude": 48.867165,
+            "longitude": 2.3375263,
+            "mapZoom": 7,
+            "name": "Hotel Malte - Astotel, Paris (aktualisierte Preise für 2024)",
+            "description": "Das 4-Sterne-<strong>Hotel</strong> <strong>Malte</strong> - <strong>Astotel</strong> liegt im historischen Viertel im Zentrum von Paris, nur 650 m vom Louvre entfernt.",
+            "url": "https://www.booking.com/hotel/fr/malteopera.de.html"
+        },
+        {
+            "type": "FAQPage",
+            "hasPart": [
+                {
+                    "question": "Welche beliebten Sehenswürdigkeiten befinden sich in der Nähe von Hotel Malte - Astotel?",
+                    "answer": "Sehenswürdigkeiten in der Umgebung sind z.\u00A0B. Panik Room (0,4\u00A0km), My Paris Photo Tour (0,2\u00A0km) und Escape Hunt - Escape Game Paris (0,4\u00A0km). Alle Sehenswürdigkeiten in der Umgebung anzeigen"
+                },
+                {
+                    "question": "Welche Ausstattungen & Services für Unternehmen bietet Hotel Malte - Astotel an?",
+                    "answer": "Beliebte angebotene Ausstattungen und Services sind z.\u00A0B. kostenloses WLAN, chemische Reinigung und Wäscheservice. Alle Ausstattungen &amp; Services für Unternehmen ansehen"
+                },
+                {
+                    "question": "Über welche Ausstattungen & Services verfügt Hotel Malte - Astotel?",
+                    "answer": "Top-Ausstattungen und Services der Zimmer sind z.\u00A0B. Minibar, Klimaanlage und Flachbildfernseher. Alle Ausstattungen &amp; Services der Zimmer ansehen"
+                },
+                {
+                    "question": "Welche Essens- und Getränkeoptionen bietet Hotel Malte - Astotel an?",
+                    "answer": "Gäste können während ihres Aufenthalts Frühstück, kostenloser Tee und kostenloser Instantkaffee genießen.  Weitere Informationen"
+                },
+                {
+                    "question": "Welche Restaurants befinden sich in der Nähe von Hotel Malte - Astotel?",
+                    "answer": "Günstig gelegene Hotels sind z.\u00A0B. L'Entente, Le British Brasserie, Palais Royal Restaurant und La Cordonnerie. Alle Restaurants in der Umgebung anzeigen"
+                },
+                {
+                    "question": "Bietet Hotel Malte - Astotel Reinigungsservices an?",
+                    "answer": "Ja, chemische Reinigung und Wäscheservice werden den Gästen angeboten.  Alle Ausstattungen &amp; Services für Unternehmen ansehen"
+                },
+                {
+                    "question": "Welchen Sprachen sprechen die Mitarbeiter von Hotel Malte - Astotel?",
+                    "answer": "Die Mitarbeiter sprechen mehrere Sprachen, z.\u00A0B. englisch, spanisch, französisch, deutsch und italienisch.  Alle Ausstattungen &amp; Services für Unternehmen ansehen"
+                },
+                {
+                    "question": "Gibt es historische Stätten in der Nähe von Hotel Malte - Astotel?",
+                    "answer": "Viele Reisende besuchen Notre-Dame de Paris (1,8\u00A0km), Arc de Triomphe (Triumphbogen) (3,2\u00A0km) und Sainte-Chapelle (1,4\u00A0km).  Alle Sehenswürdigkeiten in der Umgebung anzeigen"
+                },
+                {
+                    "question": "Ist Hotel Malte - Astotel barrierefrei?",
+                    "answer": "Ja, zum Angebot zählen rollstuhlgerecht, barrierefreie Zimmer und behindertengerechte Einrichtung. Im Falle von speziellen Anforderungen empfehlen wir einen vorherigen Anruf.  Weitere Informationen"
+                }
+            ],
+            "thumbnail": {
+                "url": "https://media-cdn.tripadvisor.com/media/photo-s/2b/44/e6/9e/outside-view.jpg"
+            },
+            "inLanguage": "de",
+            "lastReviewed": "2017-08-10T13:34:36+00:00",
+            "name": "HOTEL MALTE - ASTOTEL: Bewertungen, Fotos & Preisvergleich (Paris, Île-de-France) - Tripadvisor",
+            "description": "<strong>Hotel</strong> <strong>Malte</strong> - <strong>Astotel</strong>, Paris: 2.863 Bewertungen, 1.369 authentische Reisefotos und günstige Angebote für <strong>Hotel</strong> <strong>Malte</strong> - <strong>Astotel</strong>. Bei Tripadvisor auf Platz 3 von 1.910 <strong>Hotels</strong> in Paris mit 5/5 von Reisenden bewertet.",
+            "url": "https://www.tripadvisor.de/Hotel_Review-g187147-d228694-Reviews-Hotel_Malte_Astotel-Paris_Ile_de_France.html"
+        },
+        {
+            "type": "Place",
+            "image": {
+                "url": "https://pics.tui.com/pics/pics1600x1200/tui/9/9e2360d2992ed105_2eba1f83544dda66e318e925317f78eb.jpg"
+            },
+            "address": "Rue de Richelieu 63, 75002, Paris",
+            "telephone": "+33 144589494",
+            "latitude": 48.8672,
+            "longitude": 2.3375,
+            "mapZoom": 7,
+            "name": "Hotel Hotel Malte - Astotel in Paris günstig buchen bei TUI.com",
+            "description": "<strong>Hotel</strong> <strong>Malte</strong> - <strong>Astotel</strong> <strong>Hotel</strong>: Alle Infos zur Ausstattung, Zimmer, Lage &amp; Umgebung, Bewertung &amp; Bilder. ✅ Top Service ✅ Exklusive Angebote",
+            "url": "https://www.tui.com/hotels/hotel-malte-astotel-39265/hotelinformation/"
+        },
+        {
+            "type": "Place",
+            "image": {
+                "url": "https://media.hrs.com/media/image/83/22/b0/Malte_-_Astotel-Paris-Buffet-69204.jpg"
+            },
+            "address": "75002, Paris",
+            "latitude": 48.86719,
+            "longitude": 2.33764,
+            "mapZoom": 7,
+            "name": "Hotel Malte - Astotel in Paris bei HRS günstig buchen",
+            "description": "Gratis-Leistungen für HRS Gäste im <strong>Hotel</strong> <strong>Malte</strong> - <strong>Astotel</strong> (Paris) : ✔ kostenlose Stornierung bis 18 Uhr",
+            "url": "https://www.hrs.de/hotels/de/frankreich/paris/malte-opera-astotel-69204.html"
+        },
+        {
+            "type": "WebPage",
+            "thumbnail": {
+                "url": "https://astotel.com/wp-content/themes/astotel-groupe/new/images/logo.png"
+            },
+            "inLanguage": "de",
+            "name": "Astotel",
+            "description": "Our apologies, the <strong>Hotel</strong> has no vacancies for this date.",
+            "url": "https://en.astotel.com/"
+        },
+        {
+            "type": "Place",
+            "image": {
+                "url": "https://malte-astotel-paris.hotel-dir.com/data/Photos/OriginalPhoto/12269/1226946/1226946734.JPEG"
+            },
+            "address": "63 rue de Richelieu, 75002",
+            "email": "hotel.malte@astotel.com",
+            "telephone": "33144589494",
+            "mapZoom": 7,
+            "name": "MALTE ASTOTEL PARIS - Hotel-dir",
+            "description": "<strong>Hotel</strong> <strong>Malte</strong> - <strong>Astotel</strong> Paris - 4-Sterne-<strong>Hotel</strong>. Das 4-Sterne <strong>Hotel</strong> <strong>Malte</strong> - <strong>Astotel</strong> liegt in dem historischen Bezirk 02. Arrondissement - Bourse, in einer Entfernung von 28 Autominuten vom Flughafen …",
+            "url": "https://malte-astotel-paris.hotel-dir.com/de/"
+        },
+        {
+            "type": "FAQPage",
+            "hasPart": [
+                {
+                    "question": "Bietet Hôtel Malte - Astotel eine kostenlose Stornierung und vollständige Rückerstattung an?",
+                    "answer": "Ja, Hôtel Malte - Astotel bietet auf unserer Website vollständig erstattungsfähige Zimmer. Wenn du einen vollständig erstattungsfähigen Zimmertarif gebucht hast, kannst du bis wenige Tage vor deiner Anreise stornieren, je nach Stornierungsrichtlinie der Unterkunft. Die genauen Einzelheiten zu den Bedingungen der jeweiligen Unterkunft findest du in deren Stornierungsrichtlinie."
+                },
+                {
+                    "question": "Wie viel kostet ein Aufenthalt im Hôtel Malte - Astotel?",
+                    "answer": "Gültig ab 13. Mai 2023: Die Preise für 1 Übernachtung für 2 Erwachsene im Hôtel Malte - Astotel am 17. Mai 2023 beginnen bei 236\u00A0€ (inklusive Steuern und Gebühren). Dieser Preis basiert auf dem niedrigsten Preis pro Nacht innerhalb der nächsten 30 Tage, der jeweils in den letzten 24 Stunden gefunden wurde. Die Preise können sich ändern. Wähle deine Reisedaten, um genauere Preise zu erhalten."
+                },
+                {
+                    "question": "Welche Sauberkeits- und Hygienemaßnahmen werden derzeit im Hôtel Malte - Astotel ergriffen?",
+                    "answer": "Für die Reinigung der Unterkunft wird Desinfektionsmittel verwendet, dies wurde von der Unterkunft bestätigt. Außerdem gilt: Gästen steht Handdesinfektionsmittel zur Verfügung, die Abstandsregeln werden befolgt und das Personal der Unterkunft trägt persönliche Schutzausrüstung. Bitte beachte, dass uns diese Informationen von unseren Partnern bereitgestellt wurden."
+                },
+                {
+                    "question": "Erlaubt Hôtel Malte - Astotel Haustiere?",
+                    "answer": "Haustiere sind leider nicht gestattet, Assistenztiere sind jedoch willkommen."
+                },
+                {
+                    "question": "Bietet Hôtel Malte - Astotel Parkplätze vor Ort an?",
+                    "answer": "Leider bietet Hôtel Malte - Astotel keine Parkplätze vor Ort an."
+                },
+                {
+                    "question": "Welche Check-in- und Check-out-Zeiten hat Hôtel Malte - Astotel?",
+                    "answer": "Der Check-in ist zu folgenden Zeiten möglich: 15:00\u00A0Uhr–00:00\u00A0Uhr. Check-out ist um 12:00\u00A0Uhr. Ein kontaktloser Check-out ist möglich."
+                },
+                {
+                    "question": "Welche Aktivitäten werden in der Nähe von Hôtel Malte - Astotel angeboten?",
+                    "answer": "In den wärmeren Monaten stehen dir Aktivitäten wie Radtouren in der Nähe zur Verfügung."
+                },
+                {
+                    "question": "Was gibt es in der Umgebung von Hôtel Malte - Astotel zu sehen?",
+                    "answer": "Hôtel Malte - Astotel ist in Stadtzentrum von Paris, nur 4 Minuten Fußweg von Metrostation Bourse und 13 Minuten zu Fuß von Opéra Garnier entfernt. Reisende sind besonders begeistert von der tollen Lage dieses Hotels."
+                }
+            ],
+            "inLanguage": "de",
+            "name": "Hôtel Malte - Astotel in Paris – Hotels.com",
+            "description": "Sieh dir Angebote für Hôtel <strong>Malte</strong> - <strong>Astotel</strong> an – mit vollständig erstattungsfähigen Preisen und kostenloser Stornierung. Gäste loben das Frühstück. Opéra Garnier ist nur wenige Minuten entfernt. WLAN ist kostenlos. Darüber hinaus weist dieses <strong>Hotel</strong> auch eine Snackbar und einen ...",
+            "url": "https://de.hotels.com/ho128172/hotel-malte-astotel-paris-frankreich/"
+        },
+        {
+            "type": "FAQPage",
+            "hasPart": [
+                {
+                    "question": "Wie weit ist das Stadtzentrum von Paris von dem beeindruckenden 4-Sterne-Hotel Malte - Astotel entfernt?",
+                    "answer": "Das Stadtzentrum von Paris ist von dem beeindruckenden 4-Sterne-Hotel Malte - Astotel aus in 10 Minuten zu Fuß erreichbar."
+                },
+                {
+                    "question": "Welche Sehenswürdigkeiten können wir in der Nähe dem Hotel Hotel Malte - Astotel besuchen?",
+                    "answer": "Zu den nahegelegenen Sehenswürdigkeiten gehören Musée d'Orsay sowie Notre-Dame de Paris, die Sie nur in 20 bzw. 25 Gehminuten vom Hotel Hotel Malte - Astotel aus erreichen."
+                },
+                {
+                    "question": "Was kostet ein Zimmer in diesem Hotel in Paris?",
+                    "answer": "Im Stadtteil 02. Arrondissement - Bourse von Paris kostet eine Übernachtung in 4-Sterne-Hotels im Durchschnitt 232 €. Der Preis für eine Nacht in diesem Hotel in Paris ist 42 € günstiger als der Durchschnittspreis in der Stadt und beträgt nur 190 €."
+                },
+                {
+                    "question": "Welche Zahlungsmöglichkeiten gibt es in dem beeindruckenden 4-Sterne-Hotel Hotel Malte - Astotel?",
+                    "answer": "Zu den Zahlungsmethoden in dem beeindruckenden 4-Sterne-Hotel Hotel Malte - Astotel gehören: <ul><li>Bargeld</li><li>Visa</li><li>American Express</li><li>Mastercard</li></ul>"
+                },
+                {
+                    "question": "Über welche Annehmlichkeiten verfügen die Zimmer im Hotel Malte - Astotel?",
+                    "answer": "Jedes Zimmer im Hotel Malte - Astotel bietet einen Flachbildfernseher mit Satellitenkanälen, einige Zimmer verfügen zudem über private Badezimmer sowie einen Haartrockner und eine behindertengerechte Dusche."
+                },
+                {
+                    "question": "Wird in dem beeindruckenden 4-Sterne-Hotel Hotel Malte - Astotel kostenloses Internet angeboten?",
+                    "answer": "Ja, WLAN wird umsonst den Gästen von dem beeindruckenden 4-Sterne-Hotel Hotel Malte - Astotel zur Verfügung gestellt."
+                },
+                {
+                    "question": "Spricht das Personal von diesem beeindruckenden 4-Sterne-Hotel Fremdsprachen?",
+                    "answer": "Das Personal von diesem beeindruckenden 4-Sterne-Hotel spricht mehrere Sprachen, darunter Italienisch, Spanisch, Japanisch und Englisch."
+                },
+                {
+                    "question": "Stellt das beeindruckende 4-Sterne-Hotel Hotel Malte - Astotel einen Reinigungsservice zur Verfügung?",
+                    "answer": "Ja, das beeindruckende 4-Sterne-Hotel Hotel Malte - Astotel bietet eine Trockenreinigung und einen Reinigungsservice an und wird für seine Sauberkeit mit 9.4 Punkten bewertet."
+                }
+            ],
+            "thumbnail": {
+                "url": "https://malte-astotel-paris.hotel-mix.de/data/Photos/Big/12269/1226946/1226946734/Hotel-Malte-Astotel-Paris-Exterior.JPEG"
+            },
+            "inLanguage": "de",
+            "name": "Hotel Hotel Malte - Astotel, Paris, France",
+            "description": "<strong>Hotel</strong> <strong>Malte</strong> - <strong>Astotel</strong> - Das 4-Sterne-<strong>Hotel</strong> <strong>Hotel</strong> <strong>Malte</strong> - <strong>Astotel</strong> befindet sich in dem historischen Bezirk von Paris, nur 5 Gehminuten vom Fluss Seine entfernt. Um die Kleinen zu unterhalten, bietet das <strong>Hotel</strong> Angebote wie Spielsachen und Bücher.",
+            "url": "https://malte-astotel-paris.hotel-mix.de/"
+        },
+        {
+            "type": "Place",
+            "address": "63 rue de Richelieu, 02. Arrondissement - Bourse, 75002 Paris, Frankreich",
+            "latitude": 48.867165,
+            "longitude": 2.3375263,
+            "mapZoom": 7,
+            "name": "Hotel Malte - Astotel - Paris - Hotel WebSite",
+            "description": "Buchen Sie Ihren Aufenthalt im <strong>Hotel</strong> <strong>Malte</strong> - <strong>Astotel</strong> | Paris. Wir garantieren höchste Sicherheit zum besten Preis und zu den besten Buchungsbedingungen. (KOSTENLOSE Stornierung)",
+            "url": "https://hotelmalteastotel.com-hotel.com/de/"
+        }
+    ],
+    "nextHref": "https://api.dev.swisscows.com/v4/web/search?query=Hotel%20Malte%20Astotel&itemsCount=10&offset=10&locale=de-DE&freshness=All&spellcheck=true"
+}

@@ -11,6 +11,7 @@ export default class Details extends BaseComponent {
     
     //Locators
     this.root = this.page.locator(".product-details");
+    this.images = this.root.locator("img");
     this.detailsMedia = this.root.locator(".media");
     this.detailsImage = this.root.locator(".media img");
     this.closeButton = this.root.locator('button[name ="close"]');
@@ -107,4 +108,12 @@ export default class Details extends BaseComponent {
   async expectPaymentIconsToBeVisible() {
     await this.expectAreElementsInListDisplayed(this.paymentMethodsIcons);
   }
+
+  takeSnapshot = async (testInfo) => {
+    await this.expectPageElementToHaveScreenshot(
+      this.root,
+      this.images,
+      testInfo
+    );
+  };
 }

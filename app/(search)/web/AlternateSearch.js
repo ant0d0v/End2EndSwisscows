@@ -13,4 +13,13 @@ export default class AlternateSearch extends BaseComponent {
   expectDidYouMeanMessageToHaveText = async (expectedResult) => {
     await this.expectElementToHaveText(this.textDidYouMeanMessage, expectedResult )
   }
+  
+  takeSnapshot = async (testInfo) => {
+    await this.expectPageElementToHaveScreenshot(
+      this.textDidYouMeanMessage,
+      this.textDidYouMeanMessage,
+      testInfo
+    );
+  };
+  
 }

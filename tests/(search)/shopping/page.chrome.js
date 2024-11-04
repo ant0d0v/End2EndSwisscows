@@ -105,7 +105,7 @@ test("Check design shopping page", async ({ app },testInfo) => {
   await app.shoppingPage.takeSnapshot(testInfo);
 });
 
-test("Check info items { name, symbol price, link, brand}  ", async ({
+test("Check info items { name, symbol price, link, brand }", async ({
   app,
 }) => {
   //Actions

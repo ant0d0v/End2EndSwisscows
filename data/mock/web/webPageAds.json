@@ -1,0 +1,474 @@
+{
+    "context": {
+        "query": "laptop",
+        "effectiveQuery": "laptop",
+        "offset": 0,
+        "itemsCount": 10,
+        "locale": "de-DE",
+        "spellcheck": true
+    },
+    "entities": [],
+    "items": [
+        {
+            "type": "AdvertiserWebPage",
+            "potentialActions": [
+                {
+                    "type": "DisplayAction",
+                    "object": {
+                        "position": "Mainline",
+                        "impressionToken": "1",
+                        "extensions": [
+                            {
+                                "impressionToken": "46",
+                                "extensionItems": [
+                                    {
+                                        "impressionToken": "48[47]"
+                                    },
+                                    {
+                                        "impressionToken": "50[49]"
+                                    },
+                                    {
+                                        "impressionToken": "52[51]"
+                                    },
+                                    {
+                                        "impressionToken": "54[53]"
+                                    },
+                                    {
+                                        "impressionToken": "56[55]"
+                                    },
+                                    {
+                                        "impressionToken": "58[57]"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "target": "https://api.dev.swisscows.com/feedback/display?rguid=a6d78387c943409eb211473bfb859693"
+                },
+                {
+                    "type": "ViewAction",
+                    "target": "https://api.dev.swisscows.com:443/feedback/view?type=mv&reqver=1.0&rg=a6d78387c943409eb211473bfb859693&tids=1"
+                }
+            ],
+            "significantLinks": [
+                {
+                    "name": "Store Locator",
+                    "description": "Team up, price down\nHighly rated, low price",
+                    "url": "https://www.bing.com/aclick?ld=e8vVltIQVRjSYHzAoOWdpeajVUCUx6_MeUazaLB3LItda3HPyResOLvrRsKA0RC9a-B-saUfKfQigP7bs7wce7Ir6k1iEBt4q7DqDxPvc0bZhNT4aedP3xYa_UovsXxImv4k8UENcZFzTg1bjfkAvYuuVGrdIQKv3-4Vik2XfEr37-4aHoEgEJoVNpZ_DO-vB-172eOg&u=aHR0cHMlM2ElMmYlMmZ3d3cudGVtdS5jb20lMmZ1bCUyZmt1aXBlciUyZnVuMi5odG1sJTNmX3BfcmZzJTNkMSUyNnN1YmolM2R1bi1zZWFyY2gtd2ViJTI2X3BfanVtcF9pZCUzZDk2MCUyNl94X3ZzdF9zY2VuZSUzZGFkZyUyNmxvY2FsZV9vdmVycmlkZSUzZDIwOCU3ZSU3ZVVTRCUyNnNlYXJjaF9rZXklM2RsYXB0b3AlMjZfcF9yZnMlM2QxJTI2X3hfYWRzX2NoYW5uZWwlM2RiaW5nJTI2X3hfYWRzX3N1Yl9jaGFubmVsJTNkc2VhcmNoJTI2X3hfYWRzX2FjY291bnQlM2QxNzY2NDE3MTclMjZfeF9hZHNfc2V0JTNkNTIxMjM5NzExJTI2X3hfYWRzX2lkJTNkMTMxOTQxNjM0NzM0MTU1OCUyNl94X2Fkc19jcmVhdGl2ZV9pZCUzZDgyNDYzNzUwODk1ODEzJTI2X3hfbnNfc291cmNlJTNkcyUyNl94X25zX21zY2xraWQlM2QyOTU2NTgwNWQzMzAxZWQ1YjY2NDNmMjIwMzZmOTgzMyUyNl94X25zX21hdGNoX3R5cGUlM2RlJTI2X3hfbnNfYmlkX21hdGNoX3R5cGUlM2RiYiUyNl94X25zX3F1ZXJ5JTNkbGFwdG9wJTI2X3hfbnNfa2V5d29yZCUzZGxhcHRvcCUyNl94X25zX2RldmljZSUzZGMlMjZfeF9uc190YXJnZXRpZCUzZGt3ZC04MjQ2NDY1NDU4NTAzNiUzYWxvYy0yMzUlMjZfeF9uc19leHRlbnNpb25pZCUzZDk5NjQzNDI1MTczNzMlMjZtc2Nsa2lkJTNkMjk1NjU4MDVkMzMwMWVkNWI2NjQzZjIyMDM2Zjk4MzM&rlid=29565805d3301ed5b6643f22036f9833"
+                },
+                {
+                    "name": "Most Repurchased",
+                    "description": "Enjoy Wholesale Prices\nFind Everything You Need",
+                    "url": "https://www.bing.com/aclick?ld=e8vfTB4AWLb-DalkIxxOAUojVUCUzFaPx34u8KDLv6_dypwO-3to54i21DUspbv-wN_th4Lxs3J8f7lG5paEphnIkZCbRJE0FGL_1aOrx33Bbru8oiBFwBtL61zuzI84gCk3TUBZno3ZeRLuTl1MMBBp1hTU3bOBuIF5PzArS7XRYV5tcp3_7SL99jNmCJnSpOSYOnpA&u=aHR0cHMlM2ElMmYlMmZ3d3cudGVtdS5jb20lMmZ1bCUyZmt1aXBlciUyZnVuMi5odG1sJTNmX3BfcmZzJTNkMSUyNnN1YmolM2R1bi1zZWFyY2gtd2ViJTI2X3BfanVtcF9pZCUzZDk2MCUyNl94X3ZzdF9zY2VuZSUzZGFkZyUyNmxvY2FsZV9vdmVycmlkZSUzZDIwOCU3ZSU3ZVVTRCUyNnNlYXJjaF9rZXklM2RsYXB0b3AlMjZfcF9yZnMlM2QxJTI2X3hfYWRzX2NoYW5uZWwlM2RiaW5nJTI2X3hfYWRzX3N1Yl9jaGFubmVsJTNkc2VhcmNoJTI2X3hfYWRzX2FjY291bnQlM2QxNzY2NDE3MTclMjZfeF9hZHNfc2V0JTNkNTIxMjM5NzExJTI2X3hfYWRzX2lkJTNkMTMxOTQxNjM0NzM0MTU1OCUyNl94X2Fkc19jcmVhdGl2ZV9pZCUzZDgyNDYzNzUwODk1ODEzJTI2X3hfbnNfc291cmNlJTNkcyUyNl94X25zX21zY2xraWQlM2Q1YTY5MTM3NmYzNjcxZmVjYzQ4MDc0NTEyMzM4M2ZmOSUyNl94X25zX21hdGNoX3R5cGUlM2RlJTI2X3hfbnNfYmlkX21hdGNoX3R5cGUlM2RiYiUyNl94X25zX3F1ZXJ5JTNkbGFwdG9wJTI2X3hfbnNfa2V5d29yZCUzZGxhcHRvcCUyNl94X25zX2RldmljZSUzZGMlMjZfeF9uc190YXJnZXRpZCUzZGt3ZC04MjQ2NDY1NDU4NTAzNiUzYWxvYy0yMzUlMjZfeF9uc19leHRlbnNpb25pZCUzZDk5NjQzNDI1MTczNjglMjZtc2Nsa2lkJTNkNWE2OTEzNzZmMzY3MWZlY2M0ODA3NDUxMjMzODNmZjk&rlid=5a691376f3671fecc480745123383ff9"
+                },
+                {
+                    "name": "Crazy, So Cheap？",
+                    "description": "Limited time offer\nHot selling items",
+                    "url": "https://www.bing.com/aclick?ld=e8YRZpuULV35E50lC1OnKDhzVUCUx9MXV_W2Z4XRLrT62z-vd4VAg-SHWZAKP1LaXtVbLYYnMD7kycrZPhWw7HLEt6jNXgjH1SMDopPAJzbLHywl01PaNLx7-ITKXSAsUO-WCzk4JIbKLb6JlAIeKXRPLt7prPF2DyVNSu8U50-M5DJR0-bDUbRGnbi9Jm9Y2tTIZmDQ&u=aHR0cHMlM2ElMmYlMmZ3d3cudGVtdS5jb20lMmZ1bCUyZmt1aXBlciUyZnVuMi5odG1sJTNmX3BfcmZzJTNkMSUyNnN1YmolM2R1bi1zZWFyY2gtd2ViJTI2X3BfanVtcF9pZCUzZDk2MCUyNl94X3ZzdF9zY2VuZSUzZGFkZyUyNmxvY2FsZV9vdmVycmlkZSUzZDIwOCU3ZSU3ZVVTRCUyNnNlYXJjaF9rZXklM2RsYXB0b3AlMjZfcF9yZnMlM2QxJTI2X3hfYWRzX2NoYW5uZWwlM2RiaW5nJTI2X3hfYWRzX3N1Yl9jaGFubmVsJTNkc2VhcmNoJTI2X3hfYWRzX2FjY291bnQlM2QxNzY2NDE3MTclMjZfeF9hZHNfc2V0JTNkNTIxMjM5NzExJTI2X3hfYWRzX2lkJTNkMTMxOTQxNjM0NzM0MTU1OCUyNl94X2Fkc19jcmVhdGl2ZV9pZCUzZDgyNDYzNzUwODk1ODEzJTI2X3hfbnNfc291cmNlJTNkcyUyNl94X25zX21zY2xraWQlM2RmMDhmYWVhNTFjOTMxNzVjNmZjOWM5ODJjY2NjYjgxOSUyNl94X25zX21hdGNoX3R5cGUlM2RlJTI2X3hfbnNfYmlkX21hdGNoX3R5cGUlM2RiYiUyNl94X25zX3F1ZXJ5JTNkbGFwdG9wJTI2X3hfbnNfa2V5d29yZCUzZGxhcHRvcCUyNl94X25zX2RldmljZSUzZGMlMjZfeF9uc190YXJnZXRpZCUzZGt3ZC04MjQ2NDY1NDU4NTAzNiUzYWxvYy0yMzUlMjZfeF9uc19leHRlbnNpb25pZCUzZDk5NjQzNDI1MTczNjQlMjZtc2Nsa2lkJTNkZjA4ZmFlYTUxYzkzMTc1YzZmYzljOTgyY2NjY2I4MTk&rlid=f08faea51c93175c6fc9c982ccccb819"
+                },
+                {
+                    "name": "All Sale",
+                    "description": "Daily must-haves\nSpecial for you",
+                    "url": "https://www.bing.com/aclick?ld=e811OLh1S8KxzlUhbarhbT4zVUCUzc92x8WipqKTpjQDHUEIRo_E-fDRkmAh2yYsJA3dfcsdehnwT7O0KABFKFpFzZiLYq1mL1RHkxwSOP1K1nglPZKDFUb9pUvQCZMrUbFPCftelcoUEvPRqSKepuMqkIVNKIGbS-eI21EN3w62fbrwHoWGglwcZVMTDqny_0yj-YUQ&u=aHR0cHMlM2ElMmYlMmZ3d3cudGVtdS5jb20lMmZ1bCUyZmt1aXBlciUyZnVuMi5odG1sJTNmX3BfcmZzJTNkMSUyNnN1YmolM2R1bi1zZWFyY2gtd2ViJTI2X3BfanVtcF9pZCUzZDk2MCUyNl94X3ZzdF9zY2VuZSUzZGFkZyUyNmxvY2FsZV9vdmVycmlkZSUzZDIwOCU3ZSU3ZVVTRCUyNnNlYXJjaF9rZXklM2RsYXB0b3AlMjZfcF9yZnMlM2QxJTI2X3hfYWRzX2NoYW5uZWwlM2RiaW5nJTI2X3hfYWRzX3N1Yl9jaGFubmVsJTNkc2VhcmNoJTI2X3hfYWRzX2FjY291bnQlM2QxNzY2NDE3MTclMjZfeF9hZHNfc2V0JTNkNTIxMjM5NzExJTI2X3hfYWRzX2lkJTNkMTMxOTQxNjM0NzM0MTU1OCUyNl94X2Fkc19jcmVhdGl2ZV9pZCUzZDgyNDYzNzUwODk1ODEzJTI2X3hfbnNfc291cmNlJTNkcyUyNl94X25zX21zY2xraWQlM2RmNGYwZmNiOWEzOGYxN2FlNDQ0MDliOWU3M2QwYTFjZCUyNl94X25zX21hdGNoX3R5cGUlM2RlJTI2X3hfbnNfYmlkX21hdGNoX3R5cGUlM2RiYiUyNl94X25zX3F1ZXJ5JTNkbGFwdG9wJTI2X3hfbnNfa2V5d29yZCUzZGxhcHRvcCUyNl94X25zX2RldmljZSUzZGMlMjZfeF9uc190YXJnZXRpZCUzZGt3ZC04MjQ2NDY1NDU4NTAzNiUzYWxvYy0yMzUlMjZfeF9uc19leHRlbnNpb25pZCUzZDk5NjQzNDI1MTczNjElMjZtc2Nsa2lkJTNkZjRmMGZjYjlhMzhmMTdhZTQ0NDA5YjllNzNkMGExY2Q&rlid=f4f0fcb9a38f17ae44409b9e73d0a1cd"
+                },
+                {
+                    "name": "Today&#39;s hottest deals",
+                    "description": "Up To 90% Off For Everything\nCountless Choices For Low Prices",
+                    "url": "https://www.bing.com/aclick?ld=e8dwpy2olsTcoQ9Zo0v7HB0DVUCUxWqzSaNKiK16aJ51xTmmX1fLoCaboj6ThfbSju3W4_Vs36bfSWoyPDpyZJopVYQrkNBSuXv5rMrkbOOxjbDwWIdOQuAT4_F-q31kuJEtHbGhytGnApBoLO1pn2xJq8WaC2jQXKxjKIlmTANyH1OfLhVOH91ZS15p0rEn0BFEA_sw&u=aHR0cHMlM2ElMmYlMmZ3d3cudGVtdS5jb20lMmZ1bCUyZmt1aXBlciUyZnVuMi5odG1sJTNmX3BfcmZzJTNkMSUyNnN1YmolM2R1bi1zZWFyY2gtd2ViJTI2X3BfanVtcF9pZCUzZDk2MCUyNl94X3ZzdF9zY2VuZSUzZGFkZyUyNmxvY2FsZV9vdmVycmlkZSUzZDIwOCU3ZSU3ZVVTRCUyNnNlYXJjaF9rZXklM2RsYXB0b3AlMjZfcF9yZnMlM2QxJTI2X3hfYWRzX2NoYW5uZWwlM2RiaW5nJTI2X3hfYWRzX3N1Yl9jaGFubmVsJTNkc2VhcmNoJTI2X3hfYWRzX2FjY291bnQlM2QxNzY2NDE3MTclMjZfeF9hZHNfc2V0JTNkNTIxMjM5NzExJTI2X3hfYWRzX2lkJTNkMTMxOTQxNjM0NzM0MTU1OCUyNl94X2Fkc19jcmVhdGl2ZV9pZCUzZDgyNDYzNzUwODk1ODEzJTI2X3hfbnNfc291cmNlJTNkcyUyNl94X25zX21zY2xraWQlM2QxM2QwODA4MmYxM2QxODAxYjEwM2U3YTUyMTYyZjE0NiUyNl94X25zX21hdGNoX3R5cGUlM2RlJTI2X3hfbnNfYmlkX21hdGNoX3R5cGUlM2RiYiUyNl94X25zX3F1ZXJ5JTNkbGFwdG9wJTI2X3hfbnNfa2V5d29yZCUzZGxhcHRvcCUyNl94X25zX2RldmljZSUzZGMlMjZfeF9uc190YXJnZXRpZCUzZGt3ZC04MjQ2NDY1NDU4NTAzNiUzYWxvYy0yMzUlMjZfeF9uc19leHRlbnNpb25pZCUzZDk5NjQzNDI1MTczNzclMjZtc2Nsa2lkJTNkMTNkMDgwODJmMTNkMTgwMWIxMDNlN2E1MjE2MmYxNDY&rlid=13d08082f13d1801b103e7a52162f146"
+                },
+                {
+                    "name": "Special Sale",
+                    "description": "Hot selling items\nLimited time offer",
+                    "url": "https://www.bing.com/aclick?ld=e8Pld1mjmp1i0SebCbK3H3ITVUCUwzSDhcrxt6ZFodPHkf_Ll7UNQC6Z5esgRXyoi7JpBkg6kgll4BUcbPR7FSV64RKgBbbwmgSxruF5xowSuv9Gej4aqL-3ATpWaAMk717FbUjPhdTs2BxO9RihllCWthoPr8UTX_dWTsN2Fzg2SQJEGaMevKchWvXa6lvLFXLOAgVg&u=aHR0cHMlM2ElMmYlMmZ3d3cudGVtdS5jb20lMmZ1bCUyZmt1aXBlciUyZnVuMi5odG1sJTNmX3BfcmZzJTNkMSUyNnN1YmolM2R1bi1zZWFyY2gtd2ViJTI2X3BfanVtcF9pZCUzZDk2MCUyNl94X3ZzdF9zY2VuZSUzZGFkZyUyNmxvY2FsZV9vdmVycmlkZSUzZDIwOCU3ZSU3ZVVTRCUyNnNlYXJjaF9rZXklM2RsYXB0b3AlMjZfcF9yZnMlM2QxJTI2X3hfYWRzX2NoYW5uZWwlM2RiaW5nJTI2X3hfYWRzX3N1Yl9jaGFubmVsJTNkc2VhcmNoJTI2X3hfYWRzX2FjY291bnQlM2QxNzY2NDE3MTclMjZfeF9hZHNfc2V0JTNkNTIxMjM5NzExJTI2X3hfYWRzX2lkJTNkMTMxOTQxNjM0NzM0MTU1OCUyNl94X2Fkc19jcmVhdGl2ZV9pZCUzZDgyNDYzNzUwODk1ODEzJTI2X3hfbnNfc291cmNlJTNkcyUyNl94X25zX21zY2xraWQlM2Q4YWY2ZTkxNTE4YWIxODJjMzE1NDhlMzJjOGY0MWY4YSUyNl94X25zX21hdGNoX3R5cGUlM2RlJTI2X3hfbnNfYmlkX21hdGNoX3R5cGUlM2RiYiUyNl94X25zX3F1ZXJ5JTNkbGFwdG9wJTI2X3hfbnNfa2V5d29yZCUzZGxhcHRvcCUyNl94X25zX2RldmljZSUzZGMlMjZfeF9uc190YXJnZXRpZCUzZGt3ZC04MjQ2NDY1NDU4NTAzNiUzYWxvYy0yMzUlMjZfeF9uc19leHRlbnNpb25pZCUzZDk5NjQzNDI1MTczNzIlMjZtc2Nsa2lkJTNkOGFmNmU5MTUxOGFiMTgyYzMxNTQ4ZTMyYzhmNDFmOGE&rlid=8af6e91518ab182c31548e32c8f41f8a"
+                }
+            ],
+            "displayUrl": "www.temu.com",
+            "name": "<b>Laptop</b> | <b>Laptop</b> Big Sale",
+            "description": "Stop swiping down the screen. Big discounts on our products here - up to 90% off! Only Today, Enjoy <b>Laptop</b> Up To 90% Off Your Purchase. Hurry &amp; Shop Now.",
+            "url": "https://www.bing.com/aclick?ld=e8xUW_uZwUXg5yag57YEGzCDVUCUxy137-a2Xj4OMIhc1JDZduhKQz6WzHrXvzJV-bSMv6ij29XJHbLni2jdCnPJCpYcuBJNfehI5XjPIdXnjilHA5wBPiOXD0HDldxotUUuxM67lF_Z1485nsZ1k5C0s4kiiqbWTcQNJfY4mxwIRo2aNZ&u=aHR0cHMlM2ElMmYlMmZ3d3cudGVtdS5jb20lMmZ1bCUyZmt1aXBlciUyZnVuMi5odG1sJTNmX3BfcmZzJTNkMSUyNnN1YmolM2R1bi1zZWFyY2gtd2ViJTI2X3BfanVtcF9pZCUzZDk2MCUyNl94X3ZzdF9zY2VuZSUzZGFkZyUyNmxvY2FsZV9vdmVycmlkZSUzZDIwOCU3ZWVuJTdlVVNEJTI2c2VhcmNoX2tleSUzZGxhcHRvcCUyNl9wX3JmcyUzZDElMjZfeF9hZHNfY2hhbm5lbCUzZGJpbmclMjZfeF9hZHNfc3ViX2NoYW5uZWwlM2RzZWFyY2glMjZfeF9hZHNfYWNjb3VudCUzZDE3NjY0MTcxNyUyNl94X2Fkc19zZXQlM2Q1MjEyMzk3MTElMjZfeF9hZHNfaWQlM2QxMzE5NDE2MzQ3MzQxNTU4JTI2X3hfYWRzX2NyZWF0aXZlX2lkJTNkODI0NjM3NTA4OTU4MTMlMjZfeF9uc19zb3VyY2UlM2RzJTI2X3hfbnNfbXNjbGtpZCUzZDU0MmI5OTM2MWJhYjE5ZDFmOWRjZmUxMWNiZjQ0ODYxJTI2X3hfbnNfbWF0Y2hfdHlwZSUzZGUlMjZfeF9uc19iaWRfbWF0Y2hfdHlwZSUzZGJiJTI2X3hfbnNfcXVlcnklM2RsYXB0b3AlMjZfeF9uc19rZXl3b3JkJTNkbGFwdG9wJTI2X3hfbnNfZGV2aWNlJTNkYyUyNl94X25zX3RhcmdldGlkJTNka3dkLTgyNDY0NjU0NTg1MDM2JTNhbG9jLTIzNSUyNl94X25zX2V4dGVuc2lvbmlkJTNkJTI2bXNjbGtpZCUzZDU0MmI5OTM2MWJhYjE5ZDFmOWRjZmUxMWNiZjQ0ODYx&rlid=542b99361bab19d1f9dcfe11cbf44861"
+        },
+        {
+            "type": "AdvertiserWebPage",
+            "potentialActions": [
+                {
+                    "type": "DisplayAction",
+                    "object": {
+                        "position": "Mainline",
+                        "impressionToken": "5",
+                        "extensions": [
+                            {
+                                "impressionToken": "59",
+                                "extensionItems": [
+                                    {
+                                        "impressionToken": "61[60]"
+                                    },
+                                    {
+                                        "impressionToken": "63[62]"
+                                    },
+                                    {
+                                        "impressionToken": "65[64]"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "target": "https://api.dev.swisscows.com/feedback/display?rguid=a6d78387c943409eb211473bfb859693"
+                },
+                {
+                    "type": "ViewAction",
+                    "target": "https://api.dev.swisscows.com:443/feedback/view?type=mv&reqver=1.0&rg=a6d78387c943409eb211473bfb859693&tids=5"
+                }
+            ],
+            "significantLinks": [
+                {
+                    "name": "Preise für Privatkunden",
+                    "description": "Entdecken Sie unsere\nPreisliste.-Jetzt Preise...",
+                    "url": "https://www.bing.com/aclick?ld=e8RcKfdBazGhvjtW3pal2a5zVUCUxftUvBXGWY4BL0FQ1ZVO_l_ah7Za5dyiTN-G4cA465XUlpM7OP05J8AXULtXrUFkSM8Q2gzgmQShJOj9-xNjPWGUNyAcpPcDeDe76dicO_rGMbXEEyeikc1qLivOvswuhKIjxy5cu9ooXJZMs6IPB5hFfYuKVt8JKTnGONGkLdQw&u=aHR0cHMlM2ElMmYlMmZ3d3cubm90ZWJvb2stc2VydmljZS5hdCUyZnByaXZhdGt1bmRlbi1wcmVpc2xpc3RlJTJmJTNmbXNjbGtpZCUzZGE1YTU5ZGZlMTU3YzE4ZjUwM2JmZmFkOWM1MjMzMGRk&rlid=a5a59dfe157c18f503bffad9c52330dd"
+                },
+                {
+                    "name": "Unsere Dienstleistungen",
+                    "description": "Notebooks &amp; Computer-Services \n für private und gewerbliche Kunden",
+                    "url": "https://www.bing.com/aclick?ld=e87riVkuFfApKJXIxVjFi7LzVUCUyBlq72HTa2200I1vKiY_i862mu1eAzIiWzNoS4QbegKodLZqa4U6oUlCiOz6UDBzx8ttgjfyHTL1n485blW3llTXSN1I0supFW05WJtIw63dfrTjRsJuviBPefUw7EXmyG7JPU1mJXYFwEafnEBMpqnArRKzz061TbX8Wj7dcI7Q&u=aHR0cHMlM2ElMmYlMmZ3d3cubm90ZWJvb2stc2VydmljZS5hdCUyZmRpZW5zdGxlaXN0dW5nZW4lMmYlM2Ztc2Nsa2lkJTNkNjFiZjYxZWNlMmZkMTkzMmQwMWYwNmNiMzJhMjllMWU&rlid=61bf61ece2fd1932d01f06cb32a29e1e"
+                },
+                {
+                    "name": "Notebook-Service",
+                    "description": "Alles rund um\nNotebook-Service.-Jetzt online...",
+                    "url": "https://www.bing.com/aclick?ld=e8b5tsg6V1BAZltIGHnDVYhTVUCUwL_3k5RDnz51qJaCVkhpPBtCUPVJY8prdeycLUotF4oMfEjD2Q_2oacC21akJoCFbe8ugCrZ38ZjuA_5Nnl425u1Ge75YBgYv8-IM4Z8i3WtEUdXWOFFDFlzCHQygVjzanANV5iQBUQhOA0wae1Teod_vnxqfE9oZAz4G-eQeUjA&u=aHR0cHMlM2ElMmYlMmZ3d3cubm90ZWJvb2stc2VydmljZS5hdCUyZnNob3AlMmYlM2Ztc2Nsa2lkJTNkMTU4Y2E3YzZjNzFmMThlNmE0MjhjMGUxMTc0MDU5YTM&rlid=158ca7c6c71f18e6a428c0e1174059a3"
+                }
+            ],
+            "displayUrl": "www.notebook-service.at",
+            "name": "<b>Laptop</b>-Probleme gelöst | <b>Laptop</b>-Check vom Profi",
+            "description": "<b>Laptop</b> kaputt? Unsere Fachkräfte bringen Ihr Gerät schnell wieder in Topform – seit 2006. Ihr <b>Laptop</b> funktioniert nicht richtig? Wir bieten schnelle und verlässliche Reparaturen.",
+            "url": "https://www.bing.com/aclick?ld=e8yTaiXOJkvZGhPjaUbuVgKzVUCUxVYIdGu4Ke0QSXwHuF3_V4Fo5hi7nzctMxoag46ctNG354By5DhX0UfXsLFbRb5LrL4HJ3nFSwrsiNpqrGAbM_00a6ZHNyog0429AZQyjTqI56lQ1TYxtTdai40lTghxAbmU5HUlerNL_IHxyLJY_9&u=aHR0cHMlM2ElMmYlMmZ3d3cubm90ZWJvb2stc2VydmljZS5hdCUyZiUzZm1zY2xraWQlM2Q0NDRhOGYzM2ZjYWQxZjM1Y2U4N2U4MTQyY2YyNGU4Nw&rlid=444a8f33fcad1f35ce87e8142cf24e87"
+        },
+        {
+            "type": "AdvertiserWebPage",
+            "headline": "NBB Hotline · Campus Produkte · Online Kaufberater · KI Welt",
+            "potentialActions": [
+                {
+                    "type": "DisplayAction",
+                    "object": {
+                        "position": "Mainline",
+                        "impressionToken": "9",
+                        "extensions": [
+                            {
+                                "impressionToken": "66"
+                            }
+                        ]
+                    },
+                    "target": "https://api.dev.swisscows.com/feedback/display?rguid=a6d78387c943409eb211473bfb859693"
+                },
+                {
+                    "type": "ViewAction",
+                    "target": "https://api.dev.swisscows.com:443/feedback/view?type=mv&reqver=1.0&rg=a6d78387c943409eb211473bfb859693&tids=9"
+                }
+            ],
+            "significantLinks": [],
+            "displayUrl": "www.notebooksbilliger.de/acer/summerboost",
+            "name": "Bis -25% auf Notebooks | Top Preise. Schnelle Lieferung",
+            "description": "Spare bis zu -50% bei der Acer Summerboost Aktion. Streng limitierte Angebote. NBB.com - Deine 1. Wahl beim Technikkauf! Mehr als 50.000 Marken-Produkte zu Top-Preisen.",
+            "url": "https://www.bing.com/aclick?ld=e8-Fjd5QFemp-au43qKcpT7jVUCUwrj4GLpJxsP3I0pPTaM_3Ecnc546kFSGCkHxeH_QOBxdwloUnKkkWJWMfVRiPbkEZ8aw4cUw9Olo38vhH67taGfGXG5kKXj-LRyD-Z2VtTOe7V8xCP69oLBoPh0IGIddpxUumm3elbkCne2goL61fE&u=aHR0cHMlM2ElMmYlMmZ3d3cubm90ZWJvb2tzYmlsbGlnZXIuZGUlMmZub3RlYm9va3MlM2ZuYmJjdCUzZDYwMDclMjZhZGlkJTNkJTI2dGFyZ2V0aWQlM2Rrd2QtNzI0OTk3NzY3MDMxMDAlM2Fsb2MtMjM1JTI2ZGV2aWNlJTNkYyUyNmNpZCUzZDM5OTYxNTIxMSUyNmFnaWQlM2QxMTU5OTg1ODM4NzM4NjEzJTI2cGlkJTNkJTI2a3clM2RsYXB0b3AlMjZrd210JTNkZSUyNmthdDFpZCUzZDcwJTI2a2F0MmlkJTNkJTI2bXNjbGtpZCUzZDYyYTlkODU4NTNmYzE2MWZmNWQzYmY3ZjgzYTM3M2Vk&rlid=62a9d85853fc161ff5d3bf7f83a373ed"
+        },
+        {
+            "type": "WebPage",
+            "inLanguage": "en",
+            "lastReviewed": "2023-04-18T10:55:03+00:00",
+            "name": "Laptops & Elektronik kaufst Du bei notebooksbilliger.de",
+            "description": "notebooksbilliger.de, der Testsieger-Shop mit günstigen Preisen. Bei NBB findest du Schnäppchen rund um Notebooks, Tablets, PCs, Smartphones, Gaming, uvm.",
+            "url": "https://www.notebooksbilliger.de/notebooks"
+        },
+        {
+            "type": "WebPage",
+            "inLanguage": "de",
+            "name": "Laptops & Notebooks jetzt online kaufen",
+            "description": "Europas Elektromarkt Nummer 1! Riesige Markenauswahl zum Tiefstpreis ✓ Über 250 Märkte ✓ Sichere und flexible Zahlmittel ✓",
+            "url": "https://www.mediamarkt.de/de/category/laptops-notebooks-362.html"
+        },
+        {
+            "type": "VideoCollection",
+            "hasPart": [
+                {
+                    "publisher": {
+                        "name": "www.youtube.com",
+                        "url": "https://www.youtube.com/"
+                    },
+                    "interactionStatistic": {},
+                    "thumbnail": {
+                        "url": "https://i.ytimg.com/vi/-HqvWG_yzs4/hqdefault.jpg"
+                    },
+                    "name": "Laptops damals \uD83C\uDD9A Laptops heute",
+                    "description": "Auf YouTube findest du großartige Videos und erstklassige Musik. Außerdem kannst du eigene Inhalte hochladen und mit Freunden oder mit der ganzen Welt teilen.",
+                    "url": "https://www.youtube.com/watch?v=-HqvWG_yzs4"
+                },
+                {
+                    "publisher": {
+                        "name": "www.youtube.com",
+                        "url": "https://www.youtube.com/"
+                    },
+                    "interactionStatistic": {},
+                    "datePublished": "2024-10-14T12:07:51+00:00",
+                    "thumbnail": {
+                        "url": "https://i.ytimg.com/vi/8cUoJgKjHok/maxresdefault.jpg"
+                    },
+                    "name": "Warum Laptops sich jetzt komplett verändern... - YouTube",
+                    "description": "Seit vielen Jahren findet man in Laptops fast nur eine bestimmte Technik für den Prozessor, also das Gehirn des Geräts. Die hat durchaus Vorteile, aber eben ...",
+                    "url": "https://www.youtube.com/watch?v=8cUoJgKjHok"
+                },
+                {
+                    "publisher": {
+                        "name": "www.youtube.com",
+                        "url": "https://www.youtube.com/"
+                    },
+                    "interactionStatistic": {},
+                    "datePublished": "2024-08-15T15:00:43+00:00",
+                    "thumbnail": {
+                        "url": "https://i.ytimg.com/vi/iVQ2TFGDxDU/maxresdefault.jpg"
+                    },
+                    "name": "Windows-Laptop unter 250 Euro: Lohnt sich das? - YouTube",
+                    "description": "Wenn man viel unterwegs ist oder daheim nicht sonderlich viel Platz hat, könnte ein Laptop ein geeignetes Arbeitsgerät sein. Leider sind die mobilen Computer...",
+                    "url": "https://www.youtube.com/watch?v=iVQ2TFGDxDU"
+                }
+            ]
+        },
+        {
+            "type": "WebPage",
+            "inLanguage": "de",
+            "name": "Notebooks: Notebooks, Laptops und Zubehör : Amazon.de",
+            "description": "Entdecken, shoppen und einkaufen bei Amazon.de: Günstige Preise für Elektronik &amp; Foto, Filme, Musik, Bücher, Games, Spielzeug, Sportartikel, Drogerie &amp; mehr",
+            "url": "https://www.amazon.de/NoteBooks/b?ie=UTF8&node=427957031"
+        },
+        {
+            "type": "WebPage",
+            "inLanguage": "de",
+            "lastReviewed": "2023-04-24T06:25:04+00:00",
+            "name": "Notebooks & Laptops günstig online kaufen",
+            "description": "Preiswerte Notebook-Angebote ✓ viele namhafte Marken ✓ Produkt-Empfehlungen ✓ online &amp; vor Ort ➡️ Jetzt <strong>Laptop</strong> bei Cyberport bestellen!",
+            "url": "https://www.cyberport.de/notebook-und-tablet/notebooks.html"
+        },
+        {
+            "type": "WebPage",
+            "thumbnail": {
+                "url": "https://www.one.de/images/logo/logo_one_normal_aktiv.png"
+            },
+            "inLanguage": "de",
+            "lastReviewed": "2023-04-26T06:40:05+00:00",
+            "name": "Laptops online kaufen ► Notebooks bei ONE.de",
+            "description": "Gerade im Alltag oder bei der Arbeit haben sie sich als mobile Geräte etabliert. Arbeiten, zocken, lernen, Filme streamen, chatten, Fotos bearbeiten, Mails checken, Präsentationen erstellen - Mit <strong>Laptops</strong> geht das alles wunderbar von der Couch aus oder auch unterwegs.",
+            "url": "https://www.one.de/notebooks/"
+        },
+        {
+            "type": "WebPage",
+            "thumbnail": {
+                "url": "https://i.otto.de/i/otto/eb2b7d06-f77d-55eb-b537-cb690474177f?$responsive_ft2$"
+            },
+            "inLanguage": "de",
+            "lastReviewed": "2023-05-26T00:55:04+00:00",
+            "name": "Notebooks online kaufen » Laptops | OTTO",
+            "description": "Gigabyte Gigabyte G5 KF5-H3DE554KH Gaming <strong>Laptop</strong> für Leistung.",
+            "url": "https://www.otto.de/technik/laptop/"
+        },
+        {
+            "type": "WebPage",
+            "inLanguage": "en",
+            "lastReviewed": "2024-07-24T12:50:05+00:00",
+            "name": "Amazon.com: Laptops - Computers & Tablets: Electronics: Traditional Laptops, 2 in 1 Laptops & More",
+            "description": "Shop a wide selection of <strong>Laptops</strong> including 2 in 1 and traditional <strong>laptops</strong> at Amazon.com. Free shipping and free returns on eligible items.",
+            "url": "https://www.amazon.com/Notebooks-Laptop-Computers/b?ie=UTF8&node=565108"
+        },
+        {
+            "type": "FAQPage",
+            "hasPart": [
+                {
+                    "question": "Was sind die besten Notebooks?",
+                    "answer": "Das sind die besten Notebooks im Vergleich: <p></p><ul><li>Samsung Galaxy Book4 Pro 360 NP960QGK-KS1DE</li><li>Asus ZenBook S 16 OLED UM5606WA-RK192W</li><li>Asus ZenBook S 14 OLED UX5406SA-PV030W</li><li>Huawei MateBook 14 (2024) 53014APU</li><li>Huawei MateBook X Pro (2024) 53014AFB</li></ul><p></p>"
+                },
+                {
+                    "question": "Welches Modell der Notebooks ist gut und günstig?",
+                    "answer": "Das sind die Preis-Leistungs-Sieger in unserer Notebooks-Bestenliste <p></p><ul><li>Samsung Galaxy Book4 NP750XGK-KB5DE</li></ul><p></p> <p>Die Preiseinschätzung errechnet der CHIP-Testcenter aus der erreichten Gesamtpunktzahl und dem aktuellen Preis für das Produkt.</p>"
+                },
+                {
+                    "question": "Welches Modell der Notebooks soll ich kaufen 2024?",
+                    "answer": "In unserem Notebooks-Vergleich hat das Modell <b>Samsung Galaxy Book4 Pro 360 NP960QGK-KS1DE</b> am besten abgeschnitten und ist somit der aktuelle Notebooks-Testsieger."
+                },
+                {
+                    "question": "Wie viel kostet das beste Modell der Notebooks?",
+                    "answer": "Der beste Vertreter der Notebooks ist aktuell laut unserem Preisvergleich ab <b>1.999,00 €</b> bei <b>Notebooksbilliger</b> zu haben."
+                },
+                {
+                    "question": "Wo kann ich Preise vergleichen für die besten Notebooks?",
+                    "answer": "In unserer Notebooks-Bestenliste finden Sie neben den Testergebnissen auch eine Preisvergleich-Funktion. Damit können Sie den günstigsten Preis für ihren Favoriten schnell ermitteln und direkt kaufen."
+                },
+                {
+                    "question": "Wo kann ich Notebooks günstig kaufen?",
+                    "answer": "Aktuell ist der Notebooks-Testsieger bei <b>Notebooksbilliger</b> günstiger zu kaufen als in anderen Online-Shops."
+                },
+                {
+                    "question": "Notebooks: Worauf muss man beim Kauf achten?",
+                    "answer": "Sie interessieren sich für den Kauf von Notebooks? Dann sollten Sie folgende Kriterien berücksichtigen, um das passende Modell für Ihre Ansprüche zu ermitteln: <ul><li><b>Ausstattung</b></li><li><b>Akkulaufzeit</b></li><li><b>Display</b></li><li><b>Leistung</b></li><li><b>Handhabung</b></li></ul>"
+                },
+                {
+                    "question": "Welche Notebooks-Hersteller gibt es?",
+                    "answer": "Das sind die bekanntesten Hersteller von Notebooks. <ul><li><b>Samsung </b></li><li><b>Asus </b></li><li><b>Huawei </b></li><li><b>LG </b></li><li><b>Lenovo </b></li><li><b>MSI </b></li><li><b>HP </b></li><li><b>Microsoft </b></li><li><b>Framework </b></li><li><b>Acer </b></li><li><b>Medion </b></li><li><b>Dell </b></li></ul>"
+                }
+            ],
+            "inLanguage": "de",
+            "lastReviewed": "2023-07-13T00:00:00+00:00",
+            "name": "Laptop-Test: Das sind die besten Notebooks im Test - CHIP",
+            "description": "CHIP prüft im Notebook-Test die wichtigsten <strong>Laptops</strong> auf dem Markt. Hier finden Sie alle getesteten <strong>Laptops</strong> mit Preiseinschätzung und immer aktuell.",
+            "url": "https://www.chip.de/bestenlisten/Bestenliste-Notebooks--index/index/id/886/"
+        },
+        {
+            "type": "Place",
+            "image": {
+                "url": "https://memorypc.de/media/05/fb/b4/1712063554/memory-pc.png"
+            },
+            "address": "Weberstraße 4a, 26340, Zetel",
+            "telephone": "+49 (0) 4453 48360 - 0",
+            "mapZoom": 7,
+            "name": "Laptop zum Bestpreis kaufen",
+            "description": "<strong>Laptop</strong> zum Bestpreis kaufen ✅ Business <strong>Laptop</strong> ✅ Gaming <strong>Laptop</strong> ✅ Office <strong>Laptop</strong> ► Zu den <strong>Laptops</strong>",
+            "url": "https://www.memorypc.de/laptop/"
+        },
+        {
+            "type": "AdvertiserWebPage",
+            "potentialActions": [
+                {
+                    "type": "DisplayAction",
+                    "object": {
+                        "position": "Sidebar",
+                        "impressionToken": "13",
+                        "extensions": [
+                            {
+                                "impressionToken": "67",
+                                "extensionItems": [
+                                    {
+                                        "impressionToken": "69[68]"
+                                    },
+                                    {
+                                        "impressionToken": "71[70]"
+                                    },
+                                    {
+                                        "impressionToken": "73[72]"
+                                    },
+                                    {
+                                        "impressionToken": "75[74]"
+                                    },
+                                    {
+                                        "impressionToken": "77[76]"
+                                    },
+                                    {
+                                        "impressionToken": "79[78]"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "target": "https://api.dev.swisscows.com/feedback/display?rguid=a6d78387c943409eb211473bfb859693"
+                },
+                {
+                    "type": "ViewAction",
+                    "target": "https://api.dev.swisscows.com:443/feedback/view?type=mv&reqver=1.0&rg=a6d78387c943409eb211473bfb859693&tids=13"
+                }
+            ],
+            "significantLinks": [
+                {
+                    "name": "Hardware",
+                    "description": "Gebrauchte Grafikkarten und mehr.\nJetzt online entdecken.",
+                    "url": "https://www.bing.com/aclick?ld=e8lQf5kPxwFV9scsNUOcxgRzVUCUx3hTApTs6UjKsJ8dHwzwFklZwERpmg5kZQJO1HQqeTjNxyI0YppLNNBzSggtagzHd0YgoL_Zn6b7hLBeOu3PQG9hgMsgqICCXuAauFpThV7GX_eXDazUAgZqzUqigydZNx0IFLUqIzEO9doyea-fPa-IHCYECAPrLQ7E6BkfWgSw&u=aHR0cHMlM2ElMmYlMmZ3d3cuZWR2LXdlcmtzdmVya2F1Zi5kZSUyZmhhcmR3YXJlJTNmbXNjbGtpZCUzZDVhY2YyMDc0YjZjNDFjMWZjYzllNDc1MzY2OWIzZjI2&rlid=5acf2074b6c41c1fcc9e4753669b3f26"
+                },
+                {
+                    "name": "Laptops &amp; Tablets",
+                    "description": "Verschiedene Marken und Modelle\nTop Markenqualität",
+                    "url": "https://www.bing.com/aclick?ld=e8McHm5G_t-P8PRy3mcgwNRzVUCUxFFBgibyolb5Nckr9zZK8KivwRpk_o5O6GjEi0jsNZwraa_5sSQvQ6jLFCfoo49dFS8-poM4FtOcvJEu23Dfj-0RE4tqr-d5mFvFBAosaEVH_0ybSGui12mn8DAISTs1KYQsM555edtxSA1Z52k-ca_u0UN_1LhtbNi36asby4FQ&u=aHR0cHMlM2ElMmYlMmZ3d3cuZWR2LXdlcmtzdmVya2F1Zi5kZSUyZmxhcHRvcHMtdGFibGV0cyUzZm1zY2xraWQlM2RkZThjMDU2MDdhMTExYjM1NWU3ZTYyNDdhYTRlZDE5Ng&rlid=de8c05607a111b355e7e6247aa4ed196"
+                },
+                {
+                    "name": "Apple Geräte",
+                    "description": "Große Auswahl an Apple\nGeräten-Jetzt online kaufen!",
+                    "url": "https://www.bing.com/aclick?ld=e8Nm_IUSadKDw_MVT-_xXPYzVUCUw5RnZvgFD3scqunCmq1zLffksyr0IrPMQZyLvPFEXP5xAff3EpgUrsUh6matxh8iBZIx8JY4Rv4HCm8sA1rg5qz28BASxTqsWMqtl1a3KxPYoNkD6DNQZFrRvhdgWraWY8C5N1erS1HVnn5kg4mPScjaAgd4oazHn4SDqLLvCmuA&u=aHR0cHMlM2ElMmYlMmZ3d3cuZWR2LXdlcmtzdmVya2F1Zi5kZSUyZmFwcGxlJTNmbXNjbGtpZCUzZDYyMTRiNjJkZGM0MzEwZmJmZDU2ZDEwYTBjMWNjZTA0&rlid=6214b62ddc4310fbfd56d10a0c1cce04"
+                },
+                {
+                    "name": "Bildschirme",
+                    "description": "Gebrauchte Bildschirme kaufen\nTop Markenqualität",
+                    "url": "https://www.bing.com/aclick?ld=e8LlL8qdjHANu2FPMfGe7TVDVUCUyDO4UXMw-mGrpwWUeu3TTAC0ssR6xC3qgWz_xRUFvCojdcSdG7HmNB7rRqDmwye168kQ017RgB46GZ2Azq_JGZI6E8lVfmoA-GXO1GlWlUo6tXy_NSzUJFQKn8_BbV8FxpF9rPT8e8j8kPDC-sahqK6t6MySZwMu9YIcoj1CUhAQ&u=aHR0cHMlM2ElMmYlMmZ3d3cuZWR2LXdlcmtzdmVya2F1Zi5kZSUyZm1vbml0b3JlJTNmbXNjbGtpZCUzZDc3MGUwNjFlNzc4NzFjM2VjODExNjEzOWE3ZDhhYTZj&rlid=770e061e77871c3ec8116139a7d8aa6c"
+                },
+                {
+                    "name": "Haustechnik",
+                    "description": "Gebrauchte Technik günstig shoppen.\nAlles rund um die Haustechnik",
+                    "url": "https://www.bing.com/aclick?ld=e8XzY-UHi3UPpBy4fgRqyKrDVUCUxAtcpryMzgLqxF9jKpvmztITiWtf5rFynCeV0cyYClSu0wxzm-D-knVtg5Ua2TGIrj5oliRur_3uHUTGztAyeDXJwP_VBUh480MBQJb1yB8pB7CirhP9ZsR8ntrLJ_BQEJneFj1_xX9rG_IaQmUv1MsKfmMb8Hz5vhzfxKFCvxQg&u=aHR0cHMlM2ElMmYlMmZ3d3cuZWR2LXdlcmtzdmVya2F1Zi5kZSUyZnRlY2huaWslM2Ztc2Nsa2lkJTNkZDA0NDhkZjc4Y2ZiMTA4MDRkNWVlYWQwNWNhNDcxMDQ&rlid=d0448df78cfb10804d5eead05ca47104"
+                },
+                {
+                    "name": "Beamer &amp; VR",
+                    "description": "Gebrauchte Beamer &amp; VR Geräte\nbei EDV bestellen.",
+                    "url": "https://www.bing.com/aclick?ld=e8oxhNViMyS-sapKFtVwyyPTVUCUwzZSYxdS5qFP7IQON7-RjrosNKRh90zPvUL1M2FJvQTq3W_V7t5f0xFr3YgbY1umTsDFG0-qDwNnZYoisTcxKuIDhNCi2i5no6TOJzOKULxaz8cADyda8dPI_Rgr96D3R2QVRdk_nILblwBdr74ip7AUvXqSG_3OssE2T5RG1QSg&u=aHR0cHMlM2ElMmYlMmZ3d3cuZWR2LXdlcmtzdmVya2F1Zi5kZSUyZmJlYW1lci12ciUzZm1zY2xraWQlM2Q0NjA0Mjk2NjM4NGYxY2E5ZGU4ODRlNDFlODEwMDI4ZA&rlid=46042966384f1ca9de884e41e810028d"
+                }
+            ],
+            "displayUrl": "www.edv-werksverkauf.de",
+            "name": "Refurbished Laptops | Lenovo T14",
+            "description": "Entdecken Sie den <b>Laptop</b> der perfekt zu Ihnen passt. Microsoft Surface- Ihre flexible Lösung für Freizeit und Arbeit. Jetzt online entdecken",
+            "url": "https://www.bing.com/aclick?ld=e8ZFkiGW1kMMb_WgIv-oonMTVUCUxu_3zrFhzGwJ3Ng7GyFKNPZamzQchQmpRYh68XwlNclgvvlNlyjhCn6nPH5WxBnZ97DoCLjkTn2r5hUlN_p8QR2D-dEc74CgK3AQPK0roX3N5kbne8Xzghsftrg3NeRzphMxwmD70cMEisKHfFkO7o&u=aHR0cHMlM2ElMmYlMmZ3d3cuZWR2LXdlcmtzdmVya2F1Zi5kZSUyZjE2NTE0ODI1NTklM2Ztc2Nsa2lkJTNkNDk1MTFiZmU3NmJiMTRlN2Q1ZTA3Y2Q5YTZlNGE3N2I&rlid=49511bfe76bb14e7d5e07cd9a6e4a77b"
+        },
+        {
+            "type": "AdvertiserWebPage",
+            "potentialActions": [
+                {
+                    "type": "DisplayAction",
+                    "object": {
+                        "position": "Sidebar",
+                        "impressionToken": "17",
+                        "extensions": [
+                            {
+                                "impressionToken": "80",
+                                "extensionItems": [
+                                    {
+                                        "impressionToken": "82[81]"
+                                    },
+                                    {
+                                        "impressionToken": "84[83]"
+                                    },
+                                    {
+                                        "impressionToken": "86[85]"
+                                    },
+                                    {
+                                        "impressionToken": "88[87]"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "target": "https://api.dev.swisscows.com/feedback/display?rguid=a6d78387c943409eb211473bfb859693"
+                },
+                {
+                    "type": "ViewAction",
+                    "target": "https://api.dev.swisscows.com:443/feedback/view?type=mv&reqver=1.0&rg=a6d78387c943409eb211473bfb859693&tids=17"
+                }
+            ],
+            "significantLinks": [
+                {
+                    "name": "Gebrauchte Notebooks",
+                    "description": "Große Auswahl an gebrauchte Laptops\nProfessionell refurbished vom Profi",
+                    "url": "https://www.bing.com/aclick?ld=e8YA1hDPQN9iW8A9wUIoQv7jVUCUy2gV-KE33hJaGmbREFVXOyXNjyLcrnXsafMHoJi-H_MrcnEg02-2v9MHPH4esVCyl1XqQR9-8EKXXJGJ2QVcRITZcDkKSUO9kxV7Z0Ru1Mw1Uw-v09JVrQVIAsCzgbdxGJ06VFjp48lBUK8KPwssEOEllpP1r3tH8UGXkdfFbmiw&u=aHR0cHMlM2ElMmYlMmZ3d3cuaGFybGFuZGVyLmNvbSUyZm5vdGVib29rcy5odG1sJTNmbXNjbGtpZCUzZGEzMjIzZTIyMzM5YzEzMmIwMWViNTkwNWUzYzNjODFl&rlid=a3223e22339c132b01eb5905e3c3c81e"
+                },
+                {
+                    "name": "Laptop-Kauftipps",
+                    "description": "Hier finden Sie die besten \n Laptops für unterwegs.",
+                    "url": "https://www.bing.com/aclick?ld=e8IjJ7G93jpy0YuZewwm8_XzVUCUxwOP06q1AID4cGSEM7KCafNdnApc_zUDx-bSs8VNkJ79aOgo24cOdAjLCWKJfeTM4cepJIfD5k0lYBtVWuFnbTqlzJALGTNK-wgj-Dsemb0TqdZB2WICJRNsUD-t4_LAInNcflSwb9vQ7CqnUrDBM4ciFBZuoF9hq9TMLJWUsQow&u=aHR0cHMlM2ElMmYlMmZ3d3cuaGFybGFuZGVyLmNvbSUyZnRoZW1lbndlbHQtbm90ZWJvb2tzLW1vYmlsaXRhZXQtenUtdW5zY2hsYWdiYXItZ3VlbnN0aWdlbi1wcmVpc2VuJTNmbXNjbGtpZCUzZDBjNTI3NzVhYmQ1NzEyZTZiMDFlMTA3ZDZkMDhiZjRi&rlid=0c52775abd5712e6b01e107d6d08bf4b"
+                },
+                {
+                    "name": "Gebrauchte Computer",
+                    "description": "Refurbished-PCs von Top-Marken!\nGroße Auswahl &amp; sofort verfügbar.",
+                    "url": "https://www.bing.com/aclick?ld=e8OYoJgadDn3xD_rmwsZdTRjVUCUz1aNoF7iJJPmLGYKFRipeXihFob8CnEwJTWxM4e97cFQ_qMguz1DZZGT7kd4HXmPcbzesusOjsdxZroZ7yxlJc34KWClYNF9096aWNtTztMohz3pIQHESxuJCUrR7Xd1wjampApqHfJhly7C5qvDcJOyu3czolFxmdWt4Bo_5tTw&u=aHR0cHMlM2ElMmYlMmZ3d3cuaGFybGFuZGVyLmNvbSUyZmNvbXB1dGVyLXdvcmtzdGF0aW9ucy5odG1sJTNmbXNjbGtpZCUzZDI4N2Q0NTU2YmM5ODEzZDZhYjVlMjI3MTZjYzc1OWZj&rlid=287d4556bc9813d6ab5e22716cc759fc"
+                },
+                {
+                    "name": "Laptop kaufen",
+                    "description": "Die besten Produkte im Harlander\nShop-Jetzt vergleichen und sparen!",
+                    "url": "https://www.bing.com/aclick?ld=e8qqetocZ7hANGzEL8x1VYFDVUCUxzkNnwjyQ1qf4SKrYAA9lfCEHebPvozEtsTBHBjp7gBaYCkwt6AvorxykMitDKIbcjzSDzUOqit4QZY5OuI6MYhXrN6VRguPuKyZrL_hwkw4YJHDocaHD7E1QAjz62wgpF8ewJFy2jhXTQT6tALfQpJDqhDWjjWm0gOdN1Q0eWAA&u=aHR0cHMlM2ElMmYlMmZ3d3cuaGFybGFuZGVyLmNvbSUyZnRoZW1lbndlbHQtbm90ZWJvb2tzLW1vYmlsaXRhZXQtenUtdW5zY2hsYWdiYXItZ3VlbnN0aWdlbi1wcmVpc2VuJTNmbXNjbGtpZCUzZDkzMWE5N2Y1MTQ0MTEyNGMyNGFhZjBkMmM0MWVkMDll&rlid=931a97f51441124c24aaf0d2c41ed09e"
+                }
+            ],
+            "displayUrl": "www.harlander.com/notebooks/gebraucht",
+            "name": "Gebrauchte Notebooks | Hochwertige Markenlaptops",
+            "description": "Tiefpreise beim Spezialisten für Gebraucht-IT und Sonderposten. Jetzt entdecken. Angelieferte Geräte werden von Fachkräften ausführlich getestet, gereinigt &amp; beschrieben.",
+            "url": "https://www.bing.com/aclick?ld=e8kiUWLmR7PussMavbIcD4tDVUCUy80kHdHUc6t4TxtXW8Xz_JR9kf6yCoAxrHznknOcuziZN5Mh_08vOlGMs0hCj1KagjrcCyNT7O4ALF6x6tmRWIIWnbd0ygVCrOgBk8HHdV1Z5EWMzdmEkX6kuwBRFKI1VUPhiKfdS7AOR4FCceJPeI&u=aHR0cHMlM2ElMmYlMmZ3d3cuaGFybGFuZGVyLmNvbSUyZmdlYnJhdWNodGUtbm90ZWJvb2tzJTJmJTNmbXNjbGtpZCUzZDgxYTY2OWY1ZjhhMTFmNWYzZmUyMGVkMjI4ZmU3Nzlj&rlid=81a669f5f8a11f5f3fe20ed228fe779c"
+        }
+    ],
+    "nextHref": "https://api.dev.swisscows.com/v4/web/search?query=laptop&itemsCount=10&offset=10&locale=de-DE&freshness=All&spellcheck=true"
+}

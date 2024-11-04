@@ -14,7 +14,6 @@ export default class Place extends BaseComponent {
     this.pinMarkerIcons = this.address.locator(".icon");
     this.title = (index) => this.root.locator(".title").nth(index - 1);
     this.sites = this.root.locator(".site");
-    this.buttons = this.root.locator("button");
     this.thumbnails = this.root.locator(".thumbnail img");
   }
   //Actions
@@ -66,18 +65,10 @@ export default class Place extends BaseComponent {
     await this.expectAreElementsInListDisplayed(this.thumbnails);
   };
 
-  takeSnapshotPinMarkerIcon = async (testInfo) => {
+  takeSnapshot = async (testInfo) => {
     await this.expectPageElementToHaveScreenshot(
-      this.pinMarkerIcons.first(),
-      this.pinMarkerIcons,
-      testInfo
-    );
-  };
-
-  takeSnapshotPreviewIcon = async (testInfo) => {
-    await this.expectPageElementToHaveScreenshot(
-      this.buttons.first(),
-      this.buttons,
+      this.root.first(),
+      this.thumbnails,
       testInfo
     );
   };

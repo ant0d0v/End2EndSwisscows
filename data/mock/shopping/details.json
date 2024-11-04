@@ -1,0 +1,821 @@
+{
+    "id": 1628161460,
+    "name": "Everyday Cushion Crew 6er Pack weiß/schwarz 38-42",
+    "brand": {
+        "id": 7824,
+        "name": "Nike",
+        "logoUrl": "https://cdn.solutenetwork.com/dynimg/brands_800/7824.png"
+    },
+    "category": {
+        "id": 29425,
+        "parentId": 100112,
+        "description": "Herrensocken",
+        "relevance": 266,
+        "imageUrl": "https://cdn.solutenetwork.com/dynimg/ppSPOpzXEBrof0p75-xL_SowL-uhEXBtlt1_Cbd3R6KHFoqB03GsZJ_FlIg-TPxsSfZ0a1wIrAWgd6N9iJ61KJZRuUZPHG_-4A_gq0gH0-B/29425.jpg",
+        "isLeaf": true,
+        "documentTypes": [
+            "product"
+        ],
+        "path": [
+            {
+                "id": 100110,
+                "parentId": null,
+                "description": "Mode & Schuhe",
+                "relevance": 22353,
+                "imageUrl": "https://cdn.solutenetwork.com/dynimg/8D7G0f9al1yof0p75-xL_SUE3dk71KeClt1_Cbd3R6KHFoqB03GsZJ_FlIg-TPxsemMiwcaHwLp8a0NPk0x_plUxGT5aw8riB5v6Y9PgFPk/100110.jpg",
+                "isLeaf": false,
+                "documentTypes": [
+                    "product"
+                ]
+            },
+            {
+                "id": 100112,
+                "parentId": 100110,
+                "description": "Herrenmode",
+                "relevance": 3038,
+                "imageUrl": "https://cdn.solutenetwork.com/dynimg/U92CulIRubqof0p75-xL_SFZkjhdM_HfFt1_Cbd3R6KHFoqB03GsZJ_FlIg-TPxsXRKT0SM1f2PK3pMHj7dImAquWbntHp_BEMBXuO2EEGR/100112.jpg",
+                "isLeaf": false,
+                "documentTypes": [
+                    "product",
+                    "offer"
+                ]
+            },
+            {
+                "id": 29425,
+                "parentId": 100112,
+                "description": "Herrensocken",
+                "relevance": 266,
+                "imageUrl": "https://cdn.solutenetwork.com/dynimg/ppSPOpzXEBrof0p75-xL_SowL-uhEXBtlt1_Cbd3R6KHFoqB03GsZJ_FlIg-TPxsSfZ0a1wIrAWgd6N9iJ61KJZRuUZPHG_-4A_gq0gH0-B/29425.jpg",
+                "isLeaf": true,
+                "documentTypes": [
+                    "product"
+                ]
+            }
+        ]
+    },
+    "baseproductId": 0,
+    "deal": null,
+    "description": "Maßangaben Größe , M (38/41), Größentyp , Sockengröße, Produktdetails Art Bündchen , gerippt, Funktionen , Fußfrottee schneller Schweißtransport, Griff , weicher Griff, Passform , elastisch, Pflegehinweise , Maschinenwäsche, Polsterung , Frottee, Schaftlänge , endet über dem Knöchel, Material Art Material , Frottee Plüsch, Details Material , weich, Materialeigenschaften , elastisch, Materialzusammensetzung , Obermaterial: 67% Baumwolle, 30% Polyester, 2% Elasthan, 1% Polyamid, Farbe Farbe , weiß,",
+    "estimatedTotalOffersCount": 3,
+    "externalProductIds": {
+        "asin": [
+            "B07GBJWCY9"
+        ],
+        "gtin": [
+            "0888408282798"
+        ],
+        "mpn": [
+            "sx7666-100-medium",
+            "sx7666-100"
+        ],
+        "pzn": []
+    },
+    "images": [
+        {
+            "purpose": "main",
+            "url": "https://cdn.solutenetwork.com/dynimg/ANxlEjYYcmChSvUmB_uzEsJegRfMsbLJw_hMn5zos5T_olRSBeQCSEAXhzSr2EMddY5gngDC88Z4LjXFbFu6pXAshIwN5f5KKzVOFB9LqUYg_zMMu85ke8/1628161460_main.jpg"
+        }
+    ],
+    "legalFields": [],
+    "paymentMethods": [
+        {
+            "id": 1,
+            "description": "Visa"
+        },
+        {
+            "id": 2,
+            "description": "American Express"
+        },
+        {
+            "id": 3,
+            "description": "Eurocard/Mastercard"
+        },
+        {
+            "id": 7,
+            "description": "Vorkasse"
+        },
+        {
+            "id": 8,
+            "description": "Rechnung"
+        },
+        {
+            "id": 11,
+            "description": "Lastschrift"
+        },
+        {
+            "id": 12,
+            "description": "Andere"
+        },
+        {
+            "id": 13,
+            "description": "PayPal"
+        },
+        {
+            "id": 14,
+            "description": "Giropay"
+        },
+        {
+            "id": 15,
+            "description": "Sofortüberweisung"
+        },
+        {
+            "id": 24,
+            "description": "Amazon Pay"
+        },
+        {
+            "id": 27,
+            "description": "iDEAL"
+        },
+        {
+            "id": 28,
+            "description": "Klarna"
+        }
+    ],
+    "price": {
+        "max": {
+            "amount": 24.99,
+            "currency": "EUR"
+        },
+        "min": {
+            "amount": 20.99,
+            "currency": "EUR"
+        }
+    },
+    "properties": [],
+    "relevance": 185.01,
+    "shippingMethods": [
+        {
+            "description": "International"
+        },
+        {
+            "description": "Post/DHL"
+        },
+        {
+            "description": "Hermes"
+        },
+        {
+            "description": "Spedition"
+        },
+        {
+            "description": "Versand nach CH"
+        },
+        {
+            "description": "Versand nach A"
+        }
+    ],
+    "shortName": null,
+    "type": "product",
+    "url": null,
+    "userReviewSummary": {
+        "count": 0,
+        "rating": null,
+        "feedbackUrl": null
+    },
+    "userReviews": [],
+    "offers": [
+        {
+            "id": 243612158380,
+            "name": "6er Pack NIKE Everyday Cushioned Crew-Trainingssocken white/black 38-42",
+            "brand": {
+                "id": 7824,
+                "name": "Nike",
+                "logoUrl": "https://cdn.solutenetwork.com/dynimg/brands_800/7824.png"
+            },
+            "category": {
+                "id": 29425,
+                "parentId": 100112,
+                "description": "Herrensocken",
+                "relevance": 266,
+                "imageUrl": "https://cdn.solutenetwork.com/dynimg/ppSPOpzXEBrof0p75-xL_SowL-uhEXBtlt1_Cbd3R6KHFoqB03GsZJ_FlIg-TPxsSfZ0a1wIrAWgd6N9iJ61KJZRuUZPHG_-4A_gq0gH0-B/29425.jpg",
+                "isLeaf": true,
+                "documentTypes": [
+                    "product"
+                ],
+                "path": [
+                    {
+                        "id": 100110,
+                        "parentId": null,
+                        "description": "Mode & Schuhe",
+                        "relevance": 22353,
+                        "imageUrl": "https://cdn.solutenetwork.com/dynimg/8D7G0f9al1yof0p75-xL_SUE3dk71KeClt1_Cbd3R6KHFoqB03GsZJ_FlIg-TPxsemMiwcaHwLp8a0NPk0x_plUxGT5aw8riB5v6Y9PgFPk/100110.jpg",
+                        "isLeaf": false,
+                        "documentTypes": [
+                            "product"
+                        ]
+                    },
+                    {
+                        "id": 100112,
+                        "parentId": 100110,
+                        "description": "Herrenmode",
+                        "relevance": 3038,
+                        "imageUrl": "https://cdn.solutenetwork.com/dynimg/U92CulIRubqof0p75-xL_SFZkjhdM_HfFt1_Cbd3R6KHFoqB03GsZJ_FlIg-TPxsXRKT0SM1f2PK3pMHj7dImAquWbntHp_BEMBXuO2EEGR/100112.jpg",
+                        "isLeaf": false,
+                        "documentTypes": [
+                            "product",
+                            "offer"
+                        ]
+                    },
+                    {
+                        "id": 29425,
+                        "parentId": 100112,
+                        "description": "Herrensocken",
+                        "relevance": 266,
+                        "imageUrl": "https://cdn.solutenetwork.com/dynimg/ppSPOpzXEBrof0p75-xL_SowL-uhEXBtlt1_Cbd3R6KHFoqB03GsZJ_FlIg-TPxsSfZ0a1wIrAWgd6N9iJ61KJZRuUZPHG_-4A_gq0gH0-B/29425.jpg",
+                        "isLeaf": true,
+                        "documentTypes": [
+                            "product"
+                        ]
+                    }
+                ]
+            },
+            "clickoutUrl": "https://www.billiger.de/common/modules/api/cmodul?mc=kB9JcFHm8Z9l&p=fwrK3ke8vUQf7aDQSDOyE6tYD0ko_tc9UbN7aF8bFrTW9KE5hFfTZt30bLhVBi6TgnfxvdJ0Y41O5lY9a01RAjPEhWjc__j43TeH41Mk5AtH5174v4UmM87O9wzvis5wmmpfP3GwgAb&mid=243612158380&id=243612158380&ts=20241102",
+            "description": "6er Pack NIKE Everyday Cushioned Trainingssocken Crew Produktdetails: Dri-FIT Technologie Dicke Frotteesohle für Komfort und Dämpfung Reduziertes rutschen Extra bequeme Passform Material: 67 % Baumwolle, 30 % Polyester, 2 % Elasthan, 1 % Nylon",
+            "externalProductIds": {
+                "asin": [
+                    "B07GBJWCY9"
+                ],
+                "gtin": [
+                    "0888408282798"
+                ],
+                "mpn": [
+                    "SX7666-100"
+                ],
+                "pzn": []
+            },
+            "images": [
+                {
+                    "purpose": "main",
+                    "url": "https://cdn.solutenetwork.com/dynimg/Sxl8lGe4I-Vof0p75-xL_RzhgaXVuTABKhE8nUhH7Pc88MgR1b3VHcWvS03VxtgwB5MNabBeg4ldjajYfxzgNSDldfN7uqBdiXvptlgLOjf/243612158380_main.jpg"
+                },
+                {
+                    "purpose": "small",
+                    "url": "https://cdn.solutenetwork.com/dynimg/jwd_86SfLoKwUN_dQ8xJ9PJbK6MdmmFTQ_hMn5zos5T_olRSBeQCSEAXhzSr2EMddY5gngDC88Z4LjXFbFu6pXAshIwN5f5KKzVOFB9LqUY0Pit3kJ4AcE/243612158380_small.jpg"
+                },
+                {
+                    "purpose": "large",
+                    "url": "https://cdn.solutenetwork.com/dynimg/PQsBrhI5TX0g7327O38DMeXpJ53MH5lvA_hMn5zos5T_olRSBeQCSEAXhzSr2EMddY5gngDC88Z4LjXFbFu6pXAshIwN5f5KKzVOFB9LqUYzCg4ZCNxSXk/243612158380_large.jpg"
+                }
+            ],
+            "legalFields": [],
+            "locationCountries": [
+                "DE"
+            ],
+            "mainImage": "https://cdn.solutenetwork.com/dynimg/Sxl8lGe4I-Vof0p75-xL_RzhgaXVuTABKhE8nUhH7Pc88MgR1b3VHcWvS03VxtgwB5MNabBeg4ldjajYfxzgNSDldfN7uqBdiXvptlgLOjf/243612158380_main.jpg",
+            "marketplace": {
+                "sellerName": null,
+                "userReviewSummary": null
+            },
+            "price": {
+                "amount": 2099,
+                "currency": "EUR",
+                "shipping": 499,
+                "total": 2598
+            },
+            "priceInfo": {
+                "oldPrice": {
+                    "amount": null,
+                    "currency": null
+                },
+                "price": {
+                    "amount": 20.99,
+                    "currency": "EUR"
+                },
+                "total": {
+                    "amount": 25.98,
+                    "currency": "EUR"
+                },
+                "unitPricing": {
+                    "baseMeasureUnit": "ct",
+                    "baseMeasureValue": 1,
+                    "measureUnit": "ct",
+                    "measureValue": 6,
+                    "text": "3,50 € / 1 Paar"
+                },
+                "voucherPrice": {
+                    "amount": null,
+                    "currency": null
+                }
+            },
+            "productId": 1628161460,
+            "promoText": null,
+            "relevance": 111.03,
+            "shipping": {
+                "code": "green",
+                "price": {
+                    "amount": 4.99,
+                    "currency": "EUR"
+                },
+                "text": "3 - 5 Werktage"
+            },
+            "shop": {
+                "id": 15681,
+                "certificates": [
+                    {
+                        "id": 8,
+                        "description": "Trusted Shops Guarantee",
+                        "url": "http://www.trustedshops.de/"
+                    }
+                ],
+                "company": {
+                    "city": "Wermelskirchen",
+                    "country": "Deutschland",
+                    "name": "sportdeal24 GmbH",
+                    "street": "Albert-Einstein-Straße 8",
+                    "zipCode": "42929"
+                },
+                "cpc": {
+                    "amount": 0.215,
+                    "currency": "EUR"
+                },
+                "logoUrl": "https://cdn.solutenetwork.com/dynimg/shops/x/15681.png",
+                "name": "sportdeal24",
+                "paymentMethods": [
+                    {
+                        "id": 1,
+                        "description": "Visa"
+                    },
+                    {
+                        "id": 2,
+                        "description": "American Express"
+                    },
+                    {
+                        "id": 3,
+                        "description": "Eurocard/Mastercard"
+                    },
+                    {
+                        "id": 7,
+                        "description": "Vorkasse"
+                    },
+                    {
+                        "id": 8,
+                        "description": "Rechnung"
+                    },
+                    {
+                        "id": 11,
+                        "description": "Lastschrift"
+                    },
+                    {
+                        "id": 13,
+                        "description": "PayPal"
+                    },
+                    {
+                        "id": 14,
+                        "description": "Giropay"
+                    },
+                    {
+                        "id": 15,
+                        "description": "Sofortüberweisung"
+                    },
+                    {
+                        "id": 28,
+                        "description": "Klarna"
+                    }
+                ],
+                "shippingMethods": [
+                    {
+                        "description": "International"
+                    },
+                    {
+                        "description": "Post/DHL"
+                    },
+                    {
+                        "description": "Spedition"
+                    },
+                    {
+                        "description": "Versand nach CH"
+                    },
+                    {
+                        "description": "Versand nach A"
+                    }
+                ],
+                "url": "https://www.sportdeal24.de/",
+                "userReviewSummary": {
+                    "count": 0,
+                    "rating": null,
+                    "feedbackUrl": "https://www.billiger.de/shops/15681"
+                },
+                "userReviews": []
+            },
+            "type": "offer",
+            "voucher": {
+                "text": null
+            }
+        },
+        {
+            "id": 412055382290,
+            "name": "Nike Sportswear Freizeitsocken Everyday Cushion Crew 6er Pack Socken default schwarz|weiß M ( 38-42 )",
+            "brand": {
+                "id": 7824,
+                "name": "Nike",
+                "logoUrl": "https://cdn.solutenetwork.com/dynimg/brands_800/7824.png"
+            },
+            "category": {
+                "id": 29425,
+                "parentId": 100112,
+                "description": "Herrensocken",
+                "relevance": 266,
+                "imageUrl": "https://cdn.solutenetwork.com/dynimg/ppSPOpzXEBrof0p75-xL_SowL-uhEXBtlt1_Cbd3R6KHFoqB03GsZJ_FlIg-TPxsSfZ0a1wIrAWgd6N9iJ61KJZRuUZPHG_-4A_gq0gH0-B/29425.jpg",
+                "isLeaf": true,
+                "documentTypes": [
+                    "product"
+                ],
+                "path": [
+                    {
+                        "id": 100110,
+                        "parentId": null,
+                        "description": "Mode & Schuhe",
+                        "relevance": 22353,
+                        "imageUrl": "https://cdn.solutenetwork.com/dynimg/8D7G0f9al1yof0p75-xL_SUE3dk71KeClt1_Cbd3R6KHFoqB03GsZJ_FlIg-TPxsemMiwcaHwLp8a0NPk0x_plUxGT5aw8riB5v6Y9PgFPk/100110.jpg",
+                        "isLeaf": false,
+                        "documentTypes": [
+                            "product"
+                        ]
+                    },
+                    {
+                        "id": 100112,
+                        "parentId": 100110,
+                        "description": "Herrenmode",
+                        "relevance": 3038,
+                        "imageUrl": "https://cdn.solutenetwork.com/dynimg/U92CulIRubqof0p75-xL_SFZkjhdM_HfFt1_Cbd3R6KHFoqB03GsZJ_FlIg-TPxsXRKT0SM1f2PK3pMHj7dImAquWbntHp_BEMBXuO2EEGR/100112.jpg",
+                        "isLeaf": false,
+                        "documentTypes": [
+                            "product",
+                            "offer"
+                        ]
+                    },
+                    {
+                        "id": 29425,
+                        "parentId": 100112,
+                        "description": "Herrensocken",
+                        "relevance": 266,
+                        "imageUrl": "https://cdn.solutenetwork.com/dynimg/ppSPOpzXEBrof0p75-xL_SowL-uhEXBtlt1_Cbd3R6KHFoqB03GsZJ_FlIg-TPxsSfZ0a1wIrAWgd6N9iJ61KJZRuUZPHG_-4A_gq0gH0-B/29425.jpg",
+                        "isLeaf": true,
+                        "documentTypes": [
+                            "product"
+                        ]
+                    }
+                ]
+            },
+            "clickoutUrl": "https://www.billiger.de/common/modules/api/cmodul?mc=kB9JcFHm8Z9l&p=HUCdEJKYK7hRDMrEUYsO-lYmALJ_2MBHdZavosBRPOdDftWI6HGQteiX-dvICJsB71dFR0ScBaWHzFUUqqv6ReBxiqBRoNDsDOngyxnh_LJl7-4VIsIFJH9P2fJVlginKPjchyfQDaO17JVt2AVJH2AEenJ1PujCQ&mid=412055382290&id=412055382290&ts=20241102",
+            "description": "Maßangaben Größe , M ( 38-42 ), Optik/Stil Optik , default, Material Material , Baumwoll-Mischung, Materialzusammensetzung , Obermaterial: 67% Baumwolle, 30% Polyester, 2% Elasthan, 1% Nylon, Farbe Farbe , weissschwarz,",
+            "externalProductIds": {
+                "asin": [
+                    "B07GBJWCY9"
+                ],
+                "gtin": [
+                    "0888408282798"
+                ],
+                "mpn": [
+                    "sx7666-100-medium",
+                    "sx7666-100"
+                ],
+                "pzn": []
+            },
+            "images": [
+                {
+                    "purpose": "main",
+                    "url": "https://cdn.solutenetwork.com/dynimg/6DyWHhR3BQ8of0p75-xL_QFjIdKiLWA3ahE8nUhH7Pc88MgR1b3VHcWvS03VxtgwNQr2OnSe3WeKavgNKsAJzdQT8g-FOQX35F2m4kW3MG9/412055382290_main.webp"
+                },
+                {
+                    "purpose": "small",
+                    "url": "https://cdn.solutenetwork.com/dynimg/zuncdLd3Qx8oWt9pP2K2xzJbK6MdmmFTQ_hMn5zos5T_olRSBeQCSEAXhzSr2EMdRDV7GecoCpNIER2BLFv2AKGKgkLRp-GNlXAjWvgUTqB_e1AoCJpVkA/412055382290_small.webp"
+                },
+                {
+                    "purpose": "large",
+                    "url": "https://cdn.solutenetwork.com/dynimg/LnAqNB1AIvnXP3w_VecHqWXpJ53MH5lvA_hMn5zos5T_olRSBeQCSEAXhzSr2EMdRDV7GecoCpNIER2BLFv2AKGKgkLRp-GNlXAjWvgUTqBz-_3mrG_MBs/412055382290_large.webp"
+                }
+            ],
+            "legalFields": [],
+            "locationCountries": [
+                "DE"
+            ],
+            "mainImage": "https://cdn.solutenetwork.com/dynimg/6DyWHhR3BQ8of0p75-xL_QFjIdKiLWA3ahE8nUhH7Pc88MgR1b3VHcWvS03VxtgwNQr2OnSe3WeKavgNKsAJzdQT8g-FOQX35F2m4kW3MG9/412055382290_main.webp",
+            "marketplace": {
+                "sellerName": "11teamsports",
+                "userReviewSummary": null
+            },
+            "price": {
+                "amount": 2495,
+                "currency": "EUR",
+                "shipping": 390,
+                "total": 2885
+            },
+            "priceInfo": {
+                "oldPrice": {
+                    "amount": null,
+                    "currency": null
+                },
+                "price": {
+                    "amount": 24.95,
+                    "currency": "EUR"
+                },
+                "total": {
+                    "amount": 28.85,
+                    "currency": "EUR"
+                },
+                "unitPricing": {
+                    "baseMeasureUnit": null,
+                    "baseMeasureValue": null,
+                    "measureUnit": null,
+                    "measureValue": null,
+                    "text": null
+                },
+                "voucherPrice": {
+                    "amount": null,
+                    "currency": null
+                }
+            },
+            "productId": 1628161460,
+            "promoText": null,
+            "relevance": 7.43,
+            "shipping": {
+                "code": "green",
+                "price": {
+                    "amount": 3.9,
+                    "currency": "EUR"
+                },
+                "text": "lieferbar - in 3-4 Werktagen bei dir"
+            },
+            "shop": {
+                "id": 3667,
+                "certificates": [
+                    {
+                        "id": 13,
+                        "description": "EHI Geprüft",
+                        "url": null
+                    }
+                ],
+                "company": {
+                    "city": "Hamburg",
+                    "country": "Deutschland",
+                    "name": "Otto (GmbH & Co KG)",
+                    "street": "Werner-Otto-Straße 1-7",
+                    "zipCode": "22179"
+                },
+                "cpc": {
+                    "amount": 0.175,
+                    "currency": "EUR"
+                },
+                "logoUrl": "https://cdn.solutenetwork.com/dynimg/shops/x/3667.png",
+                "name": "OTTO",
+                "paymentMethods": [
+                    {
+                        "id": 7,
+                        "description": "Vorkasse"
+                    },
+                    {
+                        "id": 8,
+                        "description": "Rechnung"
+                    },
+                    {
+                        "id": 11,
+                        "description": "Lastschrift"
+                    },
+                    {
+                        "id": 12,
+                        "description": "Andere"
+                    },
+                    {
+                        "id": 13,
+                        "description": "PayPal"
+                    }
+                ],
+                "shippingMethods": [
+                    {
+                        "description": "Post/DHL"
+                    },
+                    {
+                        "description": "Hermes"
+                    }
+                ],
+                "url": "https://www.otto.de/",
+                "userReviewSummary": {
+                    "count": 2677,
+                    "rating": 4.5,
+                    "feedbackUrl": "https://www.billiger.de/shops/3667"
+                },
+                "userReviews": []
+            },
+            "type": "offer",
+            "voucher": {
+                "text": null
+            }
+        },
+        {
+            "id": 3590699180,
+            "name": "Nike Unisex Everyday Cushioned Training Crew Socks (6 Paar) weiß",
+            "brand": {
+                "id": 7824,
+                "name": "Nike",
+                "logoUrl": "https://cdn.solutenetwork.com/dynimg/brands_800/7824.png"
+            },
+            "category": {
+                "id": 29425,
+                "parentId": 100112,
+                "description": "Herrensocken",
+                "relevance": 266,
+                "imageUrl": "https://cdn.solutenetwork.com/dynimg/ppSPOpzXEBrof0p75-xL_SowL-uhEXBtlt1_Cbd3R6KHFoqB03GsZJ_FlIg-TPxsSfZ0a1wIrAWgd6N9iJ61KJZRuUZPHG_-4A_gq0gH0-B/29425.jpg",
+                "isLeaf": true,
+                "documentTypes": [
+                    "product"
+                ],
+                "path": [
+                    {
+                        "id": 100110,
+                        "parentId": null,
+                        "description": "Mode & Schuhe",
+                        "relevance": 22353,
+                        "imageUrl": "https://cdn.solutenetwork.com/dynimg/8D7G0f9al1yof0p75-xL_SUE3dk71KeClt1_Cbd3R6KHFoqB03GsZJ_FlIg-TPxsemMiwcaHwLp8a0NPk0x_plUxGT5aw8riB5v6Y9PgFPk/100110.jpg",
+                        "isLeaf": false,
+                        "documentTypes": [
+                            "product"
+                        ]
+                    },
+                    {
+                        "id": 100112,
+                        "parentId": 100110,
+                        "description": "Herrenmode",
+                        "relevance": 3038,
+                        "imageUrl": "https://cdn.solutenetwork.com/dynimg/U92CulIRubqof0p75-xL_SFZkjhdM_HfFt1_Cbd3R6KHFoqB03GsZJ_FlIg-TPxsXRKT0SM1f2PK3pMHj7dImAquWbntHp_BEMBXuO2EEGR/100112.jpg",
+                        "isLeaf": false,
+                        "documentTypes": [
+                            "product",
+                            "offer"
+                        ]
+                    },
+                    {
+                        "id": 29425,
+                        "parentId": 100112,
+                        "description": "Herrensocken",
+                        "relevance": 266,
+                        "imageUrl": "https://cdn.solutenetwork.com/dynimg/ppSPOpzXEBrof0p75-xL_SowL-uhEXBtlt1_Cbd3R6KHFoqB03GsZJ_FlIg-TPxsSfZ0a1wIrAWgd6N9iJ61KJZRuUZPHG_-4A_gq0gH0-B/29425.jpg",
+                        "isLeaf": true,
+                        "documentTypes": [
+                            "product"
+                        ]
+                    }
+                ]
+            },
+            "clickoutUrl": "https://www.billiger.de/common/modules/api/cmodul?mc=kB9JcFHm8Z9l&p=fPQFjFSafvGXVSmyu4TSBPnNouDPde0LRvFSb_St8rGC7GUrNZhKU_Os6ZsmAk4Hb1dFR0ScBaWHzFUUqqv6ResLyTQ6a5Zis-iDKUl8T3CCnqDtNubsDSxsSPa9cTOOwm0or5vfFvM0piBRFUnkJ8&mid=3590699180&id=3590699180&ts=20241102",
+            "description": "TRAGEKOMFORT UND HALT. Die Nike Everyday Cushion Crew Trainingssocken (6 Paar) sind für intensivste Workouts geeignet. Die dicke Sohle aus Frottee sorgt für zusätzlichen Tragekomfort bei Fußübungen und Absprüngen, während Garn mit hoher Reibung im Fußbett Verrutschen reduziert. Das schweißableitende Material sorgt für ein trockenes und bequemes Tragegefühl. Dicke Sohle aus Frottee für Tragekomfort und Dämpfung. Garn mit hoher Reibung im Fußbett reduziert Verrutschen. Anatomisches Design für linke und rechte Socken sorgt für eine natürliche Passform. Crew-Profil für einen bequemen Fit an der Wade. More Details Material: 67 % Baumwolle/30 % Polyester/2 % Elastan/1 % Nylon Maschinenwäsche Importiert",
+            "externalProductIds": {
+                "asin": [
+                    "B07GBJWCY9"
+                ],
+                "gtin": [
+                    "0888408282798"
+                ],
+                "mpn": [
+                    "SX7666-100"
+                ],
+                "pzn": []
+            },
+            "images": [
+                {
+                    "purpose": "main",
+                    "url": "https://cdn.solutenetwork.com/dynimg/xUOSe0N8liuof0p75-xL_SM8Wvp0KEDeqhE8nUhH7Pc88MgR1b3VHcWvS03VxtgwIav6Grqoc5tjX8YMwEEu1K1dhdrgIle5isR3qkcu6c7/3590699180_main.webp"
+                },
+                {
+                    "purpose": "default",
+                    "url": "https://cdn.solutenetwork.com/dynimg/ye-j1BQqHv6of0p75-xL_T1qcZKsQOCJahE8nUhH7Pc88MgR1b3VHcWvS03VxtgwOdZOSKFF3OUIVBUeK_hd2b8H_3NASOKDYMBU97D9s8-/3590699180_default.webp"
+                },
+                {
+                    "purpose": "small",
+                    "url": "https://cdn.solutenetwork.com/dynimg/4UWu8ys13qTPMbq2KA-s2DJbK6MdmmFTQ_hMn5zos5T_olRSBeQCSEAXhzSr2EMdZvwSbbtV6FBUl8OnHiYzqkCRSnqO1olzTJii0eShy2kYhueDsU4yQE/3590699180_small.webp"
+                },
+                {
+                    "purpose": "large",
+                    "url": "https://cdn.solutenetwork.com/dynimg/IZhjEUs3UZyLPQw_mtxPC-XpJ53MH5lvA_hMn5zos5T_olRSBeQCSEAXhzSr2EMdZvwSbbtV6FBUl8OnHiYzqkCRSnqO1olzTJii0eShy2kv3joUTWjQlU/3590699180_large.webp"
+                }
+            ],
+            "legalFields": [],
+            "locationCountries": [
+                "DE"
+            ],
+            "mainImage": "https://cdn.solutenetwork.com/dynimg/xUOSe0N8liuof0p75-xL_SM8Wvp0KEDeqhE8nUhH7Pc88MgR1b3VHcWvS03VxtgwIav6Grqoc5tjX8YMwEEu1K1dhdrgIle5isR3qkcu6c7/3590699180_main.webp",
+            "marketplace": {
+                "sellerName": null,
+                "userReviewSummary": null
+            },
+            "price": {
+                "amount": 2499,
+                "currency": "EUR",
+                "shipping": 495,
+                "total": 2994
+            },
+            "priceInfo": {
+                "oldPrice": {
+                    "amount": 24.99,
+                    "currency": "EUR"
+                },
+                "price": {
+                    "amount": 24.99,
+                    "currency": "EUR"
+                },
+                "total": {
+                    "amount": 29.94,
+                    "currency": "EUR"
+                },
+                "unitPricing": {
+                    "baseMeasureUnit": null,
+                    "baseMeasureValue": null,
+                    "measureUnit": null,
+                    "measureValue": null,
+                    "text": null
+                },
+                "voucherPrice": {
+                    "amount": null,
+                    "currency": null
+                }
+            },
+            "productId": 1628161460,
+            "promoText": null,
+            "relevance": 1.63,
+            "shipping": {
+                "code": "green",
+                "price": {
+                    "amount": 4.95,
+                    "currency": "EUR"
+                },
+                "text": "2 - 4 Tage"
+            },
+            "shop": {
+                "id": 12506,
+                "certificates": [],
+                "company": {
+                    "city": "Pforzheim",
+                    "country": "Deutschland",
+                    "name": "e-xplosion GmbH",
+                    "street": "Dillsteiner Straße 13",
+                    "zipCode": "75173"
+                },
+                "cpc": {
+                    "amount": 0.295,
+                    "currency": "EUR"
+                },
+                "logoUrl": "https://cdn.solutenetwork.com/dynimg/shops/x/12506.png",
+                "name": "shop4runners",
+                "paymentMethods": [
+                    {
+                        "id": 1,
+                        "description": "Visa"
+                    },
+                    {
+                        "id": 2,
+                        "description": "American Express"
+                    },
+                    {
+                        "id": 3,
+                        "description": "Eurocard/Mastercard"
+                    },
+                    {
+                        "id": 7,
+                        "description": "Vorkasse"
+                    },
+                    {
+                        "id": 13,
+                        "description": "PayPal"
+                    },
+                    {
+                        "id": 15,
+                        "description": "Sofortüberweisung"
+                    },
+                    {
+                        "id": 24,
+                        "description": "Amazon Pay"
+                    },
+                    {
+                        "id": 27,
+                        "description": "iDEAL"
+                    },
+                    {
+                        "id": 28,
+                        "description": "Klarna"
+                    }
+                ],
+                "shippingMethods": [
+                    {
+                        "description": "Post/DHL"
+                    },
+                    {
+                        "description": "Versand nach CH"
+                    },
+                    {
+                        "description": "Versand nach A"
+                    }
+                ],
+                "url": "http://www.shop4runners.com/",
+                "userReviewSummary": {
+                    "count": 0,
+                    "rating": null,
+                    "feedbackUrl": "https://www.billiger.de/shops/12506"
+                },
+                "userReviews": []
+            },
+            "type": "offer",
+            "voucher": {
+                "text": null
+            }
+        }
+    ]
+}

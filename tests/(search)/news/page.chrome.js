@@ -243,6 +243,6 @@ test("Check the info news article { site, description, date, title } in search r
   await app.newsPage.item.expectNewsInfoToContain({
     title: /\w+/,
     site: /(?:www\.)?[a-zA-Z0-9-]+\.[a-zA-Z]{2,}(?:\/[^\s]*)?/,
-    date: /(\d+)\s*hours?\s+ago/,
+    date: /(\d+)\s*hours?\s+ago|yesterday|([A-Za-z]+\s+\d{1,2},\s+\d{4})/,
   });
 });

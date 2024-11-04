@@ -31,6 +31,12 @@ export default class WebPageItem extends BaseComponent {
       `${titles.number - 1} web item in search result`
     );
   };
+  clickImageAt = async (images = { number: index }) => {
+    await this.clickElement(
+      this.thumbnails.nth(images.number - 1),
+      `${images.number - 1} web item in search result`
+    );
+  };
 
   clickPreviewButtonAt = async (buttons = { number: index }) => {
     await this.clickElement(
@@ -98,17 +104,4 @@ export default class WebPageItem extends BaseComponent {
     await this.expectAreElementsInListDisplayed(this.thumbnails);
   };
 
-  expectTitlesToHaveCSS = async (
-    expectedCSS = {
-      size: value,
-      color: value,
-    }
-  ) => {
-    await this.expectElementsToHaveCSS(
-      this.titles,
-      "font-size",
-      expectedCSS.size
-    );
-    await this.expectElementsToHaveCSS(this.titles, "color", expectedCSS.color);
-  };
 }

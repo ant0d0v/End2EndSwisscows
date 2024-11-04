@@ -1,0 +1,124 @@
+{
+    "context": {
+        "query": "Harry Potter and the Sorcerer’s Stone | Goodreads",
+        "effectiveQuery": "Harry Potter and the Sorcerer’s Stone | Goodreads",
+        "offset": 0,
+        "itemsCount": 10,
+        "locale": "de-DE",
+        "spellcheck": true
+    },
+    "entities": [],
+    "items": [
+        {
+            "type": "Book",
+            "author": [
+                {
+                    "name": "J.K. Rowling",
+                    "url": "https://www.goodreads.com/author/show/1077326.J_K_Rowling"
+                },
+                {
+                    "name": "Olly Moss",
+                    "url": "https://www.goodreads.com/author/show/6458971.Olly_Moss"
+                }
+            ],
+            "inLanguage": "de",
+            "numberOfPages": 333,
+            "thumbnail": {
+                "url": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1598823299i/42844155.jpg"
+            },
+            "aggregateRating": {
+                "ratingCount": 168703,
+                "ratingValue": 4.5,
+                "bestRating": 5
+            },
+            "name": "Harry Potter and the Sorcerer’s Stone by J.K. Rowling | Goodreads",
+            "description": "Read 169k reviews from <strong>the</strong> world’<strong>s</strong> largest community for readers. An alternative cover for this ASIN can be found here &quot;Turning <strong>the</strong> envelope over, his han…",
+            "url": "https://www.goodreads.com/de/book/show/42844155-harry-potter-and-the-sorcerer-s-stone"
+        },
+        {
+            "type": "WebPage",
+            "inLanguage": "en",
+            "name": "Harry Potter and the Sorcerer's Stone — Reader Q&A",
+            "description": "Readers’ questions about <strong>Harry</strong> <strong>Potter</strong> <strong>and</strong> <strong>the</strong> <strong>Sorcerer</strong>&#x27;<strong>s</strong> <strong>Stone</strong> (<strong>Harry</strong> <strong>Potter</strong>, #1). 533 questions answered.",
+            "url": "https://www.goodreads.com/book/3.Harry_Potter_and_the_Sorcerer_s_Stone/questions"
+        },
+        {
+            "type": "Book",
+            "author": [
+                {
+                    "name": "EZ-Summary",
+                    "url": "https://www.goodreads.com/author/show/14847626.EZ_Summary"
+                }
+            ],
+            "inLanguage": "en",
+            "numberOfPages": 54,
+            "thumbnail": {
+                "url": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1677819154i/30550722.jpg"
+            },
+            "name": "Harry Potter and the Sorcerer's Stone: Book 1 - Novel by J.K Rowling -- Summary & More! by EZ-Summary | Goodreads",
+            "description": "Read 3 reviews from the world’<strong>s</strong> largest community for readers. <strong>Harry</strong> <strong>Potter</strong> <strong>and</strong> <strong>the</strong> <strong>Sorcerer</strong>&#x27;<strong>s</strong> <strong>Stone</strong>: Book 1- A Full Summary &amp; More! &quot;<strong>Harry</strong> <strong>Potter</strong>&quot; is a co…",
+            "url": "https://www.goodreads.com/book/show/30550722-harry-potter-and-the-sorcerer-s-stone"
+        },
+        {
+            "type": "WebPage",
+            "inLanguage": "en",
+            "name": "Harry Potter and the Sorcerer's Stone - Has anyone tried this before?! Showing 1-4 of 4",
+            "description": "4 discussion posts. Joanne L said: No, i havent tried that ever in my life and plus, its just magic, although the book seems like more than magic..., Gre...",
+            "url": "https://www.goodreads.com/topic/show/17504290-has-anyone-tried-this-before"
+        },
+        {
+            "type": "WebPage",
+            "inLanguage": "en",
+            "name": "Harry Potter and the Sorcerer’s Stone Quotes by J.K. Rowling",
+            "description": "1924 quotes from <strong>Harry</strong> <strong>Potter</strong> <strong>and</strong> <strong>the</strong> <strong>Sorcerer</strong>’<strong>s</strong> <strong>Stone</strong> (<strong>Harry</strong> <strong>Potter</strong>, #1): ‘It does not do to dwell on dreams and forget to live.’",
+            "url": "https://www.goodreads.com/work/quotes/4640799-harry-potter-and-the-philosopher-s-stone"
+        },
+        {
+            "type": "WebPage",
+            "inLanguage": "en",
+            "lastReviewed": "1997-06-26T00:00:00+00:00",
+            "name": "Editions of Harry Potter and the Sorcerer’s Stone by J.K. Rowling",
+            "description": "Editions for <strong>Harry</strong> <strong>Potter</strong> <strong>and</strong> <strong>the</strong> <strong>Sorcerer</strong>’<strong>s</strong> <strong>Stone</strong>: (Hardcover published in 2003), (Kindle Edition published in 2015), (Paperback published in 1997), (eb...",
+            "url": "https://www.goodreads.com/work/editions/4640799-harry-potter-and-the-philosopher-s-stone"
+        },
+        {
+            "type": "Book",
+            "author": [],
+            "inLanguage": "en",
+            "thumbnail": {
+                "url": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1534298934i/862041._SX120_.jpg"
+            },
+            "name": "Harry Potter Series by J.K. Rowling",
+            "description": "Orphan <strong>Harry</strong> learns he is a wizard on his 11th birthday when Hagrid escorts him to magic-teaching Hogwarts School. As a baby, his mother&#x27;<strong>s</strong> love protected...",
+            "url": "https://www.goodreads.com/series/45175-harry-potter"
+        },
+        {
+            "type": "WebPage",
+            "inLanguage": "en",
+            "name": "Harry Potter and the Sorcerer’s Stone Quotes by J.K. Rowling(page 2 of 64)",
+            "description": "1916 quotes from <strong>Harry</strong> <strong>Potter</strong> <strong>and</strong> <strong>the</strong> <strong>Sorcerer</strong>’<strong>s</strong> <strong>Stone</strong> (<strong>Harry</strong> <strong>Potter</strong>, #1): ‘Welcome to a new year at Hogwarts! Before we begin our banquet, I would like ...",
+            "url": "https://www.goodreads.com/work/quotes/4640799-harry-potter-and-the-philosopher-s-stone?page=2"
+        },
+        {
+            "type": "WebPage",
+            "thumbnail": {
+                "url": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1474154022i/3._UY630_SR1200,630_.jpg"
+            },
+            "inLanguage": "en",
+            "name": "Thomas's review of Harry Potter and the Sorcerer's Stone (Harry Potter, #1)",
+            "description": "Because everyone on the planet excluding me and maybe some of the Kardashians have read this series, I&#x27;ll skip the plot summary and go for a less formal review. I can see why so many people adore <strong>Harry</strong> <strong>Potter</strong>. While Rowling does not introduce anything particularly groundbreaking in terms of ...",
+            "url": "https://www.goodreads.com/review/show/624662206"
+        },
+        {
+            "type": "WebPage",
+            "thumbnail": {
+                "url": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1474154022i/3._UY630_SR1200,630_.jpg"
+            },
+            "inLanguage": "en",
+            "name": "Elle (ellexamines)'s review of Harry Potter and the Sorcerer's Stone (Harry Potter, #1)",
+            "description": "I have so much to say here, and there&#x27;<strong>s</strong> no way I can say all of it. This series truly made me fall even deeper in love with reading. We&#x27;ve all enthused about this first book a lot. I&#x27;d like to spare a few words for how this series improves down the line, even from its spectacular beginning.",
+            "url": "https://www.goodreads.com/review/show/1822485740"
+        }
+    ],
+    "nextHref": "https://api.dev.swisscows.com/v4/web/search?query=Harry%20Potter%20and%20the%20Sorcerer%E2%80%99s%20Stone%20%7C%20Goodreads&itemsCount=10&offset=10&locale=de-DE&freshness=All&spellcheck=true"
+}
