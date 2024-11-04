@@ -13,7 +13,6 @@ dotenv.config();
 export default defineConfig({
   snapshotDir: "./tests/snapshots",
   // globalSetup: 'utils/globalSetup.js',
-  testDir: "tests",
   timeout: 5 * 60 * 1000,
   actionTimeout: 35 * 1000,
   // Limit the number of failures on CI to save resources
@@ -25,7 +24,7 @@ export default defineConfig({
   /* Retry on CI only */
   retries: process.env.CI ? 1 : 0,
   /* Opt out of parallel tests on CI. */
-  workers: process.env.CI ? 2 : undefined,
+  workers: process.env.CI ? 4 : undefined,
   // reporter: process.env.CI ? [['github'], ['blob']] : 'list',
 
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
