@@ -11,6 +11,7 @@ dotenv.config();
  * @see https://playwright.dev/docs/test-configuration
  */
 export default defineConfig({
+  testMatch: 'test.list.js',
   snapshotDir: "./tests/snapshots",
   // globalSetup: 'utils/globalSetup.js',
   testDir: "tests",
