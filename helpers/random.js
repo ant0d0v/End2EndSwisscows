@@ -48,6 +48,7 @@ export function randomAdsQuery() {
   ]);
   return word;
 }
+
 export function randomVideoQuery() {
   const word = faker.helpers.arrayElement([
     "Exploring the Mountains",

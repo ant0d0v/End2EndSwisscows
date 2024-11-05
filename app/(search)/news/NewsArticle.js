@@ -26,14 +26,14 @@ export default class Item extends BaseComponent {
   };
 
   clickTitleItemAt = async (items = { number: value }) => {
-    return await this.clickElement(
+    await this.clickElement(
       this.title.nth(items.number - 1),
       `${items.number - 1} item index in search result`
     );
   };
 
   clickImageItemAt = async (items = { number: value }) => {
-    return await this.clickElement(
+    await this.clickElement(
       this.images.nth(items.number - 1),
       `${items.number - 1} image item index in search result`
     );
