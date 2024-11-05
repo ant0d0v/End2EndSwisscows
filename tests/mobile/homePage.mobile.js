@@ -1,9 +1,6 @@
 import { test } from "../../utils/fixtures.js";
 import home from "../../data/home/testData.json";
 import { faker } from "@faker-js/faker";
-import { randomUserAgent } from "../../helpers/random.js"
-
-test.use({ userAgent: randomUserAgent() });
 
 test("Check that suggest is displayed", async ({ app }) => {
   let randomQuery = faker.word.sample();
