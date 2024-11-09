@@ -1,9 +1,12 @@
 import BaseComponent from "../../../base/BaseComponent.js";
 import Favicon from "../../../components/Favicon.js";
+import Summary from "./Summary.js";
 export default class WebPageItem extends BaseComponent {
   constructor(page) {
     super(page);
     this.favicon = new Favicon(page);
+    this.summary = new Summary(page)
+ 
     //Locators
     this.root = this.page.locator("article.item.web-page");
     this.titles = this.root.locator(".title");
@@ -11,6 +14,7 @@ export default class WebPageItem extends BaseComponent {
     this.descriptions = this.root.locator(".description");
     this.thumbnails = this.root.locator(".thumbnail img");
     this.previewButton = this.root.locator(".button");
+    this.aiButton = this.page.locator(".button.accent");
   }
   //Actions
   getTextContentWebItems = async () => {
@@ -25,25 +29,48 @@ export default class WebPageItem extends BaseComponent {
     await this.scrollByVisibleElement(this.root.last(), "search footer")
   };
 
-  clickTitleAt = async (titles = { number: index }) => {
+  clickTitleAt = async (titles = { number: Number }) => {
     await this.clickElement(
       this.titles.nth(titles.number - 1),
       `${titles.number - 1} web item in search result`
     );
   };
-  clickImageAt = async (images = { number: index }) => {
+  clickImageAt = async (images = { number: Number }) => {
     await this.clickElement(
       this.thumbnails.nth(images.number - 1),
       `${images.number - 1} web item in search result`
     );
   };
 
-  clickPreviewButtonAt = async (buttons = { number: index }) => {
+  clickPreviewButtonAt = async (buttons = { number: Number }) => {
     await this.clickElement(
       this.previewButton.nth(buttons.number - 1),
-      `${buttons.number - 1} preview of item in search result`
+      `${buttons.number - 1} preview button of item in search result`
     );
   };
+
+  clickAiButtonAt = async (buttons = { number: Number}) => {
+    await this.clickElement(
+      this.aiButton.nth(buttons.number - 1),
+      `${buttons.number - 1} ai summary button of item in search result`
+    );
+  };
+
+  async getResponseAfterClickAiButtonAt(buttons = { number: Number }) {
+    let response;
+    const responsePromise = this.page.waitForResponse(
+      `${process.env.API_URL}/ai/summary**`
+    );
+    await this.clickElement(
+      this.aiButton.nth(buttons.number - 1),
+      `${buttons.number - 1} ai summary button of item in search result`
+    );
+    response = await responsePromise;
+    const responseBody = await response.text();
+    return responseBody
+  }
+
+
 
   waitWebSocetAfterClickPreviewButtonAt = async (index) => {
     const webSocketPromise = this.page.waitForEvent("websocket");
@@ -66,8 +93,8 @@ export default class WebPageItem extends BaseComponent {
 
   async expectItemInfoToContain(
     expectedInfo = {
-      title: value,
-      site: value
+      title: String,
+      site: String
     }
   ) {
     await this.expectTextsToContains(this.titles, expectedInfo.title);
@@ -84,8 +111,8 @@ export default class WebPageItem extends BaseComponent {
 
   expectThumbnailsToHaveJSProperty = async (
     expectedProperty = {
-      height: value,
-      width: value,
+      height: Number,
+      width: Number,
     }
   ) => {
     await this.expectElementsToHaveJSProperty(

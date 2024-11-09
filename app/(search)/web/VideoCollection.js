@@ -38,7 +38,7 @@ export default class VideoCollection extends BaseComponent {
 
   //Verify
   async expectToHaveAttributeSlideAt(
-    expected = { number: index, attribute: value }
+    expected = { number: Number, attribute: String }
   ) {
     await this.expectAttributeClassOfElement(
       this.slides.nth(expected.number - 1),
@@ -50,7 +50,7 @@ export default class VideoCollection extends BaseComponent {
   };
 
   expectToBeOpenedNewPageAfterClickImageAt = async (
-    expected = { number: index, expectedUrl: value }
+    expected = { number: Number, expectedUrl: String }
   ) => {
     await this.expectToBeOpenedNewPageAfterClick(
       this.images.nth(expected.number - 1),
@@ -58,38 +58,17 @@ export default class VideoCollection extends BaseComponent {
     );
   };
 
-  expectImagesToHaveProperty = async (
-    expected = { width: value, height: value }
-  ) => {
-    await this.expectElementsToHaveJSProperty(
-      this.images,
-      "width",
-      expected.width
-    );
-    await this.expectElementsToHaveJSProperty(
-      this.images,
-      "height",
-      expected.height
-    );
-  };
   async expectVideoInfoToContain(
     expectedInfo = {
-      title: value,
-      site: value
+      title: String,
+      site: String
     }
   ) {
     await this.expectTextsToContains(this.titles, expectedInfo.title);
     await this.expectTextsToContains(this.sites, expectedInfo.site);
   }
-
-  takeSnapshotWidgetHeader = async (testInfo) => {
-    await this.expectPageElementToHaveScreenshot(
-      this.widgetHeader,
-      this.widgetHeader,
-      testInfo
-    );
-  };
-  takeSnapshotErrorIconAt = async (testInfo, expected = { number: value }) => {
+  
+  takeSnapshotErrorIconAt = async (testInfo, expected = { number: Number }) => {
     const elementHandle = await this.images.first();
     await elementHandle.evaluate((element) => element.setAttribute("src", ""));
     await this.icon.takeSnapshotIconAt(

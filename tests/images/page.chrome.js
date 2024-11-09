@@ -326,7 +326,7 @@ test("Check open site button when clicking redirect to new page", async ({
   await app.expectPageNotToHaveTitle(app.page, currentTitle);
 });
 
-test("Check that {resolution, title, site, favicon } in details pane to have value", async ({
+test("Check that { resolution, title, site, favicon } in details pane to have value", async ({
   app,
 }) => {
   //Actions
@@ -383,6 +383,20 @@ test("Check that details to be in viewport", async ({ app }) => {
 
   //Assert
   await app.imagePage.details.expectDetailsToBeInViewport();
+});
+
+test("Check design of details pane", async ({ app }, testInfo ) => {
+  //Actions
+  await app.home.open();
+  await app.home.header.searchForm.inputSearchCriteria(faker.word.sample());
+  await app.home.header.searchForm.clickEnterSearchField();
+  await app.route.mockResponseBody("/v4/images", 'data/mock/images/testData.json');
+  await app.webPage.header.navigation.clickImageTab();
+  await app.imagePage.item.expectImageItemsToBeVisible();
+  await app.imagePage.item.clickItemAt({ number: 1 });
+
+  //Assert
+  await app.imagePage.details.takeSnapshot(testInfo);
 });
 
 test("Check preloader on page when Status.LOADING", async ({ app }) => {

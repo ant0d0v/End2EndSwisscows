@@ -13,7 +13,7 @@ export default class AdvertiserProduct extends BaseComponent {
     this.image = this.root.locator("img");
   }
   //Actions
-  clickProductImageAt = async (product = { number: index }) => {
+  clickProductImageAt = async (product = { number: Number }) => {
     await this.clickElement(this.image.nth(product.number - 1));
   };
 
@@ -37,10 +37,10 @@ export default class AdvertiserProduct extends BaseComponent {
 
   async expectInfoProductToContain(
     expectedInfo = {
-      title: value,
-      price: value,
-      site: value,
-      shipping: value,
+      title: String,
+      price: String,
+      site: String,
+      shipping: String,
     }
   ) {
     await this.expectTextsToContains(this.title, expectedInfo.title);
@@ -54,7 +54,7 @@ export default class AdvertiserProduct extends BaseComponent {
   };
 
   expectThumbnailToHaveProperty = async (
-    expected = { width: value, height: value }
+    expected = { width: Number, height: Number }
   ) => {
     await this.expectElementsToHaveJSProperty(
       this.image,

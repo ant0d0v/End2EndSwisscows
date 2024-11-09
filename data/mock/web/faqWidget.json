@@ -1,0 +1,135 @@
+{
+    "context": {
+        "query": "london",
+        "effectiveQuery": "london",
+        "offset": 10,
+        "itemsCount": 10,
+        "locale": "es-US",
+        "spellcheck": true
+    },
+    "entities": [],
+    "items": [
+        {
+            "type": "FAQPage",
+            "hasPart": [
+                {
+                    "question": "What is London?",
+                    "answer": "London is the capital city of the United Kingdom. It is the U.K.’s largest metropolis and its economic, transportation, and cultural centre. London is also among the oldest of the world’s great cities, with its history spanning nearly two millennia."
+                },
+                {
+                    "question": "When was London founded?",
+                    "answer": "London’s founding can be traced to 43 CE, when the Roman armies began their occupation of Britain under Emperor Claudius. At a point just north of the marshy valley of the River Thames, where two low hills were sited, they established a settlement they called Londinium. The first definite mention of London occurs in 60 CE by the Roman historian Tacitus."
+                },
+                {
+                    "question": "Was London bombed during World War II?",
+                    "answer": "During World War II London suffered intense aerial bombardment by Nazi forces during the Blitz, a campaign from September 1940 to May 1941 that devastated the city. An estimated 43,000 Londoners died, and a further 50,000 were injured. More than 70,000 buildings were destroyed, and many more were damaged. The Blitz failed to break Britain, however, and Nazi Germany abandoned the attacks."
+                },
+                {
+                    "question": "What is London known for?",
+                    "answer": "London is one of the world’s most cosmopolitan cities. It is the largest metropolis in the United Kingdom, and it is also the country’s economic, transportation, and cultural centre. In addition to its history, art, and politics, London is a popular tourist destination for its wide variety of museums, shops, restaurants, and sports teams."
+                },
+                {
+                    "question": "Where is London located?",
+                    "answer": "London is situated in southeastern England, lying on both sides of the River Thames some 50 miles (80 km) upstream from its estuary on the North Sea."
+                }
+            ],
+            "thumbnail": {
+                "url": "https://cdn.britannica.com/94/19694-050-1DAF09F3/World-Heritage-locator-London-United-Kingdom.jpg"
+            },
+            "inLanguage": "en",
+            "lastReviewed": "2024-10-30T06:40:02+00:00",
+            "name": "London | History, Maps, Population, Area, & Facts | Britannica",
+            "description": "<strong>London</strong>, city, capital of the United Kingdom. It is among the oldest of the world’s great cities—its history spanning nearly two millennia—and one of the most cosmopolitan. By far Britain’s largest metropolis, it is also the country’s economic, transportation, and cultural center.",
+            "url": "https://www.britannica.com/place/London"
+        },
+        {
+            "type": "WebPage",
+            "inLanguage": "en",
+            "name": "City of London, Ohio",
+            "description": "Home Page City in Madison County Ohio City of <strong>London</strong> Government Services and Contact Information",
+            "url": "https://www.londonohio.gov/"
+        },
+        {
+            "type": "WebPage",
+            "thumbnail": {
+                "url": "https://tfl.gov.uk/static/1/images/TFL_Linkinage01.png"
+            },
+            "inLanguage": "en",
+            "lastReviewed": "2024-06-05T12:10:03+00:00",
+            "name": "Keeping London moving - Transport for London",
+            "description": "Information on all forms of transport in <strong>London</strong> including cycle hire. Routes, maps, plan a journey, tickets sales, realtime traffic and travel updates.",
+            "url": "https://tfl.gov.uk/"
+        },
+        {
+            "type": "WebPage",
+            "thumbnail": {
+                "url": "https://styles.redditmedia.com/t5_2qkog/styles/communityIcon_df00i2vvzr061.png"
+            },
+            "inLanguage": "en",
+            "lastReviewed": "2024-10-23T19:45:03+00:00",
+            "name": "London, UK",
+            "description": "A sub for everyday <strong>London</strong> life and the occasional tourist that passes through. Please read the rules and be respectful to our community.",
+            "url": "https://www.reddit.com/r/london/"
+        },
+        {
+            "type": "WebPage",
+            "inLanguage": "en",
+            "lastReviewed": "2024-10-30T18:45:05+00:00",
+            "name": "City, University of London • City, University of London",
+            "description": "The University of business, practice and the professions.",
+            "url": "https://www.city.ac.uk"
+        },
+        {
+            "type": "WebPage",
+            "thumbnail": {
+                "url": "https://upload.wikimedia.org/wikipedia/commons/6/67/London_Skyline_%28125508655%29.jpeg"
+            },
+            "inLanguage": "es",
+            "lastReviewed": "2024-11-02T16:23:30+00:00",
+            "name": "Londres - Wikipedia, la enciclopedia libre",
+            "description": "Londres (en inglés: <strong>London</strong>ⓘ) es la capital y mayor ciudad de Inglaterra y de Reino Unido.​​ Situada a orillas del río Támesis, Londres ha sido un importante asentamiento humano desde que fue fundada por los romanos con el nombre de Londinium hace casi dos milenios.​ El núcleo antiguo ...",
+            "url": "https://es.wikipedia.org/wiki/Londres"
+        },
+        {
+            "type": "WebPage",
+            "thumbnail": {
+                "url": "https://weather.files.bbci.co.uk/weather-web-component-renderer/93/og-image.png"
+            },
+            "inLanguage": "en",
+            "lastReviewed": "2024-10-10T11:35:05+00:00",
+            "name": "London - BBC Weather",
+            "description": "Tonight will remain mainly dry, with mostly cloudy skies throughout and the odd patch of mist possible. A few isolated spots of drizzle cannot be ruled out. Mild · Tomorrow will continue mainly cloudy, although cloud could break up a little bit at times allowing for brief glimpses of sunshine.",
+            "url": "https://www.bbc.com/weather/2643743"
+        },
+        {
+            "type": "WebPage",
+            "inLanguage": "en",
+            "lastReviewed": "2024-11-09T13:23:06+00:00",
+            "name": "London | The Guardian",
+            "description": "Latest news, sport, business, comment, analysis and reviews from the Guardian, the world&#x27;s leading liberal voice",
+            "url": "https://www.theguardian.com/uk/london"
+        },
+        {
+            "type": "WebPage",
+            "thumbnail": {
+                "url": "https://www.imperial.ac.uk/T4Assets/favicon-196x196.png"
+            },
+            "inLanguage": "en",
+            "lastReviewed": "2024-04-30T07:30:03+00:00",
+            "name": "Imperial College London",
+            "description": "Imperial College <strong>London</strong> is a world-leading university for science, technology, engineering, medicine and business (STEMB). Across our <strong>London</strong> campuses, and throughout our international network, we use science to tackle global challenges.",
+            "url": "https://www.imperial.ac.uk/"
+        },
+        {
+            "type": "WebPage",
+            "thumbnail": {
+                "url": "https://www.londonmuseum.org.uk/static/images/social-image.24a70aa3097a.png"
+            },
+            "inLanguage": "en",
+            "name": "London Museum | Home",
+            "description": "Uncover <strong>London</strong>&#x27;s hidden stories and unexpected treasures. Visit in person at <strong>London</strong> Museum Docklands or explore our online collections and stories.",
+            "url": "https://www.londonmuseum.org.uk/"
+        }
+    ],
+    "nextHref": "https://api.dev.swisscows.com/v4/web/search?query=london&itemsCount=10&offset=20&locale=es-US&freshness=All&spellcheck=true"
+}

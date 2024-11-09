@@ -31,7 +31,7 @@ export default class NewsCollection extends BaseComponent {
   };
 
   navigateToNewPageWhenClickingTitleAt = async (
-    expected = { number: index }
+    expected = { number: Number }
   ) => {
     return await this.clickElementAndNavigateToNewPage(
       this.titles.nth(expected.number - 1),
@@ -41,7 +41,7 @@ export default class NewsCollection extends BaseComponent {
 
   //Verify
   async expectToHaveAttributeSlideAt(
-    expected = { number: index, attribute: value }
+    expected = { number: Number, attribute: String }
   ) {
     await this.expectAttributeClassOfElement(
       this.slides.nth(expected.number - 1),
@@ -51,8 +51,8 @@ export default class NewsCollection extends BaseComponent {
  
   async expectArticleInfoToContain(
     expectedInfo = {
-      title: value,
-      date: value
+      title: String,
+      date: String
     }
   ) {
     await this.expectTextsToContains(this.titles, expectedInfo.title);
@@ -60,13 +60,5 @@ export default class NewsCollection extends BaseComponent {
   }
   expectArticleDescriptionNotToBeEmpty = async () => {
     await this.expectListElementsNotToBeEmpty(this.descriptions);
-  };
-
-  takeSnapshotWidgetHeader = async (testInfo) => {
-    await this.expectPageElementToHaveScreenshot(
-      this.widgetHeader,
-      this.widgetHeader,
-      testInfo
-    );
   };
 }

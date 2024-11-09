@@ -1,0 +1,512 @@
+{
+    "context": {
+        "query": "cristiano ronaldo",
+        "effectiveQuery": "cristiano ronaldo",
+        "offset": 0,
+        "itemsCount": 10,
+        "locale": "de-DE",
+        "spellcheck": true
+    },
+    "entities": [
+        {
+            "type": "Person",
+            "image": {
+                "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Cristiano_Ronaldo_playing_for_Al_Nassr_FC_against_Persepolis%2C_September_2023_%28cropped%29.jpg/512px-Cristiano_Ronaldo_playing_for_Al_Nassr_FC_against_Persepolis%2C_September_2023_%28cropped%29.jpg",
+                "text": "Cristiano_Ronaldo_playing_for_Al_Nassr_FC_against_Persepolis,_September_2023_(cropped).jpg"
+            },
+            "socialMediaProfiles": [
+                "https://de.wikipedia.org/wiki/Cristiano_Ronaldo",
+                "https://www.youtube.com/@cristiano",
+                "https://www.facebook.com/Cristiano",
+                "https://twitter.com/i/topics/733774146434269186",
+                "https://www.instagram.com/cristiano/",
+                "https://www.imdb.com/name/nm1860184/",
+                "https://www.spiegel.de/thema/cristiano_ronaldo",
+                "https://www.sueddeutsche.de/thema/Cristiano_Ronaldo",
+                "https://www.quora.com/topic/Cristiano-Ronaldo-football-player",
+                "https://www.kicker.de/cristiano-ronaldo/spieler"
+            ],
+            "website": "https://www.cristianoronaldo.com/",
+            "name": "Cristiano Ronaldo",
+            "description": "Cristiano Ronaldo [kɾiʃti'ɐnu ʁuˈnaɫðu] (* 5. Februar 1985 in Funchal, Madeira; voller Name Cristiano Ronaldo dos Santos Aveiro) ist ein portugiesischer Fußballspieler. Ronaldo wurde in der Jugendakademie von Sporting Lissabon ausgebildet und mit 18 Jahren von Manchester United unter ...",
+            "disambiguatingDescription": "portugiesischer Fußballspieler",
+            "url": "https://de.wikipedia.org/wiki/Cristiano_Ronaldo",
+            "additionalProperties": [
+                {
+                    "name": "Voller Name",
+                    "value": "Cristiano Ronaldo dos Santos Aveiro"
+                },
+                {
+                    "name": "Geburtstag",
+                    "value": "<a href='https://de.wikipedia.org/wiki/5._Februar'>5. Februar</a> <a href='https://de.wikipedia.org/wiki/1985'>1985</a>"
+                },
+                {
+                    "name": "Geburtsort",
+                    "value": "<a href='https://de.wikipedia.org/wiki/Funchal'>Funchal</a>, <a href='https://de.wikipedia.org/wiki/Portugal'>Portugal</a>"
+                },
+                {
+                    "name": "Größe",
+                    "value": "187 cm"
+                },
+                {
+                    "name": "Position",
+                    "value": "<a href='https://de.wikipedia.org/wiki/Fl%C3%BCgelspieler'>Flügel</a>, <a href='https://de.wikipedia.org/wiki/St%C3%BCrmer_(Fu%C3%9Fball)'>Sturm</a>"
+                },
+                {
+                    "name": "Jahre",
+                    "value": "Station"
+                },
+                {
+                    "name": "1993–1995",
+                    "value": "CF Andorinha"
+                },
+                {
+                    "name": "1995–1997",
+                    "value": "<a href='https://de.wikipedia.org/wiki/Nacional_Funchal'>Nacional Funchal</a>"
+                },
+                {
+                    "name": "1997–2002",
+                    "value": "<a href='https://de.wikipedia.org/wiki/Sporting_Lissabon'>Sporting Lissabon</a>"
+                },
+                {
+                    "name": "Jahre",
+                    "value": "Station"
+                },
+                {
+                    "name": "2002–2003",
+                    "value": "<a href='https://de.wikipedia.org/wiki/Sporting_Lissabon'>Sporting Lissabon</a>"
+                },
+                {
+                    "name": "2003–2009",
+                    "value": "<a href='https://de.wikipedia.org/wiki/Manchester_United'>Manchester United</a>"
+                },
+                {
+                    "name": "2009–2018",
+                    "value": "<a href='https://de.wikipedia.org/wiki/Real_Madrid'>Real Madrid</a>"
+                },
+                {
+                    "name": "2018–2021",
+                    "value": "<a href='https://de.wikipedia.org/wiki/Juventus_Turin'>Juventus Turin</a>"
+                },
+                {
+                    "name": "2021–2022",
+                    "value": "Manchester United"
+                },
+                {
+                    "name": "2023–",
+                    "value": "<a href='https://de.wikipedia.org/wiki/Al-Nassr_FC_(Saudi-Arabien)'>al-Nassr FC</a>"
+                },
+                {
+                    "name": "Jahre",
+                    "value": "Auswahl"
+                },
+                {
+                    "name": "2001",
+                    "value": "<a href='https://de.wikipedia.org/wiki/Portugiesische_Fu%C3%9Fballnationalmannschaft_(U-15-Junioren)'>Portugal U15</a>"
+                },
+                {
+                    "name": "2001–2002",
+                    "value": "<a href='https://de.wikipedia.org/wiki/Portugiesische_Fu%C3%9Fballnationalmannschaft_(U-17-Junioren)'>Portugal U17</a>"
+                },
+                {
+                    "name": "2003",
+                    "value": "<a href='https://de.wikipedia.org/wiki/Portugiesische_Fu%C3%9Fballnationalmannschaft_(U-20-M%C3%A4nner)'>Portugal U20</a>"
+                },
+                {
+                    "name": "2002–2003",
+                    "value": "<a href='https://de.wikipedia.org/wiki/Portugiesische_Fu%C3%9Fballnationalmannschaft_(U-21-M%C3%A4nner)'>Portugal U21</a>"
+                },
+                {
+                    "name": "2004",
+                    "value": "<a href='https://de.wikipedia.org/wiki/Portugiesische_Fu%C3%9Fballnationalmannschaft/Olympische_Spiele'>Portugal U23</a>"
+                },
+                {
+                    "name": "2003–",
+                    "value": "Portugal<br>1 Angegeben sind nur Ligaspiele.<br>Stand: 5. Oktober 2024<br>2 Stand: 15. Oktober 2024"
+                }
+            ]
+        }
+    ],
+    "items": [
+        {
+            "type": "AdvertiserWebPage",
+            "headline": "Nur Originalware · 100% Originalware",
+            "potentialActions": [
+                {
+                    "type": "DisplayAction",
+                    "object": {
+                        "position": "Mainline",
+                        "impressionToken": "1",
+                        "extensions": [
+                            {
+                                "impressionToken": "4"
+                            },
+                            {
+                                "impressionToken": "5",
+                                "extensionItems": [
+                                    {
+                                        "impressionToken": "7[6]"
+                                    },
+                                    {
+                                        "impressionToken": "9[8]"
+                                    },
+                                    {
+                                        "impressionToken": "11[10]"
+                                    },
+                                    {
+                                        "impressionToken": "13[12]"
+                                    },
+                                    {
+                                        "impressionToken": "15[14]"
+                                    },
+                                    {
+                                        "impressionToken": "17[16]"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "target": "https://api.dev.swisscows.com/feedback/display?rguid=8f2ca4bef9a14f3b949eccf73fe103d9"
+                },
+                {
+                    "type": "ViewAction",
+                    "target": "https://api.dev.swisscows.com:443/feedback/view?type=mv&reqver=1.0&rg=8f2ca4bef9a14f3b949eccf73fe103d9&tids=1"
+                }
+            ],
+            "significantLinks": [
+                {
+                    "name": "Damenparfüms",
+                    "description": "Bei uns findet jeder seinen Duft.\nDüfte für Damen und heiße Feger.",
+                    "url": "https://www.bing.com/aclick?ld=e8jHQbRVM19tqkcV0KI9yBCjVUCUxyqD9O4tYWXSGn0_6APrKoDcfPEiYAxysKA72NO0Zi4iBqUkfgeEQa526uZmDK1DcT278P1OsAxSLEKg6Uu3dS2c-pEhFpNeLjbOtiLCHf6SbtnotxCoEL9e5N7b0dXZ7csX384leJVun5RS14ZEUMHnF-lLGk4oa9P1fA_Mulow&u=aHR0cHMlM2ElMmYlMmZ3d3cubm90aW5vLmRlJTJmcGFyZnVtcy1kYW1lbiUyZiUzZm1zY2xraWQlM2RkMzM1YWQ1ZTQxYmUxODRlNDdkMGNhNzE5YTcxYTJhNSUyNnV0bV9zb3VyY2UlM2RiaW5nJTI2dXRtX21lZGl1bSUzZGNwYyUyNnV0bV9jYW1wYWlnbiUzZDQlMjU3QyUyNTIwJWM1JTk5YWR5JTI1MjAtJTI1MjBwYXJmJWMzJWE5bXklMjZ1dG1fdGVybSUzZGNyNyUyNTIwY3Jpc3RpYW5vJTI1MjByb25hbGRvJTI2dXRtX2NvbnRlbnQlM2RDcmlzdGlhbm8lMjUyMFJvbmFsZG8lMjUyMC0lMjUyMENSNyUyNTIwKGZpeGVkY29sbGVjdGlvbnMtNS0yMTg2NC0zNzYxOSk&rlid=d335ad5e41be184e47d0ca719a71a2a5"
+                },
+                {
+                    "name": "Geprüfter Händler",
+                    "description": "4.8 von 5 Sternchen im eKomi-System\nSo viele Kunden können nicht irren!",
+                    "url": "https://www.bing.com/aclick?ld=e8grqe-NQujtUZQvKGy29X_DVUCUz0SrlGn0ScrpE5_e7_RxZvK3goD-8tdGnGZuBb4igBDz3eiS2zzOoll2_ibSFEawDtGaD2j1m8e4Mac6xrxWkTQGv7TgUP6Vy-vYkDaEy_XyhyM0WXf9D4AEh7FffJjkbarSCOgvqLK9ueUn3PmP3yfmbIR7QManFtyKfXEROLLg&u=aHR0cCUzYSUyZiUyZnd3dy5ub3Rpbm8uZGUlMmYlM2Ztc2Nsa2lkJTNkYWU2YjNhMTkwYjMxMWMwNjMxYTA1ZDM2ZDBmZWUyNzQlMjZ1dG1fc291cmNlJTNkYmluZyUyNnV0bV9tZWRpdW0lM2RjcGMlMjZ1dG1fY2FtcGFpZ24lM2Q0JTI1N0MlMjUyMCVjNSU5OWFkeSUyNTIwLSUyNTIwcGFyZiVjMyVhOW15JTI2dXRtX3Rlcm0lM2RjcjclMjUyMGNyaXN0aWFubyUyNTIwcm9uYWxkbyUyNnV0bV9jb250ZW50JTNkQ3Jpc3RpYW5vJTI1MjBSb25hbGRvJTI1MjAtJTI1MjBDUjclMjUyMChmaXhlZGNvbGxlY3Rpb25zLTUtMjE4NjQtMzc2MTkp&rlid=ae6b3a190b311c0631a05d36d0fee274"
+                },
+                {
+                    "name": "Über 400 Marken auf Lager",
+                    "description": "Wählen Sie aus einem Riesenangebot\nParfüm und Kosmetik – online!",
+                    "url": "https://www.bing.com/aclick?ld=e8Uv7QcKt03j2m7IGM2vAPxTVUCUy7ds5OCkzvm-Z4J7C_q1Bu_JRSehj951Yfr43cqhVIQ-cDhfe9WTseKWSUSbCZK0ITaObIpTRuxz8zQ6rQEdNUwDMwDDbaWpVpIb1RVSpiA2Qu-k155hZx5r77_V6RZB92hiV8LslswoDTVsLv0fDVd63-rrRe7s8mP2E3PPAefQ&u=aHR0cCUzYSUyZiUyZnd3dy5ub3Rpbm8uZGUlMmYlM2Ztc2Nsa2lkJTNkYTExYWI1ZDUzNThkMTFlNTIxZjNkMmZhZWU0MmZiNzUlMjZ1dG1fc291cmNlJTNkYmluZyUyNnV0bV9tZWRpdW0lM2RjcGMlMjZ1dG1fY2FtcGFpZ24lM2Q0JTI1N0MlMjUyMCVjNSU5OWFkeSUyNTIwLSUyNTIwcGFyZiVjMyVhOW15JTI2dXRtX3Rlcm0lM2RjcjclMjUyMGNyaXN0aWFubyUyNTIwcm9uYWxkbyUyNnV0bV9jb250ZW50JTNkQ3Jpc3RpYW5vJTI1MjBSb25hbGRvJTI1MjAtJTI1MjBDUjclMjUyMChmaXhlZGNvbGxlY3Rpb25zLTUtMjE4NjQtMzc2MTkp&rlid=a11ab5d5358d11e521f3d2faee42fb75"
+                },
+                {
+                    "name": "Nur Originaldüfte",
+                    "description": "Zweifelsfreie Herkunft.\nAlle Düfte sind Original!",
+                    "url": "https://www.bing.com/aclick?ld=e857QJLmfoBMmezsWdEl8iNjVUCUwEulGWflTqR8UJHbMDww7RWM5s-5JVUUJy6kdL0eeQQHVKGEftQTtFqiVJ7FVxkmduPs3F5DgDKbtuS0SdoSX-ffz-S4R8tTpY74WoXX0_-0m71KartI27l_HV0LIG5aneKsM1-b64bL4TYwjtpibrO3VsfurII_bFjNb3Sok4Gg&u=aHR0cCUzYSUyZiUyZnd3dy5ub3Rpbm8uZGUlMmYlM2Ztc2Nsa2lkJTNkNDM5ZTMyZGQyOWFlMTBjNGM0ZDU1NWYyZjI2MTJhMjMlMjZ1dG1fc291cmNlJTNkYmluZyUyNnV0bV9tZWRpdW0lM2RjcGMlMjZ1dG1fY2FtcGFpZ24lM2Q0JTI1N0MlMjUyMCVjNSU5OWFkeSUyNTIwLSUyNTIwcGFyZiVjMyVhOW15JTI2dXRtX3Rlcm0lM2RjcjclMjUyMGNyaXN0aWFubyUyNTIwcm9uYWxkbyUyNnV0bV9jb250ZW50JTNkQ3Jpc3RpYW5vJTI1MjBSb25hbGRvJTI1MjAtJTI1MjBDUjclMjUyMChmaXhlZGNvbGxlY3Rpb25zLTUtMjE4NjQtMzc2MTkp&rlid=439e32dd29ae10c4c4d555f2f2612a23"
+                },
+                {
+                    "name": "Hygiene",
+                    "description": "Hygiene produkte!\nHygiene produkte – online!",
+                    "url": "https://www.bing.com/aclick?ld=e82ljjIwCmNpeuUFF94FNxnzVUCUxL7egELYIkI8uYLnibnZkoAmyTKEUCeUgbkjAmHrt2kjVmbQXeK-HR02gPZA1pg1M3ffej-tSeq7O_m05mlgG4vYkqw8qOuvalXQgtmszhyZ09Br071mQNBrKD_0l144THgmyt-BkVhP2Pn_7WsLQCExCYBcNwnOlRFQFQqXClLg&u=aHR0cHMlM2ElMmYlMmZ3d3cubm90aW5vLmRlJTJmZHJvZ2VyaWUlMmYlM2Ztc2Nsa2lkJTNkMGJmNGFiNTZiMzU3MTg4OThhNmNjYzc5Njg5ODI4YmQlMjZ1dG1fc291cmNlJTNkYmluZyUyNnV0bV9tZWRpdW0lM2RjcGMlMjZ1dG1fY2FtcGFpZ24lM2Q0JTI1N0MlMjUyMCVjNSU5OWFkeSUyNTIwLSUyNTIwcGFyZiVjMyVhOW15JTI2dXRtX3Rlcm0lM2RjcjclMjUyMGNyaXN0aWFubyUyNTIwcm9uYWxkbyUyNnV0bV9jb250ZW50JTNkQ3Jpc3RpYW5vJTI1MjBSb25hbGRvJTI1MjAtJTI1MjBDUjclMjUyMChmaXhlZGNvbGxlY3Rpb25zLTUtMjE4NjQtMzc2MTkp&rlid=0bf4ab56b35718898a6ccc79689828bd"
+                },
+                {
+                    "name": "Gratis Versand",
+                    "description": "Kostenloser Versand\nGratisversand",
+                    "url": "https://www.bing.com/aclick?ld=e8Cm0vjlDFBXnlk3SIQkylgDVUCUxPbmxxVHfPaLKHRjepzI2zkP4s6DZOPwxdQBDiWpDroH1rrGnQsngVdNk5C-CPR6_8ew57R0dfANrTOdSVBrS4obnN_JPcxi_I2UAHV3f-P9yl4f98SrxS0E-C2vQ7DnwiNPCErf9m9bd0GAymbwrH-dN65ceHPNSz0eFi_20DIg&u=aHR0cHMlM2ElMmYlMmZ3d3cubm90aW5vLmRlJTJmZ3JhdGlzLXZlcnNhbmQlMmYlM2Ztc2Nsa2lkJTNkNGU3MTkwMmU3MzU5MTZiYmUzZWRmNzAxYTg5Njc0YmUlMjZ1dG1fc291cmNlJTNkYmluZyUyNnV0bV9tZWRpdW0lM2RjcGMlMjZ1dG1fY2FtcGFpZ24lM2Q0JTI1N0MlMjUyMCVjNSU5OWFkeSUyNTIwLSUyNTIwcGFyZiVjMyVhOW15JTI2dXRtX3Rlcm0lM2RjcjclMjUyMGNyaXN0aWFubyUyNTIwcm9uYWxkbyUyNnV0bV9jb250ZW50JTNkQ3Jpc3RpYW5vJTI1MjBSb25hbGRvJTI1MjAtJTI1MjBDUjclMjUyMChmaXhlZGNvbGxlY3Rpb25zLTUtMjE4NjQtMzc2MTkp&rlid=4e71902e735916bbe3edf701a89674be"
+                }
+            ],
+            "displayUrl": "www.notino.de/<b>Cristiano</b>/Cr7",
+            "name": "Marke <b>Cristiano Ronaldo</b> | CR7 auf Lager",
+            "description": "<b>Cristiano Ronaldo</b> CR7. Konkurrenzlos am Markt. Jetzt kaufen! Der perfekte Parfüm für jeden Tag. Kaufen Sie bei uns ein - 100% auf Lager!",
+            "url": "https://www.bing.com/aclick?ld=e8yd3iTur7PWMyrYlYHCBGkjVUCUxO_G7IArBzgrO6n6vaODdY_tcSPAGfAjveRKJNDEZ0Pmma68kNwpHN3YDmVZPYplg5l7hygwSsu5L_WbJWhrmOlsYcUcNP8Zi0Yl0TbMA4_VM6WEXKdB4E49MtqVHRxN23xK29FlxR5MSoju-PQhhv&u=aHR0cHMlM2ElMmYlMmZ3d3cubm90aW5vLmRlJTJmY3Jpc3RpYW5vLXJvbmFsZG8lMmZjcjctZWF1LWRlLXRvaWxldHRlLWZ1ZXItaGVycmVuJTJmJTNmcHBjYmVlLWFkdGV4dC12YXJpYW50JTNkUlNBJTI2bXNjbGtpZCUzZGUzMzI3NzBhNzQwODE2MjA3ODMxMTAyNWFmYzczOTc1JTI2dXRtX3NvdXJjZSUzZGJpbmclMjZ1dG1fbWVkaXVtJTNkY3BjJTI2dXRtX2NhbXBhaWduJTNkNCUyNTdDJTI1MjAlYzUlOTlhZHklMjUyMC0lMjUyMHBhcmYlYzMlYTlteSUyNnV0bV90ZXJtJTNkY3I3JTI1MjBjcmlzdGlhbm8lMjUyMHJvbmFsZG8lMjZ1dG1fY29udGVudCUzZENyaXN0aWFubyUyNTIwUm9uYWxkbyUyNTIwLSUyNTIwQ1I3JTI1MjAoZml4ZWRjb2xsZWN0aW9ucy01LTIxODY0LTM3NjE5KQ&rlid=e332770a7408162078311025afc73975"
+        },
+        {
+            "type": "WebPage",
+            "significantLinks": [
+                {
+                    "name": "Herkunft und Familie",
+                    "url": "https://de.wikipedia.org/wiki/Cristiano_Ronaldo#Herkunft_und_Familie"
+                },
+                {
+                    "name": "Karriere",
+                    "url": "https://de.wikipedia.org/wiki/Cristiano_Ronaldo#Karriere"
+                },
+                {
+                    "name": "Titel und Auszeichnungen",
+                    "url": "https://de.wikipedia.org/wiki/Cristiano_Ronaldo#Titel_und_Auszeichnungen"
+                },
+                {
+                    "name": "Spielweise",
+                    "url": "https://de.wikipedia.org/wiki/Cristiano_Ronaldo#Spielweise"
+                },
+                {
+                    "name": "Sonstiges",
+                    "url": "https://de.wikipedia.org/wiki/Cristiano_Ronaldo#Sonstiges"
+                },
+                {
+                    "name": "Literatur und Medien",
+                    "url": "https://de.wikipedia.org/wiki/Cristiano_Ronaldo#Literatur_und_Medien"
+                },
+                {
+                    "name": "Filmografie",
+                    "url": "https://de.wikipedia.org/wiki/Cristiano_Ronaldo#Filmografie"
+                },
+                {
+                    "name": "Weblinks",
+                    "url": "https://de.wikipedia.org/wiki/Cristiano_Ronaldo#Weblinks"
+                },
+                {
+                    "name": "Anmerkungen",
+                    "url": "https://de.wikipedia.org/wiki/Cristiano_Ronaldo#Anmerkungen"
+                },
+                {
+                    "name": "Einzelnachweise",
+                    "url": "https://de.wikipedia.org/wiki/Cristiano_Ronaldo#Einzelnachweise"
+                }
+            ],
+            "inLanguage": "de",
+            "lastReviewed": "2024-10-12T06:40:02+00:00",
+            "name": "Cristiano Ronaldo – Wikipedia",
+            "description": "<strong>Cristiano</strong> <strong>Ronaldo</strong> [kɾiʃti&#x27;ɐnu ʁuˈnaɫðu] (* 5. Februar 1985 in Funchal, Madeira; voller Name <strong>Cristiano</strong> <strong>Ronaldo</strong> dos Santos Aveiro) ist ein portugiesischer Fußballspieler. <strong>Ronaldo</strong> wurde in der Jugendakademie von Sporting Lissabon ausgebildet und mit 18 Jahren von Manchester United unter ...",
+            "url": "https://de.wikipedia.org/wiki/Cristiano_Ronaldo"
+        },
+        {
+            "type": "WebPage",
+            "thumbnail": {
+                "url": "https://img.a.transfermarkt.technology/portrait/big/8198-1694609670.jpg?lm=1"
+            },
+            "inLanguage": "de",
+            "lastReviewed": "2024-07-01T10:30:05+00:00",
+            "name": "Cristiano Ronaldo - Spielerprofil 24/25 | Transfermarkt",
+            "description": "<strong>Cristiano</strong> <strong>Ronaldo</strong>, 39, aus Portugal ➤ Al-Nassr FC, seit 2022 ➤ Mittelstürmer ➤ Marktwert: 15,00 Mio. € ➤ * 05.02.1985 in Funchal, Portugal",
+            "url": "https://www.transfermarkt.de/cristiano-ronaldo/profil/spieler/8198"
+        },
+        {
+            "type": "NewsCollection",
+            "hasPart": [
+                {
+                    "author": [],
+                    "publisher": {
+                        "name": "footboom1.com",
+                        "url": "https://www.footboom1.com/"
+                    },
+                    "thumbnail": {
+                        "url": "https://sportcdns.live/news-2/0608a3c22586fb97d9d39806ba473395c1b7ba8f76ade950a44efba4c54f0c60.jpeg"
+                    },
+                    "datePublished": "2024-11-08T18:15:02+00:00",
+                    "name": "Cristiano Ronaldo vor Abgang von Al Nassr in diesem Winter; Rückkehr nach Europa jetzt unwahrscheinlich - footboom1.com",
+                    "description": "<strong>Cristiano</strong> <strong>Ronaldos</strong> Zeit bei Al Nassr scheint zu Ende zu gehen, da Berichte aufgetaucht sind, dass der Rivalenclub Al Hilal daran interessiert ist, seine Unterschrift zu sichern Die saudi-arabischen",
+                    "url": "https://www.footboom1.com/de/news/football/2038831-cristiano-ronaldo-set-to-depart-al-nassr-this-winter-return-to-europe-now-unlikely"
+                },
+                {
+                    "author": [],
+                    "publisher": {
+                        "name": "oe24.at",
+                        "url": "https://www.oe24.at/"
+                    },
+                    "thumbnail": {
+                        "url": "https://imgcdn.oe24.at/GettyImages-2028428658.jpg/1600x900Crop/0/611.617.589/611.617.586"
+                    },
+                    "datePublished": "2024-11-08T07:19:45+00:00",
+                    "name": "Hammer-Gerücht um Cristiano Ronaldo (39) - sport24.at",
+                    "description": "Der Portugiese soll einen anderen Superstar ersetzen.",
+                    "url": "https://www.oe24.at/sport/fussball/international/hammer-geruecht-um-cristiano-ronaldo-39/611617797"
+                },
+                {
+                    "author": [],
+                    "publisher": {
+                        "name": "fussballeuropa.com",
+                        "url": "https://www.fussballeuropa.com/"
+                    },
+                    "thumbnail": {
+                        "url": "https://www.fussballeuropa.com/images/xtra/getty-cristiano-ronaldo-241107122335.jpg"
+                    },
+                    "datePublished": "2024-11-07T19:45:05+00:00",
+                    "name": "Transfer-Hammer um Cristiano Ronaldo? Al-Hilal will Neymar durch CR7 ersetzen",
+                    "description": "Bahnt sich im Januar ein spektakulärer Transfer innerhalb Saudi-Arabiens an? Einem Bericht zufolge plant der Saudi-Meister Al-Hilal, Neymar durch <strong>Cristiano</strong> <strong>Ronaldo</strong> zu ersetzen. Neymar würde man wohl keine Steine in den Weg legen.",
+                    "url": "https://www.fussballeuropa.com/news/transfer-hammer-um-cristiano-ronaldoij-al-hilal-will-neymar-durch-cr7-ersetzen-2024-11"
+                },
+                {
+                    "author": [],
+                    "publisher": {
+                        "name": "4-4-2.com",
+                        "url": "https://www.4-4-2.com/"
+                    },
+                    "thumbnail": {
+                        "url": "https://www.4-4-2.com/wp-content/uploads/2024/11/Cristiano-Ronaldo-Imago-1000-08.jpg"
+                    },
+                    "datePublished": "2024-11-07T20:00:02+00:00",
+                    "name": "Al-Hilal will Neymar im Januar durch Ronaldo ersetzen",
+                    "description": "Al-Hilal will Neymar im Januar durch <strong>Cristiano</strong> <strong>Ronaldo</strong> ersetzen.",
+                    "url": "https://www.4-4-2.com/weitere/al-hilal/al-hilal-neymar-januar-durch-ronaldo-ersetzen/"
+                },
+                {
+                    "author": [],
+                    "publisher": {
+                        "name": "goal.com",
+                        "url": "https://www.goal.com/"
+                    },
+                    "thumbnail": {
+                        "url": "https://assets.goal.com/images/v3/blta48c97ce7912a574/GOAL%20-%20Blank%20WEB%20-%20Facebook(1012).jpeg"
+                    },
+                    "datePublished": "2024-11-08T08:55:02+00:00",
+                    "name": "Das schafften nur Cristiano Ronaldo und Lionel Messi: Robert Lewandowski schrammt wegen Hansi Flick vorerst an einem Meilenstein vorbei | Goal.com Deutschland",
+                    "description": "Kurz vor einem möglichen Meilenstein in der CL nahm Hansi Flick seinen Torjäger Robert Lewandowski in Belgrad vom Feld.",
+                    "url": "https://www.goal.com/de/listen/das-schafften-nur-cristiano-ronaldo-und-lionel-messi-robert-lewandowski-schrammt-wegen-hansi-flick-vorerst-an-einem-meilenstein-vorbei/blt679bab6b22930958"
+                },
+                {
+                    "author": [],
+                    "publisher": {
+                        "name": "sport1.de",
+                        "url": "https://www.sport1.de/"
+                    },
+                    "thumbnail": {
+                        "url": "https://reshape.sport1.de/c/t/749790f2-e03b-4039-a08c-4c5938ffc027/1200x630"
+                    },
+                    "datePublished": "2024-11-08T06:05:02+00:00",
+                    "name": "Ronaldo besiegelt das Aus einer Legende!",
+                    "description": "Sechs Monate nachdem er den Klub aus den Vereinigten Arabischen Emiraten zum Sieg in der asiatischen Champions League geführt hat, wurde der frühere Fußball-Nationalspieler entlassen. Dies teilte Al-Ain einen Tag nach der 1:5-Niederlage gegen Al Nassr, dem saudischen Klub von <strong>Cristiano</strong> <strong>Ronaldo</strong> ...",
+                    "url": "https://www.sport1.de/news/internationaler-fussball/2024/11/ronaldo-besiegelt-das-aus-einer-fussball-legende"
+                },
+                {
+                    "author": [],
+                    "publisher": {
+                        "name": "sportbild.bild.de",
+                        "url": "https://sportbild.bild.de/"
+                    },
+                    "thumbnail": {
+                        "url": "https://images.bild.de/672b6b3b048fa103a43c2285/51a815c052ad7f93d8a57817bda74e03,c10ef25c?w=1280"
+                    },
+                    "datePublished": "2024-11-08T14:10:04+00:00",
+                    "name": "Wechselbeben in Saudi-Arabien: Wird Cristiano Ronaldo zum Ersatz für Neymar? | Fußball | Sportbild.de",
+                    "description": "Bahnt sich in Saudi-Arabien ein wahres Wechselbeben an? <strong>Cristiano</strong> <strong>Ronaldo</strong> könnte Neymar ersetzen!",
+                    "url": "https://sportbild.bild.de/fussball/internationaler-fussball/wechselbeben-in-saudi-arabien-wird-cristiano-ronaldo-zum-ersatz-fuer-neymar-672b6b3b048fa103a43c2285"
+                },
+                {
+                    "author": [],
+                    "publisher": {
+                        "name": "gala.de",
+                        "url": "https://www.gala.de/"
+                    },
+                    "thumbnail": {
+                        "url": "https://image.gala.de/24222810/t/7F/v3/w1440/r1.7778/-/georgina-rodriguez.jpg"
+                    },
+                    "datePublished": "2024-11-07T07:25:04+00:00",
+                    "name": "Zoff mit ihrer engsten Vertrauten? Georgina Rodríguez verbannt ihre Schwester auf Instagram",
+                    "description": "Georgina Rodríguez hat alle ihre Fotos von und mit ihrer Schwester gelöscht. Haben die Freundin von <strong>Cristiano</strong> <strong>Ronaldo</strong> und seine Schwägerin Streit?",
+                    "url": "https://www.gala.de/stars/news/georgina-rodr%C3%ADguez--zoff--ronaldos-partnerin-loescht-fotos-ihrer-schwester-24222654.html"
+                },
+                {
+                    "author": [],
+                    "publisher": {
+                        "name": "eurosport.de",
+                        "url": "https://www.eurosport.de/"
+                    },
+                    "datePublished": "2024-11-07T11:20:04+00:00",
+                    "name": "Champions-League-Pleite gegen Klub von Cristiano Ronaldo besiegelt Aus von \nTrainer Hernan Crespo bei Al-Ain FC",
+                    "description": "Eurosport ist Ihre Anlaufstelle für Sport News, Videos, Live-Kommentare und Highlights. Alle Infos rund um Ihre Lieblingsevents an einem Platz.",
+                    "url": "https://www.eurosport.de/fussball/vae-premier-league/2024-2025/champions-league-pleite-gegen-klub-von-cristiano-ronaldo-besiegelt-aus-von-trainer-hernan-crespo-bei-al-ain-fc_sto20051971/story.shtml"
+                }
+            ]
+        },
+        {
+            "type": "WebPage",
+            "thumbnail": {
+                "url": "https://scontent-atl3-1.cdninstagram.com/v/t51.2885-19/278931269_360124899498969_9006978846103417088_n.jpg?stp=dst-jpg_s100x100&amp;_nc_cat=1&amp;ccb=1-7&amp;_nc_sid=3fd06f&amp;_nc_ohc=jQT0arbKfoYQ7kNvgFc_XYz&amp;_nc_ht=scontent-atl3-1.cdninstagram.com&amp;oh=00_AYDW8BMBeQVF5k8W6ZJPAVaEzd871EoYxPOXEdofE-jJ3Q&amp;oe=6654F14E"
+            },
+            "inLanguage": "en",
+            "lastReviewed": "2024-11-08T07:50:03+00:00",
+            "name": "Cristiano Ronaldo (@cristiano) • Instagram photos and videos",
+            "description": "630M Followers, 580 Following, 3,680 Posts - See Instagram photos and videos from <strong>Cristiano</strong> <strong>Ronaldo</strong> (@<strong>cristiano</strong>)",
+            "url": "https://www.instagram.com/cristiano/"
+        },
+        {
+            "type": "VideoCollection",
+            "hasPart": [
+                {
+                    "publisher": {
+                        "name": "www.youtube.com",
+                        "url": "https://www.youtube.com/"
+                    },
+                    "interactionStatistic": {},
+                    "datePublished": "2024-10-15T22:14:59+00:00",
+                    "thumbnail": {
+                        "url": "https://i.ytimg.com/vi/etHWeXZxdqo/maxresdefault.jpg"
+                    },
+                    "name": "Cristiano Ronaldo & Co. verzweifeln: Schottland - Portugal | UEFA ...",
+                    "description": "Am 4. Spieltag der UEFA Nations League ist Portugal zu Gast in Schottland.Die besten Highlights aus dem internationalen Fußball siehst du hier: https://www.y...",
+                    "url": "https://www.youtube.com/watch?v=etHWeXZxdqo"
+                },
+                {
+                    "publisher": {
+                        "name": "www.youtube.com",
+                        "url": "https://www.youtube.com/"
+                    },
+                    "interactionStatistic": {},
+                    "thumbnail": {
+                        "url": "https://i.ytimg.com/vi/WJLxer6IOKQ/hqdefault.jpg"
+                    },
+                    "name": "EA hat CR7 zum GOAT gemacht! \uD83D\uDC10⚽️ (89er Karte)",
+                    "description": "Auf YouTube findest du großartige Videos und erstklassige Musik. Außerdem kannst du eigene Inhalte hochladen und mit Freunden oder mit der ganzen Welt teilen.",
+                    "url": "https://www.youtube.com/watch?v=WJLxer6IOKQ"
+                },
+                {
+                    "publisher": {
+                        "name": "www.youtube.com",
+                        "url": "https://www.youtube.com/"
+                    },
+                    "interactionStatistic": {},
+                    "thumbnail": {
+                        "url": "https://i.ytimg.com/vi/eLrHZx9MmZU/hqdefault.jpg"
+                    },
+                    "name": "CRISTIANO RONALDO, THE PORTUGUESE KING",
+                    "description": "Auf YouTube findest du großartige Videos und erstklassige Musik. Außerdem kannst du eigene Inhalte hochladen und mit Freunden oder mit der ganzen Welt teilen.",
+                    "url": "https://www.youtube.com/watch?v=eLrHZx9MmZU"
+                }
+            ]
+        },
+        {
+            "type": "WebPage",
+            "inLanguage": "en",
+            "lastReviewed": "2024-05-08T19:35:03+00:00",
+            "name": "Cristiano Ronaldo (@Cristiano) · X",
+            "description": "Die neuesten tweets von <strong>Cristiano</strong> <strong>Ronaldo</strong> (@<strong>Cristiano</strong>)",
+            "url": "https://twitter.com/Cristiano"
+        },
+        {
+            "type": "WebPage",
+            "inLanguage": "en",
+            "name": "cristiano ronaldo auf X",
+            "description": "Entdecke die neuesten Twitter-Diskussionen über <strong>cristiano</strong> <strong>ronaldo</strong>",
+            "url": "https://twitter.com/search?q=cristiano+ronaldo"
+        },
+        {
+            "type": "Article",
+            "author": [],
+            "publisher": {
+                "logo": {
+                    "url": "https://a.bildstatic.de/assets/static/BILD-Logo.BSAJ5us_.png"
+                },
+                "name": "BILD",
+                "url": "https://www.bild.de/"
+            },
+            "thumbnail": {
+                "url": "https://images.bild.de/672b0e70048fa103a43c1b36/bb5ff2df83b85a4e9df96a1659bfbca9,8ef834c2?w=1280"
+            },
+            "inLanguage": "de",
+            "datePublished": "2024-11-06T00:00:00+00:00",
+            "name": "Cristiano Ronaldo: Georgina löscht alle Posts mit Schwester | Sport | BILD.de",
+            "description": "Ist Blut doch nicht dicker als Wasser? Wie die „Sun“ berichtet, knirscht es gewaltig im Familien-Leben von <strong>Cristiano</strong> <strong>Ronaldo</strong> (39) und seiner Freundin ...",
+            "url": "https://www.bild.de/sport/fussball/cristiano-ronaldo-georgina-loescht-alle-posts-mit-schwester-672b0e70048fa103a43c1b36"
+        },
+        {
+            "type": "WebPage",
+            "inLanguage": "de",
+            "lastReviewed": "2023-09-06T03:35:03+00:00",
+            "name": "Cristiano Ronaldo",
+            "description": "<strong>Cristiano</strong> <strong>Ronaldo</strong>. 140,813,175 likes · 932,336 talking about this. Welcome to the official Facebook page of <strong>Cristiano</strong> <strong>Ronaldo</strong>.",
+            "url": "https://www.facebook.com/Cristiano/?locale=de_DE"
+        },
+        {
+            "type": "WebPage",
+            "thumbnail": {
+                "url": "https://publish-p47754-e237306.adobeaemcloud.com/content/dam/common/statics/public-content/internet/web/rm-spa-web/images/meta/og-image.png"
+            },
+            "inLanguage": "es",
+            "name": "Cristiano Ronaldo | Offizielle Webseite | Real Madrid C.F.",
+            "description": "Offizielle Website, auf der Sie die besten Momente von <strong>Cristiano</strong> <strong>Ronaldo</strong>, dem legendären Spieler von Real Madrid, mit Statistiken, Fotos und Videos nacherleben können.",
+            "url": "https://www.realmadrid.com/de-DE/der-club/geschichte/fussballlenden/cristiano-ronaldo-dos-santos-aveiro"
+        }
+    ],
+    "nextHref": "https://api.dev.swisscows.com/v4/web/search?query=cristiano%20ronaldo&itemsCount=10&offset=10&locale=de-DE&freshness=All&spellcheck=true"
+}

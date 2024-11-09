@@ -19,12 +19,12 @@ export default class AdvertiserProductCollection extends BaseComponent {
     this.thumbnail = this.product.locator(".thumbnail");
   }
   //Actions
-  clickProductAt = async (product = { number: index }) => {
+  clickProductAt = async (product = { number: Number }) => {
     await this.clickElement(this.product.nth(product.number - 1));
   };
 
   expectToBeOpenedNewPageAfterClickAdsLink = async (
-    expected = { expectedUrl: value }
+    expected = { expectedUrl: String }
   ) => {
     await this.expectToBeOpenedNewPageAfterClick(this.adsLink, expected.expectedUrl);
   };
@@ -63,10 +63,10 @@ export default class AdvertiserProductCollection extends BaseComponent {
 
   async expectInfoProductToContain(
     expectedInfo = {
-      title: value,
-      price: value,
-      site: value,
-      shipping: value,
+      title: String,
+      price: String,
+      site: String,
+      shipping: String,
     }
   ) {
     await this.expectTextsToContains(this.title, expectedInfo.title);
@@ -76,7 +76,7 @@ export default class AdvertiserProductCollection extends BaseComponent {
   }
 
   expectThumbnailToHaveProperty = async (
-    expected = { width: value, height: value }
+    expected = { width: Number, height: Number }
   ) => {
     await this.expectElementsToHaveJSProperty(
       this.thumbnail,

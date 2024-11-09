@@ -122,6 +122,14 @@ export default class ItemDetails extends BaseComponent {
       testInfo
     );
   };
+
+  takeSnapshot = async (testInfo) => {
+    await this.expectPageElementToHaveScreenshot(
+      this.root,
+      this.image,
+      testInfo
+    );
+  };
   
   expectNotToBeAttachedGhostButtonBy = async (button = { name: value }) => {
     await this.expectElementNotToBeAttached(this.ghostButton(button.name));

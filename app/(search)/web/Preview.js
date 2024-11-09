@@ -80,8 +80,8 @@ export default class Preview extends BaseComponent {
 
   expectScreenshotImageToHaveJSProperty = async (
     expectedProperty = {
-      height: value,
-      width: value,
+      height: Number,
+      width: Number,
     }
   ) => {
     await this.expectElementsToHaveJSProperty(
@@ -110,7 +110,7 @@ export default class Preview extends BaseComponent {
   };
 
   expectAttributeSlideAtNumber = async (
-    slider = { slideNumber: number, attribute: string }
+    slider = { slideNumber: Number, attribute: String }
   ) => {
     await this.expectAttributeClassOfElement(
       this.slide.nth(slider.slideNumber - 1),
