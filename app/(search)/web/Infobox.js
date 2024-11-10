@@ -9,13 +9,15 @@ export default class Infobox extends BaseComponent {
     //Locators
     this.root = this.page.locator(".widget-infobox");
     this.title = this.root.locator(".title");
-    this.subtitle = this.root.locator(".subtitle")
+    this.subtitle = this.root.locator(".subtitle");
     this.header = this.root.locator("header");
     this.image = this.header.locator("img");
     this.readMore = this.root.locator(".more");
     this.description = this.root.locator(".description");
     this.site = this.root.locator(".site a");
     this.profiles = this.root.locator(".profiles a");
+    this.participants = this.root.locator(".participants a");
+    this.rate = this.root.locator(".rating .rate");
     this.footer = this.root.locator("footer");
     this.footerImage = this.footer.locator("img");
     this.expandButton = this.root.locator(".expand button");
@@ -38,15 +40,29 @@ export default class Infobox extends BaseComponent {
     await this.clickElement(this.site, `site link`);
   };
 
-  expectToBeOpenedPageAfterSelectProfileBy = async (expected = { name: String, url: String}) => {
+  clickParticipantAt = async (participants = { number: Number }) => {
+    await this.clickElement(
+      this.participants.nth(participants.number - 1),
+      "participants link"
+    );
+  };
+
+  expectToBeOpenedPageAfterSelectProfileBy = async (
+    expected = { name: String, url: String }
+  ) => {
     await this.expectToBeOpenedNewPageAfterClick(
-      this.profile(expected.name), expected.url
+      this.profile(expected.name),
+      expected.url
     );
   };
 
   // Verify
   expectPropertiesToHave = async (property = { hidden: Boolean }) => {
-    await this.expectElementToHaveJSProperty(this.properties, "hidden", property.hidden);
+    await this.expectElementToHaveJSProperty(
+      this.properties,
+      "hidden",
+      property.hidden
+    );
   };
 
   expectPropertiesNameAndValueNotToBeEmpty = async () => {
@@ -55,22 +71,32 @@ export default class Infobox extends BaseComponent {
   };
 
   expectListProfilesToHaveCount = async (value) => {
-    await this.expectListToHaveCount(this.profiles, value)
+    await this.expectListToHaveCount(this.profiles, value);
   };
 
+  expectListParticipantsToHaveCount = async (value) => {
+    await this.expectListToHaveCount(this.participants, value);
+  };
 
   async expectInfoboxToContain(
     expectedInfo = {
       title: String,
       subtitle: String,
       description: String,
-      site: String
+      site: String,
+      rate: String,
     }
   ) {
     await this.expectTextsToContains(this.title, expectedInfo.title);
     await this.expectTextsToContains(this.subtitle, expectedInfo.subtitle);
-    await this.expectTextsToContains(this.description,expectedInfo.description);
+    await this.expectTextsToContains(
+      this.description,
+      expectedInfo.description
+    );
     await this.expectTextsToContains(this.site, expectedInfo.site);
+    if (expectedInfo.rate) {
+      await this.expectTextsToContains(this.rate, expectedInfo.rate);
+    }
   }
 
   expectImageToBeVisible = async () => {
@@ -91,5 +117,5 @@ export default class Infobox extends BaseComponent {
       this.expandButton,
       testInfo
     );
-  }
+  };
 }

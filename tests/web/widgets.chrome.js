@@ -243,16 +243,27 @@ test.describe("Widget faq", () => {
 });
 
 test.describe("Widget infobox", () => {
-  test("Check design header of infobox widget", async ({ app }, testInfo) => {
+  test("Check design of infobox Person", async ({ app }, testInfo) => {
     //Actions
     await app.home.open();
     await app.home.header.clickHamburgerMenuButton();
     await app.home.header.hamburgerMenu.selectRegion("Germany");
-    await app.route.mockResponseBody(
-      "/v4/web",
-      "data/mock/web/infoboxPerson.json"
-    );
+    await app.route.mockResponseBody("/v4/web","data/mock/web/infoboxPerson.json");
     await app.home.header.searchForm.inputSearchCriteria("Cristiano Ronaldo");
+    await app.home.header.searchForm.clickEnterSearchField();
+    await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
+
+    //Assert
+    await app.webPage.infobox.takeSnapshot(testInfo);
+  });
+
+  test("Check design of infobox Movie", async ({ app }, testInfo) => {
+    //Actions
+    await app.home.open();
+    await app.home.header.clickHamburgerMenuButton();
+    await app.home.header.hamburgerMenu.selectRegion("Germany");
+    await app.route.mockResponseBody("/v4/web","data/mock/web/infoboxMovie.json");
+    await app.home.header.searchForm.inputSearchCriteria("Dune");
     await app.home.header.searchForm.clickEnterSearchField();
     await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
 
@@ -314,6 +325,70 @@ test.describe("Widget infobox", () => {
     });
   });
 
+  test("Check info { title, subtitle, description, site, rate } in infobox movie", async ({
+    app,
+  }) => {
+    //Actions
+    await app.home.open();
+    await app.home.header.clickHamburgerMenuButton();
+    await app.home.header.hamburgerMenu.selectRegion("Germany");
+    await app.home.header.searchForm.inputSearchCriteria("dune 2");
+    await app.home.header.searchForm.clickEnterSearchField();
+    await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
+
+    //Assert
+    await app.webPage.infobox.expectImageToBeVisible();
+    await app.webPage.infobox.expectInfoboxToContain({
+      title: /\w+/,
+      subtitle: /\w+/,
+      description: /\w+/,
+      site: "www.dunemovie.net",
+      rate: /9/
+    });
+  });
+
+  test("Check info { title, subtitle, description, site, rate } in infobox City", async ({
+    app,
+  }) => {
+    //Actions
+    await app.home.open();
+    await app.home.header.clickHamburgerMenuButton();
+    await app.home.header.hamburgerMenu.selectRegion("Germany");
+    await app.home.header.searchForm.inputSearchCriteria("london");
+    await app.home.header.searchForm.clickEnterSearchField();
+    await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
+
+    //Assert
+    await app.webPage.infobox.expectImageToBeVisible();
+    await app.webPage.infobox.expectInfoboxToContain({
+      title: /\w+/,
+      subtitle: /\w+/,
+      description: /\w+/,
+      site: /\w+/
+    });
+  });
+
+  test("Check info { title, subtitle, description, site, rate } in infobox company", async ({
+    app,
+  }) => {
+    //Actions
+    await app.home.open();
+    await app.home.header.clickHamburgerMenuButton();
+    await app.home.header.hamburgerMenu.selectRegion("Germany");
+    await app.home.header.searchForm.inputSearchCriteria("apple");
+    await app.home.header.searchForm.clickEnterSearchField();
+    await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
+
+    //Assert
+    await app.webPage.infobox.expectImageToBeVisible();
+    await app.webPage.infobox.expectInfoboxToContain({
+      title: /\w+/,
+      subtitle: /\w+/,
+      description: /\w+/,
+      site: "apple.com"
+    });
+  });
+
   test("Check list profiles in infobox person", async ({ app }) => {
     //Actions
     await app.home.open();
@@ -326,6 +401,20 @@ test.describe("Widget infobox", () => {
     //Assert
     await app.webPage.infobox.expectListProfilesToHaveCount(7);
   });
+
+  test("Check list participants in infobox movie", async ({ app }) => {
+    //Actions
+    await app.home.open();
+    await app.home.header.clickHamburgerMenuButton();
+    await app.home.header.hamburgerMenu.selectRegion("Germany");
+    await app.home.header.searchForm.inputSearchCriteria("dune 2");
+    await app.home.header.searchForm.clickEnterSearchField();
+    await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
+
+    //Assert
+    await app.webPage.infobox.expectListParticipantsToHaveCount(5);
+  });
+
 
   test("Check info properties { property-value and property-name } in infobox person", async ({
     app,
@@ -343,7 +432,7 @@ test.describe("Widget infobox", () => {
     await app.webPage.infobox.expectPropertiesNameAndValueNotToBeEmpty();
   });
 
-  test("Open page when clicking  on  profile in infobox widget", async ({
+  test("Open page when clicking  on  profile in infobox person", async ({
     app,
   }) => {
     //Actions
@@ -359,6 +448,23 @@ test.describe("Widget infobox", () => {
       name: "www.youtube.com",
       url: "https://www.youtube.com/@cristiano",
     });
+  });
+
+  test("Open page when clicking  on participan in infobox movie", async ({
+    app,
+  }) => {
+    //Actions
+    await app.home.open();
+    await app.home.header.clickHamburgerMenuButton();
+    await app.home.header.hamburgerMenu.selectRegion("Germany");
+    await app.home.header.searchForm.inputSearchCriteria("dune 2");
+    await app.home.header.searchForm.clickEnterSearchField();
+    await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
+    const currentUrl = await app.page.url();
+    await app.webPage.infobox.clickParticipantAt({ number: 1 });
+
+    //Assert
+    await app.expectPageNotToHaveUrl(app.page, currentUrl);
   });
 
   test("Open page when clicking  on site in infobox widget", async ({
