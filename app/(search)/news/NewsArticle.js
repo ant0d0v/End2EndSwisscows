@@ -40,21 +40,7 @@ export default class Item extends BaseComponent {
   };
 
   // Verify
-  expectImageToHaveProperty = async (
-    expected = { width: value, height: value }
-  ) => {
-    await this.expectElementsToHaveJSProperty(
-      this.images,
-      "width",
-      expected.width
-    );
-    await this.expectElementsToHaveJSProperty(
-      this.images,
-      "height",
-      expected.height
-    );
-  };
-
+ 
   expectNewsItemsToBeVisible = async () => {
     await this.expectAreElementsInListDisplayed(this.root);
   };

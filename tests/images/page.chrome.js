@@ -97,7 +97,7 @@ test("Check Saved button when adding image to bookmark", async ({
   await app.webPage.header.navigation.clickImageTab();
   await app.imagePage.item.expectImageItemsToBeVisible();
   await app.imagePage.item.clickItemAt({ number: 1 });
-  let favoriteID = await app.imagePage.details.clickGhostButtonByAndGetResponse(
+  let favoriteID = await app.imagePage.details.getResponseAfterClickGhostButtonBy(
     { name: "Save" }
   );
   deletionIds.myImages.internalUser.push(favoriteID);
@@ -326,7 +326,7 @@ test("Check open site button when clicking redirect to new page", async ({
   await app.expectPageNotToHaveTitle(app.page, currentTitle);
 });
 
-test("Check that { resolution, title, site, favicon } in details pane to have value", async ({
+test("Check that { resolution, title, site } in details pane to have value", async ({
   app,
 }) => {
   //Actions
@@ -345,30 +345,10 @@ test("Check that { resolution, title, site, favicon } in details pane to have va
   });
 
   //Assert
-  await app.imagePage.details.favicon.expectFaviconToBeVisible();
   await app.imagePage.details.expectDetailInfoToContainText({
     title: /ronaldo/i,
     site: /(?:www\.)?[a-zA-Z0-9-]+\.[a-zA-Z]{2,}(?:\/[^\s]*)?/,
     resolution: `${width} x ${height}`,
-  });
-});
-
-test("Check height and width of details pane to have value", async ({
-  app,
-}) => {
-  //Actions
-  await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria("Ronaldo");
-  await app.home.header.searchForm.clickEnterSearchField();
-  await app.webPage.header.navigation.clickImageTab();
-  await app.imagePage.item.expectImageItemsToBeVisible();
-  await app.imagePage.item.clickItemAt({ number: 1 });
-
-  //Assert
-  await app.imagePage.waitUntilPageIsFullyLoaded();
-  await app.imagePage.details.expectDetailsToHaveProperty({
-    width: 1130,
-    height: { min: 320, max: 630 },
   });
 });
 

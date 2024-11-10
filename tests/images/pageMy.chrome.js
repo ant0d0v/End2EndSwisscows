@@ -12,7 +12,7 @@ test.describe("Internal user", () => {
     await app.webPage.header.navigation.clickImageTab();
     await app.imagePage.item.expectImageItemsToBeVisible();
     await app.imagePage.item.clickItemAt({ number: 1 });
-    let favoriteID = await app.imagePage.details.clickGhostButtonByAndGetResponse({ name: "Save" });
+    let favoriteID = await app.imagePage.details.getResponseAfterClickGhostButtonBy({ name: "Save" });
     deletionIds.myImages.internalUser.push(favoriteID);
     await app.imagePage.details.clickGhostButtonBy({ name: "Saved" });
     await app.imageMyPage.waitUrlToBeChanged();
@@ -53,10 +53,10 @@ test.describe("Internal user", () => {
     await app.imagePage.header.navigation.clickImageTab();
     await app.imagePage.item.expectImageItemsToBeVisible();
     await app.imagePage.item.clickItemAt({ number: 1 });
-    const favoriteIDFirstImage = await app.imagePage.details.clickGhostButtonByAndGetResponse({ name: "Save" });
+    const favoriteIDFirstImage = await app.imagePage.details.getResponseAfterClickGhostButtonBy({ name: "Save" });
     await app.imagePage.details.clickCloseButton();
     await app.imagePage.item.clickItemAt({ number: 2 });
-    const favoriteIDSecondImage = await app.imagePage.details.clickGhostButtonByAndGetResponse({ name: "Save" });
+    const favoriteIDSecondImage = await app.imagePage.details.getResponseAfterClickGhostButtonBy({ name: "Save" });
     deletionIds.myImages.internalUser.push(
       favoriteIDFirstImage,
       favoriteIDSecondImage
@@ -81,7 +81,7 @@ test.describe("External user", () => {
     await app.webPage.header.navigation.clickImageTab();
     await app.imagePage.item.expectImageItemsToBeVisible();
     await app.imagePage.item.clickItemAt({ number: 1 });
-    let favoriteID = await app.imagePage.details.clickGhostButtonByAndGetResponse({ name: "Save" });
+    let favoriteID = await app.imagePage.details.getResponseAfterClickGhostButtonBy({ name: "Save" });
     deletionIds.myImages.externalUser.push(favoriteID);
     await app.imagePage.details.clickGhostButtonBy({ name: "Saved" });
     await app.imageMyPage.waitUrlToBeChanged();
@@ -105,7 +105,7 @@ test.describe("External user", () => {
     await app.imagePage.waitUntilPageIsFullyLoaded();
     const height = await app.imagePage.details.getAttributeImageBy({ attribute: "height" });
     const width = await app.imagePage.details.getAttributeImageBy({ attribute: "width" });
-    let favoriteID = await app.imagePage.details.clickGhostButtonByAndGetResponse({ name: "Save" });
+    let favoriteID = await app.imagePage.details.getResponseAfterClickGhostButtonBy({ name: "Save" });
     deletionIds.myImages.externalUser.push(favoriteID);
     await app.imagePage.details.clickGhostButtonBy({ name: "Saved" });
     await app.imageMyPage.waitUrlToBeChanged();
@@ -128,7 +128,7 @@ test.describe("External user", () => {
     await app.imagePage.header.navigation.clickImageTab();
     await app.imagePage.item.expectImageItemsToBeVisible();
     await app.imagePage.item.clickItemAt({ number: 1 });
-    let favoriteID = await app.imagePage.details.clickGhostButtonByAndGetResponse({ name: "Save" });
+    let favoriteID = await app.imagePage.details.getResponseAfterClickGhostButtonBy({ name: "Save" });
     deletionIds.myImages.externalUser.push(favoriteID);
     await app.imagePage.details.clickGhostButtonBy({ name: "Saved" });
     await app.imageMyPage.waitUrlToBeChanged();
