@@ -16,7 +16,7 @@ export default class Advertiser extends BaseComponent {
     this.ad = this.root.locator(".ad");
   }
   //Actions
-  clickAdsTitleAt = async (product = { number: index }) => {
+  clickAdsTitleAt = async (product = { number: Number }) => {
     await this.clickElement(this.title.nth(product.number - 1));
   };
 
@@ -36,10 +36,10 @@ export default class Advertiser extends BaseComponent {
 
   async expectInfoAdvertiserToContain(
     expectedInfo = {
-      title: value,
-      site: value,
-      callout: value,
-      ad: value,
+      title: String,
+      site: String,
+      callout: String,
+      ad: String,
     }
   ) {
     await this.expectTextsToContains(this.title, expectedInfo.title);

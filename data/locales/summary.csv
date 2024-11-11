@@ -1,0 +1,11 @@
+test_case,expected_content,language,languageCode,isoCode
+1,"Anonymität",Deutsch,de,de-DE
+2,"anonyme",Français,fr,fr-FR
+3,"anonimo",Italiano,it,it-IT
+4,"anónimo",Español,es,es-ES
+5,"anônimo",Português,pt,pt-PT
+6,"anonim",Magyar,hu,hu-HU
+7,"anonīmas",Latviešu,lv, lv-LV
+8,"anonimiteit",Nederlands,nl,nl-NL
+9,"аноним",Русский,ru,ru-RU
+10,"анонім",Українська,uk,uk-UA

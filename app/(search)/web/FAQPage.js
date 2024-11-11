@@ -25,29 +25,30 @@ export default class FAQ extends BaseComponent {
   };
 
   // Verify
-  expectQuestionsToHaveAttribute = async (expected = { attribute: value }) => {
+  expectQuestionsToHaveAttribute = async (expected = { attribute: String }) => {
     await this.expectAttributeClassAllElements(this.qa, expected.attribute);
   };
   async expectQaInfoToContain(
     expectedInfo = {
-      question: value,
-      answer: value,
+      question: String,
+      answer: String,
     }
   ) {
     await this.expectTextsToContains(this.questions, expectedInfo.question);
     await this.expectTextsToContains(this.answers, expectedInfo.answer);
   }
 
-  takeSnapshotWidgetHeader = async (testInfo) => {
+  takeSnapshot = async (testInfo) => {
     await this.expectPageElementToHaveScreenshot(
-      this.widgetHeader,
-      this.widgetHeader,
+      this.root.first(),
+      this.root.first(),
       testInfo
     );
   };
+  
   takeSnapshotChevronIconAt = async (
     testInfo,
-    expected = { number: value }
+    expected = { number: Number }
   ) => {
     await this.icon.takeSnapshotIconAt(
       testInfo,

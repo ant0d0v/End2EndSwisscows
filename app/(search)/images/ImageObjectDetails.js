@@ -20,7 +20,7 @@ export default class ItemDetails extends BaseComponent {
     this.openSiteButton = this.page.getByRole("link", { name: "Open site" });
   }
   //Actions
-  clickGhostButtonByAndGetResponse = async (button = { name: value }) => {
+  getResponseAfterClickGhostButtonBy = async (button = { name: value }) => {
     let response;
     const responsePromise = this.page.waitForResponse(
       `${process.env.API_URL}/v4/user/images`
@@ -79,26 +79,6 @@ export default class ItemDetails extends BaseComponent {
     await this.expectElementToBeHidden(this.root);
   };
 
-  expectDetailsToHaveProperty = async (
-    expected = { height: { min: value, max: value }, width: value }
-  ) => {
-    await this.expectElementToHaveJSProperty(
-      this.media,
-      "offsetWidth",
-      expected.width
-    );
-    const actualHeight = await this.media.evaluate(
-      (element) => element.clientHeight
-    );
-    const isHeightInRange =
-      actualHeight >= expected.height.min &&
-      actualHeight <= expected.height.max;
-    expect(
-      isHeightInRange,
-      `Expected height to be between ${expected.height.min}px and ${expected.height.max}px, but received ${actualHeight}px.`
-    ).toBe(true);
-  };
-
   expectDetailsToBeInViewport = async () => {
     await this.expectElementToBeInViewport(this.media);
   };
@@ -119,6 +99,14 @@ export default class ItemDetails extends BaseComponent {
     await this.expectPageElementToHaveScreenshot(
       this.ghostButton(button.name),
       this.ghostButton(button.name),
+      testInfo
+    );
+  };
+
+  takeSnapshot = async (testInfo) => {
+    await this.expectPageElementToHaveScreenshot(
+      this.root,
+      this.image,
       testInfo
     );
   };

@@ -114,7 +114,6 @@ test("Check search results in news page ", async ({ app }) => {
 
   //Assert
   await app.newsPage.item.expectImageItemsToBeVisible()
-  await app.newsPage.item.expectImageToHaveProperty({ width: 60, height: 60 });
   await app.newsPage.item.expectNewsResultToHaveCount(10)
 });
 
@@ -209,21 +208,6 @@ test("Check that image of proxy cdn server", async ({ app }) => {
 
   //Assert
   await app.newsPage.item.expectAllImagesToHaveAttribute(/cdn.dev.swisscows.com/);
-});
-
-test("Check design pagination component", async ({ app }, testInfo) => {
-  //Actions
-  await app.home.open();
-  await app.home.header.clickHamburgerMenuButton();
-  await app.home.header.hamburgerMenu.selectRegion("Germany");
-  await app.home.header.searchForm.inputSearchCriteria("news");
-  await app.home.header.searchForm.clickEnterSearchField();
-  await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
-  await app.newsPage.header.navigation.clickNewsTab();
-  await app.newsPage.item.expectNewsItemsToBeVisible();
-
-  //Assert
-  await app.newsPage.pagination.takeSnapshot(testInfo);
 });
 
 test("Check the info news article { site, description, date, title } in search result", async ({

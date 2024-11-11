@@ -1,11 +1,13 @@
 import BaseComponent from "../../../base/BaseComponent.js";
 import Favicon from "../../../components/Favicon.js";
 import Rating from "../../../components/Rating.js";
+import Summary from "./Summary.js";
 export default class Product extends BaseComponent {
   constructor(page) {
     super(page);
       this.favicon = new Favicon(page);
       this.rating = new Rating(page);
+      this.summary = new Summary(page)
     //Locators
     this.root = this.page.locator("article.item.product");
     this.titles = this.root.locator(".title");

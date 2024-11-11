@@ -1,0 +1,333 @@
+{
+    "context": {
+        "query": "dune 2",
+        "effectiveQuery": "dune 2",
+        "offset": 0,
+        "itemsCount": 10,
+        "locale": "de-DE",
+        "spellcheck": true
+    },
+    "entities": [
+        {
+            "type": "Movie",
+            "directors": [
+                {
+                    "name": "Denis Villeneuve",
+                    "url": "https://www.rottentomatoes.com/celebrity/denis-villeneuve"
+                }
+            ],
+            "actors": [
+                {
+                    "image": {
+                        "url": "https://resizing.flixster.com/4IBwYVIQNJKB4HiXHB6y5-xPE-c=/100x120/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/535891_v9_bc.jpg"
+                    },
+                    "name": "Timothée Chalamet",
+                    "url": "https://www.rottentomatoes.com/celebrity/timothee_chalamet"
+                },
+                {
+                    "image": {
+                        "url": "https://resizing.flixster.com/LKZkkN6ckOv-xiZmbtKxEpoQcAA=/100x120/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/591658_v9_bb.jpg"
+                    },
+                    "name": "Zendaya",
+                    "url": "https://www.rottentomatoes.com/celebrity/zendaya"
+                },
+                {
+                    "image": {
+                        "url": "https://resizing.flixster.com/HjVTZQzpGsmGQHExZtC1NFhoQIU=/100x120/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/723292_v9_bc.jpg"
+                    },
+                    "name": "Rebecca Ferguson",
+                    "url": "https://www.rottentomatoes.com/celebrity/rebecca_ferguson"
+                },
+                {
+                    "image": {
+                        "url": "https://resizing.flixster.com/AHbTwaObPIvZS2TdoktNo2DDX20=/100x120/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/79087_v9_bd.jpg"
+                    },
+                    "name": "Javier Bardem",
+                    "url": "https://www.rottentomatoes.com/celebrity/javier_bardem"
+                },
+                {
+                    "image": {
+                        "url": "https://resizing.flixster.com/xMhxrgtvawsRYklL4w6hcI9Jlb0=/100x120/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/74371_v9_bd.jpg"
+                    },
+                    "name": "Josh Brolin",
+                    "url": "https://www.rottentomatoes.com/celebrity/josh_brolin"
+                }
+            ],
+            "datePublished": "2024-03-01T00:00:00+00:00",
+            "thumbnail": {
+                "url": "https://resizing.flixster.com/PgHhmCKS3hR6GUsVNlC-vZ9d90I=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzZhOTA0OTIzLTEwNDctNDhkNS1iNTc3LTY3MjBmNDc5OGU1Mi5qcGc="
+            },
+            "aggregateRating": {
+                "ratingCount": 5000,
+                "ratingValue": 95,
+                "bestRating": 100
+            },
+            "website": "https://www.dunemovie.net/",
+            "name": "Dune: Part Two",
+            "description": "Dune: Part Two ist ein US-amerikanischer Science-Fiction-Film des kanadischen Regisseurs Denis Villeneuve und die Fortsetzung des Films Dune (2021). Der Film kam am 28. Februar 2024 in die österreichischen und am 29. Februar 2024 in die deutschen und deutschschweizer Kinos.",
+            "disambiguatingDescription": "Film von Denis Villeneuve (2024)",
+            "url": "https://de.wikipedia.org/wiki/Dune:_Part_Two",
+            "additionalProperties": [
+                {
+                    "name": "Titel",
+                    "value": "Dune: Part Two"
+                },
+                {
+                    "name": "Produktionsland",
+                    "value": "<a href='https://de.wikipedia.org/wiki/Vereinigte_Staaten'>USA</a>"
+                },
+                {
+                    "name": "Originalsprache",
+                    "value": "<a href='https://de.wikipedia.org/wiki/Englische_Sprache'>Englisch</a>"
+                },
+                {
+                    "name": "Erscheinungsjahr",
+                    "value": "<a href='https://de.wikipedia.org/wiki/Filmjahr_2024'>2024</a>"
+                },
+                {
+                    "name": "Länge",
+                    "value": "166 Minuten"
+                },
+                {
+                    "name": "Altersfreigabe",
+                    "value": "<a href='https://de.wikipedia.org/wiki/Freiwillige_Selbstkontrolle_der_Filmwirtschaft'>FSK</a> 12<br><a href='https://de.wikipedia.org/wiki/Jugendmedienkommission'>JMK</a> 14"
+                },
+                {
+                    "name": "Regie",
+                    "value": "<a href='https://de.wikipedia.org/wiki/Denis_Villeneuve'>Denis Villeneuve</a>"
+                },
+                {
+                    "name": "Drehbuch",
+                    "value": "Denis Villeneuve,<br><a href='https://de.wikipedia.org/wiki/Jon_Spaihts'>Jon Spaihts</a>,<br><a href='https://de.wikipedia.org/wiki/Craig_Mazin'>Craig Mazin</a>"
+                },
+                {
+                    "name": "Produktion",
+                    "value": "Denis Villeneuve,<br><a href='https://de.wikipedia.org/wiki/Mary_Parent'>Mary Parent</a>,<br><a href='https://de.wikipedia.org/wiki/Cale_Boyter'>Cale Boyter</a>,<br><a href='https://de.wikipedia.org/w/index.php?title=Tanya_Lapointe&action=edit&redlink=1'>Tanya Lapointe</a>,<br><a href='https://de.wikipedia.org/wiki/Patrick_McCormick'>Patrick McCormick</a>"
+                },
+                {
+                    "name": "Musik",
+                    "value": "<a href='https://de.wikipedia.org/wiki/Hans_Zimmer'>Hans Zimmer</a>"
+                },
+                {
+                    "name": "Kamera",
+                    "value": "<a href='https://de.wikipedia.org/wiki/Greig_Fraser'>Greig Fraser</a>"
+                },
+                {
+                    "name": "Schnitt",
+                    "value": "<a href='https://de.wikipedia.org/wiki/Joe_Walker_(Filmeditor)'>Joe Walker</a>"
+                }
+            ]
+        }
+    ],
+    "items": [
+        {
+            "type": "WebPage",
+            "significantLinks": [
+                {
+                    "name": "Handlung",
+                    "url": "https://de.wikipedia.org/wiki/Dune:_Part_Two#Handlung"
+                },
+                {
+                    "name": "Produktion",
+                    "url": "https://de.wikipedia.org/wiki/Dune:_Part_Two#Produktion"
+                },
+                {
+                    "name": "Unterschiede zum Buch",
+                    "url": "https://de.wikipedia.org/wiki/Dune:_Part_Two#Unterschiede_zum_Buch"
+                },
+                {
+                    "name": "Musik",
+                    "url": "https://de.wikipedia.org/wiki/Dune:_Part_Two#Musik"
+                },
+                {
+                    "name": "Marketing und Veröffentlichung",
+                    "url": "https://de.wikipedia.org/wiki/Dune:_Part_Two#Marketing_und_Veröffentlichung"
+                },
+                {
+                    "name": "Rezeption",
+                    "url": "https://de.wikipedia.org/wiki/Dune:_Part_Two#Rezeption"
+                },
+                {
+                    "name": "Weblinks",
+                    "url": "https://de.wikipedia.org/wiki/Dune:_Part_Two#Weblinks"
+                },
+                {
+                    "name": "Einzelnachweise",
+                    "url": "https://de.wikipedia.org/wiki/Dune:_Part_Two#Einzelnachweise"
+                }
+            ],
+            "inLanguage": "de",
+            "lastReviewed": "2021-12-08T16:39:32+00:00",
+            "name": "Dune: Part Two – Wikipedia",
+            "description": "Dune: Part Two ist ein <strong>US-amerikanischer Science-Fiction-Film des kanadischen Regisseurs Denis Villeneuve und die Fortsetzung des Films Dune (2021).</strong> Der Film kam am 28. Februar 2024 in die österreichischen und am 29. Februar 2024 in die deutschen und deutschschweizer Kinos.",
+            "url": "https://de.wikipedia.org/wiki/Dune:_Part_Two"
+        },
+        {
+            "type": "WebPage",
+            "inLanguage": "de",
+            "name": "Amazon.de: Dune: Part Two ansehen | Prime Video",
+            "description": "<strong>Dune</strong>: Part Two erkundet die mythische Reise von Paul Atreides, der sich mit Chani und den Fremen vereint, während er sich auf einen Kreuzzug der Rache gegen die Verschwörer begibt, die seine Familie zerstört haben. Er steht vor der Wahl zwischen der Liebe seines Lebens und dem Schicksal ...",
+            "url": "https://www.amazon.de/Dune-Part-Two-Denis-Villeneuve/dp/B0CWPL5D28"
+        },
+        {
+            "type": "NewsArticle",
+            "author": [],
+            "publisher": {
+                "name": "filmstarts.de",
+                "url": "https://www.filmstarts.de/"
+            },
+            "thumbnail": {
+                "url": "https://de.web.img2.acsta.net/img/ee/b8/eeb8786af132bf44aa5586017506f75e.jpg"
+            },
+            "datePublished": "2024-11-08T00:55:03+00:00",
+            "name": "\"Es ist noch nicht vorbei\": Denis Villeneuve kämpft gegen Oscar-Ausschluss bei \"Dune 2\" – mit einer ungewöhnlichen Begründung - Kino News - FILMSTARTS.de",
+            "description": "Muss Hans Zimmers gefeierte Musik für „<strong>Dune</strong>: Part Two“ von den Oscars ausgeschlossen werden? Das wollen weder der Musiker noch Regisseur Denis Villeneuve akzeptieren. Schließlich sei ihr Film ja gerade nicht „<strong>Dune</strong> <strong>2</strong>“...",
+            "url": "https://www.filmstarts.de/nachrichten/1000112737.html"
+        },
+        {
+            "type": "Movie",
+            "directors": [
+                {
+                    "name": "Denis Villeneuve",
+                    "url": "https://www.filmstarts.de/personen/27087.html"
+                }
+            ],
+            "actors": [
+                {
+                    "name": "Timothée Chalamet",
+                    "url": "https://www.filmstarts.de/personen/525421.html"
+                },
+                {
+                    "name": "Zendaya",
+                    "url": "https://www.filmstarts.de/personen/512064.html"
+                },
+                {
+                    "name": "Rebecca Ferguson",
+                    "url": "https://www.filmstarts.de/personen/599594.html"
+                },
+                {
+                    "name": "Josh Brolin",
+                    "url": "https://www.filmstarts.de/personen/3146.html"
+                }
+            ],
+            "duration": "02:46:00",
+            "genre": "Drama, Sci-Fi",
+            "thumbnail": {
+                "url": "https://de.web.img3.acsta.net/pictures/24/01/29/08/00/1118029.jpg"
+            },
+            "aggregateRating": {
+                "ratingCount": 61,
+                "ratingValue": 4.5,
+                "bestRating": 5
+            },
+            "name": "Dune: Part Two - Film 2024 - FILMSTARTS.de",
+            "description": "Als <strong>&quot;Dune: Teil 2&quot; betitelt, setzt die Fortsetzung filmisch natürlich direkt an die Handlung von &quot;Dune&quot; (2021) an</strong>. Im Bezug auf die literarische Vorlage, der sechsteiligen Romanreihe (1965-1985) des Autors Frank Herbert, sind wir aber noch nicht bei Buch 2 &quot;Dune Messiah&quot; (dt.",
+            "url": "https://www.filmstarts.de/kritiken/278742.html"
+        },
+        {
+            "type": "VideoObject",
+            "publisher": {
+                "name": "www.youtube.com",
+                "url": "https://www.youtube.com/"
+            },
+            "interactionStatistic": {},
+            "datePublished": "2024-04-16T13:18:13+00:00",
+            "thumbnail": {
+                "url": "https://i.ytimg.com/vi/JsmDuA7SWwI/maxresdefault.jpg"
+            },
+            "name": "Die staubigen ersten 9 Minuten aus DUNE 2 German Deutsch (2024) ...",
+            "description": "Offizieller \"Dune 2 \" Clip Deutsch German 2024 | Abonnieren ➤ https://abo.yt/kch | (OT: Dune: Part 2) Movie Trailer | Kino: 29 Feb 2024, DVD/Blu-Ray: 29 Mai ...",
+            "url": "https://www.youtube.com/watch?v=JsmDuA7SWwI"
+        },
+        {
+            "type": "Article",
+            "author": [],
+            "thumbnail": {
+                "url": "https://deadline.com/wp-content/uploads/2024/11/Denis-Villenueve-Quentin-Tarantino-2-shot.jpg"
+            },
+            "inLanguage": "en",
+            "datePublished": "2024-11-09T10:20:02+00:00",
+            "name": "Denis Villeneuve Reacts To Quentin Tarantino's 'Dune' Gripe",
+            "description": "After Quentin Tarantino used &#x27;<strong>Dune</strong>&#x27; to illustrate his problem with remakes, Denis Villeneuve clarified that he adapted Frank Herbert&#x27;s book.",
+            "url": "https://deadline.com/2024/11/denis-villeneuve-responds-quentin-tarantino-dune-gripe-1236171416/"
+        },
+        {
+            "type": "Product",
+            "offers": [
+                {
+                    "price": 25.55,
+                    "priceCurrency": "EUR",
+                    "url": "https://www.amazon.de/Dune-Part-Two-Ultra-Blu-ray/dp/B0CWNWMMCB"
+                }
+            ],
+            "thumbnail": {
+                "url": "https://m.media-amazon.com/images/I/81UYLohnY2L.jpg"
+            },
+            "aggregateRating": {
+                "ratingCount": 10245,
+                "ratingValue": 4.4,
+                "bestRating": 5
+            },
+            "name": "Dune: Part Two (4K Ultra HD) (+ Blu-ray): Amazon.de: Chalamet, Timothee, Brolin, Josh, Ferguson, Rebecca, Butler, Austin, Bardem, Javier, Skarsgard, Stellan, Bautista, Dave, Villeneuve, Denis, Chalamet, Timothee, Brolin, Josh: DVD & Blu-ray",
+            "description": "Amazon.de - Kaufen Sie <strong>Dune</strong>: Part Two (4K Ultra HD) (+ Blu-ray) günstig ein. Qualifizierte Bestellungen werden kostenlos geliefert. Sie finden Rezensionen und Details zu einer vielseitigen Blu-ray- und DVD-Auswahl – neu und gebraucht.",
+            "url": "https://www.amazon.de/Dune-Part-Two-Ultra-Blu-ray/dp/B0CWNWMMCB"
+        },
+        {
+            "type": "Movie",
+            "directors": [],
+            "actors": [],
+            "genre": "Abenteuer, Science Fiction",
+            "datePublished": "2024-02-29T00:00:00+00:00",
+            "thumbnail": {
+                "url": "https://static.kino.de/wp-content/uploads/2021/10/Dune-2-Poster-2024.jpeg"
+            },
+            "aggregateRating": {
+                "ratingCount": 411,
+                "ratingValue": 4.2,
+                "bestRating": 5
+            },
+            "name": "Dune 2",
+            "description": "Nach einiger Wartezeit wurden die Rufe der begeisterten Kinozuschauer*innen weltweit erhört: Die Fortsetzung „Dune: Teil 2“ erhielt grünes Licht. Der Kinostart musste aufgrund des SAG-AFTRA und WGA-Streiks verschoben werden. Am 1. <strong>März 2024</strong> startet „Dune 2“ nun in den USA, am 29.",
+            "url": "https://www.kino.de/film/dune-2-2023/"
+        },
+        {
+            "type": "Movie",
+            "directors": [],
+            "actors": [],
+            "thumbnail": {
+                "url": "https://cdn.kinocheck.com/i/q3zw4l3l2n.jpg"
+            },
+            "name": "Dune 2 (2024) Film-information und Trailer | KinoCheck",
+            "description": "Alle <strong>Dune</strong> <strong>2</strong> Trailer, News und Film-Informationen. Ein Junge wird zum Messias der Nomaden auf einem Wüstenplaneten, auf dem es riesige Würmer gibt, die eine Ware namens Spice schützen ...",
+            "url": "https://kinocheck.de/film/ddk/dune-2-2024"
+        },
+        {
+            "type": "Article",
+            "author": [
+                {
+                    "image": {
+                        "url": "https://de.web.img3.acsta.net/img/1f/b4/1fb4ac48155dbf2f533c6bbab9257b76.jpg"
+                    },
+                    "name": "Annemarie Havran",
+                    "url": "https://www.filmstarts.de/nachrichtenautor/47/"
+                }
+            ],
+            "publisher": {
+                "logo": {
+                    "url": "https://fr.web.img6.acsta.net/f_png/commons/v9/filmstarts/logos/brand/logo.png"
+                },
+                "name": "Filmstarts",
+                "url": "https://www.filmstarts.de/"
+            },
+            "thumbnail": {
+                "url": "https://de.web.img3.acsta.net/r_1280_720/img/69/52/69526f63f8b95bc5a27ca7ce86f45946.jpg"
+            },
+            "inLanguage": "de",
+            "datePublished": "2024-10-23T00:00:00+00:00",
+            "name": "Oscar-Klatsche für \"Dune 2\": Darum wird der Sci-Fi-Hit in einer wichtigen Kategorie ausgeschlossen - Kino News - FILMSTARTS.de",
+            "description": "Der kreative Kopf hinter ... Filmmusik – der zweite Goldjunge für Zimmer nach „Der König der Löwen“. Doch <strong>ein dritter wird sich für „Dune 2“ nun nicht hinzugesellen</strong>....",
+            "url": "https://www.filmstarts.de/nachrichten/1000110197.html"
+        }
+    ],
+    "nextHref": "https://api.dev.swisscows.com/v4/web/search?query=dune%202&itemsCount=10&offset=10&locale=de-DE&freshness=All&spellcheck=true"
+}
