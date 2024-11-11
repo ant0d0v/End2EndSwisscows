@@ -1,0 +1,192 @@
+{
+    "context": {
+        "query": "Catch-22 by Joseph Heller — Yellow Dog Bookshop",
+        "effectiveQuery": "catch-22 by joseph heller yellow dog bookshop",
+        "offset": 0,
+        "itemsCount": 10,
+        "locale": "de-DE",
+        "spellcheck": true
+    },
+    "entities": [],
+    "items": [
+        {
+            "type": "Product",
+            "offers": [
+                {
+                    "price": 19.99,
+                    "priceCurrency": "USD",
+                    "url": "http://www.yellowdogbookshop.com/books/334n9xg6nrx1w0lsbqrtmd8in3spcz"
+                }
+            ],
+            "thumbnail": {
+                "url": "http://static1.squarespace.com/static/57923bb33e00be1777423ef5/5a57e1abe2c483c38b4ebab5/5fda8924ad325545af7107fc/1717011729072/IMG_5590.jpeg?format=1500w"
+            },
+            "aggregateRating": {
+                "ratingCount": 14262,
+                "ratingValue": 4.4,
+                "bestRating": 5
+            },
+            "name": "Catch-22 by Joseph Heller — Yellow Dog Bookshop",
+            "description": "<strong>Catch</strong>-<strong>22</strong> <strong>by</strong> <strong>Joseph</strong> <strong>Heller</strong>  Fifty years after its original publication, <strong>Catch</strong>-<strong>22</strong> remains a cornerstone of American literature and one of the funniest—and most celebrated—books of all time. In recent years it has been named to “best novels” lists by Time, Newsweek, the Modern Library, and the London O",
+            "url": "http://www.yellowdogbookshop.com/books/334n9xg6nrx1w0lsbqrtmd8in3spcz"
+        },
+        {
+            "type": "Book",
+            "author": [
+                {
+                    "name": "Joseph Heller",
+                    "url": "https://www.goodreads.com/author/show/3167.Joseph_Heller"
+                }
+            ],
+            "inLanguage": "de",
+            "numberOfPages": 453,
+            "thumbnail": {
+                "url": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1463157317i/168668.jpg"
+            },
+            "aggregateRating": {
+                "ratingCount": 24493,
+                "ratingValue": 4,
+                "bestRating": 5
+            },
+            "name": "Catch-22 by Joseph Heller | Goodreads",
+            "description": "Read 24.5k reviews from the world’s largest community for readers. Fifty years after its original publication, <strong>Catch</strong>-<strong>22</strong> remains a cornerstone of American l…",
+            "url": "https://www.goodreads.com/de/book/show/168668.Catch_22"
+        },
+        {
+            "type": "WebPage",
+            "thumbnail": {
+                "url": "https://www.mysteriousbookshop.com/cdn/shop/products/9784871871181_p0_v1_s550x406_compact.jpg?v=1588717485"
+            },
+            "inLanguage": "en",
+            "name": "Joseph Heller - Catch-22 | The Mysterious Bookshop",
+            "description": "Catch-22 has become a word in the English language. The catch is: <strong>If you are crazy you can get out of the army</strong>. But if you want to get of the Army, that...",
+            "url": "https://www.mysteriousbookshop.com/products/joseph-heller-catch-23"
+        },
+        {
+            "type": "Product",
+            "offers": [
+                {
+                    "price": 11.11,
+                    "priceCurrency": "USD",
+                    "url": "https://www.amazon.com/Catch-22-Joseph-Heller/dp/0684833395"
+                }
+            ],
+            "thumbnail": {
+                "url": "https://m.media-amazon.com/images/I/61mt0Q0OZqL.jpg"
+            },
+            "aggregateRating": {
+                "ratingCount": 14262,
+                "ratingValue": 4.4,
+                "bestRating": 5
+            },
+            "name": "Catch-22: Heller, Joseph: 9780684833392: Amazon.com: Books",
+            "description": "<strong>Catch</strong>-<strong>22</strong> [<strong>Heller</strong>, <strong>Joseph</strong>] on Amazon.com. *FREE* shipping on qualifying offers. <strong>Catch</strong>-<strong>22</strong>",
+            "url": "https://www.amazon.com/Catch-22-Joseph-Heller/dp/0684833395"
+        },
+        {
+            "type": "Book",
+            "author": [
+                {
+                    "name": "https://www.simonandschuster.com/authors/Joseph-Heller/1061642"
+                }
+            ],
+            "inLanguage": "en",
+            "numberOfPages": 544,
+            "thumbnail": {
+                "url": "https://d28hgpri8am2if.cloudfront.net/book_images/cvr9781451621174_9781451621174.jpg"
+            },
+            "name": "Catch-22 | Book by Joseph Heller, Christopher Buckley | Official Publisher Page | Simon & Schuster",
+            "description": "<strong>Catch</strong>-<strong>22</strong> <strong>by</strong> <strong>Joseph</strong> <strong>Heller</strong> - This fiftieth-anniversary edition commemorates <strong>Joseph</strong> <strong>Heller</strong>’s masterpiece with a new introduction; critical essays and reviews b...",
+            "url": "https://www.simonandschuster.com/books/Catch-22/Joseph-Heller/9781451621174"
+        },
+        {
+            "type": "Book",
+            "author": [
+                {
+                    "name": "Joseph Heller · Paperback (06 Oct 1994)"
+                }
+            ],
+            "inLanguage": "en",
+            "numberOfPages": 569,
+            "thumbnail": {
+                "url": "https://blackwells.co.uk/resources/images/publishers/vintage.png"
+            },
+            "name": "Catch-22 : Joseph Heller : 9780099477310 : Blackwell's",
+            "description": "At the heart of <strong>Joseph</strong> <strong>Heller</strong>&#x27;s bestselling novel is a satirical indictment of military madness and stupidity, and the desire of the ordinary man to survive it.",
+            "url": "https://blackwells.co.uk/bookshop/product/Catch-22-by-Joseph-Heller/9780099477310"
+        },
+        {
+            "type": "WebPage",
+            "thumbnail": {
+                "url": "http://prodimage.images-bn.com/pimages/9781451626650_p0_v4_s1200x630.jpg"
+            },
+            "inLanguage": "en",
+            "name": "Catch-22 by Joseph Heller, Paperback | Barnes & Noble®",
+            "description": "This fiftieth-anniversary edition commemorates <strong>Joseph</strong> <strong>Heller</strong>’s masterpiece with a new introduction; critical essays and reviews by Norman Mailer, Alfred Kazin, Anthony Burgess, and others; rare papers and photos; and much more. Nominated as one of America’s...",
+            "url": "https://www.barnesandnoble.com/w/catch-22-joseph-heller/1100216099"
+        },
+        {
+            "type": "WebPage",
+            "thumbnail": {
+                "url": "http://shop.penguin.co.uk/cdn/shop/files/Catch22_grande.png?v=1710868153"
+            },
+            "inLanguage": "en",
+            "name": "Catch-22 by Joseph Heller – Penguin Shop",
+            "description": "<strong>A beautiful hardback edition of one of the most subversive anti-war novels ever written</strong> - reading Catch-22 is a rite of passage.Set in the closing months of World War II, this is the story of a bombardier named Yossarian who is frantic and furious because thousands of people he has never met ...",
+            "url": "https://shop.penguin.co.uk/products/catch-22-joseph-heller"
+        },
+        {
+            "type": "WebPage",
+            "significantLinks": [
+                {
+                    "name": "Titel",
+                    "url": "https://de.wikipedia.org/wiki/Catch-22#Titel"
+                },
+                {
+                    "name": "Inhalt",
+                    "url": "https://de.wikipedia.org/wiki/Catch-22#Inhalt"
+                },
+                {
+                    "name": "Romanfiguren",
+                    "url": "https://de.wikipedia.org/wiki/Catch-22#Romanfiguren"
+                },
+                {
+                    "name": "Fortsetzung",
+                    "url": "https://de.wikipedia.org/wiki/Catch-22#Fortsetzung"
+                },
+                {
+                    "name": "Verfilmungen",
+                    "url": "https://de.wikipedia.org/wiki/Catch-22#Verfilmungen"
+                },
+                {
+                    "name": "Adaption",
+                    "url": "https://de.wikipedia.org/wiki/Catch-22#Adaption"
+                },
+                {
+                    "name": "Ausgaben",
+                    "url": "https://de.wikipedia.org/wiki/Catch-22#Ausgaben"
+                },
+                {
+                    "name": "Einzelnachweise",
+                    "url": "https://de.wikipedia.org/wiki/Catch-22#Einzelnachweise"
+                }
+            ],
+            "thumbnail": {
+                "url": "https://upload.wikimedia.org/wikipedia/commons/8/80/Catch-22_(1961)_front_cover,_first_edition.jpg"
+            },
+            "inLanguage": "de",
+            "lastReviewed": "2003-09-10T10:33:31+00:00",
+            "name": "Catch-22 – Wikipedia",
+            "description": "Catch-22 ist ein <strong>1961 erschienener Roman des amerikanischen Schriftstellers Joseph Heller</strong>. Hellers Satire über die Absurdität des Krieges war anfangs wenig erfolgreich, wurde aber dank der Mundpropaganda begeisterter Leser schließlich zu einem Welterfolg. Die Zeitschrift Time zählt das ...",
+            "url": "https://de.wikipedia.org/wiki/Catch-22"
+        },
+        {
+            "type": "WebPage",
+            "inLanguage": "en",
+            "name": "Editions of Catch-22 by Joseph Heller",
+            "description": "Editions for <strong>Catch</strong>-<strong>22</strong>: 0684833395 (Paperback published in 2004), 0099477319 (Paperback published in 1994), (Kindle Edition published in 2010), 1451626657...",
+            "url": "https://www.goodreads.com/work/editions/814330-catch-22"
+        }
+    ],
+    "nextHref": "https://api.dev.swisscows.com/v4/web/search?query=Catch-22%20by%20Joseph%20Heller%20%E2%80%94%20Yellow%20Dog%20Bookshop&itemsCount=10&offset=10&locale=de-DE&freshness=All&spellcheck=true"
+}
