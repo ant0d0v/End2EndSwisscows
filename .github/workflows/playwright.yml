@@ -38,6 +38,18 @@ jobs:
           name: playwright-report-ui-${{ github.run_id }}
           path: playwright-report/
           retention-days: 1
+      
+      - name: Run UI failed tests
+        run: test:ui-failed
+        env:
+            HOME: /root
+  
+      - uses: actions/upload-artifact@v4
+        if: ${{ !cancelled() }}
+        with:
+          name: playwright-report-ui-failed-${{ github.run_id }}
+          path: playwright-report/
+          retention-days: 1    
 
       - name: Run API tests
         run: npm run test:api
