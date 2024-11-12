@@ -5,7 +5,6 @@
   "main": "index.js",
   "scripts": {
     "test:ui": "QASE_MODE=testops QASE_TESTOPS_RUN_TITLE=UI xvfb-run npx playwright test --project chromium firefox edge mobile",
-    "test:ui-failed": "QASE_MODE=testops QASE_TESTOPS_RUN_TITLE=UI xvfb-run npx playwright test --project chromium firefox edge mobile --last-failed",
     "test:api": "QASE_MODE=testops QASE_TESTOPS_RUN_TITLE=API npx playwright test api"
   },
   "keywords": [],
