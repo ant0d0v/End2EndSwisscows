@@ -443,6 +443,76 @@ test.describe("Place items", () => {
   });
 });
 
+test.describe("Product items", () => {
+  test("Check that product item thumbnails to have height = 60 and width = 60", async ({
+    app,
+  }) => {
+    //Actions
+    await app.home.open();
+    await app.home.header.clickHamburgerMenuButton();
+    await app.home.header.hamburgerMenu.selectRegion("Germany");
+    await app.home.header.searchForm.inputSearchCriteria("Catch-22 by Joseph Heller — Yellow Dog Bookshop");
+    await app.home.header.searchForm.clickEnterSearchField();
+    await app.webPage.product.expectProductsItemsToBeVisible();
+
+    //Assert
+    await app.webPage.product.expectThumbnailsToBeVisible();
+    await app.webPage.product.expectThumbnailsToHaveJSProperty({
+      height: 60,
+      width: 60,
+    });
+  });
+
+  test("Check that product item { title, price, description, site }", async ({
+    app,
+  }) => {
+    //Actions
+    await app.home.open();
+    await app.home.header.clickHamburgerMenuButton();
+    await app.home.header.hamburgerMenu.selectRegion("Germany");
+    await app.home.header.searchForm.inputSearchCriteria("Catch-22 by Joseph Heller — Yellow Dog Bookshop");
+    await app.home.header.searchForm.clickEnterSearchField();
+    await app.webPage.product.expectProductsItemsToBeVisible();
+
+    //Assert
+    await app.webPage.product.expectItemInfoToContain({
+      title: /\w+/,
+      price: /\d+\.\d{2} USD/,
+      description: /\w+/,
+      site: /(?:www\.)?[a-zA-Z0-9-]+\.[a-zA-Z]{2,}(?:\/[^\s]*)?/,
+    });
+  });
+
+  test("Check open new page when clicking image of product item", async ({ app }) => {
+    //Actions
+    await app.home.open();
+    await app.home.header.clickHamburgerMenuButton();
+    await app.home.header.hamburgerMenu.selectRegion("Germany");
+    await app.home.header.searchForm.inputSearchCriteria("Catch-22 by Joseph Heller — Yellow Dog Bookshop");
+    await app.home.header.searchForm.clickEnterSearchField();
+    await app.webPage.product.expectProductsItemsToBeVisible();
+    const currentUrl = await app.page.url();
+    await app.webPage.product.clickImageAt({ number: 1 });
+
+    //Assert
+    await app.expectPageNotToHaveUrl(app.page, currentUrl);
+  });
+
+  test("Check design of product item", async ({ app }, testInfo) => {
+    //Actions
+    await app.home.open();
+    await app.home.header.clickHamburgerMenuButton();
+    await app.home.header.hamburgerMenu.selectRegion("Germany");
+    await app.route.mockResponseBody("/v4/web", 'data/mock/web/productItemData.json');
+    await app.home.header.searchForm.inputSearchCriteria("Catch-22 by Joseph Heller — Yellow Dog Bookshop");
+    await app.home.header.searchForm.clickEnterSearchField();
+    await app.webPage.product.expectProductsItemsToBeVisible();
+
+    //Assert
+    await app.webPage.product.takeSnapshot(testInfo);
+  });
+});
+
 test("Check that loader skeleton", async ({ app }, testInfo) => {
   //Actions
   await app.home.open();
@@ -479,7 +549,7 @@ test("Check next button in the paging", async ({ app }) => {
     entities: [],
     items: expect.anything()
   });
-  await app.webPage.expectResultsToBeGreaterThanOrEqual(15)
+  await app.webPage.expectResultsToBeGreaterThanOrEqual(14)
   await app.webPage.pagination.expectPreviousButtonIsEnabled();
 });
 

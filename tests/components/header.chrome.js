@@ -50,6 +50,8 @@ test("Check query counter value when searching for video ", async ({ app }) => {
 test("Check query counter value when searching for music", async ({ app }) => {
   //Actions
   await app.home.open();
+  await app.route.mockResponseMusicBody("/audio/search/playlists", 'data/mock/music/testDataPlaylist.json');
+  await app.route.mockResponseMusicBody("/audio/search/tracks", 'data/mock/music/testDataTrack.json');
   await app.home.header.searchForm.inputSearchCriteria(faker.music.songName());
   await app.home.header.searchForm.clickEnterSearchField();
   await app.webPage.webPageItem.expectWebPageItemsToBeVisible();

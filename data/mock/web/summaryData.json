@@ -1,0 +1,437 @@
+{
+    "context": {
+        "query": "twitter",
+        "effectiveQuery": "twitter",
+        "offset": 0,
+        "itemsCount": 10,
+        "locale": "de-DE",
+        "spellcheck": true
+    },
+    "entities": [
+        {
+            "type": "Organization",
+            "logo": {
+                "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/X_logo_2023.svg/220px-X_logo_2023.svg.png",
+                "text": "X logo 2023"
+            },
+            "socialMediaProfiles": [
+                "https://de.wikipedia.org/wiki/X_(soziales_Netzwerk)",
+                "https://www.youtube.com/@Twitter",
+                "https://www.facebook.com/twitter",
+                "https://www.reddit.com/r/Twitter/",
+                "https://www.instagram.com/twitter/",
+                "https://github.com/twitter",
+                "https://www.pinterest.com/twitter/",
+                "https://apps.microsoft.com/detail/9wzdncrfj140",
+                "https://www.quora.com/topic/twitter-41",
+                "https://www.britannica.com/topic/Twitter"
+            ],
+            "website": "https://x.com/",
+            "name": "X",
+            "description": "X (stilisierte Schreibweise \uD835\uDD4F), bis Juli 2023 Twitter (englisch für „Gezwitscher“), ist ein Mikroblogging-Dienst des mehrheitlich von Elon Musk kontrollierten Unternehmens X Corp. (vormals Twitter Inc.). Angemeldete Nutzer können Texte mit bis zu 280 Zeichen (4000 Zeichen in der ...",
+            "disambiguatingDescription": "US-amerikanischer Kurzmitteilungsdienst",
+            "url": "https://de.wikipedia.org/wiki/X_(soziales_Netzwerk)",
+            "additionalProperties": [
+                {
+                    "name": "Staat",
+                    "value": "United States of America"
+                },
+                {
+                    "name": "Notation",
+                    "value": "\uD835\uDD4F (July 2023 -- )<br>U+EA00"
+                }
+            ]
+        },
+        {
+            "type": "Organization",
+            "logo": {
+                "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/X_logo_2023.svg/220px-X_logo_2023.svg.png",
+                "text": "X logo 2023"
+            },
+            "socialMediaProfiles": [
+                "https://www.youtube.com/@Twitter",
+                "https://en.wikipedia.org/wiki/Twitter",
+                "https://www.facebook.com/twitter",
+                "https://www.reddit.com/r/Twitter/",
+                "https://www.instagram.com/twitter/",
+                "https://github.com/twitter",
+                "https://www.pinterest.com/twitter/",
+                "https://apps.microsoft.com/detail/9wzdncrfj140",
+                "https://www.quora.com/topic/twitter-41",
+                "https://www.britannica.com/topic/Twitter"
+            ],
+            "website": "https://x.com/",
+            "name": "Twitter",
+            "description": "Twitter, officially known as X since July 2023, is a social networking service. It is one of the world's largest social media websites and one of the most-visited websites. Users can share short text messages, images, and videos in short posts commonly known as \"tweets\" or \"retweets\" (officially ...",
+            "disambiguatingDescription": "American social networking service founded in 2006",
+            "url": "https://en.wikipedia.org/wiki/Twitter",
+            "additionalProperties": [
+                {
+                    "name": "Formerly",
+                    "value": "Twitter (2006–2023)"
+                },
+                {
+                    "name": "Type of site",
+                    "value": "<a href='https://en.wikipedia.org/wiki/Social_networking_service'>Social networking service</a>"
+                },
+                {
+                    "name": "Available in",
+                    "value": "Multilingual"
+                },
+                {
+                    "name": "Founded",
+                    "value": "March 21, 2006; 18 years ago (2006-03-21), in San Francisco, California, U.S."
+                },
+                {
+                    "name": "Area served",
+                    "value": "Worldwide, except <a href='https://en.wikipedia.org/wiki/Censorship_of_Twitter'>blocking countries</a>"
+                },
+                {
+                    "name": "Owner",
+                    "value": "<a href='https://en.wikipedia.org/wiki/Odeo'>Odeo</a> (March–October 2006)<br><a href='https://en.wikipedia.org/wiki/Obvious_Corporation'>Obvious Corporation</a> (2006–2007)<br><a href='https://en.wikipedia.org/wiki/Twitter,_Inc.'>Twitter, Inc.</a> (2007–2023)<br><a href='https://en.wikipedia.org/wiki/X_Corp.'>X Corp.</a> (2023–present)"
+                },
+                {
+                    "name": "Founder(s)",
+                    "value": "<a href='https://en.wikipedia.org/wiki/Jack_Dorsey'>Jack Dorsey</a><br><a href='https://en.wikipedia.org/wiki/Noah_Glass'>Noah Glass</a><br><a href='https://en.wikipedia.org/wiki/Biz_Stone'>Biz Stone</a><br><a href='https://en.wikipedia.org/wiki/Evan_Williams_(Internet_entrepreneur)'>Evan Williams</a>"
+                },
+                {
+                    "name": "Chairman",
+                    "value": "<a href='https://en.wikipedia.org/wiki/Elon_Musk'>Elon Musk</a>"
+                },
+                {
+                    "name": "CEO",
+                    "value": "<a href='https://en.wikipedia.org/wiki/Linda_Yaccarino'>Linda Yaccarino</a>"
+                },
+                {
+                    "name": "URL",
+                    "value": "x.com"
+                },
+                {
+                    "name": "Registration",
+                    "value": "Required"
+                },
+                {
+                    "name": "Launched",
+                    "value": "July 15, 2006; 18 years ago (2006-07-15)"
+                },
+                {
+                    "name": "Current status",
+                    "value": "Active"
+                },
+                {
+                    "name": "Native client(s) on",
+                    "value": "<a href='https://en.wikipedia.org/wiki/Android_(operating_system)'>Android</a><br><a href='https://en.wikipedia.org/wiki/IOS'>iOS</a><br><a href='https://en.wikipedia.org/wiki/IPadOS'>iPadOS</a><br><a href='https://en.wikipedia.org/wiki/Fire_OS'>Amazon Fire Tablet</a>"
+                },
+                {
+                    "name": "Written in",
+                    "value": "<a href='https://en.wikipedia.org/wiki/Scala_(programming_language)'>Scala</a><br><a href='https://en.wikipedia.org/wiki/Java_(programming_language)'>Java</a><br><a href='https://en.wikipedia.org/wiki/Ruby_(programming_language)'>Ruby</a><br><a href='https://en.wikipedia.org/wiki/JavaScript'>JavaScript</a><br><a href='https://en.wikipedia.org/wiki/Python_(programming_language)'>Python</a>"
+                }
+            ]
+        }
+    ],
+    "items": [
+        {
+            "type": "WebPage",
+            "inLanguage": "de",
+            "lastReviewed": "2023-08-12T21:20:04+00:00",
+            "name": "X. Alles, was gerade los ist / X",
+            "description": "X. Alles, was gerade los ist / X",
+            "url": "https://twitter.com/"
+        },
+        {
+            "type": "WebPage",
+            "significantLinks": [
+                {
+                    "name": "Geschichte",
+                    "url": "https://de.wikipedia.org/wiki/X_(soziales_Netzwerk)#Geschichte"
+                },
+                {
+                    "name": "Charakterisierung des Dienstes",
+                    "url": "https://de.wikipedia.org/wiki/X_(soziales_Netzwerk)#Charakterisierung_des_Dienstes"
+                },
+                {
+                    "name": "Technik",
+                    "url": "https://de.wikipedia.org/wiki/X_(soziales_Netzwerk)#Technik"
+                },
+                {
+                    "name": "Datenschutz",
+                    "url": "https://de.wikipedia.org/wiki/X_(soziales_Netzwerk)#Datenschutz"
+                },
+                {
+                    "name": "Nutzung und Verbreitung",
+                    "url": "https://de.wikipedia.org/wiki/X_(soziales_Netzwerk)#Nutzung_und_Verbreitung"
+                },
+                {
+                    "name": "Rezeption",
+                    "url": "https://de.wikipedia.org/wiki/X_(soziales_Netzwerk)#Rezeption"
+                },
+                {
+                    "name": "Kritik",
+                    "url": "https://de.wikipedia.org/wiki/X_(soziales_Netzwerk)#Kritik"
+                },
+                {
+                    "name": "Zensur- und Sperrmaßnahmen",
+                    "url": "https://de.wikipedia.org/wiki/X_(soziales_Netzwerk)#Zensur-_und_Sperrmaßnahmen"
+                },
+                {
+                    "name": "Kritik an Zusammenarbeit mit autoritären Regierungen",
+                    "url": "https://de.wikipedia.org/wiki/X_(soziales_Netzwerk)#Kritik_an_Zusammenarbeit_mit_autoritären_Regierungen"
+                },
+                {
+                    "name": "Literatur",
+                    "url": "https://de.wikipedia.org/wiki/X_(soziales_Netzwerk)#Literatur"
+                },
+                {
+                    "name": "Weblinks",
+                    "url": "https://de.wikipedia.org/wiki/X_(soziales_Netzwerk)#Weblinks"
+                },
+                {
+                    "name": "Einzelnachweise",
+                    "url": "https://de.wikipedia.org/wiki/X_(soziales_Netzwerk)#Einzelnachweise"
+                }
+            ],
+            "inLanguage": "de",
+            "lastReviewed": "2024-11-05T07:10:04+00:00",
+            "name": "X (soziales Netzwerk) – Wikipedia",
+            "description": "X (stilisierte Schreibweise \uD835\uDD4F), bis Juli 2023 <strong>Twitter</strong> (englisch für „Gezwitscher“), ist ein Mikroblogging-Dienst des mehrheitlich von Elon Musk kontrollierten Unternehmens X Corp. (vormals <strong>Twitter</strong> Inc.). Angemeldete Nutzer können Texte mit bis zu 280 Zeichen (4000 Zeichen in der ...",
+            "url": "https://de.wikipedia.org/wiki/X_(soziales_Netzwerk)"
+        },
+        {
+            "type": "NewsCollection",
+            "hasPart": [
+                {
+                    "author": [],
+                    "publisher": {
+                        "name": "berliner-zeitung.de",
+                        "url": "https://www.berliner-zeitung.de/"
+                    },
+                    "thumbnail": {
+                        "url": "https://berliner-zeitung.imgix.net/2024/11/08/5f6cd1b3-65d8-49f4-a964-056bbc8b5d28.jpeg?w=1024&amp;auto=format"
+                    },
+                    "datePublished": "2024-11-09T08:15:02+00:00",
+                    "name": "Ulf Poschardt über Habecks Twitter-Comeback: „X nicht den linken Schreihälsen und Sozialpopulisten überlassen“",
+                    "description": "Wirtschaftsminister Robert Habeck ist zurück auf X. Sein Comeback ist kein Einzelfall, es gibt prominente Vorbilder.",
+                    "url": "https://www.berliner-zeitung.de/politik-gesellschaft/ulf-poschardt-ueber-habecks-twitter-comeback-x-nicht-den-linken-schreihaelsen-und-sozialpopulisten-ueberlassen-li.2270313"
+                },
+                {
+                    "author": [],
+                    "publisher": {
+                        "name": "rnd.de",
+                        "url": "https://www.rnd.de/"
+                    },
+                    "thumbnail": {
+                        "url": "https://www.rnd.de/resizer/v2/K3GULCKNRBH7LOUMVSNXBUBBK4.jpeg?auth=08a884fb1af1bf99b7393c5cdd922919c3928796ddcfad638e4dfae6243cdff2&amp;quality=70&amp;focal=2861%2C1041&amp;width=1200&amp;height=630"
+                    },
+                    "datePublished": "2024-11-08T21:10:03+00:00",
+                    "name": "Robert Habeck: X-Rückkehr mit Video",
+                    "description": "Habeck hatte den Schritt bereits am Vortag in sozialen Medien angedeutet. Fast sechs Jahre nach seinem Abschied von <strong>Twitter</strong> und Facebook meldete er sich auf der Plattform X zurück. „Orte wie diesen den Schreihälsen und Populisten zu überlassen ist leicht.",
+                    "url": "https://www.rnd.de/politik/robert-habeck-meldet-sich-bei-x-zurueck-netzwerk-nicht-den-schreihaelsen-ueberlassen-IQUQ3FMM6RH7ZFOXLBQCZWJWKM.html"
+                },
+                {
+                    "author": [],
+                    "publisher": {
+                        "name": "deutschlandfunk.de",
+                        "url": "https://www.deutschlandfunk.de/"
+                    },
+                    "thumbnail": {
+                        "url": "https://bilder.deutschlandfunk.de/9c/bd/59/15/9cbd5915-f341-48f8-a4dc-1866cc578075/wirtschaftsminister-habeck-102-1920x1080.jpg"
+                    },
+                    "datePublished": "2024-11-09T07:35:05+00:00",
+                    "name": "Soziale Medien - Vizekanzler Habeck (Grüne) zu X/Twitter - zurückgekehrt",
+                    "description": "Vizekanzler Habeck ist auf die Plattform X - ehemals <strong>Twitter</strong> - zurückgekehrt.",
+                    "url": "https://www.deutschlandfunk.de/vizekanzler-habeck-gruene-zu-x-twitter-zurueckgekehrt-104.html"
+                },
+                {
+                    "author": [],
+                    "publisher": {
+                        "name": "welt.de",
+                        "url": "https://www.welt.de/"
+                    },
+                    "thumbnail": {
+                        "url": "https://img.welt.de/img/bildergalerien/mobile254416988/1127933167-ci16x9-w1200/Bildschirmfoto-2024-11-07-um-19-42-54.jpg"
+                    },
+                    "datePublished": "2024-11-08T18:30:06+00:00",
+                    "name": "Robert Habeck kehrt nach fast sechs Jahren Abwesenheit auf X zurück - WELT",
+                    "description": "Vor fast sechs Jahren verabschiedete sich Robert Habeck von <strong>Twitter</strong>. Das Medium sei aggressiv, habe ihn und seine Politik verändert, begründete er damals. Nun ist er mit neuem Account zurück. Es sei leicht „Orte wie diesen den Schreihälsen und Populisten zu überlassen“, schreibt Habeck.",
+                    "url": "https://www.welt.de/wirtschaft/article254416824/Robert-Habeck-kehrt-nach-fast-sechs-Jahren-Abwesenheit-auf-X-zurueck.html"
+                },
+                {
+                    "author": [],
+                    "publisher": {
+                        "name": "zeit.de",
+                        "url": "https://www.zeit.de/"
+                    },
+                    "thumbnail": {
+                        "url": "https://img.zeit.de/politik/deutschland/2024-11/robert-habeck-rueckkehr-auf-x-bild/wide__1300x731"
+                    },
+                    "datePublished": "2024-11-09T02:35:02+00:00",
+                    "name": "Social Media: Robert Habeck kehrt auf X zurück, Elon Musk beschimpft Scholz | ZEIT ONLINE",
+                    "description": "Vor knapp fünf Jahren verabschiedete sich Habeck von <strong>Twitter</strong> und Facebook. Nun kehrt er auf X zurück. Musk beschimpft unterdessen den Kanzler auf der Plattform als Narr.",
+                    "url": "https://www.zeit.de/politik/deutschland/2024-11/robert-habeck-x-rueckkehr"
+                },
+                {
+                    "author": [],
+                    "publisher": {
+                        "name": "welt.de",
+                        "url": "https://www.welt.de/"
+                    },
+                    "thumbnail": {
+                        "url": "https://img.welt.de/img/politik/deutschland/mobile254417112/1557931567-ci16x9-w1200/Image-672d0b92ebdb8724738ebc62.jpg"
+                    },
+                    "datePublished": "2024-11-08T19:00:02+00:00",
+                    "name": "Nach sechs Jahren Abwesenheit: „Twitter desorientiert mich“, schrieb Habeck 2019. Jetzt ist er „back for good“ - Video - WELT",
+                    "description": "Robert Habeck ist nach sechsjähriger Abwesenheit zurück auf X. Der Vizekanzler hat ein neues Profil auf der Plattform und meldete sich mit einem &quot;back for good&quot; zurück. Man könne diesen Ort nicht &quot;Schreihälsen oder Populisten&quot; überlassen, so Habeck.",
+                    "url": "https://www.welt.de/politik/deutschland/video254417118/Nach-sechs-Jahren-Abwesenheit-Twitter-desorientiert-mich-schrieb-Habeck-2019-Jetzt-ist-er-back-for-good.html"
+                }
+            ]
+        },
+        {
+            "type": "WebPage",
+            "thumbnail": {
+                "url": "https://twitter.com/content/dam/about-twitter/global/TWTR_About_Share-Card.jpg.png"
+            },
+            "inLanguage": "de",
+            "lastReviewed": "2023-09-29T00:00:00+00:00",
+            "name": "X Datenschutzrichtlinien",
+            "description": "Kontaktdaten an Ihre örtliche Aufsichtsbehörde oder an die federführende Aufsichtsbehörde der <strong>Twitter</strong> International Unlimited Company, die Irish Data Protection Commission, zu wenden.",
+            "url": "https://x.com/de/privacy"
+        },
+        {
+            "type": "VideoCollection",
+            "hasPart": [
+                {
+                    "publisher": {
+                        "name": "www.youtube.com",
+                        "url": "https://www.youtube.com/"
+                    },
+                    "interactionStatistic": {},
+                    "thumbnail": {
+                        "url": "https://i.ytimg.com/vi/OEp7Zndlm0s/hqdefault.jpg"
+                    },
+                    "name": "WERBEPARTNER CANCELN, STRIKES und DUMMHEIT ...",
+                    "description": "Auf YouTube findest du großartige Videos und erstklassige Musik. Außerdem kannst du eigene Inhalte hochladen und mit Freunden oder mit der ganzen Welt teilen.",
+                    "url": "https://www.youtube.com/watch?v=OEp7Zndlm0s"
+                },
+                {
+                    "publisher": {
+                        "name": "www.youtube.com",
+                        "url": "https://www.youtube.com/"
+                    },
+                    "interactionStatistic": {},
+                    "datePublished": "2017-12-09T13:59:05+00:00",
+                    "thumbnail": {
+                        "url": "https://i.ytimg.com/vi/wY7UQFqo6MM/maxresdefault.jpg"
+                    },
+                    "name": "Twitter für Dummies | So funktioniert Twitter (Tutorial) - YouTube",
+                    "description": "Jetzt kostenloses Konto bei Twitter erstellen ► https://www.twitter.com NEUE VERSION DES VIDEOS VERFÜGBAR! ► Jetzt anschauen: https://youtu.be/Xuxq6Uqwdts Di...",
+                    "url": "https://www.youtube.com/watch?v=wY7UQFqo6MM"
+                },
+                {
+                    "publisher": {
+                        "name": "www.youtube.com",
+                        "url": "https://www.youtube.com/"
+                    },
+                    "interactionStatistic": {},
+                    "thumbnail": {
+                        "url": "https://i.ytimg.com/vi/H9HdYk10Rws/hqdefault.jpg"
+                    },
+                    "name": "6 Neukunden im Monat nur durch Twitter",
+                    "description": "Auf YouTube findest du großartige Videos und erstklassige Musik. Außerdem kannst du eigene Inhalte hochladen und mit Freunden oder mit der ganzen Welt teilen.",
+                    "url": "https://www.youtube.com/watch?v=H9HdYk10Rws"
+                },
+                {
+                    "publisher": {
+                        "name": "www.youtube.com",
+                        "url": "https://www.youtube.com/"
+                    },
+                    "interactionStatistic": {},
+                    "datePublished": "2023-07-04T11:02:24+00:00",
+                    "thumbnail": {
+                        "url": "https://i.ytimg.com/vi/UYGHgYajKUs/hqdefault.jpg"
+                    },
+                    "name": "Twitter führt Gebühren für „TweetDeck“-Nutzung ein - YouTube",
+                    "description": "Twitter beschränkt den Zugang zu „TweetDeck“ in Zukunft auf verifizierte, zahlende Nutzer. Die Facebook-Mutter Meta will von den Turbulenzen bei Twitter prof...",
+                    "url": "https://www.youtube.com/watch?v=UYGHgYajKUs"
+                },
+                {
+                    "publisher": {
+                        "name": "www.youtube.com",
+                        "url": "https://www.youtube.com/"
+                    },
+                    "interactionStatistic": {},
+                    "datePublished": "2024-09-09T15:30:05+00:00",
+                    "thumbnail": {
+                        "url": "https://i.ytimg.com/vi/9wAv7bCcHxc/maxresdefault.jpg"
+                    },
+                    "name": "Elon Musk und die Twitter-Übernahme | Doku HD Reupload | ARTE ...",
+                    "description": "Die Dokumentarfilm beleuchtet Elon Musks Weg von einem der provokantesten Nutzer der Social-Media-Plattform zu ihrem Eigentümer – und erforscht die weitreich...",
+                    "url": "https://www.youtube.com/watch?v=9wAv7bCcHxc"
+                },
+                {
+                    "publisher": {
+                        "name": "www.youtube.com",
+                        "url": "https://www.youtube.com/"
+                    },
+                    "interactionStatistic": {},
+                    "thumbnail": {
+                        "url": "https://i.ytimg.com/vi/wogTzRo0po0/hqdefault.jpg"
+                    },
+                    "name": "Ars Boni 521 Community Notes, der DSA und X/Twitter",
+                    "description": "Auf YouTube findest du großartige Videos und erstklassige Musik. Außerdem kannst du eigene Inhalte hochladen und mit Freunden oder mit der ganzen Welt teilen.",
+                    "url": "https://www.youtube.com/watch?v=wogTzRo0po0"
+                }
+            ]
+        },
+        {
+            "type": "WebPage",
+            "thumbnail": {
+                "url": "https://cdn.prod.www.spiegel.de/public/spon/images/logos/fb_logo_default.jpg"
+            },
+            "inLanguage": "de",
+            "lastReviewed": "2024-11-07T19:14:00+00:00",
+            "name": "X (Twitter) - DER SPIEGEL",
+            "description": "Deutschlands führende Nachrichtenseite. Alles Wichtige aus Politik, Wirtschaft, Sport, Kultur, Wissenschaft, Technik und mehr.",
+            "url": "https://www.spiegel.de/thema/twitter/"
+        },
+        {
+            "type": "WebPage",
+            "thumbnail": {
+                "url": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/b9/5d/99/b95d996c-ef54-a740-3310-2d19dd8afa0d/ProductionAppIcon-0-0-1x_U007emarketing-0-7-0-0-0-85-220.png/1200x630wa.png"
+            },
+            "inLanguage": "de",
+            "lastReviewed": "2024-07-04T06:05:04+00:00",
+            "name": "‎X im App Store",
+            "description": "Bei der App gibt es immer wieder kleinere oder größere Probleme, die in der <strong>Twitter</strong>-Gemeinde für Verwirrung sorgen. Zum Beispiel verschwinden plötzlich mal die Follower aus der Übersicht. Oder die Herzen (favs), die man vergeben hat, verschwinden wie von Geisterhand wieder.",
+            "url": "https://apps.apple.com/de/app/x/id333903271"
+        },
+        {
+            "type": "WebPage",
+            "thumbnail": {
+                "url": "https://upload.wikimedia.org/wikipedia/commons/c/ce/X_logo_2023.svg"
+            },
+            "inLanguage": "en",
+            "lastReviewed": "2024-11-09T23:15:24+00:00",
+            "name": "Twitter - Wikipedia",
+            "description": "<strong>Twitter</strong>, officially known as X since July 2023, is a social networking service. It is one of the world&#x27;s largest social media websites and one of the most-visited websites. Users can share short text messages, images, and videos in short posts commonly known as &quot;tweets&quot; or &quot;retweets&quot; (officially ...",
+            "url": "https://en.wikipedia.org/wiki/Twitter"
+        },
+        {
+            "type": "WebPage",
+            "inLanguage": "de",
+            "name": "Deutsche Bundesbank",
+            "description": "Deutsche Bundesbank",
+            "url": "https://twitter.com/bundesbank"
+        },
+        {
+            "type": "WebPage",
+            "thumbnail": {
+                "url": "https://x.com/content/dam/legal-twitter/privacy-policy-2022/Twitter-terms-of-service-share.jpg"
+            },
+            "inLanguage": "de",
+            "name": "X Allgemeine Geschäftsbedingungen",
+            "description": "Diese AGB bilden einen Vertrag zwischen Ihnen und <strong>Twitter</strong> International Unlimited Company (Firmennr. 503351, USt-Nr. IE9803175Q), einem irischen Unternehmen, das X und die Dienste bereitstellt, mit eingetragenem Sitz in One Cumberland Place, Fenian Street Dublin 2, D02 AX07, Ireland.",
+            "url": "https://x.com/de/tos"
+        }
+    ],
+    "nextHref": "https://api.dev.swisscows.com/v4/web/search?query=twitter&itemsCount=10&offset=10&locale=de-DE&freshness=All&spellcheck=true"
+}

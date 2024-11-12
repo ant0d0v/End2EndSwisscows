@@ -588,11 +588,10 @@ test.describe("Widget summary", () => {
     await app.webPage.webPageItem.summary.takeSnapshot(testInfo);
   });
 
-  test("Check summary widget content when AI_Error_NoContent ", async ({
-    app,
-  }, testInfo) => {
+  test("Check summary widget content when AI_Error_NoContent ", async ({ app }) => {
     //Actions
     await app.home.open();
+    await app.route.mockResponseBody("/v4/web", 'data/mock/web/summaryData.json');
     await app.home.header.searchForm.inputSearchCriteria("site:twitter.com");
     await app.home.header.searchForm.clickEnterSearchField();
     await app.webPage.webPageItem.expectWebPageItemsToBeVisible();

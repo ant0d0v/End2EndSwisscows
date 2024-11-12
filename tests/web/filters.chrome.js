@@ -7,7 +7,7 @@ for (const { testID, freshnessPart, fiterName } of filterData.byDate) {
   test(`${testID} Check search results by filter ${fiterName} navigates to the corresponding URL and matches response results`, async ({
     app,
   }) => {
-    const query = "news"
+    const query = "today"
     //Actions
     await app.home.open();
     await app.home.header.searchForm.inputSearchCriteria(query);
