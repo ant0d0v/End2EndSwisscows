@@ -19,7 +19,7 @@ for (const { testID, freshnessPart, fiterName } of filterData.byDate) {
         endpoint: "/v4/web",
         locator: fiterName,
       });
-    await app.webPage.webPageItem.expectWebPageItemsToBeVisible();  
+    await app.webPage.expectContentToBeVisible();  
 
     //Assert
     await app.expectPageToHaveUrl(app.page,`${process.env.BASE_URL}/en/web?query=${
