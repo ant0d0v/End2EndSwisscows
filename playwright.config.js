@@ -23,7 +23,7 @@ export default defineConfig({
   /* Retry on CI only */
   retries: process.env.CI ? 1 : 0,
   /* Opt out of parallel tests on CI. */
-  workers: process.env.CI ? 3 : undefined,
+  workers: process.env.CI ? 2 : undefined,
   // reporter: process.env.CI ? [['github'], ['blob']] : 'list',
 
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
@@ -60,8 +60,6 @@ export default defineConfig({
     updateSnapshots: "none",
     locale: "en-GB",
     colorScheme: "light",
-    screenshot: "only-on-failure",
-    video: "retain-on-failure",
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: "on-first-retry",
   },
@@ -98,8 +96,6 @@ export default defineConfig({
       use: {
         ...devices["Desktop Firefox"],
         viewport: { width: 1440, height: 900 },
-        screenshot: "only-on-failure",
-        video: "retain-on-failure",
       },
     },
     {
@@ -108,8 +104,6 @@ export default defineConfig({
       use: {
         ...devices["Desktop Edge"],
         viewport: { width: 1440, height: 900 },
-        screenshot: "only-on-failure",
-        video: "retain-on-failure",
       },
     },
     {
@@ -117,9 +111,7 @@ export default defineConfig({
       testMatch: /.*\.mobile\.js/,
       use: {
         ...devices["Pixel 7"],
-        channel: "chrome",
-        screenshot: "only-on-failure",
-        video: "retain-on-failure",
+        channel: "chrome"
       },
     },
     {
