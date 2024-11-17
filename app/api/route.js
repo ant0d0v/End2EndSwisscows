@@ -5,7 +5,7 @@ export default class Route extends PageHolder {
   }
 
   //Actions
-  mockResponseStatusCode = async (endpoint, code) => {
+  requestWithGivenResponseStatusCode = async (endpoint, code) => {
     await this.page.route(
       process.env.API_URL + `${endpoint}/*`,
       async (route) => {
@@ -16,7 +16,7 @@ export default class Route extends PageHolder {
     );
   };
   
-  mockResponseBody = async (endpoint, body) => {
+  requestWithGivenResponse = async (endpoint, body) => {
     await this.page.route(process.env.API_URL + `${endpoint}/**`, (route) =>
       route.fulfill({
         contentType: "application/json",
@@ -25,7 +25,7 @@ export default class Route extends PageHolder {
     );
   };
 
-  mockResponseBodyWithText = async (endpoint, body) => {
+  requestWithGivenResponseTypeText = async (endpoint, body) => {
     await this.page.route(process.env.API_URL + `${endpoint}**`, (route) =>
       route.fulfill({
         contentType: "text/plain; charset=utf-8",

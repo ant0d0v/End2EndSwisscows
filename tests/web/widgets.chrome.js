@@ -163,7 +163,7 @@ test.describe("Widget faq", () => {
   test("Check design widget faq", async ({ app }, testInfo) => {
     //Actions
     await app.home.open();
-    await app.route.mockResponseBody("/v4/web", "data/mock/web/faqWidget.json");
+    await app.route.requestWithGivenResponse("/v4/web", "data/mock/web/faqWidget.json");
     await app.home.header.searchForm.inputSearchCriteria("questions phone");
     await app.home.header.searchForm.clickEnterSearchField();
     await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
@@ -248,7 +248,7 @@ test.describe("Widget infobox", () => {
     await app.home.open();
     await app.home.header.clickHamburgerMenuButton();
     await app.home.header.hamburgerMenu.selectRegion("Germany");
-    await app.route.mockResponseBody("/v4/web","data/mock/web/infoboxPerson.json");
+    await app.route.requestWithGivenResponse("/v4/web","data/mock/web/infoboxPerson.json");
     await app.home.header.searchForm.inputSearchCriteria("Cristiano Ronaldo");
     await app.home.header.searchForm.clickEnterSearchField();
     await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
@@ -262,7 +262,7 @@ test.describe("Widget infobox", () => {
     await app.home.open();
     await app.home.header.clickHamburgerMenuButton();
     await app.home.header.hamburgerMenu.selectRegion("Germany");
-    await app.route.mockResponseBody("/v4/web","data/mock/web/infoboxMovie.json");
+    await app.route.requestWithGivenResponse("/v4/web","data/mock/web/infoboxMovie.json");
     await app.home.header.searchForm.inputSearchCriteria("Dune");
     await app.home.header.searchForm.clickEnterSearchField();
     await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
@@ -577,7 +577,7 @@ test.describe("Widget summary", () => {
     await app.home.header.searchForm.inputSearchCriteria(faker.word.sample());
     await app.home.header.searchForm.clickEnterSearchField();
     await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
-    await app.route.mockResponseBodyWithText(
+    await app.route.requestWithGivenResponseTypeText(
       "/ai/summary",
       "data/mock/web/summary.text"
     );
@@ -591,7 +591,7 @@ test.describe("Widget summary", () => {
   test("Check summary widget content when AI_Error_NoContent ", async ({ app }) => {
     //Actions
     await app.home.open();
-    await app.route.mockResponseBody("/v4/web", 'data/mock/web/summaryData.json');
+    await app.route.requestWithGivenResponse("/v4/web", 'data/mock/web/summaryData.json');
     await app.home.header.searchForm.inputSearchCriteria("site:twitter.com");
     await app.home.header.searchForm.clickEnterSearchField();
     await app.webPage.webPageItem.expectWebPageItemsToBeVisible();

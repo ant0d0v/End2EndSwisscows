@@ -70,7 +70,7 @@ test("Check more button in detail", async ({ app }) => {
   await app.webPage.header.hamburgerMenu.selectRegion("Germany");
   await app.webPage.header.navigation.clickShoppingTab();
   await app.shoppingPage.item.expectShoppingItemsToBeVisible();
-  await app.route.mockResponseBody("/shopping/products", 'data/mock/shopping/details.json');
+  await app.route.requestWithGivenResponse("/shopping/products", 'data/mock/shopping/details.json');
   await app.shoppingPage.item.selectProductAt({ number: 1 });
   await app.shoppingPage.details.clickMore();
 
@@ -90,7 +90,7 @@ test("Check less button in detail", async ({ app }) => {
   await app.webPage.header.hamburgerMenu.selectRegion("Germany");
   await app.webPage.header.navigation.clickShoppingTab();
   await app.shoppingPage.item.expectShoppingItemsToBeVisible();
-  await app.route.mockResponseBody("/shopping/products", 'data/mock/shopping/details.json');
+  await app.route.requestWithGivenResponse("/shopping/products", 'data/mock/shopping/details.json');
   await app.shoppingPage.item.selectProductAt({ number: 1 });
   await app.shoppingPage.details.clickMore();
   await app.shoppingPage.details.clickLess();
@@ -184,7 +184,7 @@ test(`Check design product details`, async ({ app }, testInfo) => {
   await app.webPage.header.hamburgerMenu.selectRegion("Germany");
   await app.webPage.header.navigation.clickShoppingTab();
   await app.shoppingPage.item.expectShoppingItemsToBeVisible();
-  await app.route.mockResponseBody("/shopping/products", 'data/mock/shopping/details.json');
+  await app.route.requestWithGivenResponse("/shopping/products", 'data/mock/shopping/details.json');
   await app.shoppingPage.item.selectProductAt({ number: 1 });
   await app.shoppingPage.details.expectDetailsImageToBeVisible();
 

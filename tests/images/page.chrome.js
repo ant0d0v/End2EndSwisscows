@@ -32,7 +32,7 @@ test("Check request is blocked 450 error page ", async ({ app }, testInfo) => {
 test("Check 500 unknown Error Page  ", async ({ app }, testInfo) => {
   //Actions
   await app.home.open();
-  await app.route.mockResponseStatusCode("/v4/images", 500);
+  await app.route.requestWithGivenResponseStatusCode("/v4/images", 500);
   await app.home.header.searchForm.inputSearchCriteria("food");
   await app.home.header.searchForm.clickEnterSearchField();
   await app.imagePage.header.navigation.clickImageTab();
@@ -47,7 +47,7 @@ test("Check 500 unknown Error Page  ", async ({ app }, testInfo) => {
 test("Check 501 unknown Error Page  ", async ({ app }, testInfo) => {
   //Actions
   await app.home.open();
-  await app.route.mockResponseStatusCode("/v4/images", 501);
+  await app.route.requestWithGivenResponseStatusCode("/v4/images", 501);
   await app.home.header.searchForm.inputSearchCriteria("food");
   await app.home.header.searchForm.clickEnterSearchField();
   await app.imagePage.header.navigation.clickImageTab();
@@ -62,7 +62,7 @@ test("Check 501 unknown Error Page  ", async ({ app }, testInfo) => {
 test("Check 429 Too many requests", async ({ app }, testInfo) => {
   //Actions
   await app.home.open();
-  await app.route.mockResponseStatusCode("/v4/images", 429);
+  await app.route.requestWithGivenResponseStatusCode("/v4/images", 429);
   await app.home.header.searchForm.inputSearchCriteria("food");
   await app.home.header.searchForm.clickEnterSearchField();
   await app.imagePage.header.navigation.clickImageTab();
@@ -77,7 +77,7 @@ test("Check 429 Too many requests", async ({ app }, testInfo) => {
 test("Check design images page", async ({ app },testInfo) => {
   //Actions
   await app.home.open();
-  await app.route.mockResponseBody("/v4/images", 'data/mock/images/testData.json');
+  await app.route.requestWithGivenResponse("/v4/images", 'data/mock/images/testData.json');
   await app.home.header.searchForm.inputSearchCriteria("ronaldo");
   await app.home.header.searchForm.clickEnterSearchField();
   await app.webPage.header.navigation.clickImageTab();
@@ -370,7 +370,7 @@ test("Check design of details pane", async ({ app }, testInfo ) => {
   await app.home.open();
   await app.home.header.searchForm.inputSearchCriteria(faker.word.sample());
   await app.home.header.searchForm.clickEnterSearchField();
-  await app.route.mockResponseBody("/v4/images", 'data/mock/images/testData.json');
+  await app.route.requestWithGivenResponse("/v4/images", 'data/mock/images/testData.json');
   await app.webPage.header.navigation.clickImageTab();
   await app.imagePage.item.expectImageItemsToBeVisible();
   await app.imagePage.item.clickItemAt({ number: 1 });

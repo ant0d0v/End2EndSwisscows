@@ -215,7 +215,7 @@ test.skip(`Check error when sending message with 400 status code `, async ({
 }) => {
   //Actions
   await app.contactPage.open();
-  await app.contactRoute.mockResponseStatusCode(400);
+  await app.contactRoute.requestWithGivenResponseStatusCode(400);
   await app.contactPage.form.fillContactForm({
     nameField: faker.person.fullName(),
     emailField: faker.internet.exampleEmail(),

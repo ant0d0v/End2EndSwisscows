@@ -3,7 +3,7 @@ import { randomAdsQuery } from "../../helpers/random.js"
 test("Check design of product images ads", async ({ app }, testInfo) => {
   //Actions
   await app.home.open();
-  await app.route.mockResponseBody("/v4/images", 'data/mock/images/productAds.json');
+  await app.route.requestWithGivenResponse("/v4/images", 'data/mock/images/productAds.json');
   await app.home.header.searchForm.inputSearchCriteria(randomAdsQuery());
   await app.home.header.searchForm.clickEnterSearchField();
   await app.imagePage.header.navigation.clickImageTab();
@@ -77,7 +77,7 @@ test("Check next button and prev button in the product advertising ", async ({
 }) => {
   //Actions
   await app.home.open();
-  await app.route.mockResponseBody("/v4/images", 'data/mock/images/productAds.json');
+  await app.route.requestWithGivenResponse("/v4/images", 'data/mock/images/productAds.json');
   await app.home.header.searchForm.inputSearchCriteria(randomAdsQuery());
   await app.home.header.searchForm.clickEnterSearchField();
   await app.imagePage.header.navigation.clickImageTab();

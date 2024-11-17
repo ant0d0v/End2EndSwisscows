@@ -3,7 +3,7 @@ import { randomAdsQuery } from "../../helpers/random.js"
 test("Check design of product ads", async ({ app }, testInfo) => {
   //Actions
   await app.home.open();
-  await app.route.mockResponseBody("/v4/web", 'data/mock/web/productAds.json');
+  await app.route.requestWithGivenResponse("/v4/web", 'data/mock/web/productAds.json');
   await app.home.header.searchForm.inputSearchCriteria(randomAdsQuery());
   await app.home.header.searchForm.clickEnterSearchField();
   await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
@@ -73,7 +73,7 @@ test("Check next button and prev button in the product advertising ", async ({
 }) => {
   //Actions
   await app.home.open();
-  await app.route.mockResponseBody("/v4/web", 'data/mock/web/productAds.json');
+  await app.route.requestWithGivenResponse("/v4/web", 'data/mock/web/productAds.json');
   await app.home.header.searchForm.inputSearchCriteria(randomAdsQuery());
   await app.home.header.searchForm.clickEnterSearchField();
   await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
@@ -126,7 +126,7 @@ test("Check { title, site, callout, ad } of web page ads item", async ({ app }) 
 test("Check design of web page ads", async ({ app }, testInfo) => {
   //Actions
   await app.home.open();
-  await app.route.mockResponseBody("/v4/web", 'data/mock/web/webPageAds.json');
+  await app.route.requestWithGivenResponse("/v4/web", 'data/mock/web/webPageAds.json');
   await app.home.header.searchForm.inputSearchCriteria(randomAdsQuery());
   await app.home.header.searchForm.clickEnterSearchField();
   await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
