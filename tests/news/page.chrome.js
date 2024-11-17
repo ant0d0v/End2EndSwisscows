@@ -117,7 +117,7 @@ test("Check search results in news page ", async ({ app }) => {
   await app.newsPage.item.expectNewsResultToHaveCount(10)
 });
 
-test.only("Check open page when clicking title of item", async ({ app }) => {
+test("Check open page when clicking title of item", async ({ app }) => {
   //Actions
   await app.home.open();
   await app.home.header.clickHamburgerMenuButton();
@@ -134,7 +134,7 @@ test.only("Check open page when clicking title of item", async ({ app }) => {
   await app.expectPageNotToHaveUrl(app.page, currentUrl);
 });
 
-test.only("Check open page when clicking image of item", async ({ app }) => {
+test("Check open page when clicking image of item", async ({ app }) => {
   //Actions
   await app.home.open();
   await app.home.header.clickHamburgerMenuButton();
