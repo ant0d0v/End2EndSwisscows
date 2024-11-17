@@ -117,12 +117,12 @@ test("Check search results in news page ", async ({ app }) => {
   await app.newsPage.item.expectNewsResultToHaveCount(10)
 });
 
-test("Check open page when clicking title of item", async ({ app }) => {
+test.only("Check open page when clicking title of item", async ({ app }) => {
   //Actions
   await app.home.open();
   await app.home.header.clickHamburgerMenuButton();
   await app.home.header.hamburgerMenu.selectRegion("Germany");
-  await app.home.header.searchForm.inputSearchCriteria("ukraine");
+  await app.home.header.searchForm.inputSearchCriteria("ronaldo");
   await app.home.header.searchForm.clickEnterSearchField();
   await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
   await app.newsPage.header.navigation.clickNewsTab();
@@ -134,12 +134,12 @@ test("Check open page when clicking title of item", async ({ app }) => {
   await app.expectPageNotToHaveUrl(app.page, currentUrl);
 });
 
-test("Check open page when clicking image of item", async ({ app }) => {
+test.only("Check open page when clicking image of item", async ({ app }) => {
   //Actions
   await app.home.open();
   await app.home.header.clickHamburgerMenuButton();
   await app.home.header.hamburgerMenu.selectRegion("Germany");
-  await app.home.header.searchForm.inputSearchCriteria("ukraine");
+  await app.home.header.searchForm.inputSearchCriteria("ronaldo");
   await app.home.header.searchForm.clickEnterSearchField();
   await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
   await app.newsPage.header.navigation.clickNewsTab();

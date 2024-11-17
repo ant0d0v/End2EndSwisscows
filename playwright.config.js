@@ -60,6 +60,8 @@ export default defineConfig({
     updateSnapshots: "none",
     locale: "en-GB",
     colorScheme: "light",
+    screenshot: "only-on-failure",
+    video: "retain-on-failure",
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: "on-first-retry",
   },
@@ -86,7 +88,6 @@ export default defineConfig({
         channel: "chrome",
         storageState: "./data/auth/internalUser.json",
         viewport: { width: 1440, height: 900 },
-        screenshot: "only-on-failure",
       },
       dependencies: ["setup"],
     },
