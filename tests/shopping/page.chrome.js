@@ -40,7 +40,7 @@ test("Check 500 unknown Error Page  ", async ({ app }, testInfo) => {
   await app.home.open();
   await app.home.header.clickHamburgerMenuButton();
   await app.home.header.hamburgerMenu.selectRegion("Germany");
-  await app.route.mockResponseStatusCode("/shopping", 500);
+  await app.route.requestWithGivenResponseStatusCode("/shopping", 500);
   await app.home.header.searchForm.inputSearchCriteria("food");
   await app.home.header.searchForm.clickEnterSearchField();
   await app.webPage.header.navigation.clickShoppingTab();
@@ -57,7 +57,7 @@ test("Check 429 Too many requests", async ({ app }, testInfo) => {
   await app.home.open();
   await app.home.header.clickHamburgerMenuButton();
   await app.home.header.hamburgerMenu.selectRegion("Germany");
-  await app.route.mockResponseStatusCode("/shopping", 429);
+  await app.route.requestWithGivenResponseStatusCode("/shopping", 429);
   await app.home.header.searchForm.inputSearchCriteria("food");
   await app.home.header.searchForm.clickEnterSearchField();
   await app.webPage.header.navigation.clickShoppingTab();
@@ -95,7 +95,7 @@ test("Check design shopping page", async ({ app },testInfo) => {
   await app.home.open();
   await app.home.header.clickHamburgerMenuButton();
   await app.home.header.hamburgerMenu.selectRegion("Germany");
-  await app.route.mockResponseBody("/shopping", 'data/mock/shopping/testData.json');
+  await app.route.requestWithGivenResponse("/shopping", 'data/mock/shopping/testData.json');
   await app.home.header.searchForm.inputSearchCriteria("ronaldo");
   await app.home.header.searchForm.clickEnterSearchField();
   await app.webPage.header.navigation.clickShoppingTab();

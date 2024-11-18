@@ -36,7 +36,7 @@ test("Check request is blocked 450 error music page", async ({ app }, testInfo) 
 test("Check 500 unknown Error Page  ", async ({ app }, testInfo) => {
   //Actions
   await app.home.open();
-  await app.route.mockResponseStatusCode("/audio/search", 500);
+  await app.route.requestWithGivenResponseStatusCode("/audio/search", 500);
   await app.home.header.searchForm.inputSearchCriteria("food");
   await app.home.header.searchForm.clickEnterSearchField();
   await app.musicPage.header.navigation.clickMusicTab();
@@ -51,7 +51,7 @@ test("Check 500 unknown Error Page  ", async ({ app }, testInfo) => {
 test("Check 429 Too many requests", async ({ app }, testInfo) => {
   //Actions
   await app.home.open();
-  await app.route.mockResponseStatusCode("/audio/search", 429);
+  await app.route.requestWithGivenResponseStatusCode("/audio/search", 429);
   await app.home.header.searchForm.inputSearchCriteria("food");
   await app.home.header.searchForm.clickEnterSearchField();
   await app.musicPage.header.navigation.clickMusicTab();

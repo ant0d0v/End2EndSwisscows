@@ -35,7 +35,7 @@ test.describe("Error pages in dark theme", () => {
   test("Check 429 Too many requests", async ({ app }, testInfo) => {
     //Actions
     await app.home.open();
-    await app.route.mockResponseStatusCode("/v4/web", 429);
+    await app.route.requestWithGivenResponseStatusCode("/v4/web", 429);
     await app.home.header.searchForm.inputSearchCriteria("food");
     await app.home.header.searchForm.clickEnterSearchField();
 
@@ -49,7 +49,7 @@ test.describe("Error pages in dark theme", () => {
   test("Check 500 unknown Error Page", async ({ app }, testInfo) => {
     //Actions
     await app.home.open();
-    await app.route.mockResponseStatusCode("/v4/web", 500);
+    await app.route.requestWithGivenResponseStatusCode("/v4/web", 500);
     await app.home.header.searchForm.inputSearchCriteria("food");
     await app.home.header.searchForm.clickEnterSearchField();
 
@@ -63,7 +63,7 @@ test.describe("Error pages in dark theme", () => {
   test("Check 501 unsupported region", async ({ app }, testInfo) => {
     //Actions
     await app.home.open();
-    await app.route.mockResponseStatusCode("/v4/web", 501);
+    await app.route.requestWithGivenResponseStatusCode("/v4/web", 501);
     await app.home.header.searchForm.inputSearchCriteria("food");
     await app.home.header.searchForm.clickEnterSearchField();
 
@@ -115,7 +115,7 @@ test("Check design web page", async ({ app },testInfo) => {
   await app.home.open();
   await app.home.header.clickHamburgerMenuButton();
   await app.home.header.hamburgerMenu.selectRegion("Germany");
-  await app.route.mockResponseBody("/v4/web", 'data/mock/web/testData.json');
+  await app.route.requestWithGivenResponse("/v4/web", 'data/mock/web/testData.json');
   await app.home.header.searchForm.inputSearchCriteria("ronaldo");
   await app.home.header.searchForm.clickEnterSearchField();
   await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
@@ -365,7 +365,7 @@ test.describe("Book items", () => {
     await app.home.open();
     await app.home.header.clickHamburgerMenuButton();
     await app.home.header.hamburgerMenu.selectRegion("Germany");
-    await app.route.mockResponseBody("/v4/web", 'data/mock/web/bookItemData.json');
+    await app.route.requestWithGivenResponse("/v4/web", 'data/mock/web/bookItemData.json');
     await app.home.header.searchForm.inputSearchCriteria("Harry Potter and the Sorcerer’s Stone | Goodreads");
     await app.home.header.searchForm.clickEnterSearchField();
     await app.webPage.book.expectBookItemsToBeVisible();
@@ -433,7 +433,7 @@ test.describe("Place items", () => {
     await app.home.open();
     await app.home.header.clickHamburgerMenuButton();
     await app.home.header.hamburgerMenu.selectRegion("Germany");
-    await app.route.mockResponseBody("/v4/web", 'data/mock/web/placeItemData.json');
+    await app.route.requestWithGivenResponse("/v4/web", 'data/mock/web/placeItemData.json');
     await app.home.header.searchForm.inputSearchCriteria("Hotel Malte Astotel");
     await app.home.header.searchForm.clickEnterSearchField();
     await app.webPage.place.expectPlaceItemsToBeVisible();
@@ -503,7 +503,7 @@ test.describe("Product items", () => {
     await app.home.open();
     await app.home.header.clickHamburgerMenuButton();
     await app.home.header.hamburgerMenu.selectRegion("Germany");
-    await app.route.mockResponseBody("/v4/web", 'data/mock/web/productItemData.json');
+    await app.route.requestWithGivenResponse("/v4/web", 'data/mock/web/productItemData.json');
     await app.home.header.searchForm.inputSearchCriteria("Catch-22 by Joseph Heller — Yellow Dog Bookshop");
     await app.home.header.searchForm.clickEnterSearchField();
     await app.webPage.product.expectProductsItemsToBeVisible();

@@ -5,7 +5,7 @@ export default class ContactRoute extends PageHolder {
   }
   
   //Actions
-  mockResponseStatusCode = async (code) => {
+  requestWithGivenResponseStatusCode = async (code) => {
     await this.page.route(process.env.BASE_URL + `/api/contact`, async route => {
       await route.fulfill({
         status: code,

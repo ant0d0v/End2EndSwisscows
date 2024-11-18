@@ -36,7 +36,7 @@ test("Check design request is blocked 450 error video page", async ({
 test("Check 500 unknown Error Page video page", async ({ app }, testInfo) => {
   //Actions
   await app.home.open();
-  await app.route.mockResponseStatusCode("/v2/videos", 500);
+  await app.route.requestWithGivenResponseStatusCode("/v2/videos", 500);
   await app.home.header.searchForm.inputSearchCriteria("food");
   await app.home.header.searchForm.clickEnterSearchField();
   await app.videoPage.header.navigation.clickVideoTab();
@@ -51,7 +51,7 @@ test("Check 500 unknown Error Page video page", async ({ app }, testInfo) => {
 test("Check 429 Too many requests", async ({ app }, testInfo) => {
   //Actions
   await app.home.open();
-  await app.route.mockResponseStatusCode("/v2/videos", 429);
+  await app.route.requestWithGivenResponseStatusCode("/v2/videos", 429);
   await app.home.header.searchForm.inputSearchCriteria("food");
   await app.home.header.searchForm.clickEnterSearchField();
   await app.videoPage.header.navigation.clickVideoTab();
@@ -66,7 +66,7 @@ test("Check 429 Too many requests", async ({ app }, testInfo) => {
 test("Check design video page", async ({ app },testInfo) => {
   //Actions
   await app.home.open();
-  await app.route.mockResponseBody("/v2/videos", 'data/mock/video/testData.json');
+  await app.route.requestWithGivenResponse("/v2/videos", 'data/mock/video/testData.json');
   await app.home.header.searchForm.inputSearchCriteria("ronaldo");
   await app.home.header.searchForm.clickEnterSearchField();
   await app.videoPage.header.navigation.clickVideoTab();
@@ -111,7 +111,7 @@ test("Check the design error icon of video object", async ({
 }, testInfo) => {
   //Actions
   await app.home.open();
-  await app.route.mockResponseBody("/v2/videos", 'data/mock/video/errorIcon.json');
+  await app.route.requestWithGivenResponse("/v2/videos", 'data/mock/video/errorIcon.json');
   await app.home.header.searchForm.inputSearchCriteria(faker.music.songName());
   await app.home.header.searchForm.clickEnterSearchField();
   await app.videoPage.header.navigation.clickVideoTab();
@@ -127,7 +127,7 @@ test("Check the design when video object is active", async ({
 }, testInfo) => {
   //Actions
   await app.home.open();
-  await app.route.mockResponseBody("/v2/videos", 'data/mock/video/testData.json');
+  await app.route.requestWithGivenResponse("/v2/videos", 'data/mock/video/testData.json');
   await app.home.header.searchForm.inputSearchCriteria(faker.music.songName());
   await app.home.header.searchForm.clickEnterSearchField();
   await app.videoPage.header.navigation.clickVideoTab();
@@ -228,7 +228,7 @@ test("Check open video when clicking title of video object", async ({
 test("Check design of video Privacy Warning", async ({ app }, testInfo) => {
   //Actions
   await app.home.open();
-  await app.route.mockResponseBody("/v2/videos", 'data/mock/video/testData.json');
+  await app.route.requestWithGivenResponse("/v2/videos", 'data/mock/video/testData.json');
   await app.home.header.searchForm.inputSearchCriteria(randomVideoQuery());
   await app.home.header.searchForm.clickEnterSearchField();
   await app.videoPage.header.navigation.clickVideoTab();
@@ -286,7 +286,7 @@ test("Check cancel button of Video unavailable warning ", async ({ app }) => {
 test("Check cancel button of Privacy Warning ", async ({ app }) => {
   //Actions
   await app.home.open();
-  await app.route.mockResponseBody("/v2/videos", 'data/mock/video/testData.json');
+  await app.route.requestWithGivenResponse("/v2/videos", 'data/mock/video/testData.json');
   await app.home.header.searchForm.inputSearchCriteria(faker.music.songName());
   await app.home.header.searchForm.clickEnterSearchField();
   await app.videoPage.header.navigation.clickVideoTab();
@@ -389,7 +389,7 @@ test("Check that dailymotion video is playing", async ({ app }) => {
 test("Check checkbox `Don't remind me again`", async ({ app }) => {
   //Actions
   await app.home.open();
-  await app.route.mockResponseBody("/v2/videos", 'data/mock/video/testData.json');
+  await app.route.requestWithGivenResponse("/v2/videos", 'data/mock/video/testData.json');
   await app.home.header.searchForm.inputSearchCriteria(faker.music.songName());
   await app.home.header.searchForm.clickEnterSearchField();
   await app.videoPage.header.navigation.clickVideoTab();
