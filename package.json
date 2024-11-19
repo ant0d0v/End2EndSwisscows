@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test:ui": "QASE_MODE=testops QASE_TESTOPS_RUN_TITLE=UI xvfb-run npx playwright test --project chromium firefox edge mobile",
+    "test:ui": "QASE_MODE=testops QASE_TESTOPS_RUN_TITLE=UI xvfb-run npx playwright test --project chromium firefox edge mobile --update-snapshots",
     "test:api": "QASE_MODE=testops QASE_TESTOPS_RUN_TITLE=API npx playwright test api"
   },
   "keywords": [],
@@ -12,7 +12,7 @@
   "license": "ISC",
   "devDependencies": {
     "@faker-js/faker": "^8.4.1",
-    "@playwright/test": "^1.48.2",
+    "@playwright/test": "^1.49.0",
     "@types/node": "^20.8.10",
     "playwright-qase-reporter": "^2.0.15"
   },
