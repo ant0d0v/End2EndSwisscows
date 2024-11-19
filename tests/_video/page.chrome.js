@@ -355,7 +355,7 @@ test.only("Check that youtube video is playing", async ({ app }) => {
   await app.home.open();
   await app.home.header.clickHamburgerMenuButton();
   await app.home.header.hamburgerMenu.selectRegion("Germany");
-  await app.home.header.searchForm.inputSearchCriteria("nfs");
+  await app.home.header.searchForm.inputSearchCriteria("linkin park");
   await app.home.header.searchForm.clickEnterSearchField();
   await app.videoPage.header.navigation.clickVideoTab();
   await app.videoPage.item.expectVideoItemsToBeVisible();
