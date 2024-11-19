@@ -350,12 +350,12 @@ test("Check regional search", async ({ app }) => {
   );
 });
 
-test("Check that youtube video is playing", async ({ app }) => {
+test.only("Check that youtube video is playing", async ({ app }) => {
   //Actions
   await app.home.open();
   await app.home.header.clickHamburgerMenuButton();
   await app.home.header.hamburgerMenu.selectRegion("Germany");
-  await app.home.header.searchForm.inputSearchCriteria(randomVideoQuery());
+  await app.home.header.searchForm.inputSearchCriteria("nfs");
   await app.home.header.searchForm.clickEnterSearchField();
   await app.videoPage.header.navigation.clickVideoTab();
   await app.videoPage.item.expectVideoItemsToBeVisible();
