@@ -1,6 +1,6 @@
 import { test } from "../../utils/fixtures.js";
 
-test.only("Check design of the Imprint page ", async ({ app }, testInfo) => {
+test("Check design of the Imprint page ", async ({ app }, testInfo) => {
   //Actions
   await app.imprintPage.open();
 
@@ -8,7 +8,7 @@ test.only("Check design of the Imprint page ", async ({ app }, testInfo) => {
   await app.imprintPage.takeSnapshot(testInfo);
 });
 
-test.only("Check design dark theme of the  Imprint page ", async ({
+test("Check design dark theme of the  Imprint page ", async ({
   app,
 }, testInfo) => {
   //Actions

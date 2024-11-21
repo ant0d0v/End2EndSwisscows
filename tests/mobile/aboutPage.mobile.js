@@ -1,6 +1,6 @@
 import { test } from "../../utils/fixtures.js";
 
-test.only("Check design of the About Page page ", async ({ app }, testInfo) => {
+test("Check design of the About Page page ", async ({ app }, testInfo) => {
   //Actions
   await app.aboutPage.open();
 
@@ -8,7 +8,7 @@ test.only("Check design of the About Page page ", async ({ app }, testInfo) => {
   await app.aboutPage.takeSnapshot(testInfo);
 });
 
-test.only("Check design dark theme of the   About Page page ", async ({
+test("Check design dark theme of the   About Page page ", async ({
   app,
 }, testInfo) => {
   //Actions
