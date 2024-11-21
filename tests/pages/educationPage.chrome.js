@@ -11,7 +11,6 @@ test("Check that the video is playing", async ({ app }) => {
   });
 });
 
-test.use({ headless: false });
 for (const { testID, link, name } of testData.pdfLinks) {
   test(`${testID} Check navigation to corresponding page for  ${name} pdf link and validate pdf`, async ({
     app,

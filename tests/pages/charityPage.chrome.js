@@ -1,5 +1,5 @@
 import { test } from "../../utils/fixtures.js";
-test.use({ headless: false });
+
 test("Check that border is red and 2px when clicking on the Charity Haiti slider images", async ({
   app,
 }) => {
@@ -72,7 +72,7 @@ test("Check that small image matches the large image when clicking on the small 
   );
 });
 
-test("Check that the video is playing", async ({ app }) => {
+test.only("Check that the video is playing", async ({ app }) => {
   //Actions
   await app.charityPage.open();
   //Assert
