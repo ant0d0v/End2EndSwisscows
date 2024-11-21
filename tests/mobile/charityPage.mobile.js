@@ -1,6 +1,6 @@
 import { test } from "../../utils/fixtures.js";
 
-test("Check that border is red and 2px when clicking on the Charity Haiti slider images", async ({
+test.only("Check that border is red and 2px when clicking on the Charity Haiti slider images", async ({
   app,
 }) => {
   //Assert
@@ -11,7 +11,7 @@ test("Check that border is red and 2px when clicking on the Charity Haiti slider
   );
 });
 
-test("Check that border is red and 2px when clicking on the Charity Columbia slider images", async ({
+test.only("Check that border is red and 2px when clicking on the Charity Columbia slider images", async ({
   app,
 }) => {
   //Assert
@@ -22,7 +22,7 @@ test("Check that border is red and 2px when clicking on the Charity Columbia sli
   );
 });
 
-test("Check that small image matches the large image when clicking on the small image in Charity Haiti slider", async ({
+test.only("Check that small image matches the large image when clicking on the small image in Charity Haiti slider", async ({
   app,
 }) => {
   //Assert
@@ -41,8 +41,8 @@ test("Check that small image matches the large image when clicking on the small 
     "active"
   );
 });
-
-test("Check that the video is playing", async ({ app }) => {
+test.use({ channel: 'chrome' });
+test.only("Check that the video is playing", async ({ app }) => {
   //Action
   await app.charityPage.open();
 
@@ -50,7 +50,7 @@ test("Check that the video is playing", async ({ app }) => {
   await app.charityPage.videoPlayer.expectVideoToPlay();
 });
 
-test("Check design of the charity page ", async ({ app }, testInfo) => {
+test.only("Check design of the charity page ", async ({ app }, testInfo) => {
   //Actions
   await app.charityPage.open();
 
@@ -58,7 +58,7 @@ test("Check design of the charity page ", async ({ app }, testInfo) => {
   await app.charityPage.takeSnapshot(testInfo);
 });
 
-test("Check design dark theme of the charity page ", async ({
+test.only("Check design dark theme of the charity page ", async ({
   app }, testInfo) => {
   //Actions
   await app.charityPage.open();

@@ -2,7 +2,7 @@ import { test } from "../../utils/fixtures.js";
 import home from "../../data/home/testData.json";
 import { faker } from "@faker-js/faker";
 
-test("Check that suggest is displayed", async ({ app }) => {
+test.only("Check that suggest is displayed", async ({ app }) => {
   let randomQuery = faker.word.sample();
 
   await app.home.open();
@@ -14,7 +14,7 @@ test("Check that suggest is displayed", async ({ app }) => {
   await app.home.header.searchForm.expectSuggestToContains(randomQuery);
 });
 
-test("Check that all questions were opened on the home page.", async ({
+test.only("Check that all questions were opened on the home page.", async ({
   app,
 }) => {
   //Action
@@ -26,7 +26,7 @@ test("Check that all questions were opened on the home page.", async ({
   await app.home.faq.expectQuestionsAreOpened();
 });
 
-test("Check that a question and answer can be opened and closed on the home page.", async ({
+test.only("Check that a question and answer can be opened and closed on the home page.", async ({
   app,
 }) => {
   //Action
@@ -40,7 +40,7 @@ test("Check that a question and answer can be opened and closed on the home page
   await app.home.faq.expectQuestionsAreClosed();
 });
 
-test("Check the texts of questions on the home page.", async ({ app }) => {
+test.only("Check the texts of questions on the home page.", async ({ app }) => {
   //Actions
   await app.home.open();
 
@@ -50,7 +50,7 @@ test("Check the texts of questions on the home page.", async ({ app }) => {
 });
 
 
-test("Check design of the home page ", async ({ app }, testInfo) => {
+test.only("Check design of the home page ", async ({ app }, testInfo) => {
   //Actions
   await app.home.open();
   
@@ -58,7 +58,7 @@ test("Check design of the home page ", async ({ app }, testInfo) => {
   await app.home.takeSnapshot(testInfo);
 });
 
-test("Check design dark theme of the home page ", async ({ app }, testInfo) => {
+test.only("Check design dark theme of the home page ", async ({ app }, testInfo) => {
   //Actions
   await app.home.open();
   await app.home.header.clickHamburgerMenuButton();

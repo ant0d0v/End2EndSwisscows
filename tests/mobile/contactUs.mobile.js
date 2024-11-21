@@ -1,7 +1,7 @@
 import { test } from "../../utils/fixtures.js";
 import { faker } from "@faker-js/faker";
 
-test(`Check succses message when sending form with all required fields`, async ({
+test.only(`Check succses message when sending form with all required fields`, async ({
   app,
 }, testInfo) => {
   //Actions
@@ -18,14 +18,14 @@ test(`Check succses message when sending form with all required fields`, async (
   await app.contactPage.takeSnapshot(testInfo);
 });
 
-test("Check design of the Contact Us page ", async ({ app }, testInfo) => {
+test.only("Check design of the Contact Us page ", async ({ app }, testInfo) => {
   //Actions
   await app.contactPage.open();
   //Assert
   await app.contactPage.takeSnapshot(testInfo);
 });
 
-test("Check design dark theme of the  Contact Us page ", async ({
+test.only("Check design dark theme of the  Contact Us page ", async ({
   app,
 }, testInfo) => {
   //Actions
