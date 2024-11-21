@@ -8,7 +8,7 @@ for (const {
   fiterName,
   expectedPublisher,
 } of filterData.publisher) {
-  test.only(`${testID} Check search results by filter ${fiterName} navigates to the corresponding URL and matches response results`, async ({
+  test(`${testID} Check search results by filter ${fiterName} navigates to the corresponding URL and matches response results`, async ({
     app,
   }) => {
     const query = "news";
@@ -35,7 +35,7 @@ for (const {
 }
 
 for (const { testID, freshnessPart, fiterName, filter } of filterData.byDate) {
-  test.only(`${testID} Check search results by filter ${fiterName} navigates to the corresponding URL and matches response results`, async ({
+  test(`${testID} Check search results by filter ${fiterName} navigates to the corresponding URL and matches response results`, async ({
     app,
   }) => {
     const randomQuery = faker.word.sample();
@@ -69,7 +69,7 @@ for (const { testID, freshnessPart, fiterName, filter } of filterData.byDate) {
   });
 }
 
-test.only("Check list dropdown of filter by date ", async ({ app }, testInfo) => {
+test("Check list dropdown of filter by date ", async ({ app }, testInfo) => {
   //Actions
   await app.home.open();
   await app.home.header.searchForm.inputSearchCriteria(faker.word.sample());
@@ -82,7 +82,7 @@ test.only("Check list dropdown of filter by date ", async ({ app }, testInfo) =>
   await app.videoPage.filters.selectMenu.takeSnapshot(testInfo);
 });
 
-test.only("Check list dropdown of filter publisher ", async ({ app }, testInfo) => {
+test("Check list dropdown of filter publisher ", async ({ app }, testInfo) => {
   //Actions
   await app.home.open();
   await app.home.header.searchForm.inputSearchCriteria(faker.word.sample());
@@ -95,7 +95,7 @@ test.only("Check list dropdown of filter publisher ", async ({ app }, testInfo) 
   await app.videoPage.filters.selectMenu.takeSnapshot(testInfo);
 });
 
-test.only("Check that dropdown of filter by publishers is opened", async ({
+test("Check that dropdown of filter by publishers is opened", async ({
   app,
 }) => {
   //Actions
