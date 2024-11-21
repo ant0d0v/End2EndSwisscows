@@ -382,7 +382,7 @@ test("Check regional search", async ({ app }) => {
 });
 
 test.use({ channel: "chrome" });
-test("Check that youtube video is playing", async ({ app }) => {
+test.only("Check that youtube video is playing", async ({ app }) => {
   //Actions
   await app.home.open();
   await app.home.header.clickHamburgerMenuButton();
