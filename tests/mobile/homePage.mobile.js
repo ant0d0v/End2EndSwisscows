@@ -50,7 +50,7 @@ test("Check the texts of questions on the home page.", async ({ app }) => {
 });
 
 
-test.only("Check design of the home page ", async ({ app }, testInfo) => {
+test("Check design of the home page ", async ({ app }, testInfo) => {
   //Actions
   await app.home.open();
   
@@ -58,7 +58,7 @@ test.only("Check design of the home page ", async ({ app }, testInfo) => {
   await app.home.takeSnapshot(testInfo);
 });
 
-test.only("Check design dark theme of the home page ", async ({ app }, testInfo) => {
+test("Check design dark theme of the home page ", async ({ app }, testInfo) => {
   //Actions
   await app.home.open();
   await app.home.header.clickHamburgerMenuButton();

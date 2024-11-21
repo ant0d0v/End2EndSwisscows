@@ -72,7 +72,7 @@ test("Check that small image matches the large image when clicking on the small 
   );
 });
 test.use({ channel: 'chrome' });
-test.only("Check that the video is playing", async ({ app }) => {
+test("Check that the video is playing", async ({ app }) => {
   //Actions
   await app.charityPage.open();
   //Assert

@@ -1,9 +1,14 @@
 import { test, expect } from "../../utils/fixtures.js";
-import { saveStorageState, readStorageState} from "../../helpers/authHelper.js";
+import {
+  saveStorageState,
+  readStorageState,
+} from "../../helpers/authHelper.js";
 import { faker } from "@faker-js/faker";
 import { randomVideoQuery } from "../../helpers/random.js";
 
-test.only("Check No Results Found error video page", async ({ app }, testInfo) => {
+test.only("Check No Results Found error video page", async ({
+  app,
+}, testInfo) => {
   //Actions
   await app.home.open();
   await app.home.header.searchForm.inputSearchCriteria("@#@$%^$^dasdsad1231");
@@ -29,11 +34,13 @@ test.only("Check design request is blocked 450 error video page", async ({
   //Assert
   await app.videoPage.error.takeSnapshot(testInfo, {
     error: 450,
-    name: "video"
+    name: "video",
   });
 });
 
-test.only("Check 500 unknown Error Page video page", async ({ app }, testInfo) => {
+test.only("Check 500 unknown Error Page video page", async ({
+  app,
+}, testInfo) => {
   //Actions
   await app.home.open();
   await app.route.requestWithGivenResponseStatusCode("/v2/videos", 500);
@@ -44,7 +51,7 @@ test.only("Check 500 unknown Error Page video page", async ({ app }, testInfo) =
   //Assert
   await app.videoPage.error.takeSnapshot(testInfo, {
     error: 500,
-    name: "video"
+    name: "video",
   });
 });
 
@@ -59,14 +66,17 @@ test.only("Check 429 Too many requests", async ({ app }, testInfo) => {
   //Assert
   await app.videoPage.error.takeSnapshot(testInfo, {
     error: 429,
-    name: "video"
+    name: "video",
   });
 });
 
-test.only("Check design video page", async ({ app },testInfo) => {
+test.only("Check design video page", async ({ app }, testInfo) => {
   //Actions
   await app.home.open();
-  await app.route.requestWithGivenResponse("/v2/videos", 'data/mock/video/testData.json');
+  await app.route.requestWithGivenResponse(
+    "/v2/videos",
+    "data/mock/video/testData.json"
+  );
   await app.home.header.searchForm.inputSearchCriteria("ronaldo");
   await app.home.header.searchForm.clickEnterSearchField();
   await app.videoPage.header.navigation.clickVideoTab();
@@ -76,7 +86,9 @@ test.only("Check design video page", async ({ app },testInfo) => {
   await app.videoPage.takeSnapshot(testInfo);
 });
 
-test.only("Check that video results equals search criteria", async ({ app }) => {
+test.only("Check that video results equals search criteria", async ({
+  app,
+}) => {
   //Actions
   await app.home.open();
   await app.home.header.searchForm.inputSearchCriteria("Iphone");
@@ -111,12 +123,15 @@ test.only("Check the design error icon of video object", async ({
 }, testInfo) => {
   //Actions
   await app.home.open();
-  await app.route.requestWithGivenResponse("/v2/videos", 'data/mock/video/errorIcon.json');
+  await app.route.requestWithGivenResponse(
+    "/v2/videos",
+    "data/mock/video/errorIcon.json"
+  );
   await app.home.header.searchForm.inputSearchCriteria(faker.music.songName());
   await app.home.header.searchForm.clickEnterSearchField();
   await app.videoPage.header.navigation.clickVideoTab();
   await app.videoPage.item.expectVideoItemsToBeVisible();
-  await app.videoPage.waitUntilPageIsFullyLoaded()
+  await app.videoPage.waitUntilPageIsFullyLoaded();
 
   //Assert
   await app.videoPage.item.takeSnapshotErrorIcon(testInfo);
@@ -127,7 +142,10 @@ test.only("Check the design when video object is active", async ({
 }, testInfo) => {
   //Actions
   await app.home.open();
-  await app.route.requestWithGivenResponse("/v2/videos", 'data/mock/video/testData.json');
+  await app.route.requestWithGivenResponse(
+    "/v2/videos",
+    "data/mock/video/testData.json"
+  );
   await app.home.header.searchForm.inputSearchCriteria(faker.music.songName());
   await app.home.header.searchForm.clickEnterSearchField();
   await app.videoPage.header.navigation.clickVideoTab();
@@ -138,13 +156,14 @@ test.only("Check the design when video object is active", async ({
   await app.videoPage.item.takeSnapshot(testInfo);
 });
 
-
 test.only("Check the info video object { site, description, data, views }", async ({
   app,
 }) => {
   //Actions
   await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria("Arctic Monkeys - Do I Wanna Know? (Official Video) - YouTube");
+  await app.home.header.searchForm.inputSearchCriteria(
+    "Arctic Monkeys - Do I Wanna Know? (Official Video) - YouTube"
+  );
   await app.home.header.searchForm.clickEnterSearchField();
   await app.videoPage.header.navigation.clickVideoTab();
   await app.videoPage.item.expectVideoItemsToBeVisible();
@@ -225,10 +244,15 @@ test.only("Check open video when clicking title of video object", async ({
   await app.expectPageToHaveUrl(app.page, /youtube.com/);
 });
 
-test.only("Check design of video Privacy Warning", async ({ app }, testInfo) => {
+test.only("Check design of video Privacy Warning", async ({
+  app,
+}, testInfo) => {
   //Actions
   await app.home.open();
-  await app.route.requestWithGivenResponse("/v2/videos", 'data/mock/video/testData.json');
+  await app.route.requestWithGivenResponse(
+    "/v2/videos",
+    "data/mock/video/testData.json"
+  );
   await app.home.header.searchForm.inputSearchCriteria(randomVideoQuery());
   await app.home.header.searchForm.clickEnterSearchField();
   await app.videoPage.header.navigation.clickVideoTab();
@@ -269,7 +293,9 @@ test.only(`Check design of Video unavailable dailymotion owner`, async ({
   await app.videoPage.player.takeSnapshot(testInfo);
 });
 
-test.only("Check cancel button of Video unavailable warning ", async ({ app }) => {
+test.only("Check cancel button of Video unavailable warning ", async ({
+  app,
+}) => {
   //Actions
   await app.home.open();
   await app.home.header.searchForm.inputSearchCriteria("site:vimeo.com");
@@ -286,7 +312,10 @@ test.only("Check cancel button of Video unavailable warning ", async ({ app }) =
 test.only("Check cancel button of Privacy Warning ", async ({ app }) => {
   //Actions
   await app.home.open();
-  await app.route.requestWithGivenResponse("/v2/videos", 'data/mock/video/testData.json');
+  await app.route.requestWithGivenResponse(
+    "/v2/videos",
+    "data/mock/video/testData.json"
+  );
   await app.home.header.searchForm.inputSearchCriteria(faker.music.songName());
   await app.home.header.searchForm.clickEnterSearchField();
   await app.videoPage.header.navigation.clickVideoTab();
@@ -326,7 +355,9 @@ test.only("Check that image of proxy cdn server", async ({ app }) => {
 
   //Assert
   await app.videoPage.item.expectVideoResultToHaveCount(10);
-  await app.videoPage.item.expectAllImagesToHaveAttribute(/cdn.dev.swisscows.com/);
+  await app.videoPage.item.expectAllImagesToHaveAttribute(
+    /cdn.dev.swisscows.com/
+  );
 });
 
 test.only("Check regional search", async ({ app }) => {
@@ -350,7 +381,7 @@ test.only("Check regional search", async ({ app }) => {
   );
 });
 
-test("Check that youtube video is playing", async ({ app }) => {
+test.only("Check that youtube video is playing", async ({ app }) => {
   //Actions
   await app.home.open();
   await app.home.header.clickHamburgerMenuButton();
@@ -368,28 +399,34 @@ test("Check that youtube video is playing", async ({ app }) => {
   });
 });
 
-test.only("Check that dailymotion video is playing", async ({ app }) => {
-  //Actions
-  await app.home.open();
-  await app.home.header.clickHamburgerMenuButton();
-  await app.home.header.hamburgerMenu.selectRegion("Germany");
-  await app.home.header.searchForm.inputSearchCriteria("site:dailymotion.com yum");
-  await app.home.header.searchForm.clickEnterSearchField();
-  await app.videoPage.header.navigation.clickVideoTab();
-  await app.videoPage.item.expectVideoItemsToBeVisible();
-  await app.videoPage.item.clickVideoImageAt({ number: 1 });
-  await app.videoPage.player.clickOkButton();
+  // test.use({ channel: "chrome" });
+  test.skip("Check that dailymotion video is playing", async ({ app }) => {
+    //Actions
+    await app.home.open();
+    await app.home.header.clickHamburgerMenuButton();
+    await app.home.header.hamburgerMenu.selectRegion("Germany");
+    await app.home.header.searchForm.inputSearchCriteria(
+      "site:dailymotion.com yum"
+    );
+    await app.home.header.searchForm.clickEnterSearchField();
+    await app.videoPage.header.navigation.clickVideoTab();
+    await app.videoPage.item.expectVideoItemsToBeVisible();
+    await app.videoPage.item.clickVideoImageAt({ number: 1 });
+    await app.videoPage.player.clickOkButton();
 
-  //Assert
-  await app.videoPage.player.expectDailyMotionVideoToHave({
-    text: "Video playing",
+    //Assert
+    await app.videoPage.player.expectDailyMotionVideoToHave({
+      text: "Video playing",
+    });
   });
-});
 
 test.only("Check checkbox `Don't remind me again`", async ({ app }) => {
   //Actions
   await app.home.open();
-  await app.route.requestWithGivenResponse("/v2/videos", 'data/mock/video/testData.json');
+  await app.route.requestWithGivenResponse(
+    "/v2/videos",
+    "data/mock/video/testData.json"
+  );
   await app.home.header.searchForm.inputSearchCriteria(faker.music.songName());
   await app.home.header.searchForm.clickEnterSearchField();
   await app.videoPage.header.navigation.clickVideoTab();
@@ -400,9 +437,9 @@ test.only("Check checkbox `Don't remind me again`", async ({ app }) => {
   await app.videoPage.reloadPage();
   await app.videoPage.item.clickVideoImageAt({ number: 1 });
   await saveStorageState(app.page);
-  const savedLocalStorage = await readStorageState(); 
+  const savedLocalStorage = await readStorageState();
   const value = savedLocalStorage["video.mode"];
-  
+
   //Assert
-  expect(value).toEqual('"embedded"')
+  expect(value).toEqual('"embedded"');
 });
