@@ -3,7 +3,7 @@ import { saveStorageState, readStorageState} from "../../helpers/authHelper.js";
 import { faker } from "@faker-js/faker";
 import { randomVideoQuery } from "../../helpers/random.js";
 
-test("Check No Results Found error video page", async ({ app }, testInfo) => {
+test.only("Check No Results Found error video page", async ({ app }, testInfo) => {
   //Actions
   await app.home.open();
   await app.home.header.searchForm.inputSearchCriteria("@#@$%^$^dasdsad1231");
@@ -17,7 +17,7 @@ test("Check No Results Found error video page", async ({ app }, testInfo) => {
   });
 });
 
-test("Check design request is blocked 450 error video page", async ({
+test.only("Check design request is blocked 450 error video page", async ({
   app,
 }, testInfo) => {
   //Actions
@@ -33,7 +33,7 @@ test("Check design request is blocked 450 error video page", async ({
   });
 });
 
-test("Check 500 unknown Error Page video page", async ({ app }, testInfo) => {
+test.only("Check 500 unknown Error Page video page", async ({ app }, testInfo) => {
   //Actions
   await app.home.open();
   await app.route.requestWithGivenResponseStatusCode("/v2/videos", 500);
@@ -48,7 +48,7 @@ test("Check 500 unknown Error Page video page", async ({ app }, testInfo) => {
   });
 });
 
-test("Check 429 Too many requests", async ({ app }, testInfo) => {
+test.only("Check 429 Too many requests", async ({ app }, testInfo) => {
   //Actions
   await app.home.open();
   await app.route.requestWithGivenResponseStatusCode("/v2/videos", 429);
@@ -63,7 +63,7 @@ test("Check 429 Too many requests", async ({ app }, testInfo) => {
   });
 });
 
-test("Check design video page", async ({ app },testInfo) => {
+test.only("Check design video page", async ({ app },testInfo) => {
   //Actions
   await app.home.open();
   await app.route.requestWithGivenResponse("/v2/videos", 'data/mock/video/testData.json');
@@ -76,7 +76,7 @@ test("Check design video page", async ({ app },testInfo) => {
   await app.videoPage.takeSnapshot(testInfo);
 });
 
-test("Check that video results equals search criteria", async ({ app }) => {
+test.only("Check that video results equals search criteria", async ({ app }) => {
   //Actions
   await app.home.open();
   await app.home.header.searchForm.inputSearchCriteria("Iphone");
@@ -90,7 +90,7 @@ test("Check that video results equals search criteria", async ({ app }) => {
   await app.videoPage.item.expectVideoImageToBeVisible();
 });
 
-test("Check infinity scroll in video results", async ({ app }) => {
+test.only("Check infinity scroll in video results", async ({ app }) => {
   //Actions
   await app.home.open();
   await app.home.header.searchForm.inputSearchCriteria(faker.music.songName());
@@ -106,7 +106,7 @@ test("Check infinity scroll in video results", async ({ app }) => {
   await app.videoPage.item.expectVideoResultToHaveCount(30);
 });
 
-test("Check the design error icon of video object", async ({
+test.only("Check the design error icon of video object", async ({
   app,
 }, testInfo) => {
   //Actions
@@ -122,7 +122,7 @@ test("Check the design error icon of video object", async ({
   await app.videoPage.item.takeSnapshotErrorIcon(testInfo);
 });
 
-test("Check the design when video object is active", async ({
+test.only("Check the design when video object is active", async ({
   app,
 }, testInfo) => {
   //Actions
@@ -139,7 +139,7 @@ test("Check the design when video object is active", async ({
 });
 
 
-test("Check the info video object { site, description, data, views }", async ({
+test.only("Check the info video object { site, description, data, views }", async ({
   app,
 }) => {
   //Actions
@@ -158,7 +158,7 @@ test("Check the info video object { site, description, data, views }", async ({
   });
 });
 
-test("Check the info video object { site, description, data, views } when opening video in player", async ({
+test.only("Check the info video object { site, description, data, views } when opening video in player", async ({
   app,
 }) => {
   //Actions
@@ -178,7 +178,7 @@ test("Check the info video object { site, description, data, views } when openin
   });
 });
 
-test("Check open video of vimeo owner", async ({ app }) => {
+test.only("Check open video of vimeo owner", async ({ app }) => {
   //Actions
   await app.home.open();
   await app.home.header.searchForm.inputSearchCriteria("site:vimeo.com");
@@ -194,7 +194,7 @@ test("Check open video of vimeo owner", async ({ app }) => {
   });
 });
 
-test("Check open video of dailymotion owner", async ({ app }) => {
+test.only("Check open video of dailymotion owner", async ({ app }) => {
   //Actions
   await app.home.open();
   await app.home.header.searchForm.inputSearchCriteria("site:dailymotion.com");
@@ -210,7 +210,7 @@ test("Check open video of dailymotion owner", async ({ app }) => {
   });
 });
 
-test("Check open video when clicking title of video object", async ({
+test.only("Check open video when clicking title of video object", async ({
   app,
 }) => {
   //Actions
@@ -225,7 +225,7 @@ test("Check open video when clicking title of video object", async ({
   await app.expectPageToHaveUrl(app.page, /youtube.com/);
 });
 
-test("Check design of video Privacy Warning", async ({ app }, testInfo) => {
+test.only("Check design of video Privacy Warning", async ({ app }, testInfo) => {
   //Actions
   await app.home.open();
   await app.route.requestWithGivenResponse("/v2/videos", 'data/mock/video/testData.json');
@@ -239,7 +239,7 @@ test("Check design of video Privacy Warning", async ({ app }, testInfo) => {
   await app.videoPage.player.takeSnapshot(testInfo);
 });
 
-test(`Check design of Video unavailable vimeo owner`, async ({
+test.only(`Check design of Video unavailable vimeo owner`, async ({
   app,
 }, testInfo) => {
   //Actions
@@ -254,7 +254,7 @@ test(`Check design of Video unavailable vimeo owner`, async ({
   await app.videoPage.player.takeSnapshot(testInfo);
 });
 
-test(`Check design of Video unavailable dailymotion owner`, async ({
+test.only(`Check design of Video unavailable dailymotion owner`, async ({
   app,
 }, testInfo) => {
   //Actions
@@ -269,7 +269,7 @@ test(`Check design of Video unavailable dailymotion owner`, async ({
   await app.videoPage.player.takeSnapshot(testInfo);
 });
 
-test("Check cancel button of Video unavailable warning ", async ({ app }) => {
+test.only("Check cancel button of Video unavailable warning ", async ({ app }) => {
   //Actions
   await app.home.open();
   await app.home.header.searchForm.inputSearchCriteria("site:vimeo.com");
@@ -283,7 +283,7 @@ test("Check cancel button of Video unavailable warning ", async ({ app }) => {
   await app.videoPage.player.expectPlayerToBeHidden();
 });
 
-test("Check cancel button of Privacy Warning ", async ({ app }) => {
+test.only("Check cancel button of Privacy Warning ", async ({ app }) => {
   //Actions
   await app.home.open();
   await app.route.requestWithGivenResponse("/v2/videos", 'data/mock/video/testData.json');
@@ -298,7 +298,7 @@ test("Check cancel button of Privacy Warning ", async ({ app }) => {
   await app.videoPage.player.expectPlayerToBeHidden();
 });
 
-test("Check video play if don't select checkbox Don't remind me again", async ({
+test.only("Check video play if don't select checkbox Don't remind me again", async ({
   app,
 }, testInfo) => {
   //Actions
@@ -316,7 +316,7 @@ test("Check video play if don't select checkbox Don't remind me again", async ({
   await app.videoPage.player.takeSnapshot(testInfo);
 });
 
-test("Check that image of proxy cdn server", async ({ app }) => {
+test.only("Check that image of proxy cdn server", async ({ app }) => {
   //Actions
   await app.home.open();
   await app.home.header.searchForm.inputSearchCriteria(faker.music.songName());
@@ -329,7 +329,7 @@ test("Check that image of proxy cdn server", async ({ app }) => {
   await app.videoPage.item.expectAllImagesToHaveAttribute(/cdn.dev.swisscows.com/);
 });
 
-test("Check regional search", async ({ app }) => {
+test.only("Check regional search", async ({ app }) => {
   //Actions
   await app.home.open();
   await app.home.header.searchForm.inputSearchCriteria("iphone");
@@ -350,7 +350,7 @@ test("Check regional search", async ({ app }) => {
   );
 });
 
-test.fixme("Check that youtube video is playing", async ({ app }) => {
+test("Check that youtube video is playing", async ({ app }) => {
   //Actions
   await app.home.open();
   await app.home.header.clickHamburgerMenuButton();
@@ -368,7 +368,7 @@ test.fixme("Check that youtube video is playing", async ({ app }) => {
   });
 });
 
-test("Check that dailymotion video is playing", async ({ app }) => {
+test.only("Check that dailymotion video is playing", async ({ app }) => {
   //Actions
   await app.home.open();
   await app.home.header.clickHamburgerMenuButton();
@@ -386,7 +386,7 @@ test("Check that dailymotion video is playing", async ({ app }) => {
   });
 });
 
-test("Check checkbox `Don't remind me again`", async ({ app }) => {
+test.only("Check checkbox `Don't remind me again`", async ({ app }) => {
   //Actions
   await app.home.open();
   await app.route.requestWithGivenResponse("/v2/videos", 'data/mock/video/testData.json');
