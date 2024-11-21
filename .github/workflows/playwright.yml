@@ -24,6 +24,9 @@ jobs:
         run: npm ci
 
       - name: Install Playwright Browsers
+        run: npx playwright install --with-deps --only-shell
+      
+      - name: Install dependencies
         run: npx playwright install --with-deps --only-shell 
 
       - name: Run UI tests
