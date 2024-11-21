@@ -1,5 +1,5 @@
 import { test } from "../../utils/fixtures.js";
-
+test.use({ headless: false });
 test("Check that border is red and 2px when clicking on the Charity Haiti slider images", async ({
   app,
 }) => {
