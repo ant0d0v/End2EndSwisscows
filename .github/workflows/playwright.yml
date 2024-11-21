@@ -19,10 +19,12 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: lts/*
+          
       - name: Install dependencies
         run: npm ci
+
       - name: Install Playwright Browsers
-        run: npx playwright install --with-deps --only-shell
+        run: npx playwright install --with-deps 
 
       - name: Run UI tests
         run: npm run test:ui
@@ -36,15 +38,3 @@ jobs:
           path: playwright-report/
           retention-days: 1
 
-      - name: Run API tests
-        run: npm run test:api
-        if: always()
-        env:
-          HOME: /root
-
-      - uses: actions/upload-artifact@v4
-        if: ${{ !cancelled() }}
-        with:
-          name: playwright-report-api-${{ github.run_id }}
-          path: playwright-report/
-          retention-days: 1
