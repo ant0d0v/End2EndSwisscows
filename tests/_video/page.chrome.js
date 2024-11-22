@@ -5,6 +5,7 @@ import {
 } from "../../helpers/authHelper.js";
 import { faker } from "@faker-js/faker";
 import { randomVideoQuery } from "../../helpers/random.js";
+test.use({ channel: "chrome" });
 
 test("Check No Results Found error video page", async ({
   app,
@@ -381,8 +382,7 @@ test("Check regional search", async ({ app }) => {
   );
 });
 
-test.use({ channel: "chrome" });
-test.only("Check that youtube video is playing", async ({ app }) => {
+test("Check that youtube video is playing", async ({ app }) => {
   //Actions
   await app.home.open();
   await app.home.header.clickHamburgerMenuButton();
@@ -400,7 +400,7 @@ test.only("Check that youtube video is playing", async ({ app }) => {
   });
 });
 
-  test("Check that dailymotion video is playing", async ({ app }) => {
+  test.only("Check that dailymotion video is playing", async ({ app }) => {
     //Actions
     await app.home.open();
     await app.home.header.clickHamburgerMenuButton();
