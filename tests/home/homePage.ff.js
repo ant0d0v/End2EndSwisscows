@@ -1,7 +1,7 @@
 import { test } from "../../utils/fixtures.js";
 import testData from "../../data/home/testData.json";
 
-test('Check that popup "firefox install" redirect to the corresponding page ', async ({
+test.only('Check that popup "firefox install" redirect to the corresponding page ', async ({
   app,
   context,
 }) => {
@@ -15,7 +15,7 @@ test('Check that popup "firefox install" redirect to the corresponding page ', a
   await app.expectNewPageToHaveTitle(context, /Swisscows/);
 });
 
-test("Check that popup firefox install Is Displayed", async ({
+test.only("Check that popup firefox install Is Displayed", async ({
   app,
 }, testInfo) => {
   //Actions
