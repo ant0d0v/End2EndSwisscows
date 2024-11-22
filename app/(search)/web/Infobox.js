@@ -17,6 +17,7 @@ export default class Infobox extends BaseComponent {
     this.site = this.root.locator(".site a");
     this.profiles = this.root.locator(".profiles a");
     this.participants = this.root.locator(".participants a");
+    this.participantsImage = this.root.locator(".participants img");
     this.rate = this.root.locator(".rating .rate");
     this.footer = this.root.locator("footer");
     this.footerImage = this.footer.locator("img");
@@ -102,6 +103,26 @@ export default class Infobox extends BaseComponent {
   expectImageToBeVisible = async () => {
     await this.expectElementToBeVisible(this.image);
   };
+
+  async expectParticipantsImageToHavePropetry(
+    expectedProperty = { width: value, height: value, complete: value }
+  ) {
+    await this.expectElementsToHaveJSProperty(
+      this.participantsImage,
+      "width",
+      expectedProperty.width
+    );
+    await this.expectElementsToHaveJSProperty(
+      this.participantsImage,
+      "height",
+      expectedProperty.height
+    );
+    await this.expectElementsToHaveJSProperty(
+      this.participantsImage,
+      "complete",
+      expectedProperty.complete
+    );
+  }
 
   takeSnapshot = async (testInfo) => {
     await this.expectPageElementToHaveScreenshot(

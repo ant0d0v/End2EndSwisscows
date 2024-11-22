@@ -268,6 +268,11 @@ test.describe("Widget infobox", () => {
     await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
 
     //Assert
+    await app.webPage.infobox.expectParticipantsImageToHavePropetry({
+      width: 64,
+      height: 64,
+      complete: true
+    });
     await app.webPage.infobox.takeSnapshot(testInfo);
   });
 

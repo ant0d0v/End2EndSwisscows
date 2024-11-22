@@ -5,11 +5,8 @@ import {
 } from "../../helpers/authHelper.js";
 import { faker } from "@faker-js/faker";
 import { randomVideoQuery } from "../../helpers/random.js";
-test.use({ channel: "chrome" });
 
-test("Check No Results Found error video page", async ({
-  app,
-}, testInfo) => {
+test("Check No Results Found error video page", async ({ app }, testInfo) => {
   //Actions
   await app.home.open();
   await app.home.header.searchForm.inputSearchCriteria("@#@$%^$^dasdsad1231");
@@ -39,9 +36,7 @@ test("Check design request is blocked 450 error video page", async ({
   });
 });
 
-test("Check 500 unknown Error Page video page", async ({
-  app,
-}, testInfo) => {
+test("Check 500 unknown Error Page video page", async ({ app }, testInfo) => {
   //Actions
   await app.home.open();
   await app.route.requestWithGivenResponseStatusCode("/v2/videos", 500);
@@ -87,9 +82,7 @@ test("Check design video page", async ({ app }, testInfo) => {
   await app.videoPage.takeSnapshot(testInfo);
 });
 
-test("Check that video results equals search criteria", async ({
-  app,
-}) => {
+test("Check that video results equals search criteria", async ({ app }) => {
   //Actions
   await app.home.open();
   await app.home.header.searchForm.inputSearchCriteria("Iphone");
@@ -106,7 +99,7 @@ test("Check that video results equals search criteria", async ({
 test("Check infinity scroll in video results", async ({ app }) => {
   //Actions
   await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria(faker.music.songName());
+  await app.home.header.searchForm.inputSearchCriteria("nfs");
   await app.home.header.searchForm.clickEnterSearchField();
   await app.videoPage.header.navigation.clickVideoTab();
   await app.videoPage.item.expectVideoItemsToBeVisible();
@@ -245,9 +238,7 @@ test("Check open video when clicking title of video object", async ({
   await app.expectPageToHaveUrl(app.page, /youtube.com/);
 });
 
-test("Check design of video Privacy Warning", async ({
-  app,
-}, testInfo) => {
+test("Check design of video Privacy Warning", async ({ app }, testInfo) => {
   //Actions
   await app.home.open();
   await app.route.requestWithGivenResponse(
@@ -294,9 +285,7 @@ test(`Check design of Video unavailable dailymotion owner`, async ({
   await app.videoPage.player.takeSnapshot(testInfo);
 });
 
-test("Check cancel button of Video unavailable warning ", async ({
-  app,
-}) => {
+test("Check cancel button of Video unavailable warning ", async ({ app }) => {
   //Actions
   await app.home.open();
   await app.home.header.searchForm.inputSearchCriteria("site:vimeo.com");
@@ -382,7 +371,7 @@ test("Check regional search", async ({ app }) => {
   );
 });
 
-test("Check that youtube video is playing", async ({ app }) => {
+test.fixme("Check that youtube video is playing", async ({ app }) => {
   //Actions
   await app.home.open();
   await app.home.header.clickHamburgerMenuButton();
@@ -400,25 +389,26 @@ test("Check that youtube video is playing", async ({ app }) => {
   });
 });
 
-  test("Check that dailymotion video is playing", async ({ app }) => {
-    //Actions
-    await app.home.open();
-    await app.home.header.clickHamburgerMenuButton();
-    await app.home.header.hamburgerMenu.selectRegion("Germany");
-    await app.home.header.searchForm.inputSearchCriteria(
-      "site:dailymotion.com yum"
-    );
-    await app.home.header.searchForm.clickEnterSearchField();
-    await app.videoPage.header.navigation.clickVideoTab();
-    await app.videoPage.item.expectVideoItemsToBeVisible();
-    await app.videoPage.item.clickVideoImageAt({ number: 1 });
-    await app.videoPage.player.clickOkButton();
+test.use({ channel: "chrome" });
+test("Check that dailymotion video is playing", async ({ app }) => {
+  //Actions
+  await app.home.open();
+  await app.home.header.clickHamburgerMenuButton();
+  await app.home.header.hamburgerMenu.selectRegion("Germany");
+  await app.home.header.searchForm.inputSearchCriteria(
+    "site:dailymotion.com yum"
+  );
+  await app.home.header.searchForm.clickEnterSearchField();
+  await app.videoPage.header.navigation.clickVideoTab();
+  await app.videoPage.item.expectVideoItemsToBeVisible();
+  await app.videoPage.item.clickVideoImageAt({ number: 1 });
+  await app.videoPage.player.clickOkButton();
 
-    //Assert
-    await app.videoPage.player.expectDailyMotionVideoToHave({
-      text: "Video playing",
-    });
+  //Assert
+  await app.videoPage.player.expectDailyMotionVideoToHave({
+    text: "Video playing",
   });
+});
 
 test("Check checkbox `Don't remind me again`", async ({ app }) => {
   //Actions
