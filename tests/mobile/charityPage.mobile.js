@@ -42,6 +42,7 @@ test("Check that small image matches the large image when clicking on the small 
   );
 });
 
+test.use({ channel: 'chrome' });
 test("Check that the video is playing", async ({ app }) => {
   //Action
   await app.charityPage.open();
@@ -50,7 +51,7 @@ test("Check that the video is playing", async ({ app }) => {
   await app.charityPage.videoPlayer.expectVideoToPlay();
 });
 
-test("Check design of the charity page ", async ({ app }, testInfo) => {
+test("Check design of the charity page", async ({ app }, testInfo) => {
   //Actions
   await app.charityPage.open();
 
@@ -58,7 +59,7 @@ test("Check design of the charity page ", async ({ app }, testInfo) => {
   await app.charityPage.takeSnapshot(testInfo);
 });
 
-test("Check design dark theme of the charity page ", async ({
+test("Check design dark theme of the charity page", async ({
   app }, testInfo) => {
   //Actions
   await app.charityPage.open();

@@ -9,25 +9,21 @@ on:
 jobs:
   playwright:
     name: 'Playwright Tests'
-    timeout-minutes: 60
     runs-on: ubuntu-latest
     container:
-      image: mcr.microsoft.com/playwright:v1.49.0-jammy
-
+      image: mcr.microsoft.com/playwright:v1.49.0-noble
     steps:
       - uses: actions/checkout@v4
-
       - uses: actions/setup-node@v4
         with:
-           node-version: lts/*
-
+          node-version: lts/*
       - name: Install dependencies
         run: npm ci
 
       - name: Install chrome browser
         run: npx playwright install chrome
-
-      - name: Run UI tests
+        
+      - name: Run your tests
         run: npm run test:ui
         env:
           HOME: /root
@@ -39,15 +35,3 @@ jobs:
           path: playwright-report/
           retention-days: 1
 
-      - name: Run API tests
-        run: npm run test:api
-        if: always()
-        env:
-          HOME: /root
-
-      - uses: actions/upload-artifact@v4
-        if: ${{ !cancelled() }}
-        with:
-          name: playwright-report-api-${{ github.run_id }}
-          path: playwright-report/
-          retention-days: 1

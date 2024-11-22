@@ -12,7 +12,7 @@ export default class Player extends BaseComponent {
     this.title = this.page.getByRole("heading", { name: "Privacy Warning" });
     this.player = this.page.locator(".video-player");
     this.currentStatusYouTube = this.page.frameLocator('iframe').locator(".html5-video-player")
-    this.currentStatusMotion = this.page.frameLocator('iframe').locator(".player .visuallyhidden")
+    this.currentStatusMotion = this.page.frameLocator('iframe').locator(".player  .sr_only").first()
   }
   //Actions
   clickOkButton = async () => {
