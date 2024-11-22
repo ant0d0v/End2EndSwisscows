@@ -400,7 +400,7 @@ test("Check that youtube video is playing", async ({ app }) => {
   });
 });
 
-  test.only("Check that dailymotion video is playing", async ({ app }) => {
+  test("Check that dailymotion video is playing", async ({ app }) => {
     //Actions
     await app.home.open();
     await app.home.header.clickHamburgerMenuButton();
