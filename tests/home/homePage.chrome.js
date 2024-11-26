@@ -92,7 +92,7 @@ test("Check the texts of answers on the home page.", async ({ app }) => {
   await app.home.faq.expectAnswersToHaveText(home.faq.expectedAnswer);
 });
 
-test("Check design of the home page ", async ({ app }, testInfo) => {
+test("Check design of the home page", async ({ app }, testInfo) => {
   //Actions
   await app.home.open();
   await app.home.header.extensionPopup.clickCloseButtonInExtensionPopup();
@@ -101,7 +101,7 @@ test("Check design of the home page ", async ({ app }, testInfo) => {
   await app.home.takeSnapshot(testInfo);
 });
 
-test("Check design dark theme of the home page ", async ({ app }, testInfo) => {
+test("Check design dark theme of the home page", async ({ app }, testInfo) => {
   //Actions
   await app.home.open();
   await app.home.header.clickHamburgerMenuButton();

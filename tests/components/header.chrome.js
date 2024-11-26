@@ -1,5 +1,6 @@
 import { test } from "../../utils/fixtures.js";
 import constantsData from "../../data/project-constants/testData.json";
+import testData from "../../data/header/testData.json";
 import { faker } from "@faker-js/faker";
 
 test("Clicking on the swisscows's logo leads to the home page.", async ({
@@ -50,8 +51,14 @@ test("Check query counter value when searching for video ", async ({ app }) => {
 test("Check query counter value when searching for music", async ({ app }) => {
   //Actions
   await app.home.open();
-  await app.route.mockResponseMusicBody("/audio/search/playlists", 'data/mock/music/testDataPlaylist.json');
-  await app.route.mockResponseMusicBody("/audio/search/tracks", 'data/mock/music/testDataTrack.json');
+  await app.route.mockResponseMusicBody(
+    "/audio/search/playlists",
+    "data/mock/music/testDataPlaylist.json"
+  );
+  await app.route.mockResponseMusicBody(
+    "/audio/search/tracks",
+    "data/mock/music/testDataTrack.json"
+  );
   await app.home.header.searchForm.inputSearchCriteria(faker.music.songName());
   await app.home.header.searchForm.clickEnterSearchField();
   await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
@@ -97,29 +104,7 @@ test("Check query counter value when searching for shopping", async ({
   );
 });
 
-test.describe("test use cookie", () => {
-  test("Check that email badge navigates to account/login page if user logged ", async ({
-    app,
-    context,
-  }) => {
-    //Actions
-    await app.home.open();
-    await app.home.header.searchForm.inputSearchCriteria(faker.word.sample());
-    await app.home.header.searchForm.clickEnterSearchField();
-    await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
-
-    //Assert
-    await app.webPage.header.expectToBeOpenedNewPageAfterClick(
-      app.webPage.header.badgeEmail.badge,
-      constantsData.URL_LOGIN_PAGE
-    );
-
-    await app.expectNewPageToHaveTitle(context, constantsData.TITLE_LOGIN_PAGE);
-  });
-});
-
-test.describe("tests don't use cookie", () => {
-  test.use({ storageState: { cookies: [], origins: [] } });
+test.describe("tests use cookie", () => {
   test(`Check that email badge link navigate to corresponding pages`, async ({
     app,
     context,
@@ -131,54 +116,37 @@ test.describe("tests don't use cookie", () => {
     await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
 
     //Assert
-    await app.webPage.header.expectToBeOpenedNewPageAfterClick(
-      app.webPage.header.badgeEmail.badge,
-      constantsData.URL_EMAIL_PAGE
-    );
+    await app.webPage.header.expectToBeOpenedPageAfterClickBy({
+      locator: "badge-email",
+      url: /task=mail&_mbox=INBOX/,
+    });
 
-    await app.expectNewPageToHaveTitle(context, constantsData.TITLE_EMAIL_PAGE);
+    await app.expectNewPageToHaveTitle(context, "Swisscows.email :: Inbox");
   });
+});
 
-  test(`Check that Teleguard badge link navigate to corresponding pages`, async ({
-    app,
-    context,
-  }) => {
-    //Actions
-    await app.home.open();
-    await app.home.header.searchForm.inputSearchCriteria(faker.word.sample());
-    await app.home.header.searchForm.clickEnterSearchField();
-    await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
-
-    //Assert
-    await app.webPage.header.expectToBeOpenedNewPageAfterClick(
-      app.webPage.header.badgeTeleguard.badge,
-      constantsData.URL_TELEGUARD_PAGE
-    );
-
-    await app.expectNewPageToHaveTitle(
+test.describe("tests don't use cookie", () => {
+  test.use({ storageState: { cookies: [], origins: [] } });
+  for (const { testID, expectedUrl, expectedTitle, nameIcon } of testData.badgeLinks) {
+    test(`${testID} Check that ${nameIcon} link navigate to corresponding pages`, async ({
+      app,
       context,
-      constantsData.TITLE_TELEGUARD_PAGE
-    );
-  });
+    }) => {
+      //Actions
+      await app.home.open();
+      await app.home.header.searchForm.inputSearchCriteria(faker.word.sample());
+      await app.home.header.searchForm.clickEnterSearchField();
+      await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
 
-  test(`Check that vpn badge link navigate to corresponding pages`, async ({
-    app,
-    context,
-  }) => {
-    //Actions
-    await app.home.open();
-    await app.home.header.searchForm.inputSearchCriteria(faker.word.sample());
-    await app.home.header.searchForm.clickEnterSearchField();
-    await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
+      //Assert
+      await app.webPage.header.expectToBeOpenedPageAfterClickBy({
+        locator: nameIcon,
+        url: expectedUrl,
+      });
 
-    //Assert
-    await app.webPage.header.expectToBeOpenedNewPageAfterClick(
-      app.webPage.header.badgeVPN.badge,
-      constantsData.URL_VPN_PAGE
-    );
-
-    await app.expectNewPageToHaveTitle(context, constantsData.TITLE_VPN_PAGE);
-  });
+      await app.expectNewPageToHaveTitle(context, expectedTitle);
+    });
+  }
 });
 
 test("Check design of popup badge counter", async ({ app }, testInfo) => {
@@ -194,7 +162,6 @@ test("Check design of popup badge counter", async ({ app }, testInfo) => {
 });
 
 test("Check suggest on the web search", async ({ app }) => {
- 
   //Actions
   await app.home.open();
   await app.home.header.searchForm.inputSearchCriteria("ivanka");

@@ -1,5 +1,5 @@
 import { test } from "../../utils/fixtures.js";
-import constantsData from "../../data/project-constants/testData.json";
+import testData from "../../data/header/testData.json";
 
 test("Check charity query counter value at the Beginning", async ({ app }) => {
   //Actions
@@ -44,74 +44,41 @@ test("Check that display of heart icon message in the header static pages", asyn
   await app.home.header.badgeCounter.takeSnapshot(testInfo);
 });
 
-test.describe("test use cookie", () => {
-  test("Check that email badge navigate to account/login page if user logged ", async ({
-    app,
-    context,
-  }) => {
-    //Actions
-    await app.home.open();
-
-    //Assert
-    await app.home.header.expectToBeOpenedNewPageAfterClick(
-      app.home.header.badgeEmail.badge,
-      constantsData.URL_LOGIN_PAGE
-    );
-
-    await app.expectNewPageToHaveTitle(context, constantsData.TITLE_LOGIN_PAGE);
-  });
-});
-
-test.describe("test don't use cookie", () => {
-  test.use({ storageState: { cookies: [], origins: [] } });
+test.describe("tests use cookie", () => {
   test(`Check that email badge link navigate to corresponding pages`, async ({
     app,
     context,
   }) => {
     //Actions
     await app.home.open();
-
+   
     //Assert
-    await app.home.header.expectToBeOpenedNewPageAfterClick(
-      app.home.header.badgeEmail.badge,
-      constantsData.URL_EMAIL_PAGE
-    );
-    await app.expectNewPageToHaveTitle(context, constantsData.TITLE_EMAIL_PAGE);
-  });
+    await app.home.header.expectToBeOpenedPageAfterClickBy({
+      locator: "badge-email",
+      url: /task=mail&_mbox=INBOX/,
+    });
 
-  test(`Check that Teleguard badge link navigate to corresponding pages`, async ({
-    app,
-    context,
-  }) => {
-    //Actions
-    await app.home.open();
-
-    //Assert
-    await app.home.header.expectToBeOpenedNewPageAfterClick(
-      app.home.header.badgeTeleguard.badge,
-      constantsData.URL_TELEGUARD_PAGE
-    );
-
-    await app.expectNewPageToHaveTitle(
-      context,
-      constantsData.TITLE_TELEGUARD_PAGE
-    );
-  });
-
-  test(`Check that VPN badge link navigate to corresponding pages`, async ({
-    app,
-    context,
-  }) => {
-    //Actions
-    await app.home.open();
-
-    //Assert
-    await app.home.header.expectToBeOpenedNewPageAfterClick(
-      app.home.header.badgeVPN.badge,
-      constantsData.URL_VPN_PAGE
-    );
-
-    await app.expectNewPageToHaveTitle(context, constantsData.TITLE_VPN_PAGE);
+    await app.expectNewPageToHaveTitle(context, "Swisscows.email :: Inbox");
   });
 });
 
+test.describe("tests don't use cookie", () => {
+  test.use({ storageState: { cookies: [], origins: [] } });
+  for (const { testID, expectedUrl, expectedTitle, nameIcon } of testData.badgeLinks) {
+    test(`${testID} Check that ${nameIcon} link navigate to corresponding pages`, async ({
+      app,
+      context,
+    }) => {
+      //Actions
+      await app.home.open();
+
+      //Assert
+      await app.home.header.expectToBeOpenedPageAfterClickBy({
+        locator: nameIcon,
+        url: expectedUrl,
+      });
+
+      await app.expectNewPageToHaveTitle(context, expectedTitle);
+    });
+  }
+});

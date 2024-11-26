@@ -53,54 +53,60 @@
     "externalLinks": [
         {
             "testID": "1",
-            "url": "/accounts.swisscows.com/products/vpn\\?locale=en",
+            "url": "https://accounts.dev.swisscows.com/products/vpn",
             "expectedTitle": "Configure Swisscows Proxy - Swisscows VPN service",
             "name" : "VPN"
         },
         {
             "testID": "2",
-            "url": "/accounts.swisscows.com/products/email\\?locale=en",
+            "url": "https://accounts.dev.swisscows.com/products/email",
             "expectedTitle": "Swisscows.email - The secure and private email for you",
             "name" : "Swisscows.email"
         },
         {
             "testID": "3",
+            "url": "https://accounts.dev.swisscows.com/products/cloud",
+            "expectedTitle": "Edelcloud - Secure cloud storage from Swisscows",
+            "name" : "Edelcloud"
+        },
+        {
+            "testID": "4",
             "url": "https://teleguard.com/en",
             "expectedTitle": "TeleGuard - secure messenger from Switzerland",
             "name" : "TeleGuard"
         },
         {
-            "testID": "4",
+            "testID": "5",
             "url": "https://hesbox.com/en",
             "expectedTitle": "Enterprise Search Software for companies ",
             "name" : "HES"
         },
         {
-            "testID": "5",
+            "testID": "6",
             "url": "https://getdigest.com/en",
             "expectedTitle": "GetDigest | Get a document summary. Fast!",
             "name" : "GetDigest"
         },
         {
-            "testID": "6",
+            "testID": "7",
             "url": "https://shop.swisscows.com/en",
             "expectedTitle": "Secure your cell phone and car keys with Swisscows Faraday Bag.",
             "name" : "Faraday Bag"
         },
         {
-            "testID": "7",
+            "testID": "8",
             "url": "https://swisscows-fanshop.com/",
             "expectedTitle": "SWISSCOWS FANSHOP – Swisscows",
             "name" : "Fan-shop"
         },
         {
-            "testID": "8",
+            "testID": "9",
             "url": "https://blog.swisscows.com/",
             "expectedTitle": "Blog - Erfahren Sie mehr über sichere Internetnutzung",
             "name" : "Swisscows Blog"
         },
         {
-            "testID": "9",
+            "testID": "10",
             "url": "https://support.swisscows.com/",
             "expectedTitle": "Swisscows Support",
             "name" : "Support"

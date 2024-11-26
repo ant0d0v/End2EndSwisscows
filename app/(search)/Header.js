@@ -3,6 +3,7 @@ import badgeCounter from "../../components/BadgeCounter.js";
 import BadgeEmail from "../../components/BadgeEmail.js";
 import BadgeTeleguard from "../../components/BadgeTeleguard.js";
 import BadgeVPN from "../../components/BadgeVPN.js";
+import BadgeEdelcloud from "../../components/BadgeEdelcloud.js";
 import SearchBar from "../../components/SearchBar.js";
 import BaseComponent from "../../base/BaseComponent.js";
 import Logo from "./Logo.js";
@@ -19,6 +20,7 @@ export default class Header extends BaseComponent {
     this.badgeEmail = new BadgeEmail(page);
     this.badgeTeleguard = new BadgeTeleguard(page);
     this.badgeVPN = new BadgeVPN(page);
+    this.badgeEdelcloud = new BadgeEdelcloud(page);
     this.logo = new Logo(page);
     this.navigation = new Navigation(page);
 
@@ -31,6 +33,8 @@ export default class Header extends BaseComponent {
       .getByRole("button")
       .nth(1);
     this.filtersButton = this.page.getByRole("button", { name: "Filters" });
+    this.badge = (name) => this.root.locator(`.${name}`)
+    this.images = this.root.locator("svg");
   }
 
   //Actions
@@ -68,13 +72,20 @@ export default class Header extends BaseComponent {
     );
   };
 
+
   // Verify
 
   takeSnapshot = async (testInfo) => {
     await this.expectPageElementToHaveScreenshot(
       this.root,
-      this.logo.swisscows,
+      this.images,
       testInfo
+    );
+  };
+
+  expectToBeOpenedPageAfterClickBy = async (expected = { locator: String, url: String} ) => {
+    await this.expectToBeOpenedNewPageAfterClick(
+      this.badge(expected.locator), expected.url
     );
   };
 
