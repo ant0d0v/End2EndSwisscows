@@ -24,7 +24,7 @@ test("Check that small image matches the large image when clicking on the small 
   );
 });
 
-test.use({ channel: 'chrome' });
+// test.use({ channel: 'chrome' });
 test("Check that the video is playing", async ({ app }) => {
   //Actions
   await app.datacenterPage.open();

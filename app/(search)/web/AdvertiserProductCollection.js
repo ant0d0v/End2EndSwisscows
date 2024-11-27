@@ -9,7 +9,7 @@ export default class AdvertiserProductCollection extends BaseComponent {
     this.widgetHeader = this.root.locator(".widget-header");
     this.nextButton = this.root.locator(".widget-buttons .next");
     this.prevButton = this.root.locator(".widget-buttons .prev");
-    this.adsLink = this.page.getByRole("link", { name: "Ads" });
+    this.adsLink = this.page.getByRole('link', { name: 'Ads' })
     this.product = this.root.locator(".product");
     this.title = this.product.locator(".title");
     this.price = this.product.locator(".pricing .price");

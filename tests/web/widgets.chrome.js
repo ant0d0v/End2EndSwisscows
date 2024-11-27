@@ -252,6 +252,7 @@ test.describe("Widget infobox", () => {
     await app.home.header.searchForm.inputSearchCriteria("Cristiano Ronaldo");
     await app.home.header.searchForm.clickEnterSearchField();
     await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
+    await app.webPage.adsFreePopup.closePopup()
 
     //Assert
     await app.webPage.infobox.takeSnapshot(testInfo);
@@ -266,6 +267,7 @@ test.describe("Widget infobox", () => {
     await app.home.header.searchForm.inputSearchCriteria("Dune");
     await app.home.header.searchForm.clickEnterSearchField();
     await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
+    await app.webPage.adsFreePopup.closePopup()
 
     //Assert
     await app.webPage.infobox.expectParticipantsImageToHavePropetry({
@@ -518,6 +520,7 @@ test.describe("Widget infobox", () => {
       await app.home.header.searchForm.inputSearchCriteria("Cristiano Ronaldo");
       await app.home.header.searchForm.clickEnterSearchField();
       await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
+      await app.webPage.adsFreePopup.closePopup()
 
       //Assert
       await app.webPage.infobox.takeSnapshot(testInfo);
@@ -587,6 +590,7 @@ test.describe("Widget summary", () => {
       "data/mock/web/summary.text"
     );
     await app.webPage.webPageItem.clickAiButtonAt({ number: 1 });
+    await app.webPage.adsFreePopup.closePopup()
 
     //Assert
     await app.webPage.webPageItem.summary.expectStutusToHaveText("Ready");

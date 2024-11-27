@@ -5,6 +5,7 @@ import Item from "./ImageObject.js";
 import AdvertiserProductCollection from "../web/AdvertiserProductCollection.js";
 import Header from "../Header.js";
 import Error from "../Error.js";
+import AdsFreePopup from "../AdsFreePopup.js"
 
 export default class ImagePage extends BasePage {
   constructor(page) {
@@ -16,6 +17,7 @@ export default class ImagePage extends BasePage {
     this.advertiserProductCollection = new AdvertiserProductCollection(page);
     this.header = new Header(page);
     this.error = new Error(page);
+    this.adsFreePopup = new AdsFreePopup(page)
 
     //Locators
     this.root = this.page.locator(`.images-results`);

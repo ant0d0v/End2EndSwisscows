@@ -95,6 +95,7 @@ test("Check open new page when clicking ads link", async ({ app }) => {
   await app.home.header.searchForm.clickEnterSearchField();
   await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
   await app.webPage.advertiserProductCollection.waitUntilProductAdsToBeVisible();
+  await app.webPage.adsFreePopup.closePopup()
 
   //Assert
   await app.webPage.advertiserProductCollection.expectToBeOpenedNewPageAfterClickAdsLink(
@@ -146,6 +147,7 @@ test("Check open adverster web page item", async ({ app }) => {
   await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
   await app.webPage.advertiser.waitUntilAdvertiserToBeVisible();
   const oldUrl = await app.page.url();
+  await app.webPage.adsFreePopup.closePopup()
   await app.webPage.advertiser.clickAdsTitleAt({ number: 1 });
 
   //Assert

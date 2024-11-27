@@ -11,6 +11,7 @@ test("Clicking on the swisscows's logo leads to the home page.", async ({
   await app.home.header.searchForm.inputSearchCriteria(faker.word.sample());
   await app.home.header.searchForm.clickEnterSearchField();
   await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
+  await app.webPage.adsFreePopup.closePopup()
   await app.webPage.header.clickSwisscowsLogo();
 
   //Assert
@@ -263,7 +264,8 @@ test("Check design of header component the search pages", async ({
   await app.home.header.searchForm.inputSearchCriteria("A");
   await app.home.header.searchForm.clickEnterSearchField();
   await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
-
+  await app.webPage.adsFreePopup.closePopup()
+  
   //Assert
   await app.webPage.header.takeSnapshot(testInfo);
 });

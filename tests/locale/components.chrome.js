@@ -66,7 +66,8 @@ for (const { test_case, language, languageCode } of footerTable) {
       translationKey_1: "Menu_AboutAG",
       translationKey_2: "Imprint_Menu",
       translationKey_3: "Privacy",
-      translationKey_4: "Donation",
+      translationKey_4: "Cookies",
+      translationKey_5: "Donation",
       locale: languageCode,
     });
     await app.home.footer.expectTranslationsForLink({
@@ -79,16 +80,17 @@ for (const { test_case, language, languageCode } of footerTable) {
         language === "Deutsch" ? "Speakers_Search_Home_Menu" : "",
       translationKey_7: "VPN",
       translationKey_8: "Swisscows.email",
-      translationKey_9: "TeleGuard",
-      translationKey_10: "HES",
-      translationKey_11: "GetDigest",
-      translationKey_12: "Faraday Bag",
-      translationKey_13: "Fan-shop",
-      translationKey_14:
+      translationKey_9: "Edelcloud",
+      translationKey_10: "TeleGuard",
+      translationKey_11: "HES",
+      translationKey_12: "GetDigest",
+      translationKey_13: "Faraday Bag",
+      translationKey_14: "Fan-shop",
+      translationKey_15:
         language === "Русский" || language === "Українська"
           ? "Swisscows блог"
           : "Swisscows Blog",
-      translationKey_15: "Support_Search_Home_Menu",
+      translationKey_16: "Support_Search_Home_Menu",
       locale: languageCode,
     });
   });
