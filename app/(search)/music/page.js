@@ -23,10 +23,7 @@ export default class MusicPage extends BasePage {
     this.myFavoritePlaylist = this.page.getByRole("link", {
       name: /My favorite tracks/,
     });
-    this.playlistNumber = (index) =>
-      this.page
-        .locator(`//a[contains(@href, "/en/music/playlist?query=")]`)
-        .nth(index - 1);
+    this.playlistNumber = this.page.locator(`//a[contains(@href, "/en/music/playlist?query=")]`)
   }
   //Actions
   async clickFavoritePlaylist() {
@@ -34,7 +31,7 @@ export default class MusicPage extends BasePage {
   }
   async clickPlaylistAt(playlist = { number: index }) {
     await this.clickElement(
-      this.playlistNumber(playlist.number - 1),
+      this.playlistNumber.nth(playlist.number - 1),
       `playlist ${playlist.number}`
     );
   }

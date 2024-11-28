@@ -95,6 +95,7 @@ export default class Footer extends BaseComponent {
       translationKey_2: value,
       translationKey_3: value,
       translationKey_4: value,
+      translationKey_5: value,
       locale: value,
     }
   ) {
@@ -110,11 +111,15 @@ export default class Footer extends BaseComponent {
     const expectedLink_4 = this.translations.t(expected.translationKey_4, {
       lng: expected.locale,
     });
+    const expectedLink_5 = this.translations.t(expected.translationKey_5, {
+      lng: expected.locale,
+    });
     await this.expectElementToHaveText(this.menuBottons, [
       expectedLink_1,
       expectedLink_2,
       expectedLink_3,
       expectedLink_4,
+      expectedLink_5,
     ]);
   }
   async expectTranslationsForLink(
@@ -134,11 +139,12 @@ export default class Footer extends BaseComponent {
       translationKey_13: value,
       translationKey_14: value,
       translationKey_15: value,
+      translationKey_16: value,
       locale: value,
     }
   ) {
     const links = [];
-    for (let i = 1; i <= 15; i++) {
+    for (let i = 1; i <= 16; i++) {
       const key = `translationKey_${i}`;
       const translation = this.translations.t(expected[key], {
         lng: expected.locale,

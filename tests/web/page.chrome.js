@@ -1,14 +1,17 @@
 import { test, expect } from "../../utils/fixtures.js";
 import { randomQueryWithVideoItemSearch } from "../../helpers/random.js";
+import { saveStorageState } from "../../helpers/authHelper.js";
 import { faker } from "@faker-js/faker";
 
 test.describe("Error pages in dark theme", () => {
   test.use({ colorScheme: "dark" });
   test("Check No results error web page", async ({ app }, testInfo) => {
+  
     //Actions
     await app.home.open();
     await app.home.header.searchForm.inputSearchCriteria("././././");
     await app.home.header.searchForm.clickEnterSearchField();
+    await app.webPage.adsFreePopup.closePopup()
 
     //Assert
     await app.webPage.error.takeSnapshot(testInfo, {
@@ -119,6 +122,7 @@ test("Check design web page", async ({ app },testInfo) => {
   await app.home.header.searchForm.inputSearchCriteria("ronaldo");
   await app.home.header.searchForm.clickEnterSearchField();
   await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
+  await app.webPage.adsFreePopup.closePopup()
 
   //Assert
   await app.webPage.takeSnapshot(testInfo);
@@ -164,6 +168,7 @@ test.describe("Web-page items", () => {
     await app.home.header.searchForm.clickEnterSearchField();
     await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
     const currentUrl = await app.page.url();
+    await app.webPage.adsFreePopup.closePopup()
     await app.webPage.webPageItem.clickTitleAt({ number: 1 });
 
     //Assert
@@ -179,6 +184,7 @@ test.describe("Web-page items", () => {
     await app.home.header.searchForm.clickEnterSearchField();
     await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
     const currentUrl = await app.page.url();
+    await app.webPage.adsFreePopup.closePopup()
     await app.webPage.webPageItem.clickImageAt({ number: 1 });
 
     //Assert
@@ -237,6 +243,7 @@ test.describe("Article items", () => {
     await app.home.header.searchForm.clickEnterSearchField();
     await app.webPage.article.expectArticleItemsToBeVisible();
     const currentUrl = await app.page.url();
+    await app.webPage.adsFreePopup.closePopup()
     await app.webPage.article.clickImageAt({ number: 1 });
 
     //Assert
@@ -298,6 +305,7 @@ test.describe("Video object items", () => {
     await app.home.header.searchForm.clickEnterSearchField();
     await app.webPage.videoObject.expectVideoObjectItemsToBeVisible();
     const currentUrl = await app.page.url();
+    await app.webPage.adsFreePopup.closePopup()
     await app.webPage.videoObject.clickImageAt({ number: 1 });
 
     //Assert
@@ -354,6 +362,7 @@ test.describe("Book items", () => {
     await app.home.header.searchForm.clickEnterSearchField();
     await app.webPage.book.expectBookItemsToBeVisible();
     const currentUrl = await app.page.url();
+    await app.webPage.adsFreePopup.closePopup()
     await app.webPage.book.clickImageAt({ number: 1 });
 
     //Assert
@@ -369,6 +378,7 @@ test.describe("Book items", () => {
     await app.home.header.searchForm.inputSearchCriteria("Harry Potter and the Sorcerer’s Stone | Goodreads");
     await app.home.header.searchForm.clickEnterSearchField();
     await app.webPage.book.expectBookItemsToBeVisible();
+    await app.webPage.adsFreePopup.closePopup()
 
     //Assert
     await app.webPage.book.takeSnapshot(testInfo);
@@ -422,6 +432,7 @@ test.describe("Place items", () => {
     await app.home.header.searchForm.clickEnterSearchField();
     await app.webPage.place.expectPlaceItemsToBeVisible();
     const currentUrl = await app.page.url();
+    await app.webPage.adsFreePopup.closePopup()
     await app.webPage.place.clickImageAt({ number: 1 });
 
     //Assert
@@ -436,6 +447,7 @@ test.describe("Place items", () => {
     await app.route.requestWithGivenResponse("/v4/web", 'data/mock/web/placeItemData.json');
     await app.home.header.searchForm.inputSearchCriteria("Hotel Malte Astotel");
     await app.home.header.searchForm.clickEnterSearchField();
+    await app.webPage.adsFreePopup.closePopup()
     await app.webPage.place.expectPlaceItemsToBeVisible();
 
     //Assert
@@ -492,6 +504,7 @@ test.describe("Product items", () => {
     await app.home.header.searchForm.clickEnterSearchField();
     await app.webPage.product.expectProductsItemsToBeVisible();
     const currentUrl = await app.page.url();
+    await app.webPage.adsFreePopup.closePopup()
     await app.webPage.product.clickImageAt({ number: 1 });
 
     //Assert
@@ -507,6 +520,7 @@ test.describe("Product items", () => {
     await app.home.header.searchForm.inputSearchCriteria("Catch-22 by Joseph Heller — Yellow Dog Bookshop");
     await app.home.header.searchForm.clickEnterSearchField();
     await app.webPage.product.expectProductsItemsToBeVisible();
+    await app.webPage.adsFreePopup.closePopup()
 
     //Assert
     await app.webPage.product.takeSnapshot(testInfo);
@@ -545,6 +559,7 @@ test("Check next button in the paging", async ({ app }) => {
       itemsCount: 10,
       locale: expect.any(String),
       spellcheck: true,
+      adsIncluded: true
     },
     entities: [],
     items: expect.anything()
@@ -580,6 +595,7 @@ test("Check prev button in the paging", async ({ app }) => {
       itemsCount: 10,
       locale: expect.any(String),
       spellcheck: true,
+      adsIncluded: true
     },
     entities: [],
     items: expect.anything()
@@ -609,6 +625,7 @@ test("Check request when scrolling to last element on page", async ({ app }) => 
       itemsCount: 10,
       locale: expect.any(String),
       spellcheck: true,
+      adsIncluded: true
     },
     entities: [],
     items: expect.anything()

@@ -1,0 +1,28 @@
+{
+    "badgeLinks": [
+        {
+            "testID": "1",
+            "expectedUrl": "https://accounts.dev.swisscows.com/products/vpn",
+            "expectedTitle": "Configure Swisscows Proxy - Swisscows VPN service",
+            "nameIcon" : "badge-vpn"
+        },
+        {
+            "testID": "2",
+            "expectedUrl": "https://accounts.dev.swisscows.com/products/email",
+            "expectedTitle": "Swisscows.email - The secure and private email for you",
+            "nameIcon" : "badge-email"
+        },
+        {
+            "testID": "3",
+            "expectedUrl": "https://accounts.dev.swisscows.com/products/cloud",
+            "expectedTitle": "Edelcloud - Secure cloud storage from Swisscows",
+            "nameIcon" : "badge-edelcloud"
+        },
+        {
+            "testID": "4",
+            "expectedUrl": "https://teleguard.com/en",
+            "expectedTitle": "TeleGuard - secure messenger from Switzerland",
+            "nameIcon" : "badge-tg"
+        }
+    ]
+}

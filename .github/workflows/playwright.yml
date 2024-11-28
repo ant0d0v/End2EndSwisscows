@@ -35,3 +35,14 @@ jobs:
           path: playwright-report/
           retention-days: 1
 
+      - name: Run API tests
+        run: npm run test:api
+        if: always()
+  
+      - uses: actions/upload-artifact@v4
+        if: ${{ !cancelled() }}
+        with:
+          name: playwright-report-api-${{ github.run_id }}
+          path: playwright-report/
+          retention-days: 1    
+

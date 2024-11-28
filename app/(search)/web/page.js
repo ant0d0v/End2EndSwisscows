@@ -22,6 +22,7 @@ import Book from "./Book.js";
 import Skeleton from "./Skeleton.js";
 import FAQ from "./FAQPage.js";
 import Infobox from "./Infobox.js";
+import AdsFreePopup from "../AdsFreePopup.js"
 
 
 export default class WebPage extends BasePage {
@@ -51,6 +52,7 @@ export default class WebPage extends BasePage {
     this.skeleton = new Skeleton(page);
     this.faq = new FAQ(page)
     this.infobox = new Infobox(page);
+    this.adsFreePopup = new AdsFreePopup(page)
 
     //Locators
     this.root = this.page.locator(`.web-results`)

@@ -7,6 +7,7 @@ test("Check No Results Found error image page", async ({ app }, testInfo) => {
   await app.home.header.searchForm.inputSearchCriteria("..");
   await app.home.header.searchForm.clickEnterSearchField();
   await app.imagePage.header.navigation.clickImageTab();
+  await app.imagePage.adsFreePopup.closePopup()
 
   //Assert
   await app.imagePage.error.takeSnapshot(testInfo, {
@@ -96,6 +97,7 @@ test("Check Saved button when adding image to bookmark", async ({
   await app.home.header.searchForm.clickEnterSearchField();
   await app.webPage.header.navigation.clickImageTab();
   await app.imagePage.item.expectImageItemsToBeVisible();
+  await app.imagePage.adsFreePopup.closePopup()
   await app.imagePage.item.clickItemAt({ number: 1 });
   let favoriteID = await app.imagePage.details.getResponseAfterClickGhostButtonBy(
     { name: "Save" }
@@ -119,6 +121,7 @@ test("Check Save button isn't attached in DOM when user logout", async ({
   await app.imagePage.item.expectImageItemsToBeVisible();
   await app.imagePage.header.clickHamburgerMenuButton();
   await app.imagePage.header.hamburgerMenu.clickLogoutButton();
+  await app.imagePage.adsFreePopup.closePopup()
   await app.imagePage.item.clickItemAt({ number: 1 });
 
   //Assert
@@ -139,6 +142,7 @@ test("Check the “Save” button until the image is added to the bookmark", asy
   await app.home.header.searchForm.clickEnterSearchField();
   await app.webPage.header.navigation.clickImageTab();
   await app.imagePage.item.expectImageItemsToBeVisible();
+  await app.imagePage.adsFreePopup.closePopup()
   await app.imagePage.item.clickItemAt({ number: 1 });
 
   //Assert
@@ -156,6 +160,7 @@ test("Check that details panel to be hidden when clicking close button", async (
   await app.home.header.searchForm.clickEnterSearchField();
   await app.webPage.header.navigation.clickImageTab();
   await app.imagePage.item.expectImageItemsToBeVisible();
+  await app.imagePage.adsFreePopup.closePopup()
   await app.imagePage.item.clickItemAt({ number: 1 });
   await app.imagePage.details.expectImageInDetailsPanelToBeVisible();
   await app.imagePage.details.clickCloseButton();
@@ -175,6 +180,7 @@ test("Check image first item equal image in the item details", async ({
   await app.imagePage.item.expectImageItemsToBeVisible();
   const altAttributeFirstImage =
     await app.imagePage.item.getByAltAttributeImageAt({ number: 1 });
+  await app.imagePage.adsFreePopup.closePopup()
   await app.imagePage.item.clickItemAt({ number: 1 });
   const altAttributeImageInItemDetails =
     await app.imagePage.details.getAttributeImageBy({ attribute: "alt" });
@@ -210,6 +216,7 @@ test("Check infinity scroll to next page when item details is opened", async ({
   await app.home.header.searchForm.clickEnterSearchField();
   await app.webPage.header.navigation.clickImageTab();
   await app.imagePage.item.expectImageItemsToBeVisible();
+  await app.imagePage.adsFreePopup.closePopup()
   await app.imagePage.item.clickItemAt({ number: 1 });
   await app.imagePage.item.scrollByVisibleLastItem();
 
@@ -293,6 +300,7 @@ test("Check image item is active  when clicking on image", async ({ app }) => {
   await app.home.header.searchForm.clickEnterSearchField();
   await app.webPage.header.navigation.clickImageTab();
   await app.imagePage.item.expectImageItemsToBeVisible();
+  await app.imagePage.adsFreePopup.closePopup()
   await app.imagePage.item.clickItemAt({ number: 1 });
 
   //Assert
@@ -316,6 +324,7 @@ test("Check open site button when clicking redirect to new page", async ({
   await app.home.header.searchForm.clickEnterSearchField();
   await app.webPage.header.navigation.clickImageTab();
   await app.imagePage.item.expectImageItemsToBeVisible();
+  await app.imagePage.adsFreePopup.closePopup()
   await app.imagePage.item.clickItemAt({ number: 1 });
   const currentUrl = await app.page.url();
   const currentTitle = await app.page.title();
@@ -335,6 +344,7 @@ test("Check that { resolution, title, site } in details pane to have value", asy
   await app.home.header.searchForm.clickEnterSearchField();
   await app.webPage.header.navigation.clickImageTab();
   await app.imagePage.item.expectImageItemsToBeVisible();
+  await app.imagePage.adsFreePopup.closePopup()
   await app.imagePage.item.clickItemAt({ number: 1 });
   await app.imagePage.waitUntilPageIsFullyLoaded();
   const height = await app.imagePage.details.getAttributeImageBy({
@@ -359,6 +369,7 @@ test("Check that details to be in viewport", async ({ app }) => {
   await app.home.header.searchForm.clickEnterSearchField();
   await app.webPage.header.navigation.clickImageTab();
   await app.imagePage.item.expectImageItemsToBeVisible();
+  await app.imagePage.adsFreePopup.closePopup()
   await app.imagePage.item.clickItemAt({ number: 1 });
 
   //Assert
@@ -373,6 +384,7 @@ test("Check design of details pane", async ({ app }, testInfo ) => {
   await app.route.requestWithGivenResponse("/v4/images", 'data/mock/images/testData.json');
   await app.webPage.header.navigation.clickImageTab();
   await app.imagePage.item.expectImageItemsToBeVisible();
+  await app.imagePage.adsFreePopup.closePopup()
   await app.imagePage.item.clickItemAt({ number: 1 });
 
   //Assert
@@ -386,6 +398,7 @@ test("Check preloader on page when Status.LOADING", async ({ app }) => {
   await app.home.header.searchForm.clickEnterSearchField();
   await app.webPage.header.navigation.clickImageTab();
   await app.imagePage.item.expectImageItemsToBeVisible();
+  await app.imagePage.adsFreePopup.closePopup()
   await app.imagePage.item.clickItemAt({ number: 1 });
 
   //Assert

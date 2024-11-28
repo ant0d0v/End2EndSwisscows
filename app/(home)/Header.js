@@ -4,6 +4,7 @@ import BadgeCounter from "../../components/BadgeCounter.js";
 import BadgeEmail from "../../components/BadgeEmail.js";
 import BadgeTeleguard from "../../components/BadgeTeleguard.js";
 import BadgeVPN from "../../components/BadgeVPN.js";
+import BadgeEdelcloud from "../../components/BadgeEdelcloud.js";
 import SearchBar from "../../components/SearchBar.js";
 import ExtensionPopup from "./ExtensionPopup.js";
 import Logo from "./Logo.js";
@@ -19,6 +20,7 @@ export default class Header extends BaseComponent {
     this.badgeEmail = new BadgeEmail(page);
     this.badgeTeleguard = new BadgeTeleguard(page);
     this.badgeVPN = new BadgeVPN(page);
+    this.badgeEdelcloud = new BadgeEdelcloud(page);
     this.searchBar = new SearchBar(page);
     this.searchForm = new SearchForm(page);
     this.logo = new Logo(page);
@@ -30,6 +32,7 @@ export default class Header extends BaseComponent {
     );
     this.taglineList = this.page.locator(".tagline-list");
     this.tagline = this.page.locator(".tagline");
+    this.badge = (name) => this.page.locator(`.${name}`)
   }
 
   //Actions
@@ -50,6 +53,13 @@ export default class Header extends BaseComponent {
     await this.clickElement(
       this.logo.swisscows,
       `Swisscows Logo in the header`
+    );
+  };
+
+  //Verify 
+  expectToBeOpenedPageAfterClickBy = async (expected = { locator: String, url: String} ) => {
+    await this.expectToBeOpenedNewPageAfterClick(
+      this.badge(expected.locator), expected.url
     );
   };
 

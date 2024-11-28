@@ -11,6 +11,7 @@ test.describe("Internal user", () => {
     await app.home.header.searchForm.clickEnterSearchField();
     await app.webPage.header.navigation.clickImageTab();
     await app.imagePage.item.expectImageItemsToBeVisible();
+    await app.imagePage.adsFreePopup.closePopup()
     await app.imagePage.item.clickItemAt({ number: 1 });
     let favoriteID = await app.imagePage.details.getResponseAfterClickGhostButtonBy({ name: "Save" });
     deletionIds.myImages.internalUser.push(favoriteID);
@@ -31,6 +32,7 @@ test.describe("Internal user", () => {
     await app.home.header.searchForm.clickEnterSearchField();
     await app.webPage.header.navigation.clickImageTab();
     await app.imagePage.item.expectImageItemsToBeVisible();
+    await app.imagePage.adsFreePopup.closePopup()
     await app.imagePage.item.clickItemAt({ number: 1 });
     await app.imagePage.details.clickGhostButtonBy({ name: "Save" });
     await app.imagePage.details.clickGhostButtonBy({ name: "Saved" });
@@ -52,6 +54,7 @@ test.describe("Internal user", () => {
     await app.home.header.searchForm.clickEnterSearchField();
     await app.imagePage.header.navigation.clickImageTab();
     await app.imagePage.item.expectImageItemsToBeVisible();
+    await app.imagePage.adsFreePopup.closePopup()
     await app.imagePage.item.clickItemAt({ number: 1 });
     const favoriteIDFirstImage = await app.imagePage.details.getResponseAfterClickGhostButtonBy({ name: "Save" });
     await app.imagePage.details.clickCloseButton();
@@ -80,6 +83,7 @@ test.describe("External user", () => {
     await app.home.header.searchForm.clickEnterSearchField();
     await app.webPage.header.navigation.clickImageTab();
     await app.imagePage.item.expectImageItemsToBeVisible();
+    await app.imagePage.adsFreePopup.closePopup()
     await app.imagePage.item.clickItemAt({ number: 1 });
     let favoriteID = await app.imagePage.details.getResponseAfterClickGhostButtonBy({ name: "Save" });
     deletionIds.myImages.externalUser.push(favoriteID);
@@ -101,6 +105,7 @@ test.describe("External user", () => {
     await app.home.header.searchForm.clickEnterSearchField();
     await app.webPage.header.navigation.clickImageTab();
     await app.imagePage.item.expectImageItemsToBeVisible();
+    await app.imagePage.adsFreePopup.closePopup()
     await app.imagePage.item.clickItemAt({ number: 1 });
     await app.imagePage.waitUntilPageIsFullyLoaded();
     const height = await app.imagePage.details.getAttributeImageBy({ attribute: "height" });
@@ -127,6 +132,7 @@ test.describe("External user", () => {
     await app.home.header.searchForm.clickEnterSearchField();
     await app.imagePage.header.navigation.clickImageTab();
     await app.imagePage.item.expectImageItemsToBeVisible();
+    await app.imagePage.adsFreePopup.closePopup()
     await app.imagePage.item.clickItemAt({ number: 1 });
     let favoriteID = await app.imagePage.details.getResponseAfterClickGhostButtonBy({ name: "Save" });
     deletionIds.myImages.externalUser.push(favoriteID);

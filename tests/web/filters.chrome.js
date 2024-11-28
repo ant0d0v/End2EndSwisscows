@@ -34,7 +34,10 @@ for (const { testID, freshnessPart, fiterName } of filterData.byDate) {
         itemsCount: 10,
         locale: expect.any(String),
         spellcheck: true,
+        adsIncluded: true
       },
+      entities: [],
+      items: expect.anything()
     });
   });
 }
