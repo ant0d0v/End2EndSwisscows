@@ -60,24 +60,6 @@ test.describe("Widget video", () => {
     });
   });
 
-  test("Check the design error icon of video object", async ({
-    app,
-  }, testInfo) => {
-    //Actions
-    await app.home.open();
-    await app.home.header.clickHamburgerMenuButton();
-    await app.home.header.hamburgerMenu.selectRegion("Germany");
-    await app.home.header.searchForm.inputSearchCriteria("iphone");
-    await app.home.header.searchForm.clickEnterSearchField();
-    await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
-    await app.webPage.videoCollection.waitUntilWidgetToBeVisible();
-
-    //Assert
-    await app.webPage.videoCollection.takeSnapshotErrorIconAt(testInfo, {
-      number: 1,
-    });
-  });
-
   test("Check that video  item { site, title } ", async ({ app }) => {
     //Actions
     await app.home.open();

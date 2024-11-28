@@ -417,7 +417,9 @@ test("Check checkbox `Don't remind me again`", async ({ app }) => {
     "/v2/videos",
     "data/mock/video/testData.json"
   );
-  await app.home.header.searchForm.inputSearchCriteria(faker.music.songName());
+  await app.home.header.searchForm.inputSearchCriteria(
+    "Arctic Monkeys - Do I Wanna Know? (Official Video) - YouTube"
+  );
   await app.home.header.searchForm.clickEnterSearchField();
   await app.videoPage.header.navigation.clickVideoTab();
   await app.videoPage.item.expectVideoItemsToBeVisible();

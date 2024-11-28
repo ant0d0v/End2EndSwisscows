@@ -266,6 +266,7 @@ test("Check outline and opacity of item when item is selected", async ({
   await app.home.header.searchForm.clickEnterSearchField();
   await app.webPage.header.navigation.clickImageTab();
   await app.imagePage.item.expectImageItemsToBeVisible();
+  await app.imagePage.adsFreePopup.closePopup()
   await app.imagePage.item.clickItemAt({ number: 1 });
 
   //Assert
