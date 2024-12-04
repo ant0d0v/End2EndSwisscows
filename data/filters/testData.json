@@ -7,7 +7,7 @@
             "freshnessPart": "&freshness=Day",
             "expectedNewsLink": "https://dev.swisscows.com/en/news?query=news&region=de-DE&freshness=Day",
             "expectedVideoURL": "https://dev.swisscows.com/en/video?query=video&region=de-DE&freshness=Day",
-            "fiterName" : "Past Day",
+            "filterName" : "Past Day",
             "filter": "Day"
         },
        
@@ -16,7 +16,7 @@
             "freshnessPart": "&freshness=Month",
             "expectedNewsLink": "https://dev.swisscows.com/en/news?query=news&region=de-DE&freshness=Month",
             "expectedVideoURL": "https://dev.swisscows.com/en/video?query=video&region=de-DE&freshness=Month",
-            "fiterName" : "Past Month",
+            "filterName" : "Past Month",
             "filter": "Month"
         },
         {
@@ -24,7 +24,7 @@
             "freshnessPart": "&freshness=Year",
             "expectedNewsLink": "https://dev.swisscows.com/en/news?query=news&region=de-DE&freshness=Year",
             "expectedVideoURL": "https://dev.swisscows.com/en/video?query=video&region=de-DE&freshness=Year",
-            "fiterName" : "Past Year",
+            "filterName" : "Past Year",
             "filter": "Year"
         }
     ],
@@ -34,7 +34,7 @@
         {
             "testID": "1",
             "expectedVideoURL": "https://dev.swisscows.com/en/video?query=video&publisher=YouTube",
-            "fiterName" : "YouTube",
+            "filterName" : "YouTube",
             "expectedPublisher": "YouTube",
             "publisherPart": "&publisher=YouTube"
         },
@@ -42,14 +42,14 @@
         {
             "testID": "2",
             "expectedVideoURL": "https://dev.swisscows.com/en/video?query=video&publisher=Vimeo",
-            "fiterName" : "Vimeo",
+            "filterName" : "Vimeo",
             "expectedPublisher": "Vimeo",
             "publisherPart": "&publisher=Vimeo"
         },
         {
             "testID": "3",
             "expectedVideoURL": "https://dev.swisscows.com/en/video?query=video&publisher=DailyMotion",
-            "fiterName" : "DailyMotion",
+            "filterName" : "DailyMotion",
             "expectedPublisher": "DailyMotion",
             "publisherPart": "&publisher=DailyMotion"
         }

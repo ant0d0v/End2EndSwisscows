@@ -5,10 +5,10 @@ import { faker } from "@faker-js/faker";
 for (const {
   testID,
   publisherPart,
-  fiterName,
+  filterName,
   expectedPublisher,
 } of filterData.publisher) {
-  test(`${testID} Check search results by filter ${fiterName} navigates to the corresponding URL and matches response results`, async ({
+  test(`${testID} Check search results by filter ${filterName} navigates to the corresponding URL and matches response results`, async ({
     app,
   }) => {
     const query = "news";
@@ -21,7 +21,7 @@ for (const {
     await app.videoPage.filters.clickFilterBy("All publishers");
     const response = await app.videoPage.filters.selectMenu.selectFilterAndGetResponse({
         endpoint: "/v2/videos",
-        locator: fiterName,
+        locator: filterName,
       });
     await app.videoPage.item.expectVideoItemsToBeVisible();  
 
@@ -34,8 +34,8 @@ for (const {
   });
 }
 
-for (const { testID, freshnessPart, fiterName, filter } of filterData.byDate) {
-  test(`${testID} Check search results by filter ${fiterName} navigates to the corresponding URL and matches response results`, async ({
+for (const { testID, freshnessPart, filterName, filter } of filterData.byDate) {
+  test(`${testID} Check search results by filter ${filterName} navigates to the corresponding URL and matches response results`, async ({
     app,
   }) => {
     const randomQuery = faker.word.sample();
@@ -49,7 +49,7 @@ for (const { testID, freshnessPart, fiterName, filter } of filterData.byDate) {
     const response =
       await app.videoPage.filters.selectMenu.selectFilterAndGetResponse({
         endpoint: "/v2/videos",
-        locator: fiterName,
+        locator: filterName,
       });
 
     //Assert
