@@ -2,8 +2,8 @@ import { test } from "../../utils/fixtures.js";
 import { expect } from "@playwright/test";
 import filterData from "../../data/filters/testData.json";
 
-for (const { testID, freshnessPart, fiterName } of filterData.byDate) {
-  test(`${testID}  ${fiterName} filter navigates to the corresponding page.`, async ({
+for (const { testID, freshnessPart, filterName } of filterData.byDate) {
+  test(`${testID}  ${filterName} filter navigates to the corresponding page.`, async ({
     app,
   }) => {
     //Actions
@@ -19,7 +19,7 @@ for (const { testID, freshnessPart, fiterName } of filterData.byDate) {
     const response =
       await app.webPage.filters.selectMenu.selectFilterAndGetResponse({
         endpoint: "/news",
-        locator: fiterName,
+        locator: filterName,
       });
 
     //Assert

@@ -3,8 +3,8 @@ import { expect } from "@playwright/test";
 import filterData from "../../data/filters/testData.json";
 import { faker } from "@faker-js/faker";
 
-for (const { testID, freshnessPart, fiterName } of filterData.byDate) {
-  test(`${testID} Check search results by filter ${fiterName} navigates to the corresponding URL and matches response results`, async ({
+for (const { testID, freshnessPart, filterName} of filterData.byDate) {
+  test(`${testID} Check search results by filter ${filterName} navigates to the corresponding URL and matches response results`, async ({
     app,
   }) => {
     const query = "today"
@@ -17,7 +17,7 @@ for (const { testID, freshnessPart, fiterName } of filterData.byDate) {
     const response =
       await app.webPage.filters.selectMenu.selectFilterAndGetResponse({
         endpoint: "/v4/web",
-        locator: fiterName,
+        locator: filterName,
       });
     await app.webPage.expectContentToBeVisible();  
 
