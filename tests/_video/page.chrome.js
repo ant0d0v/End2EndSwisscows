@@ -1,7 +1,7 @@
 import { test, expect } from "../../utils/fixtures.js";
 import {
   saveStorageState,
-  readStorageState,
+  getStorageKey,
 } from "../../helpers/authHelper.js";
 import { faker } from "@faker-js/faker";
 import { randomVideoQuery } from "../../helpers/random.js";
@@ -432,9 +432,7 @@ test("Check checkbox `Don't remind me again`", async ({ app }) => {
   await app.videoPage.reloadPage();
   await app.videoPage.item.clickVideoImageAt({ number: 1 });
   await saveStorageState(app.page);
-  const savedLocalStorage = await readStorageState();
-  const value = savedLocalStorage["video.mode"];
 
   //Assert
-  expect(value).toEqual('"embedded"');
+  expect(await getStorageKey("video.mode")).toEqual('"embedded"');
 });
