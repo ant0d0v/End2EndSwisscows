@@ -194,7 +194,7 @@ test("Check infinity scroll to next page", async ({ app }) => {
   await app.home.open();
   await app.home.header.clickHamburgerMenuButton();
   await app.home.header.hamburgerMenu.selectRegion("Germany");
-  await app.home.header.searchForm.inputSearchCriteria("red");
+  await app.home.header.searchForm.inputSearchCriteria("trump");
   await app.home.header.searchForm.clickEnterSearchField();
   await app.webPage.header.navigation.clickImageTab();
   await app.imagePage.item.expectImageItemsToBeVisible();
@@ -212,7 +212,7 @@ test("Check infinity scroll to next page when item details is opened", async ({
   await app.home.open();
   await app.home.header.clickHamburgerMenuButton();
   await app.home.header.hamburgerMenu.selectRegion("Germany");
-  await app.home.header.searchForm.inputSearchCriteria("red");
+  await app.home.header.searchForm.inputSearchCriteria("trump");
   await app.home.header.searchForm.clickEnterSearchField();
   await app.webPage.header.navigation.clickImageTab();
   await app.imagePage.item.expectImageItemsToBeVisible();

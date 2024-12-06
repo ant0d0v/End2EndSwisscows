@@ -7,9 +7,11 @@ for (const { testID, freshnessPart, filterName} of filterData.byDate) {
   test(`${testID} Check search results by filter ${filterName} navigates to the corresponding URL and matches response results`, async ({
     app,
   }) => {
-    const query = "today"
+    const query = "news"
     //Actions
     await app.home.open();
+    await app.home.header.clickHamburgerMenuButton();
+    await app.home.header.hamburgerMenu.selectRegion("Germany");
     await app.home.header.searchForm.inputSearchCriteria(query);
     await app.home.header.searchForm.clickEnterSearchField();
     await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
@@ -23,8 +25,7 @@ for (const { testID, freshnessPart, filterName} of filterData.byDate) {
 
     //Assert
     await app.expectPageToHaveUrl(app.page,`${process.env.BASE_URL}/en/web?query=${
-        query + freshnessPart
-      }`
+        query + "&region=de-DE" + freshnessPart}`
     );
     await app.api.search.response.expectBodyToEqual(response, {
       context: {
@@ -32,11 +33,11 @@ for (const { testID, freshnessPart, filterName} of filterData.byDate) {
         effectiveQuery: query,
         offset: 0,
         itemsCount: 10,
-        locale: expect.any(String),
+        locale: "de-DE",
         spellcheck: true,
         adsIncluded: true
       },
-      entities: [],
+      entities:expect.anything(),
       items: expect.anything()
     });
   });

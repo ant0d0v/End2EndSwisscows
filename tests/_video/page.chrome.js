@@ -128,6 +128,9 @@ test("Check the design error icon of video object", async ({
   await app.videoPage.waitUntilPageIsFullyLoaded();
 
   //Assert
+  await app.videoPage.item.expectImageToHaveProperty({
+    complete: true
+  });
   await app.videoPage.item.takeSnapshotErrorIcon(testInfo);
 });
 
@@ -396,7 +399,7 @@ test("Check that dailymotion video is playing", async ({ app }) => {
   await app.home.header.clickHamburgerMenuButton();
   await app.home.header.hamburgerMenu.selectRegion("Germany");
   await app.home.header.searchForm.inputSearchCriteria(
-    "site:dailymotion.com yum"
+    "site:dailymotion.com nfs"
   );
   await app.home.header.searchForm.clickEnterSearchField();
   await app.videoPage.header.navigation.clickVideoTab();

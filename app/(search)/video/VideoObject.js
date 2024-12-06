@@ -90,6 +90,16 @@ export default class Item extends BaseComponent {
     await this.expectAreElementsInListDisplayed(this.images);
   };
 
+  async expectImageToHaveProperty(
+    expectedProperty = {complete: value }
+  ) {
+    await this.expectElementsToHaveJSProperty(
+      this.images,
+      "complete",
+      expectedProperty.complete
+    );
+  }
+
   takeSnapshot = async (testInfo) => {
     await this.expectPageElementToHaveScreenshot(this.root.first(), this.images, testInfo);
   };
