@@ -39,12 +39,4 @@ export default class Footer extends BaseComponent {
       data.expected
     );
   };
-  
-  takeSnapshot = async (testInfo) => {
-    await this.expectPageElementToHaveScreenshot(
-      this.root,
-      this.swisscowsAppImages,
-      testInfo
-    );
-  };
 }

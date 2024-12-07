@@ -2,7 +2,7 @@ import { test, expect } from "../../utils/fixtures.js";
 import testData from "../../data/hamburger/testData.json";
 import {
   saveStorageState,
-  readStorageState,
+  getStorageKey,
 } from "../../helpers/authHelper.js";
 import { faker } from "@faker-js/faker";
 
@@ -54,11 +54,9 @@ test("Check local storage when select dark theme", async ({ app }) => {
   await app.home.header.clickHamburgerMenuButton();
   await app.home.header.hamburgerMenu.selectTheme("Dark");
   await saveStorageState(app.page);
-  const savedLocalStorage = await readStorageState();
-  const value = savedLocalStorage["theme"];
 
   //Assert
-  expect(value).toEqual("dark");
+  expect(await getStorageKey("theme")).toEqual("dark");
 });
 
 test("Check local storage when select light theme", async ({ app }) => {
@@ -67,11 +65,9 @@ test("Check local storage when select light theme", async ({ app }) => {
   await app.home.header.clickHamburgerMenuButton();
   await app.home.header.hamburgerMenu.selectTheme("Light");
   await saveStorageState(app.page);
-  const savedLocalStorage = await readStorageState();
-  const value = savedLocalStorage["theme"];
 
   //Assert
-  expect(value).toEqual("light");
+  expect(await getStorageKey("theme")).toEqual("light");
 });
 
 

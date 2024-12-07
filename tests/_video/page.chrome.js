@@ -399,7 +399,7 @@ test("Check that dailymotion video is playing", async ({ app }) => {
   await app.home.header.clickHamburgerMenuButton();
   await app.home.header.hamburgerMenu.selectRegion("Germany");
   await app.home.header.searchForm.inputSearchCriteria(
-    "site:dailymotion.com nfs"
+    "site:dailymotion.com public video"
   );
   await app.home.header.searchForm.clickEnterSearchField();
   await app.videoPage.header.navigation.clickVideoTab();
