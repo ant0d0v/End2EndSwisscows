@@ -49,6 +49,16 @@ export function randomAdsQuery() {
   return word;
 }
 
+export function randomProductAdsQuery() {
+  const word = faker.helpers.arrayElement([
+    "parfum fuerteventura",
+    "parfüm adidas",
+    "pparfum chanel",
+    "parfüm boss"
+  ]);
+  return word;
+}
+
 export function randomVideoQuery() {
   const word = faker.helpers.arrayElement([
     "Exploring the Mountains",

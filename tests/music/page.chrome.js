@@ -2,7 +2,7 @@ import { test, deletionIds, expect } from "../../utils/fixtures.js";
 import { faker } from "@faker-js/faker";
 import {
   saveStorageState,
-  readStorageState,
+  getStorageKey,
 } from "../../helpers/authHelper.js";
 
 test.skip("Check 204 No Results Found error page ", async ({ app }, testInfo) => {
@@ -330,11 +330,9 @@ test("Check shuffle function in local storage", async ({ app }) => {
   await app.musicPage.player.expectElapsedTimeToHaveText(/^0:0[4-9]$/);
   await app.musicPage.player.clickShuffleButton();
   await saveStorageState(app.page);
-  const savedLocalStorage = await readStorageState();
-  const value = savedLocalStorage["player.shuffle"];
 
   //Assert
-  expect(value).toEqual('true');
+  expect(await getStorageKey("player.shuffle")).toEqual('true');
 });
 
 test("Check infinity scroll to next page", async ({ app }) => {
