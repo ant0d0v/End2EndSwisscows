@@ -86,6 +86,9 @@ export default defineConfig({
       use: {
         ...devices["Desktop Chrome"],
         channel: "chromium",
+        launchOptions: {
+          args: ['--disable-dev-shm-usage', '--disable-web-security']
+        },
         storageState: "./data/auth/internalUser.json",
         viewport: { width: 1440, height: 900 },
       },
