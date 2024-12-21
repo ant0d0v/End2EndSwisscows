@@ -55,7 +55,7 @@ export default defineConfig({
   ],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
-    baseURL: "https://dev.swisscows.com/",
+    baseURL: "https://dev.swisscows.com",
     actionTimeout: 25 * 1000,
     updateSnapshots: "none",
     locale: "en-GB",

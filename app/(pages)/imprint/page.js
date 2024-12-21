@@ -4,6 +4,7 @@ import Translations from "../../../i18n/index.js";
 export default class ImprintPage extends BasePage {
   constructor(page) {
     super(page);
+    this.pagePath = "/imprint"
     this.translations = Translations;
     this.header = new Header(page);
 
@@ -15,15 +16,11 @@ export default class ImprintPage extends BasePage {
     this.locationInfo = this.root.locator(".location");
     this.publishingInfo = this.root.locator(".publishing-info p");
   }
-  //Actions
-  async open() {
-    await this.openPage("/imprint");
-  }
-
   //Verify
   takeSnapshot = async (testInfo) => {
     await this.expectPageToHaveScreenshotWithoutMask(testInfo, this.images);
   };
+  
   expectCompanyInfoImageToBeVisible = async () => {
     await this.expectElementToBeVisible(this.companyInfoImage);
   };

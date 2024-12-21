@@ -10,6 +10,7 @@ export default class MediaEducationPage extends BasePage {
     this.videoPlayer = new videoPlayer(page);
     this.header = new Header(page);
     this.translations = Translations;
+    this.pagePath = "/media-education"
 
     //Locators
     this.root = this.page.locator(".media-education");
@@ -26,10 +27,7 @@ export default class MediaEducationPage extends BasePage {
   }
 
   //Actions
-  async open() {
-    await this.openPage("/media-education");
-  }
-
+ 
   async clickPdfLinkOnThePage(id) {
     const newPage = await this.clickElementAndNavigateToNewPage(
       this.pdfLinks(id),

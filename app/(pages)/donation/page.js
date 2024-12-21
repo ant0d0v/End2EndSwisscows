@@ -6,6 +6,7 @@ import { expect, test }from "@playwright/test";
 export default class DonationPage extends BasePage {
   constructor(page) {
     super(page);
+    this.pagePath = "/donation"
     this.videoPlayer = new videoPlayer(page);
     this.header = new Header(page);
 
@@ -17,9 +18,6 @@ export default class DonationPage extends BasePage {
   }
 
   //Actions
-  async open() {
-    await this.openPage("/donation");
-  }
 
   async expectToBeOpenedPageAfterClickKeyshiftLink(expectedLink) {
     await this.expectToBeOpenedNewPageAfterClick(

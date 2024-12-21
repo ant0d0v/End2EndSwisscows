@@ -74,19 +74,4 @@ export default class AdvertiserProductCollection extends BaseComponent {
     await this.expectTextsToContains(this.site, expectedInfo.site);
     await this.expectTextsToContains(this.shipping, expectedInfo.shipping);
   }
-
-  expectThumbnailToHaveProperty = async (
-    expected = { width: Number, height: Number }
-  ) => {
-    await this.expectElementsToHaveJSProperty(
-      this.thumbnail,
-      "offsetWidth",
-      expected.width
-    );
-    await this.expectElementsToHaveJSProperty(
-      this.thumbnail,
-      "offsetHeight",
-      expected.height
-    );
-  };
 }

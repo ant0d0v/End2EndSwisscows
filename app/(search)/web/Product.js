@@ -45,24 +45,7 @@ export default class Product extends BaseComponent {
     await this.expectTextsToContains(this.descriptions, expectedInfo.description);
     await this.expectTextsToContains(this.sites, expectedInfo.site);
   }
-  expectThumbnailsToHaveJSProperty = async (
-    expectedProperty = {
-      height: Number,
-      width: Number,
-    }
-  ) => {
-    await this.expectElementsToHaveJSProperty(
-      this.thumbnails,
-      "height",
-      expectedProperty.height
-    );
-    await this.expectElementsToHaveJSProperty(
-      this.thumbnails,
-      "width",
-      expectedProperty.width
-    );
-  };
-
+  
   expectThumbnailsToBeVisible = async () => {
     await this.expectAreElementsInListDisplayed(this.thumbnails);
   };

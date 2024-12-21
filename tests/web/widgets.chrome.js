@@ -515,9 +515,7 @@ test.describe("Widget summary", () => {
     app,
   }) => {
     //Actions
-    await app.home.open();
-    await app.home.header.searchForm.inputSearchCriteria(faker.word.sample());
-    await app.home.header.searchForm.clickEnterSearchField();
+    await app.webPage.open(`/web?query=${faker.word.sample()}`)
     await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
     await app.webPage.webPageItem.clickAiButtonAt({ number: 1 });
 
@@ -529,9 +527,7 @@ test.describe("Widget summary", () => {
     app,
   }) => {
     //Actions
-    await app.home.open();
-    await app.home.header.searchForm.inputSearchCriteria(faker.word.sample());
-    await app.home.header.searchForm.clickEnterSearchField();
+    await app.webPage.open(`/web?query=${faker.word.sample()}`);
     await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
     await app.webPage.webPageItem.clickAiButtonAt({ number: 1 });
     await app.webPage.webPageItem.summary.expectWidgetToBeVisible();
@@ -545,9 +541,7 @@ test.describe("Widget summary", () => {
     app,
   }) => {
     //Actions
-    await app.home.open();
-    await app.home.header.searchForm.inputSearchCriteria(faker.word.sample());
-    await app.home.header.searchForm.clickEnterSearchField();
+    await app.webPage.open(`/web?query=${faker.word.sample()}`)
     await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
     await app.webPage.webPageItem.clickAiButtonAt({ number: 1 });
 
@@ -563,9 +557,7 @@ test.describe("Widget summary", () => {
 
   test("Check design summary widget", async ({ app }, testInfo) => {
     //Actions
-    await app.home.open();
-    await app.home.header.searchForm.inputSearchCriteria(faker.word.sample());
-    await app.home.header.searchForm.clickEnterSearchField();
+    await app.webPage.open(`/web?query=${faker.word.sample()}`)
     await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
     await app.route.requestWithGivenResponseTypeText(
       "/ai/summary",
@@ -598,9 +590,7 @@ test.describe("Widget summary", () => {
 
   test("Check summary widget content to have 3 paragraphs", async ({ app }) => {
     //Actions
-    await app.home.open();
-    await app.home.header.searchForm.inputSearchCriteria(faker.word.sample());
-    await app.home.header.searchForm.clickEnterSearchField();
+    await app.webPage.open(`/web?query=${faker.word.sample()}`)
     await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
     const text = await app.webPage.webPageItem.getResponseAfterClickAiButtonAt({
       number: 1,
@@ -621,9 +611,7 @@ test.describe("Widget summary", () => {
         app,
       }) => {
         //Actions
-        await app.home.open();
-        await app.home.header.searchForm.inputSearchCriteria("swisscows");
-        await app.home.header.searchForm.clickEnterSearchField();
+        await app.webPage.open("/web?query=swisscows")
         await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
         await app.webPage.webPageItem.clickAiButtonAt({ number: 1 });
 

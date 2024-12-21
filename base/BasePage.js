@@ -1,12 +1,14 @@
 import { expect,test} from "@playwright/test";
 import BaseComponent from "./BaseComponent.js";
+import { base } from "@faker-js/faker";
 export default class BasePage extends BaseComponent {
   constructor(page) {
     super(page);
+    this.pagePath = ""
   }
   //Actions
-  async openPage(path) {
-    await this.page.goto(process.env.BASE_URL + path);
+  async open(path = this.pagePath) {
+    await this.page.goto(path);
   }
 
   async reloadPage() {
@@ -14,6 +16,7 @@ export default class BasePage extends BaseComponent {
       await this.page.reload("domcontentloaded");
     });
   }
+  
   async goBack() {
     await test.step("Navigate to the previous page in history.", async () => {
       await this.page.goBack();

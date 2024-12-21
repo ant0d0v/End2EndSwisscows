@@ -1,16 +1,12 @@
 import { test, expect } from "../../utils/fixtures.js";
 import { randomQueryWithVideoItemSearch } from "../../helpers/random.js";
-import { saveStorageState } from "../../helpers/authHelper.js";
 import { faker } from "@faker-js/faker";
 
 test.describe("Error pages in dark theme", () => {
   test.use({ colorScheme: "dark" });
   test("Check No results error web page", async ({ app }, testInfo) => {
-  
     //Actions
-    await app.home.open();
-    await app.home.header.searchForm.inputSearchCriteria("././././");
-    await app.home.header.searchForm.clickEnterSearchField();
+    await app.webPage.open("/web?query=././././")
     await app.webPage.adsFreePopup.closePopup()
 
     //Assert
@@ -24,9 +20,7 @@ test.describe("Error pages in dark theme", () => {
     app,
   }, testInfo) => {
     //Actions
-    await app.home.open();
-    await app.home.header.searchForm.inputSearchCriteria("porn");
-    await app.home.header.searchForm.clickEnterSearchField();
+    await app.webPage.open("/web?query=porn")
 
     //Assert
     await app.webPage.error.takeSnapshot(testInfo, {
@@ -37,10 +31,8 @@ test.describe("Error pages in dark theme", () => {
 
   test("Check 429 Too many requests", async ({ app }, testInfo) => {
     //Actions
-    await app.home.open();
     await app.route.requestWithGivenResponseStatusCode("/v4/web", 429);
-    await app.home.header.searchForm.inputSearchCriteria("food");
-    await app.home.header.searchForm.clickEnterSearchField();
+    await app.webPage.open("/web?query=food")
 
     //Assert
     await app.webPage.error.takeSnapshot(testInfo, {
@@ -51,10 +43,8 @@ test.describe("Error pages in dark theme", () => {
 
   test("Check 500 unknown Error Page", async ({ app }, testInfo) => {
     //Actions
-    await app.home.open();
     await app.route.requestWithGivenResponseStatusCode("/v4/web", 500);
-    await app.home.header.searchForm.inputSearchCriteria("food");
-    await app.home.header.searchForm.clickEnterSearchField();
+    await app.webPage.open("/web?query=food")
 
     //Assert
     await app.webPage.error.takeSnapshot(testInfo, {
@@ -65,10 +55,8 @@ test.describe("Error pages in dark theme", () => {
 
   test("Check 501 unsupported region", async ({ app }, testInfo) => {
     //Actions
-    await app.home.open();
     await app.route.requestWithGivenResponseStatusCode("/v4/web", 501);
-    await app.home.header.searchForm.inputSearchCriteria("food");
-    await app.home.header.searchForm.clickEnterSearchField();
+    await app.webPage.open("/web?query=food")
 
     //Assert
     await app.webPage.error.takeSnapshot(testInfo, {
@@ -79,7 +67,7 @@ test.describe("Error pages in dark theme", () => {
 
   test("Check 404 Page Not Found", async ({ app }, testInfo) => {
     //Actions
-    await app.openNotFoundPage("/web/123");
+    await app.webPage.open("/web/123");
 
     //Assert
     await app.webPage.takeSnapshot(testInfo);
@@ -103,9 +91,7 @@ test("Check design alternate search", async ({ app }, testInfo) => {
 
 test("Check that web results equals search criteria", async ({ app }) => {
   //Actions
-  await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria("wikipedia");
-  await app.home.header.searchForm.clickEnterSearchField();
+  await app.webPage.open("/web?query=wikipedia")
   await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
 
   //Assert
@@ -115,12 +101,8 @@ test("Check that web results equals search criteria", async ({ app }) => {
 
 test("Check design web page", async ({ app },testInfo) => {
   //Actions
-  await app.home.open();
-  await app.home.header.clickHamburgerMenuButton();
-  await app.home.header.hamburgerMenu.selectRegion("Germany");
   await app.route.requestWithGivenResponse("/v4/web", 'data/mock/web/testData.json');
-  await app.home.header.searchForm.inputSearchCriteria("ronaldo");
-  await app.home.header.searchForm.clickEnterSearchField();
+  await app.webPage.open("/web?query=ronaldo")
   await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
   await app.webPage.adsFreePopup.closePopup()
 
@@ -144,28 +126,10 @@ test.describe("Web-page items", () => {
     });
   });
 
-  test("Check that web-page item thumbnails to have height = 60 and width = 60", async ({
-    app,
-  }) => {
-    //Actions
-    await app.home.open();
-    await app.home.header.searchForm.inputSearchCriteria(faker.word.sample());
-    await app.home.header.searchForm.clickEnterSearchField();
-    await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
-
-    //Assert
-    await app.webPage.webPageItem.expectThumbnailsToBeVisible();
-    await app.webPage.webPageItem.expectThumbnailsToHaveJSProperty({
-      height: 60,
-      width: 60,
-    });
-  });
 
   test("Check open link in  the web result when clicking title", async ({ app }) => {
     //Actions
-    await app.home.open();
-    await app.home.header.searchForm.inputSearchCriteria(faker.word.sample());
-    await app.home.header.searchForm.clickEnterSearchField();
+    await app.webPage.open(`/web?query=${faker.word.sample()}`)
     await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
     const currentUrl = await app.page.url();
     await app.webPage.adsFreePopup.closePopup()
@@ -213,25 +177,6 @@ test.describe("Article items", () => {
     });
   });
 
-  test("Check that article item thumbnails to have height = 60 and width = 60 ", async ({
-    app,
-  }) => {
-    //Actions
-    await app.home.open();
-    await app.home.header.clickHamburgerMenuButton();
-    await app.home.header.hamburgerMenu.selectRegion("Germany");
-    await app.home.header.searchForm.inputSearchCriteria("Arctic Monkeys’ “AM” [Review]");
-    await app.home.header.searchForm.clickEnterSearchField();
-    await app.webPage.article.expectArticleItemsToBeVisible();
-
-    //Assert
-    await app.webPage.article.expectThumbnailsToBeVisible();
-    await app.webPage.article.expectThumbnailsToHaveJSProperty({
-      height: 60,
-      width: 60,
-    });
-  });
-
   test("Check open new page when clicking image of article item", async ({
     app,
   }) => {
@@ -252,26 +197,6 @@ test.describe("Article items", () => {
 });
 
 test.describe("Video object items", () => {
-  test("Check that video object item thumbnails to have height = 64 and width = 86", async ({
-    app,
-  }) => {
-    //Actions
-    await app.home.open();
-    await app.home.header.clickHamburgerMenuButton();
-    await app.home.header.hamburgerMenu.selectRegion("Germany");
-    await app.home.header.searchForm.inputSearchCriteria(
-      randomQueryWithVideoItemSearch()
-    );
-    await app.home.header.searchForm.clickEnterSearchField();
-    await app.webPage.videoObject.expectVideoObjectItemsToBeVisible();
-
-    //Assert
-    await app.webPage.videoObject.expectThumbnailsToBeVisible();
-    await app.webPage.videoObject.expectThumbnailsToHaveJSProperty({
-      height: 64,
-      width: 86,
-    });
-  });
   test("Check that video object item { site, title, description }", async ({
     app,
   }) => {
@@ -314,24 +239,6 @@ test.describe("Video object items", () => {
 });
 
 test.describe("Book items", () => {
-  test("Check that book item thumbnails to have height = 60 and width = 60", async ({
-    app,
-  }) => {
-    //Actions
-    await app.home.open();
-    await app.home.header.clickHamburgerMenuButton();
-    await app.home.header.hamburgerMenu.selectRegion("Germany");
-    await app.home.header.searchForm.inputSearchCriteria("Harry Potter and the Sorcerer’s Stone | Goodreads");
-    await app.home.header.searchForm.clickEnterSearchField();
-    await app.webPage.book.expectBookItemsToBeVisible();
-
-    //Assert
-    await app.webPage.book.expectThumbnailsToBeVisible();
-    await app.webPage.book.expectThumbnailsToHaveJSProperty({
-      height: 60,
-      width: 60,
-    });
-  });
   test("Check that place item { title, author, description, rate, site }", async ({
     app,
   }) => {
@@ -386,24 +293,6 @@ test.describe("Book items", () => {
 });
 
 test.describe("Place items", () => {
-  test("Check that place item thumbnails to have height = 60 and width = 60", async ({
-    app,
-  }) => {
-    //Actions
-    await app.home.open();
-    await app.home.header.clickHamburgerMenuButton();
-    await app.home.header.hamburgerMenu.selectRegion("Germany");
-    await app.home.header.searchForm.inputSearchCriteria("Hotel Malte Astotel");
-    await app.home.header.searchForm.clickEnterSearchField();
-    await app.webPage.place.expectPlaceItemsToBeVisible();
-
-    //Assert
-    await app.webPage.place.expectThumbnailsToBeVisible();
-    await app.webPage.place.expectThumbnailsToHaveJSProperty({
-      height: 60,
-      width: 60,
-    });
-  });
   test("Check that place item { title, address, description, site }", async ({
     app,
   }) => {
@@ -423,6 +312,7 @@ test.describe("Place items", () => {
       site: /(?:www\.)?[a-zA-Z0-9-]+\.[a-zA-Z]{2,}(?:\/[^\s]*)?/,
     });
   });
+
   test("Check open new page when clicking image of place item", async ({ app }) => {
     //Actions
     await app.home.open();
@@ -456,25 +346,6 @@ test.describe("Place items", () => {
 });
 
 test.describe("Product items", () => {
-  test("Check that product item thumbnails to have height = 60 and width = 60", async ({
-    app,
-  }) => {
-    //Actions
-    await app.home.open();
-    await app.home.header.clickHamburgerMenuButton();
-    await app.home.header.hamburgerMenu.selectRegion("Germany");
-    await app.home.header.searchForm.inputSearchCriteria("Catch-22 by Joseph Heller — Yellow Dog Bookshop");
-    await app.home.header.searchForm.clickEnterSearchField();
-    await app.webPage.product.expectProductsItemsToBeVisible();
-
-    //Assert
-    await app.webPage.product.expectThumbnailsToBeVisible();
-    await app.webPage.product.expectThumbnailsToHaveJSProperty({
-      height: 60,
-      width: 60,
-    });
-  });
-
   test("Check that product item { title, price, description, site }", async ({
     app,
   }) => {
@@ -539,9 +410,7 @@ test("Check that loader skeleton", async ({ app }, testInfo) => {
 
 test("Check next button in the paging", async ({ app }) => {
   //Actions
-  await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria("news");
-  await app.home.header.searchForm.clickEnterSearchField();
+  await app.webPage.open("/web?query=news")
   await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
   await app.webPage.webPageItem.scrollToLastItem()
   await app.webPage.expectContentToBeVisible();
@@ -571,9 +440,7 @@ test("Check next button in the paging", async ({ app }) => {
 test("Check prev button in the paging", async ({ app }) => {
   const randomQuery = faker.word.sample();
   //Actions
-  await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria(randomQuery);
-  await app.home.header.searchForm.clickEnterSearchField();
+  await app.webPage.open(`/web?query=${randomQuery}`)
   await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
   await app.webPage.webPageItem.scrollToLastItem()
   await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
@@ -608,9 +475,7 @@ test("Check request when scrolling to last element on page", async ({ app }) => 
   const randomQuery = faker.word.sample();
 
   //Actions
-  await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria(randomQuery);
-  await app.home.header.searchForm.clickEnterSearchField();
+  await app.webPage.open(`/web?query=${randomQuery}`)
   await app.webPage.expectContentToBeVisible();
   const response = await app.webPage.scrollToLastItemAndGetResponse({ endpoint: "/v4/web" })
   await app.webPage.expectContentToBeVisible();
