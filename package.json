@@ -20,6 +20,9 @@
     "csv-parse": "^5.5.3",
     "dotenv": "^16.4.5",
     "i18next": "^23.11.5",
-    "rimraf": "^5.0.5"
+    "rimraf": "^5.0.5",
+    "playwright-extra": "^4.3.6",
+    "playwright-extra-plugin-stealth": "^0.0.1",
+    "puppeteer-extra-plugin-stealth": "^2.11.2"
   }
 }
