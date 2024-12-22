@@ -11,13 +11,7 @@ test("Check that ads free popup to equal false in storage when close popup", asy
   app,
 }) => {
   //Actions
-  await app.home.open();
-  await app.home.header.clickHamburgerMenuButton();
-  await app.home.header.hamburgerMenu.selectRegion("Germany");
-  await app.home.header.searchForm.inputSearchCriteria(faker.word.sample());
-  await app.home.header.searchForm.clickEnterSearchField();
-  await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
-  await app.webPage.header.navigation.clickImageTab();
+  await app.imagePage.open(`/images?query=${faker.word.sample()}&region=de-DE`)
   await app.imagePage.item.expectImageItemsToBeVisible();
   await app.imagePage.adsFreePopup.clickCloseButton();
   await saveStorageState(app.page);
@@ -30,13 +24,7 @@ test("Check that ads free popup is hidden when close popup", async ({
   app,
 }) => {
   //Actions
-  await app.home.open();
-  await app.home.header.clickHamburgerMenuButton();
-  await app.home.header.hamburgerMenu.selectRegion("Germany");
-  await app.home.header.searchForm.inputSearchCriteria(faker.word.sample());
-  await app.home.header.searchForm.clickEnterSearchField();
-  await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
-  await app.webPage.header.navigation.clickImageTab();
+  await app.imagePage.open(`/images?query=${faker.word.sample()}&region=de-DE`)
   await app.imagePage.item.expectImageItemsToBeVisible();
   await app.imagePage.adsFreePopup.clickCloseButton();
 
@@ -48,13 +36,7 @@ test("Check show ads free popup is displayed again after 24 hours", async ({
   app,
 }) => {
   //Actions
-  await app.home.open();
-  await app.home.header.clickHamburgerMenuButton();
-  await app.home.header.hamburgerMenu.selectRegion("Germany");
-  await app.home.header.searchForm.inputSearchCriteria(faker.word.sample());
-  await app.home.header.searchForm.clickEnterSearchField();
-  await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
-  await app.webPage.header.navigation.clickImageTab();
+  await app.imagePage.open(`/images?query=${faker.word.sample()}&region=de-DE`)
   await app.imagePage.item.expectImageItemsToBeVisible();
   await app.imagePage.adsFreePopup.clickCloseButton();
   await saveStorageState(app.page);

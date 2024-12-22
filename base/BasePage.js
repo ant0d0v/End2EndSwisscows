@@ -23,12 +23,6 @@ export default class BasePage extends BaseComponent {
     });
   }
 
-  async waitUntilPageIsFullyLoaded() {
-    await test.step("Wait for all network requests for images to complete", async () => {
-      await this.page.waitForLoadState("networkidle");
-    });
-  }
-
   //Verify
 
   async expectPageToHaveScreenshot(testInfo, elements, element) {
@@ -36,8 +30,7 @@ export default class BasePage extends BaseComponent {
       testInfo.snapshotSuffix = "";
       const imageElements = await elements.all();
       for (const image of imageElements) {
-        await image.scrollIntoViewIfNeeded();
-        await expect(image).not.toHaveJSProperty("naturalWidth", 0);
+        await this.waitElementIsLoaded(image)
       }
       await expect(this.page).toHaveScreenshot(`${testInfo.title}.png`, {
         fullPage: true,
@@ -51,8 +44,7 @@ export default class BasePage extends BaseComponent {
       testInfo.snapshotSuffix = "";
       const imageElements = await elements.all();
       for (const image of imageElements) {
-        await image.scrollIntoViewIfNeeded();
-        await expect(image).not.toHaveJSProperty("naturalWidth", 0);
+        await this.waitElementIsLoaded(image)
       }
       await expect(this.page).toHaveScreenshot(`${testInfo.title}.png`, {
         fullPage: true,

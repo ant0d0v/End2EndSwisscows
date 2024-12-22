@@ -40,10 +40,7 @@ for (const { testID, freshnessPart, filterName, filter } of filterData.byDate) {
   }) => {
     const randomQuery = faker.word.sample();
     //Actions
-    await app.home.open();
-    await app.home.header.searchForm.inputSearchCriteria(randomQuery);
-    await app.home.header.searchForm.clickEnterSearchField();
-    await app.videoPage.header.navigation.clickVideoTab();
+    await app.videoPage.open(`/video?query=${randomQuery}`)
     await app.videoPage.item.expectVideoItemsToBeVisible();
     await app.videoPage.filters.clickFilterBy("Any time");
     const response =
@@ -71,10 +68,7 @@ for (const { testID, freshnessPart, filterName, filter } of filterData.byDate) {
 
 test("Check list dropdown of filter by date ", async ({ app }, testInfo) => {
   //Actions
-  await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria(faker.word.sample());
-  await app.home.header.searchForm.clickEnterSearchField();
-  await app.videoPage.header.navigation.clickVideoTab();
+  await app.videoPage.open(`/video?query=${faker.word.sample()}`)
   await app.videoPage.item.expectVideoItemsToBeVisible();
   await app.videoPage.filters.clickFilterBy("Any time");
 
@@ -84,10 +78,7 @@ test("Check list dropdown of filter by date ", async ({ app }, testInfo) => {
 
 test("Check list dropdown of filter publisher ", async ({ app }, testInfo) => {
   //Actions
-  await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria(faker.word.sample());
-  await app.home.header.searchForm.clickEnterSearchField();
-  await app.videoPage.header.navigation.clickVideoTab();
+  await app.videoPage.open(`/video?query=${faker.word.sample()}`)
   await app.videoPage.item.expectVideoItemsToBeVisible();
   await app.videoPage.filters.clickFilterBy("All publishers");
 
@@ -99,10 +90,7 @@ test("Check that dropdown of filter by publishers is opened", async ({
   app,
 }) => {
   //Actions
-  await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria(faker.word.sample());
-  await app.home.header.searchForm.clickEnterSearchField();
-  await app.videoPage.header.navigation.clickVideoTab();
+  await app.videoPage.open(`/video?query=${faker.word.sample()}`)
   await app.videoPage.item.expectVideoItemsToBeVisible();
   await app.videoPage.filters.clickFilterBy("All publishers");
 

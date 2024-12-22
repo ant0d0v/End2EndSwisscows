@@ -6,10 +6,7 @@ test.describe("Internal user", () => {
     app,
   }, testInfo) => {
     //Actions
-    await app.home.open();
-    await app.home.header.searchForm.inputSearchCriteria(faker.word.sample());
-    await app.home.header.searchForm.clickEnterSearchField();
-    await app.webPage.header.navigation.clickImageTab();
+    await app.imagePage.open(`/images?query=${faker.word.sample()}`)
     await app.imagePage.item.expectImageItemsToBeVisible();
     await app.imagePage.adsFreePopup.closePopup()
     await app.imagePage.item.clickItemAt({ number: 1 });
@@ -27,10 +24,7 @@ test.describe("Internal user", () => {
 
   test("Check No items Found error page", async ({ app }, testInfo) => {
     //Actions
-    await app.home.open();
-    await app.home.header.searchForm.inputSearchCriteria(faker.word.sample());
-    await app.home.header.searchForm.clickEnterSearchField();
-    await app.webPage.header.navigation.clickImageTab();
+    await app.imagePage.open(`/images?query=${faker.word.sample()}`)
     await app.imagePage.item.expectImageItemsToBeVisible();
     await app.imagePage.adsFreePopup.closePopup()
     await app.imagePage.item.clickItemAt({ number: 1 });
@@ -49,10 +43,7 @@ test.describe("Internal user", () => {
 
   test("Check adding multiple favorites to a my images ", async ({ app }) => {
     //Actions
-    await app.home.open();
-    await app.home.header.searchForm.inputSearchCriteria(faker.animal.cat());
-    await app.home.header.searchForm.clickEnterSearchField();
-    await app.imagePage.header.navigation.clickImageTab();
+    await app.imagePage.open(`/images?query=${faker.animal.cat()}`)
     await app.imagePage.item.expectImageItemsToBeVisible();
     await app.imagePage.adsFreePopup.closePopup()
     await app.imagePage.item.clickItemAt({ number: 1 });
@@ -78,10 +69,7 @@ test.describe("External user", () => {
   test.use({ storageState: "./data/auth/externalUser.json" });
   test("Check close button in the item details my images ", async ({ app }) => {
     //Actions
-    await app.home.open();
-    await app.home.header.searchForm.inputSearchCriteria(faker.word.sample());
-    await app.home.header.searchForm.clickEnterSearchField();
-    await app.webPage.header.navigation.clickImageTab();
+    await app.imagePage.open(`/images?query=${faker.word.sample()}`)
     await app.imagePage.item.expectImageItemsToBeVisible();
     await app.imagePage.adsFreePopup.closePopup()
     await app.imagePage.item.clickItemAt({ number: 1 });
@@ -100,14 +88,11 @@ test.describe("External user", () => {
     app,
   }) => {
     //Actions
-    await app.home.open();
-    await app.home.header.searchForm.inputSearchCriteria("Ronaldo");
-    await app.home.header.searchForm.clickEnterSearchField();
-    await app.webPage.header.navigation.clickImageTab();
+    await app.imagePage.open(`/images?query=Ronaldo`)
     await app.imagePage.item.expectImageItemsToBeVisible();
     await app.imagePage.adsFreePopup.closePopup()
     await app.imagePage.item.clickItemAt({ number: 1 });
-    await app.imagePage.waitUntilPageIsFullyLoaded();
+    await app.imagePage.details.waitImageIsLoaded();
     const height = await app.imagePage.details.getAttributeImageBy({ attribute: "height" });
     const width = await app.imagePage.details.getAttributeImageBy({ attribute: "width" });
     let favoriteID = await app.imagePage.details.getResponseAfterClickGhostButtonBy({ name: "Save" });
@@ -127,10 +112,7 @@ test.describe("External user", () => {
 
   test("Check regional search", async ({ app }) => {
     //Actions
-    await app.home.open();
-    await app.home.header.searchForm.inputSearchCriteria("good");
-    await app.home.header.searchForm.clickEnterSearchField();
-    await app.imagePage.header.navigation.clickImageTab();
+    await app.imagePage.open(`/images?query=good`)
     await app.imagePage.item.expectImageItemsToBeVisible();
     await app.imagePage.adsFreePopup.closePopup()
     await app.imagePage.item.clickItemAt({ number: 1 });

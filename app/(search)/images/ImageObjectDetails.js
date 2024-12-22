@@ -53,6 +53,10 @@ export default class ItemDetails extends BaseComponent {
     return await this.image.getAttribute(expected.attribute);
   };
 
+  waitImageIsLoaded = async () => {
+    await this.waitElementIsLoaded(this.image, "detail image")
+  };
+
   //Verify
 
   expectBookmarkButtonIsActive = async () => {

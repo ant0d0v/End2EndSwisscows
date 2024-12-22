@@ -5,12 +5,7 @@ test.describe("Internal user", () => {
   test.describe.configure({ mode: "default" });
   test("Check No items Found error page ", async ({ app }, testInfo) => {
     //Actions
-    await app.home.open();
-    await app.home.header.searchForm.inputSearchCriteria(
-      faker.music.songName()
-    );
-    await app.home.header.searchForm.clickEnterSearchField();
-    await app.musicPage.header.navigation.clickMusicTab();
+    await app.musicPage.open(`/music?query=${faker.music.songName()}`)
     await app.musicPage.track.expectMusicTracksToBeVisible();
     await app.musicPage.track.clickFavoriteButtonAt({ number: 1 });
     await app.musicPage.clickFavoritePlaylist();
@@ -28,12 +23,7 @@ test.describe("Internal user", () => {
     app,
   }, testInfo) => {
     //Actions
-    await app.home.open();
-    await app.home.header.searchForm.inputSearchCriteria(
-      faker.music.songName()
-    );
-    await app.home.header.searchForm.clickEnterSearchField();
-    await app.musicPage.header.navigation.clickMusicTab();
+    await app.musicPage.open(`/music?query=${faker.music.songName()}`)
     await app.musicPage.track.expectMusicTracksToBeVisible();
     await app.musicPage.track.clickFavoriteButtonAt({ number: 1 });
     await app.musicPage.clickFavoritePlaylist();
@@ -50,12 +40,7 @@ test.describe("Internal user", () => {
 
   test("Check play track on music my page", async ({ app }) => {
     //Actions
-    await app.home.open();
-    await app.home.header.searchForm.inputSearchCriteria(
-      faker.music.songName()
-    );
-    await app.home.header.searchForm.clickEnterSearchField();
-    await app.musicPage.header.navigation.clickMusicTab();
+    await app.musicPage.open(`/music?query=${faker.music.songName()}`)
     await app.musicPage.track.expectMusicTracksToBeVisible();
     const favoriteID =
       await app.musicPage.track.clickFavoriteButtonAtAndGetResponse({
@@ -72,12 +57,7 @@ test.describe("Internal user", () => {
 
   test("Check pause track on my music page", async ({ app }) => {
     //Actions
-    await app.home.open();
-    await app.home.header.searchForm.inputSearchCriteria(
-      faker.music.songName()
-    );
-    await app.home.header.searchForm.clickEnterSearchField();
-    await app.musicPage.header.navigation.clickMusicTab();
+    await app.musicPage.open(`/music?query=${faker.music.songName()}`)
     await app.musicPage.track.expectMusicTracksToBeVisible();
     const favoriteID =
       await app.musicPage.track.clickFavoriteButtonAtAndGetResponse({
@@ -96,12 +76,7 @@ test.describe("Internal user", () => {
 
   test("Check set time in track", async ({ app }) => {
     //Actions
-    await app.home.open();
-    await app.home.header.searchForm.inputSearchCriteria(
-      faker.music.songName()
-    );
-    await app.home.header.searchForm.clickEnterSearchField();
-    await app.musicPage.header.navigation.clickMusicTab();
+    await app.musicPage.open(`/music?query=${faker.music.songName()}`)
     await app.musicPage.track.expectMusicTracksToBeVisible();
     const favoriteID =
       await app.musicPage.track.clickFavoriteButtonAtAndGetResponse({
@@ -128,12 +103,7 @@ test.describe("External user", () => {
   test.use({ storageState: "./data/auth/externalUser.json" });
   test("Check set time in the player", async ({ app }) => {
     //Actions
-    await app.home.open();
-    await app.home.header.searchForm.inputSearchCriteria(
-      faker.music.songName()
-    );
-    await app.home.header.searchForm.clickEnterSearchField();
-    await app.musicPage.header.navigation.clickMusicTab();
+    await app.musicPage.open(`/music?query=${faker.music.songName()}`)
     await app.musicPage.track.expectMusicTracksToBeVisible();
     const favoriteID =
       await app.musicPage.track.clickFavoriteButtonAtAndGetResponse({
@@ -156,12 +126,7 @@ test.describe("External user", () => {
 
   test("Check pause track in player on my music page", async ({ app }) => {
     //Actions
-    await app.home.open();
-    await app.home.header.searchForm.inputSearchCriteria(
-      faker.music.songName()
-    );
-    await app.home.header.searchForm.clickEnterSearchField();
-    await app.musicPage.header.navigation.clickMusicTab();
+    await app.musicPage.open(`/music?query=${faker.music.songName()}`)
     await app.musicPage.track.expectMusicTracksToBeVisible();
     const favoriteID =
       await app.musicPage.track.clickFavoriteButtonAtAndGetResponse({
@@ -180,12 +145,7 @@ test.describe("External user", () => {
 
   test("Check play track in player on my music page", async ({ app }) => {
     //Actions
-    await app.home.open();
-    await app.home.header.searchForm.inputSearchCriteria(
-      faker.music.songName()
-    );
-    await app.home.header.searchForm.clickEnterSearchField();
-    await app.musicPage.header.navigation.clickMusicTab();
+    await app.musicPage.open(`/music?query=${faker.music.songName()}`)
     await app.musicPage.track.expectMusicTracksToBeVisible();
     const favoriteID =
       await app.musicPage.track.clickFavoriteButtonAtAndGetResponse({
@@ -206,10 +166,7 @@ test.describe("External user", () => {
   test("Check regional search", async ({ app }) => {
     const searchCriteria = "Eminem";
     //Actions
-    await app.home.open();
-    await app.home.header.searchForm.inputSearchCriteria(searchCriteria);
-    await app.home.header.searchForm.clickEnterSearchField();
-    await app.musicPage.header.navigation.clickMusicTab();
+    await app.musicPage.open(`/music?query=${faker.music.songName()}`)
     await app.musicPage.track.expectMusicTracksToBeVisible();
     const favoriteID =
       await app.musicPage.track.clickFavoriteButtonAtAndGetResponse({
@@ -236,12 +193,7 @@ test.describe("External user", () => {
     app,
   }) => {
     //Actions
-    await app.home.open();
-    await app.home.header.searchForm.inputSearchCriteria(
-      faker.music.songName()
-    );
-    await app.home.header.searchForm.clickEnterSearchField();
-    await app.musicPage.header.navigation.clickMusicTab();
+    await app.musicPage.open(`/music?query=${faker.music.songName()}`)
     await app.musicPage.track.expectMusicTracksToBeVisible();
     const favoriteIDs =
       await app.musicPage.track.clickAllFavoriteButtonsOfTracksAndGetResponses();

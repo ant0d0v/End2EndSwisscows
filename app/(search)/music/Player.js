@@ -75,7 +75,7 @@ export default class MusicPlayer extends BaseComponent {
     await this.expectElementToBeVisible(this.image);
   }
 
-  async expectImageToHavePropetry(
+  async expectImageToHaveProperty(
     expectedProperty = { width: value, height: value, complete: value }
   ) {
     await this.expectElementToHaveJSProperty(

@@ -61,6 +61,12 @@ export default class BaseComponent extends PageHolder {
       await element.waitFor();
     });
   }
+  async waitElementIsLoaded(element, nameElement) {
+    await test.step(`Wait ${nameElement} to be loaded`, async () => {
+      await element.scrollIntoViewIfNeeded();
+      await expect(element).not.toHaveJSProperty("naturalWidth", 0);
+    });
+  }
   async input(element, text, nameElement) {
     await test.step(`Input text in to the ${nameElement}`, async () => {
       await element.pressSequentially(text, { delay: 100 });

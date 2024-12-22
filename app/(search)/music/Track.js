@@ -141,7 +141,7 @@ export default class Track extends BaseComponent {
     await this.expectTextsToContainSearchCriteria(this.title, value);
   }
 
-  async expectImageToHavePropetry(
+  async expectImageToHaveProperty(
     expectedProperty = { width: value, height: value, complete: value }
   ) {
     await this.expectElementsToHaveJSProperty(

@@ -49,6 +49,9 @@ export default class Item extends BaseComponent {
     await this.scrollByVisibleElement(this.root.last())
     
   }
+  async waitErrorIconIsLoaded() {
+    await this.waitElementIsLoaded(this.errorIcon.first(), "error icon") 
+  }
 
   //Verify
   expectAllImagesToHaveAttribute = async (value) => {

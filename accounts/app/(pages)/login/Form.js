@@ -14,7 +14,6 @@ export default class Form extends BaseComponent {
       passwordField: string,
     }
   ) {
-    await this.page.waitForLoadState("networkidle");
     await this.emailField.fill(fields.emailField, `Email field`);
     await this.passwordField.fill(fields.passwordField, `Email field`);
   }
