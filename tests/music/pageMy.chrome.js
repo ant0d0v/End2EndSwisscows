@@ -166,7 +166,7 @@ test.describe("External user", () => {
   test("Check regional search", async ({ app }) => {
     const searchCriteria = "Eminem";
     //Actions
-    await app.musicPage.open(`/music?query=${faker.music.songName()}`)
+    await app.musicPage.open(`/music?query=${searchCriteria}`)
     await app.musicPage.track.expectMusicTracksToBeVisible();
     const favoriteID =
       await app.musicPage.track.clickFavoriteButtonAtAndGetResponse({

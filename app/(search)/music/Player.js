@@ -31,15 +31,23 @@ export default class MusicPlayer extends BaseComponent {
   async clickPlayButton() {
     await this.clickElement(this.playButton, `play button in the player`);
   }
+
+  // async clickPauseButton() {
+  //   await this.page.$eval("audio", (e) => e.pause());
+  // }
+  
   async clickPauseButton() {
-    await this.page.$eval("audio", (e) => e.pause());
+    await this.clickElement(this.playButton, `pause button in the player`);
   }
+
   async clickShuffleButton() {
     await this.clickElement(this.shuffleButton, `shuffle button in the player`);
   }
+
   async clickTimeLine() {
     await this.clickElement(this.timeLine, `time-line in the player`);
   }
+
   async clickFavoriteButton() {
     await this.clickElement(
       this.favoriteButton,

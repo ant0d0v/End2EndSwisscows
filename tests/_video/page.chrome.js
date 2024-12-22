@@ -81,18 +81,18 @@ test("Check design video page", async ({ app }, testInfo) => {
 
 test("Check that video results equals search criteria", async ({ app }) => {
   //Actions
-  await app.videoPage.open(`/video?query=Iphone`)
+  await app.videoPage.open(`/video?query=Billie+Eilish`)
   await app.videoPage.item.expectVideoItemsToBeVisible();
 
   //Assert
-  await app.videoPage.item.expectVideoTitleToContain(/iphone/i);
+  await app.videoPage.item.expectVideoTitleToContain(/Eilish/i);
   await app.videoPage.item.expectVideoResultToHaveCount(10);
   await app.videoPage.item.expectVideoImageToBeVisible();
 });
 
 test("Check infinity scroll in video results", async ({ app }) => {
   //Actions
-  await app.videoPage.open(`/video?query=nfs`)
+  await app.videoPage.open(`/video?query=news`)
   await app.videoPage.item.expectVideoItemsToBeVisible();
   await app.videoPage.item.expectVideoResultToHaveCount(10);
   await app.videoPage.item.scrollByVisibleLastVideo();
@@ -308,19 +308,19 @@ test("Check that image of proxy cdn server", async ({ app }) => {
 
 test("Check regional search", async ({ app }) => {
   //Actions
-  await app.videoPage.open(`/video?query=iphone`)
+  await app.videoPage.open(`/video?query=Billie+Eilish`)
   await app.videoPage.item.expectVideoItemsToBeVisible();
   await app.videoPage.header.clickHamburgerMenuButton();
   await app.videoPage.header.hamburgerMenu.selectRegion("Germany");
   await app.videoPage.item.expectVideoItemsToBeVisible();
 
   //Assert
-  await app.videoPage.item.expectVideoTitleToContain(/iphone/i);
+  await app.videoPage.item.expectVideoTitleToContain(/Eilish/i);
   await app.videoPage.item.expectVideoResultToHaveCount(10);
   await app.videoPage.item.expectVideoImageToBeVisible();
   await app.expectPageToHaveUrl(
     app.page,
-    process.env.BASE_URL + `/en/video?query=iphone&region=de-DE`
+    process.env.BASE_URL + `/en/video?query=Billie+Eilish&region=de-DE`
   );
 });
 

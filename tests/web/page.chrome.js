@@ -161,11 +161,7 @@ test.describe("Article items", () => {
     app,
   }) => {
     //Actions
-    await app.home.open();
-    await app.home.header.clickHamburgerMenuButton();
-    await app.home.header.hamburgerMenu.selectRegion("Germany");
-    await app.home.header.searchForm.inputSearchCriteria("Arctic Monkeys’ “AM” [Review]");
-    await app.home.header.searchForm.clickEnterSearchField();
+    await app.webPage.open(`/web?query=Arctic+Monkeys’+“AM”+[Review]&region=de-DE`);
     await app.webPage.article.expectArticleItemsToBeVisible();
 
     //Assert
@@ -181,11 +177,7 @@ test.describe("Article items", () => {
     app,
   }) => {
     //Actions
-    await app.home.open();
-    await app.home.header.clickHamburgerMenuButton();
-    await app.home.header.hamburgerMenu.selectRegion("Germany");
-    await app.home.header.searchForm.inputSearchCriteria("Arctic Monkeys’ “AM” [Review]");
-    await app.home.header.searchForm.clickEnterSearchField();
+    await app.webPage.open(`/web?query=Arctic+Monkeys’+“AM”+[Review]&region=de-DE`)
     await app.webPage.article.expectArticleItemsToBeVisible();
     const currentUrl = await app.page.url();
     await app.webPage.adsFreePopup.closePopup()
@@ -201,13 +193,7 @@ test.describe("Video object items", () => {
     app,
   }) => {
     //Actions
-    await app.home.open();
-    await app.home.header.clickHamburgerMenuButton();
-    await app.home.header.hamburgerMenu.selectRegion("Germany");
-    await app.home.header.searchForm.inputSearchCriteria(
-      randomQueryWithVideoItemSearch()
-    );
-    await app.home.header.searchForm.clickEnterSearchField();
+    await app.webPage.open(`/web?query=${randomQueryWithVideoItemSearch()}&region=de-DE`)
     await app.webPage.videoObject.expectVideoObjectItemsToBeVisible();
 
     //Assert
@@ -221,13 +207,7 @@ test.describe("Video object items", () => {
 
   test("Check open new page when clicking image of video object item", async ({ app }) => {
     //Actions
-    await app.home.open();
-     await app.home.header.clickHamburgerMenuButton();
-     await app.home.header.hamburgerMenu.selectRegion("Germany");
-     await app.home.header.searchForm.inputSearchCriteria(
-       randomQueryWithVideoItemSearch()
-     );
-    await app.home.header.searchForm.clickEnterSearchField();
+    await app.webPage.open(`/web?query=${randomQueryWithVideoItemSearch()}&region=de-DE`)
     await app.webPage.videoObject.expectVideoObjectItemsToBeVisible();
     const currentUrl = await app.page.url();
     await app.webPage.adsFreePopup.closePopup()
@@ -243,11 +223,8 @@ test.describe("Book items", () => {
     app,
   }) => {
     //Actions
-    await app.home.open();
-    await app.home.header.clickHamburgerMenuButton();
-    await app.home.header.hamburgerMenu.selectRegion("Germany");
-    await app.home.header.searchForm.inputSearchCriteria("Harry Potter and the Sorcerer’s Stone | Goodreads");
-    await app.home.header.searchForm.clickEnterSearchField();
+    await app.webPage.open(
+      `/web?query=Harry+Potter+and+the+Sorcerer’s+Stone+%7C+Goodreads&region=de-DE`)
     await app.webPage.book.expectBookItemsToBeVisible();
 
     //Assert
@@ -262,11 +239,8 @@ test.describe("Book items", () => {
 
   test("Check open new page when clicking image of book item", async ({ app }) => {
     //Actions
-    await app.home.open();
-    await app.home.header.clickHamburgerMenuButton();
-    await app.home.header.hamburgerMenu.selectRegion("Germany");
-    await app.home.header.searchForm.inputSearchCriteria("Harry Potter and the Sorcerer’s Stone | Goodreads");
-    await app.home.header.searchForm.clickEnterSearchField();
+    await app.webPage.open(
+      `/web?query=Harry+Potter+and+the+Sorcerer’s+Stone+%7C+Goodreads&region=de-DE`)
     await app.webPage.book.expectBookItemsToBeVisible();
     const currentUrl = await app.page.url();
     await app.webPage.adsFreePopup.closePopup()
@@ -278,12 +252,8 @@ test.describe("Book items", () => {
 
   test("Check design of book item", async ({ app }, testInfo) => {
     //Actions
-    await app.home.open();
-    await app.home.header.clickHamburgerMenuButton();
-    await app.home.header.hamburgerMenu.selectRegion("Germany");
     await app.route.requestWithGivenResponse("/v4/web", 'data/mock/web/bookItemData.json');
-    await app.home.header.searchForm.inputSearchCriteria("Harry Potter and the Sorcerer’s Stone | Goodreads");
-    await app.home.header.searchForm.clickEnterSearchField();
+    await app.webPage.open(`/web?query=tests&region=de-DE`)
     await app.webPage.book.expectBookItemsToBeVisible();
     await app.webPage.adsFreePopup.closePopup()
 
@@ -350,11 +320,8 @@ test.describe("Product items", () => {
     app,
   }) => {
     //Actions
-    await app.home.open();
-    await app.home.header.clickHamburgerMenuButton();
-    await app.home.header.hamburgerMenu.selectRegion("Germany");
-    await app.home.header.searchForm.inputSearchCriteria("Catch-22 by Joseph Heller — Yellow Dog Bookshop");
-    await app.home.header.searchForm.clickEnterSearchField();
+    await app.webPage.open(
+      `/web?query=Catch-22+by+Joseph+Heller+—+Yellow+Dog+Bookshop&region=de-DE`)
     await app.webPage.product.expectProductsItemsToBeVisible();
 
     //Assert
@@ -368,11 +335,8 @@ test.describe("Product items", () => {
 
   test("Check open new page when clicking image of product item", async ({ app }) => {
     //Actions
-    await app.home.open();
-    await app.home.header.clickHamburgerMenuButton();
-    await app.home.header.hamburgerMenu.selectRegion("Germany");
-    await app.home.header.searchForm.inputSearchCriteria("Catch-22 by Joseph Heller — Yellow Dog Bookshop");
-    await app.home.header.searchForm.clickEnterSearchField();
+    await app.webPage.open(
+      `/web?query=Catch-22+by+Joseph+Heller+—+Yellow+Dog+Bookshop&region=de-DE`)
     await app.webPage.product.expectProductsItemsToBeVisible();
     const currentUrl = await app.page.url();
     await app.webPage.adsFreePopup.closePopup()
@@ -384,12 +348,8 @@ test.describe("Product items", () => {
 
   test("Check design of product item", async ({ app }, testInfo) => {
     //Actions
-    await app.home.open();
-    await app.home.header.clickHamburgerMenuButton();
-    await app.home.header.hamburgerMenu.selectRegion("Germany");
     await app.route.requestWithGivenResponse("/v4/web", 'data/mock/web/productItemData.json');
-    await app.home.header.searchForm.inputSearchCriteria("Catch-22 by Joseph Heller — Yellow Dog Bookshop");
-    await app.home.header.searchForm.clickEnterSearchField();
+    await app.webPage.open(`/web?query=test&region=de-DE`)
     await app.webPage.product.expectProductsItemsToBeVisible();
     await app.webPage.adsFreePopup.closePopup()
 
