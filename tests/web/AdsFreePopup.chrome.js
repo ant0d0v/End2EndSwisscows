@@ -44,11 +44,7 @@ test("Check show ads free popup is displayed again after 24 hours", async ({
   app,
 }) => {
   //Actions
-  await app.home.open();
-  await app.home.header.clickHamburgerMenuButton();
-  await app.home.header.hamburgerMenu.selectRegion("Germany");
-  await app.home.header.searchForm.inputSearchCriteria(faker.word.sample());
-  await app.home.header.searchForm.clickEnterSearchField();
+  await app.webPage.open(`/web?query=${faker.word.sample()}`)
   await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
   await app.webPage.adsFreePopup.clickCloseButton();
   await saveStorageState(app.page);
@@ -66,11 +62,7 @@ test("Check show ads free popup is displayed again after 24 hours", async ({
 
 test("Check design ads free popup", async ({ app }, testInfo) => {
   //Actions
-  await app.home.open();
-  await app.home.header.clickHamburgerMenuButton();
-  await app.home.header.hamburgerMenu.selectRegion("Germany");
-  await app.home.header.searchForm.inputSearchCriteria(faker.word.sample());
-  await app.home.header.searchForm.clickEnterSearchField();
+  await app.webPage.open(`/web?query=${faker.word.sample()}`)
   await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
 
   //Assert
@@ -81,14 +73,9 @@ test("Check open subscription page and close popup when clicking Start button", 
   app,
 }) => {
   //Actions
-  await app.home.open();
-  await app.home.header.clickHamburgerMenuButton();
-  await app.home.header.hamburgerMenu.selectRegion("Germany");
-  await app.home.header.searchForm.inputSearchCriteria(faker.word.sample());
-  await app.home.header.searchForm.clickEnterSearchField();
+  await app.webPage.open(`/web?query=${faker.word.sample()}`)
   await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
-  const newPage =
-    await app.webPage.adsFreePopup.getNewPageAfterClickStartButton();
+  const newPage = await app.webPage.adsFreePopup.getNewPageAfterClickStartButton();
   await saveStorageState(app.page);
 
   //Assert
@@ -106,14 +93,11 @@ test.describe("tests don't use cookie", () => {
     accounts,
   }) => {
     //Actions
-    await app.home.open();
-    await app.home.header.clickHamburgerMenuButton();
-    await app.home.header.hamburgerMenu.selectRegion("Germany");
-    await app.home.header.searchForm.inputSearchCriteria(faker.word.sample());
-    await app.home.header.searchForm.clickEnterSearchField();
+    await app.webPage.open(`/web?query=${faker.word.sample()}`)
     await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
     await app.webPage.header.clickHamburgerMenuButton();
     await app.webPage.header.hamburgerMenu.clickLoginButton();
+    await accounts.app.loginPage.waitImageIsLoaded()
     await accounts.app.loginPage.form.fill({
       emailField: process.env.USERNAME_PREMIUM_USER,
       passwordField: process.env.PASSWORD_PREMIUM_USER,
