@@ -32,7 +32,7 @@ export default class Playlist extends BaseComponent {
     await this.expectListToHaveCount(this.images, value);
   }
 
-  async expectImageToHavePropetry(
+  async expectImageToHaveProperty(
     expectedProperty = { width: value, height: value }
   ) {
     await this.expectElementsToHaveJSProperty(

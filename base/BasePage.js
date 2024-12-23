@@ -1,12 +1,14 @@
 import { expect,test} from "@playwright/test";
 import BaseComponent from "./BaseComponent.js";
+import { base } from "@faker-js/faker";
 export default class BasePage extends BaseComponent {
   constructor(page) {
     super(page);
+    this.pagePath = ""
   }
   //Actions
-  async openPage(path) {
-    await this.page.goto(process.env.BASE_URL + path);
+  async open(path = this.pagePath) {
+    await this.page.goto(path);
   }
 
   async reloadPage() {
@@ -14,15 +16,10 @@ export default class BasePage extends BaseComponent {
       await this.page.reload("domcontentloaded");
     });
   }
+  
   async goBack() {
     await test.step("Navigate to the previous page in history.", async () => {
       await this.page.goBack();
-    });
-  }
-
-  async waitUntilPageIsFullyLoaded() {
-    await test.step("Wait for all network requests for images to complete", async () => {
-      await this.page.waitForLoadState("networkidle");
     });
   }
 
@@ -33,8 +30,7 @@ export default class BasePage extends BaseComponent {
       testInfo.snapshotSuffix = "";
       const imageElements = await elements.all();
       for (const image of imageElements) {
-        await image.scrollIntoViewIfNeeded();
-        await expect(image).not.toHaveJSProperty("naturalWidth", 0);
+        await this.waitElementIsLoaded(image)
       }
       await expect(this.page).toHaveScreenshot(`${testInfo.title}.png`, {
         fullPage: true,
@@ -48,8 +44,7 @@ export default class BasePage extends BaseComponent {
       testInfo.snapshotSuffix = "";
       const imageElements = await elements.all();
       for (const image of imageElements) {
-        await image.scrollIntoViewIfNeeded();
-        await expect(image).not.toHaveJSProperty("naturalWidth", 0);
+        await this.waitElementIsLoaded(image)
       }
       await expect(this.page).toHaveScreenshot(`${testInfo.title}.png`, {
         fullPage: true,

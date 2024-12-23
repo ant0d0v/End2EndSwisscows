@@ -2,10 +2,7 @@ import { test } from "../../utils/fixtures.js";
 
 test("Check pause track on music page", async ({ app }) => {
   //Actions
-  await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria("best");
-  await app.home.header.searchForm.clickEnterSearchField();
-  await app.musicPage.header.navigation.clickMusicTab();
+  await app.musicPage.open(`/music?query=best`)
   await app.musicPage.track.expectMusicTracksToBeVisible();
   await app.musicPage.clickPlaylistAt({ number: 1 });
   await app.musicPage.playlist.expectToBeHiddenPlaylistAt({ number: 1 });
@@ -20,10 +17,7 @@ test("Check pause track on music page", async ({ app }) => {
 
 test("Check next button of track on the main page", async ({ app }) => {
   //Actions
-  await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria("best");
-  await app.home.header.searchForm.clickEnterSearchField();
-  await app.musicPage.header.navigation.clickMusicTab();
+  await app.musicPage.open(`/music?query=best`)
   await app.musicPage.track.expectMusicTracksToBeVisible();
   await app.musicPage.clickPlaylistAt({ number: 1 });
   await app.musicPage.playlist.expectToBeHiddenPlaylistAt({ number: 1 });
@@ -39,10 +33,7 @@ test("Check next button of track on the main page", async ({ app }) => {
 
 test("Check previous button of track on the main page", async ({ app }) => {
   //Actions
-  await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria("best");
-  await app.home.header.searchForm.clickEnterSearchField();
-  await app.musicPage.header.navigation.clickMusicTab();
+  await app.musicPage.open(`/music?query=best`)
   await app.musicPage.track.expectMusicTracksToBeVisible();
   await app.musicPage.clickPlaylistAt({ number: 1 });
   await app.musicPage.playlist.expectToBeHiddenPlaylistAt({ number: 1 });
@@ -59,10 +50,7 @@ test("Check previous button of track on the main page", async ({ app }) => {
 
 test("Check shuffle function in the player", async ({ app }) => {
   //Actions
-  await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria("Skofka");
-  await app.home.header.searchForm.clickEnterSearchField();
-  await app.musicPage.header.navigation.clickMusicTab();
+  await app.musicPage.open(`/music?query=Skofka`)
   await app.musicPage.track.expectMusicTracksToBeVisible();
   await app.musicPage.clickPlaylistAt({ number: 1 });
   await app.musicPage.playlist.expectToBeHiddenPlaylistAt({ number: 1 });
@@ -83,10 +71,7 @@ test("Check change region", async ({ app }) => {
     `${process.env.WEB_URL}en/music/playlist\\?query=${value}&id=\\d+&region=de-DE`
   );
   //Actions
-  await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria(value);
-  await app.home.header.searchForm.clickEnterSearchField();
-  await app.musicPage.header.navigation.clickMusicTab();
+  await app.musicPage.open(`/music?query=${value}`)
   await app.musicPage.track.expectMusicTracksToBeVisible();
   await app.musicPage.clickPlaylistAt({ number: 1 });
   await app.musicPage.playlist.expectToBeHiddenPlaylistAt({ number: 1 });

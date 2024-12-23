@@ -3,6 +3,7 @@ import Header from "../../(landings)/email/Header.js";
 export default class EmailPage extends BasePage {
   constructor(page) {
     super(page);
+    this.pagePath = "/swisscows-email"
     this.header = new Header(page);
      //Locators
     this.allContent = this.page.locator("main.swisscows-email");
@@ -10,10 +11,6 @@ export default class EmailPage extends BasePage {
     this.introductionAndSupportLinks = (name) => this.page.getByRole("link", { name: name });
     this.subscriptionLinks = (id, name) => this.page.getByRole('link', { name: name }).nth(id);
     this.introductionAndSupportButtons = this.page.locator("//a[@class='button']")
-  }
-  //Actions
-  async open(){
-    await this.openPage("/swisscows-email")
   }
 
   //Verify

@@ -11,6 +11,7 @@ import Translations from "../../i18n/index.js";
 export default class Home extends BasePage {
   constructor(page) {
     super(page);
+    this.pagePath = "/"
     this.translations = Translations;
     this.header = new Header(page);
     this.footer = new Footer(page);
@@ -35,9 +36,6 @@ export default class Home extends BasePage {
   }
 
   //Actions
-  async open() {
-    await this.openPage("/");
-  }
   async expectToBeOpenedNewPageAfterClickLinks(
     data = {
       locator: element,

@@ -77,11 +77,8 @@ test("Check 429 Too many requests", async ({ app }, testInfo) => {
 
 test("Check design images page", async ({ app },testInfo) => {
   //Actions
-  await app.home.open();
   await app.route.requestWithGivenResponse("/v4/images", 'data/mock/images/testData.json');
-  await app.home.header.searchForm.inputSearchCriteria("ronaldo");
-  await app.home.header.searchForm.clickEnterSearchField();
-  await app.webPage.header.navigation.clickImageTab();
+  await app.imagePage.open(`/images?query=${faker.word.sample()}`)
   await app.imagePage.item.expectImageItemsToBeVisible();
 
   //Assert
@@ -92,10 +89,7 @@ test("Check Saved button when adding image to bookmark", async ({
   app,
 }, testInfo) => {
   //Actions
-  await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria(faker.word.sample());
-  await app.home.header.searchForm.clickEnterSearchField();
-  await app.webPage.header.navigation.clickImageTab();
+  await app.imagePage.open(`/images?query=${faker.word.sample()}`)
   await app.imagePage.item.expectImageItemsToBeVisible();
   await app.imagePage.adsFreePopup.closePopup()
   await app.imagePage.item.clickItemAt({ number: 1 });
@@ -114,10 +108,7 @@ test("Check Save button isn't attached in DOM when user logout", async ({
   app,
 }) => {
   //Actions
-  await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria(faker.word.sample());
-  await app.home.header.searchForm.clickEnterSearchField();
-  await app.webPage.header.navigation.clickImageTab();
+  await app.imagePage.open(`/images?query=${faker.word.sample()}`)
   await app.imagePage.item.expectImageItemsToBeVisible();
   await app.imagePage.header.clickHamburgerMenuButton();
   await app.imagePage.header.hamburgerMenu.clickLogoutButton();
@@ -137,10 +128,7 @@ test("Check the “Save” button until the image is added to the bookmark", asy
   app,
 }, testInfo) => {
   //Actions
-  await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria(faker.word.sample());
-  await app.home.header.searchForm.clickEnterSearchField();
-  await app.webPage.header.navigation.clickImageTab();
+  await app.imagePage.open(`/images?query=${faker.word.sample()}`)
   await app.imagePage.item.expectImageItemsToBeVisible();
   await app.imagePage.adsFreePopup.closePopup()
   await app.imagePage.item.clickItemAt({ number: 1 });
@@ -155,10 +143,7 @@ test("Check that details panel to be hidden when clicking close button", async (
   app,
 }) => {
   //Actions
-  await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria(faker.animal.fish());
-  await app.home.header.searchForm.clickEnterSearchField();
-  await app.webPage.header.navigation.clickImageTab();
+  await app.imagePage.open(`/images?query=${faker.animal.fish()}`)
   await app.imagePage.item.expectImageItemsToBeVisible();
   await app.imagePage.adsFreePopup.closePopup()
   await app.imagePage.item.clickItemAt({ number: 1 });
@@ -173,10 +158,7 @@ test("Check image first item equal image in the item details", async ({
   app,
 }) => {
   //Actions
-  await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria(faker.animal.dog());
-  await app.home.header.searchForm.clickEnterSearchField();
-  await app.webPage.header.navigation.clickImageTab();
+  await app.imagePage.open(`/images?query=${faker.animal.dog()}`)
   await app.imagePage.item.expectImageItemsToBeVisible();
   const altAttributeFirstImage =
     await app.imagePage.item.getByAltAttributeImageAt({ number: 1 });
@@ -191,12 +173,7 @@ test("Check image first item equal image in the item details", async ({
 
 test("Check infinity scroll to next page", async ({ app }) => {
   //Actions
-  await app.home.open();
-  await app.home.header.clickHamburgerMenuButton();
-  await app.home.header.hamburgerMenu.selectRegion("Germany");
-  await app.home.header.searchForm.inputSearchCriteria("trump");
-  await app.home.header.searchForm.clickEnterSearchField();
-  await app.webPage.header.navigation.clickImageTab();
+  await app.imagePage.open(`/images?query=trump&region=de-DE`)
   await app.imagePage.item.expectImageItemsToBeVisible();
   await app.imagePage.item.scrollByVisibleLastItem();
 
@@ -209,12 +186,7 @@ test("Check infinity scroll to next page when item details is opened", async ({
   app,
 }) => {
   //Actions
-  await app.home.open();
-  await app.home.header.clickHamburgerMenuButton();
-  await app.home.header.hamburgerMenu.selectRegion("Germany");
-  await app.home.header.searchForm.inputSearchCriteria("trump");
-  await app.home.header.searchForm.clickEnterSearchField();
-  await app.webPage.header.navigation.clickImageTab();
+  await app.imagePage.open(`/images?query=trump&region=de-DE`)
   await app.imagePage.item.expectImageItemsToBeVisible();
   await app.imagePage.adsFreePopup.closePopup()
   await app.imagePage.item.clickItemAt({ number: 1 });
@@ -227,10 +199,7 @@ test("Check infinity scroll to next page when item details is opened", async ({
 
 test("Check that images results equals search criteria", async ({ app }) => {
   //Actions
-  await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria("red");
-  await app.home.header.searchForm.clickEnterSearchField();
-  await app.webPage.header.navigation.clickImageTab();
+  await app.imagePage.open(`/images?query=red`)
   await app.imagePage.item.expectImageItemsToBeVisible();
 
   //Assert
@@ -240,10 +209,7 @@ test("Check that images results equals search criteria", async ({ app }) => {
 
 test("Check regional search", async ({ app }) => {
   //Actions
-  await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria("red");
-  await app.home.header.searchForm.clickEnterSearchField();
-  await app.webPage.header.navigation.clickImageTab();
+  await app.imagePage.open(`/images?query=red`)
   await app.imagePage.item.expectImageItemsToBeVisible();
   await app.imagePage.header.clickHamburgerMenuButton();
   await app.imagePage.header.hamburgerMenu.selectRegion("Germany");
@@ -261,10 +227,7 @@ test("Check outline and opacity of item when item is selected", async ({
   app,
 }) => {
   //Actions
-  await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria(faker.word.sample());
-  await app.home.header.searchForm.clickEnterSearchField();
-  await app.webPage.header.navigation.clickImageTab();
+  await app.imagePage.open(`/images?query=${faker.word.sample()}`)
   await app.imagePage.item.expectImageItemsToBeVisible();
   await app.imagePage.adsFreePopup.closePopup()
   await app.imagePage.item.clickItemAt({ number: 1 });
@@ -296,10 +259,7 @@ test("Check that image of proxy cdn server", async ({ app }) => {
 
 test("Check image item is active  when clicking on image", async ({ app }) => {
   //Actions
-  await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria(faker.word.sample());
-  await app.home.header.searchForm.clickEnterSearchField();
-  await app.webPage.header.navigation.clickImageTab();
+  await app.imagePage.open(`/images?query=${faker.word.sample()}`)
   await app.imagePage.item.expectImageItemsToBeVisible();
   await app.imagePage.adsFreePopup.closePopup()
   await app.imagePage.item.clickItemAt({ number: 1 });
@@ -320,10 +280,7 @@ test("Check open site button when clicking redirect to new page", async ({
   app,
 }) => {
   //Actions
-  await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria(faker.animal.dog());
-  await app.home.header.searchForm.clickEnterSearchField();
-  await app.webPage.header.navigation.clickImageTab();
+  await app.imagePage.open(`/images?query=${faker.animal.dog()}`)
   await app.imagePage.item.expectImageItemsToBeVisible();
   await app.imagePage.adsFreePopup.closePopup()
   await app.imagePage.item.clickItemAt({ number: 1 });
@@ -340,14 +297,11 @@ test("Check that { resolution, title, site } in details pane to have value", asy
   app,
 }) => {
   //Actions
-  await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria("Ronaldo");
-  await app.home.header.searchForm.clickEnterSearchField();
-  await app.webPage.header.navigation.clickImageTab();
+  await app.imagePage.open(`/images?query=Ronaldo`)
   await app.imagePage.item.expectImageItemsToBeVisible();
   await app.imagePage.adsFreePopup.closePopup()
   await app.imagePage.item.clickItemAt({ number: 1 });
-  await app.imagePage.waitUntilPageIsFullyLoaded();
+  await app.imagePage.details.waitImageIsLoaded();
   const height = await app.imagePage.details.getAttributeImageBy({
     attribute: "height",
   });
@@ -365,10 +319,7 @@ test("Check that { resolution, title, site } in details pane to have value", asy
 
 test("Check that details to be in viewport", async ({ app }) => {
   //Actions
-  await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria(faker.word.sample());
-  await app.home.header.searchForm.clickEnterSearchField();
-  await app.webPage.header.navigation.clickImageTab();
+  await app.imagePage.open(`/images?query=${faker.word.sample()}`)
   await app.imagePage.item.expectImageItemsToBeVisible();
   await app.imagePage.adsFreePopup.closePopup()
   await app.imagePage.item.clickItemAt({ number: 1 });
@@ -379,11 +330,8 @@ test("Check that details to be in viewport", async ({ app }) => {
 
 test("Check design of details pane", async ({ app }, testInfo ) => {
   //Actions
-  await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria(faker.word.sample());
-  await app.home.header.searchForm.clickEnterSearchField();
   await app.route.requestWithGivenResponse("/v4/images", 'data/mock/images/testData.json');
-  await app.webPage.header.navigation.clickImageTab();
+  await app.imagePage.open(`/images?query=${faker.word.sample()}`)
   await app.imagePage.item.expectImageItemsToBeVisible();
   await app.imagePage.adsFreePopup.closePopup()
   await app.imagePage.item.clickItemAt({ number: 1 });
@@ -394,10 +342,7 @@ test("Check design of details pane", async ({ app }, testInfo ) => {
 
 test("Check preloader on page when Status.LOADING", async ({ app }) => {
   //Actions
-  await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria(faker.commerce.product());
-  await app.home.header.searchForm.clickEnterSearchField();
-  await app.webPage.header.navigation.clickImageTab();
+  await app.imagePage.open(`/images?query=${faker.commerce.product()}`)
   await app.imagePage.item.expectImageItemsToBeVisible();
   await app.imagePage.adsFreePopup.closePopup()
   await app.imagePage.item.clickItemAt({ number: 1 });

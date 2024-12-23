@@ -28,6 +28,7 @@ import AdsFreePopup from "../AdsFreePopup.js"
 export default class WebPage extends BasePage {
   constructor(page) {
     super(page);
+    this.pagePath = `/web`
     this.pagination = new Pagination(page);
     this.filters = new Filters(page);
     this.webPageItem = new WebPageItem(page);

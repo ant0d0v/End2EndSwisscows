@@ -6,6 +6,7 @@ import fs from 'fs';
 export default class VpnPage extends BasePage {
   constructor(page) {
     super(page);
+    this.pagePath = "/anonymous-vpn"
     this.header = new Header(page);
     this.faq =  new FAQ(page);
      //Locators
@@ -20,9 +21,6 @@ export default class VpnPage extends BasePage {
     this.tryNowThreeDayLink = this.page.getByRole('link', { name: 'Try now 3 days for free (' })
   }
   //Actions
-  async open(){
-    await this.openPage("/anonymous-vpn")
-  }
   scrollDownToQuestions = async () => {
     await this.scrollByVisibleElement(this.secondQuestion, `second question in accordion menu`);
   }

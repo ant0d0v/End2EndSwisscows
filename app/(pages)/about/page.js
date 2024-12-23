@@ -3,6 +3,7 @@ import Header from "../../(pages)/Header.js";
 export default class AboutPage extends BasePage {
   constructor(page) {
     super(page);
+    this.pagePath = "/search-engine-no-tracking"
     this.header = new Header(page);
     
     //Locators
@@ -11,9 +12,6 @@ export default class AboutPage extends BasePage {
     this.links = (name) => this.page.getByText(name, { exact: true });
   }
   //Actions
-  async open() {
-    await this.openPage("/search-engine-no-tracking");
-  }
   
   async expectToBeOpenedNewPageAfterClickLinks(
     data = {

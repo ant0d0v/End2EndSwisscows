@@ -6,6 +6,7 @@ import Translations from "../../../i18n/index.js";
 export default class CharityPage extends BasePage {
   constructor(page) {
     super(page);
+    this.pagePath = "/social-projects"
     this.header = new Header(page);
     this.imagesGallery = new ImagesGallery(page);
     this.videoPlayer = new VideoPlayer(page);
@@ -22,10 +23,6 @@ export default class CharityPage extends BasePage {
     });
   }
   //Actions
-  async open() {
-    await this.openPage("/social-projects");
-  }
-
   async expectToBeOpenedPageAfterClickKeyshiftLink(expectedLink) {
     await this.expectToBeOpenedNewPageAfterClick(
       this.keyshiftLink,

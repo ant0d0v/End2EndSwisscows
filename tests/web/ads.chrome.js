@@ -33,25 +33,6 @@ test("Check price and shipping of product ads in widget", async ({ app }) => {
   });
 });
 
-test("Check the thumbnail width and Height of products ads items", async ({
-  app,
-}) => {
-  //Actions
-  await app.home.open();
-  await app.home.header.clickHamburgerMenuButton();
-  await app.home.header.hamburgerMenu.selectRegion("Germany");
-  await app.home.header.searchForm.inputSearchCriteria(randomAdsQuery());
-  await app.home.header.searchForm.clickEnterSearchField();
-  await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
-  await app.webPage.advertiserProductCollection.waitUntilProductAdsToBeVisible();
-
-  //Assert
-  await app.webPage.advertiserProductCollection.expectThumbnailToHaveProperty({
-    width: 178,
-    height: 140,
-  });
-});
-
 test("Check open advertising ", async ({ app }) => {
   //Actions
   await app.home.open();

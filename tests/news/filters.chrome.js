@@ -7,13 +7,7 @@ for (const { testID, freshnessPart, filterName } of filterData.byDate) {
     app,
   }) => {
     //Actions
-    await app.home.open();
-    await app.home.header.clickHamburgerMenuButton();
-    await app.home.header.hamburgerMenu.selectRegion("Germany");
-    await app.home.header.searchForm.inputSearchCriteria("news");
-    await app.home.header.searchForm.clickEnterSearchField();
-    await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
-    await app.webPage.header.navigation.clickNewsTab();
+    await app.newsPage.open(`/news?query=news&region=de-DE`)
     await app.newsPage.item.expectNewsItemsToBeVisible();
     await app.newsPage.filters.clickFilterByDate();
     const response =
@@ -50,13 +44,7 @@ test("Cancel filter and navigates to the corresponding page.", async ({
   app,
 }) => {
   //Actions
-  await app.home.open();
-  await app.home.header.clickHamburgerMenuButton();
-  await app.home.header.hamburgerMenu.selectRegion("Germany");
-  await app.home.header.searchForm.inputSearchCriteria("news");
-  await app.home.header.searchForm.clickEnterSearchField();
-  await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
-  await app.webPage.header.navigation.clickNewsTab();
+  await app.newsPage.open(`/news?query=news&region=de-DE`)
   await app.newsPage.item.expectNewsItemsToBeVisible();
   await app.newsPage.filters.clickFilterByDate();
   const oldResponse =
@@ -81,12 +69,7 @@ test("Cancel filter and navigates to the corresponding page.", async ({
 
 test("Check list dropdown of filter by date ", async ({ app }, testInfo) => {
   //Actions
-  await app.home.open();
-  await app.home.header.clickHamburgerMenuButton();
-  await app.home.header.hamburgerMenu.selectRegion("Germany");
-  await app.home.header.searchForm.inputSearchCriteria("news")
-  await app.home.header.searchForm.clickEnterSearchField();
-  await app.webPage.header.navigation.clickNewsTab();
+  await app.newsPage.open(`/news?query=news&region=de-DE`)
   await app.newsPage.item.expectNewsItemsToBeVisible();
   await app.newsPage.filters.clickFilterByDate();
 
@@ -98,12 +81,7 @@ test("Check that dropdown of filter by date is opened and closed", async ({
   app,
 }) => {
   //Actions
-  await app.home.open();
-  await app.home.header.clickHamburgerMenuButton();
-  await app.home.header.hamburgerMenu.selectRegion("Germany");
-  await app.home.header.searchForm.inputSearchCriteria("news");
-  await app.home.header.searchForm.clickEnterSearchField();
-  await app.webPage.header.navigation.clickNewsTab();
+  await app.newsPage.open(`/news?query=news&region=de-DE`)
   await app.newsPage.item.expectNewsItemsToBeVisible();
   await app.newsPage.filters.clickFilterByDate();
 

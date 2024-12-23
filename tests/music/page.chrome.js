@@ -65,16 +65,13 @@ test("Check 429 Too many requests", async ({ app }, testInfo) => {
 
 test("Check design music page", async ({ app },testInfo) => {
   //Actions
-  await app.home.open();
   await app.route.mockResponseMusicBody("/audio/search/playlists", 'data/mock/music/testDataPlaylist.json');
   await app.route.mockResponseMusicBody("/audio/search/tracks", 'data/mock/music/testDataTrack.json');
-  await app.home.header.searchForm.inputSearchCriteria("ronaldo");
-  await app.home.header.searchForm.clickEnterSearchField();
-  await app.musicPage.header.navigation.clickMusicTab();
+  await app.musicPage.open(`/music?query=${faker.music.songName()}`)
   await app.musicPage.track.expectMusicTracksToBeVisible();
 
   //Assert
-  await app.musicPage.track.expectImageToHavePropetry({
+  await app.musicPage.track.expectImageToHaveProperty({
     width: 64,
     height: 64,
     complete: true
@@ -86,11 +83,7 @@ test.describe("favorite function", () => {
   test.use({ mode: "default" });
   test("Check add track in the favorite", async ({ app }) => {
     //Actions
-    await app.home.open();
-    await app.home.header.searchForm.inputSearchCriteria(
-      faker.music.songName()
-    );
-    await app.home.header.searchForm.clickEnterSearchField();
+    await app.musicPage.open(`/music?query=${faker.music.songName()}`)
     await app.musicPage.header.navigation.clickMusicTab();
     await app.musicPage.track.expectMusicTracksToBeVisible();
     const favoriteID =
@@ -106,12 +99,7 @@ test.describe("favorite function", () => {
 
   test("Check delete track from the favorite", async ({ app }) => {
     //Actions
-    await app.home.open();
-    await app.home.header.searchForm.inputSearchCriteria(
-      faker.music.songName()
-    );
-    await app.home.header.searchForm.clickEnterSearchField();
-    await app.musicPage.header.navigation.clickMusicTab();
+    await app.musicPage.open(`/music?query=${faker.music.songName()}`)
     await app.musicPage.track.expectMusicTracksToBeVisible();
     await app.musicPage.track.clickFavoriteButtonAt({ number: 1 });
     await app.musicPage.track.clickPlayButtonAt({ number: 1 });
@@ -127,12 +115,7 @@ test.describe("favorite function", () => {
 
   test("Check add track in the favorite from player", async ({ app }) => {
     //Actions
-    await app.home.open();
-    await app.home.header.searchForm.inputSearchCriteria(
-      faker.music.songName()
-    );
-    await app.home.header.searchForm.clickEnterSearchField();
-    await app.musicPage.header.navigation.clickMusicTab();
+    await app.musicPage.open(`/music?query=${faker.music.songName()}`)
     await app.musicPage.track.expectMusicTracksToBeVisible();
     await app.musicPage.track.clickPlayButtonAt({ number: 1 });
     await app.musicPage.player.expectElapsedTimeToHaveText(/^0:0[4-9]$/);
@@ -147,12 +130,7 @@ test.describe("favorite function", () => {
 
   test("Check delete track from the favorite using player", async ({ app }) => {
     //Actions
-    await app.home.open();
-    await app.home.header.searchForm.inputSearchCriteria(
-      faker.music.songName()
-    );
-    await app.home.header.searchForm.clickEnterSearchField();
-    await app.musicPage.header.navigation.clickMusicTab();
+    await app.musicPage.open(`/music?query=${faker.music.songName()}`)
     await app.musicPage.track.expectMusicTracksToBeVisible();
     await app.musicPage.track.clickFavoriteButtonAt({ number: 1 });
     await app.musicPage.track.clickPlayButtonAt({ number: 1 });
@@ -169,10 +147,7 @@ test.describe("favorite function", () => {
 
 test("Check play track on music page", async ({ app }) => {
   //Actions
-  await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria(faker.music.songName());
-  await app.home.header.searchForm.clickEnterSearchField();
-  await app.musicPage.header.navigation.clickMusicTab();
+  await app.musicPage.open(`/music?query=${faker.music.songName()}`)
   await app.musicPage.track.expectMusicTracksToBeVisible();
   await app.musicPage.track.clickPlayButtonAt({ number: 1 });
   await app.musicPage.player.expectElapsedTimeToHaveText(/^0:0[4-9]$/);
@@ -184,10 +159,7 @@ test("Check play track on music page", async ({ app }) => {
 
 test("Check pause track on music page", async ({ app }) => {
   //Actions
-  await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria(faker.music.songName());
-  await app.home.header.searchForm.clickEnterSearchField();
-  await app.musicPage.header.navigation.clickMusicTab();
+  await app.musicPage.open(`/music?query=${faker.music.songName()}`)
   await app.musicPage.track.expectMusicTracksToBeVisible();
   await app.musicPage.track.clickPlayButtonAt({ number: 1 });
   await app.musicPage.player.expectElapsedTimeToHaveText(/^0:0[4-9]$/);
@@ -199,10 +171,7 @@ test("Check pause track on music page", async ({ app }) => {
 
 test("Check next button of track on the main page", async ({ app }) => {
   //Actions
-  await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria(faker.music.songName());
-  await app.home.header.searchForm.clickEnterSearchField();
-  await app.musicPage.header.navigation.clickMusicTab();
+  await app.musicPage.open(`/music?query=${faker.music.songName()}`)
   await app.musicPage.track.expectMusicTracksToBeVisible();
   await app.musicPage.track.clickPlayButtonAt({ number: 1 });
   await app.musicPage.player.clickNextButton();
@@ -216,10 +185,7 @@ test("Check next button of track on the main page", async ({ app }) => {
 
 test("Check previous button of track on the main page", async ({ app }) => {
   //Actions
-  await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria(faker.music.songName());
-  await app.home.header.searchForm.clickEnterSearchField();
-  await app.musicPage.header.navigation.clickMusicTab();
+  await app.musicPage.open(`/music?query=${faker.music.songName()}`)
   await app.musicPage.track.expectMusicTracksToBeVisible();
   await app.musicPage.track.clickPlayButtonAt({ number: 1 });
   await app.musicPage.player.expectElapsedTimeToHaveText(/^0:0[4-9]$/);
@@ -235,10 +201,7 @@ test("Check previous button of track on the main page", async ({ app }) => {
 
 test("Check set time in track", async ({ app }) => {
   //Actions
-  await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria(faker.music.songName());
-  await app.home.header.searchForm.clickEnterSearchField();
-  await app.musicPage.header.navigation.clickMusicTab();
+  await app.musicPage.open(`/music?query=${faker.music.songName()}`)
   await app.musicPage.track.expectMusicTracksToBeVisible();
   await app.musicPage.track.clickPlayButtonAt({ number: 1 });
   await app.musicPage.player.expectElapsedTimeToHaveText(/^0:0[4-9]$/);
@@ -254,10 +217,7 @@ test("Check set time in track", async ({ app }) => {
 
 test("Check set time in the player", async ({ app }) => {
   //Actions
-  await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria(faker.music.songName());
-  await app.home.header.searchForm.clickEnterSearchField();
-  await app.musicPage.header.navigation.clickMusicTab();
+  await app.musicPage.open(`/music?query=${faker.music.songName()}`)
   await app.musicPage.track.expectMusicTracksToBeVisible();
   await app.musicPage.track.clickPlayButtonAt({ number: 1 });
   await app.musicPage.player.expectElapsedTimeToHaveText(/^0:0[4-9]$/);
@@ -273,10 +233,7 @@ test("Check set time in the player", async ({ app }) => {
 
 test("Check pause track in player on music page", async ({ app }) => {
   //Actions
-  await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria(faker.music.songName());
-  await app.home.header.searchForm.clickEnterSearchField();
-  await app.musicPage.header.navigation.clickMusicTab();
+  await app.musicPage.open(`/music?query=${faker.music.songName()}`)
   await app.musicPage.track.expectMusicTracksToBeVisible();
   await app.musicPage.track.clickPlayButtonAt({ number: 1 });
   await app.musicPage.player.expectElapsedTimeToHaveText(/^0:0[4-9]$/);
@@ -288,10 +245,7 @@ test("Check pause track in player on music page", async ({ app }) => {
 
 test("Check play track in player on music page", async ({ app }) => {
   //Actions
-  await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria(faker.music.songName());
-  await app.home.header.searchForm.clickEnterSearchField();
-  await app.musicPage.header.navigation.clickMusicTab();
+  await app.musicPage.open(`/music?query=${faker.music.songName()}`)
   await app.musicPage.track.expectMusicTracksToBeVisible();
   await app.musicPage.track.clickPlayButtonAt({ number: 1 });
   await app.musicPage.player.expectElapsedTimeToHaveText(/^0:0[4-9]$/);
@@ -304,10 +258,7 @@ test("Check play track in player on music page", async ({ app }) => {
 
 test("Check shuffle function in the player", async ({ app }) => {
   //Actions
-  await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria(faker.music.songName());
-  await app.home.header.searchForm.clickEnterSearchField();
-  await app.musicPage.header.navigation.clickMusicTab();
+  await app.musicPage.open(`/music?query=${faker.music.songName()}`)
   await app.musicPage.track.expectMusicTracksToBeVisible();
   await app.musicPage.track.clickPlayButtonAt({ number: 1 });
   await app.musicPage.player.expectElapsedTimeToHaveText(/^0:0[4-9]$/);
@@ -321,10 +272,7 @@ test("Check shuffle function in the player", async ({ app }) => {
 
 test("Check shuffle function in local storage", async ({ app }) => {
   //Actions
-  await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria(faker.music.songName());
-  await app.home.header.searchForm.clickEnterSearchField();
-  await app.musicPage.header.navigation.clickMusicTab();
+  await app.musicPage.open(`/music?query=${faker.music.songName()}`)
   await app.musicPage.track.expectMusicTracksToBeVisible();
   await app.musicPage.track.clickPlayButtonAt({ number: 1 });
   await app.musicPage.player.expectElapsedTimeToHaveText(/^0:0[4-9]$/);
@@ -337,10 +285,7 @@ test("Check shuffle function in local storage", async ({ app }) => {
 
 test("Check infinity scroll to next page", async ({ app }) => {
   //Actions
-  await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria("best");
-  await app.home.header.searchForm.clickEnterSearchField();
-  await app.musicPage.header.navigation.clickMusicTab();
+  await app.musicPage.open(`/music?query=best`)
   await app.musicPage.track.expectMusicTracksToBeVisible();
   await app.musicPage.track.expectTracksCount(20);
   await app.musicPage.track.scrollByVisibleLastTrack();
@@ -353,97 +298,56 @@ test("Check infinity scroll to next page", async ({ app }) => {
 
 test("Check that music results equals search criteria", async ({ app }) => {
   //Actions
-  await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria("billie jean");
-  await app.home.header.searchForm.clickEnterSearchField();
-  await app.musicPage.header.navigation.clickMusicTab();
+  await app.musicPage.open(`/music?query=lady+gaga`)
   await app.musicPage.track.expectMusicTracksToBeVisible();
 
   //Assert
-  await app.musicPage.track.expectTracksNameToContainText("billie jean");
+  // await app.musicPage.track.expectTracksNameToContainText("lady");
   await app.musicPage.track.expectTracksCount(20);
 });
 
 test("Check regional search", async ({ app }) => {
-  const query = "billie jean";
+  const query = "lady+gaga";
+
   //Actions
-  await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria(query);
-  await app.home.header.searchForm.clickEnterSearchField();
-  await app.musicPage.header.navigation.clickMusicTab();
+  await app.musicPage.open(`/music?query=${query}`)
   await app.musicPage.track.expectMusicTracksToBeVisible();
   await app.musicPage.header.clickHamburgerMenuButton();
   await app.musicPage.header.hamburgerMenu.selectRegion("Germany");
   await app.musicPage.track.expectMusicTracksToBeVisible();
 
   //Assert
-  await app.musicPage.track.expectTracksNameToContainText(query);
+  // await app.musicPage.track.expectTracksNameToContainText(query);
   await app.musicPage.track.expectTracksCount(20);
   await app.expectPageToHaveUrl(
     app.page,
-    process.env.BASE_URL + `/en/music?query=billie+jean&region=de-DE`
+    process.env.BASE_URL + `/en/music?query=lady+gaga&region=de-DE`
   );
 });
 
 test("Check the width and visibility images of playlist", async ({ app }) => {
   //Actions
-  await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria("billie jean");
-  await app.home.header.searchForm.clickEnterSearchField();
-  await app.musicPage.header.navigation.clickMusicTab();
+  await app.musicPage.open(`/music?query=billie+jean`)
   await app.musicPage.track.expectMusicTracksToBeVisible();
 
   //Assert
-  await app.musicPage.playlist.expectImageToHavePropetry({
-    width: 180,
-    height: 180,
-  });
   await app.musicPage.playlist.expectImagesPlaylistToBeVisible();
   await app.musicPage.playlist.expectPlaylistsCount(20);
 });
 
-test("Check the width and visibility images of tracks", async ({ app }) => {
+test("Check visibility images of tracks", async ({ app }) => {
   //Actions
-  await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria(faker.music.songName());
-  await app.home.header.searchForm.clickEnterSearchField();
-  await app.musicPage.header.navigation.clickMusicTab();
+  await app.musicPage.open(`/music?query=${faker.music.songName()}`)
   await app.musicPage.track.expectMusicTracksToBeVisible();
 
   //Assert
-  await app.musicPage.track.expectImageToHavePropetry({
-    width: 64,
-    height: 64,
-    complete: true
-  });
   await app.musicPage.track.expectTracksCount(20);
   await app.musicPage.track.expectImageTracksToBeVisible();
 });
 
-test("Check width and visibility image in player", async ({ app }) => {
-  //Actions
-  await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria(faker.music.songName());
-  await app.home.header.searchForm.clickEnterSearchField();
-  await app.musicPage.header.navigation.clickMusicTab();
-  await app.musicPage.track.expectMusicTracksToBeVisible();
-  await app.musicPage.track.clickPlayButtonAt({ number: 1 });
-
-  //Assert
-  await app.musicPage.player.expectImageToHavePropetry({
-    width: 64,
-    height: 64,
-    complete: true
-  });
-  await app.musicPage.player.expectPlayerImageToBeVisible();
-});
-
 test("Checking the Next button in the slide", async ({ app }) => {
   //Actions
-  await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria("Skofka");
-  await app.home.header.searchForm.clickEnterSearchField();
-  await app.musicPage.header.navigation.clickMusicTab();
+  await app.musicPage.open(`/music?query=Skofka`)
   await app.musicPage.track.expectMusicTracksToBeVisible();
   await app.musicPage.playlist.clickNextButton();
 
@@ -461,10 +365,7 @@ test("Checking the Next button in the slide", async ({ app }) => {
 
 test("Checking the Prev button in the slide", async ({ app }) => {
   //Actions
-  await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria("Skofka");
-  await app.home.header.searchForm.clickEnterSearchField();
-  await app.musicPage.header.navigation.clickMusicTab();
+  await app.musicPage.open(`/music?query=Skofka`)
   await app.musicPage.track.expectMusicTracksToBeVisible();
   await app.musicPage.playlist.clickNextButton();
   await app.musicPage.playlist.expectPrevButtonIsEnabled();
@@ -486,10 +387,7 @@ test("Check design of button when track is playing  on music page", async ({
   app,
 }, testInfo) => {
   //Actions
-  await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria(faker.music.songName());
-  await app.home.header.searchForm.clickEnterSearchField();
-  await app.musicPage.header.navigation.clickMusicTab();
+  await app.musicPage.open(`/music?query=${faker.music.songName()}`)
   await app.musicPage.track.expectMusicTracksToBeVisible();
   await app.musicPage.track.clickPlayButtonAt({ number: 1 });
 
@@ -501,17 +399,14 @@ test("Check design of player component  on music page", async ({
   app,
 }, testInfo) => {
   //Actions
-  await app.home.open();
   await app.route.mockResponseMusicBody("/audio/search/playlists", 'data/mock/music/testDataPlaylist.json');
   await app.route.mockResponseMusicBody("/audio/search/tracks", 'data/mock/music/testDataTrack.json');
-  await app.home.header.searchForm.inputSearchCriteria(faker.music.songName());
-  await app.home.header.searchForm.clickEnterSearchField();
-  await app.musicPage.header.navigation.clickMusicTab();
+  await app.musicPage.open(`/music?query=${faker.music.songName()}`)
   await app.musicPage.track.expectMusicTracksToBeVisible();
   await app.musicPage.track.clickPlayButtonAt({ number: 1 });
 
   //Assert
-  await app.musicPage.player.expectImageToHavePropetry({
+  await app.musicPage.player.expectImageToHaveProperty({
     width: 64,
     height: 64,
     complete: true

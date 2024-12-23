@@ -68,14 +68,11 @@ test("Check 429 Too many requests", async ({ app }, testInfo) => {
 
 test("Check design video page", async ({ app }, testInfo) => {
   //Actions
-  await app.home.open();
   await app.route.requestWithGivenResponse(
     "/v2/videos",
     "data/mock/video/testData.json"
   );
-  await app.home.header.searchForm.inputSearchCriteria("ronaldo");
-  await app.home.header.searchForm.clickEnterSearchField();
-  await app.videoPage.header.navigation.clickVideoTab();
+  await app.videoPage.open(`/video?query=Iphone`)
   await app.videoPage.item.expectVideoItemsToBeVisible();
 
   //Assert
@@ -84,24 +81,18 @@ test("Check design video page", async ({ app }, testInfo) => {
 
 test("Check that video results equals search criteria", async ({ app }) => {
   //Actions
-  await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria("Iphone");
-  await app.home.header.searchForm.clickEnterSearchField();
-  await app.videoPage.header.navigation.clickVideoTab();
+  await app.videoPage.open(`/video?query=Billie+Eilish`)
   await app.videoPage.item.expectVideoItemsToBeVisible();
 
   //Assert
-  await app.videoPage.item.expectVideoTitleToContain(/iphone/i);
+  await app.videoPage.item.expectVideoTitleToContain(/Eilish/i);
   await app.videoPage.item.expectVideoResultToHaveCount(10);
   await app.videoPage.item.expectVideoImageToBeVisible();
 });
 
 test("Check infinity scroll in video results", async ({ app }) => {
   //Actions
-  await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria("nfs");
-  await app.home.header.searchForm.clickEnterSearchField();
-  await app.videoPage.header.navigation.clickVideoTab();
+  await app.videoPage.open(`/video?query=news`)
   await app.videoPage.item.expectVideoItemsToBeVisible();
   await app.videoPage.item.expectVideoResultToHaveCount(10);
   await app.videoPage.item.scrollByVisibleLastVideo();
@@ -116,16 +107,13 @@ test("Check the design error icon of video object", async ({
   app,
 }, testInfo) => {
   //Actions
-  await app.home.open();
   await app.route.requestWithGivenResponse(
     "/v2/videos",
     "data/mock/video/errorIcon.json"
   );
-  await app.home.header.searchForm.inputSearchCriteria(faker.music.songName());
-  await app.home.header.searchForm.clickEnterSearchField();
-  await app.videoPage.header.navigation.clickVideoTab();
+  await app.videoPage.open(`/video?query=${faker.music.songName()}`)
   await app.videoPage.item.expectVideoItemsToBeVisible();
-  await app.videoPage.waitUntilPageIsFullyLoaded();
+  await app.videoPage.item.waitErrorIconIsLoaded()
 
   //Assert
   await app.videoPage.item.expectImageToHaveProperty({
@@ -138,14 +126,11 @@ test("Check the design when video object is active", async ({
   app,
 }, testInfo) => {
   //Actions
-  await app.home.open();
   await app.route.requestWithGivenResponse(
     "/v2/videos",
     "data/mock/video/testData.json"
   );
-  await app.home.header.searchForm.inputSearchCriteria(faker.music.songName());
-  await app.home.header.searchForm.clickEnterSearchField();
-  await app.videoPage.header.navigation.clickVideoTab();
+  await app.videoPage.open(`/video?query=${faker.music.songName()}`)
   await app.videoPage.item.expectVideoItemsToBeVisible();
   await app.videoPage.item.clickVideoImageAt({ number: 1 });
 
@@ -157,12 +142,7 @@ test("Check the info video object { site, description, data, views }", async ({
   app,
 }) => {
   //Actions
-  await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria(
-    "Arctic Monkeys - Do I Wanna Know? (Official Video) - YouTube"
-  );
-  await app.home.header.searchForm.clickEnterSearchField();
-  await app.videoPage.header.navigation.clickVideoTab();
+  await app.videoPage.open(`/video?query=Arctic+Monkeys+-+Do+I+Wanna+Know%3F+%28Official+Video%29+-+YouTube`)
   await app.videoPage.item.expectVideoItemsToBeVisible();
 
   //Assert
@@ -178,10 +158,7 @@ test("Check the info video object { site, description, data, views } when openin
   app,
 }) => {
   //Actions
-  await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria(faker.music.songName());
-  await app.home.header.searchForm.clickEnterSearchField();
-  await app.videoPage.header.navigation.clickVideoTab();
+  await app.videoPage.open(`/video?query=${faker.music.songName()}`)
   await app.videoPage.item.expectVideoItemsToBeVisible();
   await app.videoPage.item.clickVideoImageAt({ number: 1 });
 
@@ -196,10 +173,7 @@ test("Check the info video object { site, description, data, views } when openin
 
 test("Check open video of vimeo owner", async ({ app }) => {
   //Actions
-  await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria("site:vimeo.com");
-  await app.home.header.searchForm.clickEnterSearchField();
-  await app.videoPage.header.navigation.clickVideoTab();
+  await app.videoPage.open(`/video?query=site%3Avimeo.com`)
   await app.videoPage.item.expectVideoItemsToBeVisible();
   await app.videoPage.item.clickVideoImageAt({ number: 1 });
 
@@ -230,10 +204,7 @@ test("Check open video when clicking title of video object", async ({
   app,
 }) => {
   //Actions
-  await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria(faker.music.songName());
-  await app.home.header.searchForm.clickEnterSearchField();
-  await app.videoPage.header.navigation.clickVideoTab();
+  await app.videoPage.open(`/video?query=${faker.music.songName()}`)
   await app.videoPage.item.expectVideoItemsToBeVisible();
   await app.videoPage.item.clickVideoTitleAt({ number: 1 });
 
@@ -243,14 +214,11 @@ test("Check open video when clicking title of video object", async ({
 
 test("Check design of video Privacy Warning", async ({ app }, testInfo) => {
   //Actions
-  await app.home.open();
   await app.route.requestWithGivenResponse(
     "/v2/videos",
     "data/mock/video/testData.json"
   );
-  await app.home.header.searchForm.inputSearchCriteria(randomVideoQuery());
-  await app.home.header.searchForm.clickEnterSearchField();
-  await app.videoPage.header.navigation.clickVideoTab();
+  await app.videoPage.open(`/video?query=iphone`)
   await app.videoPage.item.expectVideoItemsToBeVisible();
   await app.videoPage.item.clickVideoImageAt({ number: 1 });
 
@@ -262,10 +230,7 @@ test(`Check design of Video unavailable vimeo owner`, async ({
   app,
 }, testInfo) => {
   //Actions
-  await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria("site:vimeo.com");
-  await app.home.header.searchForm.clickEnterSearchField();
-  await app.videoPage.header.navigation.clickVideoTab();
+  await app.videoPage.open(`/video?query=site%3Avimeo.com`)
   await app.videoPage.item.expectVideoItemsToBeVisible();
   await app.videoPage.item.clickVideoImageAt({ number: 1 });
 
@@ -290,10 +255,7 @@ test(`Check design of Video unavailable dailymotion owner`, async ({
 
 test("Check cancel button of Video unavailable warning ", async ({ app }) => {
   //Actions
-  await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria("site:vimeo.com");
-  await app.home.header.searchForm.clickEnterSearchField();
-  await app.videoPage.header.navigation.clickVideoTab();
+  await app.videoPage.open(`/video?query=site%3Avimeo.com`)
   await app.videoPage.item.expectVideoItemsToBeVisible();
   await app.videoPage.item.clickVideoImageAt({ number: 1 });
   await app.videoPage.player.clickCancelButton();
@@ -304,14 +266,11 @@ test("Check cancel button of Video unavailable warning ", async ({ app }) => {
 
 test("Check cancel button of Privacy Warning ", async ({ app }) => {
   //Actions
-  await app.home.open();
   await app.route.requestWithGivenResponse(
     "/v2/videos",
     "data/mock/video/testData.json"
   );
-  await app.home.header.searchForm.inputSearchCriteria(faker.music.songName());
-  await app.home.header.searchForm.clickEnterSearchField();
-  await app.videoPage.header.navigation.clickVideoTab();
+  await app.videoPage.open(`/video?query=${faker.music.songName()}`)
   await app.videoPage.item.expectVideoItemsToBeVisible();
   await app.videoPage.item.clickVideoImageAt({ number: 1 });
   await app.videoPage.player.clickCancelButton();
@@ -324,10 +283,7 @@ test("Check video play if don't select checkbox Don't remind me again", async ({
   app,
 }, testInfo) => {
   //Actions
-  await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria(randomVideoQuery());
-  await app.home.header.searchForm.clickEnterSearchField();
-  await app.videoPage.header.navigation.clickVideoTab();
+  await app.videoPage.open(`/video?query=${randomVideoQuery()}`)
   await app.videoPage.item.expectVideoItemsToBeVisible();
   await app.videoPage.item.clickVideoImageAt({ number: 1 });
   await app.videoPage.player.clickOkButton();
@@ -340,10 +296,7 @@ test("Check video play if don't select checkbox Don't remind me again", async ({
 
 test("Check that image of proxy cdn server", async ({ app }) => {
   //Actions
-  await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria(faker.music.songName());
-  await app.home.header.searchForm.clickEnterSearchField();
-  await app.videoPage.header.navigation.clickVideoTab();
+  await app.videoPage.open(`/video?query=${faker.music.songName()}`)
   await app.videoPage.item.expectVideoItemsToBeVisible();
 
   //Assert
@@ -355,22 +308,19 @@ test("Check that image of proxy cdn server", async ({ app }) => {
 
 test("Check regional search", async ({ app }) => {
   //Actions
-  await app.home.open();
-  await app.home.header.searchForm.inputSearchCriteria("iphone");
-  await app.home.header.searchForm.clickEnterSearchField();
-  await app.videoPage.header.navigation.clickVideoTab();
+  await app.videoPage.open(`/video?query=Billie+Eilish`)
   await app.videoPage.item.expectVideoItemsToBeVisible();
   await app.videoPage.header.clickHamburgerMenuButton();
   await app.videoPage.header.hamburgerMenu.selectRegion("Germany");
   await app.videoPage.item.expectVideoItemsToBeVisible();
 
   //Assert
-  await app.videoPage.item.expectVideoTitleToContain(/iphone/i);
+  await app.videoPage.item.expectVideoTitleToContain(/Eilish/i);
   await app.videoPage.item.expectVideoResultToHaveCount(10);
   await app.videoPage.item.expectVideoImageToBeVisible();
   await app.expectPageToHaveUrl(
     app.page,
-    process.env.BASE_URL + `/en/video?query=iphone&region=de-DE`
+    process.env.BASE_URL + `/en/video?query=Billie+Eilish&region=de-DE`
   );
 });
 
@@ -395,14 +345,7 @@ test.fixme("Check that youtube video is playing", async ({ app }) => {
 test.use({ channel: "chrome" });
 test("Check that dailymotion video is playing", async ({ app }) => {
   //Actions
-  await app.home.open();
-  await app.home.header.clickHamburgerMenuButton();
-  await app.home.header.hamburgerMenu.selectRegion("Germany");
-  await app.home.header.searchForm.inputSearchCriteria(
-    "site:dailymotion.com public video"
-  );
-  await app.home.header.searchForm.clickEnterSearchField();
-  await app.videoPage.header.navigation.clickVideoTab();
+  await app.videoPage.open(`/video?query=site%3Adailymotion.com+public+video`)
   await app.videoPage.item.expectVideoItemsToBeVisible();
   await app.videoPage.item.clickVideoImageAt({ number: 1 });
   await app.videoPage.player.clickOkButton();
@@ -415,16 +358,11 @@ test("Check that dailymotion video is playing", async ({ app }) => {
 
 test("Check checkbox `Don't remind me again`", async ({ app }) => {
   //Actions
-  await app.home.open();
   await app.route.requestWithGivenResponse(
     "/v2/videos",
     "data/mock/video/testData.json"
   );
-  await app.home.header.searchForm.inputSearchCriteria(
-    "Arctic Monkeys - Do I Wanna Know? (Official Video) - YouTube"
-  );
-  await app.home.header.searchForm.clickEnterSearchField();
-  await app.videoPage.header.navigation.clickVideoTab();
+  await app.videoPage.open(`/video?query=trump`)
   await app.videoPage.item.expectVideoItemsToBeVisible();
   await app.videoPage.item.clickVideoImageAt({ number: 1 });
   await app.videoPage.player.selectCheckbox();

@@ -77,11 +77,7 @@ test("Cancel filter and navigates to the corresponding page.", async ({
 
 test("Check list dropdown of filter by date ", async ({ app }, testInfo) => {
   //Actions
-  await app.home.open();
-  await app.home.header.clickHamburgerMenuButton();
-  await app.home.header.hamburgerMenu.selectRegion("Germany");
-  await app.home.header.searchForm.inputSearchCriteria(faker.word.sample());
-  await app.home.header.searchForm.clickEnterSearchField();
+  await app.webPage.open(`/web?query=${faker.word.sample()}`)
   await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
   await app.webPage.filters.clickFilterByDate();
 
@@ -93,11 +89,7 @@ test("Check that dropdown of filter by date is opened and closed", async ({
   app,
 }) => {
   //Actions
-  await app.home.open();
-  await app.home.header.clickHamburgerMenuButton();
-  await app.home.header.hamburgerMenu.selectRegion("Germany");
-  await app.home.header.searchForm.inputSearchCriteria(faker.word.sample());
-  await app.home.header.searchForm.clickEnterSearchField();
+  await app.webPage.open(`/web?query=${faker.word.sample()}`)
   await app.webPage.webPageItem.expectWebPageItemsToBeVisible();
   await app.webPage.filters.clickFilterByDate();
 

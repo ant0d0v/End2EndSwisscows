@@ -6,6 +6,7 @@ import Translations from "../../../i18n/index.js";
 export default class ContactPage extends BasePage {
   constructor(page) {
     super(page);
+    this.pagePath = "/contact"
     this.header = new Header(page);
     this.form = new Form(page);
     this.translations = Translations;
@@ -22,10 +23,6 @@ export default class ContactPage extends BasePage {
     });
   }
   //Actions
-  async open() {
-    await this.openPage("/contact");
-  }
-
   async clickBackToSearchButton() {
     await this.clickElement(this.backToSearchButton, `Back to search button`);
   }

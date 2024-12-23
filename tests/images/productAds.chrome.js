@@ -2,11 +2,8 @@ import { test } from "../../utils/fixtures.js";
 import { randomProductAdsQuery } from "../../helpers/random.js"
 test("Check design of product images ads", async ({ app }, testInfo) => {
   //Actions
-  await app.home.open();
   await app.route.requestWithGivenResponse("/v4/images", 'data/mock/images/productAds.json');
-  await app.home.header.searchForm.inputSearchCriteria(randomProductAdsQuery());
-  await app.home.header.searchForm.clickEnterSearchField();
-  await app.imagePage.header.navigation.clickImageTab();
+  await app.imagePage.open(`/images?query=trump&region=de-DE`)
   await app.imagePage.item.expectImageItemsToBeVisible();
   await app.imagePage.advertiserProductCollection.waitUntilProductAdsToBeVisible();
 
@@ -16,12 +13,7 @@ test("Check design of product images ads", async ({ app }, testInfo) => {
 
 test("Check open advertising ", async ({ app }) => {
   //Actions
-  await app.home.open();
-  await app.home.header.clickHamburgerMenuButton();
-  await app.home.header.hamburgerMenu.selectRegion("Germany");
-  await app.home.header.searchForm.inputSearchCriteria(randomProductAdsQuery());
-  await app.home.header.searchForm.clickEnterSearchField();
-  await app.imagePage.header.navigation.clickImageTab();
+  await app.imagePage.open(`/images?query=${randomProductAdsQuery()}&region=de-DE`)
   await app.imagePage.item.expectImageItemsToBeVisible();
   await app.imagePage.advertiserProductCollection.waitUntilProductAdsToBeVisible();
   const oldUrl = await app.page.url();
@@ -33,12 +25,7 @@ test("Check open advertising ", async ({ app }) => {
 
 test("Check price,shipping,title and site of product ads", async ({ app }) => {
   //Actions
-  await app.home.open();
-  await app.home.header.clickHamburgerMenuButton();
-  await app.home.header.hamburgerMenu.selectRegion("Germany");
-  await app.home.header.searchForm.inputSearchCriteria(randomProductAdsQuery());
-  await app.home.header.searchForm.clickEnterSearchField();
-  await app.imagePage.header.navigation.clickImageTab();
+  await app.imagePage.open(`/images?query=${randomProductAdsQuery()}&region=de-DE`)
   await app.imagePage.item.expectImageItemsToBeVisible();
   await app.imagePage.advertiserProductCollection.waitUntilProductAdsToBeVisible();
 
@@ -55,11 +42,8 @@ test("Check next button and prev button in the product advertising ", async ({
   app,
 }) => {
   //Actions
-  await app.home.open();
   await app.route.requestWithGivenResponse("/v4/images", 'data/mock/images/productAds.json');
-  await app.home.header.searchForm.inputSearchCriteria(randomProductAdsQuery());
-  await app.home.header.searchForm.clickEnterSearchField();
-  await app.imagePage.header.navigation.clickImageTab();
+  await app.imagePage.open(`/images?query=${randomProductAdsQuery()}&region=de-DE`)
   await app.imagePage.item.expectImageItemsToBeVisible();
   await app.imagePage.advertiserProductCollection.waitUntilProductAdsToBeVisible();
   await app.imagePage.advertiserProductCollection.clickUntilNextButtonToBeDisabled();
@@ -72,12 +56,7 @@ test("Check next button and prev button in the product advertising ", async ({
 
 test("Check open new page when clicking ads link", async ({ app }) => {
   //Actions
-  await app.home.open();
-  await app.home.header.clickHamburgerMenuButton();
-  await app.home.header.hamburgerMenu.selectRegion("Germany");
-  await app.home.header.searchForm.inputSearchCriteria(randomProductAdsQuery());
-  await app.home.header.searchForm.clickEnterSearchField();
-  await app.imagePage.header.navigation.clickImageTab();
+  await app.imagePage.open(`/images?query=${randomProductAdsQuery()}&region=de-DE`)
   await app.imagePage.item.expectImageItemsToBeVisible();
   await app.imagePage.advertiserProductCollection.waitUntilProductAdsToBeVisible();
 
