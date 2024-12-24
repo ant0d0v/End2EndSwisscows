@@ -297,8 +297,7 @@ export default class BaseComponent extends PageHolder {
       testInfo.snapshotSuffix = "";
       const imageElements = await elements.all();
       for (const image of imageElements) {
-        await image.scrollIntoViewIfNeeded();
-        await expect(image).not.toHaveJSProperty("naturalWidth", 0);
+        await this.waitElementIsLoaded(image)
       }
       await expect(locator).toHaveScreenshot(`${testInfo.title}.png`);
     });
@@ -313,8 +312,7 @@ export default class BaseComponent extends PageHolder {
       testInfo.snapshotSuffix = "";
       const imageElements = await elements.all();
       for (const image of imageElements) {
-        await image.scrollIntoViewIfNeeded();
-        await expect(image).not.toHaveJSProperty("naturalWidth", 0);
+        await this.waitElementIsLoaded(image)
       }
       await expect(locator).toHaveScreenshot(`${testInfo.title}.png`, {
         mask: [await element],
