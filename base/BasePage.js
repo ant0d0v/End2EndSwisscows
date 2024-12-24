@@ -1,10 +1,9 @@
 import { expect,test} from "@playwright/test";
 import BaseComponent from "./BaseComponent.js";
-import { base } from "@faker-js/faker";
 export default class BasePage extends BaseComponent {
   constructor(page) {
     super(page);
-    this.pagePath = ""
+    this.pagePath = "";
   }
   //Actions
   async open(path = this.pagePath) {
@@ -18,7 +17,7 @@ export default class BasePage extends BaseComponent {
   }
   
   async goBack() {
-    await test.step("Navigate to the previous page in history.", async () => {
+    await test.step("Navigate to the previous page", async () => {
       await this.page.goBack();
     });
   }
